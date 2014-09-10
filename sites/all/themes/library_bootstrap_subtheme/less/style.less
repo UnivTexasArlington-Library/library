@@ -1,0 +1,333 @@
+// Bootstrap library.
+@import 'bootstrap.less';
+
+// Base-theme overrides.
+@import 'overrides.less';
+
+// Theme specific.
+@import 'header.less';
+@import 'content.less';
+@import 'footer.less';
+
+@import 'variables.less';
+
+/*for body font*/
+body {
+	font-family: 'Open Sans';
+}
+
+/*for page titles*/
+.page-header {
+	color:#f58025;
+	background: #dddbdc;
+	border:none;
+	padding-top: 5px;
+	margin-left: -15px;
+	margin-right: -15px;
+	padding-right: 15px;
+	text-transform: uppercase;
+	padding-bottom: 5px;
+}
+.page-header:before {
+	content: url('http://drupal-dev.uta.edu/sites/default/files/orangecircle.png');
+	display: inline-block;
+	margin-top: -6px;
+	float: left;
+	padding-right: 15px;
+}
+
+/*for sidebar nav style*/
+#sidebar {
+  height: 100%;
+  padding-right: 0;
+}
+#sidebar .nav {
+  width: 95%;
+}
+/* collapsed sidebar styles */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -41.6%;
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -41.6%;
+  }
+  .row-offcanvas-right.active {
+    right: 41.6%;
+  }
+  .row-offcanvas-left.active {
+    left: 41.6%;
+  }
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 41.6%;
+  }
+  #sidebar {
+    padding-top:0;
+  }
+  #sidebar .nav>li:first-child {
+    border-top:0;
+  }
+  #sidebar .nav>li>a {
+    color: #ddd;
+  }
+  #sidebar .nav>li>a>img {
+    max-width: 14px;
+  }
+  #sidebar .nav>li>a:hover, #sidebar .nav>li>a:focus {
+    text-decoration: none;
+  }
+  #sidebar .nav .caret {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+  }
+  #sidebar .nav a:hover .caret{
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+  }
+}
+/*end sidebar nav style*/
+
+/*for uta header*/
+.region-uta-header img {
+	width:100%;
+}
+.uta_header {
+	padding-left:0;
+	padding-right:0;
+}
+.univ_logo {
+	background: #00447C;
+	padding-left:0;
+	padding-right:0;
+	font-family: @font-family-serif;
+	color: #dddbdb;
+	text-transform:uppercase;
+	text-align:right;
+	padding-top:4px;
+	padding-bottom:4px;
+	letter-spacing:.05em;
+	padding-right: 12px;
+	img {
+		max-width:26px;
+	}
+}
+
+.center-container {
+	background:#FFFFFF;
+}
+
+/*for nav links*/
+.region-sidebar-first, .region-sidebar-second {
+	.nav .leaf a, .nav li.dropdown a {
+		color: #dddbdb;
+	}
+	.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+		background-color: transparent;
+		border: none;
+	}
+	.nav > li > a:hover, .nav > li > a:focus {
+		text-decoration: none;
+		background-color: transparent;
+	}
+	.nav > li > a {
+	 	padding: 2px;
+	 	font-size:13px;
+	}
+	.dropdown-menu {
+		position:relative;
+		border:none;
+		box-shadow:none;
+		background-color:transparent;
+		background:none;
+		margin-left:-15px;
+		font-size:13px;
+	}
+	.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+		background-color:transparent;
+	}
+	.block-title-link {
+		color: #F58025;
+		padding-bottom: 0px;
+		font-size:14px;
+		display: inline;
+		padding-left: 3px;
+	}
+}
+
+#block-menu-menu-left-menu-top .block-title-link:after, #block-menu-menu-left-menu-bottom .block-title-link:after, #block-menu-menu-right-menu-bottom .block-title-link:after, #block-menu-menu-right-menu-top .block-title-link:after {
+	content: '';
+	display: inline-block;
+	background-size: 100%;
+	float: left;
+	margin-right: 5px;
+}
+#block-menu-menu-left-menu-top .block-title-link:after {
+	background: url('http://drupal-dev.uta.edu/sites/default/files/research_icon.png');
+	width:35px;
+	height:36px;
+}
+#block-menu-menu-left-menu-bottom .block-title-link {
+	display:inline-block;
+	line-height: 20px;
+}
+#block-menu-menu-left-menu-bottom .block-title-link:before {
+	content: url('http://drupal-dev.uta.edu/sites/default/files/services_icon.png');
+	display: inline-block;
+	float: left;
+	margin-right:3px;
+}
+#block-menu-menu-right-menu-bottom .block-title-link:after {
+	background: url('http://drupal-dev.uta.edu/sites/default/files/about_icon.png');
+	width:46px;
+	height:27px;
+	margin-top: 2px;
+}
+#block-menu-menu-right-menu-top .block-title-link:after {
+	background: url('http://drupal-dev.uta.edu/sites/default/files/help_icon.png');
+	width:35px;
+	height:35px;
+}
+#block-menu-menu-left-menu-bottom .menu, #block-menu-menu-right-menu-bottom .menu {
+	display:none;
+}
+@media(max-width:991px) {
+	#block-menu-menu-right-menu-top .menu {
+		display:none;
+	} 
+}
+@media(min-width:992px) {
+	#block-menu-menu-right-menu-top .caret, #block-menu-menu-left-menu-top .caret {
+		display:none;
+	}
+}
+@media(max-width:767px) {
+	#block-menu-menu-left-menu-top .menu {
+		display:none;
+	} 
+}
+.caret.up {
+    border-top-width: 0;
+    border-bottom: 4px solid;
+}
+.breadcrumb {
+	text-align: right;
+}
+.summon {
+	background: url('http://drupal-dev.uta.edu/sites/default/files/central.jpg');
+	background-size: 100%;
+	.btn-summon {
+		background: rgba(0, 71, 124, 0.85);
+		width:20%;
+		margin-right:5%;
+		border:none;
+		text-transform:uppercase;
+		padding-top: 1.2%;
+		padding-bottom: 1.2%;
+	} 
+	.btn-summon.active {
+		background: rgba(245, 128, 37, 0.85);
+	}
+	.summon-search-box {
+		width: 100%;
+		line-height: 36px;
+		padding-top: 10%;
+		padding-left: 5%;
+		padding-right: 5%;
+		padding-bottom: 2%;
+	}
+	.summon-search-field {
+		width: 90%;
+		font-size: 1.4em;
+		border-radius:5px;
+		::-webkit-input-placeholder {
+		   padding-left:5px;
+		}
+
+		:-moz-placeholder { /* Firefox 18- */
+		   padding-left:5px;  
+		}
+
+		::-moz-placeholder {  /* Firefox 19+ */
+		   padding-left:5px;  
+		}
+
+		:-ms-input-placeholder {  
+		   padding-left:5px;  
+		}
+	}
+	.summon-search-submit {
+		background: #F58025;
+		border: 2px solid #999990;
+		border-radius: 30px;
+		font-size: 2em;
+		color: #FFFFFF;
+		padding: 11px;
+		text-transform: uppercase;
+		margin-left: -30px;
+		margin-top: -8px;
+		position: absolute;
+	}
+	a {
+		float:right;
+		color: #FFFFFF;
+		text-transform:uppercase;
+	}
+	form a {
+		padding-right:15%;
+	}
+	.search-buttons {
+		padding-top: 12%;
+		padding-bottom: 14%;
+		padding-left: 7%;
+		padding-right: 7%;
+	}
+}
+/*styles book navigation*/
+.book-navigation {
+	.page-next, .page-up, .page-previous {
+		display: inline-block;
+		padding: 5px 14px;
+		background-color: #fff;
+		border: 1px solid #ddd;
+		border-radius: 15px;
+	}
+	.page-links {
+		padding:10px;
+		display:block;
+		margin-left:auto;
+		margin-right:auto;
+	}
+}
+/*styles background color of texteditor for users*/
+.cke_editable {
+	background:#FFFFFF;	
+}
+
+.node-form {
+	padding-left:15px;
+}
+
+.footer {
+	background:#FFFFFF;
+}
+
+/*for homepage*/
+#central-hours, #afa-hours, #sel-hours, #spco-hours {
+	color:#F58025;
+}
+h3 {
+	color: #F58025;
+	border-top: 1px solid #dddbdb;
+	border-bottom: 1px solid #dddbdb;
+}
