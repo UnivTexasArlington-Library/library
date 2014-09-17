@@ -15,17 +15,18 @@
         <?php print $left; ?>
       </<?php print $left_wrapper; ?>>
         <?php endif; ?>
+        <div class="col-sm-8">
   <?php if ($topright) : ?>
-      <<?php print $topright_wrapper; ?> class="col-sm-8 <?php print $topright_classes; ?>">
+      <<?php print $topright_wrapper; ?> class="<?php print $topright_classes; ?>">
         <?php print $topright; ?>
       </<?php print $topright_wrapper; ?>>
   <?php endif; ?>
   <?php if ($bottomleft || $bottomright) : ?>
         <div class="row">
-         <<?php print $bottomleft_wrapper; ?> class="col-sm-4 <?php print $bottomleft_classes; ?>">
+         <<?php print $bottomleft_wrapper; ?> class="col-sm-6 <?php print $bottomleft_classes; ?>">
           <?php print $bottomleft; ?>
         </<?php print $bottomleft_wrapper; ?>>
-        <<?php print $bottomright_wrapper; ?> class="col-sm-4 <?php print $bottomright_classes; ?>">
+        <<?php print $bottomright_wrapper; ?> class="col-sm-6 <?php print $bottomright_classes; ?>">
           <?php print $bottomright; ?>
         </<?php print $bottomright_wrapper; ?>>
         </div>
