@@ -7273,3 +7273,7 @@ h3 {
 :-ms-input-placeholder {
   padding-left: 5px;
 }
+/*for locations images */
+.page-locations img {
+  width: 100%;
+}
