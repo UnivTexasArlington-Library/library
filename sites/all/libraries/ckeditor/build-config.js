@@ -49,7 +49,6 @@ var CKBUILDER_CONFIG = {
 		'basicstyles' : 1,
 		'blockquote' : 1,
 		'clipboard' : 1,
-		'codemirror' : 1,
 		'contextmenu' : 1,
 		'elementspath' : 1,
 		'enterkey' : 1,
