@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the improved_multi_select module.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function improved_multi_select_uninstall() {
+  variable_del('improved_multi_select:url');
+  variable_del('improved_multi_select:isall');
+  variable_del('improved_multi_select:selectors');
+  variable_del('improved_multi_select:filtertype');
+  variable_del('improved_multi_select:orderable');
+  variable_del('improved_multi_select:groupresetfilter');
+  variable_del('improved_multi_select:buttontext_add');
+  variable_del('improved_multi_select:buttontext_addall');
+  variable_del('improved_multi_select:buttontext_del');
+  variable_del('improved_multi_select:buttontext_delall');
+  variable_del('improved_multi_select:buttontext_moveup');
+  variable_del('improved_multi_select:buttontext_movedown');
+}

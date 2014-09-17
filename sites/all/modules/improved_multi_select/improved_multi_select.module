@@ -1,0 +1,190 @@
+<?php
+
+/**
+ * @file
+ * Replace the default multi-select boxes with two pannel list and search.
+ */
+
+/**
+ * Implements template_preprocess_page().
+ */
+function improved_multi_select_preprocess_page() {
+  $is_enabled = FALSE;
+  $url = trim(variable_get('improved_multi_select:url', ''));
+  $selectors = array_filter(explode("\n", str_replace("\r", "\n", trim(variable_get('improved_multi_select:selectors', '')))));
+
+  if ($replace_all = variable_get('improved_multi_select:isall', FALSE)) {
+    $is_enabled = TRUE;
+  }
+  else {
+    if (($url && drupal_match_path(request_path(), $url)) || $selectors) {
+      $is_enabled = TRUE;
+    }
+  }
+
+  if ($is_enabled) {
+    $selectors = improved_multi_select_load_selectors($replace_all, $selectors);
+    drupal_add_css(drupal_get_path('module', 'improved_multi_select') . '/improved_multi_select.css');
+    drupal_add_js(drupal_get_path('module', 'improved_multi_select') . '/improved_multi_select.js');
+    drupal_add_js(array(
+      'improved_multi_select' => array(
+        'selectors' => $selectors,
+        'filtertype' => variable_get('improved_multi_select:filtertype', 'partial'),
+        'orderable' => variable_get('improved_multi_select:orderable', FALSE),
+        'groupresetfilter' => variable_get('improved_multi_select:groupresetfilter', FALSE),
+        'buttontext_add' => variable_get('improved_multi_select:buttontext_add', '>'),
+        'buttontext_addall' => variable_get('improved_multi_select:buttontext_addall', '»'),
+        'buttontext_del' => variable_get('improved_multi_select:buttontext_del', '<'),
+        'buttontext_delall' => variable_get('improved_multi_select:buttontext_delall', '«'),
+        'buttontext_moveup' => variable_get('improved_multi_select:buttontext_moveup', 'Move up'),
+        'buttontext_movedown' => variable_get('improved_multi_select:buttontext_movedown', 'Move down'),
+      ),
+    ), 'setting');
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function improved_multi_select_menu() {
+  $items = array();
+
+  $items['admin/config/user-interface/ims'] = array(
+    'title' => 'Improved Multi Select',
+    'description' => 'Configure Improved Multi Select module.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('improved_multi_select_admin'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Administration settings page.
+ */
+function improved_multi_select_admin($form) {
+  $form['improved_multi_select:isall'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Replace all multi-select lists'),
+    '#default_value' => variable_get('improved_multi_select:isall', FALSE),
+  );
+
+  $form['improved_multi_select:url'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Replace multi-select lists on specific pages'),
+    '#description' => t("Specify pages by using their paths. Enter one path per line. The '*' character is a wildcard. Example paths are %blog for the blog page and %blog-wildcard for every personal blog. %front is the front page.", array('%blog' => 'blog', '%blog-wildcard' => 'blog/*', '%front' => '<front>')),
+    '#default_value' => variable_get('improved_multi_select:url', ''),
+  );
+
+  $form['improved_multi_select:selectors'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Replace multi-select with specified selectors'),
+    '#description' => t('Enter jQuery selectors (one selector per line). Example: select[multiple]'),
+    '#default_value' => variable_get('improved_multi_select:selectors', ''),
+  );
+
+  $form['improved_multi_select:filtertype'] = array(
+    '#type' => 'radios',
+    '#title' => t('Filter functionality'),
+    '#description' => t('Choose how you would like the filter textfield to function.'),
+    '#options' => array(
+      'partial' => t('Partial match: Shows options that contain the filter text.'),
+      'exact' => t('Exact match: Shows options that exactly match the filter text.'),
+      'anywords' => t('Any words: Shows options that contain any of the individual words in the filter text. Only exact word matches count.'),
+      'anywords_partial' => t('Any words (partial): Shows options that contain any of the individual words in the filter text. Partial word matches count.'),
+      'allwords' => t('All words: Shows options that contain all of the individual words in the filter text (in any order). Only exact word matches count.'),
+      'allwords_partial' => t('All words (partial): Shows options that contain all of the individual words in the filter text (in any order). Partial word matches count.'),
+    ),
+    '#default_value' => variable_get('improved_multi_select:filtertype', 'partial'),
+  );
+
+  $form['improved_multi_select:orderable'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Allow re-ordering of selected items'),
+    '#description' => t('If checked, the user will be able to re-order the selected items using "Move up" and "Move down" buttons. Also, when adding items they will remain in the order they were added instead of keeping the order of the original field.'),
+    '#default_value' => variable_get('improved_multi_select:orderable', FALSE),
+  );
+
+  $form['improved_multi_select:groupresetfilter'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Reset filter when selecting a group'),
+    '#description' => t('If checked and a select has optgroups, when a group is selected the filter text field is cleared. If unchecked, any existing filter will be applied only to items of the selected group.'),
+    '#default_value' => variable_get('improved_multi_select:groupresetfilter', FALSE),
+  );
+
+  $form['button_text'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Button text'),
+    '#description' => t('Set the text used for the improved multi-select buttons.'),
+  );
+  $form['button_text']['improved_multi_select:buttontext_add'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Add button'),
+    '#default_value' => variable_get('improved_multi_select:buttontext_add', '>'),
+  );
+  $form['button_text']['improved_multi_select:buttontext_addall'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Add all button'),
+    '#default_value' => variable_get('improved_multi_select:buttontext_addall', '»'),
+  );
+  $form['button_text']['improved_multi_select:buttontext_del'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Remove button'),
+    '#default_value' => variable_get('improved_multi_select:buttontext_del', '<'),
+  );
+  $form['button_text']['improved_multi_select:buttontext_delall'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Remove all button'),
+    '#default_value' => variable_get('improved_multi_select:buttontext_delall', '«'),
+  );
+  $form['button_text']['improved_multi_select:buttontext_moveup'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Move up button'),
+    '#default_value' => variable_get('improved_multi_select:buttontext_moveup', 'Move up'),
+    '#states' => array(
+      // Hide the settings when the move buttons are disabled.
+      'invisible' => array(
+       ':input[name="improved_multi_select:orderable"]' => array('checked' => FALSE),
+      ),
+    ),
+  );
+  $form['button_text']['improved_multi_select:buttontext_movedown'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Move down button'),
+    '#default_value' => variable_get('improved_multi_select:buttontext_movedown', 'Move down'),
+    '#states' => array(
+      // Hide the settings when the move buttons are disabled.
+      'invisible' => array(
+       ':input[name="improved_multi_select:orderable"]' => array('checked' => FALSE),
+      ),
+    ),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Return array of jQuery selectors from jQuery selectors or 'replace all' option.
+ *
+ * @param $replace_all
+ *   Boolean indicating if all multiselects will be replaced.
+ * @param $selectors
+ *   Array with jQuery selectors.
+ *
+ * @return
+ *   Array with jQuery selectors.
+ */
+function improved_multi_select_load_selectors($replace_all, $selectors) {
+  $output = array();
+  if (!empty($selectors) and !$replace_all) {
+    foreach ($selectors as $selector) {
+      $output[] = $selector;
+    }
+  }
+  else {
+    $output = array('select[multiple]');
+  }
+  return $output;
+}

@@ -1,0 +1,16 @@
+name = Taxonomies
+core = 7.x
+package = Features
+dependencies[] = features
+dependencies[] = taxonomy
+features[features_api][] = api:2
+features[taxonomy][] = discipline
+features[taxonomy][] = event
+features[taxonomy][] = location
+features[taxonomy][] = policy_type
+features[taxonomy][] = software
+features[taxonomy][] = sponsor
+features[taxonomy][] = staff_department
+features[taxonomy][] = staff_location
+features[taxonomy][] = study_feature
+features[taxonomy][] = technology
