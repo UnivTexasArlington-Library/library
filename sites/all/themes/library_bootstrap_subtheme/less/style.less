@@ -307,12 +307,52 @@ body {
 	background:#FFFFFF;	
 }
 
+/*overall styling*/
 .node-form {
 	padding-left:15px;
 }
+.form-horizontal .form-group {
+	margin-left:0;
+	margin-right:0;
+}
 
+/*for footer*/
 .footer {
-	background:#FFFFFF;
+	background:#dddbdb;
+	font-size:.8em;
+	border-top:30px solid #00447C;
+	color:@brand-primary;
+	line-height:18px;
+	padding-top:10px;
+	.glyphicon {
+		color: #000000;
+		padding-right:5px;
+	}
+	img {
+		width:75%;
+		text-align:center;
+	}
+	.col-sm-4 {
+		border-right:4px solid #FFFFFF;
+		padding-top:10px;
+	}
+	.col-sm-4:nth-of-type(2), .col-sm-4:nth-of-type(3) {
+		text-align:center;
+	}
+	.col-sm-4:last-of-type {
+		border:none;
+	}
+	.footer-links {
+		.col-sm-6 {
+			padding-left:0;
+			padding-right:0;
+		}
+		a {
+			text-decoration:underline;
+			padding-top:2px;
+			padding-bottom:2px;
+		}
+	}
 }
 
 /*for homepage*/
@@ -568,6 +608,10 @@ h3 {
 		a:hover, a:focus {
 			color:#FFFFFF;
 		}
+	}
+	.glyphicon img {
+		width:20px;
+		height:auto;
 	}
 }
 

@@ -7046,11 +7046,50 @@ body {
 .cke_editable {
   background: #FFFFFF;
 }
+/*overall styling*/
 .node-form {
   padding-left: 15px;
 }
+.form-horizontal .form-group {
+  margin-left: 0;
+  margin-right: 0;
+}
+/*for footer*/
 .footer {
-  background: #FFFFFF;
+  background: #dddbdb;
+  font-size: .8em;
+  border-top: 30px solid #00447C;
+  color: #0064b1;
+  line-height: 18px;
+  padding-top: 10px;
+}
+.footer .glyphicon {
+  color: #000000;
+  padding-right: 5px;
+}
+.footer img {
+  width: 75%;
+  text-align: center;
+}
+.footer .col-sm-4 {
+  border-right: 4px solid #FFFFFF;
+  padding-top: 10px;
+}
+.footer .col-sm-4:nth-of-type(2),
+.footer .col-sm-4:nth-of-type(3) {
+  text-align: center;
+}
+.footer .col-sm-4:last-of-type {
+  border: none;
+}
+.footer .footer-links .col-sm-6 {
+  padding-left: 0;
+  padding-right: 0;
+}
+.footer .footer-links a {
+  text-decoration: underline;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 /*for homepage*/
 #central-hours,
@@ -7292,6 +7331,10 @@ h3 {
 .node-location h2 a:hover,
 .node-location h2 a:focus {
   color: #FFFFFF;
+}
+.node-location .glyphicon img {
+  width: 20px;
+  height: auto;
 }
 /*for padding between nodes*/
 .node {
