@@ -7286,6 +7286,13 @@ h3 {
   padding: 5px;
   margin-top: 0;
 }
+.node-location h2 a {
+  color: #FFFFFF;
+}
+.node-location h2 a:hover,
+.node-location h2 a:focus {
+  color: #FFFFFF;
+}
 /*for padding between nodes*/
 .node {
   padding-top: 10px;
