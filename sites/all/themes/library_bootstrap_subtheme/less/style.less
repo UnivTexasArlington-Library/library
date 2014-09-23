@@ -302,12 +302,33 @@ body {
 		margin-right:auto;
 	}
 }
-/*styles background color of texteditor for users*/
-.cke_editable {
-	background:#FFFFFF;	
+
+
+
+
+
+
+/*SYSTEM WIDE SETTINGS*/
+/*for orange font*/
+.orange {	
+	color:@brand-warning;
 }
 
-/*overall styling*/
+/*class for inline styling*/
+.inline {
+	display:inline-block;
+}
+
+/*for padding between nodes*/
+.node {
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.node.node-home-page {
+	padding-top:0;
+}
+
+/*form styling*/
 .node-form {
 	padding-left:15px;
 }
@@ -315,6 +336,56 @@ body {
 	margin-left:0;
 	margin-right:0;
 }
+.btn-primary.form-submit {
+	background-color:@brand-success;	
+	border-color:@brand-success;
+}
+.form-item {
+	margin-left:15px;
+}
+
+/*for placeholder text*/
+::-webkit-input-placeholder {
+   padding-left:5px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   padding-left:5px;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   padding-left:5px;  
+}
+
+:-ms-input-placeholder {  
+   padding-left:5px;  
+}
+
+/*for all nav-tabs*/
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .nav-tabs > li > a {
+	border: 1px solid #dddddd;
+	border-bottom-color: transparent;
+}
+/*for tab colors*/
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+	background-color: @brand-warning;
+}
+.nav-tabs > li > a {
+	background-color: @brand-primary;
+	color:#FFFFFF;
+}
+.tabs-below > .nav-tabs .summary, .tabs-left > .nav-tabs .summary, .tabs-right > .nav-tabs .summary {
+	color:#dddbdb;
+}
+
+/*styles background color of texteditor for users*/
+.cke_editable {
+	background:#FFFFFF;	
+}
+
+
 
 /*for footer*/
 .footer {
@@ -324,6 +395,7 @@ body {
 	color:@brand-primary;
 	line-height:18px;
 	padding-top:10px;
+	padding-bottom:10px;
 	.glyphicon {
 		color: #000000;
 		padding-right:5px;
@@ -334,16 +406,14 @@ body {
 	}
 	.col-sm-4 {
 		border-right:4px solid #FFFFFF;
-		padding-top:10px;
-	}
-	.col-sm-4:nth-of-type(2), .col-sm-4:nth-of-type(3) {
 		text-align:center;
+		padding-top:25px;
+		padding-bottom:20px;
 	}
 	.col-sm-4:last-of-type {
 		border:none;
-	}
-	.footer-links {
-		.col-sm-6 {
+		text-align:left;
+		.col-xs-6 {
 			padding-left:0;
 			padding-right:0;
 		}
@@ -352,6 +422,10 @@ body {
 			padding-top:2px;
 			padding-bottom:2px;
 		}
+	}
+	.col-sm-4:first-of-type {
+		padding-top:10px;
+		padding-bottom:0px;
 	}
 }
 
@@ -385,17 +459,6 @@ h3 {
 	.dropdown-menu > .active > a {
 		background-color: #FFFFFF;
 	}
-}
-
-/*for all nav-tabs*/
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .nav-tabs > li > a {
-	border: 1px solid #dddbdb;
-	border-bottom-color: transparent;
-}
-
-/*class for inline styling*/
-.inline {
-	display:inline-block;
 }
 
 /*for homepage*/
@@ -464,6 +527,7 @@ h3 {
 		}
 	}
 }
+
 /*for available now section*/
 .available-links {
 	text-transform:none;
@@ -508,9 +572,11 @@ h3 {
 	}
 	.nav-tabs > li > a {
 		color:#F58025;
+		background:#FFFFFF;
 		border:none;
 		font-size:1.2em;
 		margin-bottom:0;
+		border-bottom: 1px solid #dddbdb;
 	}
 	.avail {
 		font-size:2em;
@@ -572,22 +638,7 @@ h3 {
 	}
 }
 
-/*for placeholder text*/
-::-webkit-input-placeholder {
-   padding-left:5px;
-}
 
-:-moz-placeholder { /* Firefox 18- */
-   padding-left:5px;  
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   padding-left:5px;  
-}
-
-:-ms-input-placeholder {  
-   padding-left:5px;  
-}
 
 /*for locations */
 .node-location {
@@ -615,13 +666,3 @@ h3 {
 	}
 }
 
-/*for padding between nodes*/
-.node {
-	padding-top:10px;
-	padding-bottom:10px;
-}
-
-/*for orange font*/
-.orange {	
-	color:@brand-warning;
-}

@@ -26,3 +26,16 @@ function library_bootstrap_subtheme_preprocess_views_view_rowspan(&$vars) {
 function bootstrap_menu_tree__menu_spco_menu(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
+
+/*function library_bootstrap_subtheme_preprocess_field(&$variables, $hook) {
+ $element = $variables['element'];
+  if (isset($element['#field_name'])) {
+    if ($element['#field_name'] == 'field_video_file') {	  
+    	  $options = array(
+		    'group' => JS_THEME,
+		  );
+		//drupal_add_js(drupal_get_path('theme', 'library_bootstrap_subtheme'). '/js/swfobject.js', $options);
+    	  drupal_add_js('http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js', 'external');
+   }
+ }
+}*/
