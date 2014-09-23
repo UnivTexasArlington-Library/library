@@ -7026,6 +7026,13 @@ body {
   padding-left: 7%;
   padding-right: 7%;
 }
+.summon .search-parameters {
+  color: #FFFFFF;
+  padding-left: 5%;
+}
+.summon .search-parameters input {
+  margin-right: 6px;
+}
 /*styles book navigation*/
 .book-navigation .page-next,
 .book-navigation .page-up,
