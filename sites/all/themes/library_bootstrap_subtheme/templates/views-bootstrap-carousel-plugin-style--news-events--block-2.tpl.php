@@ -31,7 +31,7 @@
           </div>
       </div>
 <!-- total number / item count has remainder == 2 -->
-<?php elseif($rows_count % item_count) == 2):?>
+<?php elseif($rows_count % $item_count) == 2):?>
 <?php for($i=0;$i<$rows_count-2;$i+=$item_count):?>
   <div class="item <?php if ($i == 0) print 'active' ?>">
           <?php for($j=0;$j<$item_count;$j++): ?>
