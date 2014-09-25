@@ -6793,7 +6793,7 @@ body {
   padding-right: 15px;
   text-transform: uppercase;
   padding-bottom: 5px;
-  height: 75px;
+  min-height: 75px;
   font-size: 2.3em;
 }
 .page-header:before {
@@ -6885,6 +6885,11 @@ body {
 }
 .univ_logo img {
   max-width: 26px;
+  margin-bottom: 6px;
+}
+.univ_logo a {
+  color: #FFFFFF;
+  vertical-align: bottom;
 }
 .center-container {
   background: #FFFFFF;
@@ -6926,6 +6931,7 @@ body {
   background: none;
   margin-left: -15px;
   font-size: 1em;
+  width: 95%;
 }
 .region-sidebar-first .dropdown-menu > .active > a,
 .region-sidebar-second .dropdown-menu > .active > a,
@@ -6944,6 +6950,18 @@ body {
   padding-left: 3px;
   padding-right: 7px;
   text-decoration: none;
+}
+.region-sidebar-first .dropdown-menu > li > a,
+.region-sidebar-second .dropdown-menu > li > a {
+  white-space: normal;
+}
+.region-sidebar-first .keep-open > .dropdown-menu,
+.region-sidebar-second .keep-open > .dropdown-menu {
+  display: block;
+}
+.region-sidebar-first .dropdown.keep-open .dropdown-toggle,
+.region-sidebar-second .dropdown.keep-open .dropdown-toggle {
+  display: none;
 }
 #block-menu-menu-left-menu-top .block-title-link:after,
 #block-menu-menu-left-menu-bottom .block-title-link:after,
@@ -7010,6 +7028,7 @@ body {
 }
 .breadcrumb {
   text-align: right;
+  margin-bottom: 0;
 }
 .summon {
   background: url('http://drupal-dev.uta.edu/sites/default/files/central.jpg');
@@ -7417,30 +7436,4 @@ h3 {
 .node-location .glyphicon img {
   width: 20px;
   height: auto;
-}
-.alert-danger {
-  background-image: url('http://drupal-dev.uta.edu/sites/default/files/feedback-banner.png');
-  border: none;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border-radius: 0px;
-  padding-top: 2%;
-  padding-bottom: 2%;
-}
-.alert-danger a {
-  color: #FFFFFF;
-  width: 20%;
-  border-radius: 9px;
-  margin-right: 2%;
-  font-size: 1.5em;
-  padding: 0;
-  margin-top: 2px;
-  margin-bottom: -2px;
-}
-.alert-danger p {
-  text-align: right;
-}
-.view-test-st {
-  overflow-y: scroll;
-  overflow-x: none;
 }
