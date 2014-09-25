@@ -4,9 +4,9 @@ package = Form Elements
 core = 7.x
 configure = admin/config/user-interface/ims
 
-; Information added by Drupal.org packaging script on 2014-07-17
+; Information added by Drupal.org packaging script on 2014-09-15
 version = "7.x-2.x-dev"
 core = "7.x"
 project = "improved_multi_select"
-datestamp = "1405606129"
+datestamp = "1410771229"
 
