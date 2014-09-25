@@ -39,3 +39,21 @@ function bootstrap_menu_tree__menu_spco_menu(&$variables) {
    }
  }
 }*/
+
+//adds homepage javascript file for summon search boxes
+function library_bootstrap_subtheme_preprocess_node(&$vars, $hook) {
+	 if ($vars['node']->nid == 476) {
+	 	$options = array(
+    		'group' => JS_THEME,
+  		);
+  		drupal_add_js(drupal_get_path('theme', 'library_bootstrap_subtheme'). '/js/home.js', $options);
+	 }
+}
+
+//makes spco homepage into view mode spco homepage instead of default
+/*function library_bootstrap_subtheme_preprocess_node(&$vars, $hook) {
+		$view_mode = 'spco_homepage';
+	 if ($vars['node']->nid == 495) {
+	 	node_build_content($vars['node'], $view_mode);
+	 }
+}*/

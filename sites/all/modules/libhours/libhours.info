@@ -1,0 +1,6 @@
+name = Library Hours
+description = A module to build on Opening Hours to display library hours
+package = Opening hours
+core = 7.x
+dependencies[] = opening_hours
+dependencies[] = block

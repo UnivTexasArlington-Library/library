@@ -1,0 +1,47 @@
+<?php
+/**
+* @file
+* Drupal module file where we extend drupal views hooks.
+*
+* The views allow you to extend its all portion of the functionality so that
+* here we extend its plugin and add new style plugin for drawing google org 
+* chart. Also we add one theme functionality to arrange its output. 
+*/
+/**
+ * Implements hook_views_plugins().
+ */
+function views_org_chart_views_plugins() {
+  return array(
+    'style' => array(
+      'views_chart_tools_dashboard' => array(
+        'title' => t('Views Org Chart'),
+        'help' => t('Renders views data into Organization flow chart form.'),
+        'handler' => 'views_org_chart_style_plugin',
+        'theme' => 'views_org_chart',
+        'theme path' => drupal_get_path('module', 'views_org_chart') . '/theme',
+        'theme file' => 'theme.inc',
+        'uses options' => TRUE,
+        'uses grouping' => FALSE,
+        'uses row plugin' => FALSE,
+        'uses row class' => FALSE,
+        'uses fields' => TRUE,
+        'even empty' => FALSE,
+        'js' => array(drupal_get_path('module', 'google_charts') . '/js/google_charts.js'),
+        'type' => 'normal',
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function views_org_chart_theme() {
+
+  return array(
+    'views_org_chart_items' => array(
+      'variables' => array('data' => array())
+    )
+  );
+}
+

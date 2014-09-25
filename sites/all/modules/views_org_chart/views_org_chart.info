@@ -1,0 +1,14 @@
+name = Views Org Chart
+description = Show your team hierarchy into google organization chart.
+core = 7.x
+package = Views
+dependencies[] = views
+
+; Views plugins
+files[] = plugins/views_org_chart_style_plugin.inc
+; Information added by Drupal.org packaging script on 2013-12-25
+version = "7.x-1.0"
+core = "7.x"
+project = " views_org_chart"
+datestamp = "1387939106"
+

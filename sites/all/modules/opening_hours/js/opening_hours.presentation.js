@@ -145,8 +145,8 @@
         daysContainer.empty();
 
         // Fill in the header.
-        self.el.find('.from_date').text($.datepicker.formatDate('d/m', self.week.dates[0]));
-        self.el.find('.to_date').text($.datepicker.formatDate('d/m', self.week.dates[6]));
+        self.el.find('.from_date').text($.datepicker.formatDate('m/d', self.week.dates[0]));
+        self.el.find('.to_date').text($.datepicker.formatDate('m/d', self.week.dates[6]));
         // Use the middle day of the week to get the week number, to
         // dodge off-by-one-errors in older versions of jQuery UI.
         self.el.find('.week_num').text($.datepicker.iso8601Week(self.week.dates[3]));
@@ -175,9 +175,38 @@
               category = Drupal.settings.OpeningHours.categories[instance.category_tid];
             }
 
+            var start = instance.start_time;
+            var end = instance.end_time;
+            start = parseInt(start);
+            if (start > 12) {
+              start = (start - 12) + " p.m.";
+            }
+            else if (start == 12) {
+              start = start + " p.m.";
+            }
+            else if (start == 0) {
+              start = "Midnight";
+            }
+            else if (start < 12) {
+              start = start + " a.m.";
+            }
+            end = parseInt(end);
+            if (end > 12) {
+              end = (end - 12) + " p.m.";
+            }
+            else if (end == 12) {
+              end = end + " p.m.";
+            }
+            else if (end == 0) {
+              end = "Midnight";
+            }
+            else if (end < 12) {
+              end = end + " a.m.";
+            }
+
             renderedInstances.push(self.options.instanceTemplate({
-              start_time: instance.start_time,
-              end_time: instance.end_time,
+              start_time: start,
+              end_time: end,
               category: category,
               notice: instance.notice || ''
             }));
