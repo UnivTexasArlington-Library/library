@@ -7437,3 +7437,7 @@ h3 {
   width: 20px;
   height: auto;
 }
+/*for org charts*/
+.view-id-or {
+  overflow-x: scroll;
+}
