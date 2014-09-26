@@ -6943,7 +6943,7 @@ body {
 }
 .region-sidebar-first .block-title-link,
 .region-sidebar-second .block-title-link {
-  color: #F58025;
+  color: #f58025;
   padding-bottom: 0px;
   font-size: .7em;
   display: inline;
@@ -7089,7 +7089,7 @@ body {
   line-height: 2.2em;
 }
 .summon .summon-search-submit {
-  background: #F58025;
+  background: #f58025;
   border: 2px solid #999990;
   border-radius: 42px;
   font-size: 2em;
@@ -7218,14 +7218,11 @@ body {
   display: none;
 }
 /*for homepage*/
-#central-hours,
-#afa-hours,
-#sel-hours,
-#spco-hours {
-  color: #F58025;
+.hours {
+  color: #f58025;
 }
 h3 {
-  color: #F58025;
+  color: #f58025;
   border-top: 1px solid #dddbdb;
   border-bottom: 1px solid #dddbdb;
   padding-top: 6px;
@@ -7237,7 +7234,7 @@ h3 {
   margin-top: 0px;
 }
 .node-home-page ul {
-  color: #F58025;
+  color: #f58025;
 }
 /*for spco menu*/
 #block-menu-menu-spco-menu .dropdown-menu {
@@ -7292,12 +7289,12 @@ h3 {
   left: 0;
   width: 25px;
   height: 25px;
-  background: #F58025;
+  background: #f58025;
   opacity: 1;
 }
 #block-views-news-events-block-2 .carousel-control-container .carousel-control.left,
 #block-views-news-events-block-2 .carousel-control-container .carousel-control.right {
-  background: #F58025;
+  background: #f58025;
 }
 #block-views-news-events-block-2 .carousel-control-container .carousel-control.left {
   float: left;
@@ -7359,7 +7356,7 @@ h3 {
   color: #0064b1;
 }
 #block-block-12 .nav-tabs > li > a {
-  color: #F58025;
+  color: #f58025;
   background: #FFFFFF;
   border: none;
   font-size: 1.2em;
@@ -7372,7 +7369,7 @@ h3 {
 }
 /*for give button*/
 .give {
-  color: #F58025;
+  color: #f58025;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.5em;
@@ -7440,4 +7437,24 @@ h3 {
 /*for org charts*/
 .view-id-or {
   overflow-x: scroll;
+}
+/*for spco homepage*/
+#block-views-spco-current-exhibit-block-1 h2,
+.field-name-spco-services-for h2,
+.field-name-spco-news-block h2 {
+  color: #f58025;
+  text-transform: uppercase;
+  border-top: 1px solid #dddbdb;
+  border-bottom: 1px solid #dddbdb;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 1.8em;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 25px;
+}
+#block-views-spco-current-exhibit-block-1 #node-492 h2,
+.field-name-spco-services-for #node-492 h2,
+.field-name-spco-news-block #node-492 h2 {
+  font-size: 1.5em;
 }
