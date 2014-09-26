@@ -1,0 +1,12 @@
+
+name = "Crumbs"
+description = "The ultimate breadcrumbs module"
+core = 7.x
+php = 5.2
+
+; Information added by Drupal.org packaging script on 2014-09-11
+version = "7.x-2.1"
+core = "7.x"
+project = "crumbs"
+datestamp = "1410474535"
+
