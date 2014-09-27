@@ -7233,6 +7233,10 @@ h3 {
   padding-left: 25px;
   margin-top: 0px;
 }
+h3 a {
+  color: #f58025;
+  text-decoration: none;
+}
 .node-home-page ul {
   color: #f58025;
 }
@@ -7367,6 +7371,9 @@ h3 {
   font-size: 2em;
   padding-top: 20px;
 }
+.field-name-today-s-hours {
+  color: #f58025;
+}
 /*for give button*/
 .give {
   color: #f58025;
@@ -7398,6 +7405,22 @@ h3 {
 }
 #flickr img {
   width: 100%;
+}
+#block-views-spco-current-exhibit-block-1 h2,
+.field-name-spco-services-for h2,
+.field-name-spco-news-block h2 {
+  color: #f58025;
+  text-transform: uppercase;
+  border-top: 1px solid #dddbdb;
+  border-bottom: 1px solid #dddbdb;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 1.8em;
+}
+#block-views-spco-current-exhibit-block-1 #node-492 h2,
+.field-name-spco-services-for #node-492 h2,
+.field-name-spco-news-block #node-492 h2 {
+  font-size: 1.5em;
 }
 /*for full width accordion links*/
 .panel-title > a {
@@ -7438,23 +7461,79 @@ h3 {
 .view-id-or {
   overflow-x: scroll;
 }
-/*for spco homepage*/
-#block-views-spco-current-exhibit-block-1 h2,
-.field-name-spco-services-for h2,
-.field-name-spco-news-block h2 {
-  color: #f58025;
-  text-transform: uppercase;
-  border-top: 1px solid #dddbdb;
-  border-bottom: 1px solid #dddbdb;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  font-size: 1.8em;
-  margin-left: -15px;
-  margin-right: -15px;
-  padding-left: 25px;
+/*for employment page*/
+.employment_image {
+  width: 100%;
 }
-#block-views-spco-current-exhibit-block-1 #node-492 h2,
-.field-name-spco-services-for #node-492 h2,
-.field-name-spco-news-block #node-492 h2 {
-  font-size: 1.5em;
+.employment_inspiration {
+  color: #FFFFFF;
+  text-align: center;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes changecolor1 {
+  from {
+    color: #FFFFFF;
+  }
+  to {
+    color: #00447C;
+  }
+}
+/* Standard syntax */
+@keyframes changecolor1 {
+  from {
+    color: #FFFFFF;
+  }
+  to {
+    color: #00447C;
+  }
+}
+@-webkit-keyframes fadeaway {
+  0% {
+    color: #00447C;
+  }
+  100% {
+    color: #dddbdb;
+  }
+}
+@keyframes fadeaway {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#inspire_1 {
+  -webkit-animation: changecolor1 3s,
+						fadeaway 3s 3s linear;
+  animation: changecolor1 3s,
+				fadeaway 3s 3s linear;
+}
+#inspire_2 {
+  -webkit-animation: changecolor1 3s 3s,
+						fadeaway 3s 6s linear;
+  animation: changecolor1 3s 3s,
+						fadeaway 3s 6s linear;
+}
+#inspire_3 {
+  -webkit-animation: changecolor1 3s 6s,
+						fadeaway 3s 9s linear;
+  animation: changecolor1 3s 6s,
+						fadeaway 3s 9s linear;
+}
+#inspire_4 {
+  -webkit-animation: changecolor1 3s 9s,
+						fadeaway 3s 12s linear;
+  animation: changecolor1 3s 9s,
+						fadeaway 3s 12s linear;
+}
+#inspire_5 {
+  -webkit-animation: changecolor1 3s 12s forwards;
+  animation: changecolor1 3s 12s;
+  animation-fill-mode: forwards;
+  text-transform: uppercase;
+}
+.employment_orange {
+  background: #f58025;
+  color: #FFFFFF;
 }
