@@ -7468,6 +7468,11 @@ h3 a {
 .employment_inspiration {
   color: #FFFFFF;
   text-align: center;
+  font-size: 2em;
+  padding-top: 20px;
+}
+.employment_inspiration div {
+  padding-bottom: 10px;
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes changecolor1 {
@@ -7504,36 +7509,61 @@ h3 a {
   }
 }
 #inspire_1 {
-  -webkit-animation: changecolor1 3s,
-						fadeaway 3s 3s linear;
-  animation: changecolor1 3s,
-				fadeaway 3s 3s linear;
+  -webkit-animation: changecolor1 2s,
+						fadeaway 2s 2s linear;
+  animation: changecolor1 2s,
+				fadeaway 2s 2s linear;
 }
 #inspire_2 {
-  -webkit-animation: changecolor1 3s 3s,
-						fadeaway 3s 6s linear;
-  animation: changecolor1 3s 3s,
-						fadeaway 3s 6s linear;
+  -webkit-animation: changecolor1 2s 2s,
+						fadeaway 2s 4s linear;
+  animation: changecolor1 2s 2s,
+						fadeaway 2s 4s linear;
 }
 #inspire_3 {
-  -webkit-animation: changecolor1 3s 6s,
-						fadeaway 3s 9s linear;
-  animation: changecolor1 3s 6s,
-						fadeaway 3s 9s linear;
+  -webkit-animation: changecolor1 2s 4s,
+						fadeaway 2s 6s linear;
+  animation: changecolor1 2s 4s,
+						fadeaway 2s 6s linear;
 }
 #inspire_4 {
-  -webkit-animation: changecolor1 3s 9s,
-						fadeaway 3s 12s linear;
-  animation: changecolor1 3s 9s,
-						fadeaway 3s 12s linear;
+  -webkit-animation: changecolor1 2s 6s,
+						fadeaway 2s 8s linear;
+  animation: changecolor1 2s 6s,
+						fadeaway 2s 8s linear;
 }
 #inspire_5 {
-  -webkit-animation: changecolor1 3s 12s forwards;
-  animation: changecolor1 3s 12s;
+  -webkit-animation: changecolor1 2s 8s forwards;
+  animation: changecolor1 2s 10s;
   animation-fill-mode: forwards;
   text-transform: uppercase;
 }
 .employment_orange {
   background: #f58025;
   color: #FFFFFF;
+}
+.employment_orange p {
+  padding: 15px;
+  font-size: 1.2em;
+}
+.employment_buttons {
+  padding-right: 0;
+}
+.employment_buttons a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #0064b1;
+  color: #FFFFFF;
+  font-size: 2em;
+  padding-top: 8%;
+  padding-bottom: 8%;
+  text-decoration: none;
+}
+.employment_buttons a:nth-of-type(2) {
+  padding: 3%;
+}
+.employment_believe h4,
+.employment_believe p {
+  color: #00477C;
 }
