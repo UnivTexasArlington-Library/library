@@ -7469,10 +7469,10 @@ h3 a {
   color: #FFFFFF;
   text-align: center;
   font-size: 2em;
-  padding-top: 20px;
+  padding-top: 5%;
 }
 .employment_inspiration div {
-  padding-bottom: 10px;
+  padding-bottom: 5%;
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes changecolor1 {
@@ -7509,32 +7509,32 @@ h3 a {
   }
 }
 #inspire_1 {
-  -webkit-animation: changecolor1 2s,
-						fadeaway 2s 2s linear;
-  animation: changecolor1 2s,
-				fadeaway 2s 2s linear;
+  -webkit-animation: changecolor1 1s,
+						fadeaway 1s 1s linear;
+  animation: changecolor1 1s,
+				fadeaway 1s 1s linear;
 }
 #inspire_2 {
-  -webkit-animation: changecolor1 2s 2s,
-						fadeaway 2s 4s linear;
-  animation: changecolor1 2s 2s,
-						fadeaway 2s 4s linear;
+  -webkit-animation: changecolor1 1s 1s,
+						fadeaway 1s 2s linear;
+  animation: changecolor1 1s 1s,
+						fadeaway 1s 2s linear;
 }
 #inspire_3 {
-  -webkit-animation: changecolor1 2s 4s,
-						fadeaway 2s 6s linear;
-  animation: changecolor1 2s 4s,
-						fadeaway 2s 6s linear;
+  -webkit-animation: changecolor1 1s 2s,
+						fadeaway 1s 3s linear;
+  animation: changecolor1 1s 2s,
+						fadeaway 1s 3s linear;
 }
 #inspire_4 {
-  -webkit-animation: changecolor1 2s 6s,
-						fadeaway 2s 8s linear;
-  animation: changecolor1 2s 6s,
-						fadeaway 2s 8s linear;
+  -webkit-animation: changecolor1 1s 3s,
+						fadeaway 1s 4s linear;
+  animation: changecolor1 1s 3s,
+						fadeaway 1s 4s linear;
 }
 #inspire_5 {
-  -webkit-animation: changecolor1 2s 8s forwards;
-  animation: changecolor1 2s 10s;
+  -webkit-animation: changecolor1 1s 4s forwards;
+  animation: changecolor1 1s 5s;
   animation-fill-mode: forwards;
   text-transform: uppercase;
 }
@@ -7543,7 +7543,7 @@ h3 a {
   color: #FFFFFF;
 }
 .employment_orange p {
-  padding: 15px;
+  padding: 4%;
   font-size: 1.2em;
 }
 .employment_buttons {
@@ -7562,6 +7562,9 @@ h3 a {
 }
 .employment_buttons a:nth-of-type(2) {
   padding: 3%;
+}
+.employment_believe {
+  padding: 4%;
 }
 .employment_believe h4,
 .employment_believe p {
