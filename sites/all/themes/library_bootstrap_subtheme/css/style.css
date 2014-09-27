@@ -7576,3 +7576,7 @@ h3 a {
 .employment_believe h4 {
   font-size: 1.8em;
 }
+.page-node-560 .page-header,
+.page-node-560 .breadcrumb {
+  display: none;
+}
