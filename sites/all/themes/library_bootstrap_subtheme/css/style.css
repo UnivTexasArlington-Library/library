@@ -7575,7 +7575,7 @@ h3 a {
   text-decoration: none;
 }
 .employment_buttons a:nth-of-type(2) {
-  padding: 3%;
+  border-top: 15px solid #FFFFFF;
 }
 .employment_believe {
   padding: 4%;
