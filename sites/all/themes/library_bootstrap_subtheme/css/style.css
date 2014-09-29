@@ -7538,9 +7538,19 @@ h3 a {
   animation-fill-mode: forwards;
   text-transform: uppercase;
 }
+#node-560 .row:first-of-type {
+  border-bottom: 30px solid #00447C;
+}
+#node-560 .row:nth-of-type(2) {
+  display: table;
+  border-top: 30px solid #FFFFFF;
+}
 .employment_orange {
   background: #f58025;
   color: #FFFFFF;
+  display: table-cell;
+  float: none;
+  vertical-align: top;
 }
 .employment_orange p {
   padding: 4%;
@@ -7548,12 +7558,16 @@ h3 a {
 }
 .employment_buttons {
   padding-right: 0;
+  display: table-cell;
+  float: none;
+  border-left: 15px solid #FFFFFF;
+  vertical-align: middle;
+  background: #0064b1;
 }
 .employment_buttons a {
   display: block;
   width: 100%;
   text-align: center;
-  background: #0064b1;
   color: #FFFFFF;
   font-size: 2em;
   padding-top: 8%;
