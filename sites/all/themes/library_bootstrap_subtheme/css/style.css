@@ -7558,6 +7558,7 @@ h3 a {
 }
 .employment_buttons {
   padding-right: 0;
+  padding-left: 0;
   display: table-cell;
   float: none;
   border-left: 15px solid #FFFFFF;
@@ -7570,8 +7571,7 @@ h3 a {
   text-align: center;
   color: #FFFFFF;
   font-size: 2em;
-  padding-top: 8%;
-  padding-bottom: 8%;
+  padding: 8%;
   text-decoration: none;
 }
 .employment_buttons a:nth-of-type(2) {
