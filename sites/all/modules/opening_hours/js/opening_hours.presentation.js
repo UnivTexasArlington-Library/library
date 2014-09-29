@@ -177,31 +177,60 @@
 
             var start = instance.start_time;
             var end = instance.end_time;
-            start = parseInt(start);
-            if (start > 12) {
-              start = (start - 12) + " p.m.";
+
+            if (start.indexOf(":30") > 0) {
+                var startst = start.split(":");
+                start = parseInt(startst[0]);
+                var startmin = startst[1];
+              } else {
+               start = parseInt(start);
+              }
+             var startmerid = '';
+              if (start > 12) {
+                start = (start - 12);
+                startmerid = " p.m.";
+              }
+              else if (start == 12) {
+                startmerid = " p.m.";
+              }
+              else if (start == 0) {
+                start = "Midnight";
+              }
+              else if (start < 12) {
+                startmerid = " a.m.";
+              }
+            if (startmin) {
+                start = start + ":" + startmin + startmerid;
+            } else {
+                start = start + startmerid;
             }
-            else if (start == 12) {
-              start = start + " p.m.";
+
+            
+            if (end.indexOf(":30") > 0) {
+                var endst = end.split(":");
+                end = parseInt(endst[0]);
+                var endmin = endst[1];
+            } else {
+              end = parseInt(end);
             }
-            else if (start == 0) {
-              start = "Midnight";
-            }
-            else if (start < 12) {
-              start = start + " a.m.";
-            }
-            end = parseInt(end);
-            if (end > 12) {
-              end = (end - 12) + " p.m.";
-            }
-            else if (end == 12) {
-              end = end + " p.m.";
-            }
-            else if (end == 0) {
-              end = "Midnight";
-            }
-            else if (end < 12) {
-              end = end + " a.m.";
+             var endmerid = '';
+              if (end > 12) {
+                end = (end - 12);
+                endmerid = " p.m.";
+              }
+              else if (end == 12) {
+                endmerid = " p.m.";
+              }
+              else if (end == 0) {
+                end = "Midnight";
+              }
+              else if (end < 12) {
+                endmerid = " a.m.";
+              }
+            if (endmin) {
+                end = end + ":" + endmin + endmerid;
+            } else {
+                end = end + endmerid;
             }
 
             renderedInstances.push(self.options.instanceTemplate({

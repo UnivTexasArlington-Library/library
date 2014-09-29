@@ -32,27 +32,37 @@ function libhours_block_view($delta='') {
               $start_time = "Midnight";
            }
            else {
-              $start = strtotime($record->start_time);
-              $start_time = date('g a', $start);
-              $start_num = substr($start_time, 0, -2);
-              $start_meridium = substr($start_time, -2);
-              $start_arr = str_split($start_meridium);
-              $start_ampm = $start_arr[0] . "." . $start_arr[1] . ".";
-              $start_time = $start_num . $start_ampm;
+              if (strpos($record->start_time,':30')) {
+                  $start = strtotime($record->start_time);
+                  $start_time = date('g:i a', $start);
+              } else {
+                $start = strtotime($record->start_time);
+                $start_time = date('g a', $start);
+              }
+                $start_num = substr($start_time, 0, -2);
+                $start_meridium = substr($start_time, -2);
+                $start_arr = str_split($start_meridium);
+                $start_ampm = $start_arr[0] . "." . $start_arr[1] . ".";
+                $start_time = $start_num . $start_ampm;
            }
            if ($record->end_time == '00:00:00') {
               $end_time = "Midnight";
            }
            else {
-              $end = strtotime($record->end_time);
-              $end_time = date('g a', $end);
+              if (strpos($record->end_time,':30')) {
+                  $end = strtotime($record->end_time);
+                  $end_time = date('g:i a', $end);
+              } else {
+                $end = strtotime($record->end_time);
+                $end_time = date('g a', $end);
+              }
               $end_num = substr($end_time, 0, -2);
               $end_meridium = substr($end_time, -2);
               $end_arr = str_split($end_meridium);
               $end_ampm = $end_arr[0] . "." . $end_arr[1] . ".";
               $end_time = $end_num . $end_ampm;
            }
-            $block_content .= $start_time . " - " . $end_time . "<br/>";
+            $block_content .= "<span class='hours'>" . $start_time . " - " . $end_time . "</span><br/>";
         }
       }
     }
