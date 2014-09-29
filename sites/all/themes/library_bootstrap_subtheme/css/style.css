@@ -7217,6 +7217,10 @@ body {
 .field-name-opening-hours-week .field-label {
   display: none;
 }
+/*for image widths*/
+.field-type-image img {
+  width: 100%;
+}
 /*for homepage*/
 .hours {
   color: #f58025;
