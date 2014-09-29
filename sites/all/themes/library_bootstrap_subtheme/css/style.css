@@ -7576,8 +7576,11 @@ h3 a {
   padding-top: 10%;
   padding-bottom: 10%;
 }
+.employment_buttons a:first-of-type {
+  border-bottom: 7.5px solid #FFFFFF;
+}
 .employment_buttons a:nth-of-type(2) {
-  border-top: 15px solid #FFFFFF;
+  border-top: 7.5px solid #FFFFFF;
 }
 .employment_believe {
   padding: 4%;
