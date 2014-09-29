@@ -7220,6 +7220,7 @@ body {
 /*for image widths*/
 .field-type-image img {
   width: 100%;
+  height: auto;
 }
 /*for homepage*/
 .hours {
