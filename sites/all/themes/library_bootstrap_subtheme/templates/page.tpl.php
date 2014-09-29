@@ -91,6 +91,23 @@
       <?php if (!empty($page['univ_logo'])): ?>
         <div class="row"><div class="col-md-8 col-md-offset-2 col-sm-9 col-sm-offset-3 col-xs-12 univ_logo"><?php print render($page['univ_logo']); ?></div></div>
       <?php endif; ?>
+      <?php if (!empty($page['modal'])): ?>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              </div>
+              <div class="modal-body">
+                <?php print render($page['modal']); ?>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php endif; ?>
       <?php if (!empty($page['notification'])): ?>
         <div class="row"><div class="col-md-8 col-md-offset-2 col-sm-9 col-sm-offset-3 col-xs-12 notification"><div class='alert alert-danger'><?php print render($page['notification']); ?></div></div></div>
       <?php endif; ?>
