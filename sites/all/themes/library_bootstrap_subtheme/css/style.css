@@ -7582,7 +7582,7 @@ h3 a {
   padding-left: 0;
   display: table-cell;
   float: none;
-  border-left: 15px solid #FFFFFF;
+  border-left: 30px solid #FFFFFF;
   vertical-align: middle;
   background: #0064b1;
 }
@@ -7599,10 +7599,10 @@ h3 a {
   text-transform: uppercase;
 }
 .employment_buttons a:first-of-type {
-  border-bottom: 7.5px solid #FFFFFF;
+  border-bottom: 15px solid #FFFFFF;
 }
 .employment_buttons a:nth-of-type(2) {
-  border-top: 7.5px solid #FFFFFF;
+  border-top: 15px solid #FFFFFF;
 }
 .employment_believe {
   padding: 4%;
