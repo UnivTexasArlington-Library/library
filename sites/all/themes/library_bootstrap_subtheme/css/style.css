@@ -7525,7 +7525,7 @@ h3 a {
 #inspire_1 {
   -webkit-animation: changecolor1 2s,
 						fadeaway 2s 2s linear;
-  animation: changecolor1 1s,
+  animation: changecolor1 2s,
 				fadeaway 2s 2s linear;
 }
 #inspire_2 {
@@ -7535,20 +7535,20 @@ h3 a {
 						fadeaway 2s 4s linear;
 }
 #inspire_3 {
-  -webkit-animation: changecolor1 2s 3s,
-						fadeaway 2s 5s linear;
-  animation: changecolor1 2s 3s,
-						fadeaway 2s 5s linear;
-}
-#inspire_4 {
   -webkit-animation: changecolor1 2s 4s,
 						fadeaway 2s 6s linear;
   animation: changecolor1 2s 4s,
 						fadeaway 2s 6s linear;
 }
+#inspire_4 {
+  -webkit-animation: changecolor1 2s 6s,
+						fadeaway 2s 8s linear;
+  animation: changecolor1 2s 6s,
+						fadeaway 2s 8s linear;
+}
 #inspire_5 {
-  -webkit-animation: changecolor1 2s 5s forwards;
-  animation: changecolor1 2s 5s;
+  -webkit-animation: changecolor1 2s 8s forwards;
+  animation: changecolor1 2s 8s;
   animation-fill-mode: forwards;
   text-transform: uppercase;
 }
