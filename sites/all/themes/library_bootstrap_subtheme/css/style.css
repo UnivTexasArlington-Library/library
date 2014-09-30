@@ -7561,6 +7561,7 @@ h3 a {
 #node-560 .row:nth-of-type(2) {
   display: table;
   border-top: 30px solid #FFFFFF;
+  margin-right: -16.4px;
 }
 #node-560 .row:before {
   content: '';
