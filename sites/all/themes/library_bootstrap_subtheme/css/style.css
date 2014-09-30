@@ -7219,8 +7219,12 @@ body {
 }
 /*for image widths*/
 .field-type-image img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
+  max-height: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 /*for homepage*/
 .hours {
@@ -7254,6 +7258,10 @@ h3 a {
 }
 #block-menu-menu-spco-menu .dropdown-menu > .active > a {
   background-color: #FFFFFF;
+}
+/*for addthis toolbar/social media*/
+.addthis_default_style {
+  float: right;
 }
 /*for homepage*/
 #block-views-news-events-block-2 {
@@ -7416,10 +7424,6 @@ h3 a {
   padding-bottom: 6px;
   font-size: 1.8em;
   margin-top: 22px;
-  margin-left: -15px;
-  padding-left: 15px;
-  margin-right: -15px;
-  padding-right: 15px;
 }
 .field-name-spco-current-exhibit #node-495 h2,
 .field-name-ds-spco-services-for #node-495 h2,
@@ -7478,11 +7482,11 @@ h3 a {
 .employment_inspiration {
   color: #FFFFFF;
   text-align: center;
-  font-size: 2em;
+  font-size: 3em;
   padding-top: 5%;
 }
 .employment_inspiration div {
-  padding-bottom: 5%;
+  padding-bottom: 10%;
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes changecolor1 {
@@ -7560,11 +7564,11 @@ h3 a {
   color: #FFFFFF;
   display: table-cell;
   float: none;
-  vertical-align: top;
+  vertical-align: middle;
 }
 .employment_orange p {
   padding: 4%;
-  font-size: 1.2em;
+  font-size: 1.8em;
 }
 .employment_buttons {
   padding-right: 0;
@@ -7580,7 +7584,7 @@ h3 a {
   width: 100%;
   text-align: center;
   color: #FFFFFF;
-  font-size: 2em;
+  font-size: 3em;
   padding: 8%;
   text-decoration: none;
   padding-top: 10%;
@@ -7600,10 +7604,10 @@ h3 a {
   color: #00477C;
 }
 .employment_believe p {
-  font-size: 1.2em;
+  font-size: 1.8em;
 }
 .employment_believe h4 {
-  font-size: 1.8em;
+  font-size: 3em;
 }
 .page-node-560 .page-header,
 .page-node-560 .breadcrumb {

@@ -443,8 +443,12 @@ body {
 /*for image widths*/
 .field-type-image {
 	img {
-		width:100%;
-		height:auto;
+		width:auto;
+		height:100%;
+		max-height:300px;
+		display:block;
+		margin-left:auto;
+		margin-right:auto;
 	}
 }
 
@@ -483,6 +487,11 @@ h3 {
 	.dropdown-menu > .active > a {
 		background-color: #FFFFFF;
 	}
+}
+
+/*for addthis toolbar/social media*/
+.addthis_default_style {
+	float:right;
 }
 
 /*for homepage*/
@@ -649,10 +658,6 @@ h3 {
 		padding-bottom: 6px;
 		font-size: 1.8em;
 		margin-top: 22px;
-		margin-left: -15px;
-		padding-left: 15px;
-		margin-right: -15px;
-		padding-right: 15px;
 	}
 	#node-495 h2 {
 		font-size:1.5em;
@@ -724,10 +729,10 @@ h3 {
 .employment_inspiration {
 	color:#FFFFFF;
 	text-align:center;
-	font-size:2em;
+	font-size:3em;
 	padding-top:5%;
 	div {
-		padding-bottom:5%;
+		padding-bottom:10%;
 	}
 }
 /* Chrome, Safari, Opera */
@@ -792,10 +797,10 @@ h3 {
 	color:#FFFFFF;
 	display:table-cell;
 	float:none;
-	vertical-align:top;
+	vertical-align:middle;
 	p {
 		padding: 4%;
-		font-size: 1.2em;
+		font-size: 1.8em;
 	}
 }
 .employment_buttons {
@@ -811,7 +816,7 @@ h3 {
 		width: 100%;
 		text-align: center;
 		color: #FFFFFF;
-		font-size: 2em;
+		font-size: 3em;
 		padding: 8%;
 		text-decoration: none;
 		padding-top:10%;
@@ -830,10 +835,10 @@ h3 {
 		color:#00477C;
 	}
 	p {
-		font-size:1.2em;
+		font-size:1.8em;
 	}
 	h4 {
-		font-size:1.8em;
+		font-size:3em;
 	}
 }
 .page-node-560 .page-header, .page-node-560 .breadcrumb {
