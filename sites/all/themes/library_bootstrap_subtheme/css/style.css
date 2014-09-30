@@ -7551,6 +7551,7 @@ h3 a {
   animation: changecolor1 2s 8s;
   animation-fill-mode: forwards;
   text-transform: uppercase;
+  font-style: italic;
 }
 #node-560 .row:first-of-type {
   border-bottom: 30px solid #00447C;
