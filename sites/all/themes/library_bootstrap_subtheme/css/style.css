@@ -7393,17 +7393,8 @@ h3 a {
   margin-top: -35px;
 }
 /*for spco homepage */
-#block-views-spco-current-exhibit-block-1 {
-  display: inline-block;
-}
-#block-views-spco-current-exhibit-block-1 img {
+.field-name-spco-current-exhibit img {
   width: 100%;
-}
-#block-views-spco-current-exhibit-block-1 .views-field-title {
-  display: inline-block;
-}
-#block-views-news-events-block-1 {
-  display: inline-block;
 }
 #block-views-news-events-block-1 img {
   width: 100%;
@@ -7411,9 +7402,9 @@ h3 a {
 #flickr img {
   width: 100%;
 }
-#block-views-spco-current-exhibit-block-1 h2,
-.field-name-spco-services-for h2,
-.field-name-spco-news-block h2 {
+.field-name-spco-current-exhibit h2,
+.field-name-ds-spco-services-for h2,
+.field-name-spco-news-events h2 {
   color: #f58025;
   text-transform: uppercase;
   border-top: 1px solid #dddbdb;
@@ -7422,9 +7413,9 @@ h3 a {
   padding-bottom: 6px;
   font-size: 1.8em;
 }
-#block-views-spco-current-exhibit-block-1 #node-492 h2,
-.field-name-spco-services-for #node-492 h2,
-.field-name-spco-news-block #node-492 h2 {
+.field-name-spco-current-exhibit #node-492 h2,
+.field-name-ds-spco-services-for #node-492 h2,
+.field-name-spco-news-events #node-492 h2 {
   font-size: 1.5em;
 }
 /*for full width accordion links*/

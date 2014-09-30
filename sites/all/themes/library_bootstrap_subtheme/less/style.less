@@ -165,7 +165,7 @@ body {
 		background-color:transparent;
 	}
 	.block-title-link {
-		color: #F58025;
+		color: @brand-warning;
 		padding-bottom: 0px;
 		font-size:.7em;
 		display: inline;
@@ -301,7 +301,7 @@ body {
 		line-height:2.2em;
 	}
 	.summon-search-submit {
-		background: #F58025;
+		background: @brand-warning;
 		border: 2px solid #999990;
 		border-radius: 42px;
 		font-size: 2em;
@@ -436,17 +436,24 @@ body {
 }
 
 /*removes opening hours label*/
-.field-name-opening-hours-week {
+.field-name-opening-hours-week .field-label {
 	display:none;
 }
 
+/*for image widths*/
+.field-type-image {
+	img {
+		width:100%;
+		height:auto;
+	}
+}
 
 /*for homepage*/
-#central-hours, #afa-hours, #sel-hours, #spco-hours {
-	color:#F58025;
+.hours {
+	color:@brand-warning;
 }
 h3 {
-	color: #F58025;
+	color: @brand-warning;
 	border-top: 1px solid #dddbdb;
 	border-bottom: 1px solid #dddbdb;
 	padding-top: 6px;
@@ -456,9 +463,13 @@ h3 {
 	margin-right:-15px;
 	padding-left:25px;
 	margin-top:0px;
+	a {
+		color: @brand-warning;
+		text-decoration:none;
+	}
 }
 .node-home-page ul {
-	color:#F58025;
+	color:@brand-warning;
 }
 
 /*for spco menu*/
@@ -515,11 +526,11 @@ h3 {
 			left:0;
 			width: 25px;
 			height: 25px;
-			background: #F58025;
+			background: @brand-warning;
 			opacity:1;
 		}
 		.carousel-control.left, .carousel-control.right {
-			background:#F58025;
+			background:@brand-warning;
 		}
 		.carousel-control.left {
 			float:left;
@@ -584,7 +595,7 @@ h3 {
 		color:@brand-primary;
 	}
 	.nav-tabs > li > a {
-		color:#F58025;
+		color:@brand-warning;
 		background:#FFFFFF;
 		border:none;
 		font-size:1.2em;
@@ -596,10 +607,13 @@ h3 {
 		padding-top:20px;
 	}
 }
+.field-name-today-s-hours {
+	color:@brand-warning;
+}
 
 /*for give button*/ 
 .give {
-	color:#F58025;
+	color:@brand-warning;
 	text-transform:uppercase;
 	font-weight:bold;
 	font-size:1.5em;
@@ -612,17 +626,12 @@ h3 {
 }
 
 /*for spco homepage */
-#block-views-spco-current-exhibit-block-1 {
-	display:inline-block;
+.field-name-spco-current-exhibit {
 	img {
 		width:100%;
 	}
-	.views-field-title {
-		display:inline-block;
-	}
 }
 #block-views-news-events-block-1 {
-	display:inline-block;
 	img {
 		width:100%;
 	}
@@ -630,6 +639,21 @@ h3 {
 #flickr {
 	img {
 		width:100%;
+	}
+}
+
+.field-name-spco-current-exhibit, .field-name-ds-spco-services-for, .field-name-spco-news-events{
+	h2 {
+		color:@brand-warning;
+		text-transform: uppercase;
+		border-top: 1px solid #dddbdb;
+		border-bottom: 1px solid #dddbdb;
+		padding-top: 6px;
+		padding-bottom: 6px;
+		font-size: 1.8em;
+	}
+	#node-492 h2 {
+		font-size:1.5em;
 	}
 }
 
@@ -678,3 +702,130 @@ h3 {
 	}
 }
 
+/*for org charts*/
+.view-id-or {
+	overflow-x:scroll;
+}
+
+/*for employment page*/
+.employment_image {
+	width:100%;
+}
+.employment_inspiration {
+	color:#FFFFFF;
+	text-align:center;
+	font-size:2em;
+	padding-top:5%;
+	div {
+		padding-bottom:5%;
+	}
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes changecolor1 {
+    from {color: #FFFFFF;}
+    to {color: #00447C;}
+}
+/* Standard syntax */
+@keyframes changecolor1 {
+    from {color: #FFFFFF;}
+    to {color: #00447C;}
+}
+@-webkit-keyframes fadeaway {
+	0% {color:#00447C;}
+	100% {color:#dddbdb;}
+}
+@keyframes fadeaway {
+	0% {opacity:1;}
+	100% {opacity:0;}
+}
+#inspire_1 {
+	-webkit-animation: changecolor1 1s,
+						fadeaway 1s 1s linear;
+	animation: changecolor1 1s,
+				fadeaway 1s 1s linear;
+}
+#inspire_2 {
+	-webkit-animation: changecolor1 1s 1s,
+						fadeaway 1s 2s linear;
+	animation: changecolor1 1s 1s,
+						fadeaway 1s 2s linear;
+}
+#inspire_3 {
+	-webkit-animation: changecolor1 1s 2s,
+						fadeaway 1s 3s linear;
+	animation: changecolor1 1s 2s,
+						fadeaway 1s 3s linear;
+}
+#inspire_4 {
+	-webkit-animation: changecolor1 1s 3s,
+						fadeaway 1s 4s linear;
+	animation: changecolor1 1s 3s,
+						fadeaway 1s 4s linear;
+}
+#inspire_5 {
+	-webkit-animation: changecolor1 1s 4s forwards;
+	animation: changecolor1 1s 5s;
+	animation-fill-mode:forwards;
+	text-transform:uppercase;
+}
+#node-560 {
+	.row:first-of-type {
+		border-bottom:30px solid #00447C;
+	}
+	.row:nth-of-type(2) {
+		display:table;
+		border-top:30px solid #FFFFFF;
+	}
+}
+.employment_orange {
+	background:@brand-warning;
+	color:#FFFFFF;
+	display:table-cell;
+	float:none;
+	vertical-align:top;
+	p {
+		padding: 4%;
+		font-size: 1.2em;
+	}
+}
+.employment_buttons {
+	padding-right: 0;
+	padding-left:0;
+	display:table-cell;
+	float:none;
+	border-left:15px solid #FFFFFF;
+	vertical-align:middle;
+	background:@brand-primary;
+	a {
+		display: block;
+		width: 100%;
+		text-align: center;
+		color: #FFFFFF;
+		font-size: 2em;
+		padding: 8%;
+		text-decoration: none;
+		padding-top:10%;
+		padding-bottom:10%;
+	}
+	a:first-of-type{
+		border-bottom:7.5px solid #FFFFFF;
+	}
+	a:nth-of-type(2) {
+		border-top:7.5px solid #FFFFFF;
+	}
+}
+.employment_believe {
+	padding:4%;
+	h4, p {
+		color:#00477C;
+	}
+	p {
+		font-size:1.2em;
+	}
+	h4 {
+		font-size:1.8em;
+	}
+}
+.page-node-560 .page-header, .page-node-560 .breadcrumb {
+	display:none;
+}
