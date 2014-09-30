@@ -1,3 +1,7 @@
+<?php if (!empty($title)): ?>
+  <h3><?php print $title ?></h3>
+<?php endif ?>
+
 <div id="views-bootstrap-accordion-<?php print $id ?>" class="<?php print $classes ?>">
   <?php foreach ($rows as $key => $row): ?>
     <div class="panel panel-default">
