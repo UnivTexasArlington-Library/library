@@ -7552,6 +7552,8 @@ h3 a {
   animation-fill-mode: forwards;
   text-transform: uppercase;
   font-style: italic;
+  padding-right: 10%;
+  padding-left: 10%;
 }
 #node-560 .row:first-of-type {
   border-bottom: 30px solid #00447C;
@@ -7559,6 +7561,10 @@ h3 a {
 #node-560 .row:nth-of-type(2) {
   display: table;
   border-top: 30px solid #FFFFFF;
+}
+#node-560 .row:before,
+#node-560 .row:after {
+  content: '';
 }
 .employment_orange {
   background: #f58025;
@@ -7585,11 +7591,12 @@ h3 a {
   width: 100%;
   text-align: center;
   color: #FFFFFF;
-  font-size: 3em;
+  font-size: 2.8em;
   padding: 8%;
   text-decoration: none;
   padding-top: 10%;
   padding-bottom: 10%;
+  text-transform: uppercase;
 }
 .employment_buttons a:first-of-type {
   border-bottom: 7.5px solid #FFFFFF;
