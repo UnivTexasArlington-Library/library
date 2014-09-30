@@ -7562,9 +7562,9 @@ h3 a {
   display: table;
   border-top: 30px solid #FFFFFF;
 }
-#node-560 .row:before,
-#node-560 .row:after {
+#node-560 .row:before {
   content: '';
+  display: none;
 }
 .employment_orange {
   background: #f58025;
@@ -7574,7 +7574,7 @@ h3 a {
   vertical-align: middle;
 }
 .employment_orange p {
-  padding: 4%;
+  padding: 7%;
   font-size: 1.8em;
 }
 .employment_buttons {
