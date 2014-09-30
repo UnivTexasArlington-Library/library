@@ -16,7 +16,7 @@
         </h4>
       </div>
 
-      <div id="collapse-<?php print $id . '-' . $key ?>" class="panel-collapse collapse">
+      <div id="collapse-<?php print $id . '-' . $key ?>" class="panel-collapse collapse <?php if($key == '0'): ?>in<?php endif; ?>">
         <div class="panel-body">
           <?php print $row ?>
         </div>
