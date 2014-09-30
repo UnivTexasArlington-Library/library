@@ -1,0 +1,6 @@
+name = SPCO Flickr
+description = Brings in Flickr images from SPCO Flickr account
+package = Custom
+core = 7.x
+dependencies[] = block
+dependencies[] = libraries
