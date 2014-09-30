@@ -7524,27 +7524,27 @@ h3 a {
 }
 #inspire_1 {
   -webkit-animation: changecolor1 1s,
-						fadeaway 2s 2s linear;
+						fadeaway 2s 1s linear;
   animation: changecolor1 1s,
-				fadeaway 2s 2s linear;
+				fadeaway 2s 1s linear;
 }
 #inspire_2 {
   -webkit-animation: changecolor1 1s 2s,
-						fadeaway 2s 4s linear;
+						fadeaway 2s 3s linear;
   animation: changecolor1 1s 2s,
-						fadeaway 2s 4s linear;
+						fadeaway 2s 3s linear;
 }
 #inspire_3 {
   -webkit-animation: changecolor1 1s 3s,
-						fadeaway 2s 6s linear;
-  animation: changecolor1 1s 2s,
-						fadeaway 2s 6s linear;
+						fadeaway 2s 4s linear;
+  animation: changecolor1 1s 3s,
+						fadeaway 2s 4s linear;
 }
 #inspire_4 {
   -webkit-animation: changecolor1 1s 4s,
-						fadeaway 2s 8s linear;
+						fadeaway 2s 5s linear;
   animation: changecolor1 1s 4s,
-						fadeaway 2s 8s linear;
+						fadeaway 2s 6s linear;
 }
 #inspire_5 {
   -webkit-animation: changecolor1 1s 5s forwards;
