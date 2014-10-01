@@ -754,34 +754,37 @@ h3 {
 	100% {opacity:0;}
 }
 #inspire_1 {
-	-webkit-animation: changecolor1 1s,
-						fadeaway 2s 1s linear;
-	animation: changecolor1 1s,
-				fadeaway 2s 1s linear;
+	-webkit-animation: changecolor1 2s,
+						fadeaway 2s 2s linear;
+	animation: changecolor1 2s,
+				fadeaway 2s 2s linear;
 }
 #inspire_2 {
-	-webkit-animation: changecolor1 1s 2s,
-						fadeaway 2s 3s linear;
-	animation: changecolor1 1s 2s,
-						fadeaway 2s 3s linear;
+	-webkit-animation: changecolor1 2s 2s,
+						fadeaway 2s 4s linear;
+	animation: changecolor1 2s 2s,
+						fadeaway 2s 4s linear;
 }
 #inspire_3 {
-	-webkit-animation: changecolor1 1s 3s,
-						fadeaway 2s 4s linear;
-	animation: changecolor1 1s 3s,
-						fadeaway 2s 4s linear;
-}
-#inspire_4 {
-	-webkit-animation: changecolor1 1s 4s,
-						fadeaway 2s 5s linear;
-	animation: changecolor1 1s 4s,
+	-webkit-animation: changecolor1 2s 4s,
+						fadeaway 2s 6s linear;
+	animation: changecolor1 2s 4s,
 						fadeaway 2s 6s linear;
 }
+#inspire_4 {
+	-webkit-animation: changecolor1 2s 6s,
+						fadeaway 2s 8s linear;
+	animation: changecolor1 2s 6s,
+						fadeaway 2s 8s linear;
+}
 #inspire_5 {
-	-webkit-animation: changecolor1 1s 5s forwards;
-	animation: changecolor1 1s 5s;
+	-webkit-animation: changecolor1 2s 8s forwards;
+	animation: changecolor1 2s 8s;
 	animation-fill-mode:forwards;
 	text-transform:uppercase;
+	font-style:italic;
+	padding-right:10%;
+	padding-left:10%;
 }
 #node-560 {
 	.row:first-of-type {
@@ -790,6 +793,11 @@ h3 {
 	.row:nth-of-type(2) {
 		display:table;
 		border-top:30px solid #FFFFFF;
+		margin-right:-16.4px;
+	}
+	.row:before {
+		content:'';
+		display:none;
 	}
 }
 .employment_orange {
@@ -799,7 +807,7 @@ h3 {
 	float:none;
 	vertical-align:middle;
 	p {
-		padding: 4%;
+		padding: 7%;
 		font-size: 1.8em;
 	}
 }
@@ -808,7 +816,7 @@ h3 {
 	padding-left:0;
 	display:table-cell;
 	float:none;
-	border-left:15px solid #FFFFFF;
+	border-left:30px solid #FFFFFF;
 	vertical-align:middle;
 	background:@brand-primary;
 	a {
@@ -816,17 +824,18 @@ h3 {
 		width: 100%;
 		text-align: center;
 		color: #FFFFFF;
-		font-size: 3em;
+		font-size: 2.8em;
 		padding: 8%;
 		text-decoration: none;
 		padding-top:10%;
 		padding-bottom:10%;
+		text-transform: uppercase;
 	}
 	a:first-of-type{
-		border-bottom:7.5px solid #FFFFFF;
+		border-bottom:15px solid #FFFFFF;
 	}
 	a:nth-of-type(2) {
-		border-top:7.5px solid #FFFFFF;
+		border-top:15px solid #FFFFFF;
 	}
 }
 .employment_believe {
