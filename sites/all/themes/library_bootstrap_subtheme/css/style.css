@@ -7227,9 +7227,6 @@ body {
   margin-right: auto;
 }
 /*for homepage*/
-.hours {
-  color: #f58025;
-}
 h3 {
   color: #f58025;
   border-top: 1px solid #dddbdb;
@@ -7384,8 +7381,15 @@ h3 a {
   font-size: 2em;
   padding-top: 20px;
 }
-.field-name-today-s-hours {
+.field-name-today-s-hours,
+.hours {
   color: #f58025;
+}
+.field-name-today-s-hours a,
+.hours a,
+.field-name-today-s-hours .hours,
+.hours .hours {
+  padding-left: 20px;
 }
 /*for give button*/
 .give {
