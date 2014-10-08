@@ -7401,6 +7401,10 @@ h3 a {
 .hours .hours {
   padding-left: 20px;
 }
+.field-name-today-s-hours .hours,
+.hours .hours {
+  display: block;
+}
 /*for give button*/
 .give {
   color: #f58025;
