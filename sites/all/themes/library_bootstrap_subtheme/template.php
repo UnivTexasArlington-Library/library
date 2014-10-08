@@ -34,10 +34,3 @@ function library_bootstrap_subtheme_preprocess_node(&$vars, $hook) {
 	 }
 }
 
-//this adds js for crazyegg
-function library_bootstrap_subtheme_preprocess_html(&$variables) {
-  drupal_add_js('setTimeout(function(){var a=document.createElement("script");
-var b=document.getElementsByTagName("script")[0];
-a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0023/0834.js?"+Math.floor(new Date().getTime()/3600000);
-a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);', array('type' => 'inline', 'scope' => 'footer'));
-}
