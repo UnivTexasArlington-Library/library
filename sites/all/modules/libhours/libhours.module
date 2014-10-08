@@ -17,15 +17,15 @@ function libhours_block_view($delta='') {
     case 'current-hours':
     $date = date('Y-m-d');
     $block_content = "<h3>Today's Hours</h3>";
-    $result = db_query('SELECT nid, start_time, end_time FROM opening_hours WHERE date =:today', array(':today'=> $date));
+    $result = db_query('SELECT nid, start_time, end_time FROM opening_hours WHERE date =:today ORDER BY nid = 202, nid asc', array(':today'=> $date));
 
 
       foreach ($result as $record) {
      $result2 = db_query('SELECT title FROM node WHERE nid =:nid', array(':nid'=>$record->nid));
       foreach ($result2 as $record2) {
-         $block_content .= "<a href='node/" . $record->nid . "'>" . $record2->title . "</a><br/>";
+         $block_content .= "<div class='hours-block'><a href='node/" . $record->nid . "'>" . $record2->title . "</a><br/>";
          if ($record->start_time == '00:00:00' && $record->end_time == '00:00:00') {
-            $block_content .= "24 hours<br/>";
+            $block_content .= "<span class='hours'>24 hours</span>";
          } 
          else {
             if ($record->start_time == '00:00:00') {
@@ -62,12 +62,12 @@ function libhours_block_view($delta='') {
               $end_ampm = $end_arr[0] . "." . $end_arr[1] . ".";
               $end_time = $end_num . $end_ampm;
            }
-            $block_content .= "<span class='hours'>" . $start_time . " - " . $end_time . "</span><br/>";
+            $block_content .= "<span class='hours'>" . $start_time . " - " . $end_time . "</span>";
         }
       }
     }
 
-      $block_content .= "<a href='hours'>All Hours</a>";
+      $block_content .= "<a href='hours'>All Hours</a></div>";
 
       $block['subject'] = t("Today's Hours");
       $block['content'] = $block_content;
