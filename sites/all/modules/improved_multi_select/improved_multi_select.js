@@ -62,7 +62,7 @@
                 // Any existing selections in the all list need to be unselected
                 // if they aren't part of the newly selected group.
                 if (!$group.hasClass('all')) {
-                  $('#improvedselect-' + improvedselect_id + ' .improvedselect_all li.selected[group!=' + $group.text() + ']', context).removeClass('selected');
+                  $('#improvedselect-' + improvedselect_id + ' .improvedselect_all li.selected[group!="' + $group.text() + '"]', context).removeClass('selected');
                 }
 
                 // Clear the filter if we have to.
@@ -83,7 +83,7 @@
             $select.find('option, optgroup').each(function() {
               var $opt = $(this),
                 group = '';
-              if ($opt.attr('tagName') == 'OPTGROUP') {
+              if ($opt[0].tagName == 'OPTGROUP') {
                 if ($opt.has('option').length) {
                   $('#improvedselect-'+ improvedselect_id +' .improvedselect_all', context)
                     .append('<li isgroup="isgroup" so="---' + $opt.attr('label') + '---">--- '+ $opt.attr('label') +' ---</li>');
@@ -244,7 +244,7 @@
    * Filter the all options list.
    */
   function improvedselectFilter(sid, options, context) {
-    $filter = $('.improvedselect_filter', context);
+    $filter = $('#improvedselect-' + sid + ' .improvedselect_filter', context);
     // Get current selected group.
     var $selectedGroup = $('#improvedselect-' + sid + ' .improvedselect_tabs li.selected:not(.all) a', context),
       text = $filter.val(),
@@ -383,7 +383,7 @@
       $select.find('option, optgroup').remove();
       $('#improvedselect-' + sid + ' .improvedselect_sel li', context).each(function() {
         var $li = $(this);
-        $select.append($('<option></option').attr('value', $li.attr('so')).attr('selected', 'selected').text($li.text()));
+        $select.append($('<option></option>').attr('value', $li.attr('so')).attr('selected', 'selected').text($li.text()));
       });
       // Now that the select has the options in the correct order, use the
       // cloned select for resetting the ul values.
@@ -398,7 +398,7 @@
 
     $select.find('option, optgroup').each(function() {
       $opt = $(this);
-      if ($opt.attr('tagName') == 'OPTGROUP') {
+      if ($opt[0].tagName == 'OPTGROUP') {
         if ($opt.has('option').length) {
           $('#improvedselect-' + sid + ' .improvedselect_all', context).append($('#improvedselect-' + sid + ' .improvedselect_all [so="---' + $opt.attr('label') + '---"]', context));
         }

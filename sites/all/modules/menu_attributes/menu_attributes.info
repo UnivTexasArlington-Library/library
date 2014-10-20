@@ -6,9 +6,9 @@ configure = admin/structure/menu/settings
 
 files[] = menu_attributes.test
 
-; Information added by Drupal.org packaging script on 2014-07-05
-version = "7.x-1.0-rc2+9-dev"
+; Information added by Drupal.org packaging script on 2014-10-19
+version = "7.x-1.0-rc3"
 core = "7.x"
 project = "menu_attributes"
-datestamp = "1404590628"
+datestamp = "1413756231"
 
