@@ -7419,11 +7419,11 @@ h3 a {
 .field-name-today-s-hours,
 .hours {
   color: #f58025;
-  font-size: 1.2em;
 }
 .field-name-today-s-hours .hours-block,
 .hours .hours-block {
   padding-left: 20px;
+  font-size: 1.2em;
 }
 .field-name-today-s-hours .hours,
 .hours .hours {
