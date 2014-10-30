@@ -7084,7 +7084,7 @@ body {
   padding-bottom: 2%;
 }
 .summon .summon-search-field {
-  width: 90%;
+  width: 93%;
   font-size: 1.8em;
   border-radius: 5px;
   line-height: 2.2em;
@@ -7193,7 +7193,7 @@ body {
   padding-left: 10px;
 }
 :-ms-input-placeholder {
-  padding-left: 10x;
+  padding-left: 10px;
 }
 /*for all nav-tabs*/
 .nav-tabs > li.active > a,
