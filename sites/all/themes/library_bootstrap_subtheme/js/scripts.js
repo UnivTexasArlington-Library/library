@@ -49,5 +49,7 @@ $("#block-menu-menu-right-menu-bottom .block-title-link").on("click", function(e
 //adds pager class to book navigation
 $(".book-navigation .page-links").addClass("pager");
 
+//adds hours icon to all hours link on homepage
+$(".hours a:last-of-type").prepend('<span class="glyphicon glyphicon-time"></span>');
 });
 

@@ -7433,6 +7433,10 @@ h3 a {
 .hours a {
   text-transform: uppercase;
 }
+.field-name-today-s-hours a:last-of-type,
+.hours a:last-of-type {
+  text-decoration: underline;
+}
 /*for services for*/
 .field-name-services-for .field-item a {
   text-transform: uppercase;
