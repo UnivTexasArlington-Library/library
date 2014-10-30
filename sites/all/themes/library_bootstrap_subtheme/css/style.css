@@ -7433,7 +7433,7 @@ h3 a {
 .field-name-today-s-hours a,
 .hours a {
   text-transform: uppercase;
-  display: inline-block;
+  display: block;
 }
 .field-name-today-s-hours a:last-of-type,
 .hours a:last-of-type {
