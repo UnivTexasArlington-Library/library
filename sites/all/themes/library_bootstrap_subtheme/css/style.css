@@ -7173,18 +7173,18 @@ body {
 }
 /*for placeholder text*/
 ::-webkit-input-placeholder {
-  padding-left: 5px;
+  padding-left: 10px;
 }
 :-moz-placeholder {
   /* Firefox 18- */
-  padding-left: 5px;
+  padding-left: 10px;
 }
 ::-moz-placeholder {
   /* Firefox 19+ */
-  padding-left: 5px;
+  padding-left: 10px;
 }
 :-ms-input-placeholder {
-  padding-left: 5px;
+  padding-left: 10x;
 }
 /*for all nav-tabs*/
 .nav-tabs > li.active > a,
@@ -7245,6 +7245,14 @@ h3 a {
 }
 .node-home-page ul {
   color: #f58025;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+.node-home-page ul li {
+  padding-bottom: 4px;
+}
+.node-home-page h3 {
+  font-size: 1.7em;
 }
 /*for spco menu*/
 #block-menu-menu-spco-menu .dropdown-menu {
@@ -7391,32 +7399,41 @@ h3 a {
   font-size: 2em;
   padding-top: 20px;
 }
+/*for hours block*/
 .field-name-today-s-hours,
 .hours {
   color: #f58025;
+  font-size: 1.2em;
 }
-.field-name-today-s-hours a,
-.hours a,
-.field-name-today-s-hours .hours,
-.hours .hours {
+.field-name-today-s-hours .hours-block,
+.hours .hours-block {
   padding-left: 20px;
 }
 .field-name-today-s-hours .hours,
 .hours .hours {
-  display: block;
+  font-size: 1em;
+  padding-bottom: 4px;
+}
+.field-name-today-s-hours a,
+.hours a {
+  text-transform: uppercase;
 }
 /*for give button*/
 .give {
   color: #f58025;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 2em;
   float: right;
 }
 .give img {
   width: 45%;
   display: inline-block;
   margin-top: -35px;
+}
+.give:hover {
+  text-decoration: none;
+  color: #f58025;
 }
 /*for spco homepage */
 .field-name-spco-current-exhibit img,

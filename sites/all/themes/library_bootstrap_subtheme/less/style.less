@@ -396,19 +396,19 @@ body {
 
 /*for placeholder text*/
 ::-webkit-input-placeholder {
-   padding-left:5px;
+   padding-left:10px;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   padding-left:5px;  
+   padding-left:10px;  
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   padding-left:5px;  
+   padding-left:10px;  
 }
 
 :-ms-input-placeholder {  
-   padding-left:5px;  
+   padding-left:10x;  
 }
 
 /*for all nav-tabs*/
@@ -469,8 +469,18 @@ h3 {
 		text-decoration:none;
 	}
 }
-.node-home-page ul {
-	color:@brand-warning;
+.node-home-page {
+	ul {
+		color:@brand-warning;
+		font-size:1.2em;
+		text-transform:uppercase;
+		li {
+			padding-bottom:4px;
+		}
+	}
+	h3 {
+		font-size:1.7em;
+	}
 }
 
 /*for spco menu*/
@@ -621,13 +631,19 @@ h3 {
 		padding-top:20px;
 	}
 }
+/*for hours block*/
 .field-name-today-s-hours, .hours {
 	color:@brand-warning;
-	a, .hours {
+	font-size:1.2em;
+	.hours-block {
 		padding-left:20px;
 	}
 	.hours {
-		display:block;
+		font-size:1em;
+		padding-bottom:4px;
+	}
+	a {
+		text-transform:uppercase;
 	}
 }
 
@@ -636,7 +652,7 @@ h3 {
 	color:@brand-warning;
 	text-transform:uppercase;
 	font-weight:bold;
-	font-size:1.5em;
+	font-size:2em;
 	float:right;
 	img {
 		width:45%;
@@ -644,7 +660,10 @@ h3 {
 		margin-top:-35px;
 	}
 }
-
+.give:hover {
+	text-decoration:none;
+	color:@brand-warning;
+}
 /*for spco homepage */
 .field-name-spco-current-exhibit img, #block-views-news-events-block-1 img {
 		width: auto;
