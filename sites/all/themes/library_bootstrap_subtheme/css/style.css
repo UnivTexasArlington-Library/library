@@ -7433,6 +7433,10 @@ h3 a {
 .hours a {
   text-transform: uppercase;
 }
+/*for services for*/
+.field-name-services-for .field-item a {
+  text-transform: uppercase;
+}
 /*for give button*/
 .give {
   color: #f58025;
