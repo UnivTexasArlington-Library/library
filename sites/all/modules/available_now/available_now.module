@@ -34,57 +34,50 @@ function available_now_block_view($delta='') {
       }
       }
     /*END LAB STATS FOR COMPUTER AVAILABILITY*/
-    /*START OPENROOM FOR STUDY ROOMS*/
-    $db = new PDO('mysql:host=libwebmysqlprod.ardclb.uta.edu;dbname=openroom;charset=utf8', 'openroom_drupal', 't84wHa$!');
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-        ini_set('display_errors',1); 
-        error_reporting(E_ALL);
-        $db->exec("set names utf8");
-
-        date_default_timezone_set('America/Chicago');
-        $now = date('Y-m-d H:i:s');
-        $now = strtotime($now);
-        $now2 = $now;
-        $centralTotal = 0;
-        $afaTotal = 0;
-        $selTotal = 0;
-        //gets total central rooms
-        $stmt1 = $db->prepare("SELECT roomid, roomgroupid FROM rooms");
-        $stmt1->execute();
-        while ($row1 = $stmt1->fetch(PDO::FETCH_ASSOC)) {
-          if ($row1['roomgroupid'] == 6) {
-            $centralTotal++;
-          }
-          if ($row1['roomgroupid'] == 8) {
-            $selTotal++;
-          }
-          if ($row1['roomgroupid'] == 9) {
-            $afaTotal++;
-          }
-        }
-        //gets room reservations
-        $stmt = $db->prepare("SELECT reservations.reservationid, reservations.start, reservations.end, reservations.roomid, rooms.roomgroupid FROM reservations, rooms WHERE reservations.roomid = rooms.roomid AND UNIX_TIMESTAMP(reservations.start) <= :now AND UNIX_TIMESTAMP(reservations.end) >= :now2");
-        $stmt->execute(array(':now' => $now, ':now2' => $now2));
-        $centralRooms = 0;
-        $afaRooms = 0;
-        $selRooms = 0;
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-          if ($row['roomgroupid'] == 6) {
-            $centralRooms++;
-          }
-          if ($row['roomgroupid'] == 8) {
-            $selRooms++;
-          }
-          if ($row['roomgroupid'] == 9) {
-            $afaRooms++;
-          }
-        }
-        //room total minus rooms reservered
-        $centralRoomAvail = $centralTotal - $centralRooms;
-        $afaRoomAvail = $afaTotal - $afaRooms;
-        $selRoomAvail = $selTotal - $selRooms;
-        /*END OPENROOM FOR STUDY ROOMS*/
+    /*START NEW OPENROOM*/
+    $html = file_get_contents("https://openroom.uta.edu/or-available.php");
+    $doc = new DOMDocument();
+    libxml_use_internal_errors(TRUE);
+    if (!empty($html)) {
+      $doc->loadHTML($html);
+      libxml_clear_errors();
+      $doc_xpath = new DOMXPATH($doc);
+      $centralRooms = $doc_xpath->query('//div[(@id="rooms_cen")]');
+      if ($centralRooms->length > 0) {
+        $centralRoomAvail = $centralRooms->item(0)->nodeValue;
+      }
+      $afaRooms = $doc_xpath->query('//div[(@id="rooms_afa")]');
+      if ($afaRooms->length > 0) {
+        $afaRoomAvail = $afaRooms->item(0)->nodeValue;
+      }
+      $selRooms = $doc_xpath->query('//div[(@id="rooms_sel")]');
+      if ($selRooms->length > 0) {
+        $selRoomAvail = $selRooms->item(0)->nodeValue;
+      }
+    }
+    /*END NEW OPEN ROOM*/
+    /*START LAPTOPS*/
+    $html = file_get_contents("http://pulse.uta.edu/vwebv/laptops.cgi");
+    $doc = new DOMDocument();
+    libxml_use_internal_errors(TRUE);
+    if (!empty($html)) {
+      $doc->loadHTML($html);
+      libxml_clear_errors();
+      $doc_xpath = new DOMXPATH($doc);
+      $centralLaptops = $doc_xpath->query('//div[(@id="laptops_central")]');
+      if ($centralLaptops->length > 0) {
+        $centralLaptopAvail = $centralLaptops->item(0)->nodeValue;
+      }
+      $afaLaptops = $doc_xpath->query('//div[(@id="laptops_afa")]');
+      if ($afaLaptops->length > 0) {
+        $afaLaptopAvail = $afaLaptops->item(0)->nodeValue;
+      }
+      $selLaptops = $doc_xpath->query('//div[(@id="laptops_sel")]');
+      if ($selLaptops->length > 0) {
+        $selLaptopAvail = $selLaptops->item(0)->nodeValue;
+      }
+    }
+    /*END LAPTOPS*/
         $block_content = '<div class="row">
         <div class="col-sm-12">
         <h3>Available Now @ <span class="available-links"><a href="technology">Borrow Technology</a> / <a href="http://openroom.uta.edu">Reserve a Room</a></span></h3>
@@ -111,7 +104,7 @@ function available_now_block_view($delta='') {
             <div class="col-md-4">
               <h4><a href="technology/laptops">Laptops</a></h4>
 <div class="avail">';
-        $block_content .= '?';
+        $block_content .= $centralLaptopAvail;
         $block_content .= '</div>
             </div>
 
@@ -136,7 +129,7 @@ function available_now_block_view($delta='') {
             <div class="col-md-4">
               <h4><a href="technology/laptops">Laptops</a></h4>
 <div class="avail">';
-        $block_content .= '?';
+        $block_content .= $afaLaptopAvail;
         $block_content .= '</div>
             </div>
 
@@ -161,7 +154,7 @@ function available_now_block_view($delta='') {
             <div class="col-md-4">
               <h4><a href="technology/laptops">Laptops</a></h4>
 <div class="avail">';
-        $block_content .= '?';
+        $block_content .= $selLaptopAvail;
         $block_content .= '</div>
             </div>
 
@@ -178,8 +171,6 @@ function available_now_block_view($delta='') {
   </div>
 </div>';
 
-
-      $block_content .= "<a href='hours'>All Hours</a>";
 
       $block['subject'] = t("Available Now");
       $block['content'] = $block_content;
