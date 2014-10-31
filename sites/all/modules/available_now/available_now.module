@@ -1,0 +1,191 @@
+<?php
+/**
+ * Implementation of hook_block_info().
+ */
+function available_now_block_info() {
+  $blocks = array();
+  $blocks['available-now'] = array(
+    'info' => t('Available Now'),
+    'pages' => 'home'
+  );
+  return $blocks;
+}
+
+function available_now_block_view($delta='') {
+  $block = array();
+  switch ($delta) {
+    case 'available-now':
+    /*START LABSTATS FOR COMPUTER AVAILABILITY*/
+      $ini = ini_set("soap.wsdl_cache_enabled","0");
+      $client = new SoapClient("http://cas.uta.edu/LabStats/WebServices/Statistics.asmx?WSDL");
+      $results = $client->GetGroupedCurrentStats()->GetGroupedCurrentStatsResult->GroupStat;
+      global $centralAvail;
+      global $afaAvail;
+      global $selAvail;
+      foreach ($results as $entry) {
+      if ($entry->groupName == 'Science and Engineering Library') {
+        $selCompAvail = $entry->availableCount;
+      }
+      if (strpos($entry->groupName, 'Central') !==false) {
+        $centralCompAvail = $centralAvail + $entry->availableCount; 
+      }
+      if ($entry->groupName == 'Architecture and Fine Arts Library') {
+        $afaCompAvail = $entry->availableCount;
+      }
+      }
+    /*END LAB STATS FOR COMPUTER AVAILABILITY*/
+    /*START OPENROOM FOR STUDY ROOMS*/
+    $db = new PDO('mysql:host=libwebmysqlprod.ardclb.uta.edu;dbname=openroom;charset=utf8', 'openroom_drupal', 't84wHa$!');
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+        ini_set('display_errors',1); 
+        error_reporting(E_ALL);
+        $db->exec("set names utf8");
+
+        date_default_timezone_set('America/Chicago');
+        $now = date('Y-m-d H:i:s');
+        $now = strtotime($now);
+        $now2 = $now;
+        $centralTotal = 0;
+        $afaTotal = 0;
+        $selTotal = 0;
+        //gets total central rooms
+        $stmt1 = $db->prepare("SELECT roomid, roomgroupid FROM rooms");
+        $stmt1->execute();
+        while ($row1 = $stmt1->fetch(PDO::FETCH_ASSOC)) {
+          if ($row1['roomgroupid'] == 6) {
+            $centralTotal++;
+          }
+          if ($row1['roomgroupid'] == 8) {
+            $selTotal++;
+          }
+          if ($row1['roomgroupid'] == 9) {
+            $afaTotal++;
+          }
+        }
+        //gets room reservations
+        $stmt = $db->prepare("SELECT reservations.reservationid, reservations.start, reservations.end, reservations.roomid, rooms.roomgroupid FROM reservations, rooms WHERE reservations.roomid = rooms.roomid AND UNIX_TIMESTAMP(reservations.start) <= :now AND UNIX_TIMESTAMP(reservations.end) >= :now2");
+        $stmt->execute(array(':now' => $now, ':now2' => $now2));
+        $centralRooms = 0;
+        $afaRooms = 0;
+        $selRooms = 0;
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+          if ($row['roomgroupid'] == 6) {
+            $centralRooms++;
+          }
+          if ($row['roomgroupid'] == 8) {
+            $selRooms++;
+          }
+          if ($row['roomgroupid'] == 9) {
+            $afaRooms++;
+          }
+        }
+        //room total minus rooms reservered
+        $centralRoomAvail = $centralTotal - $centralRooms;
+        $afaRoomAvail = $afaTotal - $afaRooms;
+        $selRoomAvail = $selTotal - $selRooms;
+        /*END OPENROOM FOR STUDY ROOMS*/
+        $block_content = '<div class="row">
+        <div class="col-sm-12">
+        <h3>Available Now @ <span class="available-links"><a href="technology">Borrow Technology</a> / <a href="http://openroom.uta.edu">Reserve a Room</a></span></h3>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-12">
+        <div class="tabbable tabs-left">
+        <ul class="nav nav-tabs col-sm-5" id="myTab" role="tablist">
+        <li class="active"><a data-toggle="tab" href="#central">Central Library</a></li>
+        <li><a data-toggle="tab" href="#afa">Architecture &amp; Fine Arts Library</a></li>
+        <li><a data-toggle="tab" href="#sel">Science &amp; Engineering Library</a></li>
+        </ul>';
+        $block_content .= '<div class="tab-content">
+        <div class="tab-pane active" id="central">
+          <div class="row">
+            <div class="col-md-4">
+              <h4><a href="http://cas.uta.edu/CAS/">Computers</a></h4>
+<div class="avail">';
+        $block_content .= $centralCompAvail;
+        $block_content .= '</div>
+            </div>
+
+            <div class="col-md-4">
+              <h4><a href="technology/laptops">Laptops</a></h4>
+<div class="avail">';
+        $block_content .= '?';
+        $block_content .= '</div>
+            </div>
+
+            <div class="col-md-4">
+              <h4><a href="http://openroom.uta.edu">Study Rooms</a></h4>
+<div class="avail">';
+        $block_content .= $centralRoomAvail;
+        $block_content .= '</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="afa">
+          <div class="row">
+            <div class="col-md-4">
+              <h4><a href="http://cas.uta.edu/CAS/">Computers</a></h4>
+<div class="avail">';
+        $block_content .= $afaCompAvail; 
+        $block_content .= '</div>
+            </div>
+
+            <div class="col-md-4">
+              <h4><a href="technology/laptops">Laptops</a></h4>
+<div class="avail">';
+        $block_content .= '?';
+        $block_content .= '</div>
+            </div>
+
+            <div class="col-md-4">
+              <h4><a href="http://openroom.uta.edu">Study Rooms</a></h4>
+<div class="avail">';
+        $block_content .= $afaRoomAvail;
+        $block_content .= '</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="sel">
+          <div class="row">
+            <div class="col-md-4">
+              <h4><a href="http://cas.uta.edu/CAS/">Computers</a></h4>
+<div class="avail">';
+        $block_content .= $selCompAvail; 
+        $block_content .= '</div>
+            </div>
+
+            <div class="col-md-4">
+              <h4><a href="technology/laptops">Laptops</a></h4>
+<div class="avail">';
+        $block_content .= '?';
+        $block_content .= '</div>
+            </div>
+
+            <div class="col-md-4">
+              <h4><a href="http://openroom.uta.edu">Study Rooms</a></h4>
+<div class="avail">';
+        $block_content .= $selRoomAvail;
+        $block_content .= '</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>';
+
+
+      $block_content .= "<a href='hours'>All Hours</a>";
+
+      $block['subject'] = t("Available Now");
+      $block['content'] = $block_content;
+      break;
+  }
+  return $block;
+}
+
+?>

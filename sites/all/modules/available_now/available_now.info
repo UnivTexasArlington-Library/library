@@ -1,0 +1,5 @@
+name = Available Now
+description = A module which builds the Available Now box on the library homepage using labstats, openroom, and voyager
+package = Custom
+core = 7.x
+dependencies[] = block
