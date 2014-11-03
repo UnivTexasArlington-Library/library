@@ -19,15 +19,12 @@ function available_now_block_view($delta='') {
       $ini = ini_set("soap.wsdl_cache_enabled","0");
       $client = new SoapClient("http://cas.uta.edu/LabStats/WebServices/Statistics.asmx?WSDL");
       $results = $client->GetGroupedCurrentStats()->GetGroupedCurrentStatsResult->GroupStat;
-      global $centralAvail;
-      global $afaAvail;
-      global $selAvail;
       foreach ($results as $entry) {
       if ($entry->groupName == 'Science and Engineering Library') {
         $selCompAvail = $entry->availableCount;
       }
       if (strpos($entry->groupName, 'Central') !==false) {
-        $centralCompAvail = $centralAvail + $entry->availableCount; 
+        $centralCompAvail = $centralCompAvail + $entry->availableCount; 
       }
       if ($entry->groupName == 'Architecture and Fine Arts Library') {
         $afaCompAvail = $entry->availableCount;
