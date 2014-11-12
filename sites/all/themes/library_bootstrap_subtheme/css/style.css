@@ -7064,16 +7064,16 @@ body {
   background-size: contain;
 }
 .summon #everything-button {
-  background-image: url('http://library-beta.uta.edu/sites/default/files/everything.png');
+  background-image: url('http://library-test.uta.edu/sites/default/files/everything.png');
 }
 .summon #website-button {
-  background-image: url('http://library-beta.uta.edu/sites/default/files/website.png');
+  background-image: url('http://library-test.uta.edu/sites/default/files/website.png');
 }
 .summon #articles-button {
-  background-image: url('http://library-beta.uta.edu/sites/default/files/articles.png');
+  background-image: url('http://library-test.uta.edu/sites/default/files/articles.png');
 }
 .summon #books-button {
-  background-image: url('http://library-beta.uta.edu/sites/default/files/books.png');
+  background-image: url('http://library-test.uta.edu/sites/default/files/books.png');
 }
 .summon .summon-search-box {
   width: 100%;
