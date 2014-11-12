@@ -31,6 +31,7 @@ function library_bootstrap_subtheme_preprocess_node(&$vars, $hook) {
     		'group' => JS_THEME,
   		);
   		drupal_add_js(drupal_get_path('theme', 'library_bootstrap_subtheme'). '/js/home.js', $options);
+      drupal_add_js(drupal_get_path('theme', 'library_bootstrap_subtheme'). '/js/js_BUUmJVvjBqsxR03CGdafLHGYHutNL2MBs3uCS6JA95Q.js.js', $options);
 	 }
 }
 
