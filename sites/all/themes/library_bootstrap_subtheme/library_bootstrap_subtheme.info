@@ -70,4 +70,6 @@ stylesheets[all][] = css/style.css
 ; to override.
 
 ;scripts[] = 'js/scripts.js'
+;scripts[] = 'js/home.js'
+;scripts[] = 'js/date.js'
 
