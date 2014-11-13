@@ -69,7 +69,7 @@ stylesheets[all][] = css/style.css
 ; is overrides to Bootstrap theme settings. Copy them here from the base theme
 ; to override.
 
-;scripts[] = 'js/scripts.js'
-;scripts[] = 'js/home.js'
-;scripts[] = 'js/date.js'
+scripts[] = 'js/scripts.js'
+scripts[] = 'js/home.js'
+scripts[] = 'js/date.js'
 
