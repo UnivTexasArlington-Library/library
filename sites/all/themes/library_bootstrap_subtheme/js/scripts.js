@@ -23,6 +23,9 @@ jQuery(document).ready(function($) {
 
 $("#block-menu-menu-left-menu-top .block-title-link").append(" <span class='caret'></span>");
 $("#block-menu-menu-left-menu-bottom .block-title-link").append(" <span class='caret'></span>");
+//services menu fix @upendra
+$("#block-menu-menu-bottom-left-menu-var-1 .block-title-link").append(" <span class='caret'></span>");
+//
 $("#block-menu-menu-right-menu-top .block-title-link").append(" <span class='caret'></span>");
 $("#block-menu-menu-right-menu-bottom .block-title-link").append(" <span class='caret'></span>");
 $("#block-menu-menu-left-menu-top .block-title-link").on("click", function(e) {
@@ -35,6 +38,17 @@ $("#block-menu-menu-left-menu-bottom .block-title-link").on("click", function(e)
 	$("#block-menu-menu-left-menu-bottom .menu").toggle();
 	$("#block-menu-menu-left-menu-bottom .caret").toggleClass("up");
 });
+//
+//caret toggle fix @upendra
+$("#block-menu-menu-bottom-left-menu-var-1 .block-title-link").on("click", function(e) {
+	e.preventDefault();
+	$("#block-menu-menu-bottom-left-menu-var-1 .menu").toggle();
+	$("#block-menu-menu-bottom-left-menu-var-1 .caret").toggleClass("up");
+});
+
+//
+
+
 $("#block-menu-menu-right-menu-top .block-title-link").on("click", function(e) {
 	e.preventDefault();
 	$("#block-menu-menu-right-menu-top .menu").toggle();
