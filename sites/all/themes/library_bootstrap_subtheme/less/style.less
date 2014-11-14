@@ -45,6 +45,7 @@ body {
 }
 #sidebar .nav {
   width: 95%;
+  font-size:1.1em;
 }
 /* collapsed sidebar styles */
 @media screen and (max-width: 767px) {
@@ -167,7 +168,7 @@ body {
 	.block-title-link {
 		color: @brand-warning;
 		padding-bottom: 0px;
-		font-size:.7em;
+		font-size:.8em;
 		display: inline;
 		padding-left: 3px;
 		padding-right: 7px;
@@ -213,7 +214,7 @@ body {
 	background: url('http://library-beta.uta.edu/sites/default/files/about_icon.png');
 	width:46px;
 	height:27px;
-	margin-top: 2px;
+	margin-top: 4px;
 }
 #block-menu-menu-right-menu-top .block-title-link:after {
 	background: url('http://library-beta.uta.edu/sites/default/files/help_icon.png');
@@ -247,7 +248,7 @@ body {
 	margin-bottom:0;
 }
 .summon {
-	background: url('http://library-beta.uta.edu/sites/default/files/central.jpg');
+	background: url(../Homecoming2014_revision.jpg);
 	background-size: 100%;
 	background-repeat:no-repeat;
 	.btn-summon {
@@ -256,7 +257,7 @@ body {
 		height:100%;
 		border:none;
 		text-transform:uppercase;
-		padding:7% 0 7% 0;
+		padding:10% 0 11% 0;
 		font-size:1.4em;
 		text-shadow:#000000 1px 1px;
 		display:block;
@@ -271,8 +272,8 @@ body {
 	#everything-button, #website-button, #articles-button, #books-button {
 		background-repeat:no-repeat;
 		border-radius:5px;
-		padding-left:0;
-		padding-right:30px;
+		padding-left:15px;
+		padding-right:15px;
 		background-size:contain;
 	}
 	#everything-button {
@@ -534,8 +535,15 @@ h3 {
 		margin-right:auto;
 		max-width:100%;
 	}
-	.views-field-field-news-captions {
-		text-align:center;
+	.views-field-field-news-caption .field-content {
+		text-align: center;
+		display: block;
+		width: 80%;
+		padding-top: 7px;
+		margin-left: auto;
+		margin-right: auto;
+		line-height: 1.1em;
+		color: #0064b1;
 	}
 	.carousel-control-container {
 		display:block;
@@ -549,8 +557,8 @@ h3 {
 			border-radius: 25px;
 			bottom: 0;
 			left:0;
-			width: 25px;
-			height: 25px;
+			width: 30px;
+			height: 30px;
 			background: @brand-warning;
 			opacity:1;
 		}
@@ -591,8 +599,11 @@ h3 {
 	float:right;
 	padding-right:16px;
 	font-size:.7em;
-	color:#dddbdb;
 	line-height:1.5em;
+	a {
+		color:#0064b1;
+		text-decoration:underline;
+	}
 }
 #block-available-now-available-now {
 	.tabs-left {
@@ -653,7 +664,7 @@ h3 {
 .field-name-today-s-hours, .hours {
 	color:@brand-warning;
 	.hours-block {
-		padding-left:20px;
+		padding-left:10px;
 		font-size:1.2em;
 	}
 	.hours {
@@ -672,6 +683,17 @@ h3 {
 .field-name-services-for {
 	.field-item a {
 		text-transform: uppercase;
+	}
+	ul {
+		padding-left:30px;
+	}
+	@media(min-width:@screen-sm) {
+		ul {
+			padding-left:14%;
+		}
+		h3 {
+			padding-left:12%;
+		}
 	}
 }
 /*for give button*/ 
@@ -911,4 +933,72 @@ h3 {
 }
 .page-node-560 .page-header, .page-node-560 .breadcrumb {
 	display:none;
+}
+
+/*for columns of same height*/
+
+/* columns of same height styles */
+.container-xs-height {
+    display:table;
+    padding-left:0px;
+    padding-right:0px;
+}
+.row-xs-height {
+    display:table-row;
+}
+.col-xs-height {
+    display:table-cell;
+    float:none;
+}
+@media (min-width: 768px) {
+    .container-sm-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-sm-height {
+        display:table-row;
+    }
+    .col-sm-height {
+        display:table-cell;
+        float:none;
+    }
+}
+@media (min-width: 992px) {
+    .container-md-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-md-height {
+        display:table-row;
+    }
+    .col-md-height {
+        display:table-cell;
+        float:none;
+    }
+}
+@media (min-width: 1200px) {
+    .container-lg-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-lg-height {
+        display:table-row;
+    }
+    .col-lg-height {
+        display:table-cell;
+        float:none;
+    }
+}
+/* vertical alignment styles */
+.col-top {
+    vertical-align:top;
+}
+.col-middle {
+    vertical-align:middle;
+}
+.col-bottom {
+    vertical-align:bottom;
 }
