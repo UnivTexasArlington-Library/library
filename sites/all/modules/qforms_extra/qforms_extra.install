@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implementation of hook_install().
+ */
+function qforms_extra_install() {
+}
+
+/**
+* Implementation of hook_enable().
+*/
+function qforms_extra_enable() {
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function qforms_extra_uninstall() {
+}

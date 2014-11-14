@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * @file
+ * Qforms extra module.
+ *
+ * Adds additional qforms form elements: Number, Email, URL, Markup text.
+ */
+
+/*************/
+/*** Hooks ***/
+/*************/
+
+/**
+ * Implementation of hook_qforms().
+ */
+function qforms_extra_qforms() {
+  $module_path = drupal_get_path('module', 'qforms_extra');
+  $inc_path = $module_path . '/qforms_extra.inc';
+
+  return array(
+    'css' => array($module_path . '/qforms_extra.css'),
+    'elements' => array(
+      'number' => array(
+        'file' => $module_path . '/inc/qforms_extra.number.inc',
+        'name' => t('Number'),
+        'fapi' => 'qforms_extra_fapi_number',
+        'element' => 'qforms_extra_element_number',
+        'group' => 'extra',
+      ),
+      'email' => array(
+        'file' => $module_path . '/inc/qforms_extra.email.inc',
+        'name' => t('Email'),
+        'fapi' => 'qforms_extra_fapi_email',
+        'element' => 'qforms_extra_element_email',
+        'group' => 'extra',
+      ),
+      'url' => array(
+        'file' => $module_path . '/inc/qforms_extra.url.inc',
+        'name' => t('Url'),
+        'fapi' => 'qforms_extra_fapi_url',
+        'element' => 'qforms_extra_element_url',
+        'group' => 'extra',
+      ),
+        'markup' => array(
+        'file' => $module_path . '/inc/qforms_extra.markup.inc',
+        'name' => t('Markup'),
+        'fapi' => 'qforms_extra_fapi_markup',
+        'element' => 'qforms_extra_element_markup',
+        'prepare_for_csv_export' => 'qforms_element_markup_prepare_for_csv_export',
+        'group' => 'extra',
+      ),
+        'date' => array(
+        'file' => $module_path . '/inc/qforms_extra.date.inc',
+        'name' => t('Date'),
+        'fapi' => 'qforms_extra_fapi_date',
+        'element' => 'qforms_extra_element_date',
+        'group' => 'extra',
+      ),
+    ),
+  );
+}
