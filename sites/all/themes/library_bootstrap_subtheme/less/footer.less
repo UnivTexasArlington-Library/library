@@ -8,6 +8,12 @@
 	line-height:18px;
 	padding-top:10px;
 	padding-bottom:10px;
+	.region-footer {
+		&:extend(.container-xs-height);
+	}
+	.block {
+		&:extend(.row, .row-xs-height);
+	}
 	.glyphicon {
 		color: #000000;
 		padding-right:5px;
@@ -16,13 +22,14 @@
 		width:75%;
 		text-align:center;
 	}
-	.col-sm-4 {
+	.col-xs-4 {
 		border-right:4px solid #FFFFFF;
 		text-align:center;
 		padding-top:25px;
 		padding-bottom:20px;
+		&:extend(.col-xs-height, .col-top);
 	}
-	.col-sm-4:last-of-type {
+	.col-xs-4:last-of-type {
 		border:none;
 		text-align:left;
 		.col-xs-6 {
@@ -35,8 +42,7 @@
 			padding-bottom:2px;
 		}
 	}
-	.col-sm-4:first-of-type {
-		padding-top:10px;
+	.col-xs-4:first-of-type {
 		padding-bottom:0px;
 	}
 }
