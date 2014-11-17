@@ -50,7 +50,7 @@ $("#block-menu-menu-bottom-left-menu-var-1 .block-title-link").on("click", funct
 	$("#block-menu-menu-bottom-left-menu-var-1 .menu").toggle();
 	$("#block-menu-menu-bottom-left-menu-var-1 .caret").toggleClass("up");
 });
-block-menu-menu-left-menu-bottom-var-1
+
 $("#block-menu-menu-left-menu-bottom-var-1 .block-title-link").on("click", function(e) {
 	e.preventDefault();
 	$("#block-menu-menu-left-menu-bottom-var-1 .menu").toggle();
