@@ -24,7 +24,8 @@ jQuery(document).ready(function($) {
 //closing menu's initially
 	$("#block-menu-menu-right-menu-bottom-var-1 .menu").toggle();
 	$("#block-menu-menu-bottom-left-menu-var-1 .menu").toggle();
-	
+
+	$("#block-menu-menu-left-menu-bottom-var-1 .menu").toggle();
 
 
 $("#block-menu-menu-left-menu-top .block-title-link").append(" <span class='caret'></span>");
