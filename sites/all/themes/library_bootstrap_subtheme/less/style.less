@@ -559,7 +559,7 @@ h3 {
 			left:0;
 			width: 30px;
 			height: 30px;
-			/*background: @brand-warning;*/
+			background: @brand-warning;
 			opacity:1;
 		}
 		.carousel-control.left, .carousel-control.right {
@@ -568,14 +568,11 @@ h3 {
 		.carousel-control.left {
 			float:left;
 		}
-		.icon-prev:before, .icon-next:before {
-			content: '';
+		.icon-prev:before {
+			content: '\25c0';
 		}
-		.icon-next {
-			background:url('http://library-test.uta.edu/sites/default/files/right-arrow.png');
-		}
-		.icon-prev {
-			background:url('http://library-test.uta.edu/sites/default/files/left-arrow.png');
+		.icon-next:before {
+			content: '\25b6';
 		}
 		.icon-prev, .icon-next {
 			width:32px;
@@ -584,7 +581,6 @@ h3 {
 			font-size:24px;
 			margin-left:-17px;
 			margin-right:-18px;
-			background-size:cover;
 		}
 	}
 }
