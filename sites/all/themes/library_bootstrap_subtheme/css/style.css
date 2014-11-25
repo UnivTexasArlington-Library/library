@@ -7209,9 +7209,9 @@ body {
 }
 .summon .summon-search-field {
 width: 93%;
-font-size: 1.7em;
-   border-radius: 7px;
-   line-height: 2.2em;
+font-size: 1.8em;
+   border-radius: 5px;;
+   line-height: 31pt;
   
 /* old code
 -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
@@ -7219,9 +7219,9 @@ font-size: 1.7em;
    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 */
 /*Code for  for shadow effect*/
--webkit-box-shadow: inset 7px 7px 5px 0px #2F3030;
--moz-box-shadow: inset 7px 7px 5px 0px #2F3030;
-box-shadow: inset 5px 7px 5px px #2F3030;
+-webkit-box-shadow: inset 5px 6px 4px 0px #2F3030;
+-moz-box-shadow: inset 5px 6px 4px 0px #2F3030;
+box-shadow: inset 5px 6px 4px 0px #2F3030;
 /*code for shadow effect ends here*/
 border:none;
 }
