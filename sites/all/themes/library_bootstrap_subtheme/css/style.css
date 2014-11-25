@@ -7212,9 +7212,16 @@ body {
   font-size: 1.8em;
   border-radius: 5px;
   line-height: 2.2em;
-  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+/* old code
+-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+*/
+/*Code for  for shadow effect*/
+-webkit-box-shadow: 0 10px 6px -6px #777;
+-moz-box-shadow: 0 10px 6px -6px #777;
+box-shadow: 0 10px 6px -6px #777;
+/*code for shadow effect ends here*/
   border: none;
 }
 .summon .summon-search-submit {
