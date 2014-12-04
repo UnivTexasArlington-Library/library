@@ -157,7 +157,7 @@ function available_now_block_view($delta='') {
             </div>
 
             <div class="col-md-4">
-              <h4><a href="http://openroom.uta.edu">Study Rooms</a></h4>
+              <h4><a href="http://library-beta.uta.edu/study-spaces">Study Rooms</a></h4>
 <div class="avail">';
         $block_content .= $selRoomAvail;
         $block_content .= '</div>
