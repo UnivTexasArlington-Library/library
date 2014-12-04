@@ -7019,6 +7019,12 @@ body {
   background: #FFFFFF;
 }
 /*for nav links*/
+
+.region-sidebar-second
+{
+margin-left:15px;
+}
+
 .region-sidebar-first .nav .leaf a,
 .region-sidebar-second .nav .leaf a,
 .region-sidebar-first .nav li.dropdown a,
@@ -7133,6 +7139,7 @@ body {
 @media (max-width: 991px) {
   #block-menu-menu-right-menu-top .menu {
     display: none;
+    
   }
 }
 @media (min-width: 992px) {
