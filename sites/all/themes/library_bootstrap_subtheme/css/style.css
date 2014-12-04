@@ -289,7 +289,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: white;
+  color: #00447c;
   text-decoration: underline;
 }
 a:focus {
@@ -3647,7 +3647,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #00447c;
+  background-color: #fff;
 }
 .nav > li.disabled > a {
   color: #777777;
