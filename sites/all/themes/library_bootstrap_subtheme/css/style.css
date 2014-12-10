@@ -7367,6 +7367,16 @@ border:none;
   margin-left: auto;
   margin-right: auto;
 }
+@media(max-width:768px){
+	.field-type-image img {
+  width: 0%;
+  height: 0%;
+  max-height: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+}
 /*for homepage*/
 h3 {
   color: #f58025;
