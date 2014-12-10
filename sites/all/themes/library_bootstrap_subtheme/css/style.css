@@ -7360,7 +7360,7 @@ border:none;
 }
 /*for image widths*/
 .field-type-image img {
-  width: auto;
+  width: 50%;
   height: 100%;
   max-height: 300px;
   display: block;
