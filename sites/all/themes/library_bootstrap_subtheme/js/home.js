@@ -15,7 +15,7 @@ function changeSearch(tabID) {
 		jQuery("#s5da153d0cede013143c5441ea15a6074 .summon-search-submit[0]").attr("onclick", "_gaq.push(['_trackEvent', 'search', 'submit', 'summonbooks']);");
 	}
 	if (tabID == 'website') {
-		jQuery("#searchbox").html('<form action="http://www.google.com/cse" id="cse-search-box" target="_blank" class="summon-search-widget"><div class="summon-search-box"><input name="cx" type="hidden" value="009634764007679247941:gfvozwqv5p4" /> <input name="ie" type="hidden" value="UTF-8" /> <input autocomplete="on" name="q" placeholder="Search the libraries website" size="50" type="text" class="summon-search-field" /> <input name="sa" onclick="_gaq.push([\'_trackEvent\', \'search\', \'submit\', \'website\']);" type="submit" value="Go" class="summon-search-submit" /></div><a href="sitemap">Sitemap</a></form>');
+		jQuery("#searchbox").html('<form class="summon-search-widget" action="http://library-beta.uta.edu/search/node" method="post" id="search-form" accept-charset="UTF-8"><div><div class="summon-search-box" id="edit-basic"><div class="input-group"><input placeholder="Search the libraries website" class="summon-search-field" type="text" id="edit-keys" name="keys" value="" size="50" ><input name="op" onclick="_gaq.push([\'_trackEvent\', \'search\', \'submit\', \'website\']);" type="submit" value="Go" class="summon-search-submit" id="edit-submit"></div></div><input type="hidden" name="form_build_id" value="form-gmAaqFFtOYoY_QtCiUEKi2JWaUJ6qlBPH7BnWMwT_38"><input type="hidden" name="form_token" value="-kfWHvcQEJpzhtJ1QTbBaXqukYwvMcJig1xRqAbUzcY"><input type="hidden" name="form_id" value="search_form"></div></form>');
 	}
 }
 
