@@ -7367,7 +7367,7 @@ border:none;
   margin-left: auto;
   margin-right: auto;
 }
-@media(max-width:1124px){
+@media(max-width:768px){
 	.field-type-image img {
   width: 0%;
   height: 0%;
