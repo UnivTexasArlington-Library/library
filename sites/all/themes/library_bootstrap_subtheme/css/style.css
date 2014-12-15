@@ -5070,7 +5070,7 @@ a.list-group-item-danger.active:focus {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 18px;
-  color: inherit;
+  color: #f58025;
 }
 .panel-title > a {
   color: inherit;
