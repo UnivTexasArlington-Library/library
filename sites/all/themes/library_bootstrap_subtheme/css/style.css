@@ -465,6 +465,15 @@ h4,
   text-transform: uppercase;
   color: #f58025;
 }
+/*TABBABLE PANE H4 ONLY*/
+.tabbable .tab-content .tab-pane .row .col-md-4 h4{
+	font-size: 90%;
+	margin-top: 5px;
+	margin-bottom: 0px;
+}
+
+
+
 h5,
 .h5 {
   font-size: 16px;
