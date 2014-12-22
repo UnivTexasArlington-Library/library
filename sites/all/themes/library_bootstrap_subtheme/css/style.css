@@ -7632,6 +7632,7 @@ h3 a {
   font-weight: bold;
   font-size: 2em;
   float: right;
+  margin-right: -45px;
 }
 .give img {
   width: 45%;
