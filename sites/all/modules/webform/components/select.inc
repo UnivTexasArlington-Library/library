@@ -314,6 +314,10 @@ function _webform_render_select($component, $value = NULL, $filter = TRUE) {
   // Convert the user-entered options list into an array.
   $default_value = $filter ? webform_replace_tokens($component['value'], $node) : $component['value'];
   $options = _webform_select_options($component, !$component['extra']['aslist'], $filter);
+  if (empty($options)) {
+    // Make element inaccessible if there are no options as there is no point in showing it.
+    $element['#access'] = FALSE;
+  }
 
   if ($component['extra']['optrand']) {
     _webform_shuffle_options($options);
@@ -858,7 +862,7 @@ function webform_select_options_ajax($source_name = '') {
 
   $component['extra']['options_source'] = $source_name;
   if ($source_name && isset($info[$source_name])) {
-    $options = _webform_select_options_to_text(_webform_select_options($component, !$component['extra']['aslist'], FALSE));
+    $options = _webform_select_options_to_text(_webform_select_options($component, FALSE, FALSE));
   }
   else {
     $options = '';
