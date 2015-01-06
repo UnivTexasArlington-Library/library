@@ -110,13 +110,12 @@ function _workflownode_rules_condition_info() {
 function _workflownode_rules_action_info() {
   $actions = array();
 
-  // Warning: keep this action in line between Workflow Field and Workflow Node.
   $actions['workflow_rules_set_state'] = array(
     'group' => t('Workflow'),
-    'label' => t('Set a Workflow state (with a comment)'),
+    'label' => t('Set a Workflow state'),
     'parameter' => array(
       'node' => array(
-        'type' => 'entity',
+        'type' => 'node',
         'label' => t('Node'),
         'description' => t('The node to set the current workflow state of.'),
         // 'save' => TRUE,

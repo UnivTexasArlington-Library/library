@@ -13,4 +13,6 @@
  * Drupal 7 requires a .module file, even if it is empty.
  */
 
-module_load_include('inc', 'workflow_rules', 'workflow_rules.rules-callback');
+if (module_exists('rules')) {
+  module_load_include('inc', 'workflow_rules', 'workflow_rules.rules-callback');
+}

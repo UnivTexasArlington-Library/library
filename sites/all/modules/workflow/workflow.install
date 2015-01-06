@@ -611,7 +611,7 @@ function workflow_update_7004() {
   db_update('workflow_scheduled_transition')
     ->fields(array(
       'entity_type' => 'node',
-      'language' => LANGUAGE_NONE,
+      'language' => 'und',
       'delta' => '0',
       )
     )

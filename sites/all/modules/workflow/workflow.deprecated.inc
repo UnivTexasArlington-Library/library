@@ -192,8 +192,7 @@ function workflow_field_choices($node, $force = FALSE, $state = NULL) {
   }
   else {
     // This is used in Node API.
-    $field_name = ''; // An explicit var is needed.
-    $current_sid = workflow_node_current_state($node, 'node', $field_name);
+    $current_sid = workflow_node_current_state($node, 'node', '');
     $state = workflow_state_load_single($current_sid);
   }
   return $state->getOptions('node', $node, '', $user, $force);
@@ -677,19 +676,6 @@ function workflow_insert_workflow_scheduled_transition($data) {
 // function workflow_delete_workflow_scheduled_transition_by_nid($nid) {
 //   return WorkflowScheduledTransition::deleteById('node', $nid);
 // }
-
-/**
- * Deprecated functions related to table {workflow_node}.
- */
-
-/**
- * Given nid, update the new stamp. This probably can be refactored. Called by workflow_execute_transition().
- *
- * @deprecated: this is micro-optimalisation.
- */
-function workflow_update_workflow_node_stamp($nid, $new_stamp) {
-  return db_update('workflow_node')->fields(array('stamp' => $new_stamp))->condition('nid', $nid, '=')->execute();
-}
 
 /**
  * Deprecated functions related to table {workflow_node_history}.
