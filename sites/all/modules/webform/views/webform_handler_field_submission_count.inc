@@ -44,12 +44,9 @@ class webform_handler_field_submission_count extends views_handler_field {
         $count = webform_get_submission_count($node->nid);
         $output = l($count, "node/$node->nid/webform-results");
       }
-      elseif (webform_submission_access($node, NULL, 'list', $user)) {
+      else {
         $count = webform_get_submission_count($node->nid, $user->uid);
         $output = l($count, "node/$node->nid/submissions");
-      }
-      else {
-        $output = webform_get_submission_count($node->nid);
       }
     }
     elseif ($this->count_type == 'users') {
