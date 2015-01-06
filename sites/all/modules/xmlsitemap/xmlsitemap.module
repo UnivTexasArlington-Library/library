@@ -64,8 +64,6 @@ function xmlsitemap_hook_info() {
     'xmlsitemap_context_info_alter',
     'xmlsitemap_context_url_options',
     'xmlsitemap_context',
-    'xmlsitemap_element_alter',
-    'xmlsitemap_root_attributes_alter',
     'xmlsitemap_sitemap_insert',
     'xmlsitemap_sitemap_update',
     'xmlsitemap_sitemap_operations',
@@ -236,10 +234,6 @@ function xmlsitemap_cron() {
   if (!variable_get('xmlsitemap_regenerate_needed', FALSE)) {
     return;
   }
-  // If cron sitemap file regeneration is disabled, stop.
-  if (variable_get('xmlsitemap_disable_cron_regeneration', 0)) {
-    return;
-  }
 
   // If the minimum sitemap lifetime hasn't been passed, skip.
   $lifetime = REQUEST_TIME - variable_get('xmlsitemap_generated_last', 0);
@@ -296,7 +290,6 @@ function xmlsitemap_variables() {
     'xmlsitemap_frontpage_changefreq' => XMLSITEMAP_FREQUENCY_DAILY,
     'xmlsitemap_lastmod_format' => XMLSITEMAP_LASTMOD_MEDIUM,
     'xmlsitemap_gz' => FALSE,
-    'xmlsitemap_disable_cron_regeneration' => 0,
     // Removed variables are set to NULL so they can still be deleted.
     'xmlsitemap_regenerate_last' => NULL,
     'xmlsitemap_custom_links' => NULL,
@@ -567,15 +560,10 @@ function xmlsitemap_link_load_multiple(array $conditions = array()) {
 /**
  * Saves or updates a sitemap link.
  *
- * @param array $link
+ * @param $link
  *   An array with a sitemap link.
- * @param array $context
- *   An optional context array containing data related to the link.
- *
- * @return array
- *   The saved sitemap link.
  */
-function xmlsitemap_link_save(array $link, array $context = array()) {
+function xmlsitemap_link_save(array $link) {
   $link += array(
     'access' => 1,
     'status' => 1,
@@ -589,7 +577,7 @@ function xmlsitemap_link_save(array $link, array $context = array()) {
   );
 
   // Allow other modules to alter the link before saving.
-  drupal_alter('xmlsitemap_link', $link, $context);
+  drupal_alter('xmlsitemap_link', $link);
 
   // Temporary validation checks.
   // @todo Remove in final?
@@ -611,11 +599,11 @@ function xmlsitemap_link_save(array $link, array $context = array()) {
   // Save the link and allow other modules to respond to the link being saved.
   if ($existing) {
     drupal_write_record('xmlsitemap', $link, array('type', 'id'));
-    module_invoke_all('xmlsitemap_link_update', $link, $context);
+    module_invoke_all('xmlsitemap_link_update', $link);
   }
   else {
     drupal_write_record('xmlsitemap', $link);
-    module_invoke_all('xmlsitemap_link_insert', $link, $context);
+    module_invoke_all('xmlsitemap_link_insert', $link);
   }
 
   return $link;
