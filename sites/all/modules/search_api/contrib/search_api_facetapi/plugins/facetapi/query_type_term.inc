@@ -148,15 +148,9 @@ class SearchApiFacetapiTerm extends FacetapiQueryType implements FacetapiQueryTy
       return array();
     }
     $search_id = $search_ids[$facet['name']];
-    list(, $results) = search_api_current_search($search_id);
+    $search = search_api_current_search($search_id);
     $build = array();
-
-    // Always include the active facet items.
-    foreach ($this->adapter->getActiveItems($this->facet) as $filter)  {
-      $build[$filter['value']]['#count'] = $results['result count'];
-    }
-
-    // Then, add the facets returned by the server.
+    $results = $search[1];
     if (isset($results['search_api_facets']) && isset($results['search_api_facets'][$this->facet['name']])) {
       $values = $results['search_api_facets'][$this->facet['name']];
       foreach ($values as $value) {
