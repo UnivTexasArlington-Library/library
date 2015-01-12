@@ -8,9 +8,7 @@
 .improvedselect .del_all:hover,
 .improvedselect .add_all:hover,
 .improvedselect .del:hover,
-.improvedselect .add:hover,
-.improvedselect .move_up:hover,
-.improvedselect .move_down:hover {
+.improvedselect .add:hover {
   background: #ccc;
 }
 .improvedselect .improvedselect-text-wrapper {
@@ -25,9 +23,7 @@
 .improvedselect .add_all,
 .improvedselect .del_all,
 .improvedselect .del,
-.improvedselect .add,
-.improvedselect .move_up,
-.improvedselect .move_down {
+.improvedselect .add {
   display: block;
   width: 80%;
   margin: 0 auto;
@@ -37,12 +33,6 @@
   text-align: center;
   margin-left: 10%;
   background: white;
-  /* This is to make the text in the buttons un-selectable. */
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 .improvedselect .improvedselect_control {
   float: left;
@@ -68,44 +58,6 @@
   background: white;
   list-style: none;
   overflow: auto;
-}
-.has_group ul.improvedselect_sel,
-.has_group ul.improvedselect_all {
-  width: 30%;
-}
-.improvedselect div.improvedselect_tabs-wrapper {
-  width: 19%;
-  float: left;
-}
-.improvedselect ul.improvedselect_tabs {
-  margin: 0;
-  padding: 0;
-}
-.improvedselect ul.improvedselect_tabs li {
-  margin-bottom: 5px;
-  padding: 1px 0 1px 5px;
-  /* This is to make the text in the buttons un-selectable. */
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.improvedselect ul.improvedselect_tabs li.selected {
-  background-color: white;
-  border-color: gray;
-  border-style: solid;
-  border-width: 1px 0 1px 1px;
-  padding: 0;
-}
-.improvedselect ul.improvedselect_tabs li.selected div {
-  background-color: white;
-  margin: 0 -1px 0 1px;
-  position: relative;
-}
-.improvedselect ul.improvedselect_tabs li.selected div a {
-  margin-left: 3px;
-  padding-right: 5px;
 }
 .improvedselect .improvedselect_all {
   float: left;
