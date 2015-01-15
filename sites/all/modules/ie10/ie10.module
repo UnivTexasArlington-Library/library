@@ -1,5 +1,0 @@
-<?php
-function ie10_init() {
-  $ie10 = 'X-UA-Compatible: IE=10';
-  drupal_set_header($ie10);
-}
