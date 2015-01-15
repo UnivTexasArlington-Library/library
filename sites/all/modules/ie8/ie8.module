@@ -1,0 +1,6 @@
+
+    <?php
+    function ie8_init() {
+      $ie8 = 'X-UA-Compatible: IE=8';
+      drupal_set_header($ie8);
+    }
