@@ -1,3 +1,0 @@
-name = IE10
-description = Sends X-UA-Compatible IE10 headers for IE.
-core = 7.x
