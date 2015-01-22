@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ * This is the main module file.
+ */
+
+ /**
+ * Implements hook_help().
+ */
+function drupalform_help($path, $arg) {
+
+  if ($path == 'admin/help#rupalform') {
+    $output = '<h3>' . t('About') . '</h3>';
+    $output .= '<p>' . t('The drupalform module shows how to create forms using Drupal.') . '</p>';
+    return $output;
+  }
+}
