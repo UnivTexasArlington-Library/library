@@ -25,7 +25,6 @@ function views_bootstrap_views_plugins() {
         'uses grouping' => FALSE,
         'uses options' => TRUE,
         'type' => 'normal',
-        //@TODO:  'uses row plugin' => FALSE, 'uses fields' => TRUE,
       ),
       'views_bootstrap_thumbnail_plugin_style' => array(
         'title' => t('Bootstrap Thumbnails'),
@@ -68,7 +67,6 @@ function views_bootstrap_views_plugins() {
         'uses grouping' => TRUE,
         'uses options' => TRUE,
         'type' => 'normal',
-        //@TODO:  'uses row plugin' => FALSE, 'uses fields' => TRUE,
       ),
       'views_bootstrap_tab_plugin_style' => array(
         'title' => t('Bootstrap Tab'),
@@ -83,7 +81,6 @@ function views_bootstrap_views_plugins() {
         'uses grouping' => TRUE,
         'uses options' => TRUE,
         'type' => 'normal',
-        //@TODO:  'uses row plugin' => FALSE, 'uses fields' => TRUE,
       ),
       'views_bootstrap_media_plugin_style' => array(
         'title' => t('Bootstrap Media Object'),
@@ -113,21 +110,6 @@ function views_bootstrap_views_plugins() {
         'uses fields' => TRUE,
         'uses options' => TRUE,
         'type' => 'normal',
-      ),
-      'views_bootstrap_list_group_plugin_style' => array(
-        'title' => t('Bootstrap List Group'),
-        'help' => t('Bootstrap List Group Style'),
-        'path' => $module_path . '/plugins/list_group',
-        'handler' => 'ViewsBootstrapListGroupPluginStyle',
-        'parent' => 'default',
-        'theme' => 'views_bootstrap_list_group_plugin_style',
-        'theme path' => $module_path . '/templates/list_group',
-        'theme file' => 'theme.inc',
-        'uses row plugin' => TRUE,
-        'uses grouping' => TRUE,
-        'uses options' => TRUE,
-        'type' => 'normal',
-        //@TODO:  'uses row plugin' => FALSE, 'uses fields' => TRUE,
       ),
     ),
     'row' => array(
