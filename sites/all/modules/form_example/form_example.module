@@ -47,4 +47,3 @@ form_example_form_validate($form, &$form_state) {
 function
 form_example_form_submit($form, &$form_state) {
 }
-?>
