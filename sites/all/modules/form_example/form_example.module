@@ -1,0 +1,33 @@
+<?php
+function form_example_menu() {
+  $items = array();
+
+ 
+$items['examples/form-example'] = array( //this creates a URL that will call this form at "examples/form-example"
+    'title' => 'Example Form', //page title
+    'description' => 'A form to mess around with.',
+    'page callback' => 'drupal_get_form', //this is the function that will be called when the page is accessed.  for a form, use drupal_get_form
+    'page arguments' => array('form_example_form'), //put the name of the form here
+    'access callback' => TRUE
+  );
+
+  return
+$items;
+}
+
+function form_example_form($form, &$form_state) {
+ 
+  $form['submit_button'] = array(
+    '#type' => 'submit',
+    '#value' => t('Click Here!'),
+  );
+ 
+  return $form;
+}
+function
+form_example_form_validate($form, &$form_state) {
+}
+
+function
+form_example_form_submit($form, &$form_state) {
+}
