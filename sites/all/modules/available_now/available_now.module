@@ -107,7 +107,7 @@ function available_now_block_view($delta='') {
             </div>
 
             <div class="col-md-4">
-              <h4><a href="http://library-beta.uta.edu/study-spaces">Study Rooms</a></h4>
+              <h4><a href="http://library.uta.edu/study-spaces">Study Rooms</a></h4>
 <div class="avail">';
         $block_content .= $centralRoomAvail;
         $block_content .= '</div>
@@ -132,7 +132,7 @@ function available_now_block_view($delta='') {
             </div>
 
             <div class="col-md-4">
-              <h4><a href="http://library-beta.uta.edu/study-spaces">Study Rooms</a></h4>
+              <h4><a href="http://library.uta.edu/study-spaces">Study Rooms</a></h4>
 <div class="avail">';
         $block_content .= $afaRoomAvail;
         $block_content .= '</div>
@@ -157,7 +157,7 @@ function available_now_block_view($delta='') {
             </div>
 
             <div class="col-md-4">
-              <h4><a href="http://library-beta.uta.edu/study-spaces">Study Rooms</a></h4>
+              <h4><a href="http://library.uta.edu/study-spaces">Study Rooms</a></h4>
 <div class="avail">';
         $block_content .= $selRoomAvail;
         $block_content .= '</div>
