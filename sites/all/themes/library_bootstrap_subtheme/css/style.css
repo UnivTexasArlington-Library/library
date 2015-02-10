@@ -7945,5 +7945,5 @@ h3 a {
   vertical-align: bottom;
 }
 .webform-container-inline {
-  display: inline;
+  display: inline-block;
 }
