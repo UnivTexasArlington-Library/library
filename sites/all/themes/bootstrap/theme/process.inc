@@ -40,6 +40,7 @@ function _bootstrap_process_input(&$element, &$form_state) {
     'searchfield',
     'telfield',
     'urlfield',
+    'webform_email',
   );
   if (!empty($element['#type']) && (in_array($element['#type'], $types) || ($element['#type'] === 'file' && empty($element['#managed_file'])))) {
     $element['#attributes']['class'][] = 'form-control';
