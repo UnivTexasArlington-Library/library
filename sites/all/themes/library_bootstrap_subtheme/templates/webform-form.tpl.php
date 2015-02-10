@@ -1,3 +1,4 @@
+<?php
     /**
     * @file
     * Customize the display of a complete webform.
