@@ -23,7 +23,7 @@
 
     foreach($form['submitted'] as $key=>$value){
     if(substr($key, 0, 1)<>'#'){
-    $prefix = '<div class="form-group">';
+    $prefix = '<div class="form-group col-sm-12">';
     $prefix .= '<label for="edit-submitted-'.$key.'" class="col-sm-6 control-label text-right">'.$value['#title'].'</label>';
     $prefix .= '<div class="col-sm-6 control-label">';
 
