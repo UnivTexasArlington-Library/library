@@ -7944,3 +7944,6 @@ h3 a {
 .col-bottom {
   vertical-align: bottom;
 }
+.webform-container-inline {
+  display: inline-block;
+}
