@@ -38,6 +38,7 @@
     print '</div>';
   }
 
+/*
   foreach($form['submitted'] as $key=>$value){
     if(substr($key, 0, 1)<>'#'){
     $prefix = '<div class="form-group">';
@@ -52,6 +53,7 @@
     }
 
     }
+*/
 
   // Print out the main part of the form.
   // Feel free to break this up and move the pieces within the array.
