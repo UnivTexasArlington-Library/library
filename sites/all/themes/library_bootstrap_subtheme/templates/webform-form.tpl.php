@@ -20,7 +20,12 @@
  * - $form['preview_message']: The preview message renderable.
  * - $form['preview']: A renderable representing the entire submission preview.
  */
-?>
+print ('<pre>'.print_r($form,1).'</pre>');
+
+?> 
+
+
+
 <?php
 
   // Print out the progress bar at the top of the page
@@ -41,5 +46,3 @@
   // form that haven't yet been rendered above (buttons, hidden elements, etc).
   print drupal_render_children($form);
 
-// Print R
-print_r($submission) ?>
