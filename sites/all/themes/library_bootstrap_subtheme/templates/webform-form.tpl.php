@@ -20,7 +20,7 @@
  * - $form['preview_message']: The preview message renderable.
  * - $form['preview']: A renderable representing the entire submission preview.
  */
-print ('<pre>'.print_r($form,1).'</pre>');
+/** print ('<pre>'.print_r($form,1).'</pre>'); */
 
 ?> 
 
@@ -37,6 +37,21 @@ print ('<pre>'.print_r($form,1).'</pre>');
     print drupal_render($form['preview_message']);
     print '</div>';
   }
+
+  foreach($form['submitted'] as $key=>$value){
+    if(substr($key, 0, 1)<>'#'){
+    $prefix = '<div class="form-group col-sm-12">';
+    $prefix .= '<label for="edit-submitted-'.$key.'" class="col-sm-6 control-label text-right">'.$value['#title'].'</label>';
+    $prefix .= '<div class="col-sm-6 control-label">';
+
+    $suffix = '</div></div>';
+
+    $form['submitted'][$key]['#prefix'] = $prefix;
+    $form['submitted'][$key]['#suffix'] = $suffix;
+    unset($form['submitted'][$key]['#title']);
+    }
+
+    }
 
   // Print out the main part of the form.
   // Feel free to break this up and move the pieces within the array.
