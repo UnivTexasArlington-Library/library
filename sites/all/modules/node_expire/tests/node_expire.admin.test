@@ -53,5 +53,4 @@ class NodeExpireAdminTestCase extends DrupalWebTestCase {
     $this->assertText(t('Allow expire date in the past'),
       'The text "Allow expire date in the past" appears on the Node expire settings page.');
   }
-
 }

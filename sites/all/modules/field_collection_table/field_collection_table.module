@@ -31,28 +31,18 @@ function field_collection_table_field_formatter_info() {
 function field_collection_table_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
   $element = array();
   $settings = $display['settings'];
-  $view_mode = !empty( $display['settings']['view_mode'] ) ? $display['settings']['view_mode'] : 'default';
 
   switch ($display['type']) {
     case 'field_collection_table_view':
       $header = array();
       $field_names = array();
       foreach (field_info_instances('field_collection_item', $field['field_name']) as $field_collection_item) {
-        $item_view_mode = !empty($field_collection_item['display'][$view_mode]) ? $view_mode : 'default';
-        if ($field_collection_item['display'][$item_view_mode]['type'] != 'hidden') {
-          $weight = $field_collection_item['display'][$item_view_mode]['weight'];
-          $field_names[$weight] = $field_collection_item['field_name'];
-
-          if ($field_collection_item['display'][$item_view_mode]['label'] != 'hidden') {
-            $header[$weight] = array(
-              'data' => $field_collection_item['label'],
-              'class' => $field_names[$weight],
-            );
-          }
-          else {
-            $header[$weight] = '';
-          }
-        }
+        $weight = $field_collection_item['display']['default']['weight'];
+        $field_names[$weight] = $field_collection_item['field_name'];
+        $header[$weight] = array(
+          'data' => $field_collection_item['label'],
+          'class' => $field_names[$weight],
+        );
       }
       ksort($header);
       ksort($field_names);
@@ -63,7 +53,7 @@ function field_collection_table_field_formatter_view($entity_type, $entity, $fie
         if (empty($field_collection)) {
           continue;
         }
-        $view = $field_collection->view($view_mode);
+        $view = $field_collection->view();
         $content = $view['field_collection_item'][$field_collection->identifier()];
         $column = array();
         foreach ($field_names as $field_name) {
@@ -114,11 +104,6 @@ function field_collection_table_field_formatter_view($entity_type, $entity, $fie
           'data' => $column,
           'class' => array('field_collection_item'),
         );
-      }
-
-      // remove header if all labels are hidden
-      if (!array_filter($header)) {
-        $header = array();
       }
 
       $element[0] = array(
@@ -212,7 +197,6 @@ function field_collection_table_form_alter(&$form, &$form_state, $form_id) {
       if (isset($form[$field_name]) && $instance['widget']['type'] == 'field_collection_table') {
         $language = $form[$field_name]['#language'];
         $form[$field_name][$language]['#theme'] = 'field_collection_table_multiple_value_fields';
-        $form[$field_name][$language]['#custom_settings'] = $instance['widget']['settings'];
         $form[$field_name][$language]['#pre_render'][] = 'field_collection_table_pre_render_multiple_fields';
       }
     }
@@ -238,27 +222,14 @@ function field_collection_table_pre_render_field($element) {
     }
 
     $field = &$element[$field_name];
-    $field_info = field_info_field($field_name);
     $language = $field['#language'];
     if (isset($field[$language])) {
       // Set the most common places for a title to display invisible.
       $field['#title_display'] = 'invisible';
       $field[$language]['#title_display'] = 'invisible';
       foreach (element_children($field[$language]) as $child) {
-        if (array_key_exists('#type', $field[$language][$child]) && !in_array($field[$language][$child]['#type'], array('radio', 'checkbox'))) {
-           $field[$language][$child]['#title_display'] = 'invisible';
-        }
-        // Check the individual columns. Most commonly 'value'.
-        foreach ($field_info['columns'] as $column => $column_info) {
-          $field[$language][$child][$column]['#title_display'] = 'invisible';
-
-          // The date module sometimes adds its own random titles inside value.
-          if (in_array($field_info['type'], array('date', 'datestamp', 'datetime'))) {
-            foreach (element_children($field[$language][$child][$column]) as $date_child) {
-              $field[$language][$child][$column][$date_child]['#title_display'] = 'invisible';
-            }
-          }
-        }
+        $field[$language][$child]['#title_display'] = 'invisible';
+        $field[$language][$child]['value']['#title_display'] = 'invisible';
       }
     }
     else {
@@ -304,12 +275,9 @@ function field_collection_table_field_widget_info() {
     'field_collection_table' => array(
       'label' => t('Table'),
       'field types' => array('field_collection'),
-      'settings' => array(
-        'nodragging' => FALSE,
-      ),
       'behaviors' => array(
         'multiple values' => FIELD_BEHAVIOR_DEFAULT,
-        'default value' => FIELD_BEHAVIOR_NONE,
+        'default value' => FIELD_BEHAVIOR_DEFAULT,
       ),
     ),
   );
@@ -326,23 +294,4 @@ function field_collection_table_field_widget_form(&$form, &$form_state, $field, 
       break;
   }
   return $element;
-}
-
-/**
- * Implements hook_field_widget_settings_form().
- */
-function field_collection_table_field_widget_settings_form($field, $instance) {
-  $widget = $instance['widget'];
-  $settings = $widget['settings'];
-
-  if ($widget['type'] == 'field_collection_table') {
-    $form['nodragging'] = array(
-      '#type' => 'checkbox',
-      '#title' => t('Disable drag and drop'),
-      '#description' => t('If checked, users cannot rearrange the rows.'),
-      '#default_value' => $settings['nodragging'],
-    );
-  }
-
-  return $form;
 }

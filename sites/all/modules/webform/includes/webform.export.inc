@@ -50,7 +50,7 @@ function webform_webform_exporters() {
     unset($exporters['excel']);
   }
   // By default the legacy Excel exporter is disabled.
-  if (!webform_variable_get('webform_excel_legacy_exporter')) {
+  if (!variable_get('webform_excel_legacy_exporter', 0)) {
     unset($exporters['excel_legacy']);
   }
 

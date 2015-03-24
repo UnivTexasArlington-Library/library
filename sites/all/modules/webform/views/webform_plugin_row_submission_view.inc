@@ -76,9 +76,9 @@ class webform_views_plugin_row_submission_view extends views_plugin_row {
     if (isset($this->submissions[$row->{$this->field_alias}])) {
       $submission = $this->submissions[$row->{$this->field_alias}];
       $node = $this->nodes[$submission->nid];
+
       $submission->view = $this->view;
-      $format = $this->options['format'];
-      $build = webform_submission_render($node, $submission, NULL, $format);
+      $build = webform_submission_render($node, $submission, NULL, $this->options['format']);
 
       // Add extra theme functions:
       $themes = array();
@@ -87,9 +87,7 @@ class webform_views_plugin_row_submission_view extends views_plugin_row {
       }
       $build['#theme'] = $themes;
 
-      // Render built submission, and if unsanitized plain text is used, make it safe for display.
-      $render = drupal_render($build);
-      return $format == 'html' ? $render : nl2br(check_plain($render));
+      return drupal_render($build);
     }
   }
 }

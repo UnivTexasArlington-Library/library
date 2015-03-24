@@ -295,13 +295,8 @@ function _node_expire_form_alter_nodeform(&$ntype, &$form, &$form_state, $form_i
     );
   }
 
-  // If we use hidden value, do not create fieldset.
-  if ($expire_field['#type'] == 'value') {
-    $form['options1'] = array();
-    $form['options1']['expire'] = &$expire_field;
-  }
   // If the form doesn't have the publishing options we'll create our own.
-  elseif (!$form['options']['#access']) {
+  if (!$form['options']['#access']) {
     $form['options1'] = array(
       '#type' => 'fieldset',
       '#title' => t('Publishing options'),

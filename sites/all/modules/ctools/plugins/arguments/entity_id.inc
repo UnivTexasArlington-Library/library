@@ -3,7 +3,7 @@
 /**
  * @file
  *
- * Plugin to provide an argument handler for all entity ids.
+ * Plugin to provide an argument handler for all entity ids
  */
 
 /**
@@ -17,7 +17,7 @@ $plugin = array(
   'get child' => 'ctools_argument_entity_id_get_child',
   'get children' => 'ctools_argument_entity_id_get_children',
   'default' => array(
-    'entity_id' => '',
+    'entity_id' => ''
   ),
   'placeholder form' => 'ctools_argument_entity_id_ctools_argument_placeholder',
 );
@@ -41,7 +41,6 @@ function ctools_argument_entity_id_get_children($original_plugin, $parent) {
     $plugins[$plugin_id] = $plugin;
   }
   drupal_alter('ctools_entity_contexts', $plugins);
-
   return $plugins;
 }
 
@@ -61,12 +60,9 @@ function ctools_argument_entity_id_context($arg = NULL, $conf = NULL, $empty = F
     return ctools_context_create('entity:' . $entity_type, $arg);
   }
 
-  // Trim spaces and other garbage.
-  $arg = trim($arg);
-
   if (!is_numeric($arg)) {
     $preg_matches = array();
-    $match = preg_match('/\[id: (\d+)\]/', $arg, $preg_matches);
+    $match        = preg_match('/\[id: (\d+)\]/', $arg, $preg_matches);
     if (!$match) {
       $match = preg_match('/^id: (\d+)/', $arg, $preg_matches);
     }
@@ -74,18 +70,18 @@ function ctools_argument_entity_id_context($arg = NULL, $conf = NULL, $empty = F
     if ($match) {
       $id = $preg_matches[1];
     }
-    if (isset($id) && is_numeric($id)) {
+    if (is_numeric($id)) {
       return ctools_context_create('entity:' . $entity_type, $id);
     }
     return FALSE;
   }
 
-  $entities = entity_load($entity_type, array($arg));
-  if (empty($entities)) {
+  $entity = entity_load($entity_type, array($arg));
+  if (!$entity) {
     return FALSE;
   }
 
-  return ctools_context_create('entity:' . $entity_type, reset($entities));
+  return ctools_context_create('entity:' . $entity_type, $entity[$arg]);
 }
 
 function ctools_argument_entity_id_settings_form(&$form, &$form_state, $conf) {
@@ -123,7 +119,7 @@ function ctools_argument_entity_id_settings_form(&$form, &$form_state, $conf) {
 
   $form['settings']['entity_id'] = array(
     '#type' => 'value',
-    '#value' => isset($conf['entity_id']) ? $conf['entity_id'] : '',
+    '#value' => $conf['entity_id'],
   );
 
   $form['settings']['entity_type'] = array(
@@ -136,12 +132,11 @@ function ctools_argument_entity_id_settings_form(&$form, &$form_state, $conf) {
 
 function ctools_argument_entity_id_ctools_argument_placeholder($conf) {
   $conf = array(
-    '#title' => t('Enter the title or ID of a @entity entity', array('@entity' => $conf['keyword'])),
-    '#type' => 'textfield',
-    '#maxlength' => 512,
+    '#title'             => t('Enter the title or ID of a @entity entity', array('@entity' => $conf['keyword'])),
+    '#type'              => 'textfield',
+    '#maxlength'         => 512,
     '#autocomplete_path' => 'ctools/autocomplete/' . $conf['keyword'],
-    '#weight' => -10,
+    '#weight'            => -10,
   );
-
   return $conf;
 }
