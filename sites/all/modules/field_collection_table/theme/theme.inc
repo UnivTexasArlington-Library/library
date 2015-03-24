@@ -7,7 +7,11 @@ function theme_field_collection_table_multiple_value_field($variables) {
   $element = $variables['element'];
   $header = array();
   $cells = array();
-  foreach (field_info_instances($element['#entity_type'], $element['#bundle']) as $field_name => $instance) {
+
+  // Order field widgets by their widget weight.
+  $instances = field_info_instances($element['#entity_type'], $element['#bundle']);
+  uasort($instances, '_field_collection_table_sort_items_widget_helper');
+  foreach ($instances as $field_name => $instance) {
     if (empty($element[$field_name])) {
       continue;
     }
@@ -28,6 +32,15 @@ function theme_field_collection_table_multiple_value_field($variables) {
 
   $element['#sorted'] = FALSE;
   return drupal_render_children($element);
+}
+
+/**
+ * Comparison function for sorting field instances by their widget's weight.
+ */
+function _field_collection_table_sort_items_widget_helper($a, $b) {
+  $a_weight = (is_array($a) && isset($a['widget']['weight']) ? $a['widget']['weight'] : 0);
+  $b_weight = (is_array($b) && isset($b['widget']['weight']) ? $b['widget']['weight'] : 0);
+  return $a_weight - $b_weight;
 }
 
 /**
@@ -59,34 +72,52 @@ function theme_field_collection_table_multiple_value_fields($variables) {
     }
     usort($items, '_field_sort_items_value_helper');
 
-    $header = array(
-      array(
-        'data' => '<label>' . t('!title: !required', array('!title' => $element['#title'], '!required' => $required)) . "</label>",
-        'class' => array('field-label'),
-      ),
-    );
+    // Add header for table dragging.
+    if (!$element['#custom_settings']['nodragging']) {
+      $header = array(
+          array(
+              'data' => '<label>' . t('!title: !required', array('!title' => $element['#title'], '!required' => $required)) . "</label>",
+              'class' => array('field-label'),
+          ),
+      );
+    }
 
     // Add the items as table rows.
     foreach ($items as $key => $item) {
       uasort($item, 'element_sort');
       $item['_weight']['#attributes']['class'] = array($order_class);
-      $cells = array(
-        array('data' => '', 'class' => array('field-multiple-drag')),
-      );
-      foreach (element_children($item) as $field_name) {
-        // Only add the header once.
-        if ($key == 0) {
-          $header[] = array(
-            'data' => '<label>' . t('!title', array('!title' => _field_collection_table_get_title($item[$field_name]))) . '</label>',
-            'class' => array('field-label'),
-          );
-        }
-        $cells[] = array('data' => $item[$field_name]);
+      $cells = array();
+      // Add classes for dragging if needed.
+      if (!$element['#custom_settings']['nodragging']) {
+        $cells = array(
+          array('data' => '', 'class' => array('field-multiple-drag')),
+        );
       }
-      $rows[] = array(
-        'data' => $cells,
-        'class' => array('draggable'),
-      );
+      foreach (element_children($item) as $field_name) {
+        // Don't add the _weight
+        if (!$element['#custom_settings']['nodragging'] || $field_name != '_weight') {
+          // Only add the header once.
+          if ($key == 0) {
+            $header[] = array(
+              'data' => '<label>' . t('!title', array('!title' => _field_collection_table_get_title($item[$field_name]))) . '</label>',
+              'class' => array('field-label'),
+            );
+          }
+          $cells[] = array('data' => $item[$field_name]);
+        }
+      }
+      // Mark rows as draggable if needed.
+      if (!$element['#custom_settings']['nodragging']) {
+        $rows[] = array(
+          'data' => $cells,
+          'class' => array('draggable'),
+        );
+      }
+      else {
+        $rows[] = array(
+          'data' => $cells,
+         );
+      }
     }
 
     $output = array(
@@ -97,6 +128,7 @@ function theme_field_collection_table_multiple_value_fields($variables) {
       '#theme' => 'table',
       '#header' => $header,
       '#rows' => $rows,
+      '#weight' => 20,
       '#attributes' => array(
         'id' => $table_id,
         'class' => array(
@@ -109,9 +141,11 @@ function theme_field_collection_table_multiple_value_fields($variables) {
         '#prefix' => '<div class="description">',
         '#suffix' => '</div>',
         '#markup' => $element['#description'],
+        '#weight' => 30,
       );
     }
     if (isset($add_more_button)) {
+      $add_more_button['#weight'] = 40;
       $output[] = $add_more_button + array(
         '#prefix' => '<div class="clearfix">',
         '#suffix' => '</div>',
@@ -120,7 +154,10 @@ function theme_field_collection_table_multiple_value_fields($variables) {
 
     $output = drupal_render($output);
 
-    drupal_add_tabledrag($table_id, 'order', 'sibling', $order_class);
+    // Add table drag
+    if (!$element['#custom_settings']['nodragging']) {
+      drupal_add_tabledrag($table_id, 'order', 'sibling', $order_class);
+    }
   }
   else {
     foreach (element_children($element) as $key) {
@@ -174,7 +211,7 @@ function _field_collection_table_hide_empty(&$variables) {
  * Derivative of theme_table() solely for the HOOK_preprocess_table__PATTERN().
  */
 function theme_table__field_collection_table($variables) {
-  return theme_table($variables);
+  return theme('table', $variables);
 }
 
 /**

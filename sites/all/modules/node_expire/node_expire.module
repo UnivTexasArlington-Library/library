@@ -63,7 +63,7 @@ function node_expire_menu() {
  */
 function node_expire_form_alter(&$form, &$form_state, $form_id) {
   if ((isset($form['type'])) &&
-    (isset($form['type']['#value'])) &&
+    (isset($form['type']['#value']) && is_string($form['type']['#value'])) &&
     ($form['type']['#value'] . '_node_form' == $form_id) &&
     ($ntypes = variable_get('node_expire_ntypes', array())) &&
     (isset($ntypes[$form['type']['#value']])) &&
@@ -252,12 +252,12 @@ function node_expire_node_delete($node) {
 function node_expire_permission() {
   return array(
     'administer node expire' => array(
-      'title' => t('administer node expire'),
-      'description' => t('TODO Add a description for "administer node expire"'),
+      'title' => t('Administer node expire'),
+      'description' => t('Administer node expire functionality.'),
     ),
     'edit node expire' => array(
-      'title' => t('edit node expire'),
-      'description' => t('TODO Add a description for "edit node expire"'),
+      'title' => t('Edit node expire'),
+      'description' => t('Edit node expiration dates.'),
     ),
   );
 }

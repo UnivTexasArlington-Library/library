@@ -8,9 +8,9 @@ dependencies[]  = rules
 ; Tests.
 files[] = tests/node_expire.admin.test
 
-; Information added by Drupal.org packaging script on 2014-09-02
-version = "7.x-1.7"
+; Information added by Drupal.org packaging script on 2015-03-06
+version = "7.x-1.8"
 core = "7.x"
 project = "node_expire"
-datestamp = "1409672968"
+datestamp = "1425669799"
 

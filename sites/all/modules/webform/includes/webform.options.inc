@@ -130,16 +130,3 @@ function webform_options_united_states($component, $flat, $arguments) {
     'WY' => t('Wyoming'),
   );
 }
-/**
- * Options list containing UT Arlington Classification.
- */
-function webform_options_classification($component, $flat, $arguments) {
-  return array(
-    'faculty' => t('Faculty'),
-    'faculty-associate' => t('Faculty Assoicate'),
-    'grad' => t('Student-Graduate'),
-    'undergrad' => t('Student-Undergraduate'),
-    'staff' => t('Staff'),
-    'other' => t('Other'),
-  );
-}
