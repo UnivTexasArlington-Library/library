@@ -6,17 +6,6 @@
  */
 
 /**
- * Implements hook_install().
- */
-/*
-function node_expire_install() {
-  // TODO The drupal_(un)install_schema
-  // functions are called automatically in D7.
-  // drupal_install_schema('node_expire')
-}
-*/
-
-/**
  * Implements hook_schema().
  */
 function node_expire_schema() {
