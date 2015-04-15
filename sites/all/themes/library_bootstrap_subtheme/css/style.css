@@ -6909,19 +6909,19 @@ body {
   color: #f58025;
   background: #dddbdc;
   border: none;
-  padding-top: 17px;
+  padding-top: 10px;
   margin-left: -15px;
   margin-right: -15px;
   padding-right: 15px;
   text-transform: uppercase;
-  padding-bottom: 5px;
-  min-height: 75px;
-  font-size: 2.3em;
+  padding-bottom: 11px;
+  min-height: 0px;
+  font-size: 1.8em;
 }
 .page-header:before {
-  content: url('http://library-beta.uta.edu/sites/default/files/orange.png');
+  content: url('http://library.uta.edu/sites/default/files/WebsiteImages/orange.png');
   display: inline-block;
-  margin-top: -17px;
+  margin-top: -10px;
   float: left;
   padding-right: 15px;
 }
@@ -7007,12 +7007,13 @@ body {
   padding-right: 12px;
 }
 .univ_logo img {
-  max-width: 26px;
-  margin-bottom: 6px;
+  max-width: 17px;
+  margin-bottom: 2px;
 }
 .univ_logo a {
   color: #FFFFFF;
   vertical-align: bottom;
+  font-size: 12px;
 }
 .center-container {
   background: #FFFFFF;
@@ -7097,7 +7098,7 @@ body {
   margin-right: 5px;
 }
 #block-menu-menu-left-menu-top .block-title-link:after {
-  background: url('http://library-beta.uta.edu/sites/default/files/research_icon.png');
+  background: url('http://library.uta.edu/sites/default/files/WebsiteImages/research_icon.png');
   width: 35px;
   height: 36px;
 }
@@ -7109,19 +7110,19 @@ body {
   padding-right: 16px;
 }
 #block-menu-menu-left-menu-bottom .block-title-link:before {
-  content: url('http://library-beta.uta.edu/sites/default/files/services_icon.png');
+  content: url('http://library.uta.edu/sites/default/files/WebsiteImages/services_icon.png');
   display: inline-block;
   float: left;
   padding-right: 7px;
 }
 #block-menu-menu-right-menu-bottom .block-title-link:after {
-  background: url('http://library-beta.uta.edu/sites/default/files/about_icon.png');
+  background: url('http://library.uta.edu/sites/default/files/WebsiteImages/about_icon.png');
   width: 46px;
   height: 27px;
   margin-top: 4px;
 }
 #block-menu-menu-right-menu-top .block-title-link:after {
-  background: url('http://library-beta.uta.edu/sites/default/files/help_icon.png');
+  background: url('http://library.uta.edu/sites/default/files/WebsiteImages/help_icon.png');
   width: 35px;
   height: 35px;
 }
@@ -7154,7 +7155,7 @@ body {
   margin-bottom: 0;
 }
 .summon {
-  background: url(../Homecoming2014_revision.jpg);
+  background: url("http://library.uta.edu/sites/default/files/HomepageImages/fablab-beta-site.png");
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -7164,7 +7165,7 @@ body {
   height: 100%;
   border: none;
   text-transform: uppercase;
-  padding: 5% 0 5% 0;
+  padding: 10% 0 11% 0;
   font-size: 1.4em;
   text-shadow: #000000 1px 1px;
   display: block;
@@ -7185,18 +7186,19 @@ body {
   padding-left: 15px;
   padding-right: 15px;
   background-size: contain;
+  background-position: 16px;
 }
 .summon #everything-button {
-  background-image: url('http://library-beta.uta.edu/sites/default/files/everything.png');
+  background-image: url('http://library.uta.edu/sites/default/files/WebsiteImages/everything.png');
 }
 .summon #website-button {
-  background-image: url('http://library-beta.uta.edu/sites/default/files/website.png');
+  background-image: url('http://library.uta.edu/sites/default/files/WebsiteImages/website.png');
 }
 .summon #articles-button {
-  background-image: url('http://library-beta.uta.edu/sites/default/files/articles.png');
+  background-image: url('http://library.uta.edu/sites/default/files/WebsiteImages/articles.png');
 }
 .summon #books-button {
-  background-image: url('http://library-beta.uta.edu/sites/default/files/books.png');
+  background-image: url('http://library.uta.edu/sites/default/files/WebsiteImages/books.png');
 }
 .summon .summon-search-box {
   width: 100%;
@@ -7211,9 +7213,16 @@ body {
   font-size: 1.8em;
   border-radius: 5px;
   line-height: 2.2em;
-  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  /* old code
+		-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+		box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+		*/
+  /*Code for  for shadow effect*/
+  -webkit-box-shadow: inset 5px 6px 4px 0px #2F3030;
+  -moz-box-shadow: inset 5px 6px 4px 0px #2F3030;
+  box-shadow: inset 5px 6px 4px 0px #2F3030;
+  /*code for shadow effect ends here*/
   border: none;
 }
 .summon .summon-search-submit {
@@ -7224,8 +7233,8 @@ body {
   color: #FFFFFF;
   padding: 19px;
   text-transform: uppercase;
-  margin-left: -30px;
-  margin-top: -4px;
+  margin-left: -37px;
+  margin-top: -14px;
   position: absolute;
   border: none;
   -webkit-box-shadow: 0px 0px 10px 0px #000000;
@@ -7353,10 +7362,15 @@ body {
 .field-type-image img {
   width: auto;
   height: auto;
-  max-height: 300px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+@media (max-width: 767px) {
+  .field-type-image img {
+    width: 100%;
+    height: 100%;
+  }
 }
 /*for homepage*/
 h3 {
@@ -7384,7 +7398,7 @@ h3 a {
   padding-bottom: 4px;
 }
 .node-home-page h3 {
-  font-size: 1.7em;
+  font-size: 1.5em;
 }
 /*for spco menu*/
 #block-menu-menu-spco-menu .dropdown-menu {
@@ -7542,7 +7556,7 @@ h3 a {
   border: none;
   font-size: 1.2em;
   margin-bottom: 0;
-  border-bottom: 1px solid #dddbdb;
+  border-bottom: 0px solid #dddbdb;
 }
 #block-available-now-available-now .avail {
   font-size: 2em;
@@ -7595,6 +7609,7 @@ h3 a {
   font-weight: bold;
   font-size: 2em;
   float: right;
+  margin-right: -45px;
 }
 .give img {
   width: 45%;
@@ -7652,6 +7667,13 @@ h3 a {
   padding-top: 20px;
   width: 100%;
   height: 100%;
+  /*for staff directoy, in smaller devices*/
+}
+@media (max-width: 768px) {
+  .node-staff .field-name-field-image img {
+    width: auto;
+    height: 100%;
+  }
 }
 /*for locations */
 .node-location img {
@@ -7897,4 +7919,7 @@ h3 a {
 }
 .col-bottom {
   vertical-align: bottom;
+}
+.webform-container-inline {
+  display: inline;
 }
