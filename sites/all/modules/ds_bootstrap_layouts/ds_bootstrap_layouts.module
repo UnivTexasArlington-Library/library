@@ -223,19 +223,6 @@ function ds_bootstrap_layouts_ds_layout_info() {
     'image' => TRUE,
   );
   
-  $layouts['bootstrap_4_8_4_4_bricks'] = array(
-    'label' => t('Bootstrap Three Columns: 4-8-4-4 bricks'),
-    'path' => $threecol . '/bootstrap_4_8_4_4_bricks',
-    'regions' => array(
-      'left' => t('Left'),
-      'topright' => t('Upper Right'),
-      'bottomleft' => t('Lower Left'),
-      'bottomright' => t('Lower Right'),
-    ),
-    'form' => TRUE,
-    'image' => TRUE,
-  );
-
   $layouts['bootstrap_5_5_2'] = array(
     'label' => t('Bootstrap Three Columns: 5-5-2'),
     'path' => $threecol . '/bootstrap_5_5_2',
