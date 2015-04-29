@@ -15,6 +15,13 @@
 body {
 	font-family: 'Calibri', 'Open Sans';
 }
+h4 {
+	text-transform: uppercase;
+	color: #f58025;
+}
+h5 {
+	font-weight: bold;
+}
 
 /*for page titles*/
 .page-header {
@@ -249,7 +256,7 @@ body {
 	margin-bottom:0;
 }
 .summon {
-	background: url("http://library.uta.edu/sites/default/files/HomepageImages/fablab-beta-site.png");
+	background: url('/sites/default/files/HomepageImages/window13.jpg');
 	background-size: 100%;
 	background-repeat:no-repeat;
 	.btn-summon {
@@ -276,7 +283,7 @@ body {
 		padding-left:15px;
 		padding-right:15px;
 		background-size:contain;
-		background-position:16px;
+		background-position: 16px;
 	}
 	#everything-button {
 		background-image:url('http://library.uta.edu/sites/default/files/WebsiteImages/everything.png');
@@ -303,17 +310,16 @@ body {
 		font-size: 1.8em;
 		border-radius:5px;
 		line-height:2.2em;
-		/* old code
-		-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+		/* old code	304	
+		-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);	
 		-moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-		box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-		*/
-		/*Code for  for shadow effect*/
-		-webkit-box-shadow: inset 5px 6px 4px 0px #2F3030;
-		-moz-box-shadow: inset 5px 6px 4px 0px #2F3030;
-		box-shadow: inset 5px 6px 4px 0px #2F3030;
-		/*code for shadow effect ends here*/
-		border:none;
+		box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75); 	 	
+		*/ 	 	
+		/*Code for for shadow effect*/ 	 	
+		-webkit-box-shadow: inset 5px 6px 4px 0px #2F3030; 	 	
+		-moz-box-shadow: inset 5px 6px 4px 0px #2F3030; 	 	
+		box-shadow: inset 5px 6px 4px 0px #2F3030; 	 	
+		/*code for shadow effect ends here*/ 
 	}
 	.summon-search-submit {
 		background: @brand-warning;
@@ -371,12 +377,6 @@ body {
 		margin-right:auto;
 	}
 }
-
-
-
-
-
-
 /*SYSTEM WIDE SETTINGS*/
 /*for orange font*/
 .orange {	
@@ -463,12 +463,13 @@ body {
 .field-type-image {
 	img {
 		width:auto;
+		max-width: 100%;
 		height:auto;
 		display:block;
 		margin-left:auto;
 		margin-right:auto;
-		@media(max-width: 767px) {
-			width: 100%;
+		@media (max-width: 767px) {
+			width:100%;
 			height: 100%;
 		}
 	}
@@ -665,11 +666,18 @@ h3 {
 		font-size:1.2em;
 		margin-bottom:0;
 		border-bottom: 0px solid #dddbdb;
+		@media(max-width:997px) {
+			font-size: small;
+		}
 	}
 	.avail {
 		font-size:2em;
 		padding-top:27px;
 		padding-bottom:27px;
+		@media(max-width:997px) {
+			padding-top: none;
+			padding-bottom: none;
+		}
 	}
 }
 /*for hours block*/
@@ -779,17 +787,15 @@ h3 {
 			padding-top: 20px;
 			width: 100%;
 			height: 100%;
-			/*for staff directoy, in smaller devices*/
-			@media(max-width: 768px) {
-				width:auto;
+			/*for staff directoy, in smaller devices*/ 	 	
+			@media(max-width: 768px) { 	 	
+				width:auto; 	 	
 				height: 100%;
-			}
+				padding-bottom: 10px; 	 	
+			} 
 		}
 	}
 }
-
-
-
 /*for locations */
 .node-location {
 	img {
@@ -952,6 +958,10 @@ h3 {
 .page-node-560 .page-header, .page-node-560 .breadcrumb {
 	display:none;
 }
+/*for webforms*/
+.webform-container-inline {
+	display: inline;
+}
 
 /*for columns of same height*/
 
@@ -1020,6 +1030,16 @@ h3 {
 .col-bottom {
     vertical-align:bottom;
 }
-.webform-container-inline {
-	display: inline;
+/* for Digital Bookplates */
+.booktitle {
+	font-size: 20px;
+	text-transform: uppercase;
+	color: #f58025;
+}
+.field-name-field-digital-bookplate-item {
+	margin-top: 20px;
+}
+.thumbnail {
+	background-color: transparent;
+	border-color: #0064b1;
 }
