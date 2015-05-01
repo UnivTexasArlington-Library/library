@@ -7162,7 +7162,7 @@ h5 {
   margin-bottom: 0;
 }
 .summon {
-  background: url('/sites/default/files/HomepageImages/window13.jpg');
+  background: url('/sites/default/files/HomepageImages/window13_2000.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -7190,7 +7190,7 @@ h5 {
 .summon #books-button {
   background-repeat: no-repeat;
   border-radius: 5px;
-  padding-left: 15px;
+  padding-left: 10px;
   padding-right: 15px;
   background-size: contain;
   background-position: 16px;
