@@ -361,13 +361,16 @@ function opening_hours_instance_prepare($instance) {
  */
 function opening_hours_format_time($time) {
   $matches = array();
+  $time_formatted = NULL;
   preg_match('/^([0-2]?\d):([0-5]?\d)/', $time, $matches);
 
   if (!empty($matches[1]) && !empty($matches[2])) {
-    return $matches[1] . ':' . $matches[2];
+    $time_formatted = $matches[1] . ':' . $matches[2];
   }
 
-  return NULL;
+  drupal_alter('opening_hours_format_time', $time_formatted);
+
+  return $time_formatted;
 }
 
 /**
@@ -419,9 +422,7 @@ function opening_hours_repeat_instance_propagate(&$instance) {
     }
   }
 
-  while ($current_date < $limit) {
-    $current_date += $increment;
-
+  for ($current_date += $increment; $current_date < $limit; $current_date += $increment) {
     // Generate the new propagated instance.
     $propagated = (object) array(
       'nid' => $instance->nid,
