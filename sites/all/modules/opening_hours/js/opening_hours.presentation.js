@@ -145,8 +145,8 @@
         daysContainer.empty();
 
         // Fill in the header.
-        self.el.find('.from_date').text($.datepicker.formatDate('d/m', self.week.dates[0]));
-        self.el.find('.to_date').text($.datepicker.formatDate('d/m', self.week.dates[6]));
+        self.el.find('.from_date').text($.datepicker.formatDate('m/d', self.week.dates[0]));
+        self.el.find('.to_date').text($.datepicker.formatDate('m/d', self.week.dates[6]));
         // Use the middle day of the week to get the week number, to
         // dodge off-by-one-errors in older versions of jQuery UI.
         self.el.find('.week_num').text($.datepicker.iso8601Week(self.week.dates[3]));
@@ -175,6 +175,63 @@
               category = Drupal.settings.OpeningHours.categories[instance.category_tid];
             }
 
+            var start = instance.start_time;
+            var end = instance.end_time;
+
+            if (start.indexOf(":30") > 0) {
+                var startst = start.split(":");
+                start = parseInt(startst[0]);
+                var startmin = startst[1];
+              } else {
+               start = parseInt(start);
+              }
+             var startmerid = '';
+              if (start > 12) {
+                start = (start - 12);
+                startmerid = " p.m.";
+              }
+              else if (start == 12) {
+                startmerid = " p.m.";
+              }
+              else if (start == 0) {
+                start = "Midnight";
+              }
+              else if (start < 12) {
+                startmerid = " a.m.";
+              }
+            if (startmin) {
+                start = start + ":" + startmin + startmerid;
+            } else {
+                start = start + startmerid;
+            }
+
+            if (end.indexOf(":30") > 0) {
+                var endst = end.split(":");
+                end = parseInt(endst[0]);
+                var endmin = endst[1];
+            } else {
+              end = parseInt(end);
+            }
+             var endmerid = '';
+              if (end > 12) {
+                end = (end - 12);
+                endmerid = " p.m.";
+              }
+              else if (end == 12) {
+                endmerid = " p.m.";
+              }
+              else if (end == 0) {
+                end = "Midnight";
+              }
+              else if (end < 12) {
+                endmerid = " a.m.";
+              }
+            if (endmin) {
+                end = end + ":" + endmin + endmerid;
+            } else {
+                end = end + endmerid;
+            }
+            
             renderedInstances.push(self.options.instanceTemplate({
               start_time: instance.start_time,
               end_time: instance.end_time,
