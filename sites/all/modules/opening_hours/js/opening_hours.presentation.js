@@ -233,8 +233,8 @@
             }
             
             renderedInstances.push(self.options.instanceTemplate({
-              start_time: instance.start_time,
-              end_time: instance.end_time,
+              start_time: start,
+              end_time: end,
               category: category,
               notice: instance.notice || ''
             }));
