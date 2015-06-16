@@ -365,12 +365,10 @@ function opening_hours_format_time($time) {
   preg_match('/^([0-2]?\d):([0-5]?\d)/', $time, $matches);
 
   if (!empty($matches[1]) && !empty($matches[2])) {
-    $time_formatted = $matches[1] . ':' . $matches[2];
+    return $matches[1] . ':' . $matches[2];
   }
 
-  drupal_alter('opening_hours_format_time', $time_formatted);
-
-  return $time_formatted;
+  return NULL;
 }
 
 /**
