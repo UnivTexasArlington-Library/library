@@ -55,7 +55,7 @@
           options.success();
         }
       },
-      url: Drupal.settings.basePath + 'opening_hours/instances'
+      url: Drupal.settings.basePath + Drupal.settings.pathPrefix + 'opening_hours/instances'
     });
   };
 
@@ -205,7 +205,6 @@
                 start = start + startmerid;
             }
 
-            
             if (end.indexOf(":30") > 0) {
                 var endst = end.split(":");
                 end = parseInt(endst[0]);
@@ -232,7 +231,7 @@
             } else {
                 end = end + endmerid;
             }
-
+            
             renderedInstances.push(self.options.instanceTemplate({
               start_time: start,
               end_time: end,

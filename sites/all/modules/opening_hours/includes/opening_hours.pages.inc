@@ -14,7 +14,18 @@ function opening_hours_node_edit_page($node) {
   drupal_add_css(drupal_get_path('module', 'opening_hours') . '/css/opening_hours.admin.css');
   opening_hours_add_js('admin', $node->nid);
 
+  $page = array();
+  
   return theme('opening_hours_admin');
+
+  $page['#attached'] = opening_hours_js_attach_admin($node->nid);
+
+  // No arguments to this theme function.
+  $page[] = array(
+    '#theme' => 'opening_hours_admin',
+  );
+
+  return $page;
 }
 
 /**
@@ -50,8 +61,8 @@ function opening_hours_crud_api_page() {
         // Clear the cached array storing which nodes have opening hours.
         cache_clear_all('opening_hours_present_on_node', 'cache');
       }
-
       break;
+
     case 'GET':
       // The nid parameter might be an array. If it's a single value, it
       // should still pass these filters with no trouble.
@@ -86,6 +97,7 @@ function opening_hours_instance_id_api_page($instance) {
     case 'GET':
       $output[] = $instance;
       break;
+
     case 'PUT':
       $updated_instance = _opening_hours_get_instance_from_request();
 
@@ -103,6 +115,7 @@ function opening_hours_instance_id_api_page($instance) {
 
       $output[] = _opening_hours_instance_update($updated_instance, $instance);
       break;
+
     case 'DELETE':
       _opening_hours_instance_delete($instance);
       break;
@@ -140,7 +153,7 @@ function _opening_hours_get_instance_from_request() {
  * Also updates propagated copies, if applicable.
  *
  * @param stdClass $instance
- *   The updated instance object.
+ *   The updated instance stdClass.
  * @param stdClass $original
  *   Original instance data as currently stored in the database.
  *
@@ -232,16 +245,18 @@ function _opening_hours_instance_update($instance, $original) {
   // Once that's all done, first update the original instance, and then
   // any propagated copies.
   drupal_write_record('opening_hours', $instance, array('instance_id'));
-	$start_time = date('h A', strtotime($instance->start_time));
-	$end_time = date('h A', strtotime($instance->end_time));
+
+  $start_time = date('h A', strtotime($instance->start_time));
+  $end_time = date('h A', strtotime($instance->end_time));
 
   $query = db_query("
     UPDATE {opening_hours}
     SET start_time = :start, end_time = :end, category_tid = :tid, notice = :notice
     WHERE customised = 0 AND original_instance_id = :id
   ", array(
-    ':start' => $start_time,
-    ':end' => $end_time,
+
+    ':start' => $instance->start_time,
+    ':end' => $instance->end_time,
     ':tid' => $instance->category_tid,
     ':notice' => $instance->notice,
     ':id' => $instance->instance_id,
