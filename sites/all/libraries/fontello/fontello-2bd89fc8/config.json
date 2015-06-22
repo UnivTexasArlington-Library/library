@@ -1,0 +1,40 @@
+{
+  "name": "fontawesome",
+  "css_prefix_text": "icon-30-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "6cc7af3e5b55720bcb6ef68372ce24be",
+      "css": "facebook-official",
+      "code": 59392,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "4c1ef492f1d2c39a2250ae457cee2a6e",
+      "css": "instagram",
+      "code": 59395,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "79689c4c425b7cdaa2746f510e81e27a",
+      "css": "pinterest-squared",
+      "code": 59393,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "906348dc798a0d42715cc97c875e3ac6",
+      "css": "twitter-squared",
+      "code": 59394,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "e331ff486a299c6bdf0056426c8fac53",
+      "css": "youtube-squared",
+      "code": 59396,
+      "src": "fontawesome"
+    }
+  ]
+}
