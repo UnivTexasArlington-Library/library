@@ -19,6 +19,25 @@ function changeSearch(tabID) {
 	}
 }
 
+//for new homepage searchbox
+$(document).ready(function () {
+  $("#hider").hide();
+  $("#hiderarticles").hide();
+    });
+$("#books").click(function(){
+  $("#hiderarticles").hide();
+  $('#hider').show();
+  
+});
+$("#everything").click(function(){
+  $("#hiderarticles").hide();
+  $('#hider').hide();
+});
+$("#articles").click(function(){
+  $('#hider').hide();
+  $("#hiderarticles").show();
+});
+
 
 //for getting individual count of everything summon search in google analytics
 jQuery(document).ready(function($) {
