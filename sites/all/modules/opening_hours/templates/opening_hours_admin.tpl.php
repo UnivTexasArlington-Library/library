@@ -44,7 +44,7 @@
 <script type="text/template" id="oho-instance-display-template">
   <span class="start_time"><%= start_time %></span> –
   <span class="end_time"><%= end_time %></span>
-  <p class="category"><%= category %></span>
+  <p class="category"><%= category %></p>
   <p class="notice"><%= notice %></p>
 </script>
 
