@@ -12,7 +12,7 @@ endif;
   <div class="header">
     <a class="prev" href="#prev">←</a>
     <?php print t('Week'); ?>
-    <!--<span class="week_num"></span> – -->
+    <span class="week_num"></span> –
     <span class="from_date"></span> –
     <span class="to_date"></span>
     <a class="next" href="#next">→</a>

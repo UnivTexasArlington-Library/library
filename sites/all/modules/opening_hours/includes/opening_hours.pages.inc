@@ -10,13 +10,7 @@
 function opening_hours_node_edit_page($node) {
   drupal_set_title(t('Opening hours for @title', array('@title' => $node->title)));
 
-  drupal_add_css(drupal_get_path('module', 'jquery_ui') . '/jquery.ui/themes/default/ui.all.css');
-  drupal_add_css(drupal_get_path('module', 'opening_hours') . '/css/opening_hours.admin.css');
-  opening_hours_add_js('admin', $node->nid);
-
   $page = array();
-  
-  return theme('opening_hours_admin');
 
   $page['#attached'] = opening_hours_js_attach_admin($node->nid);
 
@@ -152,12 +146,12 @@ function _opening_hours_get_instance_from_request() {
  *
  * Also updates propagated copies, if applicable.
  *
- * @param stdClass $instance
- *   The updated instance stdClass.
- * @param stdClass $original
+ * @param object $instance
+ *   The updated instance object.
+ * @param object $original
  *   Original instance data as currently stored in the database.
  *
- * @return stdClass
+ * @return object
  *   Returns $instance.
  */
 function _opening_hours_instance_update($instance, $original) {
@@ -246,15 +240,11 @@ function _opening_hours_instance_update($instance, $original) {
   // any propagated copies.
   drupal_write_record('opening_hours', $instance, array('instance_id'));
 
-  $start_time = date('h A', strtotime($instance->start_time));
-  $end_time = date('h A', strtotime($instance->end_time));
-
   $query = db_query("
     UPDATE {opening_hours}
     SET start_time = :start, end_time = :end, category_tid = :tid, notice = :notice
     WHERE customised = 0 AND original_instance_id = :id
   ", array(
-
     ':start' => $instance->start_time,
     ':end' => $instance->end_time,
     ':tid' => $instance->category_tid,
@@ -275,7 +265,7 @@ function _opening_hours_instance_update($instance, $original) {
  *
  * Also deletes propagated copies, if applicable.
  *
- * @param stdClass $instance
+ * @param object $instance
  *   The update instance object.
  */
 function _opening_hours_instance_delete($instance) {
