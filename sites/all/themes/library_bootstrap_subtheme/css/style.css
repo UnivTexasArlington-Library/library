@@ -7380,6 +7380,11 @@ h5 {
 			height: 100%;
 		}*/
 }
+@media (max-width: 767px) {
+  .field-type-image img {
+    padding-bottom: 10px;
+  }
+}
 /*for homepage*/
 h3 {
   color: #f58025;
