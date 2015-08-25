@@ -7380,6 +7380,11 @@ h5 {
 			height: 100%;
 		}*/
 }
+@media (max-width: 767px) {
+  .field-type-image img {
+    padding-bottom: 10px;
+  }
+}
 /*for homepage*/
 h3 {
   color: #f58025;
@@ -7955,6 +7960,7 @@ h3 a {
   background-color: transparent;
   border-color: #0064b1;
 }
+<<<<<<< HEAD
 .bootstrap-twocol-stacked {
   margin-left: 15px;
   margin-right: 15px;
@@ -8057,4 +8063,97 @@ h3 a {
 #searc-bar {
   margin-top: -15px;
   width: 300px !important;
+=======
+/*DEPARTMENT */
+.taxonomy-term-description {
+  margin-bottom: 1em;
+}
+.pane-taxonomy-term-field-organization-chart {
+  margin-left: -15px;
+}
+.view-staff-by-department {
+  margin-left: 15px;
+}
+/*FOOTER*/
+.inq-links {
+  float: left;
+}
+/*lg screens*/
+@media (min-width: 1200px) {
+  .inq-links {
+    width: 25em;
+  }
+  .cc-info {
+    float: right;
+  }
+  .fb-icon,
+  .tw-icon,
+  .yt-icon {
+    width: 6.9em;
+  }
+}
+/*lg screen ends*/
+/*md screen*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .fb-icon,
+  .tw-icon,
+  .yt-icon {
+    width: 6.5em;
+  }
+}
+/*md screen ends*/
+/*sm screen*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .fb-icon,
+  .tw-icon,
+  .yt-icon {
+    width: 4em;
+    padding: 0px;
+  }
+  .address-block {
+    margin-bottom: 10px;
+  }
+  .sm-links {
+    /*left:15em;*/
+    float: none;
+  }
+  .cc-info {
+    /*left: 10em;*/
+    float: right;
+  }
+  /*				.links{
+	float: left;
+}*/
+}
+/*sm screen ends*/
+/*xs screen*/
+@media (max-width: 767px) {
+  .address-block,
+  .inq-links,
+  .links,
+  .cc-info {
+    width: 100%;
+  }
+  /*.sm-links{
+		width: 100%
+	}*/
+  .sm-links {
+    margin-bottom: 10px;
+  }
+  .sm-links img {
+    /*width: 4.5em !important;*/
+    padding: 0px;
+  }
+  .links {
+    text-align: left;
+  }
+  .footer {
+    margin: auto;
+    text-align: center !important;
+    text-align: -moz-center !important;
+  }
+  .inq-links-right {
+    text-align: left;
+  }
+>>>>>>> origin/clean
 }
