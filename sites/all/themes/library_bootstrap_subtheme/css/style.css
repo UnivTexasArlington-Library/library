@@ -7955,3 +7955,106 @@ h3 a {
   background-color: transparent;
   border-color: #0064b1;
 }
+.bootstrap-twocol-stacked {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.view-homepage-images {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.view-homepage-images .carousel-caption {
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+/*New searchbox styles */
+.marketing-image {
+  background-image: url('http://library.uta.edu/sites/default/files/HomepageImages/window13.jpg');
+  /*http://library.uta.edu/sites/default/files/HomepageImages/window13.jpg*/
+  background-repeat: no-repeat;
+  /*height: 700px;*/
+  background-size: cover;
+}
+.marketing-caption {
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #dedcdc;
+  margin-top: 6em;
+}
+.summon-row {
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.summon-form {
+  background-color: #0064b1;
+}
+.search-bar-label {
+  display: block !important ;
+  margin-bottom: 0px !important;
+}
+.radio-back,
+.checkbox-back {
+  background: #477CDE;
+  padding-right: 0px !important;
+  font-size: 10px;
+}
+.radio-back {
+  padding-left: 15px !important;
+}
+.checkbox-back {
+  padding-left: 0px !important;
+}
+.searchbar-row {
+  /*background: #477CDE;*/
+}
+.radio-styles {
+  margin-bottom: 2px !important;
+}
+.checkbox-styles {
+  margin-bottom: 9px !important;
+}
+#searchbox,
+.searchbargroup,
+#searchgroupglyphbtn,
+#AdvSearchddbtn {
+  line-height: 1.42857143 !important;
+  height: 65px !important;
+}
+#searchbox {
+  font-size: 36px;
+}
+#closeglp {
+  right: -100px;
+}
+#closeglph {
+  right: -180px;
+}
+#radiogroups {
+  background-color: #477CDE;
+  width: 300px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+#hider {
+  margin-top: -15px;
+  padding-top: 0px;
+  width: 120px;
+  margin-left: 180px;
+  z-index: 1000;
+  position: absolute;
+  background-color: #477CDE;
+}
+#hiderarticles {
+  margin-top: -15px;
+  padding-top: 0px;
+  margin-left: 100px;
+  width: 200px;
+  z-index: 1000;
+  position: absolute;
+  background-color: #477CDE;
+}
+#searc-bar {
+  margin-top: -15px;
+  width: 300px !important;
+}
