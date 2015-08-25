@@ -27,7 +27,6 @@ $(document).ready(function () {
 $("#books").click(function(){
   $("#hiderarticles").hide();
   $('#hider').show();
-  
 });
 $("#everything").click(function(){
   $("#hiderarticles").hide();
