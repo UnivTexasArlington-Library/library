@@ -40,6 +40,15 @@ function changeSearch(tabID) {
 jQuery(document).ready(function() {
   jQuery("#hider").hide();
   jQuery("#hiderarticles").hide();
+});
+
+$("#articles").on("click", function(e) {
+	//e.preventDefault();
+	$("#hider").hide();
+	$("#hiderarticles").show();
+	$('#ebookcheck').attr('checked', false);
+	$('#expandcheck').attr('checked', false);
+});
 
 
 jQuery("#searchbox").focusin(function() {
@@ -62,12 +71,12 @@ jQuery("#everything").click(function() {
   jQuery('#expandcheck').attr('checked', false);
 });
 
-jQuery("#articles").click(function() {
-  jQuery('#hider').hide();
-  jQuery("#hiderarticles").show();
-  jQuery('#ebookcheck').attr('checked', false);
-  jQuery('#expandcheck').attr('checked', false);
-});
+// jQuery("#articles").click(function() {
+//   jQuery('#hider').hide();
+//   jQuery("#hiderarticles").show();
+//   jQuery('#ebookcheck').attr('checked', false);
+//   jQuery('#expandcheck').attr('checked', false);
+// });
 
 //x button click handler
 jQuery("#closeglph").focus(function() {
@@ -83,7 +92,7 @@ jQuery("#closeglp").focus(function() {
   jQuery("#hider").hide();
 });
 
-});
+
 ///searfch box new js code ends hiderarticles
 
 
