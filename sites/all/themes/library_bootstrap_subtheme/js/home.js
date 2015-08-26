@@ -20,21 +20,22 @@ function changeSearch(tabID) {
 }
 
 //for new homepage searchbox
-$(document).ready(function () {
-  $("#hider").hide();
-  $("#hiderarticles").hide();
+jQuery(document).ready(function () {
+  jQuery("#hider").hide();
+  jQuery("#hiderarticles").hide();
     });
-$("#books").click(function(){
-  $("#hiderarticles").hide();
-  $('#hider').show();
+jQuery("#books").click(function(){
+  jQuery("#hiderarticles").hide();
+  jQuery('#hider').show();
+  
 });
-$("#everything").click(function(){
-  $("#hiderarticles").hide();
-  $('#hider').hide();
+jQuery("#everything").click(function(){
+  jQuery("#hiderarticles").hide();
+  jQuery('#hider').hide();
 });
-$("#articles").click(function(){
-  $('#hider').hide();
-  $("#hiderarticles").show();
+jQuery("#articles").click(function(){
+  jQuery('#hider').hide();
+  jQuery("#hiderarticles").show();
 });
 
 
