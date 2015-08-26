@@ -47,14 +47,14 @@ jQuery("#searchbox").focusin(function() {
   jQuery("#hiderarticles").hide();
 });
 
-$("#books").click(function() {
-  $("#hiderarticles").hide();
-  $('#hider').show();
+jQuery("#books").click(function() {
+  jQuery("#hiderarticles").hide();
+  jQuery('#hider').show();
   //
-  $('#peerreviewedarticlescheck').attr('checked', false); // Unchecks it
+  jQuery('#peerreviewedarticlescheck').attr('checked', false); // Unchecks it
 
 });
-$("#everything").click(function() {
+jQuery("#everything").click(function() {
   jQuery("#hiderarticles").hide();
   jQuery('#hider').hide();
   jQuery('#peerreviewedarticlescheck').attr('checked', false);
@@ -62,7 +62,7 @@ $("#everything").click(function() {
   jQuery('#expandcheck').attr('checked', false);
 });
 
-$("#articles").click(function() {
+jQuery("#articles").click(function() {
   jQuery('#hider').hide();
   jQuery("#hiderarticles").show();
   jQuery('#ebookcheck').attr('checked', false);
@@ -70,16 +70,16 @@ $("#articles").click(function() {
 });
 
 //x button click handler
-$("#closeglph").focus(function() {
+jQuery("#closeglph").focus(function() {
   jQuery("#hiderarticles").hide();
 });
-$("#closeglph").click(function() {
+jQuery("#closeglph").click(function() {
   jQuery("#hiderarticles").hide(); //articles dropdown
 });
-$("#closeglp").click(function() {
+jQuery("#closeglp").click(function() {
   jQuery("#hider").hide(); //books dropdown
 });
-$("#closeglp").focus(function() {
+jQuery("#closeglp").focus(function() {
   jQuery("#hider").hide();
 });
 
