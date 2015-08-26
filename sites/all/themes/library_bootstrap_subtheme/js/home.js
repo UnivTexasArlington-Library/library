@@ -20,23 +20,70 @@ function changeSearch(tabID) {
 }
 
 //for new homepage searchbox
-jQuery(document).ready(function () {
+// jQuery(document).ready(function () {
+//   jQuery("#hider").hide();
+//   jQuery("#hiderarticles").hide();
+//     });
+// jQuery("#books").click(function(){
+//   jQuery("#hiderarticles").hide();
+//   jQuery('#hider').show();
+  
+// });
+// jQuery("#everything").click(function(){
+//   jQuery("#hiderarticles").hide();
+//   jQuery('#hider').hide();
+// });
+// jQuery("#articles").click(function(){
+//   jQuery('#hider').hide();
+//   jQuery("#hiderarticles").show();
+// });
+jQuery(document).ready(function() {
   jQuery("#hider").hide();
   jQuery("#hiderarticles").hide();
-    });
-jQuery("#books").click(function(){
+});
+
+jQuery("#searchbox").focusin(function() {
+  jQuery("#hider").hide();
+  jQuery("#hiderarticles").hide();
+});
+
+jQuery("#books").click(function() {
   jQuery("#hiderarticles").hide();
   jQuery('#hider').show();
-  
+  //
+  jQuery('#peerreviewedarticlescheck').attr('checked', false); // Unchecks it
+
 });
-jQuery("#everything").click(function(){
+jQuery("#everything").click(function() {
   jQuery("#hiderarticles").hide();
   jQuery('#hider').hide();
+  jQuery('#peerreviewedarticlescheck').attr('checked', false);
+  jQuery('#ebookcheck').attr('checked', false);
+  jQuery('#expandcheck').attr('checked', false);
 });
-jQuery("#articles").click(function(){
+
+jQuery("#articles").click(function() {
   jQuery('#hider').hide();
   jQuery("#hiderarticles").show();
+  jQuery('#ebookcheck').attr('checked', false);
+  jQuery('#expandcheck').attr('checked', false);
 });
+
+//x button click handler
+jQuery("#closeglph").focus(function() {
+  jQuery("#hiderarticles").hide();
+});
+jQuery("#closeglph").click(function() {
+  jQuery("#hiderarticles").hide(); //articles dropdown
+});
+jQuery("#closeglp").click(function() {
+  jQuery("#hider").hide(); //books dropdown
+});
+jQuery("#closeglp").focus(function() {
+  jQuery("#hider").hide();
+});
+
+///searfch box new js code ends hiderarticles
 
 
 //for getting individual count of everything summon search in google analytics
