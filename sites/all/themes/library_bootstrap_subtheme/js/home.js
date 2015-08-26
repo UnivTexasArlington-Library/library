@@ -40,7 +40,7 @@ function changeSearch(tabID) {
 jQuery(document).ready(function() {
   jQuery("#hider").hide();
   jQuery("#hiderarticles").hide();
-});
+
 
 jQuery("#searchbox").focusin(function() {
   jQuery("#hider").hide();
@@ -83,6 +83,7 @@ jQuery("#closeglp").focus(function() {
   jQuery("#hider").hide();
 });
 
+});
 ///searfch box new js code ends hiderarticles
 
 
