@@ -9781,7 +9781,7 @@ h3 a {
 }
 /* advance search */
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031183}}
-.btnad {
+button.btnad {
   background: #477CDE !important;
   border: none;
   color: #FFFFFF !important;
