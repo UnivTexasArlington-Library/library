@@ -9791,7 +9791,7 @@ h3 a {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031191}}
 .adv_search {
-  width: 1145px;
+  width: 100%;
 }
 /*Search box css for XS screen size*/
 @media (max-width: 500px) {
