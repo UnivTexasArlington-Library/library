@@ -1,4 +1,5 @@
 /*for footer*/
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/footer\.less}line{font-family:\000033}}
 .footer {
   background: #dddbdb;
   font-size: .8em;
@@ -8,33 +9,40 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/footer\.less}line{font-family:\0000317}}
 .footer .glyphicon {
   color: #000000;
   padding-right: 5px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/footer\.less}line{font-family:\0000321}}
 .footer img {
   width: 75%;
   text-align: center;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/footer\.less}line{font-family:\0000325}}
 .footer .col-xs-4 {
   border-right: 4px solid #FFFFFF;
   text-align: center;
   padding-top: 25px;
   padding-bottom: 20px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/footer\.less}line{font-family:\0000332}}
 .footer .col-xs-4:last-of-type {
   border: none;
   text-align: left;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/footer\.less}line{font-family:\0000335}}
 .footer .col-xs-4:last-of-type .col-xs-6 {
   padding-left: 0;
   padding-right: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/footer\.less}line{font-family:\0000339}}
 .footer .col-xs-4:last-of-type a {
   text-decoration: underline;
   padding-top: 2px;
   padding-bottom: 2px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/footer\.less}line{font-family:\0000345}}
 .footer .col-xs-4:first-of-type {
   padding-bottom: 0px;
 }

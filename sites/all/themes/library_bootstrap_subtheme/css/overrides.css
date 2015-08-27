@@ -1,52 +1,69 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000317}}
 html.overlay-open .navbar-fixed-top {
   z-index: 400;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000322}}
 html.js fieldset.collapsed {
   height: auto;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000326}}
 html.js input.form-autocomplete {
   background-image: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000331}}
 body {
   position: relative;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000335}}
 body.admin-expanded.admin-vertical.admin-nw .navbar,
 body.admin-expanded.admin-vertical.admin-sw .navbar {
   margin-left: 260px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000340}}
 body.navbar-is-fixed-top {
   padding-top: 64px !important;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000343}}
 body.navbar-is-fixed-bottom {
   padding-bottom: 64px !important;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000346}}
 body.toolbar {
   padding-top: 30px !important;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000348}}
 body.toolbar .navbar-fixed-top {
   top: 30px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000351}}
 body.toolbar.navbar-is-fixed-top {
   padding-top: 94px !important;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000355}}
 body.toolbar-drawer {
   padding-top: 64px !important;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000357}}
 body.toolbar-drawer .navbar-fixed-top {
   top: 64px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000360}}
 body.toolbar-drawer.navbar-is-fixed-top {
   padding-top: 128px !important;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000366}}
 body.admin-menu .navbar-fixed-top {
   top: 29px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000369}}
 body.admin-menu.navbar-is-fixed-top {
   padding-top: 93px !important;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000373}}
 body div#admin-toolbar {
   z-index: 1600;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000377}}
 body #toolbar,
 body #admin-menu,
 body #admin-toolbar {
@@ -54,129 +71,160 @@ body #admin-toolbar {
   -moz-box-shadow: none;
   box-shadow: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000381}}
 body #admin-menu {
   margin: 0;
   padding: 0;
   position: fixed;
   z-index: 1600;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000386}}
 body #admin-menu .dropdown li {
   line-height: normal;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000393}}
 .navbar.container {
   margin-top: 20px;
 }
 @media screen and (min-width: 768px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000394}}
   .navbar.container {
     max-width: 720px;
   }
 }
 @media screen and (min-width: 992px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\0000397}}
   .navbar.container {
     max-width: 940px;
   }
 }
 @media screen and (min-width: 1200px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003100}}
   .navbar.container {
     max-width: 1140px;
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003104}}
 .navbar.container > .container {
   margin: 0;
   padding: 0;
   width: auto;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003112}}
 #overlay-container,
 .overlay-modal-background,
 .overlay-element {
   z-index: 1500;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003117}}
 #toolbar {
   z-index: 1600;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003121}}
 .modal {
   z-index: 1620;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003124}}
 .modal-dialog {
   z-index: 1630;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003127}}
 .modal-backdrop {
   z-index: 1610;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003130}}
 .footer {
   margin-top: 45px;
   padding-top: 35px;
   padding-bottom: 36px;
   border-top: 1px solid #E5E5E5;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003138}}
 .element-invisible {
   margin: 0;
   padding: 0;
   width: 1px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003145}}
 .navbar .logo {
   margin-right: -15px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media screen and (min-width: 768px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003149}}
   .navbar .logo {
     margin-right: 0;
     padding-left: 0;
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003156}}
 ul.secondary {
   float: left;
 }
 @media screen and (min-width: 768px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003158}}
   ul.secondary {
     float: right;
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003164}}
 .page-header {
   margin-top: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003170}}
 .block:first-child h2.block-title {
   margin-top: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003176}}
 p:last-child {
   margin-bottom: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003182}}
 .region-help > .glyphicon {
   font-size: 20px;
   float: left;
   margin: -0.05em 0.5em 0 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003187}}
 .region-help .block {
   overflow: hidden;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003193}}
 form#search-block-form {
   margin: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003196}}
 .navbar #block-search-form {
   float: none;
   margin: 5px 0 5px 5px;
 }
 @media screen and (min-width: 992px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003199}}
   .navbar #block-search-form {
     float: right;
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003203}}
 .navbar-search .control-group {
   margin-bottom: 0px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003208}}
 ul.action-links {
   margin: 12px 0;
   padding: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003211}}
 ul.action-links li {
   display: inline;
   margin: 0;
   padding: 0 6px 0 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003216}}
 ul.action-links .glyphicon {
   padding-right: 0.5em;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003222}}
 input,
 textarea,
 select,
@@ -184,41 +232,51 @@ select,
   max-width: 100%;
   width: auto;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003226}}
 input.error {
   color: #a94442;
   border-color: #ebccd1;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003230}}
 fieldset legend.panel-heading {
   float: left;
   line-height: 1em;
   margin: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003235}}
 fieldset .panel-body {
   clear: both;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003238}}
 fieldset .panel-heading a.panel-title {
   color: inherit;
   display: block;
   margin: -10px -15px;
   padding: 10px 15px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003243}}
 fieldset .panel-heading a.panel-title:hover {
   text-decoration: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003247}}
 .form-actions {
   clear: both;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003250}}
 .resizable-textarea textarea {
   border-radius: 4px 4px 0 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003254}}
 .radio:first-child,
 .checkbox:first-child {
   margin-top: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003257}}
 .radio:last-child,
 .checkbox:last-child {
   margin-bottom: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003261}}
 .help-block,
 .control-group .help-inline {
   color: #777777;
@@ -226,29 +284,36 @@ fieldset .panel-heading a.panel-title:hover {
   margin: 5px 0 10px;
   padding: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003267}}
 .panel-heading {
   display: block;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003270}}
 a.tabledrag-handle .handle {
   height: auto;
   width: auto;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003276}}
 .error {
   color: #a94442;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003279}}
 div.error,
 table tr.error {
   background-color: #f2dede;
   color: #a94442;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003284}}
 .control-group.error {
   background: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003286}}
 .control-group.error label,
 .control-group.error .control-label {
   color: #a94442;
   font-weight: 600;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003290}}
 .control-group.error input,
 .control-group.error textarea,
 .control-group.error select,
@@ -256,60 +321,73 @@ table tr.error {
   color: #555555;
   border: 1px solid #cccccc;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003294}}
 .control-group.error .help-block,
 .control-group.error .help-inline {
   color: #333333;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003301}}
 .list-inline > li.first {
   padding-left: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003305}}
 .nav-tabs {
   margin-bottom: 10px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003308}}
 ul li.collapsed,
 ul li.expanded,
 ul li.leaf {
   list-style: none;
   list-style-image: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003314}}
 .tabs--secondary {
   margin: 0 0 10px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003319}}
 .submitted {
   margin-bottom: 1em;
   font-style: italic;
   font-weight: normal;
   color: #777;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003327}}
 .password-strength {
   width: 17em;
   float: right;
   /* LTR */
   margin-top: 1.4em;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003332}}
 .password-strength-title {
   display: inline;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003335}}
 .password-strength-text {
   float: right;
   /* LTR */
   font-weight: bold;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003339}}
 .password-indicator {
   background-color: #727272;
   height: 0.3em;
   width: 100%;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003343}}
 .password-indicator div {
   height: 100%;
   width: 0%;
   background-color: #777777;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003349}}
 input.password-confirm,
 input.password-field {
   width: 16em;
   margin-bottom: 0.4em;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003354}}
 div.password-confirm {
   float: right;
   /* LTR */
@@ -317,15 +395,18 @@ div.password-confirm {
   visibility: hidden;
   width: 17em;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003360}}
 div.form-item div.password-suggestions {
   padding: 0.2em 0.5em;
   margin: 0.7em 0;
   width: 38.5em;
   border: 1px solid #B4B4B4;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003366}}
 div.password-suggestions ul {
   margin-bottom: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003369}}
 .confirm-parent,
 .password-parent {
   clear: left;
@@ -333,26 +414,33 @@ div.password-suggestions ul {
   margin: 0;
   width: 36.3em;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003377}}
 .progress-wrapper .progress {
   margin-bottom: 10px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003383}}
 .pagination ul > li > a.progress-disabled {
   float: left;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003390}}
 .form-autocomplete .glyphicon {
   color: #777777;
   font-size: 120%;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003393}}
 .form-autocomplete .glyphicon.glyphicon-spin {
   color: #0064b1;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003397}}
 .form-autocomplete .input-group-addon {
   background-color: #ffffff;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003404}}
 .ajax-progress .glyphicon {
   font-size: 90%;
   margin: 0 -0.25em 0 0.5em;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003410}}
 .glyphicon-spin {
   display: inline-block;
   -moz-animation: spin 1s infinite linear;
@@ -360,50 +448,62 @@ div.password-suggestions ul {
   -webkit-animation: spin 1s infinite linear;
   animation: spin 1s infinite linear;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003417}}
 a .glyphicon-spin {
   display: inline-block;
   text-decoration: none;
 }
 @-moz-keyframes spin {
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003422}}
   0% {
     -moz-transform: rotate(0deg);
   }
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003425}}
   100% {
     -moz-transform: rotate(359deg);
   }
 }
 @-webkit-keyframes spin {
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003430}}
   0% {
     -webkit-transform: rotate(0deg);
   }
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003433}}
   100% {
     -webkit-transform: rotate(359deg);
   }
 }
 @-o-keyframes spin {
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003438}}
   0% {
     -o-transform: rotate(0deg);
   }
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003441}}
   100% {
     -o-transform: rotate(359deg);
   }
 }
 @-ms-keyframes spin {
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003446}}
   0% {
     -ms-transform: rotate(0deg);
   }
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003449}}
   100% {
     -ms-transform: rotate(359deg);
   }
 }
 @keyframes spin {
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003454}}
   0% {
     transform: rotate(0deg);
   }
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003457}}
   100% {
     transform: rotate(359deg);
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003462}}
 .glyphicon-refresh {
   -webkit-transform-origin: 50% 45%;
   -moz-transform-origin: 50% 45%;
@@ -416,68 +516,84 @@ a .glyphicon-spin {
  * @see http://stackoverflow.com/questions/18432577/stacked-tabs-in-bootstrap-3
  * @see http://bootply.com/74926
  */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003475}}
 .tabbable {
   margin-bottom: 20px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003479}}
 .tabs-below > .nav-tabs,
 .tabs-left > .nav-tabs,
 .tabs-right > .nav-tabs {
   border-bottom: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003481}}
 .tabs-below > .nav-tabs .summary,
 .tabs-left > .nav-tabs .summary,
 .tabs-right > .nav-tabs .summary {
   color: #777777;
   font-size: 14px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003487}}
 .tab-pane > .panel-heading {
   display: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003490}}
 .tab-content > .active {
   display: block;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003496}}
 .tabs-below > .nav-tabs {
   border-top: 1px solid #dddddd;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003498}}
 .tabs-below > .nav-tabs > li {
   margin-top: -1px;
   margin-bottom: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003501}}
 .tabs-below > .nav-tabs > li > a {
   border-radius: 0 0 4px 4px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003503}}
 .tabs-below > .nav-tabs > li > a:hover,
 .tabs-below > .nav-tabs > li > a:focus {
   border-top-color: #dddddd;
   border-bottom-color: transparent;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003511}}
 .tabs-below > .nav-tabs > .active > a,
 .tabs-below > .nav-tabs > .active > a:hover,
 .tabs-below > .nav-tabs > .active > a:focus {
   border-color: transparent #dddddd #dddddd #dddddd;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003523}}
 .tabs-left > .nav-tabs,
 .tabs-right > .nav-tabs {
   padding-bottom: 20px;
   width: 220px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003526}}
 .tabs-left > .nav-tabs > li,
 .tabs-right > .nav-tabs > li {
   float: none;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003528}}
 .tabs-left > .nav-tabs > li:focus,
 .tabs-right > .nav-tabs > li:focus {
   outline: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003531}}
 .tabs-left > .nav-tabs > li > a,
 .tabs-right > .nav-tabs > li > a {
   margin-right: 0;
   margin-bottom: 3px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003534}}
 .tabs-left > .nav-tabs > li > a:focus,
 .tabs-right > .nav-tabs > li > a:focus {
   outline: 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003540}}
 .tabs-left > .tab-content,
 .tabs-right > .tab-content {
   border-radius: 0 4px 4px 4px;
@@ -488,17 +604,21 @@ a .glyphicon-spin {
   overflow: hidden;
   padding: 10px 15px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003551}}
 .tabs-left > .nav-tabs {
   float: left;
   margin-right: -1px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003554}}
 .tabs-left > .nav-tabs > li > a {
   border-radius: 4px 0 0 4px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003556}}
 .tabs-left > .nav-tabs > li > a:hover,
 .tabs-left > .nav-tabs > li > a:focus {
   border-color: #eeeeee #dddddd #eeeeee #eeeeee;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003561}}
 .tabs-left > .nav-tabs > .active > a,
 .tabs-left > .nav-tabs > .active > a:hover,
 .tabs-left > .nav-tabs > .active > a:focus {
@@ -507,13 +627,16 @@ a .glyphicon-spin {
   -moz-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.05);
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003572}}
 .tabs-right > .nav-tabs {
   float: right;
   margin-left: -1px;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003575}}
 .tabs-right > .nav-tabs > li > a {
   border-radius: 0 4px 4px 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003577}}
 .tabs-right > .nav-tabs > li > a:hover,
 .tabs-right > .nav-tabs > li > a:focus {
   border-color: #eeeeee #eeeeee #eeeeee #dddddd;
@@ -521,29 +644,35 @@ a .glyphicon-spin {
   -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003583}}
 .tabs-right > .nav-tabs > .active > a,
 .tabs-right > .nav-tabs > .active > a:hover,
 .tabs-right > .nav-tabs > .active > a:focus {
   border-color: #dddddd #dddddd #dddddd transparent;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003592}}
 th.checkbox,
 td.checkbox,
 th.radio,
 td.radio {
   display: table-cell;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003601}}
 .views-display-settings .label {
   font-size: 100%;
   color: #666666;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003605}}
 .views-display-settings .footer {
   padding: 0;
   margin: 4px 0 0 0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003613}}
 table .radio input[type="radio"],
 table .checkbox input[type="checkbox"] {
   max-width: inherit;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003620}}
 .form-horizontal .form-group label {
   position: relative;
   min-height: 1px;
@@ -555,23 +684,29 @@ table .checkbox input[type="checkbox"] {
   text-align: right;
 }
 @media (min-width: 768px) {
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003630}}
   .form-horizontal .form-group label {
     float: left;
     width: 16.66666667%;
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003637}}
 .alert a {
   font-weight: bold;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003640}}
 .alert-success a {
   color: #2b542c;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003643}}
 .alert-info a {
   color: #245269;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003646}}
 .alert-warning a {
   color: #66512c;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/overrides\.less}line{font-family:\00003649}}
 .alert-danger a {
   color: #843534;
 }
