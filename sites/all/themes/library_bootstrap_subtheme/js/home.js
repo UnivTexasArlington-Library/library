@@ -138,6 +138,13 @@ jQuery("#searchbox").focusin(function() {
 // });
 
 //x button click handler
+
+
+jQuery(document).ready(function() {
+   // $('#test').click(function(){
+     
+   // });
+	
 jQuery("#closeglph").focus(function() {
   jQuery("#hiderarticles").hide();
 });
@@ -150,6 +157,22 @@ jQuery("#closeglp").click(function() {
 jQuery("#closeglp").focus(function() {
   jQuery("#hider").hide();
 });
+
+
+ });
+
+// jQuery("#closeglph").focus(function() {
+//   jQuery("#hiderarticles").hide();
+// });
+// jQuery("#closeglph").click(function() {
+//   jQuery("#hiderarticles").hide(); //articles dropdown
+// });
+// jQuery("#closeglp").click(function() {
+//   jQuery("#hider").hide(); //books dropdown
+// });
+// jQuery("#closeglp").focus(function() {
+//   jQuery("#hider").hide();
+// });
 
 
 // $("#articles").on("click", function(e) {
