@@ -18,6 +18,55 @@ function changeSearch(tabID) {
 		jQuery("#searchbox").html('<form class="summon-search-widget" action="http://library-beta.uta.edu/search/node" method="post" id="search-form" accept-charset="UTF-8"><div><div class="summon-search-box" id="edit-basic"><div class="input-group"><input placeholder="Search the libraries website" class="summon-search-field" type="text" id="edit-keys" name="keys" value="" size="50" ><input name="op" onclick="_gaq.push([\'_trackEvent\', \'search\', \'submit\', \'website\']);" type="submit" value="Go" class="summon-search-submit" id="edit-submit"></div></div></div></form>');
 	}
 }
+function hide_ele(tabID)
+{
+	// if(tabID == 'books')
+	// {
+ //  		jQuery("#hiderarticles").hide();
+ //  		jQuery('#hider').show();
+	// }
+	// if(tabID == 'articles')
+	// {
+	// 	jQuery('#hider').hide();
+ //  		jQuery("#hiderarticles").show();
+ //  		jQuery('#ebookcheck').attr('checked', false);
+ //  		jQuery('#expandcheck').attr('checked', false);
+	// }
+	// if(tabID == 'everything')
+	// {
+	//   	jQuery("#hiderarticles").hide();
+	// 	jQuery('#hider').hide();
+	// 	jQuery('#peerreviewedarticlescheck').attr('checked', false);
+	// 	jQuery('#ebookcheck').attr('checked', false);
+	// 	jQuery('#expandcheck').attr('checked', false);
+	// }
+}
+
+
+function changeSearch1(tabID)
+{
+	hide_ele(tabID);
+	if(tabID == 'books')
+	{
+  		jQuery("#hiderarticles").hide();
+  		jQuery('#hider').show();
+	}
+	if(tabID == 'articles')
+	{
+		jQuery('#hider').hide();
+  		jQuery("#hiderarticles").show();
+  		jQuery('#ebookcheck').attr('checked', false);
+  		jQuery('#expandcheck').attr('checked', false);
+	}
+	if(tabID == 'everything')
+	{
+	  	jQuery("#hiderarticles").hide();
+		jQuery('#hider').hide();
+		jQuery('#peerreviewedarticlescheck').attr('checked', false);
+		jQuery('#ebookcheck').attr('checked', false);
+		jQuery('#expandcheck').attr('checked', false);
+	}
+}
 
 //for new homepage searchbox
 // jQuery(document).ready(function () {
@@ -40,14 +89,14 @@ function changeSearch(tabID) {
 jQuery(document).ready(function() {
   jQuery("#hider").hide();
   jQuery("#hiderarticles").hide();
-
-$("#articles").on("click", function(e) {
-	//e.preventDefault();
-	$("#hider").hide();
-	$("#hiderarticles").show();
-	$('#ebookcheck').attr('checked', false);
-	$('#expandcheck').attr('checked', false);
 });
+// $("#articles").on("click", function(e) {
+// 	//e.preventDefault();
+// 	$("#hider").hide();
+// 	$("#hiderarticles").show();
+// 	$('#ebookcheck').attr('checked', false);
+// 	$('#expandcheck').attr('checked', false);
+// });
 
 
 jQuery("#searchbox").focusin(function() {
@@ -55,20 +104,20 @@ jQuery("#searchbox").focusin(function() {
   jQuery("#hiderarticles").hide();
 });
 
-jQuery("#books").click(function() {
-  jQuery("#hiderarticles").hide();
-  jQuery('#hider').show();
-  //
-  jQuery('#peerreviewedarticlescheck').attr('checked', false); // Unchecks it
+// jQuery("#books").click(function() {
+//   jQuery("#hiderarticles").hide();
+//   jQuery('#hider').show();
+//   //
+//   jQuery('#peerreviewedarticlescheck').attr('checked', false); // Unchecks it
 
-});
-jQuery("#everything").click(function() {
-  jQuery("#hiderarticles").hide();
-  jQuery('#hider').hide();
-  jQuery('#peerreviewedarticlescheck').attr('checked', false);
-  jQuery('#ebookcheck').attr('checked', false);
-  jQuery('#expandcheck').attr('checked', false);
-});
+// });
+// jQuery("#everything").click(function() {
+//   jQuery("#hiderarticles").hide();
+//   jQuery('#hider').hide();
+//   jQuery('#peerreviewedarticlescheck').attr('checked', false);
+//   jQuery('#ebookcheck').attr('checked', false);
+//   jQuery('#expandcheck').attr('checked', false);
+// });
 
 // jQuery("#articles").click(function() {
 //   jQuery('#hider').hide();
@@ -92,38 +141,34 @@ jQuery("#closeglp").focus(function() {
 });
 
 
-
-  
-});
-
-$("#articles").on("click", function(e) {
-	//e.preventDefault();
-	$("#hider").hide();
-	$("#hiderarticles").show();
-	$('#ebookcheck').attr('checked', false);
-	$('#expandcheck').attr('checked', false);
-});
+// $("#articles").on("click", function(e) {
+// 	//e.preventDefault();
+// 	$("#hider").hide();
+// 	$("#hiderarticles").show();
+// 	$('#ebookcheck').attr('checked', false);
+// 	$('#expandcheck').attr('checked', false);
+// });
 
 
-jQuery("#searchbox").focusin(function() {
-  jQuery("#hider").hide();
-  jQuery("#hiderarticles").hide();
-});
+// jQuery("#searchbox").focusin(function() {
+//   jQuery("#hider").hide();
+//   jQuery("#hiderarticles").hide();
+// });
 
-jQuery("#books").click(function() {
-  jQuery("#hiderarticles").hide();
-  jQuery('#hider').show();
-  //
-  jQuery('#peerreviewedarticlescheck').attr('checked', false); // Unchecks it
+// jQuery("#books").click(function() {
+//   jQuery("#hiderarticles").hide();
+//   jQuery('#hider').show();
+//   //
+//   jQuery('#peerreviewedarticlescheck').attr('checked', false); // Unchecks it
 
-});
-jQuery("#everything").click(function() {
-  jQuery("#hiderarticles").hide();
-  jQuery('#hider').hide();
-  jQuery('#peerreviewedarticlescheck').attr('checked', false);
-  jQuery('#ebookcheck').attr('checked', false);
-  jQuery('#expandcheck').attr('checked', false);
-});
+// });
+// jQuery("#everything").click(function() {
+//   jQuery("#hiderarticles").hide();
+//   jQuery('#hider').hide();
+//   jQuery('#peerreviewedarticlescheck').attr('checked', false);
+//   jQuery('#ebookcheck').attr('checked', false);
+//   jQuery('#expandcheck').attr('checked', false);
+// });
 
 // jQuery("#articles").click(function() {
 //   jQuery('#hider').hide();
@@ -133,24 +178,23 @@ jQuery("#everything").click(function() {
 // });
 
 //x button click handler
-jQuery("#closeglph").focus(function() {
-  jQuery("#hiderarticles").hide();
-});
-jQuery("#closeglph").click(function() {
-  jQuery("#hiderarticles").hide(); //articles dropdown
-});
-jQuery("#closeglp").click(function() {
-  jQuery("#hider").hide(); //books dropdown
-});
-jQuery("#closeglp").focus(function() {
-  jQuery("#hider").hide();
-});
+// jQuery("#closeglph").focus(function() {
+//   jQuery("#hiderarticles").hide();
+// });
+// jQuery("#closeglph").click(function() {
+//   jQuery("#hiderarticles").hide(); //articles dropdown
+// });
+// jQuery("#closeglp").click(function() {
+//   jQuery("#hider").hide(); //books dropdown
+// });
+// jQuery("#closeglp").focus(function() {
+//   jQuery("#hider").hide();
+// });
 
 
 
 
 ///searfch box new js code ends hiderarticles
-
 
 
 //for getting individual count of everything summon search in google analytics
