@@ -9690,7 +9690,7 @@ h3 a {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031090}}
 .radiogroup {
   height: 63 !important;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031096}}
 .psearch-bar-label {
@@ -9779,24 +9779,38 @@ h3 a {
   margin-top: -15px;
   width: 300px !important;
 }
+/* advance search */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031183}}
+.btnad {
+  background: #477CDE !important;
+  border: none;
+  color: #FFFFFF !important;
+  width: 200px;
+  padding: 0px;
+  right: 0px !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031191}}
+.adv_search {
+  width: 1145px;
+}
 /*Search box css for XS screen size*/
 @media (max-width: 500px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031184}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031199}}
   #resp-search-bar {
     clear: left;
     width: 100%;
     height: 175px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031190}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031205}}
   .search-bar-label {
     display: inline !important ;
     margin-bottom: 0px !important;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031196}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031211}}
   .radiogroup {
     width: 100%;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031201}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031216}}
   #search-bar-div {
     margin-top: -15px;
     width: 300px !important;
@@ -9805,34 +9819,34 @@ h3 a {
 /*search bar new design engs here*/
 /*=======*/
 /*DEPARTMENT */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031216}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031231}}
 .taxonomy-term-description {
   margin-bottom: 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031219}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031234}}
 .pane-taxonomy-term-field-organization-chart {
   margin-left: -15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031222}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031237}}
 .view-staff-by-department {
   margin-left: 15px;
 }
 /*FOOTER*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031227}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031242}}
 .inq-links {
   float: left;
 }
 /*lg screens*/
 @media (min-width: 1200px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031232}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031247}}
   .inq-links {
     width: 25em;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031235}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031250}}
   .cc-info {
     float: right;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031238}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031253}}
   .fb-icon,
   .tw-icon,
   .yt-icon {
@@ -9842,7 +9856,7 @@ h3 a {
 /*lg screen ends*/
 /*md screen*/
 @media (min-width: 992px) and (max-width: 1199px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031245}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031260}}
   .fb-icon,
   .tw-icon,
   .yt-icon {
@@ -9852,23 +9866,23 @@ h3 a {
 /*md screen ends*/
 /*sm screen*/
 @media (min-width: 768px) and (max-width: 991px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031252}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031267}}
   .fb-icon,
   .tw-icon,
   .yt-icon {
     width: 4em;
     padding: 0px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031256}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031271}}
   .address-block {
     margin-bottom: 10px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031259}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031274}}
   .sm-links {
     /*left:15em;*/
     float: none;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031263}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031278}}
   .cc-info {
     /*left: 10em;*/
     float: right;
@@ -9880,7 +9894,7 @@ h3 a {
 /*sm screen ends*/
 /*xs screen*/
 @media (max-width: 767px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031275}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031290}}
   .address-block,
   .inq-links,
   .links,
@@ -9890,26 +9904,26 @@ h3 a {
   /*.sm-links{
 		width: 100%
 	}*/
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031284}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031299}}
   .sm-links {
     margin-bottom: 10px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031287}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031302}}
   .sm-links img {
     /*width: 4.5em !important;*/
     padding: 0px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031291}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031306}}
   .links {
     text-align: left;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031294}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031309}}
   .footer {
     margin: auto;
     text-align: center !important;
     text-align: -moz-center !important;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031299}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Desktop\/theme\/less\/style\.less}line{font-family:\000031314}}
   .inq-links-right {
     text-align: left;
   }
