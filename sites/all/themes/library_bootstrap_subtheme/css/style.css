@@ -9807,25 +9807,26 @@ button.btnad {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031206}}
 .adv_search {
   width: 100%;
+  display: none;
 }
 /*Search box css for XS screen size*/
 @media (max-width: 500px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031214}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031215}}
   #resp-search-bar {
     clear: left;
     width: 100%;
     height: 175px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031220}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031221}}
   .search-bar-label {
     display: inline !important ;
     margin-bottom: 0px !important;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031226}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031227}}
   .radiogroup {
     width: 100%;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031231}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031232}}
   #search-bar-div {
     margin-top: -15px;
     width: 300px !important;
@@ -9834,34 +9835,34 @@ button.btnad {
 /*search bar new design engs here*/
 /*=======*/
 /*DEPARTMENT */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031246}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031247}}
 .taxonomy-term-description {
   margin-bottom: 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031249}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031250}}
 .pane-taxonomy-term-field-organization-chart {
   margin-left: -15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031252}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031253}}
 .view-staff-by-department {
   margin-left: 15px;
 }
 /*FOOTER*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031257}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031258}}
 .inq-links {
   float: left;
 }
 /*lg screens*/
 @media (min-width: 1200px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031262}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031263}}
   .inq-links {
     width: 25em;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031265}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031266}}
   .cc-info {
     float: right;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031268}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031269}}
   .fb-icon,
   .tw-icon,
   .yt-icon {
@@ -9871,7 +9872,7 @@ button.btnad {
 /*lg screen ends*/
 /*md screen*/
 @media (min-width: 992px) and (max-width: 1199px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031275}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031276}}
   .fb-icon,
   .tw-icon,
   .yt-icon {
@@ -9881,23 +9882,23 @@ button.btnad {
 /*md screen ends*/
 /*sm screen*/
 @media (min-width: 768px) and (max-width: 991px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031282}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031283}}
   .fb-icon,
   .tw-icon,
   .yt-icon {
     width: 4em;
     padding: 0px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031286}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031287}}
   .address-block {
     margin-bottom: 10px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031289}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031290}}
   .sm-links {
     /*left:15em;*/
     float: none;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031293}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031294}}
   .cc-info {
     /*left: 10em;*/
     float: right;
@@ -9909,7 +9910,7 @@ button.btnad {
 /*sm screen ends*/
 /*xs screen*/
 @media (max-width: 767px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031305}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031306}}
   .address-block,
   .inq-links,
   .links,
@@ -9919,26 +9920,26 @@ button.btnad {
   /*.sm-links{
 		width: 100%
 	}*/
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031314}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031315}}
   .sm-links {
     margin-bottom: 10px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031317}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031318}}
   .sm-links img {
     /*width: 4.5em !important;*/
     padding: 0px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031321}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031322}}
   .links {
     text-align: left;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031324}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031325}}
   .footer {
     margin: auto;
     text-align: center !important;
     text-align: -moz-center !important;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031329}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031330}}
   .inq-links-right {
     text-align: left;
   }

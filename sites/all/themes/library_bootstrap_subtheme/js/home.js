@@ -125,7 +125,7 @@ function changeSearch1(tabID)
 //   jQuery('#hider').hide();
 // });
 // jQuery("#articles").click(function(){
-//   jQuery('#hider').hide();
+//   jQuery('#hider').hide(); 
 //   jQuery("#hiderarticles").show();
 // });
 jQuery(document).ready(function() {
@@ -144,6 +144,7 @@ jQuery(document).ready(function() {
 jQuery("#searchbox").focusin(function() {
   jQuery("#hider").hide();
   jQuery("#hiderarticles").hide();
+  jQuery("#searchbox form a").addClass("btnad btn-default");
 });
 
 // jQuery("#books").click(function() {
