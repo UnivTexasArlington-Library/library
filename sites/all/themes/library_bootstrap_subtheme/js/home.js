@@ -131,7 +131,11 @@ function changeSearch1(tabID)
 jQuery(document).ready(function() {
   jQuery("#hider").hide();
   jQuery("#hiderarticles").hide();
-  jQuery("#searchbox form a").addClass("btnad btn-default");
+  jQuery("#searchbox form a").addClass("btnad btn-default");//adding class to adv search a tag
+  jQuery(".summon-search-box").addClass("row");
+  jQuery(".summon-search-field").addClass("col-lg-10 col-md-10 col-sm-10");
+  jQuery(".summon-search-submit").addClass("col-sm-2 col-md-2 col-lg-1");
+
 });
 // $("#articles").on("click", function(e) {
 // 	//e.preventDefault();
