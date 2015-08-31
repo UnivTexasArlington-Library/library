@@ -1,4 +1,34 @@
 //for homepage search box 
+// function changeSearch(tabID) {
+// 	jQuery(".search-buttons button").removeClass('active');
+// 	jQuery("#" + tabID).addClass('active');
+// 	if (tabID == 'everything') {
+// 		jQuery("#hiderarticles").hide();
+// 		jQuery('#hider').hide();
+// 		jQuery('#peerreviewedarticlescheck').attr('checked', false);
+// 		jQuery('#ebookcheck').attr('checked', false);
+// 		jQuery('#expandcheck').attr('checked', false);
+// 		jQuery("#searchbox").html('<script type="text/javascript" id="s5aecdba01c2c01320001441ea15aa1ac" src="http://uta.summon.serialssolutions.com/widgets/box.js"></script><script type="text/javascript"> new SummonCustomSearchBox({"id":"#s5aecdba01c2c01320001441ea15aa1ac","params":{"keep_r":true},"colors":{},"searchbutton_text":"Go","advanced_text":"Advanced Search","placeholder_text":"Search articles, books, guides, and more","advanced":"true","suggest":"true","popup":"true"})</script>');
+// 		jQuery("#s5aecdba01c2c01320001441ea15aa1ac .summon-search-submit[0]").attr("onclick", "_gaq.push(['_trackEvent', 'search', 'submit', 'summoneverything']);");
+// 	}
+// 	if (tabID == 'articles') {
+// 		jQuery('#hider').hide();
+//   		jQuery("#hiderarticles").show();
+//   		jQuery('#ebookcheck').attr('checked', false);
+//   		jQuery('#expandcheck').attr('checked', false);
+// 		jQuery("#searchbox").html('<script id="s5b6f3640cedb0131542b00237dd8628a" src="http://uta.summon.serialssolutions.com/widgets/box.js" type="text/javascript" ></script><script type="text/javascript">new SummonCustomSearchBox({"id":"#s5b6f3640cedb0131542b00237dd8628a","params":{"s.fvf[]":["ContentType,Journal Article"],"keep_r":true},"colors":{},"searchbutton_text":"Go","advanced_text":"Advanced Search","placeholder_text":"Search articles","advanced":"true","suggest":"true","popup":"true"})</script><div class="search-parameters"><label><input type="checkbox" id="peerreview" name="peerbox" onclick="peer();">Peer-Reviewed Only</label></div>');
+// 		jQuery("#s5b6f3640cedb0131542b00237dd8628a .summon-search-submit[0]").attr("onclick", "_gaq.push(['_trackEvent', 'search', 'submit', 'summonarticles']);");
+// 	}
+// 	if (tabID == 'books') {
+// 		jQuery("#hiderarticles").hide();
+//   		jQuery('#hider').show();
+// 		jQuery("#searchbox").html('<script id="s5da153d0cede013143c5441ea15a6074" src="http://uta.summon.serialssolutions.com/widgets/box.js" type="text/javascript" ></script><script type="text/javascript">new SummonCustomSearchBox({"id":"#s5da153d0cede013143c5441ea15a6074","params":{"s.fvf[]":["ContentType,Book / eBook"],"keep_r":true},"colors":{},"searchbutton_text":"Go","advanced_text":"Advanced Search","placeholder_text":"Search books","advanced":"true","suggest":"true","popup":"true"})</script><div class="search-parameters"><label><input id="ebookcheck" name="ebookbox" onclick="expand()" type="checkbox">E-Book only</label> <label><input id="expandcheck" name="expandbox" onclick="expand()" type="checkbox">Expand beyond the Libraries\' collection</label></div>');
+// 		jQuery("#s5da153d0cede013143c5441ea15a6074 .summon-search-submit[0]").attr("onclick", "_gaq.push(['_trackEvent', 'search', 'submit', 'summonbooks']);");
+// 	}
+// 	if (tabID == 'website') {
+// 		jQuery("#searchbox").html('<form class="summon-search-widget" action="http://library-beta.uta.edu/search/node" method="post" id="search-form" accept-charset="UTF-8"><div><div class="summon-search-box" id="edit-basic"><div class="input-group"><input placeholder="Search the libraries website" class="summon-search-field" type="text" id="edit-keys" name="keys" value="" size="50" ><input name="op" onclick="_gaq.push([\'_trackEvent\', \'search\', \'submit\', \'website\']);" type="submit" value="Go" class="summon-search-submit" id="edit-submit"></div></div></div></form>');
+// 	}
+// }
 function changeSearch(tabID) {
 	jQuery(".search-buttons button").removeClass('active');
 	jQuery("#" + tabID).addClass('active');
@@ -8,27 +38,92 @@ function changeSearch(tabID) {
 		jQuery('#peerreviewedarticlescheck').attr('checked', false);
 		jQuery('#ebookcheck').attr('checked', false);
 		jQuery('#expandcheck').attr('checked', false);
-		jQuery("#searchbox").html('<script type="text/javascript" id="s5aecdba01c2c01320001441ea15aa1ac" src="http://uta.summon.serialssolutions.com/widgets/box.js"></script><script type="text/javascript"> new SummonCustomSearchBox({"id":"#s5aecdba01c2c01320001441ea15aa1ac","params":{"keep_r":true},"colors":{},"searchbutton_text":"Go","advanced_text":"Advanced Search","placeholder_text":"Search articles, books, guides, and more","advanced":"true","suggest":"true","popup":"true"})</script>');
-		jQuery("#s5aecdba01c2c01320001441ea15aa1ac .summon-search-submit[0]").attr("onclick", "_gaq.push(['_trackEvent', 'search', 'submit', 'summoneverything']);");
+		jQuery("#searchbox").html('<script type="text/javascript" id="s5aecdba01c2c01320001441ea15aa1ac" src="http://uta.summon.serialssolutions.com/widgets/box.js"></script>
+			<script type="text/javascript"> 
+			new SummonCustomSearchBox({"id":"#s5aecdba01c2c01320001441ea15aa1ac",
+				"params":{"keep_r":true},
+				"colors":{},
+				"searchbutton_text":"Go",
+				"advanced_text":"Advanced Search",
+				"placeholder_text":"Search articles, books, guides, and more",
+				"advanced":"true",
+				"suggest":"true",
+				"popup":"true"})
+		</script>');
+		jQuery("#s5aecdba01c2c01320001441ea15aa1ac .summon-search-submit[0]").attr("
+			onclick", 
+			"_gaq.push(['_trackEvent', 'search', 'submit', 'summoneverything']);");
 	}
 	if (tabID == 'articles') {
 		jQuery('#hider').hide();
   		jQuery("#hiderarticles").show();
   		jQuery('#ebookcheck').attr('checked', false);
   		jQuery('#expandcheck').attr('checked', false);
-		jQuery("#searchbox").html('<script id="s5b6f3640cedb0131542b00237dd8628a" src="http://uta.summon.serialssolutions.com/widgets/box.js" type="text/javascript" ></script><script type="text/javascript">new SummonCustomSearchBox({"id":"#s5b6f3640cedb0131542b00237dd8628a","params":{"s.fvf[]":["ContentType,Journal Article"],"keep_r":true},"colors":{},"searchbutton_text":"Go","advanced_text":"Advanced Search","placeholder_text":"Search articles","advanced":"true","suggest":"true","popup":"true"})</script><div class="search-parameters"><label><input type="checkbox" id="peerreview" name="peerbox" onclick="peer();">Peer-Reviewed Only</label></div>');
-		jQuery("#s5b6f3640cedb0131542b00237dd8628a .summon-search-submit[0]").attr("onclick", "_gaq.push(['_trackEvent', 'search', 'submit', 'summonarticles']);");
+		jQuery("#searchbox").html('<script id="s5b6f3640cedb0131542b00237dd8628a" 
+			src="http://uta.summon.serialssolutions.com/widgets/box.js" 
+			type="text/javascript" >
+			</script>
+			<script type="text/javascript">
+			new SummonCustomSearchBox({"id":"#s5b6f3640cedb0131542b00237dd8628a",
+				"params":{"s.fvf[]":["ContentType,Journal Article"],
+				"keep_r":true},
+				"colors":{},
+				"searchbutton_text":"Go",
+				"advanced_text":"Advanced Search",
+				"placeholder_text":"Search articles",
+				"advanced":"true",
+				"suggest":"true",
+				"popup":"true"})
+		</script>
+		');
+		jQuery("#s5b6f3640cedb0131542b00237dd8628a .summon-search-submit[0]").attr("
+			onclick", 
+			"_gaq.push(['_trackEvent', 'search', 'submit', 'summonarticles']);"
+			);
 	}
 	if (tabID == 'books') {
 		jQuery("#hiderarticles").hide();
   		jQuery('#hider').show();
-		jQuery("#searchbox").html('<script id="s5da153d0cede013143c5441ea15a6074" src="http://uta.summon.serialssolutions.com/widgets/box.js" type="text/javascript" ></script><script type="text/javascript">new SummonCustomSearchBox({"id":"#s5da153d0cede013143c5441ea15a6074","params":{"s.fvf[]":["ContentType,Book / eBook"],"keep_r":true},"colors":{},"searchbutton_text":"Go","advanced_text":"Advanced Search","placeholder_text":"Search books","advanced":"true","suggest":"true","popup":"true"})</script><div class="search-parameters"><label><input id="ebookcheck" name="ebookbox" onclick="expand()" type="checkbox">E-Book only</label> <label><input id="expandcheck" name="expandbox" onclick="expand()" type="checkbox">Expand beyond the Libraries\' collection</label></div>');
+		jQuery("#searchbox").html('<script id="s5da153d0cede013143c5441ea15a6074" src="http://uta.summon.serialssolutions.com/widgets/box.js" type="text/javascript" >
+			</script>
+			<script type="text/javascript">
+			new SummonCustomSearchBox({"id":"#s5da153d0cede013143c5441ea15a6074",
+			"params":{"s.fvf[]":["ContentType,Book / eBook"],"keep_r":true},
+			"colors":{},
+			"searchbutton_text":"Go",
+			"advanced_text":"Advanced Search",
+			"placeholder_text":"Search books",
+			"advanced":"true",
+			"suggest":"true",
+			"popup":"true"})
+			</script>
+			');
 		jQuery("#s5da153d0cede013143c5441ea15a6074 .summon-search-submit[0]").attr("onclick", "_gaq.push(['_trackEvent', 'search', 'submit', 'summonbooks']);");
 	}
 	if (tabID == 'website') {
-		jQuery("#searchbox").html('<form class="summon-search-widget" action="http://library-beta.uta.edu/search/node" method="post" id="search-form" accept-charset="UTF-8"><div><div class="summon-search-box" id="edit-basic"><div class="input-group"><input placeholder="Search the libraries website" class="summon-search-field" type="text" id="edit-keys" name="keys" value="" size="50" ><input name="op" onclick="_gaq.push([\'_trackEvent\', \'search\', \'submit\', \'website\']);" type="submit" value="Go" class="summon-search-submit" id="edit-submit"></div></div></div></form>');
+		jQuery("#searchbox").html('
+			<form class="summon-search-widget" 
+			action="http://library-beta.uta.edu/search/node" 
+			method="post" id="search-form" accept-charset="UTF-8">
+			<div>
+			<div class="summon-search-box" id="edit-basic">
+			<div class="input-group">
+			<input placeholder="Search the libraries website" 
+			class="summon-search-field" 
+			type="text" 
+			id="edit-keys" 
+			name="keys" 
+			value="" 
+			size="50" 
+			>
+			<input name="op" onclick="_gaq.push([\'_trackEvent\', \'search\', \'submit\', \'website\']);" type="submit" value="Go" class="summon-search-submit" id="edit-submit">
+			</div>
+			</div>
+			</div>
+			</form>');
 	}
 }
+
 function hide_ele(tabID)
 {
 	// if(tabID == 'books')
