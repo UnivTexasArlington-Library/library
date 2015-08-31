@@ -8751,14 +8751,17 @@ h5 {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003303}}
 .summon .summon-search-box {
-  width: 100%;
-  line-height: 36px;
-  padding-top: 30%;
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-bottom: 2%;
+  /*width: 100%;
+		line-height: 36px;
+		padding-top: 30%;
+		padding-left: 8%;
+		padding-right: 8%;
+		padding-bottom: 2%;*/
+  margin-left: -13px !important;
+  line-height: 1.6 !important;
+  margin-top: -15px !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003314}}
 .summon .summon-search-field {
   width: 93%;
   font-size: 1.8em;
@@ -8775,7 +8778,7 @@ h5 {
   box-shadow: inset 5px 6px 4px 0px #2F3030;
   /*code for shadow effect ends here*/
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003330}}
 .summon .summon-search-submit {
   background: #f58025;
   border: 2px solid #999990;
@@ -8792,7 +8795,7 @@ h5 {
   -moz-box-shadow: 0px 0px 10px 0px #000000;
   box-shadow: 0px 0px 10px 0px #000000;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003346}}
 .summon a {
   float: right;
   color: #FFFFFF;
@@ -8800,28 +8803,28 @@ h5 {
   text-decoration: underline;
   font-size: 1.2em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003353}}
 .summon form a {
   padding-right: 15%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003356}}
 .summon .search-buttons {
   padding-top: 12%;
   padding-bottom: 13%;
   padding-left: 7%;
   padding-right: 8%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003362}}
 .summon .search-parameters {
   color: #FFFFFF;
   padding-left: 5%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003362}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003365}}
 .summon .search-parameters input {
   margin-right: 6px;
 }
 /*styles book navigation*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003372}}
 .book-navigation .page-next,
 .book-navigation .page-up,
 .book-navigation .page-previous {
@@ -8831,7 +8834,7 @@ h5 {
   border: 1px solid #ddd;
   border-radius: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003379}}
 .book-navigation .page-links {
   padding: 10px;
   display: block;
@@ -8840,65 +8843,65 @@ h5 {
 }
 /*SYSTEM WIDE SETTINGS*/
 /*for orange font*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003388}}
 .orange {
   color: #f58025;
 }
 /*class for inline styling*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003393}}
 .inline {
   display: inline-block;
 }
 /*for padding between nodes*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003398}}
 .node {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003402}}
 .node.node-home-page {
   padding-top: 0;
 }
 /*form styling*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003404}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003407}}
 .node-form {
   padding-left: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003407}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003410}}
 .form-horizontal .form-group {
   margin-left: 0;
   margin-right: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003411}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003414}}
 .btn-primary.form-submit {
   background-color: #5cb85c;
   border-color: #5cb85c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003415}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003418}}
 .form-item {
   margin-left: 15px;
 }
 /*for placeholder text*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003420}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003423}}
 ::-webkit-input-placeholder {
   padding-left: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003424}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003427}}
 :-moz-placeholder {
   /* Firefox 18- */
   padding-left: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003428}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003431}}
 ::-moz-placeholder {
   /* Firefox 19+ */
   padding-left: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003432}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003435}}
 :-ms-input-placeholder {
   padding-left: 10px;
 }
 /*for all nav-tabs*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003437}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003440}}
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus,
@@ -8907,35 +8910,35 @@ h5 {
   border-bottom-color: transparent;
 }
 /*for tab colors*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003442}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003445}}
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   background-color: #f58025;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003447}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003450}}
 .nav-tabs > li > a {
   background-color: #0064b1;
   color: #FFFFFF;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003451}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003454}}
 .tabs-below > .nav-tabs .summary,
 .tabs-left > .nav-tabs .summary,
 .tabs-right > .nav-tabs .summary {
   color: #dddbdb;
 }
 /*styles background color of texteditor for users*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003456}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003459}}
 .cke_editable {
   background: #FFFFFF;
 }
 /*removes opening hours label*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003461}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003464}}
 .field-name-opening-hours-week .field-label {
   display: none;
 }
 /*for image widths*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003467}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003470}}
 .field-type-image img {
   width: auto;
   max-width: 100%;
@@ -8949,13 +8952,13 @@ h5 {
 		}*/
 }
 @media (max-width: 767px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003474}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003477}}
   .field-type-image img {
     padding-bottom: 10px;
   }
 }
 /*for homepage*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003485}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003488}}
 h3 {
   color: #f58025;
   border-top: 1px solid #dddbdb;
@@ -8968,49 +8971,49 @@ h3 {
   padding-left: 25px;
   margin-top: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003496}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003499}}
 h3 a {
   color: #f58025;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003502}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003505}}
 .node-home-page ul {
   color: #f58025;
   font-size: 1.2em;
   text-transform: uppercase;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003506}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003509}}
 .node-home-page ul li {
   padding-bottom: 4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003510}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003513}}
 .node-home-page h3 {
   font-size: 1.5em;
 }
 /*for spco menu*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003517}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003520}}
 #block-menu-menu-spco-menu .dropdown-menu {
   background-color: #FFFFFF;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003520}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003523}}
 #block-menu-menu-spco-menu .dropdown-menu > li > a {
   color: #0064b1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003523}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003526}}
 #block-menu-menu-spco-menu .dropdown-menu > .active > a {
   background-color: #FFFFFF;
 }
 /*for addthis toolbar/social media*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003529}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003532}}
 .addthis_default_style {
   float: right;
 }
 /*for homepage*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003534}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003537}}
 #block-views-news-events-block-2 {
   padding-bottom: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003536}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003539}}
 #block-views-news-events-block-2 h2 {
   color: #f58025;
   text-transform: uppercase;
@@ -9023,7 +9026,7 @@ h3 a {
   margin-right: -15px;
   padding-left: 25px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003548}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003551}}
 #block-views-news-events-block-2 img {
   width: auto;
   height: auto;
@@ -9033,7 +9036,7 @@ h3 a {
   margin-right: auto;
   max-width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003557}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003560}}
 #block-views-news-events-block-2 .views-field-field-news-caption .field-content {
   text-align: center;
   display: block;
@@ -9044,13 +9047,13 @@ h3 a {
   line-height: 1.1em;
   color: #0064b1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003567}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003570}}
 #block-views-news-events-block-2 .carousel-control-container {
   display: block;
   width: 70px;
   float: right;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003571}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003574}}
 #block-views-news-events-block-2 .carousel-control-container .carousel-control {
   top: 102%;
   position: relative;
@@ -9064,24 +9067,24 @@ h3 a {
   background: #f58025;
   opacity: 1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003584}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003587}}
 #block-views-news-events-block-2 .carousel-control-container .carousel-control.left,
 #block-views-news-events-block-2 .carousel-control-container .carousel-control.right {
   background: #f58025;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003587}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003590}}
 #block-views-news-events-block-2 .carousel-control-container .carousel-control.left {
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003590}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003593}}
 #block-views-news-events-block-2 .carousel-control-container .icon-prev:before {
   content: '\25c0';
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003593}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003596}}
 #block-views-news-events-block-2 .carousel-control-container .icon-next:before {
   content: '\25b6';
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003596}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003599}}
 #block-views-news-events-block-2 .carousel-control-container .icon-prev,
 #block-views-news-events-block-2 .carousel-control-container .icon-next {
   width: 32px;
@@ -9092,16 +9095,16 @@ h3 a {
   margin-right: -18px;
 }
 /*for spacing between hours and news & events*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003608}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003611}}
 .view-mode-homepage .row:nth-of-type(2) {
   padding-bottom: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003611}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003614}}
 .view-mode-homepage .row:nth-of-type(3) {
   padding-bottom: 15px;
 }
 /*for available now section*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003616}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003619}}
 .available-links {
   text-transform: none;
   float: right;
@@ -9109,17 +9112,17 @@ h3 a {
   font-size: .7em;
   line-height: 1.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003622}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003625}}
 .available-links a {
   color: #0064b1;
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003628}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003631}}
 #block-available-now-available-now .tabs-left {
   border: 1px solid #dddbdb;
   border-radius: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003632}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003635}}
 #block-available-now-available-now .tabs-left > .nav-tabs {
   width: auto;
   margin-right: -15px;
@@ -9127,19 +9130,19 @@ h3 a {
   padding-bottom: 0;
 }
 @media (max-width: 997px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003637}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003640}}
   #block-available-now-available-now .tabs-left > .nav-tabs {
     width: 40%;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003641}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003644}}
 #block-available-now-available-now .tab-content {
   background: #dddbdb;
   text-align: center;
   color: #0064b1;
   padding-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003646}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003649}}
 #block-available-now-available-now .tab-content .col-md-4 {
   border: 3px solid #FFFFFF;
   border-left: none;
@@ -9148,23 +9151,23 @@ h3 a {
   font-size: 1.2em;
   min-height: 117px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003654}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003657}}
 #block-available-now-available-now .tab-content .col-md-4:last-of-type {
   border: none;
 }
 @media (max-width: 997px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003658}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003661}}
   #block-available-now-available-now .tab-content .col-md-4 {
     border: none;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003663}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003666}}
 #block-available-now-available-now .nav-tabs > .active > a {
   background: #dddbdb;
   border: none;
   color: #0064b1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003668}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003671}}
 #block-available-now-available-now .nav-tabs > li > a {
   color: #f58025;
   background: #FFFFFF;
@@ -9174,74 +9177,74 @@ h3 a {
   border-bottom: 0px solid #dddbdb;
 }
 @media (max-width: 997px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003675}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003678}}
   #block-available-now-available-now .nav-tabs > li > a {
     font-size: small;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003679}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003682}}
 #block-available-now-available-now .avail {
   font-size: 2em;
   padding-top: 27px;
   padding-bottom: 27px;
 }
 @media (max-width: 997px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003683}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003686}}
   #block-available-now-available-now .avail {
     padding-top: none;
     padding-bottom: none;
   }
 }
 /*for hours block*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003690}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003693}}
 .field-name-today-s-hours,
 .hours {
   color: #f58025;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003692}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003695}}
 .field-name-today-s-hours .hours-block,
 .hours .hours-block {
   padding-left: 10px;
   font-size: 1.2em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003696}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003699}}
 .field-name-today-s-hours .hours,
 .hours .hours {
   font-size: 1em;
   padding-bottom: 4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003700}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003703}}
 .field-name-today-s-hours a,
 .hours a {
   text-transform: uppercase;
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003704}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003707}}
 .field-name-today-s-hours a:last-of-type,
 .hours a:last-of-type {
   text-decoration: underline;
 }
 /*for services for*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003710}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003713}}
 .field-name-services-for .field-item a {
   text-transform: uppercase;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003713}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003716}}
 .field-name-services-for ul {
   padding-left: 30px;
 }
 @media (min-width: 768px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003717}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003720}}
   .field-name-services-for ul {
     padding-left: 14%;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003720}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003723}}
   .field-name-services-for h3 {
     padding-left: 12%;
   }
 }
 /*for give button*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003726}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003729}}
 .give {
   color: #f58025;
   text-transform: uppercase;
@@ -9250,20 +9253,20 @@ h3 a {
   float: right;
   margin-right: -45px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003733}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003736}}
 .give img {
   width: 45%;
   display: inline-block;
   margin-top: -35px;
   margin-right: -50px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003740}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003743}}
 .give:hover {
   text-decoration: none;
   color: #f58025;
 }
 /*for spco homepage */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003746}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003749}}
 .field-name-spco-current-exhibit img,
 #block-views-news-events-block-1 img {
   width: auto;
@@ -9273,11 +9276,11 @@ h3 a {
   margin-left: auto;
   margin-right: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003755}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003758}}
 #flickr img {
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003760}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003763}}
 .field-name-spco-current-exhibit h2,
 .field-name-ds-spco-services-for h2,
 #block-views-news-events-block-1 h2 {
@@ -9290,13 +9293,13 @@ h3 a {
   font-size: 1.8em;
   margin-top: 22px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003770}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003773}}
 .field-name-spco-current-exhibit #node-495 h2,
 .field-name-ds-spco-services-for #node-495 h2,
 #block-views-news-events-block-1 #node-495 h2 {
   font-size: 1.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003775}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003778}}
 #node-495 .carousel-caption h3 {
   color: #0064b1;
   font-size: 1.2em;
@@ -9304,13 +9307,13 @@ h3 a {
   text-transform: inherit;
 }
 /*for full width accordion links*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003784}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003787}}
 .panel-title > a {
   width: 100%;
   display: block;
 }
 /*for staff directory*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003792}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003795}}
 .node-staff .field-name-field-image img {
   padding-top: 20px;
   width: auto;
@@ -9318,18 +9321,18 @@ h3 a {
   /*for staff directoy, in smaller devices*/
 }
 @media (max-width: 768px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003797}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003800}}
   .node-staff .field-name-field-image img {
     padding-bottom: 10px;
   }
 }
 /*for locations */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003805}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003808}}
 .node-location img {
   width: 100%;
   height: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003809}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003812}}
 .node-location h2 {
   color: #FFFFFF;
   background: #00447C;
@@ -9338,112 +9341,112 @@ h3 a {
   padding: 5px;
   margin-top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003816}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003819}}
 .node-location h2 a {
   color: #FFFFFF;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003819}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003822}}
 .node-location h2 a:hover,
 .node-location h2 a:focus {
   color: #FFFFFF;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003823}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003826}}
 .node-location .glyphicon img {
   width: 20px;
   height: auto;
 }
 /*for org charts*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003830}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003833}}
 .view-id-or {
   overflow-x: scroll;
 }
 /*for employment page*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003835}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003838}}
 .employment_image {
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003838}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003841}}
 .employment_inspiration {
   color: #FFFFFF;
   text-align: center;
   font-size: 3em;
   padding-top: 5%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003843}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003846}}
 .employment_inspiration div {
   padding-bottom: 10%;
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes changecolor1 {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003849}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003852}}
   from {
     color: #FFFFFF;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003850}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003853}}
   to {
     color: #00447C;
   }
 }
 /* Standard syntax */
 @keyframes changecolor1 {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003854}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003857}}
   from {
     color: #FFFFFF;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003855}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003858}}
   to {
     color: #00447C;
   }
 }
 @-webkit-keyframes fadeaway {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003858}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003861}}
   0% {
     color: #00447C;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003859}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003862}}
   100% {
     color: #dddbdb;
   }
 }
 @keyframes fadeaway {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003862}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003865}}
   0% {
     opacity: 1;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003863}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003866}}
   100% {
     opacity: 0;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003865}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003868}}
 #inspire_1 {
   -webkit-animation: changecolor1 2s,
 						fadeaway 2s 2s linear;
   animation: changecolor1 2s,
 				fadeaway 2s 2s linear;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003871}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003874}}
 #inspire_2 {
   -webkit-animation: changecolor1 2s 2s,
 						fadeaway 2s 4s linear;
   animation: changecolor1 2s 2s,
 						fadeaway 2s 4s linear;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003877}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003880}}
 #inspire_3 {
   -webkit-animation: changecolor1 2s 4s,
 						fadeaway 2s 6s linear;
   animation: changecolor1 2s 4s,
 						fadeaway 2s 6s linear;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003883}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003886}}
 #inspire_4 {
   -webkit-animation: changecolor1 2s 6s,
 						fadeaway 2s 8s linear;
   animation: changecolor1 2s 6s,
 						fadeaway 2s 8s linear;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003889}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003892}}
 #inspire_5 {
   -webkit-animation: changecolor1 2s 8s forwards;
   animation: changecolor1 2s 8s;
@@ -9453,22 +9456,22 @@ h3 a {
   padding-right: 10%;
   padding-left: 10%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003899}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003902}}
 #node-560 .row:first-of-type {
   border-bottom: 30px solid #00447C;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003902}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003905}}
 #node-560 .row:nth-of-type(2) {
   display: table;
   border-top: 30px solid #FFFFFF;
   margin-right: -16.4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003907}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003910}}
 #node-560 .row:before {
   content: '';
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003912}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003915}}
 .employment_orange {
   background: #f58025;
   color: #FFFFFF;
@@ -9476,12 +9479,12 @@ h3 a {
   float: none;
   vertical-align: middle;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003918}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003921}}
 .employment_orange p {
   padding: 7%;
   font-size: 1.8em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003923}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003926}}
 .employment_buttons {
   padding-right: 0;
   padding-left: 0;
@@ -9491,7 +9494,7 @@ h3 a {
   vertical-align: middle;
   background: #0064b1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003931}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003934}}
 .employment_buttons a {
   display: block;
   width: 100%;
@@ -9504,161 +9507,161 @@ h3 a {
   padding-bottom: 10%;
   text-transform: uppercase;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003943}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003946}}
 .employment_buttons a:first-of-type {
   border-bottom: 15px solid #FFFFFF;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003946}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003949}}
 .employment_buttons a:nth-of-type(2) {
   border-top: 15px solid #FFFFFF;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003950}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003953}}
 .employment_believe {
   padding: 4%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003952}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003955}}
 .employment_believe h4,
 .employment_believe p {
   color: #00477C;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003955}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003958}}
 .employment_believe p {
   font-size: 1.8em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003958}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003961}}
 .employment_believe h4 {
   font-size: 3em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003962}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003965}}
 .page-node-560 .page-header,
 .page-node-560 .breadcrumb {
   display: none;
 }
 /*for webforms*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003966}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003969}}
 .webform-container-inline {
   display: inline;
 }
 /*for columns of same height*/
 /* columns of same height styles */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003973}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003976}}
 .container-xs-height,
 .footer .region-footer {
   display: table;
   padding-left: 0px;
   padding-right: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003978}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003981}}
 .row-xs-height,
 .footer .block {
   display: table-row;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003981}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003984}}
 .col-xs-height,
 .footer .col-xs-4 {
   display: table-cell;
   float: none;
 }
 @media (min-width: 768px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003986}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003989}}
   .container-sm-height {
     display: table;
     padding-left: 0px;
     padding-right: 0px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003991}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003994}}
   .row-sm-height {
     display: table-row;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003994}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\00003997}}
   .col-sm-height {
     display: table-cell;
     float: none;
   }
 }
 @media (min-width: 992px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031000}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031003}}
   .container-md-height {
     display: table;
     padding-left: 0px;
     padding-right: 0px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031005}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031008}}
   .row-md-height {
     display: table-row;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031008}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031011}}
   .col-md-height {
     display: table-cell;
     float: none;
   }
 }
 @media (min-width: 1200px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031014}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031017}}
   .container-lg-height {
     display: table;
     padding-left: 0px;
     padding-right: 0px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031019}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031022}}
   .row-lg-height {
     display: table-row;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031022}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031025}}
   .col-lg-height {
     display: table-cell;
     float: none;
   }
 }
 /* vertical alignment styles */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031028}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031031}}
 .col-top,
 .footer .col-xs-4 {
   vertical-align: top;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031031}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031034}}
 .col-middle {
   vertical-align: middle;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031034}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031037}}
 .col-bottom {
   vertical-align: bottom;
 }
 /* for Digital Bookplates */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031038}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031041}}
 .booktitle {
   font-size: 20px;
   text-transform: uppercase;
   color: #f58025;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031043}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031046}}
 .field-name-field-digital-bookplate-item {
   margin-top: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031046}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031049}}
 .thumbnail {
   background-color: transparent;
   border-color: #0064b1;
 }
 /*HEAD*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031051}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031054}}
 .bootstrap-twocol-stacked {
   margin-left: 15px;
   margin-right: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031055}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031058}}
 .view-homepage-images {
   margin-right: -15px;
   margin-left: -15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031059}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031062}}
 .view-homepage-images .carousel-caption {
   left: 0;
   right: 0;
   background-color: rgba(255, 255, 255, 0.5);
 }
 /*New searchbox styles */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031065}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031068}}
 .marketing-image {
   background-image: url('http://library.uta.edu/sites/default/files/HomepageImages/window13.jpg');
   /*http://library.uta.edu/sites/default/files/HomepageImages/window13.jpg*/
@@ -9666,68 +9669,68 @@ h3 a {
   /*height: 700px;*/
   background-size: cover;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031071}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031074}}
 .marketing-caption {
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.45);
   color: #dedcdc;
   margin-top: 6em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031077}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031080}}
 .summon-row {
   z-index: 100;
   background-color: rgba(255, 255, 255, 0.2);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031081}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031084}}
 .summon-form {
   background-color: #0064b1;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031084}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031087}}
 .search-bar-label {
   display: block !important ;
   margin-bottom: 0px !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031090}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031093}}
 .radiogroup {
   height: 63 !important;
   overflow: hidden !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031096}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031099}}
 .psearch-bar-label {
   margin-bottom: 0px !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031101}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031104}}
 .search-bar-label {
   height: 21px !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031108}}
 .radio-back,
 .checkbox-back {
   background: #477CDE;
   padding-right: 0px !important;
   font-size: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031111}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031114}}
 .radio-back {
   padding-left: 15px !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031115}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031118}}
 .checkbox-back {
   padding-left: 0px !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031122}}
 .searchbar-row {
   /*background: #477CDE;*/
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031127}}
 .radio-styles {
   margin-bottom: 2px !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031131}}
 .checkbox-styles {
   margin-bottom: 9px !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031135}}
 #searchbox,
 .searchbargroup,
 #searchgroupglyphbtn,
@@ -9735,26 +9738,26 @@ h3 a {
   line-height: 1.42857143 !important;
   height: 65px !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031137}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031140}}
 #searchbox {
   font-size: 36px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031142}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031145}}
 #closeglp {
   right: -100px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031146}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031149}}
 #closeglph {
   right: -180px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031150}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031153}}
 #radiogroups {
   background-color: #477CDE;
   width: 300px;
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031157}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031160}}
 #hider {
   margin-top: -15px;
   padding-top: 0px;
@@ -9764,7 +9767,7 @@ h3 a {
   position: absolute;
   background-color: #477CDE;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031167}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031170}}
 #hiderarticles {
   margin-top: -15px;
   padding-top: 0px;
@@ -9774,13 +9777,13 @@ h3 a {
   position: absolute;
   background-color: #477CDE;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031177}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031180}}
 #searc-bar {
   margin-top: -15px;
   width: 300px !important;
 }
 /* advance search */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031183}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031186}}
 button.btnad {
   background: #477CDE !important;
   border: none;
@@ -9789,28 +9792,28 @@ button.btnad {
   padding: 0px;
   right: 0px !important;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031191}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031194}}
 .adv_search {
   width: 100%;
 }
 /*Search box css for XS screen size*/
 @media (max-width: 500px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031199}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031202}}
   #resp-search-bar {
     clear: left;
     width: 100%;
     height: 175px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031205}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031208}}
   .search-bar-label {
     display: inline !important ;
     margin-bottom: 0px !important;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031211}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031214}}
   .radiogroup {
     width: 100%;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031216}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031219}}
   #search-bar-div {
     margin-top: -15px;
     width: 300px !important;
@@ -9819,34 +9822,34 @@ button.btnad {
 /*search bar new design engs here*/
 /*=======*/
 /*DEPARTMENT */
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031231}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031234}}
 .taxonomy-term-description {
   margin-bottom: 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031234}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031237}}
 .pane-taxonomy-term-field-organization-chart {
   margin-left: -15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031237}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031240}}
 .view-staff-by-department {
   margin-left: 15px;
 }
 /*FOOTER*/
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031242}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031245}}
 .inq-links {
   float: left;
 }
 /*lg screens*/
 @media (min-width: 1200px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031247}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031250}}
   .inq-links {
     width: 25em;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031250}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031253}}
   .cc-info {
     float: right;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031253}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031256}}
   .fb-icon,
   .tw-icon,
   .yt-icon {
@@ -9856,7 +9859,7 @@ button.btnad {
 /*lg screen ends*/
 /*md screen*/
 @media (min-width: 992px) and (max-width: 1199px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031260}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031263}}
   .fb-icon,
   .tw-icon,
   .yt-icon {
@@ -9866,23 +9869,23 @@ button.btnad {
 /*md screen ends*/
 /*sm screen*/
 @media (min-width: 768px) and (max-width: 991px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031267}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031270}}
   .fb-icon,
   .tw-icon,
   .yt-icon {
     width: 4em;
     padding: 0px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031271}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031274}}
   .address-block {
     margin-bottom: 10px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031274}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031277}}
   .sm-links {
     /*left:15em;*/
     float: none;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031278}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031281}}
   .cc-info {
     /*left: 10em;*/
     float: right;
@@ -9894,7 +9897,7 @@ button.btnad {
 /*sm screen ends*/
 /*xs screen*/
 @media (max-width: 767px) {
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031290}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031293}}
   .address-block,
   .inq-links,
   .links,
@@ -9904,26 +9907,26 @@ button.btnad {
   /*.sm-links{
 		width: 100%
 	}*/
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031299}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031302}}
   .sm-links {
     margin-bottom: 10px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031302}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031305}}
   .sm-links img {
     /*width: 4.5em !important;*/
     padding: 0px;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031306}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031309}}
   .links {
     text-align: left;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031309}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031312}}
   .footer {
     margin: auto;
     text-align: center !important;
     text-align: -moz-center !important;
   }
-  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031314}}
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/upendram\/Documents\/GitHub\/library\/sites\/all\/themes\/library_bootstrap_subtheme\/less\/style\.less}line{font-family:\000031317}}
   .inq-links-right {
     text-align: left;
   }
