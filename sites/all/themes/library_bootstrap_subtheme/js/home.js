@@ -136,6 +136,18 @@ jQuery(document).ready(function() {
   jQuery(".summon-search-field").addClass("col-lg-10 col-md-10 col-sm-10");
   jQuery(".summon-search-submit").addClass("col-sm-2 col-md-2 col-lg-1");
 
+  var doc_width=jQuery(document).width();
+  var doc_height=jQuery(document).height();
+  if(doc_width<768)
+  {
+  	/*xs screen specific styles*/
+
+  }
+  else
+  {
+  	// add classes of big screens , remove classes for smaller screens
+
+  }
 });
 // $("#articles").on("click", function(e) {
 // 	//e.preventDefault();
