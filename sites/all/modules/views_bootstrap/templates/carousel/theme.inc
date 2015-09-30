@@ -22,9 +22,12 @@ function template_preprocess_views_bootstrap_carousel_plugin_style(&$vars) {
   drupal_add_js(drupal_get_path('module', 'views_bootstrap') . '/js/views-bootstrap-carousel.js');
 
   $vars['classes_array'][] = 'carousel slide';
+  $vars['attributes_array']['data-ride'] = 'carousel';
 
   $vars['navigation'] = (bool)$vars['options']['navigation'];
   $vars['indicators'] = (bool)$vars['options']['indicators'];
+  $keys = array_keys($vars['rows']);
+  $vars['first_key'] = reset($keys);
 }
 
 /**

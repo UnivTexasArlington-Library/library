@@ -9,7 +9,7 @@ function template_preprocess_views_bootstrap_list_group_plugin_style(&$vars) {
 
   $vars['linked_items'] = !empty($link_field);
 
-  foreach ($vars['view']->result as $key => $field) {
+  foreach (array_keys($vars['rows']) as $key) {
     $vars['link_fields'][$key] = $view->style_plugin->get_field($key, $link_field);
   }
 }
