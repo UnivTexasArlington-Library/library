@@ -35,10 +35,11 @@ function template_preprocess_views_bootstrap_carousel_plugin_style(&$vars) {
  */
 function template_preprocess_views_bootstrap_carousel_plugin_rows(&$vars) {
   $view = &$vars['view'];
+  $row_index = $view->row_index; // Clone value because get_field will unset it.
 
   foreach ($vars['options'] as $id => $field) {
     if (isset($view->field[$field])) {
-      $vars[$id] = $view->style_plugin->get_field($view->row_index, $field);
+      $vars[$id] = $view->style_plugin->get_field($row_index, $field);
     }
   }
 }

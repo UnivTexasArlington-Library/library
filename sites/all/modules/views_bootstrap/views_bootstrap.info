@@ -23,9 +23,9 @@ files[] = plugins/table/views_bootstrap_table_plugin_style.inc
 
 files[] = plugins/list_group/views_bootstrap_list_group_plugin_style.inc
 
-; Information added by Drupal.org packaging script on 2015-09-25
-version = "7.x-3.1+29-dev"
+; Information added by Drupal.org packaging script on 2015-09-30
+version = "7.x-3.1+30-dev"
 core = "7.x"
 project = "views_bootstrap"
-datestamp = "1443186862"
+datestamp = "1443641641"
 
