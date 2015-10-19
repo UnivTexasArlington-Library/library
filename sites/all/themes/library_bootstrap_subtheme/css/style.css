@@ -7414,13 +7414,16 @@ h3 a {
   font-size: 1.5em;
 }
 /*for spco menu*/
-#block-menu-menu-spco-menu .dropdown-menu {
+#block-menu-menu-spco-menu .dropdown-menu,
+#block-menu-menu-friends-of-the-library .dropdown-menu {
   background-color: #FFFFFF;
 }
-#block-menu-menu-spco-menu .dropdown-menu > li > a {
+#block-menu-menu-spco-menu .dropdown-menu > li > a,
+#block-menu-menu-friends-of-the-library .dropdown-menu > li > a {
   color: #0064b1;
 }
-#block-menu-menu-spco-menu .dropdown-menu > .active > a {
+#block-menu-menu-spco-menu .dropdown-menu > .active > a,
+#block-menu-menu-friends-of-the-library .dropdown-menu > .active > a {
   background-color: #FFFFFF;
 }
 /*for addthis toolbar/social media*/
@@ -7960,7 +7963,6 @@ h3 a {
   background-color: transparent;
   border-color: #0064b1;
 }
-<<<<<<< HEAD
 .bootstrap-twocol-stacked {
   margin-left: 15px;
   margin-right: 15px;
@@ -8063,7 +8065,7 @@ h3 a {
 #searc-bar {
   margin-top: -15px;
   width: 300px !important;
-=======
+}
 /*DEPARTMENT */
 .taxonomy-term-description {
   margin-bottom: 1em;
@@ -8155,5 +8157,4 @@ h3 a {
   .inq-links-right {
     text-align: left;
   }
->>>>>>> origin/clean
 }
