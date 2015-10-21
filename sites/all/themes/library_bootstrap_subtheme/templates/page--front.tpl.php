@@ -77,10 +77,14 @@
 <div class="page-container container-fluid">
  	<div class="row">
       <?php if (!empty($page['lib_header'])): ?>
-    <div class="uta_header"><?php print render($page['lib_header']); ?></div>
+    <div class="uta_header col-md-offset-2 col-md-5 col-sm-offset-3 col-sm-6 col-xs-12">
+      <?php print render($page['lib_header']); ?>
+    </div>
       <?php endif; ?>
       <?php if (!empty($page['todays_hrs'])): ?>
-    <div class=" "><?php print render($page['todays_hrs']); ?></div>
+    <div class="col-md-3 col-sm-3 col-xs-12">
+      <?php print render($page['todays_hrs']); ?>
+    </div>
       <?php endif; ?> 
   </div>
 
@@ -117,7 +121,7 @@
     </div>
   </div>
     <?php endif; ?>
-    
+
   <div class="navbar navbar-default visible-xs" role="navigation">
     <div class="container">
       <div class="navbar-header">
