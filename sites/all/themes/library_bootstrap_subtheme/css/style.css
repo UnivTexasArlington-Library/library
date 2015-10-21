@@ -6861,20 +6861,9 @@ table .checkbox input[type="checkbox"] {
   color: #843534;
 }
 #libhrs {
-  text-align: right;
   background-color: #dddbdb;
-}
-#libhrs h1 {
-  text-transform: uppercase;
-  font-size: 80px;
-  letter-spacing: 15px;
-}
-#libhrs h1 a {
-  text-decoration: none;
-}
-#libhrs h1 a:hover,
-#libhrs h1 a:focus {
-  color: #0064b1;
+  margin: 0;
+  padding: 15px;
 }
 .region-todays-hrs {
   border-left: 2px solid #0064b1;
@@ -6893,6 +6882,7 @@ table .checkbox input[type="checkbox"] {
 .hours {
   color: #0064b1;
   margin-left: 20px;
+  margin-right: 20px;
 }
 /*for footer*/
 .footer {
