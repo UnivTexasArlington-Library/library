@@ -1,1 +1,37 @@
 // Insert your styling here.
+#libhrs {
+	text-align: right;
+	background-color: #dddbdb;
+	h1 {
+		text-transform: uppercase;
+		font-size: 80px;
+		letter-spacing: 15px;
+		a {
+			text-decoration: none;
+			&:hover, 
+			&:focus {
+				color: @brand-primary;
+			}
+		}
+
+	}
+}
+.region-todays-hrs {
+	border-left: 2px solid @brand-primary;
+	padding-left: 50px;
+	h3 {
+		border-width: 0;
+		margin-left: initial;
+		padding-left: inhnierit;
+	}
+	a {
+		&:hover, 
+		&:focus {
+			color: @brand-primary;
+		}
+	}
+}
+.region-todays-hrs > .field-name-today-s-hours, .hours {
+	color:@brand-primary;
+	margin-left: 20px;
+}

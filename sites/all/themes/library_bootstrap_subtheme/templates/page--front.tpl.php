@@ -76,39 +76,29 @@
 
 <div class="page-container container-fluid">
           <?php if (!empty($page['lib_header'])): ?>
-        <div class="row">
-      <?php if (!empty($page['feedback'])): ?>
-        <div class="col-md-2 col-sm-3 hidden-xs">
-          <?php print render($page['feedback']); ?>
-        </div>
-        <div class="col-md-5 col-sm-6 col-xs-12 uta_header">
+        <div  class="row">
+          <?php if (!empty($page['feedback'])): ?>
+          <div class="col-md-2 col-sm-3 hidden-xs">
+            <?php print render($page['feedback']); ?>
+          </div> <!-- end feedback -->
+          <div class="col-md-8 col-sm-9 col-xs-12 uta_header">
 
-      <?php else: ?>
-        <div class="col-md-5 col-sm-6 col-xs-12 uta_header col-sm-offset-3 col-md-offset-2">
-      <?php endif; ?>
-        <?php print render($page['lib_header']); ?>
-        </div>
+              <?php else: ?>
+          <div class="col-md-8 col-sm-9 col-xs-12 uta_header col-sm-offset-3 col-md-offset-2">
+            <?php endif; ?>
+          
+            <div id="libhrs" class="row">
+              <div class="col-md-7 col-sm-7 col-xs-12"><?php print render($page['lib_header']); ?></div>
+                <?php if (!empty($page['todays_hrs'])): ?>
+              <div class="col-md-5 col-sm-5 col-xs-12"><?php print render($page['todays_hrs']); ?></div>
+            </div> <!-- end #libhrs row -->
+              <?php endif; ?>
+    
+        </div> <!-- end uta_header -->
 
+        <?php endif; ?>
 
-        <?php if (!empty($page['todays_hrs'])): ?>
-        <div class="row">
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <?php print render($page['todays_hrs']); ?>
-          </div>
-        </div>
-      <?php endif; ?>
-      
-
-      </div>
-      <?php endif; ?>
-      <?php if (!empty($page['univ_logo'])): ?>
-        <div class="row">
-          <div class="col-md-5 col-md-offset-2 col-sm-6 col-sm-offset-3 col-xs-12 univ_logo">
-            <?php print render($page['univ_logo']); ?>
-          </div>
-        </div>
-      <?php endif; ?>
-      
+      </div> <!-- end row -->
 
 
 

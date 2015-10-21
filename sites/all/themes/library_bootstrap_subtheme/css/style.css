@@ -6860,6 +6860,40 @@ table .checkbox input[type="checkbox"] {
 .alert-danger a {
   color: #843534;
 }
+#libhrs {
+  text-align: right;
+  background-color: #dddbdb;
+}
+#libhrs h1 {
+  text-transform: uppercase;
+  font-size: 80px;
+  letter-spacing: 15px;
+}
+#libhrs h1 a {
+  text-decoration: none;
+}
+#libhrs h1 a:hover,
+#libhrs h1 a:focus {
+  color: #0064b1;
+}
+.region-todays-hrs {
+  border-left: 2px solid #0064b1;
+  padding-left: 50px;
+}
+.region-todays-hrs h3 {
+  border-width: 0;
+  margin-left: initial;
+  padding-left: inhnierit;
+}
+.region-todays-hrs a:hover,
+.region-todays-hrs a:focus {
+  color: #0064b1;
+}
+.region-todays-hrs > .field-name-today-s-hours,
+.hours {
+  color: #0064b1;
+  margin-left: 20px;
+}
 /*for footer*/
 .footer {
   background: #dddbdb;
