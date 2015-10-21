@@ -75,67 +75,62 @@
 ?>
 
 <div class="page-container container-fluid">
- 	  <?php if (!empty($page['lib_header'])): ?>
-        <div class="row">
-          <?php if (!empty($page['feedback'])): ?>
-            <div class="col-md-2 col-sm-3 hidden-xs">
-              <?php print render($page['feedback']); ?>
-            </div>
-            <div class="col-md-5 col-sm-6 col-xs-12 uta_header">
-          <?php else: ?>
-          <div class="col-md-5 col-sm-6 col-xs-12 uta_header col-sm-offset-3 col-md-offset-2">
-          <?php endif; ?>
-          <?php print render($page['lib_header']); ?>
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-12 todays_hrs col-sm-offset-3 col-md-offset-2">
-          <?php endif; ?>
-          <?php print render($page['todays_hrs']); ?>
-          </div>
-          <?php if (!empty($page['univ_logo'])): ?>
-        
-          <div class="col-md-5 col-md-offset-2 col-sm-6 col-sm-offset-3 col-xs-12 univ_logo">
-            <?php print render($page['univ_logo']); ?>
-          </div>
+ 	<div class="row">
+      <?php if (!empty($page['lib_header'])): ?>
+    <div class="uta_header"><?php print render($page['lib_header']); ?></div>
+      <?php endif; ?>
+      <?php if (!empty($page['todays_hrs'])): ?>
+    <div class=" "><?php print render($page['todays_hrs']); ?></div>
+      <?php endif; ?> 
+  </div>
+
+    <?php if (!empty($page['modal'])): ?>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
         </div>
-      <?php endif; ?>
-       
-        
-      <?php endif; ?>
-      <?php if (!empty($page['modal'])): ?>
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              </div>
-              <div class="modal-body">
-                <?php print render($page['modal']); ?>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
+        <div class="modal-body">
+          <?php print render($page['modal']); ?>
         </div>
-      <?php endif; ?>
-      <?php if (!empty($page['help'])): ?>
-        <?php print render($page['help']); ?>
-      <?php endif; ?>
-      <?php if (!empty($page['notification'])): ?>
-        <div class="row"><div class="col-md-8 col-md-offset-2 col-sm-9 col-sm-offset-3 col-xs-12 notification"><div class='alert alert-danger'><?php print render($page['notification']); ?></div></div></div>
-      <?php endif; ?>
-      <div class="navbar navbar-default visible-xs" role="navigation">
-       <div class="container">
-      <div class="navbar-header">
-           <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".row-offcanvas">
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-           </button>
-           <a class="navbar-brand" href="#"></a>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
       </div>
-       </div>
     </div>
+  </div>
+    <?php endif; ?>
+
+    <?php if (!empty($page['help'])): ?>
+      <?php print render($page['help']); ?>
+    <?php endif; ?>
+
+    <?php if (!empty($page['notification'])): ?>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 col-sm-9 col-sm-offset-3 col-xs-12 notification">
+      <div class='alert alert-danger'><?php print render($page['notification']); ?>
+      </div>
+    </div>
+  </div>
+    <?php endif; ?>
+    
+  <div class="navbar navbar-default visible-xs" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".row-offcanvas">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"></a>
+      </div>
+    </div>
+  </div>
+</div>
   
 
 <div id="page-content-wrapper" class="main-container" >
