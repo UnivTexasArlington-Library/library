@@ -6869,20 +6869,44 @@ table .checkbox input[type="checkbox"] {
   border-left: 2px solid #0064b1;
   padding-left: 30px;
 }
+@media (max-width: 480px) {
+  .region-todays-hrs {
+    border-width: 0;
+  }
+}
 .region-todays-hrs h3 {
   border-width: 0;
   margin-left: initial;
   padding: 0;
+  letter-spacing: 4px;
 }
 .region-todays-hrs a:hover,
 .region-todays-hrs a:focus {
   color: #0064b1;
 }
-.region-todays-hrs > .field-name-today-s-hours,
+/*for hours block*/
+.field-name-today-s-hours,
 .hours {
   color: #0064b1;
-  margin-left: 20px;
-  margin-right: 20px;
+}
+.field-name-today-s-hours .hours-block,
+.hours .hours-block {
+  font-size: 1.2em;
+}
+.field-name-today-s-hours .hours,
+.hours .hours {
+  font-size: 1em;
+  padding-bottom: 4px;
+  margin-left: 10px;
+}
+.field-name-today-s-hours a,
+.hours a {
+  text-transform: uppercase;
+  display: block;
+}
+.field-name-today-s-hours a:last-of-type,
+.hours a:last-of-type {
+  text-decoration: underline;
 }
 /*for footer*/
 .footer {
@@ -6923,6 +6947,118 @@ table .checkbox input[type="checkbox"] {
 }
 .footer .col-xs-4:first-of-type {
   padding-bottom: 0px;
+}
+.summon {
+  background: url('/sites/default/files/HomepageImages/podmarketpic.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.summon .btn-summon {
+  background: rgba(0, 71, 124, 0.85);
+  width: 100%;
+  height: 100%;
+  border: none;
+  text-transform: uppercase;
+  padding: 10% 0 11% 0;
+  font-size: 1.4em;
+  text-shadow: #000000 1px 1px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-weight: bold;
+}
+.summon .btn-summon.active {
+  background: rgba(245, 128, 37, 0.85);
+}
+.summon #searchbox {
+  bottom: -230px;
+}
+.summon #everything-button,
+.summon #website-button,
+.summon #articles-button,
+.summon #books-button {
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-size: contain;
+  background-position: 16px;
+}
+.summon #everything-button {
+  background-image: url('http://library.uta.edu/sites/default/files/WebsiteImages/everything.png');
+}
+.summon #website-button {
+  background-image: url('http://library.uta.edu/sites/default/files/WebsiteImages/website.png');
+}
+.summon #articles-button {
+  background-image: url('http://library.uta.edu/sites/default/files/WebsiteImages/articles.png');
+}
+.summon #books-button {
+  background-image: url('http://library.uta.edu/sites/default/files/WebsiteImages/books.png');
+}
+.summon .summon-search-box {
+  width: 100%;
+  line-height: 36px;
+  padding-top: 30%;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-bottom: 2%;
+}
+.summon .summon-search-field {
+  width: 93%;
+  font-size: 1em;
+  border-radius: 5px;
+  line-height: 2.2em;
+  /* old code	304	
+		-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);	
+		-moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+		box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75); 	 	
+		*/
+  /*Code for for shadow effect*/
+  -webkit-box-shadow: inset 5px 6px 4px 0px #2F3030;
+  -moz-box-shadow: inset 5px 6px 4px 0px #2F3030;
+  box-shadow: inset 5px 6px 4px 0px #2F3030;
+  /*code for shadow effect ends here*/
+}
+.summon .summon-search-submit {
+  background: #f58025;
+  border: 2px solid #999990;
+  border-radius: 42px;
+  font-size: 1em;
+  color: #FFFFFF;
+  padding: 19px;
+  text-transform: uppercase;
+  margin-left: -37px;
+  margin-top: 7px;
+  position: absolute;
+  border: none;
+  -webkit-box-shadow: 0px 0px 10px 0px #000000;
+  -moz-box-shadow: 0px 0px 10px 0px #000000;
+  box-shadow: 0px 0px 10px 0px #000000;
+}
+.summon a {
+  float: right;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 0.8em;
+}
+.summon form a {
+  padding-right: 15%;
+}
+.summon .search-buttons {
+  padding-top: 18%;
+  padding-left: 7%;
+  padding-right: 8%;
+  margin-bottom: 42%;
+}
+.summon .search-parameters {
+  color: #FFFFFF;
+  padding-left: 5%;
+}
+.summon .search-parameters input {
+  margin-right: 6px;
 }
 /*for body font*/
 body {
@@ -7184,118 +7320,6 @@ h5 {
 .breadcrumb {
   text-align: right;
   margin-bottom: 0;
-}
-.summon {
-  background: url('/sites/default/files/HomepageImages/podmarketpic.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-.summon .btn-summon {
-  background: rgba(0, 71, 124, 0.85);
-  width: 100%;
-  height: 100%;
-  border: none;
-  text-transform: uppercase;
-  padding: 10% 0 11% 0;
-  font-size: 1.4em;
-  text-shadow: #000000 1px 1px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  font-weight: bold;
-}
-.summon .btn-summon.active {
-  background: rgba(245, 128, 37, 0.85);
-}
-.summon #searchbox {
-  bottom: -80px;
-}
-.summon #everything-button,
-.summon #website-button,
-.summon #articles-button,
-.summon #books-button {
-  background-repeat: no-repeat;
-  border-radius: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-  background-size: contain;
-  background-position: 16px;
-}
-.summon #everything-button {
-  background-image: url('http://library.uta.edu/sites/default/files/WebsiteImages/everything.png');
-}
-.summon #website-button {
-  background-image: url('http://library.uta.edu/sites/default/files/WebsiteImages/website.png');
-}
-.summon #articles-button {
-  background-image: url('http://library.uta.edu/sites/default/files/WebsiteImages/articles.png');
-}
-.summon #books-button {
-  background-image: url('http://library.uta.edu/sites/default/files/WebsiteImages/books.png');
-}
-.summon .summon-search-box {
-  width: 100%;
-  line-height: 36px;
-  padding-top: 30%;
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-bottom: 2%;
-}
-.summon .summon-search-field {
-  width: 93%;
-  font-size: 1.8em;
-  border-radius: 5px;
-  line-height: 2.2em;
-  /* old code	304	
-		-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);	
-		-moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-		box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75); 	 	
-		*/
-  /*Code for for shadow effect*/
-  -webkit-box-shadow: inset 5px 6px 4px 0px #2F3030;
-  -moz-box-shadow: inset 5px 6px 4px 0px #2F3030;
-  box-shadow: inset 5px 6px 4px 0px #2F3030;
-  /*code for shadow effect ends here*/
-}
-.summon .summon-search-submit {
-  background: #f58025;
-  border: 2px solid #999990;
-  border-radius: 42px;
-  font-size: 2em;
-  color: #FFFFFF;
-  padding: 19px;
-  text-transform: uppercase;
-  margin-left: -37px;
-  margin-top: -3px;
-  position: absolute;
-  border: none;
-  -webkit-box-shadow: 0px 0px 10px 0px #000000;
-  -moz-box-shadow: 0px 0px 10px 0px #000000;
-  box-shadow: 0px 0px 10px 0px #000000;
-}
-.summon a {
-  float: right;
-  color: #FFFFFF;
-  text-transform: uppercase;
-  text-decoration: underline;
-  font-size: 1.2em;
-}
-.summon form a {
-  padding-right: 15%;
-}
-.summon .search-buttons {
-  padding-top: 12%;
-  padding-bottom: 13%;
-  padding-left: 7%;
-  padding-right: 8%;
-}
-.summon .search-parameters {
-  color: #FFFFFF;
-  padding-left: 5%;
-}
-.summon .search-parameters input {
-  margin-right: 6px;
 }
 /*styles book navigation*/
 .book-navigation .page-next,
@@ -7613,30 +7637,6 @@ h3 a {
     padding-top: none;
     padding-bottom: none;
   }
-}
-/*for hours block*/
-.field-name-today-s-hours,
-.hours {
-  color: #f58025;
-}
-.field-name-today-s-hours .hours-block,
-.hours .hours-block {
-  padding-left: 10px;
-  font-size: 1.2em;
-}
-.field-name-today-s-hours .hours,
-.hours .hours {
-  font-size: 1em;
-  padding-bottom: 4px;
-}
-.field-name-today-s-hours a,
-.hours a {
-  text-transform: uppercase;
-  display: block;
-}
-.field-name-today-s-hours a:last-of-type,
-.hours a:last-of-type {
-  text-decoration: underline;
 }
 /*for services for*/
 .field-name-services-for .field-item a {
@@ -7999,96 +7999,6 @@ h3 a {
   left: 0;
   right: 0;
   background-color: rgba(255, 255, 255, 0.5);
-}
-/*New searchbox styles */
-.marketing-image {
-  background-image: url('http://library.uta.edu/sites/default/files/HomepageImages/window13.jpg');
-  /*http://library.uta.edu/sites/default/files/HomepageImages/window13.jpg*/
-  background-repeat: no-repeat;
-  /*height: 700px;*/
-  background-size: cover;
-}
-.marketing-caption {
-  z-index: 100;
-  background-color: rgba(0, 0, 0, 0.45);
-  color: #dedcdc;
-  margin-top: 6em;
-}
-.summon-row {
-  z-index: 100;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-.summon-form {
-  background-color: #0064b1;
-}
-.search-bar-label {
-  display: block !important ;
-  margin-bottom: 0px !important;
-}
-.radio-back,
-.checkbox-back {
-  background: #477CDE;
-  padding-right: 0px !important;
-  font-size: 10px;
-}
-.radio-back {
-  padding-left: 15px !important;
-}
-.checkbox-back {
-  padding-left: 0px !important;
-}
-.searchbar-row {
-  /*background: #477CDE;*/
-}
-.radio-styles {
-  margin-bottom: 2px !important;
-}
-.checkbox-styles {
-  margin-bottom: 9px !important;
-}
-#searchbox,
-.searchbargroup,
-#searchgroupglyphbtn,
-#AdvSearchddbtn {
-  line-height: 1.42857143 !important;
-  height: 65px !important;
-}
-#searchbox {
-  font-size: 36px;
-}
-#closeglp {
-  right: -100px;
-}
-#closeglph {
-  right: -180px;
-}
-#radiogroups {
-  background-color: #477CDE;
-  width: 300px;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-}
-#hider {
-  margin-top: -15px;
-  padding-top: 0px;
-  width: 120px;
-  margin-left: 180px;
-  z-index: 1000;
-  position: absolute;
-  background-color: #477CDE;
-}
-#hiderarticles {
-  margin-top: -15px;
-  padding-top: 0px;
-  margin-left: 100px;
-  width: 200px;
-  z-index: 1000;
-  position: absolute;
-  background-color: #477CDE;
-}
-#searc-bar {
-  margin-top: -15px;
-  width: 300px !important;
 }
 /*DEPARTMENT */
 .taxonomy-term-description {

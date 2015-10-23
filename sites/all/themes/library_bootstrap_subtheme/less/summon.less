@@ -1,0 +1,110 @@
+// Summon Search Box styling here.
+.summon {
+	background: url('/sites/default/files/HomepageImages/podmarketpic.jpg');
+	background-size: 100%;
+	background-repeat:no-repeat;
+	.btn-summon {
+		background: rgba(0, 71, 124, 0.85);
+		width:100%;
+		height:100%;
+		border:none;
+		text-transform:uppercase;
+		padding:10% 0 11% 0;
+		font-size:1.4em;
+		text-shadow:#000000 1px 1px;
+		display:block;
+		margin-left:auto;
+		margin-right:auto;
+		text-align:center;
+		font-weight:bold;
+	} 
+	.btn-summon.active {
+		background: rgba(245, 128, 37, 0.85);
+	}
+	#searchbox {
+		bottom: -230px;
+	}
+	#everything-button, #website-button, #articles-button, #books-button {
+		background-repeat:no-repeat;
+		border-radius:5px;
+		padding-left:15px;
+		padding-right:15px;
+		background-size:contain;
+		background-position: 16px;
+	}
+	#everything-button {
+		background-image:url('http://library.uta.edu/sites/default/files/WebsiteImages/everything.png');
+	}
+	#website-button {
+		background-image:url('http://library.uta.edu/sites/default/files/WebsiteImages/website.png');
+	}
+	#articles-button {
+		background-image:url('http://library.uta.edu/sites/default/files/WebsiteImages/articles.png');
+	}
+	#books-button {
+		background-image:url('http://library.uta.edu/sites/default/files/WebsiteImages/books.png');
+	}
+	.summon-search-box {
+		width: 100%;
+		line-height: 36px;
+		padding-top: 30%;
+		padding-left: 8%;
+		padding-right: 8%;
+		padding-bottom: 2%;
+	}
+	.summon-search-field {
+		width: 93%;
+		font-size: 1em;
+		border-radius:5px;
+		line-height:2.2em;
+		/* old code	304	
+		-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);	
+		-moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+		box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75); 	 	
+		*/ 	 	
+		/*Code for for shadow effect*/ 	 	
+		-webkit-box-shadow: inset 5px 6px 4px 0px #2F3030; 	 	
+		-moz-box-shadow: inset 5px 6px 4px 0px #2F3030; 	 	
+		box-shadow: inset 5px 6px 4px 0px #2F3030; 	 	
+		/*code for shadow effect ends here*/ 
+	}
+	.summon-search-submit {
+		background: @brand-warning;
+		border: 2px solid #999990;
+		border-radius: 42px;
+		font-size: 1em;
+		color: #FFFFFF;
+		padding: 19px;
+		text-transform: uppercase;
+		margin-left: -37px;
+		margin-top: 7px;
+		position: absolute;
+		border:none;
+		-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
+        -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
+		box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
+	}
+	a {
+		float:right;
+		color: #FFFFFF;
+		text-transform:uppercase;
+		text-decoration:underline;
+		font-size:0.8em;
+	}
+	form a {
+		padding-right:15%;
+	}
+	.search-buttons {
+		padding-top: 18%;
+		padding-left: 7%;
+		padding-right: 8%;
+		margin-bottom: 42%;
+	}
+	.search-parameters {
+		color:#FFFFFF;
+		padding-left:5%;
+		input {
+			margin-right:6px;
+		}
+	}
+}

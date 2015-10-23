@@ -7,10 +7,14 @@
 .region-todays-hrs {
 	border-left: 2px solid @brand-primary;
 	padding-left: 30px;
+	@media(max-width:@screen-xs){
+		border-width:0;
+	}
 	h3 {
 		border-width: 0;
 		margin-left: initial;
 		padding: 0;
+		letter-spacing: 4px;
 	}
 	a {
 		&:hover, 
@@ -19,8 +23,22 @@
 		}
 	}
 }
-.region-todays-hrs > .field-name-today-s-hours, .hours {
+/*for hours block*/
+.field-name-today-s-hours, .hours {
 	color:@brand-primary;
-	margin-left: 20px;
-	margin-right: 20px;
+	.hours-block {
+		font-size:1.2em;
+	}
+	.hours {
+		font-size:1em;
+		padding-bottom:4px;
+		margin-left: 10px;
+	}
+	a {
+		text-transform:uppercase;
+		display:block;
+	}
+	a:last-of-type {
+		text-decoration:underline;
+	}
 }
