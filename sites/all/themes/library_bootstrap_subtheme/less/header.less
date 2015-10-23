@@ -6,10 +6,8 @@
 }
 .region-todays-hrs {
 	border-left: 2px solid @brand-primary;
-	padding-left: 30px;
-	@media(max-width:@screen-xs){
-		border-width:0;
-	}
+	padding-left: 20px;
+	
 	h3 {
 		border-width: 0;
 		margin-left: initial;
@@ -22,17 +20,20 @@
 			color: @brand-primary;
 		}
 	}
+	@media (max-width:@screen-xs){
+		border-width:0;
+	}
 }
 /*for hours block*/
 .field-name-today-s-hours, .hours {
 	color:@brand-primary;
+	margin-left: 10px;
 	.hours-block {
 		font-size:1.2em;
 	}
 	.hours {
 		font-size:1em;
 		padding-bottom:4px;
-		margin-left: 10px;
 	}
 	a {
 		text-transform:uppercase;
