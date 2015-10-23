@@ -6949,7 +6949,7 @@ table .checkbox input[type="checkbox"] {
   padding-bottom: 0px;
 }
 .summon {
-  background: url('/sites/default/files/HomepageImages/podmarketpic.jpg');
+  background: url('/sites/default/files/HomepageImages/football.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -6972,7 +6972,7 @@ table .checkbox input[type="checkbox"] {
   background: rgba(245, 128, 37, 0.85);
 }
 .summon #searchbox {
-  bottom: -230px;
+  bottom: -80px;
 }
 .summon #everything-button,
 .summon #website-button,
@@ -7000,14 +7000,14 @@ table .checkbox input[type="checkbox"] {
 .summon .summon-search-box {
   width: 100%;
   line-height: 36px;
-  padding-top: 30%;
+  padding-top: 24%;
   padding-left: 8%;
   padding-right: 8%;
   padding-bottom: 2%;
 }
 .summon .summon-search-field {
   width: 93%;
-  font-size: 1em;
+  font-size: 1.8em;
   border-radius: 5px;
   line-height: 2.2em;
   /* old code	304	
@@ -7025,12 +7025,12 @@ table .checkbox input[type="checkbox"] {
   background: #f58025;
   border: 2px solid #999990;
   border-radius: 42px;
-  font-size: 1em;
+  font-size: 2em;
   color: #FFFFFF;
   padding: 19px;
   text-transform: uppercase;
   margin-left: -37px;
-  margin-top: 7px;
+  margin-top: -3px;
   position: absolute;
   border: none;
   -webkit-box-shadow: 0px 0px 10px 0px #000000;
@@ -7042,16 +7042,16 @@ table .checkbox input[type="checkbox"] {
   color: #FFFFFF;
   text-transform: uppercase;
   text-decoration: underline;
-  font-size: 0.8em;
+  font-size: 1.2em;
 }
 .summon form a {
   padding-right: 15%;
 }
 .summon .search-buttons {
-  padding-top: 18%;
+  margin-top: 12%;
+  padding-bottom: 13%;
   padding-left: 7%;
   padding-right: 8%;
-  margin-bottom: 42%;
 }
 .summon .search-parameters {
   color: #FFFFFF;
