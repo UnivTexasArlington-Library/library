@@ -22,7 +22,10 @@ function library_bootstrap_subtheme_preprocess_views_view_rowspan(&$vars) {
 function bootstrap_menu_tree__menu_spco_menu(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
-
+//adding class to services for k12 menu
+function bootstrap_menu_tree__menu_services_k12(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
 
 //adds homepage javascript file for summon search boxes
 function library_bootstrap_subtheme_preprocess_node(&$vars, $hook) {
