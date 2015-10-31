@@ -23,8 +23,36 @@ function bootstrap_menu_tree__menu_spco_menu(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
 
-//adding class to services for assessment menu
+//adding class to assessment menu
 function bootstrap_menu_tree__menu_assessment(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
+
+//adding class to borrowing menu
+function bootstrap_menu_tree__menu_borrowing_menu(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
+
+//adding class to library instruction menu
+function bootstrap_menu_tree__menu_library_instruction(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
+
+//adding class to services for visitors menu
+function bootstrap_menu_tree__menu_visitors(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
+//adding class to services for k12 menu
+function bootstrap_menu_tree__menu_services_k12(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
+//adding class to services for k12 menu
+function bootstrap_menu_tree__menu_giving(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
+
+//adding class to reserves menu
+function bootstrap_menu_tree__menu_reserves(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
 
