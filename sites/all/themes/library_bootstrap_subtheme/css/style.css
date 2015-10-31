@@ -7638,21 +7638,23 @@ h3 a {
     padding-bottom: none;
   }
 }
-/*for services for*/
-.field-name-services-for .field-item a {
-  text-transform: uppercase;
-}
-.field-name-services-for ul {
-  padding-left: 30px;
-}
-@media (min-width: 768px) {
-  .field-name-services-for ul {
-    padding-left: 14%;
-  }
-  .field-name-services-for h3 {
-    padding-left: 12%;
-  }
-}
+/*for services for
+.field-name-services-for {
+	.field-item a {
+		text-transform: uppercase;
+	}
+	ul {
+		padding-left:30px;
+	}
+	@media(min-width:@screen-sm) {
+		ul {
+			padding-left:14%;
+		}
+		h3 {
+			padding-left:12%;
+		}
+	}
+}*/
 /*for give button*/
 .give {
   color: #f58025;
