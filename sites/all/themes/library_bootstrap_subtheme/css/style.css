@@ -7688,7 +7688,7 @@ h3 a {
   width: 100%;
 }
 .field-name-spco-current-exhibit h2,
-.field-name-ds-spco-services-for h2,
+.field-name-ds-spco-services-for .field-name-services-for h2,
 #block-views-news-events-block-1 h2 {
   color: #f58025;
   text-transform: uppercase;
@@ -7700,7 +7700,7 @@ h3 a {
   margin-top: 22px;
 }
 .field-name-spco-current-exhibit #node-495 h2,
-.field-name-ds-spco-services-for #node-495 h2,
+.field-name-ds-spco-services-for .field-name-services-for #node-495 h2,
 #block-views-news-events-block-1 #node-495 h2 {
   font-size: 1.5em;
 }
