@@ -46,13 +46,27 @@ function bootstrap_menu_tree__menu_visitors(&$variables) {
 function bootstrap_menu_tree__menu_services_k12(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
-//adding class to services for k12 menu
+//adding class to services for faculty menu
+function bootstrap_menu_tree__menu_services_faculty(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
+//adding class to giving menu
 function bootstrap_menu_tree__menu_giving(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
 
 //adding class to reserves menu
 function bootstrap_menu_tree__menu_reserves(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
+
+//adding class to robots menu
+function bootstrap_menu_tree__menu_robots(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
+
+//adding class to robots menu
+function bootstrap_menu_tree__menu_friends_library(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
 
