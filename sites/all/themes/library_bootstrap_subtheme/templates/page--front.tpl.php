@@ -119,8 +119,15 @@
           </div>
         </div>
       <?php endif; ?>
+      <?php if (!empty($page['help'])): ?>
+        <?php print render($page['help']); ?>
+      <?php endif; ?>
       <?php if (!empty($page['notification'])): ?>
-        <div class="row"><div class="col-md-8 col-md-offset-2 col-sm-9 col-sm-offset-3 col-xs-12 notification"><div class='alert alert-danger'><?php print render($page['notification']); ?></div></div></div>
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 col-sm-9 col-sm-offset-3 col-xs-12 notification">
+            <div class='alert alert-danger'><?php print render($page['notification']); ?></div>
+          </div>
+        </div>
       <?php endif; ?>
       <div class="navbar navbar-default visible-xs" role="navigation">
        <div class="container">
