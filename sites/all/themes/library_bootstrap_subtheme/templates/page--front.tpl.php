@@ -75,7 +75,7 @@
 ?>
 
 <div class="page-container container-fluid">
-    <?php if (!empty($page['uta_header'])): ?>
+ 	  <?php if (!empty($page['uta_header'])): ?>
         <div class="row">
       <?php if (!empty($page['feedback'])): ?>
         <div class="col-md-2 col-sm-3 hidden-xs">
@@ -89,8 +89,19 @@
         </div>
       <?php endif; ?>
        <?php if (!empty($page['univ_logo'])): ?>
-        <div class="row"><div class="col-md-8 col-md-offset-2 col-sm-9 col-sm-offset-3 col-xs-12 univ_logo"><?php print render($page['univ_logo']); ?></div></div>
+        <div class="row">
+          <div class="col-md-offset-2 col-md-1 univ_logo">
+            <?php print render($page['univ_logo']); ?>
+          </div>
+          <div class="col-md-4">
+            <?php print render($page['lib_header']); ?>
+          </div>
+          <div class="col-md-3" id="libhrs">
+            <?php print render($page['todays_hrs']); ?>
+          </div>
+        </div>
       <?php endif; ?>
+
       <?php if (!empty($page['modal'])): ?>
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -112,11 +123,7 @@
         <?php print render($page['help']); ?>
       <?php endif; ?>
       <?php if (!empty($page['notification'])): ?>
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2 col-sm-9 col-sm-offset-3 col-xs-12 notification">
-            <div class='alert alert-danger'><?php print render($page['notification']); ?></div>
-          </div>
-        </div>
+        <div class="row"><div class="col-md-8 col-md-offset-2 col-sm-9 col-sm-offset-3 col-xs-12 notification"><div class='alert alert-danger'><?php print render($page['notification']); ?></div></div></div>
       <?php endif; ?>
       <div class="navbar navbar-default visible-xs" role="navigation">
        <div class="container">
