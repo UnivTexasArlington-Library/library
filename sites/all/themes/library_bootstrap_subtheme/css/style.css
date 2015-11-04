@@ -6861,28 +6861,20 @@ table .checkbox input[type="checkbox"] {
   color: #843534;
 }
 #libhrs {
-  background-color: #dddbdb;
+  background-color: #f58025;
   margin: 0;
   padding: 15px;
-}
-.region-todays-hrs {
-  border-left: 2px solid #0064b1;
-  padding-left: 20px;
 }
 .region-todays-hrs h3 {
   border-width: 0;
   margin-left: initial;
   padding: 0;
-  letter-spacing: 4px;
+  color: #fff;
+  text-transform: none;
 }
 .region-todays-hrs a:hover,
 .region-todays-hrs a:focus {
   color: #0064b1;
-}
-@media (max-width: 480px) {
-  .region-todays-hrs {
-    border-width: 0;
-  }
 }
 /*for hours block*/
 .field-name-today-s-hours,
@@ -6898,6 +6890,7 @@ table .checkbox input[type="checkbox"] {
 .hours .hours {
   font-size: 1em;
   padding-bottom: 4px;
+  float: right;
 }
 .field-name-today-s-hours a,
 .hours a {
@@ -6907,6 +6900,10 @@ table .checkbox input[type="checkbox"] {
 .field-name-today-s-hours a:last-of-type,
 .hours a:last-of-type {
   text-decoration: underline;
+}
+.all_hours {
+  float: right;
+  color: #fff;
 }
 /*for footer*/
 .footer {

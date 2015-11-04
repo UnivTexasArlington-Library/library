@@ -1,27 +1,22 @@
 // Insert your styling here.
 #libhrs {
-	background-color: #dddbdb;
+	background-color: @brand-warning;
 	margin: 0;
 	padding: 15px;
 }
 .region-todays-hrs {
-	border-left: 2px solid @brand-primary;
-	padding-left: 20px;
-	
 	h3 {
 		border-width: 0;
 		margin-left: initial;
 		padding: 0;
-		letter-spacing: 4px;
+		color:#fff;
+		text-transform: none;
 	}
 	a {
 		&:hover, 
 		&:focus {
 			color: @brand-primary;
 		}
-	}
-	@media (max-width:@screen-xs){
-		border-width:0;
 	}
 }
 /*for hours block*/
@@ -34,6 +29,7 @@
 	.hours {
 		font-size:1em;
 		padding-bottom:4px;
+		float: right;
 	}
 	a {
 		text-transform:uppercase;
@@ -42,4 +38,8 @@
 	a:last-of-type {
 		text-decoration:underline;
 	}
+}
+.all_hours {
+	float:right;
+	color:#fff;
 }
