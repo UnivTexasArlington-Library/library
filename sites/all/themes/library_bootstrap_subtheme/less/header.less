@@ -34,8 +34,6 @@
 }
 #libhrs {
 	background-color: @brand-warning;
-	margin: 0;
-	padding: 15px;
 }
 .region-todays-hrs {
 	h3 {
@@ -50,6 +48,10 @@
 	a {
 		color:@brand-primary;
 	}
+	a.all_hours {
+		float:right;
+		color:#fff;
+	}
 }
 /*for hours block*/
 .hours-block {
@@ -59,17 +61,11 @@
 
 span.hours {
 	font-size:1em;
-	padding-bottom:4px;
 	float: right;
 	a {
-		text-transform:uppercase;
 		display:block;
 	}
 	a:last-of-type {
 		text-decoration:underline;
 	}
-}
-.all_hours {
-	float:right;
-	color:#fff;
 }

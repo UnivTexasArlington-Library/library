@@ -6896,8 +6896,6 @@ table .checkbox input[type="checkbox"] {
 }
 #libhrs {
   background-color: #f58025;
-  margin: 0;
-  padding: 15px;
 }
 .region-todays-hrs h3 {
   border-width: 0;
@@ -6911,6 +6909,10 @@ table .checkbox input[type="checkbox"] {
 .region-todays-hrs a {
   color: #0064b1;
 }
+.region-todays-hrs a.all_hours {
+  float: right;
+  color: #fff;
+}
 /*for hours block*/
 .hours-block {
   font-size: 1.1em;
@@ -6918,19 +6920,13 @@ table .checkbox input[type="checkbox"] {
 }
 span.hours {
   font-size: 1em;
-  padding-bottom: 4px;
   float: right;
 }
 span.hours a {
-  text-transform: uppercase;
   display: block;
 }
 span.hours a:last-of-type {
   text-decoration: underline;
-}
-.all_hours {
-  float: right;
-  color: #fff;
 }
 /*for footer*/
 .footer {
@@ -7176,36 +7172,6 @@ h5 {
   }
 }
 /*end sidebar nav style*/
-/*for uta header*/
-.region-uta-header img {
-  width: 100%;
-}
-.uta_header {
-  padding-left: 0;
-  padding-right: 0;
-}
-.univ_logo {
-  background: #00447C;
-  padding-left: 0;
-  padding-right: 0;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: #dddbdb;
-  text-transform: uppercase;
-  text-align: right;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  letter-spacing: .05em;
-  padding-right: 12px;
-}
-.univ_logo img {
-  max-width: 17px;
-  margin-bottom: 2px;
-}
-.univ_logo a {
-  color: #FFFFFF;
-  vertical-align: bottom;
-  font-size: 12px;
-}
 .center-container {
   background: #FFFFFF;
 }
