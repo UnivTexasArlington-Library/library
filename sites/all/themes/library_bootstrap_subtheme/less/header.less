@@ -1,4 +1,37 @@
 // Insert your styling here.
+/*for uta header*/
+.region-univ-logo, .region-lib-header {
+	background-color: #dddcdc;
+}
+.region-uta-header img {
+	width:100%;
+}
+.uta_header {
+	padding-left:0;
+	padding-right:0;
+}
+.univ_logo {
+	background: #00447C;
+	padding-left:0;
+	padding-right:0;
+	font-family: @font-family-serif;
+	color: #dddbdb;
+	text-transform:uppercase;
+	text-align:right;
+	padding-top:4px;
+	padding-bottom:4px;
+	letter-spacing:.05em;
+	padding-right: 12px;
+	img {
+		max-width:100%;
+		width: 100%
+	}
+	a {
+		color:#FFFFFF;
+		vertical-align: bottom;
+		font-size: 12px;
+	}
+}
 #libhrs {
 	background-color: @brand-warning;
 	margin: 0;
@@ -11,26 +44,23 @@
 		padding: 0;
 		color:#fff;
 		text-transform: none;
+		margin-bottom:0;
+		font-size: 20px;
 	}
 	a {
-		&:hover, 
-		&:focus {
-			color: @brand-primary;
-		}
+		color:@brand-primary;
 	}
 }
 /*for hours block*/
-.field-name-today-s-hours, .hours {
+.hours-block {
+	font-size:1.1em;
 	color:@brand-primary;
-	margin-left: 10px;
-	.hours-block {
-		font-size:1.2em;
-	}
-	.hours {
-		font-size:1em;
-		padding-bottom:4px;
-		float: right;
-	}
+}
+
+span.hours {
+	font-size:1em;
+	padding-bottom:4px;
+	float: right;
 	a {
 		text-transform:uppercase;
 		display:block;

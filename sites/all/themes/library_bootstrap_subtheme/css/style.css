@@ -6860,6 +6860,40 @@ table .checkbox input[type="checkbox"] {
 .alert-danger a {
   color: #843534;
 }
+/*for uta header*/
+.region-univ-logo,
+.region-lib-header {
+  background-color: #dddcdc;
+}
+.region-uta-header img {
+  width: 100%;
+}
+.uta_header {
+  padding-left: 0;
+  padding-right: 0;
+}
+.univ_logo {
+  background: #00447C;
+  padding-left: 0;
+  padding-right: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #dddbdb;
+  text-transform: uppercase;
+  text-align: right;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  letter-spacing: .05em;
+  padding-right: 12px;
+}
+.univ_logo img {
+  max-width: 100%;
+  width: 100%;
+}
+.univ_logo a {
+  color: #FFFFFF;
+  vertical-align: bottom;
+  font-size: 12px;
+}
 #libhrs {
   background-color: #f58025;
   margin: 0;
@@ -6871,34 +6905,27 @@ table .checkbox input[type="checkbox"] {
   padding: 0;
   color: #fff;
   text-transform: none;
+  margin-bottom: 0;
+  font-size: 20px;
 }
-.region-todays-hrs a:hover,
-.region-todays-hrs a:focus {
+.region-todays-hrs a {
   color: #0064b1;
 }
 /*for hours block*/
-.field-name-today-s-hours,
-.hours {
+.hours-block {
+  font-size: 1.1em;
   color: #0064b1;
-  margin-left: 10px;
 }
-.field-name-today-s-hours .hours-block,
-.hours .hours-block {
-  font-size: 1.2em;
-}
-.field-name-today-s-hours .hours,
-.hours .hours {
+span.hours {
   font-size: 1em;
   padding-bottom: 4px;
   float: right;
 }
-.field-name-today-s-hours a,
-.hours a {
+span.hours a {
   text-transform: uppercase;
   display: block;
 }
-.field-name-today-s-hours a:last-of-type,
-.hours a:last-of-type {
+span.hours a:last-of-type {
   text-decoration: underline;
 }
 .all_hours {
