@@ -90,10 +90,10 @@
       <?php endif; ?>
        <?php if (!empty($page['univ_logo'])): ?>
         <div class="row">
-          <div class="col-md-offset-2 col-md-1 univ_logo">
+          <div class="col-md-offset-2 col-md-1" id="univ_logo">
             <?php print render($page['univ_logo']); ?>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" id="lib_header">
             <?php print render($page['lib_header']); ?>
           </div>
           <div class="col-md-3" id="libhrs">

@@ -6861,41 +6861,15 @@ table .checkbox input[type="checkbox"] {
   color: #843534;
 }
 /*for uta header*/
-.region-univ-logo,
-.region-lib-header {
+#lib_header,
+#univ_logo {
   background-color: #dddcdc;
-}
-.region-uta-header img {
-  width: 100%;
-}
-.uta_header {
-  padding-left: 0;
-  padding-right: 0;
-}
-.univ_logo {
-  background: #00447C;
-  padding-left: 0;
-  padding-right: 0;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: #dddbdb;
-  text-transform: uppercase;
-  text-align: right;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  letter-spacing: .05em;
-  padding-right: 12px;
-}
-.univ_logo img {
-  max-width: 100%;
-  width: 100%;
-}
-.univ_logo a {
-  color: #FFFFFF;
-  vertical-align: bottom;
-  font-size: 12px;
 }
 #libhrs {
   background-color: #f58025;
+}
+.region-uta-header img {
+  width: 100%;
 }
 .region-todays-hrs h3 {
   border-width: 0;
@@ -6909,7 +6883,7 @@ table .checkbox input[type="checkbox"] {
 .region-todays-hrs a {
   color: #0064b1;
 }
-.region-todays-hrs a.all_hours {
+a.all_hours {
   float: right;
   color: #fff;
 }
