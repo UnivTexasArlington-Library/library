@@ -6943,7 +6943,7 @@ span.hours a:last-of-type {
   padding-bottom: 0px;
 }
 .summon {
-  background: url('/sites/default/files/HomepageImages/fablab_3d_kid.jpg');
+  background: url('/sites/default/files/HomepageImages/hornets_homecoming2015.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -7093,7 +7093,7 @@ h5 {
 }
 #sidebar .nav {
   width: 95%;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 /* collapsed sidebar styles */
 @media screen and (max-width: 767px) {
