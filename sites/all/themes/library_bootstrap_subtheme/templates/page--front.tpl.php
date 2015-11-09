@@ -122,21 +122,21 @@
       <div class="col-md-8 col-md-offset-2 col-sm-9 col-sm-offset-3 col-xs-12 notification">
           <div class='alert alert-danger'>
             <?php print render($page['notification']); ?>
+          </div> <!-- end.alert alert-danger -->
+      </div> <!-- end.notification -->
+        <?php endif; ?>
+      <div class="navbar navbar-default visible-xs" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".row-offcanvas">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"></a>
           </div>
         </div>
-        <?php endif; ?>
-        <div class="navbar navbar-default visible-xs" role="navigation">
-       <div class="container">
-      <div class="navbar-header">
-           <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".row-offcanvas">
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-           </button>
-           <a class="navbar-brand" href="#"></a>
-      </div>
-       </div>
-    </div>
+      </div> <!-- end.navbar -->
      <!-- <?php print render($title_prefix); ?>
       <?php if (!empty($title)): ?>
         <h1 class="page-header"><?php print $title; ?></h1>
@@ -153,18 +153,20 @@
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <?php print render($page['content']); ?>
-      <?php print render($page['footer']); ?>
     </section>
-  <!--  <footer class="footer container-fluid">
-  <?php print render($page['footer']); ?>
-</footer> -->
+
 
     <?php if (!empty($page['sidebar_second'])): ?>
       <aside class="col-xs-6 col-sm-3 col-md-2 pull-right sidebar_second" role="navigation">
         <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
+    </div> <!-- end .row -->
     <?php endif; ?>
-
-  </div>
-</div>
+      <footer class="footer container-fluid">
+        <div class="col-md-8 col-md-offset-2 col-sm-9 col-sm-offset-3 col-xs-12">
+    <?php print render($page['footer']); ?>
+        </div>
+      </footer>
+  
+</div> <!-- end.main-container container-fluid -->
 
