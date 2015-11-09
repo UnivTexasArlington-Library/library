@@ -7227,9 +7227,7 @@ table .checkbox input[type="checkbox"] {
   margin-right: 5px;
 }
 #block-menu-menu-left-menu-top .block-title-link:after {
-  background: url('http://library.uta.edu/sites/default/files/default-images/search.png');
-  width: 35px;
-  height: 36px;
+  background: url('/sites/default/files/default_images/search.png');
 }
 #block-menu-menu-left-menu-bottom .block-title-link {
   display: inline-block;
@@ -7239,21 +7237,17 @@ table .checkbox input[type="checkbox"] {
   padding-right: 16px;
 }
 #block-menu-menu-left-menu-bottom .block-title-link:before {
-  content: url('http://library.uta.edu/sites/default/files/default-images/services.png');
+  content: url('/sites/default/files/default_images/services.png');
   display: inline-block;
   float: left;
   padding-right: 7px;
 }
 #block-menu-menu-right-menu-bottom .block-title-link:after {
-  background: url('http://library.uta.edu/sites/default/files/default-images/about2.png');
-  width: 46px;
-  height: 27px;
+  background: url('/sites/default/files/default_images/about2.png');
   margin-top: 4px;
 }
 #block-menu-menu-right-menu-top .block-title-link:after {
-  background: url('http://library.uta.edu/sites/default/files/default-images/question.png');
-  width: 35px;
-  height: 35px;
+  background: url('/sites/default/files/default_images/question.png');
 }
 #block-menu-menu-left-menu-bottom .menu,
 #block-menu-menu-right-menu-bottom .menu {
