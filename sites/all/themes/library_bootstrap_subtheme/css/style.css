@@ -7218,6 +7218,7 @@ table .checkbox input[type="checkbox"] {
   padding-left: 3px;
   padding-right: 7px;
   text-decoration: none;
+  border: 0;
 }
 .region-sidebar-first .dropdown-menu > li > a,
 .region-sidebar-second .dropdown-menu > li > a {
@@ -7725,19 +7726,6 @@ footer {
 .field-name-services-for {
   padding-bottom: 20px;
 }
-#block-views-news-events-block-2 h2,
-.field-name-services-for h2 {
-  color: #f69042;
-  text-transform: uppercase;
-  border-top: 1px solid #dddbdb;
-  border-bottom: 1px solid #dddbdb;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  font-size: 1.8em;
-  margin-left: -15px;
-  margin-right: -15px;
-  padding-left: 25px;
-}
 #block-views-news-events-block-2 img,
 .field-name-services-for img {
   width: auto;
@@ -7843,7 +7831,7 @@ footer {
   }
 }
 #block-available-now-available-now .tab-content {
-  background: #dddbdb;
+  background: #f1f2f2;
   text-align: center;
   color: #0064b1;
   padding-bottom: 0;
