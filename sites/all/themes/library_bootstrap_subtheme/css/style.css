@@ -7363,10 +7363,13 @@ h1 {
 h2 {
   color: #0052a3;
 }
+h2 a {
+  color: #0052a3;
+}
 h2 a:hover,
 h2 a:focus {
   color: #ae482c;
-  text-decoration: none;
+  text-decoration: underline;
 }
 h3 {
   color: #0052a3;
@@ -7380,10 +7383,13 @@ h3 {
   padding-left: 25px;
   margin-top: 0px;
 }
+h3 a {
+  color: #0052a3;
+}
 h3 a:hover,
 h3 a:focus {
   color: #ae482c;
-  text-decoration: none;
+  text-decoration: underline;
 }
 h4 {
   text-transform: uppercase;
