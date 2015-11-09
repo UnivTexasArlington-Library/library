@@ -7228,6 +7228,8 @@ table .checkbox input[type="checkbox"] {
 }
 #block-menu-menu-left-menu-top .block-title-link:after {
   background: url('/sites/default/files/default_images/search.png');
+  width: 35px;
+  height: 35px;
 }
 #block-menu-menu-left-menu-bottom .block-title-link {
   display: inline-block;
@@ -7244,10 +7246,14 @@ table .checkbox input[type="checkbox"] {
 }
 #block-menu-menu-right-menu-bottom .block-title-link:after {
   background: url('/sites/default/files/default_images/about2.png');
+  width: 46px;
+  height: 27px;
   margin-top: 4px;
 }
 #block-menu-menu-right-menu-top .block-title-link:after {
   background: url('/sites/default/files/default_images/question.png');
+  width: 35px;
+  height: 35px;
 }
 #block-menu-menu-left-menu-bottom .menu,
 #block-menu-menu-right-menu-bottom .menu {
