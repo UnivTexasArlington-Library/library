@@ -7360,11 +7360,21 @@ body {
 h1 {
   padding-left: 15px;
 }
-h2,
+h2 {
+  font-size: 1.6em;
+}
+h2 a {
+  color: #0052a3;
+}
+h2 a:hover,
+h2 a:focus {
+  color: #ae482c;
+  text-decoration: underline;
+}
 h3 {
   color: #0052a3;
-  border-top: 1px solid #f1f2f2;
-  border-bottom: 1px solid #f1f2f2;
+  border-top: 1px solid #c6c4c4;
+  border-bottom: 1px solid #c6c4c4;
   padding-top: 6px;
   padding-bottom: 6px;
   text-transform: uppercase;
@@ -7373,13 +7383,10 @@ h3 {
   margin-top: 0px;
   font-size: 1.6em;
 }
-h2 a,
 h3 a {
   color: #0052a3;
 }
-h2 a:hover,
 h3 a:hover,
-h2 a:focus,
 h3 a:focus {
   color: #ae482c;
   text-decoration: underline;

@@ -5,11 +5,20 @@ body {
 h1 {
 	padding-left: 15px;
 }
-h2,
+h2 {
+	font-size: 1.6em;
+	a {
+		color: @header-text;
+		&:hover, &:focus {
+			color: @link-color;
+			text-decoration:underline;
+		}
+	}
+}
 h3 {
 	color: @header-text;
-	border-top: 1px solid @header-bg;
-	border-bottom: 1px solid @header-bg;
+	border-top: 1px solid @footer-bg;
+	border-bottom: 1px solid @footer-bg;
 	padding-top: 6px;
 	padding-bottom: 6px;
 	text-transform: uppercase;
