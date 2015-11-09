@@ -240,3 +240,164 @@
   // Remove the top rounded corners here since there is a hard edge above the menu
   .border-top-radius(0);
 }
+
+/*for nav links*/
+.region-sidebar-first, .region-sidebar-second {
+  .nav .leaf a, .nav li.dropdown a {
+    color: #dddbdb;
+  }
+  .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: transparent;
+    border: none;
+  }
+  .nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: transparent;
+  }
+  .nav > li > a {
+    padding: 2px;
+    font-size:1em;
+  }
+  .dropdown-menu {
+    position:relative;
+    border:none;
+    box-shadow:none;
+    background-color:transparent;
+    background:none;
+    margin-left:-15px;
+    font-size:1em;
+    width:95%;
+  }
+  .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    background-color:transparent;
+  }
+  .block-title-link {
+    color: @brand-warning;
+    padding-bottom: 0px;
+    font-size:.8em;
+    display: inline;
+    padding-left: 3px;
+    padding-right: 7px;
+    text-decoration:none;
+  }
+  .dropdown-menu > li > a {
+    white-space:normal;
+  }
+  .keep-open > .dropdown-menu {
+    display:block;
+  }
+  .dropdown.keep-open .dropdown-toggle {
+    display:none;
+  }
+}
+
+#block-menu-menu-left-menu-top .block-title-link:after, #block-menu-menu-left-menu-bottom .block-title-link:after, #block-menu-menu-right-menu-bottom .block-title-link:after, #block-menu-menu-right-menu-top .block-title-link:after {
+  content: '';
+  display: inline-block;
+  background-size: 100%;
+  float: left;
+  margin-right: 5px;
+}
+#block-menu-menu-left-menu-top .block-title-link:after {
+  background: url('http://library.uta.edu/sites/default/files/WebsiteImages/research_icon.png');
+  width:35px;
+  height:36px;
+}
+#block-menu-menu-left-menu-bottom .block-title-link {
+  display:inline-block;
+  line-height: 20px;
+  a {
+    padding-right: 16px;
+  }
+}
+#block-menu-menu-left-menu-bottom .block-title-link:before {
+  content: url('http://library.uta.edu/sites/default/files/WebsiteImages/services_icon.png');
+  display: inline-block;
+  float: left;
+  padding-right:7px;
+}
+#block-menu-menu-right-menu-bottom .block-title-link:after {
+  background: url('http://library.uta.edu/sites/default/files/WebsiteImages/about_icon.png');
+  width:46px;
+  height:27px;
+  margin-top: 4px;
+}
+#block-menu-menu-right-menu-top .block-title-link:after {
+  background: url('http://library.uta.edu/sites/default/files/WebsiteImages/help_icon.png');
+  width:35px;
+  height:35px;
+}
+#block-menu-menu-left-menu-bottom .menu, #block-menu-menu-right-menu-bottom .menu {
+  display:none;
+}
+@media(max-width:991px) {
+  #block-menu-menu-right-menu-top .menu {
+    display:none;
+  } 
+}
+@media(min-width:992px) {
+  #block-menu-menu-right-menu-top .caret, #block-menu-menu-left-menu-top .caret {
+    display:none;
+  }
+}
+@media(max-width:767px) {
+  #block-menu-menu-left-menu-top .menu {
+    display:none;
+  } 
+}
+.caret.up {
+    border-top-width: 0;
+    border-bottom: 4px solid;
+}
+.breadcrumb {
+  text-align: right;
+  margin-bottom:0;
+}
+
+/*styles book navigation*/
+.book-navigation {
+  .page-next, .page-up, .page-previous {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+  }
+  .page-links {
+    padding:10px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+/*for all nav-tabs*/
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .nav-tabs > li > a {
+  border: 1px solid #dddddd;
+  border-bottom-color: transparent;
+}
+/*for tab colors*/
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: @brand-warning;
+}
+.nav-tabs > li > a {
+  background-color: @brand-primary;
+  color:#FFFFFF;
+}
+.tabs-below > .nav-tabs .summary, .tabs-left > .nav-tabs .summary, .tabs-right > .nav-tabs .summary {
+  color:#dddbdb;
+}
+/*for spco menu*/
+#block-menu-menu-spco-menu, 
+#block-menu-menu-friends-of-the-library {
+  .dropdown-menu {
+    background-color:#FFFFFF;
+  }
+  .dropdown-menu > li > a {
+    color: @brand-primary;
+  }
+  .dropdown-menu > .active > a {
+    background-color: #FFFFFF;
+  }
+}
