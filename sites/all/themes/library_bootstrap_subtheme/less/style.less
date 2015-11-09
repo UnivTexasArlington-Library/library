@@ -20,7 +20,7 @@ body {
 }
 h4 {
 	text-transform: uppercase;
-	color: #f58025;
+	color: @header-text;
 }
 h5 {
 	font-weight: bold;
@@ -28,8 +28,8 @@ h5 {
 
 /*for page titles*/
 .page-header {
-	color:@brand-warning;
-	background: @brand-ltblue;
+	color:@header-text;
+	background: @header-bg;
 	border:none;
 	padding-top: 10px;
 	margin-left: -15px;
@@ -39,13 +39,6 @@ h5 {
 	padding-bottom: 11px;
 	min-height:0px;
 	font-size:1.8em;
-}
-.page-header:before {
-	content: url('http://library.uta.edu/sites/default/files/WebsiteImages/orange.png');
-	display: inline-block;
-	margin-top: -10px;
-	float: left;
-	padding-right: 15px;
 }
 .center-container {
 	background:#FFFFFF;
