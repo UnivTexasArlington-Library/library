@@ -154,6 +154,9 @@
       <?php endif; ?>
       <?php print render($page['content']); ?>
     </section>
+    <footer class="footer container-fluid">
+  <?php print render($page['footer']); ?>
+</footer>
 
     <?php if (!empty($page['sidebar_second'])): ?>
       <aside class="col-xs-6 col-sm-3 col-md-2 pull-right sidebar_second" role="navigation">
@@ -163,6 +166,4 @@
 
   </div>
 </div>
-<footer class="footer container">
-  <?php print render($page['footer']); ?>
-</footer>
+

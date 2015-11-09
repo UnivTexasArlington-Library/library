@@ -6904,46 +6904,16 @@ table .checkbox input[type="checkbox"] {
   color: #843534;
 }
 /*for uta header*/
-#lib_header,
-#univ_logo {
-  background-color: #dddcdc;
-}
-#libhrs {
-  background-color: #f58025;
+#lib_header {
+  border-top: 30px solid #0052a3;
+  background-color: #0052a3;
+  margin-right: -15px;
+  margin-left: -15px;
+  color: #fafafb;
 }
 .region-uta-header img {
   width: 100%;
-}
-.region-todays-hrs h3 {
-  border-width: 0;
-  margin-left: initial;
-  padding: 0;
-  color: #fff;
-  text-transform: none;
-  margin-bottom: 0;
-  font-size: 20px;
-}
-.region-todays-hrs a {
-  color: #0064b1;
-}
-a.all_hours {
-  float: right;
-  color: #fff;
-}
-/*for hours block*/
-.hours-block {
-  font-size: 1.1em;
-  color: #0064b1;
-}
-span.hours {
-  font-size: 1em;
-  float: right;
-}
-span.hours a {
-  display: block;
-}
-span.hours a:last-of-type {
-  text-decoration: underline;
+  height: auto;
 }
 .nav {
   margin-bottom: 0;
@@ -7182,7 +7152,7 @@ span.hours a:last-of-type {
 .region-sidebar-second .nav .leaf a,
 .region-sidebar-first .nav li.dropdown a,
 .region-sidebar-second .nav li.dropdown a {
-  color: #dddbdb;
+  color: #dddbc4;
 }
 .region-sidebar-first .nav .open > a,
 .region-sidebar-second .nav .open > a,
