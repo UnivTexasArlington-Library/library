@@ -6919,7 +6919,8 @@ table .checkbox input[type="checkbox"] {
 }
 #header_links {
   position: absolute;
-  top: 75px;
+  top: 20px;
+  right: 0;
 }
 .region-uta-header img {
   width: 100%;
