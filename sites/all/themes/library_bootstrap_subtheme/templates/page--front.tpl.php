@@ -153,10 +153,11 @@
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <?php print render($page['content']); ?>
+      <?php print render($page['footer']); ?>
     </section>
-    <footer class="footer container-fluid">
+  <!--  <footer class="footer container-fluid">
   <?php print render($page['footer']); ?>
-</footer>
+</footer> -->
 
     <?php if (!empty($page['sidebar_second'])): ?>
       <aside class="col-xs-6 col-sm-3 col-md-2 pull-right sidebar_second" role="navigation">
