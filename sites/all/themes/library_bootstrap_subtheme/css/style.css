@@ -7362,6 +7362,7 @@ h1 {
 }
 h2 {
   color: #0052a3;
+  font-size: 1.6em;
 }
 h2 a {
   color: #0052a3;
@@ -7382,6 +7383,7 @@ h3 {
   margin-right: -15px;
   padding-left: 25px;
   margin-top: 0px;
+  font-size: 1.6em;
 }
 h3 a {
   color: #0052a3;
@@ -7945,7 +7947,6 @@ footer {
 .field-name-spco-current-exhibit h2,
 .field-name-ds-spco-services-for h2,
 #block-views-news-events-block-1 h2 {
-  color: #f69042;
   text-transform: uppercase;
   border-top: 1px solid #dddbdb;
   border-bottom: 1px solid #dddbdb;
@@ -7960,7 +7961,6 @@ footer {
   font-size: 1.5em;
 }
 #node-495 .carousel-caption h3 {
-  color: #0064b1;
   font-size: 1.2em;
   border: none;
   text-transform: inherit;
