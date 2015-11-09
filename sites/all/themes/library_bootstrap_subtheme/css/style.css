@@ -7154,6 +7154,10 @@ table .checkbox input[type="checkbox"] {
   border-top-left-radius: 0;
 }
 /*for nav links*/
+.region-sidebar-first,
+.region-sidebar-second {
+  margin-top: 20px;
+}
 .region-sidebar-first .nav .leaf a,
 .region-sidebar-second .nav .leaf a,
 .region-sidebar-first .nav li.dropdown a,
@@ -7239,7 +7243,7 @@ table .checkbox input[type="checkbox"] {
 }
 #block-menu-menu-left-menu-bottom .block-title-link {
   display: inline-block;
-  line-height: 20px;
+  line-height: 72px;
 }
 #block-menu-menu-left-menu-bottom .block-title-link a {
   padding-right: 16px;

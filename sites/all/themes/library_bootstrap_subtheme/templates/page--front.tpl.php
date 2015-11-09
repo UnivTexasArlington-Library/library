@@ -153,6 +153,11 @@
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <?php print render($page['content']); ?>
+      <footer class="footer">
+        
+    <?php print render($page['footer']); ?>
+
+      </footer>
     </section>
 
 
@@ -162,11 +167,7 @@
       </aside>  <!-- /#sidebar-second -->
     </div> <!-- end .row -->
     <?php endif; ?>
-      <footer class="footer container-fluid">
-        <div class="col-md-8 col-md-offset-2 col-sm-9 col-sm-offset-3 col-xs-12">
-    <?php print render($page['footer']); ?>
-        </div>
-      </footer>
+      
   
 </div> <!-- end.main-container container-fluid -->
 
