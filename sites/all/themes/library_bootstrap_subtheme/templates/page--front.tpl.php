@@ -73,7 +73,7 @@
  * @ingroup themeable
  */
 ?>
-<!-- <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
+ <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
   <div class="container">
     <div class="navbar-header">
       <?php if ($logo): ?>
@@ -87,7 +87,7 @@
       <?php endif; ?>
 
       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-<!--      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -111,7 +111,7 @@
       </div>
     <?php endif; ?>
   </div>
-</header> -->
+</header>
 
 <div class="main-container container-fluid">
 
