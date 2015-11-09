@@ -7360,35 +7360,26 @@ body {
 h1 {
   padding-left: 15px;
 }
-h2 {
-  color: #0052a3;
-  font-size: 1.6em;
-}
-h2 a {
-  color: #0052a3;
-}
-h2 a:hover,
-h2 a:focus {
-  color: #ae482c;
-  text-decoration: underline;
-}
+h2,
 h3 {
   color: #0052a3;
-  border-top: 1px solid #dddbdb;
-  border-bottom: 1px solid #dddbdb;
+  border-top: 1px solid #f1f2f2;
+  border-bottom: 1px solid #f1f2f2;
   padding-top: 6px;
   padding-bottom: 6px;
   text-transform: uppercase;
   margin-left: -15px;
   margin-right: -15px;
-  padding-left: 25px;
   margin-top: 0px;
   font-size: 1.6em;
 }
+h2 a,
 h3 a {
   color: #0052a3;
 }
+h2 a:hover,
 h3 a:hover,
+h2 a:focus,
 h3 a:focus {
   color: #ae482c;
   text-decoration: underline;
@@ -7944,22 +7935,20 @@ footer {
 #flickr img {
   width: 100%;
 }
-.field-name-spco-current-exhibit h2,
-.field-name-ds-spco-services-for h2,
-#block-views-news-events-block-1 h2 {
-  text-transform: uppercase;
-  border-top: 1px solid #dddbdb;
-  border-bottom: 1px solid #dddbdb;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  font-size: 1.8em;
-  margin-top: 22px;
-}
-.field-name-spco-current-exhibit #node-495 h2,
-.field-name-ds-spco-services-for #node-495 h2,
-#block-views-news-events-block-1 #node-495 h2 {
-  font-size: 1.5em;
-}
+/*.field-name-spco-current-exhibit, .field-name-ds-spco-services-for, #block-views-news-events-block-1 {
+	h2 {
+		text-transform: uppercase;
+		border-top: 1px solid #dddbdb;
+		border-bottom: 1px solid #dddbdb;
+		padding-top: 6px;
+		padding-bottom: 6px;
+		font-size: 1.8em;
+		margin-top: 22px;
+	}
+	#node-495 h2 {
+		font-size:1.5em;
+	}
+} */
 #node-495 .carousel-caption h3 {
   font-size: 1.2em;
   border: none;
