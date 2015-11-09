@@ -6905,11 +6905,17 @@ table .checkbox input[type="checkbox"] {
 }
 /*for uta header*/
 #lib_header {
-  border-top: 50px solid #0052a3;
   background-color: #0052a3;
   margin-right: -15px;
   margin-left: -15px;
   color: #fafafb;
+  padding: 50px 20px 20px 20px;
+}
+#lib_header a {
+  color: #fafafb;
+}
+#uta_logo {
+  border-right: #fff solid 1px;
 }
 .region-uta-header img {
   width: 100%;
