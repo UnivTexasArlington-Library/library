@@ -73,7 +73,7 @@
  * @ingroup themeable
  */
 ?>
- <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
+ <!--<header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
   <div class="container">
     <div class="navbar-header">
       <?php if ($logo): ?>
@@ -87,7 +87,7 @@
       <?php endif; ?>
 
       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+     <!--  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -95,7 +95,7 @@
       </button>
     </div>
   </div>
-</header>
+</header> -->
 
 <div class="main-container container-fluid">
 
@@ -104,12 +104,12 @@
   <div class="row">
 
     <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-xs-6 col-sm-3 col-md-2 sidebar-offcanvas" role="navigation" id="sidebar">
+      <aside class="col-xs-6 col-sm-3 col-md-2 sidebar-offcanvas" role="navigation" id="sidebar">4
         <?php print render($page['sidebar_first']); ?>
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>
 
-    <section<?php print $content_column_class; ?> class="center-container">
+    <section class="center-container col-md-8 col-sm-9 col-xs-12">
       <?php if (!empty($page['lib_header'])): ?>
         <div id="lib_header"><?php print render($page['lib_header']); ?></div>
       <?php endif; ?>
