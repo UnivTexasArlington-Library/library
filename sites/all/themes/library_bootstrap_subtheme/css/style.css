@@ -7326,7 +7326,7 @@ table .checkbox input[type="checkbox"] {
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  background-color: #e5f0f9;
+  background-color: #f1f2f2;
   color: #0052a3;
 }
 .nav-tabs > li > a {
@@ -7383,7 +7383,7 @@ h5 {
 /*for page titles*/
 .page-header {
   color: #0052a3;
-  background: #e5f0f9;
+  background: #f1f2f2;
   border: none;
   padding-top: 10px;
   margin-left: -15px;
