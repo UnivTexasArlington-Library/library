@@ -6917,6 +6917,11 @@ table .checkbox input[type="checkbox"] {
 #uta_logo {
   border-right: #fff solid 1px;
 }
+#uta_logo img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
 #header_links {
   position: absolute;
   top: 72px;
@@ -7252,7 +7257,7 @@ table .checkbox input[type="checkbox"] {
 }
 #block-menu-menu-left-menu-bottom .block-title-link {
   display: inline-block;
-  line-height: 72px;
+  line-height: 20px;
 }
 #block-menu-menu-left-menu-bottom .block-title-link a {
   padding-right: 16px;
@@ -7293,6 +7298,10 @@ table .checkbox input[type="checkbox"] {
   #block-menu-menu-left-menu-top .menu {
     display: none;
   }
+}
+#block-menu-menu-left-menu-top .block-title-link,
+#block-menu-menu-left-menu-bottom .block-title-link {
+  float: right;
 }
 .caret.up {
   border-top-width: 0;
@@ -7361,17 +7370,7 @@ body {
 h1 {
   padding-left: 15px;
 }
-h2 {
-  font-size: 1.6em;
-}
-h2 a {
-  color: #0052a3;
-}
-h2 a:hover,
-h2 a:focus {
-  color: #ae482c;
-  text-decoration: underline;
-}
+h2.block-title,
 h3 {
   color: #0052a3;
   border-top: 1px solid #c6c4c4;
@@ -7384,10 +7383,13 @@ h3 {
   margin-top: 0px;
   font-size: 1.6em;
 }
+h2.block-title a,
 h3 a {
   color: #0052a3;
 }
+h2.block-title a:hover,
 h3 a:hover,
+h2.block-title a:focus,
 h3 a:focus {
   color: #ae482c;
   text-decoration: underline;
@@ -7841,7 +7843,7 @@ footer {
   border-left: none;
   border-top: none;
   border-bottom: none;
-  font-size: 1.2em;
+  font-size: 1em;
   min-height: 117px;
 }
 #block-available-now-available-now .tab-content .col-md-4:last-of-type {
@@ -7861,7 +7863,7 @@ footer {
   color: #f69042;
   background: #FFFFFF;
   border: none;
-  font-size: 1.2em;
+  font-size: 1em;
   margin-bottom: 0;
   border-bottom: 0px solid #dddbdb;
 }
