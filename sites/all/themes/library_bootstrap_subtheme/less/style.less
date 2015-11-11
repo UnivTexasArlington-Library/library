@@ -228,7 +228,7 @@
 			border-left:none;
 			border-top:none;
 			border-bottom:none;
-			font-size:1.2em;
+			font-size:1em;
 			min-height:117px;
 		}
 		.col-md-4:last-of-type {
@@ -249,7 +249,7 @@
 		color:@brand-warning;
 		background:#FFFFFF;
 		border:none;
-		font-size:1.2em;
+		font-size:1em;
 		margin-bottom:0;
 		border-bottom: 0px solid #dddbdb;
 		@media(max-width:997px) {
@@ -350,13 +350,12 @@
 .node-staff {
 	.field-name-field-image {
 		img {
-			padding-top: 20px;
 			width: auto;
 			height: auto;
 			/*for staff directoy, in smaller devices*/ 	 	
-			@media(max-width: 768px) { 	 	
-				padding-bottom: 10px; 	 	
-			} 
+			@media (max-width: @screen-xs-max) {
+				padding-bottom: 15px;
+			}
 		}
 	}
 }

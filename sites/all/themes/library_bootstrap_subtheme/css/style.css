@@ -7956,14 +7956,13 @@ footer {
 }
 /*for staff directory*/
 .node-staff .field-name-field-image img {
-  padding-top: 20px;
   width: auto;
   height: auto;
   /*for staff directoy, in smaller devices*/
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .node-staff .field-name-field-image img {
-    padding-bottom: 10px;
+    padding-bottom: 15px;
   }
 }
 /*for locations */
