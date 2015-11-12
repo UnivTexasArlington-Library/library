@@ -7294,6 +7294,9 @@ table .checkbox input[type="checkbox"] {
 .region-sidebar-first .nav > li {
   text-align: right;
 }
+.region-sidebar-first .block:first-child h2.block-title {
+  margin-right: 15px;
+}
 .region-sidebar-second {
   margin-top: 65px;
   margin-left: 15px;
@@ -7417,9 +7420,6 @@ table .checkbox input[type="checkbox"] {
 #block-menu-menu-friends-of-the-library .dropdown-menu > .active > a {
   background-color: #FFFFFF;
 }
-.block:first-child h2.block-title {
-  margin-right: 15px;
-}
 body {
   font-family: 'Calibri', 'Open Sans';
 }
@@ -7449,6 +7449,9 @@ h2.block-title a:focus,
 h3 a:focus {
   color: #ae482c;
   text-decoration: underline;
+}
+h2.block-title {
+  padding-left: 15px;
 }
 h4 {
   text-transform: uppercase;
