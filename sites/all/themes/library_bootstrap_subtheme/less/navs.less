@@ -243,10 +243,9 @@
 
 /*for nav links*/
 .region-sidebar-first, .region-sidebar-second {
-  margin-top:20px;
-  .nav .leaf a, .nav li.dropdown a {
+  /*.nav .leaf a, .nav li.dropdown a {
     color: #dddbc4;
-  }
+  } */
   .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
     background-color: transparent;
     border: none;
@@ -279,8 +278,8 @@
     padding-bottom: 0px;
     font-size:.8em;
     display: inline;
-    padding-left: 3px;
-    padding-right: 7px;
+    /*padding-left: 3px;
+    padding-right: 7px; */
     text-decoration:none;
     border: 0;
   }
@@ -294,54 +293,60 @@
     display:none;
   }
 }
-.region-sidebar-first .nav > li {
-  text-align: right;
+.region-sidebar-first {
+  margin-right: 30px;
+  .nav > li {
+    text-align: right;
+  }
 }
-#block-menu-menu-left-menu-top h2.block-title {
+
+#block-menu-menu-left-menu-top h2.block-title, 
+#block-menu-menu-left-menu-bottom h2.block-title,
+#block-menu-menu-right-menu-bottom h2.block-title,
+#block-menu-menu-right-menu-top h2.block-title {
   border-top-style: none;
   border-bottom-style: none;
 }
-#block-menu-menu-left-menu-top .block-title-link:after, 
-#block-menu-menu-left-menu-bottom .block-title-link:after, 
-#block-menu-menu-right-menu-bottom .block-title-link:after, 
-#block-menu-menu-right-menu-top .block-title-link:after {
+#block-menu-menu-left-menu-top .block-title-link:before, 
+#block-menu-menu-left-menu-bottom .block-title-link:before, 
+#block-menu-menu-right-menu-bottom .block-title-link:before, 
+#block-menu-menu-right-menu-top .block-title-link:before {
   content: '';
   display: inline-block;
   background-size: 100%;
   float: left;
   margin-right: 5px;
-  background-repeat: none;
+  background-repeat: no-repeat;
 }
-#block-menu-menu-left-menu-top .block-title-link:after {
+#block-menu-menu-left-menu-top .block-title-link:before {
   background: url('/sites/default/files/default_images/search1.png');
   width:25px;
   height:25px;
 }
-#block-menu-menu-left-menu-bottom .block-title-link {
+/*#block-menu-menu-left-menu-bottom .block-title-link {
   display:inline-block;
   line-height: 20px;
   a {
     padding-right: 16px;
   }
-}
+}*/
 #block-menu-menu-left-menu-bottom .block-title-link:before {
   content: url('/sites/default/files/default_images/services1.png');
-  display: inline-block;
-  float: left;
   padding-right:7px;
 }
-#block-menu-menu-right-menu-bottom .block-title-link:after {
+#block-menu-menu-right-menu-bottom .block-title-link:before {
   background: url('/sites/default/files/default_images/about1.png');
   width:46px;
   height:27px;
   margin-top: 4px;
 }
-#block-menu-menu-right-menu-top .block-title-link:after {
+#block-menu-menu-right-menu-top .block-title-link:before {
   background: url('/sites/default/files/default_images/question1.png');
   width:35px;
   height:35px;
 }
-#block-menu-menu-left-menu-bottom .menu, #block-menu-menu-right-menu-bottom .menu {
+#block-menu-menu-left-menu-bottom .menu, 
+#block-menu-menu-right-menu-bottom .menu {
   display:none;
 }
 @media(max-width:991px) {
@@ -359,7 +364,8 @@
     display:none;
   } 
 }
-#block-menu-menu-left-menu-top .block-title-link, #block-menu-menu-left-menu-bottom .block-title-link {
+#block-menu-menu-left-menu-top .block-title-link, 
+#block-menu-menu-left-menu-bottom .block-title-link {
   float: right;
 }
 .caret.up {
@@ -419,3 +425,64 @@
     background-color: #FFFFFF;
   }
 }
+/*for sidebar nav style*/
+#sidebar {
+  height: 100%;
+  .nav {
+    width: 95%;
+    font-size:1em;
+  }
+}
+/* collapsed sidebar styles */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -41.6%;
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -41.6%;
+  }
+  .row-offcanvas-right.active {
+    right: 41.6%;
+  }
+  .row-offcanvas-left.active {
+    left: 41.6%;
+  }
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 41.6%;
+  }
+  #sidebar {
+    padding-top:0;
+  }
+  #sidebar .nav>li:first-child {
+    border-top:0;
+  }
+  #sidebar .nav>li>a {
+    color: #ddd;
+  }
+  #sidebar .nav>li>a>img {
+    max-width: 14px;
+  }
+  #sidebar .nav>li>a:hover, #sidebar .nav>li>a:focus {
+    text-decoration: none;
+  }
+  #sidebar .nav .caret {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+  }
+  #sidebar .nav a:hover .caret{
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+  }
+}
+/*end sidebar nav style*/
