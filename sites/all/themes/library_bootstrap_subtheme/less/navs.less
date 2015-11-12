@@ -359,15 +359,14 @@
   }
 }
 .region-sidebar-first {
-  margin-right: 30px;
-  h2.block-title {
-    float: right;
-  }
+  margin-top:40px;
+  text-align: right;
   .nav > li {
     text-align: right;
   }
 }
 .region-sidebar-second {
+    margin-top:65px;
     margin-left: 30px;
   .nav > li {
     text-align: left;
@@ -409,6 +408,8 @@
 }
 #block-menu-menu-left-menu-top .block-title-link:before {
   content: url('/sites/default/files/default_images/search1.png');
+  margin-left: -30px;
+  position: absolute;
 }
 #block-menu-menu-left-menu-bottom .block-title-link:before {
   content: url('/sites/default/files/default_images/services1.png');
@@ -476,4 +477,7 @@
   .dropdown-menu > .active > a {
     background-color: #FFFFFF;
   }
+}
+.block:first-child h2.block-title {
+    margin-right: 15px;
 }

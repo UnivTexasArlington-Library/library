@@ -7288,15 +7288,14 @@ table .checkbox input[type="checkbox"] {
   display: none;
 }
 .region-sidebar-first {
-  margin-right: 30px;
-}
-.region-sidebar-first h2.block-title {
-  float: right;
+  margin-top: 40px;
+  text-align: right;
 }
 .region-sidebar-first .nav > li {
   text-align: right;
 }
 .region-sidebar-second {
+  margin-top: 65px;
   margin-left: 30px;
 }
 .region-sidebar-second .nav > li {
@@ -7337,6 +7336,8 @@ table .checkbox input[type="checkbox"] {
 }
 #block-menu-menu-left-menu-top .block-title-link:before {
   content: url('/sites/default/files/default_images/search1.png');
+  margin-left: -30px;
+  position: absolute;
 }
 #block-menu-menu-left-menu-bottom .block-title-link:before {
   content: url('/sites/default/files/default_images/services1.png');
@@ -7407,6 +7408,9 @@ table .checkbox input[type="checkbox"] {
 #block-menu-menu-spco-menu .dropdown-menu > .active > a,
 #block-menu-menu-friends-of-the-library .dropdown-menu > .active > a {
   background-color: #FFFFFF;
+}
+.block:first-child h2.block-title {
+  margin-right: 15px;
 }
 body {
   font-family: 'Calibri', 'Open Sans';
