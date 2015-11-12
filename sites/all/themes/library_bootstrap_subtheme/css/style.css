@@ -7479,6 +7479,9 @@ h5 {
 .center-container {
   background: #FFFFFF;
 }
+#internal-page {
+  padding: 0 50px;
+}
 /*for footer*/
 footer {
   margin-left: -15px;
