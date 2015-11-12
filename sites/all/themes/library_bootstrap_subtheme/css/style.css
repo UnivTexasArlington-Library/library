@@ -7298,7 +7298,7 @@ table .checkbox input[type="checkbox"] {
 .region-sidebar-first .nav > li {
   text-align: right;
 }
-.region-sidebar-first .block:first-child h2.block-title {
+.region-sidebar-first > .block:first-child h2.block-title {
   margin-right: 15px;
 }
 .region-sidebar-second {
@@ -7334,6 +7334,7 @@ table .checkbox input[type="checkbox"] {
 }
 #block-menu-menu-left-menu-bottom .block-title-link {
   margin-right: 30px;
+  margin-left: auto;
 }
 /* for nav link icons */
 #block-menu-menu-left-menu-top .block-title-link:before,
