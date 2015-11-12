@@ -264,7 +264,6 @@
     box-shadow:none;
     background-color:transparent;
     background:none;
-    margin-left:-15px;
     font-size:1em;
     width:95%;
   }
@@ -274,7 +273,7 @@
     background-color:transparent;
   }
   .block-title-link {
-    color: @brand-warning;
+    color: #dddbc4;
     padding-bottom: 0px;
     font-size:.8em;
     display: inline;
@@ -319,9 +318,9 @@
   background-repeat: no-repeat;
 }
 #block-menu-menu-left-menu-top .block-title-link:before {
-  background: url('/sites/default/files/default_images/search1.png');
-  width:25px;
-  height:25px;
+  content: url('/sites/default/files/default_images/search1.png');
+  /*width:25px;
+  height:25px; */
 }
 /*#block-menu-menu-left-menu-bottom .block-title-link {
   display:inline-block;
@@ -332,34 +331,33 @@
 }*/
 #block-menu-menu-left-menu-bottom .block-title-link:before {
   content: url('/sites/default/files/default_images/services1.png');
-  padding-right:7px;
+  
 }
 #block-menu-menu-right-menu-bottom .block-title-link:before {
-  background: url('/sites/default/files/default_images/about1.png');
-  width:46px;
-  height:27px;
-  margin-top: 4px;
+  content:url('/sites/default/files/default_images/about1.png');
+  /*width:36px;
+  height:30px; */
 }
 #block-menu-menu-right-menu-top .block-title-link:before {
-  background: url('/sites/default/files/default_images/question1.png');
-  width:35px;
-  height:35px;
+  content: url('/sites/default/files/default_images/question1.png');
+  /*width:25px;
+  height:25px; */
 }
 #block-menu-menu-left-menu-bottom .menu, 
 #block-menu-menu-right-menu-bottom .menu {
   display:none;
 }
-@media(max-width:991px) {
+@media(max-width:@screen-sm-max) {
   #block-menu-menu-right-menu-top .menu {
     display:none;
   } 
 }
-@media(min-width:992px) {
+@media(min-width:@screen-sm-min) {
   #block-menu-menu-right-menu-top .caret, #block-menu-menu-left-menu-top .caret {
     display:none;
   }
 }
-@media(max-width:767px) {
+@media(max-width:@screen-xs-max) {
   #block-menu-menu-left-menu-top .menu {
     display:none;
   } 
