@@ -7301,6 +7301,9 @@ table .checkbox input[type="checkbox"] {
 .region-sidebar-second .nav > li {
   text-align: left;
 }
+.region-sidebar-second h2.block-title {
+  margin-left: 0;
+}
 /* for collapsed menus */
 #block-menu-menu-left-menu-bottom .menu,
 #block-menu-menu-right-menu-bottom .menu {
@@ -7322,6 +7325,9 @@ table .checkbox input[type="checkbox"] {
     display: none;
   }
 }
+#block-menu-menu-left-menu-bottom .block-title-link {
+  margin-right: 30px;
+}
 /* for nav link icons */
 #block-menu-menu-left-menu-top .block-title-link:before,
 #block-menu-menu-left-menu-bottom .block-title-link:before,
@@ -7341,6 +7347,8 @@ table .checkbox input[type="checkbox"] {
 }
 #block-menu-menu-left-menu-bottom .block-title-link:before {
   content: url('/sites/default/files/default_images/services1.png');
+  margin-left: -30px;
+  position: absolute;
 }
 #block-menu-menu-right-menu-bottom .block-title-link:before {
   content: url('/sites/default/files/default_images/about1.png');
