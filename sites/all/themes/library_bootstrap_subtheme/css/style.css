@@ -6914,6 +6914,10 @@ table .checkbox input[type="checkbox"] {
 #lib_header a {
   color: #fafafb;
 }
+#uta_logo {
+  padding-right: 15px;
+  border-right: 1px solid #ffffff;
+}
 #header_links {
   position: absolute;
   top: 72px;
@@ -7715,20 +7719,19 @@ footer {
 .node-home-page ul li {
   padding-bottom: 4px;
 }
-.node-home-page h3 {
-  font-size: 1.5em;
-}
 /*for addthis toolbar/social media*/
 .addthis_default_style {
   float: right;
 }
 /*for homepage*/
 #block-views-news-events-block-2,
-.field-name-services-for {
+.field-name-services-for,
+#block-available-now-available-now {
   padding-bottom: 20px;
 }
 #block-views-news-events-block-2 img,
-.field-name-services-for img {
+.field-name-services-for img,
+#block-available-now-available-now img {
   width: auto;
   height: auto;
   max-height: 165px;
@@ -7737,8 +7740,14 @@ footer {
   margin-right: auto;
   max-width: 100%;
 }
+#block-views-news-events-block-2 h2.block-title,
+.field-name-services-for h2.block-title,
+#block-available-now-available-now h2.block-title {
+  padding-left: 15px;
+}
 #block-views-news-events-block-2 .views-field-field-news-caption .field-content,
-.field-name-services-for .views-field-field-news-caption .field-content {
+.field-name-services-for .views-field-field-news-caption .field-content,
+#block-available-now-available-now .views-field-field-news-caption .field-content {
   text-align: center;
   display: block;
   width: 80%;
@@ -7749,13 +7758,15 @@ footer {
   color: #0064b1;
 }
 #block-views-news-events-block-2 .carousel-control-container,
-.field-name-services-for .carousel-control-container {
+.field-name-services-for .carousel-control-container,
+#block-available-now-available-now .carousel-control-container {
   display: block;
   width: 70px;
   float: right;
 }
 #block-views-news-events-block-2 .carousel-control-container .carousel-control,
-.field-name-services-for .carousel-control-container .carousel-control {
+.field-name-services-for .carousel-control-container .carousel-control,
+#block-available-now-available-now .carousel-control-container .carousel-control {
   top: 102%;
   position: relative;
   display: inline-block;
@@ -7770,26 +7781,33 @@ footer {
 }
 #block-views-news-events-block-2 .carousel-control-container .carousel-control.left,
 .field-name-services-for .carousel-control-container .carousel-control.left,
+#block-available-now-available-now .carousel-control-container .carousel-control.left,
 #block-views-news-events-block-2 .carousel-control-container .carousel-control.right,
-.field-name-services-for .carousel-control-container .carousel-control.right {
+.field-name-services-for .carousel-control-container .carousel-control.right,
+#block-available-now-available-now .carousel-control-container .carousel-control.right {
   background: #f69042;
 }
 #block-views-news-events-block-2 .carousel-control-container .carousel-control.left,
-.field-name-services-for .carousel-control-container .carousel-control.left {
+.field-name-services-for .carousel-control-container .carousel-control.left,
+#block-available-now-available-now .carousel-control-container .carousel-control.left {
   float: left;
 }
 #block-views-news-events-block-2 .carousel-control-container .icon-prev:before,
-.field-name-services-for .carousel-control-container .icon-prev:before {
+.field-name-services-for .carousel-control-container .icon-prev:before,
+#block-available-now-available-now .carousel-control-container .icon-prev:before {
   content: '\25c0';
 }
 #block-views-news-events-block-2 .carousel-control-container .icon-next:before,
-.field-name-services-for .carousel-control-container .icon-next:before {
+.field-name-services-for .carousel-control-container .icon-next:before,
+#block-available-now-available-now .carousel-control-container .icon-next:before {
   content: '\25b6';
 }
 #block-views-news-events-block-2 .carousel-control-container .icon-prev,
 .field-name-services-for .carousel-control-container .icon-prev,
+#block-available-now-available-now .carousel-control-container .icon-prev,
 #block-views-news-events-block-2 .carousel-control-container .icon-next,
-.field-name-services-for .carousel-control-container .icon-next {
+.field-name-services-for .carousel-control-container .icon-next,
+#block-available-now-available-now .carousel-control-container .icon-next {
   width: 32px;
   height: 32px;
   margin-top: -16px;

@@ -78,7 +78,7 @@ function available_now_block_view($delta='') {
     /*END LAPTOPS*/
         $block_content = '<div class="row">
         <div class="col-sm-12">
-        <h3>Available Now @ <span class="available-links"><a href="technology">Borrow Technology</a> / <a href="http://openroom.uta.edu">Reserve a Room</a></span></h3>
+        <h2 class="block-title">Available Now @ <span class="available-links"><a href="technology">Borrow Technology</a> / <a href="http://openroom.uta.edu">Reserve a Room</a></span></h2>
         </div>
         </div>
         <div class="row">
