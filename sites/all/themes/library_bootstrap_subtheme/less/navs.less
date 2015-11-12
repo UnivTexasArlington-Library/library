@@ -334,18 +334,20 @@
   .dropdown-menu > .active > a:focus {
     background-color:transparent;
   }
+  h2.block-title {
+    border-top-style: none;
+    border-bottom-style: none;
+  }
   .block-title-link {
     color: @brand-warning;
     padding-bottom: 0px;
     font-size:.8em;
     display: inline;
-    /*padding-left: 3px;
-    padding-right: 7px; */
     text-decoration:none;
     border: 0;
-    border-top-style: none;
-    border-bottom-style: none;
+
   }
+  
   .dropdown-menu > li > a {
     white-space:normal;
   }
@@ -358,6 +360,9 @@
 }
 .region-sidebar-first {
   margin-right: 30px;
+  h2.block-title {
+    float: right;
+  }
   .nav > li {
     text-align: right;
   }

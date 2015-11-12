@@ -7261,18 +7261,19 @@ table .checkbox input[type="checkbox"] {
 .region-sidebar-second .dropdown-menu > .active > a:focus {
   background-color: transparent;
 }
+.region-sidebar-first h2.block-title,
+.region-sidebar-second h2.block-title {
+  border-top-style: none;
+  border-bottom-style: none;
+}
 .region-sidebar-first .block-title-link,
 .region-sidebar-second .block-title-link {
   color: #f69042;
   padding-bottom: 0px;
   font-size: .8em;
   display: inline;
-  /*padding-left: 3px;
-    padding-right: 7px; */
   text-decoration: none;
   border: 0;
-  border-top-style: none;
-  border-bottom-style: none;
 }
 .region-sidebar-first .dropdown-menu > li > a,
 .region-sidebar-second .dropdown-menu > li > a {
@@ -7288,6 +7289,9 @@ table .checkbox input[type="checkbox"] {
 }
 .region-sidebar-first {
   margin-right: 30px;
+}
+.region-sidebar-first h2.block-title {
+  float: right;
 }
 .region-sidebar-first .nav > li {
   text-align: right;
