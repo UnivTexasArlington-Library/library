@@ -7308,9 +7308,6 @@ table .checkbox input[type="checkbox"] {
 .region-sidebar-second .nav > li {
   text-align: left;
 }
-.region-sidebar-second h2.block-title {
-  margin-left: 0;
-}
 /* for collapsed menus */
 #block-menu-menu-left-menu-bottom .menu,
 #block-menu-menu-right-menu-bottom .menu {
