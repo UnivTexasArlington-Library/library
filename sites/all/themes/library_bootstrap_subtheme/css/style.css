@@ -6942,8 +6942,8 @@ table .checkbox input[type="checkbox"] {
 .region-notification p {
   padding-bottom: 4px;
 }
-.region-notification .block-title:before {
-  background: url('/sites/default/files/default_images/warning.png');
+.region-notification .block-title::before {
+  background-image: url('/sites/default/files/default_images/warning.png');
   display: inline-block;
   background-size: 25px;
   float: left;
