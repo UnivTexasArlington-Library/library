@@ -7503,11 +7503,11 @@ h5 {
 #internal-page {
   padding: 0 50px;
 }
-.region-notification {
-  background-color: #e6dbbe;
-  color: #003a70;
-  padding: 20px;
-  border-bottom: 20px solid #363c3d;
+/* Emergency Notification Icon, image located in template: region--notification.tpl.php */
+#warning {
+  float: left;
+  height: 25px;
+  margin: 21px 5px 0 20px;
 }
 /*for footer*/
 .footer {

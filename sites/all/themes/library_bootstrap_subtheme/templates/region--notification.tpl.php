@@ -29,7 +29,7 @@
  */
 ?>
 <?php if ($content): ?>
-  <div><img src="/sites/default/files/default_images/warning.png" /></div>
+  <div><img id="warning" src="/sites/default/files/default_images/warning.png" /></div>
   <div class="<?php print $classes; ?>">
     <?php print $content; ?>
   </div>
