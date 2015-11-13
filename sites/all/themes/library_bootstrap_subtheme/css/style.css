@@ -7537,9 +7537,35 @@ h5 {
   padding-bottom: 0px;
 }
 .summon {
-  background: url('/sites/default/files/HomepageImages/hornets_homecoming2015.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* background: url('/sites/default/files/HomepageImages/hornets_homecoming2015.jpg');
+	background-size: cover;
+	background-repeat:no-repeat; */
+  /*#searchbox {
+		bottom: -80px;
+	} */
+  /* #everything-button, #website-button, #articles-button, #books-button {
+		background-repeat:no-repeat;
+		border-radius:5px;
+		padding-left:15px;
+		padding-right:15px;
+		background-size:contain;
+		background-position: 16px;
+	}
+	#everything-button {
+		background-image:url('http://library.uta.edu/sites/default/files/WebsiteImages/everything.png');
+	}
+	#website-button {
+		background-image:url('http://library.uta.edu/sites/default/files/WebsiteImages/website.png');
+	}
+	#articles-button {
+		background-image:url('http://library.uta.edu/sites/default/files/WebsiteImages/articles.png');
+	}
+	#books-button {
+		background-image:url('http://library.uta.edu/sites/default/files/WebsiteImages/books.png');
+	} */
 }
 .summon .btn-summon {
   background: rgba(0, 71, 124, 0.85);
@@ -7559,39 +7585,17 @@ h5 {
 .summon .btn-summon.active {
   background: rgba(245, 128, 37, 0.85);
 }
-.summon #searchbox {
-  bottom: -80px;
-}
-.summon #everything-button,
-.summon #website-button,
-.summon #articles-button,
-.summon #books-button {
-  background-repeat: no-repeat;
-  border-radius: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-  background-size: contain;
-  background-position: 16px;
-}
-.summon #everything-button {
-  background-image: url('http://library.uta.edu/sites/default/files/WebsiteImages/everything.png');
-}
-.summon #website-button {
-  background-image: url('http://library.uta.edu/sites/default/files/WebsiteImages/website.png');
-}
-.summon #articles-button {
-  background-image: url('http://library.uta.edu/sites/default/files/WebsiteImages/articles.png');
-}
-.summon #books-button {
-  background-image: url('http://library.uta.edu/sites/default/files/WebsiteImages/books.png');
+.summon .searchbox {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding-bottom: 20px;
 }
 .summon .summon-search-box {
   width: 100%;
-  line-height: 36px;
-  padding-top: 24%;
-  padding-left: 8%;
-  padding-right: 8%;
-  padding-bottom: 2%;
+  /* line-height: 36px;
+		padding-top: 24%;
+		padding-left: 8%;
+		padding-right: 8%;
+		padding-bottom: 2%; */
 }
 .summon .summon-search-field {
   width: 93%;
@@ -7642,8 +7646,8 @@ h5 {
   padding-right: 8%;
 }
 .summon .search-parameters {
-  color: #FFFFFF;
-  padding-left: 5%;
+  /*color:#FFFFFF;
+		padding-left:5%; */
 }
 .summon .search-parameters input {
   margin-right: 6px;
