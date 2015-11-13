@@ -6915,6 +6915,7 @@ table .checkbox input[type="checkbox"] {
 #uta_logo {
   padding-right: 15px;
   border-right: 1px solid #ffffff;
+  margin-right: 20px;
 }
 #header_links {
   position: absolute;
@@ -7292,6 +7293,7 @@ table .checkbox input[type="checkbox"] {
 .region-sidebar-second h2.block-title {
   border-top-style: none;
   border-bottom-style: none;
+  padding-left: 0;
 }
 .region-sidebar-first .block-title-link,
 .region-sidebar-second .block-title-link {
@@ -7363,7 +7365,6 @@ table .checkbox input[type="checkbox"] {
 #block-menu-menu-right-menu-top .block-title-link:before {
   content: '';
   display: inline-block;
-  background-size: 25px;
   float: left;
   margin-right: 5px;
   background-repeat: no-repeat;
