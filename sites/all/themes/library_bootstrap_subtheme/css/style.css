@@ -7668,10 +7668,10 @@ h5 {
 		box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75); 	 	
 		*/
   /*Code for for shadow effect*/
-  -webkit-box-shadow: inset 5px 6px 4px 0px #2F3030;
-  -moz-box-shadow: inset 5px 6px 4px 0px #2F3030;
-  box-shadow: inset 5px 6px 4px 0px #2F3030;
-  /*code for shadow effect ends here
+  /*-webkit-box-shadow: inset 5px 6px 4px 0px #2F3030; 	 	
+		-moz-box-shadow: inset 5px 6px 4px 0px #2F3030; 	 	
+		box-shadow: inset 5px 6px 4px 0px #2F3030; 	 	
+		/*code for shadow effect ends here
 	} */
   /*.summon-search-submit {
 		background: @brand-warning;
@@ -7747,6 +7747,9 @@ h5 {
   width: 100%;
   text-decoration: none;
   font-size: 0.8em;
+}
+.nav-tabs-summon > li > a:hover {
+  color: #fff;
 }
 /*for body font*/
 /*SYSTEM WIDE SETTINGS*/
