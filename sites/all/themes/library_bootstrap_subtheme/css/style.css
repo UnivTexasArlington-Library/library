@@ -7667,7 +7667,7 @@ h5 {
 .summon .search-parameters input {
   margin-right: 6px;
 }
-.nav-tabs-summon {
+.nav-tabs-summon > li > a {
   width: 100%;
   text-decoration: none;
   font-size: 0.8em;
