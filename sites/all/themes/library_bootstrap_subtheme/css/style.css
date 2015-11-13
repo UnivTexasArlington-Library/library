@@ -6940,7 +6940,7 @@ table .checkbox input[type="checkbox"] {
   padding-bottom: 0;
 }
 .region-notification h2.block-title:before {
-  background-image: url('/sites/default/files/default_images/research4.png');
+  background-image: url('/sites/default/files/default_images/warning.png');
   display: inline-block;
   background-size: 100%;
   float: left;
@@ -7382,7 +7382,7 @@ table .checkbox input[type="checkbox"] {
   content: url('/sites/default/files/default_images/about3.png');
 }
 #block-menu-menu-right-menu-top .block-title-link:before {
-  content: url('/sites/default/files/default_images/question1.png');
+  content: url('/sites/default/files/default_images/question2.png');
 }
 .caret.up {
   border-top-width: 0;
