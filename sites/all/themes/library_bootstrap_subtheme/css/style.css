@@ -7553,6 +7553,8 @@ h5 {
   background-color: rgba(255, 255, 255, 0.5);
   padding-top: 20px;
   padding-bottom: 20px;
+  position: absolute;
+  top: 0;
   /* background: url('/sites/default/files/HomepageImages/hornets_homecoming2015.jpg');
 	background-size: cover;
 	background-repeat:no-repeat; */
@@ -7578,6 +7580,38 @@ h5 {
 	}
 	#books-button {
 		background-image:url('http://library.uta.edu/sites/default/files/WebsiteImages/books.png');
+	} */
+  /*.summon-search-field {
+		width: 93%;
+		font-size: 1.8em;
+		border-radius:5px;
+		line-height:2.2em;
+		/* old code	304	
+		-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);	
+		-moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+		box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75); 	 	
+		*/
+  /*Code for for shadow effect*/
+  -webkit-box-shadow: inset 5px 6px 4px 0px #2F3030;
+  -moz-box-shadow: inset 5px 6px 4px 0px #2F3030;
+  box-shadow: inset 5px 6px 4px 0px #2F3030;
+  /*code for shadow effect ends here
+	} */
+  /*.summon-search-submit {
+		background: @brand-warning;
+		border: 2px solid #999990;
+		border-radius: 42px;
+		font-size: 2em;
+		color: #FFFFFF;
+		padding: 19px;
+		text-transform: uppercase;
+		margin-left: -37px;
+		margin-top: -3px;
+		position: absolute;
+		border:none;
+		-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
+        -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
+		box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
 	} */
 }
 .summon .btn-summon {
@@ -7610,38 +7644,6 @@ h5 {
 		padding-right: 8%;
 		padding-bottom: 2%; */
 }
-.summon .summon-search-field {
-  width: 93%;
-  font-size: 1.8em;
-  border-radius: 5px;
-  line-height: 2.2em;
-  /* old code	304	
-		-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);	
-		-moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-		box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.75); 	 	
-		*/
-  /*Code for for shadow effect*/
-  -webkit-box-shadow: inset 5px 6px 4px 0px #2F3030;
-  -moz-box-shadow: inset 5px 6px 4px 0px #2F3030;
-  box-shadow: inset 5px 6px 4px 0px #2F3030;
-  /*code for shadow effect ends here*/
-}
-.summon .summon-search-submit {
-  background: #f69042;
-  border: 2px solid #999990;
-  border-radius: 42px;
-  font-size: 2em;
-  color: #FFFFFF;
-  padding: 19px;
-  text-transform: uppercase;
-  margin-left: -37px;
-  margin-top: -3px;
-  position: absolute;
-  border: none;
-  -webkit-box-shadow: 0px 0px 10px 0px #000000;
-  -moz-box-shadow: 0px 0px 10px 0px #000000;
-  box-shadow: 0px 0px 10px 0px #000000;
-}
 .summon a {
   float: right;
   color: #FFFFFF;
@@ -7665,11 +7667,16 @@ h5 {
 .summon .search-parameters input {
   margin-right: 6px;
 }
+.nav-tabs-summon {
+  width: 100%;
+  text-decoration: none;
+  font-size: 0.8em;
+}
 /*for body font*/
 /*SYSTEM WIDE SETTINGS*/
 /*for orange font*/
 .orange {
-  color: #f69042;
+  color: #b35208;
 }
 /*class for inline styling*/
 .inline {
@@ -8012,6 +8019,13 @@ h5 {
   .node-staff .field-name-field-image img {
     padding-bottom: 15px;
   }
+}
+.field-collection-view {
+  border-bottom-style: none;
+  padding: 0;
+}
+.field-collection-container {
+  border-bottom-style: none;
 }
 /*for locations */
 .node-location img {

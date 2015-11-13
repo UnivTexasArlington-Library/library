@@ -51,7 +51,7 @@
   <?php endif; ?>
   <div class="field-items"<?php print $content_attributes; ?>>
     <?php foreach ($items as $delta => $item): ?>
-      <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><span class="glyphicon orange"><img src="http://library.uta.edu/sites/default/files/student.png"></span> <?php print render($item); ?></div>
+      <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><span class="glyphicon"><img src="/sites/default/files/default_images/studiespaces2.png"></span> <?php print render($item); ?></div>
     <?php endforeach; ?>
   </div>
 </div>
