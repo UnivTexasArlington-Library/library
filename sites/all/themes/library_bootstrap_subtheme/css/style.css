@@ -6939,16 +6939,16 @@ table .checkbox input[type="checkbox"] {
   font-size: 1.35em;
   padding-bottom: 0;
 }
-.region-notification h2.block-title:before {
-  background-image: url('/sites/default/files/default_images/warning.png');
+.region-notification p {
+  padding-bottom: 4px;
+}
+.region-notification .block-title:before {
+  content: url('/sites/default/files/default_images/warning.png');
   display: inline-block;
   background-size: 100%;
   float: left;
   margin-right: 5px;
   background-repeat: no-repeat;
-}
-.region-notification p {
-  padding-bottom: 4px;
 }
 .nav {
   margin-bottom: 0;
@@ -7382,7 +7382,7 @@ table .checkbox input[type="checkbox"] {
   content: url('/sites/default/files/default_images/about3.png');
 }
 #block-menu-menu-right-menu-top .block-title-link:before {
-  content: url('/sites/default/files/default_images/question2.png');
+  content: url('/sites/default/files/default_images/questions2.png');
 }
 .caret.up {
   border-top-width: 0;
