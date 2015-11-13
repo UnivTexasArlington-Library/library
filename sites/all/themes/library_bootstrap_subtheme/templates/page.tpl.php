@@ -84,7 +84,7 @@
 
     <section class="center-container col-md-8 col-sm-9 col-xs-12">
       <?php if (!empty($page['notification'])): ?>
-        <div class="notification"><?php print render($page['notification']); ?></div>
+      <?php print render($page['notification']); ?>
       <?php endif; ?>
       <?php if (!empty($page['lib_header'])): ?>
         <div id="lib_header"><?php print render($page['lib_header']); ?></div>
