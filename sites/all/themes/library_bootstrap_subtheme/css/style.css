@@ -6945,7 +6945,7 @@ table .checkbox input[type="checkbox"] {
 .region-notification .block-title:before {
   content: url('/sites/default/files/default_images/warning.png');
   display: inline-block;
-  background-size: 100%;
+  background-size: 25px;
   float: left;
   margin-right: 5px;
   background-repeat: no-repeat;
@@ -7363,7 +7363,7 @@ table .checkbox input[type="checkbox"] {
 #block-menu-menu-right-menu-top .block-title-link:before {
   content: '';
   display: inline-block;
-  background-size: 100%;
+  background-size: 25px;
   float: left;
   margin-right: 5px;
   background-repeat: no-repeat;
