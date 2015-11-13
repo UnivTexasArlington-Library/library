@@ -6925,6 +6925,19 @@ table .checkbox input[type="checkbox"] {
   width: 100%;
   height: auto;
 }
+.region-notification {
+  background-color: #e6dbbe;
+  color: #003a70;
+  padding: 20px;
+  border-bottom: 20px solid #363c3d;
+}
+.region-notification h2.block-title {
+  border-top-style: none;
+  border-bottom-style: none;
+  color: #003a70;
+  padding-left: 0;
+  font-size: 1.3em;
+}
 .nav {
   margin-bottom: 0;
   padding-left: 0;
