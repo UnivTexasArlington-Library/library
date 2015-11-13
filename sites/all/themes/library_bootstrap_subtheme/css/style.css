@@ -6943,7 +6943,7 @@ table .checkbox input[type="checkbox"] {
   padding-bottom: 4px;
 }
 .region-notification .block-title:before {
-  content: url('/sites/default/files/default_images/warning.png');
+  background: url('/sites/default/files/default_images/warning.png');
   display: inline-block;
   background-size: 25px;
   float: left;
