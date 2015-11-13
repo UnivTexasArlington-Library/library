@@ -6936,7 +6936,19 @@ table .checkbox input[type="checkbox"] {
   border-bottom-style: none;
   color: #003a70;
   padding-left: 0;
-  font-size: 1.3em;
+  font-size: 1.35em;
+  padding-bottom: 0;
+}
+.region-notification h2.block-title:before {
+  background-image: url('/sites/default/files/default_images/research4.png');
+  display: inline-block;
+  background-size: 100%;
+  float: left;
+  margin-right: 5px;
+  background-repeat: no-repeat;
+}
+.region-notification p {
+  padding-bottom: 4px;
 }
 .nav {
   margin-bottom: 0;
