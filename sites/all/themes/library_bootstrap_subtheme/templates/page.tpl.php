@@ -94,13 +94,6 @@
       <?php endif; ?>
       <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
       <a id="main-content"></a>
-      <?php if (!empty($page['notification'])): ?>
-      <div class="col-md-8 col-md-offset-2 col-sm-9 col-sm-offset-3 col-xs-12 notification">
-          <div class='alert alert-danger'>
-            <?php print render($page['notification']); ?>
-          </div> <!-- end.alert alert-danger -->
-      </div> <!-- end.notification -->
-        <?php endif; ?>
       <div class="navbar navbar-default visible-xs" role="navigation">
         <div class="container">
           <div class="navbar-header">
