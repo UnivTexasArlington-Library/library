@@ -7758,13 +7758,22 @@ h5 {
 .nav-tabs-summon > li > a:hover {
   color: #fff;
 }
-.field-name-field-caption {
+.view-hero-image > .carousel-inner > .field-content {
+  z-index: 99;
+  color: #fff;
+  background-color: rgba(18, 15, 7, 0.6);
+  padding: 20px;
+  bottom: 0;
+  max-width: 100%;
+  width: 100%;
+}
+.view-hero-image > .carousel-inner > .field-content a {
+  text-decoration: underline;
+}
+.views-field-field-image img {
   width: 100%;
   max-width: 100%;
-  z-index: 99;
-  color: #000;
-  background-color: rgba(18, 15, 7, 0.6);
-  padding: 20;
+  height: auto;
 }
 /*for body font*/
 /*SYSTEM WIDE SETTINGS*/
