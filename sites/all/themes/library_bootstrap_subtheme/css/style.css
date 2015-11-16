@@ -7758,7 +7758,7 @@ h5 {
 .nav-tabs-summon > li > a:hover {
   color: #fff;
 }
-.view-hero-image > .carousel-inner > .field-content {
+.view-hero-image.field-content {
   z-index: 99;
   color: #fff;
   background-color: rgba(18, 15, 7, 0.6);
@@ -7767,7 +7767,7 @@ h5 {
   max-width: 100%;
   width: 100%;
 }
-.view-hero-image > .carousel-inner > .field-content a {
+.view-hero-image.field-content a {
   text-decoration: underline;
 }
 .views-field-field-image img {
