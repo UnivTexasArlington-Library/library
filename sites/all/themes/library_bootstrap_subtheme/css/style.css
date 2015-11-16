@@ -6907,7 +6907,7 @@ table .checkbox input[type="checkbox"] {
 #lib_header {
   background-color: #0052a3;
   color: #fafafb;
-  padding: 50px 20px 20px 20px;
+  padding: 70px 0px 00px 20px;
 }
 #lib_header a {
   color: #fafafb;
@@ -7450,6 +7450,7 @@ table .checkbox input[type="checkbox"] {
 .navbar-hours-contact {
   position: relative;
   top: -35px;
+  margin-bottom: 0;
 }
 .dropdown-menu {
   background-color: #e7f6fd;
@@ -7457,6 +7458,7 @@ table .checkbox input[type="checkbox"] {
   left: auto;
   padding: 17px;
   min-width: 320px;
+  top: 75%;
 }
 .dropdown-menu a {
   color: #ae482c !important;
@@ -7497,6 +7499,10 @@ table .checkbox input[type="checkbox"] {
   border-bottom: 6px solid #ffffff;
   border-left: 6px solid transparent;
   content: '';
+}
+.navbar-collapse {
+  position: relative;
+  top: 50px;
 }
 .nav .open > a,
 .nav .open > a:hover,
@@ -7631,6 +7637,7 @@ h5 {
   padding-bottom: 20px;
   position: absolute;
   top: 0;
+  z-index: 99;
   /* background: url('/sites/default/files/HomepageImages/hornets_homecoming2015.jpg');
 	background-size: cover;
 	background-repeat:no-repeat; */
@@ -7750,6 +7757,14 @@ h5 {
 }
 .nav-tabs-summon > li > a:hover {
   color: #fff;
+}
+.field-name-field-caption {
+  width: 100%;
+  max-width: 100%;
+  z-index: 99;
+  color: #000;
+  background-color: rgba(18, 15, 7, 0.6);
+  padding: 20;
 }
 /*for body font*/
 /*SYSTEM WIDE SETTINGS*/

@@ -489,34 +489,35 @@
 
 /* HOURS & CONTACT US on homepage */
 .navbar-hours-contact {
-        position:relative;
-        top:-35px;
-    }
-    .dropdown-menu {
-        background-color:#e7f6fd;
-        right:0;
-        left:auto;
-        padding:17px;
-        min-width:320px;
-    }
-    .dropdown-menu a {
-    color: #ae482c !important;
-    text-decoration: none;
+  position:relative;
+  top:-35px;
+  margin-bottom: 0;
+  }
+.dropdown-menu {
+  background-color:#e7f6fd;
+  right:0;
+  left:auto;
+  padding:17px;
+  min-width:320px;
+  top:75%;
 }
-    .dropdown-menu a:hover, .dropdown-menu a:focus {
-        text-decoration:underline;
-    }
-    .dropdown-menu div, .dropdown-menu p, .dropdown-menu h2 {
-        color:#0052a3;
-        padding:2px;
-    }
-    
-    .dropdown-menu h2 {
-        font-size:1.1em;
-        font-weight:bold;
-        margin-top:0;
-    }
-    .dropdown-menu:before {
+.dropdown-menu a {
+  color: #ae482c !important;
+  text-decoration: none;
+}
+.dropdown-menu a:hover, .dropdown-menu a:focus {
+  text-decoration:underline;
+}
+.dropdown-menu div, .dropdown-menu p, .dropdown-menu h2 {
+  color:#0052a3;
+  padding:2px;
+}
+.dropdown-menu h2 {
+  font-size:1.1em;
+  font-weight:bold;
+  margin-top:0;
+}
+.dropdown-menu:before {
   position: absolute;
   top: -7px;
   right: 9px;
@@ -527,7 +528,6 @@
   border-bottom-color: rgba(0, 0, 0, 0.2);
   content: '';
 }
-
 .dropdown-menu:after {
   position: absolute;
   top: -6px;
@@ -538,7 +538,10 @@
   border-left: 6px solid transparent;
   content: '';
 }
-
+.navbar-collapse {
+  position: relative;
+  top:50px;
+}
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
   background-color: #003a70;
   border-color: #003a70;
