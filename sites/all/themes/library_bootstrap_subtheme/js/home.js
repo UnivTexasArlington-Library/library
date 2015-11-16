@@ -1,5 +1,5 @@
 //for homepage search box 
-function changeSearch(tabID) {
+/*function changeSearch(tabID) {
 	jQuery(".search-buttons button").removeClass('active');
 	jQuery("#" + tabID).addClass('active');
 	if (tabID == 'everything') {
@@ -17,7 +17,7 @@ function changeSearch(tabID) {
 	if (tabID == 'website') {
 		jQuery("#searchbox").html('<form class="summon-search-widget" action="http://library-beta.uta.edu/search/node" method="post" id="search-form" accept-charset="UTF-8"><div><div class="summon-search-box input-lg" id="edit-basic"><div class="input-group"><input placeholder="Search the libraries website" class="summon-search-field" type="text" id="edit-keys" name="keys" value="" size="50" ><input name="op" onclick="_gaq.push([\'_trackEvent\', \'search\', \'submit\', \'website\']);" type="submit" value="Go" class="btn btn-lg btn-warning" id="edit-submit"></div></div></div></form>');
 	}
-}
+} */
 
 // for new homepage searchbox
 /* $(document).ready(function () {
