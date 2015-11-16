@@ -7730,10 +7730,8 @@ h5 {
 }
 .summon a {
   float: right;
-  color: #FFFFFF;
   text-transform: uppercase;
   text-decoration: underline;
-  font-size: 1.2em;
 }
 .summon form a {
   padding-right: 15%;
