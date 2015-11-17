@@ -54,9 +54,30 @@ h5 {
 #internal-page {
 	padding:0 50px;
 }
-/* Emergency Notification Icon, image located in template: region--notification.tpl.php */
+/* EMERGENCY NOTIFICATION, image located in template: region--notification.tpl.php */
 #warning {
 	float:left;
 	height:25px;
 	margin: 21px 5px 0 20px;
+}
+/* HOMEPAGE IMAGE */
+.views-field-field-caption {
+	.field-content {
+		z-index: 99;
+		color: #fff;
+		background-color: rgba(18,15,7,0.6);
+		padding:20px;
+		bottom: 0;
+		max-width: 100%;
+		width: 100%;
+		position: absolute;
+		a {
+			text-decoration: underline;
+		}
+	}
+}
+.views-field-field-image img {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
 }

@@ -1,5 +1,5 @@
 //for homepage search box 
-/*function changeSearch(tabID) {
+function changeSearch(tabID) {
 	jQuery(".search-buttons button").removeClass('active');
 	jQuery("#" + tabID).addClass('active');
 	if (tabID == 'everything') {
@@ -14,10 +14,7 @@
 		jQuery("#searchbox").html('<script id="s5da153d0cede013143c5441ea15a6074" src="http://uta.summon.serialssolutions.com/widgets/box.js" type="text/javascript" ></script><script type="text/javascript">new SummonCustomSearchBox({"id":"#s5da153d0cede013143c5441ea15a6074","params":{"s.fvf[]":["ContentType,Book / eBook"],"keep_r":true},"colors":{},"searchbutton_text":"Go","advanced_text":"Advanced Search","placeholder_text":"Search books","advanced":"true","suggest":"true","popup":"true"})</script><div class="search-parameters"><label><input id="ebookcheck" name="ebookbox" onclick="expand()" type="checkbox">E-Book only</label> <label><input id="expandcheck" name="expandbox" onclick="expand()" type="checkbox">Expand beyond the Libraries\' collection</label></div>');
 		jQuery("#s5da153d0cede013143c5441ea15a6074 .summon-search-submit[0]").attr("onclick", "_gaq.push(['_trackEvent', 'search', 'submit', 'summonbooks']);");
 	}
-	if (tabID == 'website') {
-		jQuery("#searchbox").html('<form class="summon-search-widget" action="http://library-beta.uta.edu/search/node" method="post" id="search-form" accept-charset="UTF-8"><div><div class="summon-search-box input-lg" id="edit-basic"><div class="input-group"><input placeholder="Search the libraries website" class="summon-search-field" type="text" id="edit-keys" name="keys" value="" size="50" ><input name="op" onclick="_gaq.push([\'_trackEvent\', \'search\', \'submit\', \'website\']);" type="submit" value="Go" class="btn btn-lg btn-warning" id="edit-submit"></div></div></div></form>');
-	}
-} */
+} 
 
 // for new homepage searchbox
 /* $(document).ready(function () {
