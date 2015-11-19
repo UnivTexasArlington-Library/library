@@ -51,6 +51,14 @@ function _field_collection_table_sort_items_widget_helper($a, $b) {
 function theme_field_collection_table_multiple_value_fields($variables) {
   $element = $variables['element'];
   $output = '';
+  /*
+   * MN
+   * extract display settings if we can find them
+   */
+  $settings = (isset($element['#instance']['display']['default']['settings']) ?
+    $element['#instance']['display']['default']['settings'] :
+    array('csscolrow' => FALSE, 'cssfield' => FALSE));
+
 
   if (isset($element['#cardinality']) && ($element['#cardinality'] > 1 || $element['#cardinality'] == FIELD_CARDINALITY_UNLIMITED)) {
     $table_id = drupal_html_id($element['#field_name'] . '_values');
@@ -63,8 +71,10 @@ function theme_field_collection_table_multiple_value_fields($variables) {
     // preview or failed validation)
     $items = array();
     foreach (element_children($element) as $key) {
-      if ($key === 'add_more') {
-        $add_more_button = &$element[$key];
+      if (!isset($element[$key]['#entity_type'])) {
+        if ($key === 'add_more') {
+          $add_more_button = &$element[$key];
+        }
       }
       else {
         $items[] = &$element[$key];
@@ -72,12 +82,26 @@ function theme_field_collection_table_multiple_value_fields($variables) {
     }
     usort($items, '_field_sort_items_value_helper');
 
+
     // Add header for table dragging.
     if (!$element['#custom_settings']['nodragging']) {
+
+      // check if we need to add css classes for rows and columns
+      $classes = array('field-label');
+      if (isset($settings['cssrowcol']) && $settings['cssrowcol']) {
+        // add css classes to field label tat is in the first column of the header
+        $classes = array_merge($classes,array('h1','c1','h1-c1'));
+      }
+      // check if we need to add css field classes
+      if (isset($settings['cssfield']) && $settings['cssfield']) {
+        // add css classes to field label tat is in the first column of the header
+        $classes = array_merge($classes,array('label_'.$element['#field_name']));
+      }
+
       $header = array(
           array(
               'data' => '<label>' . t('!title: !required', array('!title' => $element['#title'], '!required' => $required)) . "</label>",
-              'class' => array('field-label'),
+              'class' => $classes,
           ),
       );
     }
@@ -86,24 +110,70 @@ function theme_field_collection_table_multiple_value_fields($variables) {
     foreach ($items as $key => $item) {
       uasort($item, 'element_sort');
       $item['_weight']['#attributes']['class'] = array($order_class);
+
+      // find row number
+      $rown = count($rows)+1;
+      //initialize cells array
       $cells = array();
+
       // Add classes for dragging if needed.
       if (!$element['#custom_settings']['nodragging']) {
+        // insert css class identifiers if needed
+        $classes = array('field-multiple-drag','field_body');
+        if (isset($settings['cssrowcol']) && $settings['cssrowcol']) {
+          // add css classes to field label that is in the first column of the header
+          $classes = array_merge($classes,array('r'.$rown,'c1','r'.$rown.'-c1'));
+        }
+        // check if we need to add css field classes
+        if (isset($settings['cssfield']) && $settings['cssfield']) {
+          // add css classes to field label tat is in the first column of the header
+          $classes = array_merge($classes,array('drag_r'.$rown.'_'.$element['#field_name'],'td_drag','drag_'.$element['#field_name']));
+        }
+
+        // prepare row
         $cells = array(
-          array('data' => '', 'class' => array('field-multiple-drag')),
+          array('data' => '', 'class' => $classes),
         );
       }
+
       foreach (element_children($item) as $field_name) {
+        // find column number
+        $coln = count($cells)+1;
         // Don't add the _weight
         if (!$element['#custom_settings']['nodragging'] || $field_name != '_weight') {
           // Only add the header once.
           if ($key == 0) {
+            // check if we need to add css classes for rows and columns
+            $classes = array('field-label');
+            if (isset($settings['cssrowcol']) && $settings['cssrowcol']) {
+              // add css classes to field label tat is in the first column of the header
+              $classes = array_merge($classes,array('h1','c'.$coln,'h1-c'.$coln));
+            }
+            // check if we need to add css field classes
+            if (isset($settings['cssfield']) && $settings['cssfield']) {
+              // add css classes to field label tat is in the first column of the header
+              $classes = array_merge($classes,array('h1_'.$field_name,'th_'.$field_name));
+            }
             $header[] = array(
               'data' => '<label>' . t('!title', array('!title' => _field_collection_table_get_title($item[$field_name]))) . '</label>',
-              'class' => array('field-label'),
+              'class' => $classes,
             );
           }
-          $cells[] = array('data' => $item[$field_name]);
+          // check if we need to add css classes for rows and columns
+          $classes = array('field-body');
+          if (isset($settings['cssrowcol']) && $settings['cssrowcol']) {
+            // add css classes to field label tat is in the first column of the header
+            $classes = array_merge($classes,array('r'.$rown,'c'.$coln,'r'.$rown.'-c'.$coln));
+          }
+          // check if we need to add css field classes
+          if (isset($settings['cssfield']) && $settings['cssfield']) {
+            // add css classes to field label tat is in the first column of the header
+            $classes = array_merge($classes,array('r'.$rown.'_'.$field_name,'td_'.$field_name));
+          }
+          // append value to cells array
+          $cells[] = array(
+            'data' => $item[$field_name],
+            'class' => $classes);
         }
       }
       // Mark rows as draggable if needed.
