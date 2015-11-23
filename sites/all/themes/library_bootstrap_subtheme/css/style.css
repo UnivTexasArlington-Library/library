@@ -6912,6 +6912,10 @@ table .checkbox input[type="checkbox"] {
 #lib_header a {
   color: #fafafb;
 }
+#lib_header img:hover,
+#lib_header img:focus {
+  background: rgba(23, 24, 24, 0.18);
+}
 #uta_logo {
   padding-right: 15px;
   border-right: 1px solid #ffffff;
