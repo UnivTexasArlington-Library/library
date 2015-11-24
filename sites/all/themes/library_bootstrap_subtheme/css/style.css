@@ -7338,6 +7338,11 @@ table .checkbox input[type="checkbox"] {
   text-align: left;
 }
 @media (max-width: 991px) {
+  .region-sidebar-second {
+    margin-top: 0;
+    margin-right: 15px;
+    margin-left: 0;
+  }
   .region-sidebar-second .nav > li {
     text-align: right;
   }
