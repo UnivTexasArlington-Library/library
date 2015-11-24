@@ -7369,7 +7369,7 @@ table .checkbox input[type="checkbox"] {
   }
 }
 #block-menu-menu-left-menu-bottom .block-title-link {
-  margin-right: 30px;
+  /*margin-right: 30px; */
   margin-left: auto;
 }
 /* for nav link icons */
@@ -7379,7 +7379,7 @@ table .checkbox input[type="checkbox"] {
 #block-menu-menu-right-menu-top .block-title-link:before {
   content: '';
   display: inline-block;
-  float: left;
+  /*float: left; */
   margin-right: 5px;
   background-repeat: no-repeat;
 }
@@ -7392,6 +7392,11 @@ table .checkbox input[type="checkbox"] {
   content: url('/sites/default/files/default_images/services4.png');
   /*margin-left: -30px;
   position: absolute; */
+}
+@media (max-width: 991px) {
+  #block-menu-menu-left-menu-bottom .block-title-link:before {
+    float: none;
+  }
 }
 #block-menu-menu-right-menu-bottom .block-title-link:before {
   content: url('/sites/default/files/default_images/about3.png');
@@ -7716,13 +7721,13 @@ h5 {
 /*for body font*/
 /*SYSTEM WIDE SETTINGS*/
 /*for orange font*/
-.orange {
-  color: #b35208;
-}
+/*.orange {	
+	color: #b35208;
+} */
 /*class for inline styling*/
-.inline {
-  display: inline-block;
-}
+/*.inline {
+	display:inline-block;
+} */
 /*for padding between nodes*/
 .node {
   padding-top: 10px;
