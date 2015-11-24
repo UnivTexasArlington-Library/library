@@ -7616,11 +7616,11 @@ h5 {
   height: auto;
 }
 /* MAINTENANCE MODE */
-.maintenance-page .in-maintenance {
+.in-maintenance {
   color: #dddbc4;
 }
-.maintenance-page .in-maintenance h1 {
-  color: #f69042;
+.in-maintenance img {
+  padding: 20px;
 }
 /*for footer*/
 .footer {
