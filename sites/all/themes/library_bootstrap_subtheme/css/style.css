@@ -7337,6 +7337,11 @@ table .checkbox input[type="checkbox"] {
 .region-sidebar-second .nav > li {
   text-align: left;
 }
+@media (max-width: 991px) {
+  .region-sidebar-second .nav > li {
+    text-align: right;
+  }
+}
 /* for collapsed menus */
 #block-menu-menu-left-menu-bottom .menu,
 #block-menu-menu-right-menu-bottom .menu {
@@ -7619,6 +7624,9 @@ h5 {
 .in-maintenance {
   color: #dddbc4;
   padding: 50px;
+}
+.in-maintenance h1 {
+  padding-left: 0;
 }
 /*for footer*/
 .footer {
