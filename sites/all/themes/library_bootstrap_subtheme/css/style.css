@@ -7615,6 +7615,13 @@ h5 {
   max-width: 100%;
   height: auto;
 }
+/* MAINTENCE MODE */
+.maintenance-page .in-maintenance {
+  color: #dddbc4;
+}
+.maintenance-page .in-maintenance h1 {
+  color: #f69042;
+}
 /*for footer*/
 .footer {
   background: #c6c4c4;
