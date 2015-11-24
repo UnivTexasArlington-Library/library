@@ -7618,9 +7618,7 @@ h5 {
 /* MAINTENANCE MODE */
 .in-maintenance {
   color: #dddbc4;
-}
-.in-maintenance img {
-  padding: 20px;
+  padding: 50px;
 }
 /*for footer*/
 .footer {
