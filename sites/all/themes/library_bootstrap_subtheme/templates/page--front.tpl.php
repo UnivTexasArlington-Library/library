@@ -115,7 +115,12 @@
       <?php print render($page['notification']); ?>
       <?php endif; ?>
       <?php if (!empty($page['lib_header'])): ?>
-        <div id="lib_header"><?php print render($page['lib_header']); ?></div>
+        <div id="lib_header" class="row">
+          <div class="col-md-9 col-sm-9 col-xs-12"><?php print render($page['lib_header']); ?></div>
+          <?php if (!empty($page['modal'])): ?>
+          <div class="col-md-3 col-sm-3 col-xs-12"><?php print render($page['modal']); ?></div>
+          <?php endif; ?>
+        </div>
       <?php endif; ?>
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted"><?php print render($page['highlighted']); ?></div>
