@@ -6916,6 +6916,20 @@ table .checkbox input[type="checkbox"] {
 #lib_header a:focus {
   background: rgba(23, 24, 24, 0.18);
 }
+#lib_header img {
+  width: auto;
+  height: 42px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #lib_header img {
+    height: 36px;
+  }
+}
+@media (max-width: 767px) {
+  #lib_header img {
+    height: 24px;
+  }
+}
 #uta_logo {
   padding-right: 15px;
   border-right: 1px solid #ffffff;

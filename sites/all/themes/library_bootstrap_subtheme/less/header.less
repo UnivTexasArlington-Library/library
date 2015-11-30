@@ -10,7 +10,18 @@
 			background:rgba(23,24,24,0.18);
 		}
 	}
+	img {
+		width: auto;
+		height: 42px;
+		@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+			height:36px;
+		}
+		@media (max-width: @screen-xs-max) {
+			height:24px;
+		}
+	}
 }
+
 #uta_logo {
 	padding-right: 15px;
 	border-right: 1px solid #ffffff;
