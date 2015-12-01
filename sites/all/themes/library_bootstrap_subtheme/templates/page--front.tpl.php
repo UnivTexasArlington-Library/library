@@ -139,10 +139,7 @@
           </div>
         </div>
       </div> <!-- end.navbar -->
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of b688412... add todays hours in "hours" modal
      <!-- <?php print render($title_prefix); ?>
       <?php if (!empty($title)): ?>
         <h1 class="page-header"><?php print $title; ?></h1>
