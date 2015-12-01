@@ -6908,6 +6908,7 @@ table .checkbox input[type="checkbox"] {
   background-color: #0052a3;
   color: #fafafb;
   padding: 70px 0px 00px 20px;
+  margin: 0;
 }
 #lib_header a {
   color: #fafafb;
@@ -6929,6 +6930,9 @@ table .checkbox input[type="checkbox"] {
   #lib_header img {
     height: 24px;
   }
+}
+#lib_header nav > li {
+  padding-right: 5px;
 }
 #uta_logo {
   padding-right: 15px;
