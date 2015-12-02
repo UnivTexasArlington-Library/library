@@ -7746,6 +7746,9 @@ h5 {
 .nav-tabs-summon > li > a:hover {
   color: #fff;
 }
+#gcse-wrap .gsc-webResult.gsc-result {
+  margin-bottom: 2em;
+}
 /*for body font*/
 /*SYSTEM WIDE SETTINGS*/
 /*for orange font*/
