@@ -16,7 +16,7 @@ function libhours_block_view($delta='') {
   switch ($delta) {
     case 'current-hours':
     $date = date('Y-m-d');
-    // $block_content = "<h3>Today's Hours</h3><div class='hours-block'>"; //
+    $block_content = "<div class='hours-block'>";
     $result = db_query('SELECT nid, start_time, end_time FROM opening_hours WHERE date =:today ORDER BY nid = 202, nid asc limit 2', array(':today'=> $date));
 
 
