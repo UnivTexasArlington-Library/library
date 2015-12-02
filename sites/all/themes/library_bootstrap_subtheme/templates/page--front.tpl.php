@@ -120,6 +120,7 @@
           <?php if (!empty($page['modal'])): ?>
           <div class="col-md-3 col-sm-3 col-xs-12"><?php print render($page['modal']); ?></div>
           <?php print render($page['todays_hrs']); ?>
+          <?php print render($page['feedback']); ?>
           <?php endif; ?>
         </div>
       <?php endif; ?>
