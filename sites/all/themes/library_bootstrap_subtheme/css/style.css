@@ -7652,6 +7652,20 @@ h5 {
 .in-maintenance h1 {
   padding-left: 0;
 }
+/* TODAY'S HOURS */
+.hours-block {
+  color: #0052a3;
+}
+.hours-block a {
+  color: #ae482c;
+}
+.hours-block .hours {
+  padding-left: 15px;
+}
+/* WE LISTEN FORM BLOCK */
+.region-feedback h2.block-title {
+  display: none;
+}
 /*for footer*/
 .footer {
   background: #c6c4c4;
