@@ -7838,6 +7838,7 @@ h5 {
 .field-name-services-for,
 #block-available-now-available-now {
   padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 #block-views-news-events-block-2 img,
 .field-name-services-for img,
@@ -7850,6 +7851,9 @@ h5 {
   margin-right: auto;
   max-width: 100%;
 }
+#block-views-news-events-block-2 h2.panel-title,
+.field-name-services-for h2.panel-title,
+#block-available-now-available-now h2.panel-title,
 #block-views-news-events-block-2 h2.block-title,
 .field-name-services-for h2.block-title,
 #block-available-now-available-now h2.block-title {
