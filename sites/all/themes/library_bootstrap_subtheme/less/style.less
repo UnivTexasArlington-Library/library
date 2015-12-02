@@ -12,6 +12,7 @@
 @import 'summon.less';
 
 @import 'variables.less';
+@import 'google-search.less';
 
 /*for body font*/
 
@@ -209,6 +210,7 @@
 	.tabs-left {
 		border:1px solid #dddbdb;
 		border-radius:5px;
+		margin: 0 15px;
 	}
 	.tabs-left > .nav-tabs {
 		width:auto;
@@ -224,6 +226,7 @@
 		text-align:center;
 		color:@brand-primary;
 		padding-bottom:0;
+		border-color: @header-bg;
 		.col-md-4 {
 			border:3px solid #FFFFFF;
 			border-left:none;
@@ -242,7 +245,7 @@
 		}
 	}
 	.nav-tabs > .active > a {
-		background:#dddbdb;
+		background:@header-bg;
 		border:none;
 		color:@brand-primary;
 	}
@@ -250,9 +253,10 @@
 		color:@brand-warning;
 		background:#FFFFFF;
 		border:none;
-		font-size:1em;
+		font-size:1.3em;
 		margin-bottom:0;
 		border-bottom: 0px solid #dddbdb;
+		text-transform: uppercase;
 		@media(max-width:997px) {
 			font-size: small;
 		}

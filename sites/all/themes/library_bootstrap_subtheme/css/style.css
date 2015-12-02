@@ -7947,6 +7947,7 @@ h5 {
 #block-available-now-available-now .tabs-left {
   border: 1px solid #dddbdb;
   border-radius: 5px;
+  margin: 0 15px;
 }
 #block-available-now-available-now .tabs-left > .nav-tabs {
   width: auto;
@@ -7964,6 +7965,7 @@ h5 {
   text-align: center;
   color: #0064b1;
   padding-bottom: 0;
+  border-color: #f1f2f2;
 }
 #block-available-now-available-now .tab-content .col-md-4 {
   border: 3px solid #FFFFFF;
@@ -7982,7 +7984,7 @@ h5 {
   }
 }
 #block-available-now-available-now .nav-tabs > .active > a {
-  background: #dddbdb;
+  background: #f1f2f2;
   border: none;
   color: #0064b1;
 }
@@ -7990,9 +7992,10 @@ h5 {
   color: #f69042;
   background: #FFFFFF;
   border: none;
-  font-size: 1em;
+  font-size: 1.3em;
   margin-bottom: 0;
   border-bottom: 0px solid #dddbdb;
+  text-transform: uppercase;
 }
 @media (max-width: 997px) {
   #block-available-now-available-now .nav-tabs > li > a {
