@@ -7582,6 +7582,7 @@ h1 {
   padding-left: 15px;
 }
 h2.block-title,
+h2.pane-title,
 h3 {
   color: #0052a3;
   border-top: 1px solid #c6c4c4;
@@ -7593,17 +7594,21 @@ h3 {
   font-size: 1.6em;
 }
 h2.block-title a,
+h2.pane-title a,
 h3 a {
   color: #0052a3;
 }
 h2.block-title a:hover,
+h2.pane-title a:hover,
 h3 a:hover,
 h2.block-title a:focus,
+h2.pane-title a:focus,
 h3 a:focus {
   color: #ae482c;
   text-decoration: underline;
 }
-h2.block-title {
+h2.block-title,
+h2.pane-title {
   padding-left: 15px;
 }
 h4 {
@@ -7853,14 +7858,6 @@ h5 {
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
-}
-#block-views-news-events-block-2 h2.pane-title,
-.field-name-services-for h2.pane-title,
-#block-available-now-available-now h2.pane-title,
-#block-views-news-events-block-2 h2.block-title,
-.field-name-services-for h2.block-title,
-#block-available-now-available-now h2.block-title {
-  padding-left: 15px;
 }
 #block-views-news-events-block-2 .views-field-field-news-caption .field-content,
 .field-name-services-for .views-field-field-news-caption .field-content,
