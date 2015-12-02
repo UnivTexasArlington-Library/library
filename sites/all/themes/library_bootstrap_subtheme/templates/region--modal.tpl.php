@@ -41,6 +41,7 @@
 	        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
 	      </div>
 	      <div class="modal-body">
+	      	<?php echo "Hello world!";?>
 	       <?php print render($page['todays_hrs']); ?>
 	      </div>
 	      <div class="modal-footer">
