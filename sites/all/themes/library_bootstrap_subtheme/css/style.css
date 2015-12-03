@@ -7779,7 +7779,7 @@ h5 {
   color: #dddbc4;
   background-color: rgba(255, 255, 255, 0.9);
 }
-.nav-tabs-summon > li.active > a #articles {
+a #articles {
   margin: 2px 0;
 }
 /* to act like .form-inline & .form-group */
