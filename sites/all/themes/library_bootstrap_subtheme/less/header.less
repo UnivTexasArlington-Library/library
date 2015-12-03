@@ -14,15 +14,24 @@
 	img {
 		width: auto;
 		height: 42px;
+		@media (min-width: @screen-md-min) and (max-width: 1145px) {
+			height: 35px;
+		}
 		@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-			height:36px;
+			height:29px;
 		}
 		@media (max-width: @screen-xs-max) {
 			height:24px;
 		}
 	}
-	nav > li {
-		padding-right: 5px;
+	.nav > li {
+		display: inline-block;
+	}
+	.navbar-toggle {
+		border-color:#ffffff;
+	}
+	.navbar-toggle .icon-bar {
+		background: #ffffff; 
 	}
 }
 

@@ -6921,9 +6921,14 @@ table .checkbox input[type="checkbox"] {
   width: auto;
   height: 42px;
 }
+@media (min-width: 992px) and (max-width: 1145px) {
+  #lib_header img {
+    height: 35px;
+  }
+}
 @media (min-width: 768px) and (max-width: 991px) {
   #lib_header img {
-    height: 36px;
+    height: 29px;
   }
 }
 @media (max-width: 767px) {
@@ -6931,8 +6936,14 @@ table .checkbox input[type="checkbox"] {
     height: 24px;
   }
 }
-#lib_header nav > li {
-  padding-right: 5px;
+#lib_header .nav > li {
+  display: inline-block;
+}
+#lib_header .navbar-toggle {
+  border-color: #ffffff;
+}
+#lib_header .navbar-toggle .icon-bar {
+  background: #ffffff;
 }
 #uta_logo {
   padding-right: 15px;
@@ -7728,6 +7739,7 @@ h5 {
   border-style: solid;
   border-width: 1px 1px 1px 0;
   border-color: #f1f2f2;
+  border-radius: 0;
 }
 .summon a {
   float: right;
@@ -8043,10 +8055,10 @@ h5 {
 }
 /*for body font*/
 /*SYSTEM WIDE SETTINGS*/
-/*for orange font*/
-/*.orange {	
-	color: #b35208;
-} */
+/*for orange font, locations icons*/
+.orange {
+  color: #ae482c;
+}
 /*class for inline styling*/
 /*.inline {
 	display:inline-block;
