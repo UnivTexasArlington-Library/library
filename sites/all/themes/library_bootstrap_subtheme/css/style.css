@@ -7716,6 +7716,9 @@ h5 {
   z-index: 99;
   width: 100%;
   position: absolute;
+  /*form a {
+		padding-right:15%;
+	}*/
 }
 .summon .searchbox {
   background-color: rgba(255, 255, 255, 0.9);
@@ -7732,9 +7735,6 @@ h5 {
   text-decoration: underline;
   font-size: 1.2em;
 }
-.summon form a {
-  padding-right: 15%;
-}
 .summon .search-parameters input {
   margin-right: 6px;
 }
@@ -7749,6 +7749,13 @@ h5 {
 }
 .nav-tabs-summon > li > a:hover {
   color: #fff;
+}
+/* to act like .form-inline & .form-group */
+.summon-search-widget,
+.summon-search-box {
+  display: inline-block;
+  margin-bottom: 0px;
+  vertical-align: middle;
 }
 /* Styles for the <front> page */
 /* HOMEPAGE IMAGE */
