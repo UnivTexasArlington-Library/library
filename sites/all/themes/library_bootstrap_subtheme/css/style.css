@@ -7444,10 +7444,6 @@ table .checkbox input[type="checkbox"] {
 #block-menu-menu-friends-of-the-library .dropdown-menu > .active > a {
   background-color: #FFFFFF;
 }
-/* HOURS & CONTACT US on homepage */
-.navbar-hours-contact > li > a {
-  color: #fff;
-}
 .dropdown-menu {
   background-color: #e7f6fd;
   right: 0;
@@ -7583,6 +7579,9 @@ table .checkbox input[type="checkbox"] {
   }
 }
 /*end sidebar nav style*/
+nav.navbar-hours-contact > li > a {
+  color: #fff;
+}
 body {
   font-family: 'Calibri', 'Open Sans';
 }
