@@ -102,13 +102,15 @@
 
 
   <div class="row">
-
+    <div class="row row-offcanvas row-offcanvas-left">
     <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-xs-6 col-sm-3 col-md-2 sidebar-offcanvas" role="navigation" id="sidebar">4
+      <aside class="col-xs-6 col-sm-3 col-md-2 sidebar-offcanvas" role="navigation" id="sidebar">
+        
         <?php print render($page['sidebar_first']); ?>
+
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>
-
+    </div>
     <section class="center-container col-md-8 col-sm-9 col-xs-12">
       
       <?php if (!empty($page['notification'])): ?>

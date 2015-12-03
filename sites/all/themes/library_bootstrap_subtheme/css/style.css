@@ -7719,7 +7719,7 @@ h5 {
   background-color: rgba(255, 255, 255, 0.9);
   padding-bottom: 20px;
   padding-top: 15px;
-  height: 85px;
+  height: 89px;
   border-style: solid;
   border-width: 1px 1px 1px 0;
   border-color: #f1f2f2;
@@ -7756,7 +7756,7 @@ h5 {
   width: 100%;
   text-decoration: none;
   padding: 5px 10px;
-  margin-right: 0px;
+  argin-right: 0px;
   color: #f1f2f2;
   background-color: #545555;
   border-radius: 0;
@@ -7767,11 +7767,20 @@ h5 {
 .nav-tabs-summon > li > a:hover,
 .nav-tabs-summon > li > a:focus {
   color: #dddbc4;
+  background-color: #545555;
 }
 .nav-tabs-summon > li.active > a {
   color: #0052a3;
   background-color: rgba(255, 255, 255, 0.9);
   border: none;
+}
+.nav-tabs-summon > li.active > a:hover,
+.nav-tabs-summon > li.active > a:focus {
+  color: #dddbc4;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.nav-tabs-summon > li.active > a #articles {
+  margin: 2px 0;
 }
 /* to act like .form-inline & .form-group */
 .summon-search-widget,
@@ -7781,7 +7790,7 @@ h5 {
   vertical-align: middle;
 }
 .summon-search-submit {
-  background-color: #f1f2f2;
+  background-color: #0052a3;
   color: #fff;
 }
 /* Styles for the <front> page */
