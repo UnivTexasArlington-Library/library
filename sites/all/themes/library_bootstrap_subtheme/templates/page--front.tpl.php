@@ -131,7 +131,7 @@
               </button>
               <!-- <a class="navbar-brand" href="#"></a> -->
             </div> <!-- end.navbar-header -->
-          </div> <!-- end.mobile navigation -->
+          </div> <!-- end.visible-xs col-xs-2 (mobile navigation) -->
         </div> <!-- end #lib_header -->
       <?php endif; ?>
       <?php if (!empty($page['highlighted'])): ?>
@@ -158,9 +158,7 @@
       <?php endif; ?>
       <?php print render($page['content']); ?>
       <footer class="footer">
-        
-    <?php print render($page['footer']); ?>
-
+        <?php print render($page['footer']); ?>
       </footer>
     </section>
 
