@@ -13,7 +13,8 @@
   		border-style: solid;
   		border-width: 1px 1px 1px 0;
   		border-color:@header-bg;
-  		border-radius: 0;
+  		border-top-left-radius: 0;
+  		border-bottom-left-radius: 0;
 	}
 	a {
 		float:right;
@@ -50,7 +51,8 @@
 	text-decoration: none;
 	font-size:0.8em;
 	margin-right: 0px;
-	&:hover {
+	&:hover,
+	&:focus {
 		color:#fff;
 	}
 }
@@ -59,6 +61,11 @@
 	background-color: @header-text;
 	border-radius: 0;
 	border:none;
+	&:hover,
+	&:focus {
+		color:@header-bg;
+		background-color: @header-text;
+	}
 }
 .nav-tabs-summon > li.active > a{
 		color:@header-text;
