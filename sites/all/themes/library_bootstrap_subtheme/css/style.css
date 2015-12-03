@@ -7719,8 +7719,8 @@ h5 {
 .summon .searchbox {
   background-color: rgba(255, 255, 255, 0.9);
   padding-bottom: 20px;
-  padding-top: 25px;
-  height: 115px;
+  padding-top: 15px;
+  height: 85px;
   border-style: solid;
   border-width: 1px 1px 1px 0;
   border-color: #f1f2f2;
@@ -7744,6 +7744,8 @@ h5 {
 .summon .search-parameters label {
   font-weight: unset;
   margin-right: 10px;
+  color: #0052a3;
+  text-transform: capitalize;
 }
 .summon .col-md-2 {
   padding-right: 0px;
@@ -7754,23 +7756,18 @@ h5 {
 .nav-tabs-summon > li > a {
   width: 100%;
   text-decoration: none;
-  font-size: 0.8em;
+  padding: 5px 10px;
   margin-right: 0px;
-}
-.nav-tabs-summon > li > a:hover,
-.nav-tabs-summon > li > a:focus {
-  color: #fff;
-}
-.nav-tabs-summon > li > a {
   color: #f1f2f2;
-  background-color: #0052a3;
+  background-color: #545555;
   border-radius: 0;
   border: none;
+  text-transform: capitalize;
+  font-size: 0.8em;
 }
 .nav-tabs-summon > li > a:hover,
 .nav-tabs-summon > li > a:focus {
-  color: #f1f2f2;
-  background-color: #0052a3;
+  color: #dddbc4;
 }
 .nav-tabs-summon > li.active > a {
   color: #0052a3;
@@ -7783,6 +7780,10 @@ h5 {
   display: inline-block;
   margin-bottom: 0px;
   vertical-align: middle;
+}
+.summon-search-submit {
+  background-color: #f1f2f2;
+  color: #fff;
 }
 /* Styles for the <front> page */
 /* HOMEPAGE IMAGE */
