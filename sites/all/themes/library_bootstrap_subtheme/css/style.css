@@ -6906,7 +6906,6 @@ table .checkbox input[type="checkbox"] {
 /*for uta header*/
 #lib_header {
   background-color: #0052a3;
-  color: #fafafb;
   padding: 70px 0px 00px 20px;
   margin: 0;
 }
@@ -6985,7 +6984,7 @@ table .checkbox input[type="checkbox"] {
 }
 /* TODAY'S HOURS */
 #menu-hours {
-  color: #ae482c;
+  color: #fff;
 }
 .hours-block .hours {
   padding-left: 15px;
