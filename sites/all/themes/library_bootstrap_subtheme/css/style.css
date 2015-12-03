@@ -6910,9 +6910,6 @@ table .checkbox input[type="checkbox"] {
   padding: 70px 0px 00px 20px;
   margin: 0;
 }
-#lib_header a {
-  color: #fff;
-}
 #lib_header a:hover,
 #lib_header a:focus {
   background: rgba(23, 24, 24, 0.18);
@@ -6986,8 +6983,16 @@ table .checkbox input[type="checkbox"] {
   margin-right: 5px;
   background-repeat: no-repeat;
 }
-.region-todays-hrs > .hours-block > a {
+/* TODAY'S HOURS */
+#menu-hours {
   color: #ae482c;
+}
+.hours-block .hours {
+  padding-left: 15px;
+}
+/* WE LISTEN FORM BLOCK */
+.region-feedback h2.block-title {
+  display: none;
 }
 .nav {
   margin-bottom: 0;
@@ -7661,20 +7666,6 @@ h5 {
 }
 .in-maintenance h1 {
   padding-left: 0;
-}
-/* TODAY'S HOURS */
-.hours-block {
-  color: #0052a3;
-}
-.hours-block a {
-  color: #ae482c;
-}
-.hours-block .hours {
-  padding-left: 15px;
-}
-/* WE LISTEN FORM BLOCK */
-.region-feedback h2.block-title {
-  display: none;
 }
 /*for footer*/
 .footer {
