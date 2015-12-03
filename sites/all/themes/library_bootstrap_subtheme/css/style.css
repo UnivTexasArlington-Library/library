@@ -6910,9 +6910,6 @@ table .checkbox input[type="checkbox"] {
   padding: 70px 0px 00px 20px;
   margin: 0;
 }
-#lib_header a {
-  color: #fafafb;
-}
 #lib_header a:hover,
 #lib_header a:focus {
   background: rgba(23, 24, 24, 0.18);
@@ -7453,7 +7450,7 @@ table .checkbox input[type="checkbox"] {
   top: -35px;
   margin-bottom: 0;
 }
-.navbar-hours-contact a {
+.navbar-hours-contact li > a {
   color: #fff;
 }
 .dropdown-menu {
