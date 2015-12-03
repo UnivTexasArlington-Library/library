@@ -7445,12 +7445,7 @@ table .checkbox input[type="checkbox"] {
   background-color: #FFFFFF;
 }
 /* HOURS & CONTACT US on homepage */
-.navbar-hours-contact {
-  position: relative;
-  top: -35px;
-  margin-bottom: 0;
-}
-.navbar-hours-contact li > a {
+.navbar-hours-contact > li > a {
   color: #fff;
 }
 .dropdown-menu {
