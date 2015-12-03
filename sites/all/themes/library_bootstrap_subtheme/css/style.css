@@ -7724,19 +7724,23 @@ h5 {
   background-color: rgba(255, 255, 255, 0.9);
   padding-bottom: 20px;
   padding-top: 25px;
-  height: 121.85px;
+  height: 121px;
   border-style: solid;
   border-width: 1px;
-  border-color: #0064b1;
+  border-color: #f1f2f2;
 }
 .summon a {
   float: right;
   text-transform: uppercase;
   text-decoration: underline;
-  font-size: 1.2em;
+  /* font-size:1.2em; */
+  padding-left: 15px;
 }
 .summon .search-parameters input {
-  margin-right: 6px;
+  margin-right: 10px;
+}
+.summon .search-parameters label {
+  font-weight: unset;
 }
 .summon .col-md-2 {
   padding-right: 0px;
@@ -7749,6 +7753,14 @@ h5 {
 }
 .nav-tabs-summon > li > a:hover {
   color: #fff;
+}
+.nav-tabs-summon > li {
+  color: #f1f2f2;
+  background-color: #0052a3;
+}
+.nav-tabs-summon > li .active {
+  color: #0052a3;
+  background-color: #f1f2f2;
 }
 /* to act like .form-inline & .form-group */
 .summon-search-widget,

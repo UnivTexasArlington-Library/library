@@ -9,23 +9,27 @@
 		background-color: rgba(255, 255, 255, 0.9);
   		padding-bottom: 20px;
   		padding-top: 25px;
-  		height: 121.85px;
+  		height: 121px;
   		border-style: solid;
   		border-width: 1px;
-  		border-color:#0064b1;
+  		border-color:@header-bg;
 	}
 	a {
 		float:right;
 		text-transform:uppercase;
 		text-decoration:underline;
-		font-size:1.2em;
+		/* font-size:1.2em; */
+		padding-left: 15px;
 	}
 	/*form a {
 		padding-right:15%;
 	}*/
 	.search-parameters {
 		input {
-			margin-right:6px;
+			margin-right:10px;
+		}
+		label{
+			font-weight: unset;
 		}
 	}
 	.col-md-2 {
@@ -40,6 +44,14 @@
 	margin-right: 0px;
 	&:hover {
 		color:#fff;
+	}
+}
+.nav-tabs-summon > li {
+	color:@header-bg;
+	background-color: @header-text;
+	.active {
+		color:@header-text;
+		background-color: @header-bg;
 	}
 }
 /* to act like .form-inline & .form-group */
