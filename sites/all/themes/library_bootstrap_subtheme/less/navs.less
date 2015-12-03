@@ -472,7 +472,10 @@
   }
 }
 /*for all nav-tabs*/
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, .nav-tabs > li > a {
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus, 
+.nav-tabs > li > a {
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
 }
@@ -506,9 +509,12 @@
 
 /* HOURS & CONTACT US on homepage */
 .navbar-hours-contact {
-  position:relative;
-  top:-35px;
-  margin-bottom: 0;
+    position:relative;
+    top:-35px;
+    margin-bottom: 0;
+    a {
+      color:#fff;
+    }
   }
 .dropdown-menu {
   background-color:#e7f6fd;

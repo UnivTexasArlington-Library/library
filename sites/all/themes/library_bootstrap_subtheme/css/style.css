@@ -6937,7 +6937,9 @@ table .checkbox input[type="checkbox"] {
 #uta_logo {
   padding-right: 15px;
   border-right: 1px solid #ffffff;
-  margin-right: 20px;
+}
+#lib_logo {
+  margin-left: 15px;
 }
 #header_links {
   position: absolute;
@@ -7499,6 +7501,9 @@ table .checkbox input[type="checkbox"] {
   top: -35px;
   margin-bottom: 0;
 }
+.navbar-hours-contact a {
+  color: #fff;
+}
 .dropdown-menu {
   background-color: #e7f6fd;
   right: 0;
@@ -7707,8 +7712,7 @@ h5 {
 }
 .summon {
   background-color: rgba(255, 255, 255, 0.5);
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 10px 0;
   z-index: 99;
   width: 100%;
   position: absolute;
@@ -7766,6 +7770,11 @@ h5 {
   width: 100%;
   max-width: 100%;
   height: auto;
+}
+/*for services for*/
+.services-for {
+  text-transform: uppercase;
+  font-size: 1.2em;
 }
 /*for homepage*/
 #block-views-news-events-block-2,
