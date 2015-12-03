@@ -122,22 +122,17 @@
           <?php print render($page['todays_hrs']); ?>
           <?php print render($page['feedback']); ?>
           <?php endif; ?>
-        </div>
-        <div class="visible-xs col-xs-2">
-          <div class="navbar navbar-default visible-xs" role="navigation">
-            <div class="container">
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".row-offcanvas">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"></a>
-              </div>
-            </div>
-          </div> <!-- end.navbar -->
-        </div> <!-- end. mobile navigation -->
-
+          <div class="visible-xs col-xs-2">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".row-offcanvas">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <!-- <a class="navbar-brand" href="#"></a> -->
+            </div> <!-- end.navbar-header -->
+          </div> <!-- end.mobile navigation -->
+        </div> <!-- end #lib_header -->
       <?php endif; ?>
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted"><?php print render($page['highlighted']); ?></div>
