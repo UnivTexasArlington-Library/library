@@ -124,16 +124,14 @@
           <?php print render($page['todays_hrs']); ?>
           <?php print render($page['feedback']); ?>
           <?php endif; ?>
-          <div class="navbar navbar-default visible-xs" role="navigation">
-          <!--  <div class="visible-xs pull-right"> -->
-                <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".row-offcanvas">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"></a>
-          <!--  </div>  end.visible-xs col-xs-2 (mobile navigation) -->
-          </div>
+          <div class="visible-xs pull-right" role="navigation"> 
+            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".row-offcanvas">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"></a>
+          </div>  end.visible-xs col-xs-2 (mobile navigation)
         </div> <!-- end #lib_header -->
       <?php endif; ?>
       <?php if (!empty($page['highlighted'])): ?>

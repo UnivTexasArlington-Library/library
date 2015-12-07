@@ -7556,7 +7556,9 @@ table .checkbox input[type="checkbox"] {
     right: 41.6%;
   }
   .row-offcanvas-left.active {
-    left: 41.6%;
+    /*left: 41.6%;*/
+    z-index: 50;
+    background-color: #363c3d;
   }
   .sidebar-offcanvas {
     position: absolute;
@@ -7708,7 +7710,7 @@ h5 {
 .summon {
   background-color: rgba(255, 255, 255, 0.5);
   padding: 10px 0;
-  z-index: 99;
+  z-index: 25;
   width: 100%;
   position: absolute;
   /*form a {
