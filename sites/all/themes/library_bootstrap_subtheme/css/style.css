@@ -7733,11 +7733,14 @@ h5 {
   text-decoration: underline;
   /* font-size:1.2em; */
   padding-left: 15px;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 .summon input {
-  font-size: 20px;
-  line-height: 1.33;
+  font-size: 18px;
+  line-height: 1.25em;
+}
+.summon .summon-search-field {
+  width: 325px;
 }
 .summon .search-parameters {
   margin-top: 5px;
@@ -7757,6 +7760,10 @@ h5 {
 .nav-tabs-summon {
   border: none;
   margin-right: 50px;
+}
+.nav-tabs-summon #articles {
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 .nav-tabs-summon > li > a {
   width: 100%;
@@ -7786,10 +7793,6 @@ h5 {
   color: #0052a3;
   background-color: rgba(255, 255, 255, 0.9);
   border-width: 0;
-}
-.nav-tabs-summon > li.active > a #articles {
-  margin-top: 2px;
-  margin-bottom: 2px;
 }
 /* to act like .form-inline & .form-group */
 .summon-search-widget,
