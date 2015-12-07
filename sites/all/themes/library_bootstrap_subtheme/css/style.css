@@ -7805,6 +7805,14 @@ h5 {
   background-color: #0052a3;
   color: #fff;
 }
+input.summon-search-submit.button-website {
+  color: transparent;
+  background-color: transparent;
+  border: 0px none;
+  background-image: url("http://library-test.uta.edu/andrew/search-button.jpg");
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+}
 /* Styles for the <front> page */
 /* HOMEPAGE IMAGE */
 .views-field-field-caption .field-content {
