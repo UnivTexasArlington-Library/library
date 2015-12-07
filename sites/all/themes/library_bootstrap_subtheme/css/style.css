@@ -6947,6 +6947,7 @@ table .checkbox input[type="checkbox"] {
 }
 #lib_logo {
   margin-left: 15px;
+  height: 32px;
 }
 #header_links {
   position: absolute;
@@ -7300,7 +7301,7 @@ table .checkbox input[type="checkbox"] {
   display: none;
 }
 .region-sidebar-first {
-  margin-top: 40px;
+  margin-top: 77px;
   text-align: right;
 }
 .region-sidebar-first .nav > li {
@@ -7310,8 +7311,7 @@ table .checkbox input[type="checkbox"] {
   margin-right: 15px;
 }
 .region-sidebar-second {
-  margin-top: 65px;
-  margin-left: 15px;
+  margin-top: 77px;
 }
 .region-sidebar-second .nav > li {
   text-align: left;
