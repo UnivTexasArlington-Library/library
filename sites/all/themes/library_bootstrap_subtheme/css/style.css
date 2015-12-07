@@ -7725,6 +7725,7 @@ h5 {
   border-color: #f1f2f2;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  margin-left: -52px;
 }
 .summon a {
   float: right;
@@ -7732,10 +7733,14 @@ h5 {
   text-decoration: underline;
   /* font-size:1.2em; */
   padding-left: 15px;
+  padding-top: 10px;
 }
 .summon input {
   font-size: 20px;
   line-height: 1.33;
+}
+.summon .search-parameters {
+  margin-top: 5px;
 }
 .summon .search-parameters input {
   margin-right: 10px;
@@ -7751,13 +7756,13 @@ h5 {
 }
 .nav-tabs-summon {
   border: none;
-  margin-right: -2px;
+  margin-right: 50px;
 }
 .nav-tabs-summon > li > a {
   width: 100%;
   text-decoration: none;
-  padding: 5px 10px;
-  argin-right: 0px;
+  padding: 5px 20px;
+  margin-right: 0px;
   color: #f1f2f2;
   background-color: #545555;
   border-radius: 0;
@@ -7782,7 +7787,7 @@ h5 {
   background-color: rgba(255, 255, 255, 0.9);
   border-width: 0;
 }
-#articles a {
+.nav-tabs-summon > li.active > a #articles {
   margin-top: 2px;
   margin-bottom: 2px;
 }
