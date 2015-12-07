@@ -105,13 +105,14 @@
     
     <?php if (!empty($page['sidebar_first'])): ?>
       <aside class="col-xs-6 col-sm-3 col-md-2 sidebar-offcanvas" role="navigation" id="sidebar">
+         <button type="button" class="visible-xs close" data-dismiss="offcanvas" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <div class="row row-offcanvas row-offcanvas-left">
         <?php print render($page['sidebar_first']); ?>
         </div>
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>
     
-    <section <?php print $content_column_class; ?> class="center-container">
+    <section class="center-container col-md-8 col-sm-9 col-xs-12">
       
       <?php if (!empty($page['notification'])): ?>
       <?php print render($page['notification']); ?>

@@ -6909,6 +6909,11 @@ table .checkbox input[type="checkbox"] {
   padding-top: 70px;
   margin: 0;
 }
+@media (min-width: 767px) {
+  #lib_header {
+    padding-top: 15px;
+  }
+}
 #lib_header a:hover,
 #lib_header a:focus {
   background: rgba(23, 24, 24, 0.18);
@@ -6945,9 +6950,20 @@ table .checkbox input[type="checkbox"] {
   padding-right: 15px;
   border-right: 1px solid #ffffff;
 }
+@media (max-width: 767px) {
+  #uta_logo {
+    padding-right: 5px;
+  }
+}
 #lib_logo {
   margin-left: 15px;
   height: 32px;
+}
+@media (max-width: 767px) {
+  #lib_logo {
+    margin-left: 5px;
+    height: 15px;
+  }
 }
 #header_links {
   position: absolute;
@@ -7303,6 +7319,11 @@ table .checkbox input[type="checkbox"] {
 .region-sidebar-first {
   margin-top: 77px;
   text-align: right;
+}
+@media (max-width: 767px) {
+  .region-sidebar-first {
+    margin-top: 15px;
+  }
 }
 .region-sidebar-first .nav > li {
   text-align: right;
@@ -7743,6 +7764,11 @@ h5 {
 }
 .summon .summon-search-field {
   width: 325px;
+}
+@media (max-width: 1199px) {
+  .summon .summon-search-field {
+    width: 100%;
+  }
 }
 .summon .search-parameters {
   margin-top: 5px;

@@ -4,6 +4,9 @@
 	background-color: #0052a3;
 	padding-top: 70px;
 	margin: 0;
+	@media (min-width: @screen-xs-max) {
+		padding-top:15px;
+	}
 	a {
 		&:hover, &:focus{
 			background:rgba(23,24,24,0.18);
@@ -31,15 +34,23 @@
 	.navbar-toggle .icon-bar {
 		background: #ffffff; 
 	}
+
 }
 
 #uta_logo {
 	padding-right: 15px;
 	border-right: 1px solid #ffffff;
+	@media (max-width: @screen-xs-max) {
+		padding-right:5px;
+	}
 }
 #lib_logo {
 	margin-left: 15px;
 	height:32px;
+	@media (max-width: @screen-xs-max) {
+			margin-left: 5px;
+			height:15px;
+		}
 }
 #header_links {
 	position: absolute;
