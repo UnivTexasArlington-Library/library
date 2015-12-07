@@ -7727,7 +7727,7 @@ h5 {
   border-color: #f1f2f2;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  margin-left: -52px;
+  margin-left: -50px;
 }
 .summon a {
   float: right;
@@ -7756,7 +7756,8 @@ h5 {
   color: #0052a3;
   text-transform: capitalize;
 }
-.summon .col-md-2 {
+.summon .col-md-2,
+.summon .col-md-1 {
   padding-right: 0px;
 }
 .nav-tabs-summon {
@@ -7818,7 +7819,7 @@ input.summon-search-submit.button-website {
 /* Styles for the <front> page */
 /* HOMEPAGE IMAGE */
 .views-field-field-caption .field-content {
-  z-index: 99;
+  z-index: 25;
   color: #fff;
   background-color: rgba(18, 15, 7, 0.6);
   padding: 20px;
