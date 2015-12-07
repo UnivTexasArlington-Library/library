@@ -6906,7 +6906,7 @@ table .checkbox input[type="checkbox"] {
 /*for uta header*/
 #lib_header {
   background-color: #0052a3;
-  padding: 70px 0px 00px 20px;
+  padding-top: 70px;
   margin: 0;
 }
 #lib_header a:hover,
@@ -6915,21 +6915,21 @@ table .checkbox input[type="checkbox"] {
 }
 #lib_header img {
   width: auto;
-  height: 42px;
+  height: 38px;
 }
 @media (min-width: 992px) and (max-width: 1145px) {
   #lib_header img {
-    height: 35px;
+    height: 30px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   #lib_header img {
-    height: 29px;
+    height: 24px;
   }
 }
 @media (max-width: 767px) {
   #lib_header img {
-    height: 24px;
+    height: 20px;
   }
 }
 #lib_header .nav > li {
