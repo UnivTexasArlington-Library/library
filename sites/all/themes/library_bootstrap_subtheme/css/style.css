@@ -7909,7 +7909,7 @@ input.summon-search-submit.button-website:focus {
   color: #0052a3;
 }
 /*for News & Events */
-.pane-news-events .img {
+.pane-news-events .views-field-field-image img {
   max-height: 165px;
   width: auto;
   margin-left: auto;
