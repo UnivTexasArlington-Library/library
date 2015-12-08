@@ -7671,6 +7671,7 @@ h2.pane-title {
 h4 {
   text-transform: uppercase;
   color: #0052a3;
+  font-size: 16px;
 }
 h5 {
   font-weight: bold;
