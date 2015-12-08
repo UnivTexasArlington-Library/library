@@ -7935,6 +7935,12 @@ input.summon-search-submit.button-website:focus {
   display: inline-block;
   width: 30px;
   opacity: 1;
+  text-shadow: none;
+  color: #c6c4c4;
+}
+.pane-news-events .carousel-control-container .carousel-control.right,
+.pane-news-events .carousel-control-container .carousel-control.left {
+  background-image: none;
 }
 /*for Available Now */
 #block-available-now-available-now img {
@@ -8009,11 +8015,6 @@ input.summon-search-submit.button-website:focus {
   margin-bottom: 0;
   border-bottom: 0px solid #dddbdb;
   text-transform: uppercase;
-}
-@media (max-width: 997px) {
-  #block-available-now-available-now .nav-tabs > li > a {
-    font-size: small;
-  }
 }
 #block-available-now-available-now .avail {
   font-size: 20px;
