@@ -103,10 +103,14 @@
 	color: #fff;
 }
 input.summon-search-submit.button-website {
-color: transparent;
-background-color: transparent;
-border: 0px none;
-background-image: url("http://library-test.uta.edu/andrew/search-button.jpg");
-background-size: 25px 25px;
-background-repeat: no-repeat;
+	color: transparent;
+	background-color: transparent;
+	border: 0px none;
+	background-image: url("sites/default/files/default_images/magnifier2.png");
+	background-size: 25px 25px;
+	background-repeat: no-repeat;
+	&:hover,
+	&:focus {
+		background-image: url("/sites/default/files/default_images/magnifier_grey.png");
+	}
 }
