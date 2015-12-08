@@ -162,7 +162,7 @@ function available_now_block_view($delta='') {
                     $block_content .= $selRoomAvail;
                     $block_content .= '</div>
                   </div><!-- end.col-md-4 -->
-                </div> </div> <!-- end.row -->
+                </div> <!-- end.row -->
               </div><!-- end#sel -->
             </div> <!-- end.tab-content -->
           </div> <!-- end.tabs-available-now -->
