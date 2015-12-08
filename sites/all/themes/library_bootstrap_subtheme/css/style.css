@@ -7796,6 +7796,17 @@ h5 {
 .summon .search-parameters input {
   margin-right: 5px;
 }
+.summon .search-parameters input[type=checkbox] {
+  /* reduced Checkboxes */
+  -ms-transform: scale(0.8);
+  /* IE */
+  -moz-transform: scale(0.8);
+  /* FF */
+  -webkit-transform: scale(0.8);
+  /* Safari and Chrome */
+  -o-transform: scale(0.8);
+  /* Opera */
+}
 .summon .search-parameters label {
   font-weight: unset;
   margin-right: 8px;
