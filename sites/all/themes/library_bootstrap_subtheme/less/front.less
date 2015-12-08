@@ -1,5 +1,5 @@
 /* Styles for the <front> page */
-/* HOMEPAGE IMAGE */
+/* HOMEPAGE IMAGE CAPTION */
 .views-field-field-caption {
 	.field-content {
 		z-index: 25;
@@ -10,6 +10,7 @@
 		max-width: 100%;
 		width: 100%;
 		position: absolute;
+		font-size: 14px;
 		a {
 			text-decoration: underline;
 			color:#fff;
@@ -21,28 +22,27 @@
 	max-width: 100%;
 	height: auto;
 }
+
+
+/*for homepage*/
+
+
+/* Services For & News & Events padding & title */
+.pane-block-18, 
+.pane-news-events {
+	.pane-content {
+		padding-top:20px;
+		padding-bottom: 28px;
+	}
+}
 /*for services for*/
 .services-for {
 	text-transform: uppercase;
-	font-size:1.2em;
+	font-size:16px;
 	color: @header-text;
 }
-
-/*for homepage*/
-#block-views-news-events-block-2, 
-.field-name-services-for,
-#block-available-now-available-now{
-	padding-bottom:20px;
-	margin-bottom: 20px;
-	img {
-		width:auto;
-		height:auto;
-		max-height:165px;
-		display:block;
-		margin-left:auto;
-		margin-right:auto;
-		max-width:100%;
-	}
+/*for News & Events */
+.pane-news-events {
 	.views-field-field-news-caption .field-content {
 		text-align: center;
 		display: block;
@@ -70,7 +70,7 @@
 			background: @brand-warning;
 			opacity:1;
 		}
-		.carousel-control.left, .carousel-control.right {
+	/*	.carousel-control.left, .carousel-control.right {
 			background:@brand-warning;
 		}
 		.carousel-control.left {
@@ -89,22 +89,34 @@
 			font-size:24px;
 			margin-left:-17px;
 			margin-right:-18px;
+		}*/
+	}
+}
+/*for Available Now */
+/*, 
+.field-name-services-for, */
+#block-available-now-available-now{
+	img {
+		width:auto;
+		height:auto;
+		max-height:165px;
+		display:block;
+		margin-left:auto;
+		margin-right:auto;
+		max-width:100%;
+	}
+	
+	.available-links {
+		text-transform:none;
+		float:right;
+		padding-right:16px;
+		font-size:.7em;
+		line-height:1.5em;
+		a {
+			color:#0064b1;
+			text-decoration:underline;
 		}
 	}
-}
-/*for available now section*/
-.available-links {
-	text-transform:none;
-	float:right;
-	padding-right:16px;
-	font-size:.7em;
-	line-height:1.5em;
-	a {
-		color:#0064b1;
-		text-decoration:underline;
-	}
-}
-#block-available-now-available-now {
 	.tabs-left {
 		border:1px solid #dddbdb;
 		border-radius:5px;
@@ -160,7 +172,7 @@
 		}
 	}
 	.avail {
-		font-size:2em;
+		font-size:20px;
 		padding-top:27px;
 		padding-bottom:27px;
 		@media(max-width:997px) {
