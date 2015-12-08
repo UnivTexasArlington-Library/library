@@ -6909,7 +6909,7 @@ table .checkbox input[type="checkbox"] {
   padding-top: 70px;
   margin: 0;
 }
-@media (min-width: 767px) {
+@media (max-width: 767px) {
   #lib_header {
     padding-top: 15px;
   }
