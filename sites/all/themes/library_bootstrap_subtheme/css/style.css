@@ -7760,30 +7760,30 @@ h5 {
 }
 .summon .searchbox {
   background-color: rgba(255, 255, 255, 0.9);
-  padding-bottom: 20px;
-  padding-top: 15px;
-  height: 89px;
+  padding-top: 8px;
+  height: 71px;
   border-style: solid;
   border-width: 1px 1px 1px 0;
   border-color: #f1f2f2;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  margin-left: -50px;
+  margin-left: -73px;
 }
 .summon a {
   float: right;
   text-transform: uppercase;
   text-decoration: underline;
-  /* font-size:1.2em; */
-  padding-left: 15px;
-  padding-top: 5px;
+  font-size: 12px;
+  padding-left: 26px;
+  padding-right: 26px;
+  padding-top: 10px;
 }
 .summon input {
   font-size: 18px;
-  line-height: 1.25em;
+  line-height: 1em;
 }
 .summon .summon-search-field {
-  width: 325px;
+  width: 431px;
 }
 @media (max-width: 1199px) {
   .summon .summon-search-field {
@@ -7791,14 +7791,14 @@ h5 {
   }
 }
 .summon .search-parameters {
-  margin-top: 5px;
+  margin-top: 2px;
 }
 .summon .search-parameters input {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .summon .search-parameters label {
   font-weight: unset;
-  margin-right: 10px;
+  margin-right: 8px;
   color: #0052a3;
   text-transform: capitalize;
 }
@@ -7808,7 +7808,7 @@ h5 {
 }
 .nav-tabs-summon {
   border: none;
-  margin-right: 50px;
+  margin-right: 73px;
 }
 .nav-tabs-summon #articles {
   margin-top: 2px;
@@ -7817,7 +7817,7 @@ h5 {
 .nav-tabs-summon > li > a {
   width: 100%;
   text-decoration: none;
-  padding: 5px 20px;
+  padding: 2px 20px;
   margin-right: 0px;
   color: #f1f2f2;
   background-color: #545555;
@@ -7855,7 +7855,7 @@ input.summon-search-submit.button-website {
   background-color: transparent;
   border: 0px none;
   background-image: url("/sites/default/files/default_images/magnifier2.png");
-  background-size: 21px 21px;
+  background-size: 18px 18px;
   background-repeat: no-repeat;
 }
 input.summon-search-submit.button-website:hover,
