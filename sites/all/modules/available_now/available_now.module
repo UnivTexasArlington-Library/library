@@ -78,96 +78,97 @@ function available_now_block_view($delta='') {
     /*END LAPTOPS*/
         $block_content = '<div class="row">
         <div class="col-sm-12">
-        <h2 class="block-title">Available Now @ <span class="available-links"><a href="technology">Borrow Technology</a> / <a href="http://openroom.uta.edu">Reserve a Room</a></span></h2>
+        <h2 class="block-title">Available Now </h2>
         </div>
         </div>
         <div class="row">
-        <div class="col-md-12">
-        <div class="tabbable tabs-left">
-        <ul class="nav nav-tabs col-sm-5" id="myTab" role="tablist">
-        <li class="active"><a data-toggle="tab" href="#central">Central Library</a></li>
-        <li><a data-toggle="tab" href="#afa">Architecture &amp; Fine Arts Library</a></li>
-        <li><a data-toggle="tab" href="#sel">Science &amp; Engineering Library</a></li>
-        </ul>';
-        $block_content .= '<div class="tab-content">
-        <div class="tab-pane active" id="central">
-          <div class="row">
-            <div class="col-md-4">
-              <h4><a href="http://cas.uta.edu/CAS/">Computers</a></h4>
-<div class="avail">';
-        $block_content .= $centralCompAvail;
-        $block_content .= '</div>
-            </div>
+          <div class="col-md-12">
+            <div class="tabbable tabs-left tabs-available-now">
+              <ul class="nav nav-tabs col-sm-5" id="myTab" role="tablist">
+                <li class="active"><a data-toggle="tab" href="#central">Central Library</a></li>
+                <li><a data-toggle="tab" href="#afa">Architecture &amp; Fine Arts Library</a></li>
+                <li><a data-toggle="tab" href="#sel">Science &amp; Engineering Library</a></li>
+              </ul>';
+              $block_content .= '<div class="tab-content">
+              <div class="tab-pane active" id="central">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h4><a href="http://cas.uta.edu/CAS/">Computers</a></h4>
+                    <div class="avail">';
+                    $block_content .= $centralCompAvail;
+                    $block_content .= '</div>
+                  </div> <!-- end.col-md-4 -->
 
-            <div class="col-md-4">
-              <h4><a href="technology/laptops">Laptops</a></h4>
-<div class="avail">';
-        $block_content .= $centralLaptopAvail;
-        $block_content .= '</div>
-            </div>
+                  <div class="col-md-4">
+                    <h4><a href="technology/laptops">Laptops</a></h4>
+                    <div class="avail">';
+                    $block_content .= $centralLaptopAvail;
+                    $block_content .= '</div>
+                  </div><!-- end.col-md-4 -->
 
-            <div class="col-md-4">
-              <h4><a href="http://library.uta.edu/study-spaces">Study Rooms</a></h4>
-<div class="avail">';
-        $block_content .= $centralRoomAvail;
-        $block_content .= '</div>
-            </div>
-          </div>
-        </div>
+                  <div class="col-md-4">
+                    <h4><a href="http://library.uta.edu/study-spaces">Study Rooms</a></h4>
+                    <div class="avail">';
+                      $block_content .= $centralRoomAvail;
+                      $block_content .= '</div>
+                  </div><!-- end.col-md-4 -->
+                </div> <!-- end.row -->
+              </div> <!-- end#central -->
 
-        <div class="tab-pane" id="afa">
-          <div class="row">
-            <div class="col-md-4">
-              <h4><a href="http://cas.uta.edu/CAS/">Computers</a></h4>
-<div class="avail">';
-        $block_content .= $afaCompAvail; 
-        $block_content .= '</div>
-            </div>
+              <div class="tab-pane" id="afa">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h4><a href="http://cas.uta.edu/CAS/">Computers</a></h4>
+                    <div class="avail">';
+                    $block_content .= $afaCompAvail; 
+                    $block_content .= '</div>
+                  </div> <!-- end.col-md-4 -->
 
-            <div class="col-md-4">
-              <h4><a href="technology/laptops">Laptops</a></h4>
-<div class="avail">';
-        $block_content .= $afaLaptopAvail;
-        $block_content .= '</div>
-            </div>
+                  <div class="col-md-4">
+                    <h4><a href="technology/laptops">Laptops</a></h4>
+                    <div class="avail">';
+                      $block_content .= $afaLaptopAvail;
+                      $block_content .= '</div>
+                  </div><!-- end.col-md-4 -->
 
-            <div class="col-md-4">
-              <h4><a href="http://library.uta.edu/study-spaces">Study Rooms</a></h4>
-<div class="avail">';
-        $block_content .= $afaRoomAvail;
-        $block_content .= '</div>
-            </div>
-          </div>
-        </div>
+                  <div class="col-md-4">
+                    <h4><a href="http://library.uta.edu/study-spaces">Study Rooms</a></h4>
+                    <div class="avail">';
+                    $block_content .= $afaRoomAvail;
+                    $block_content .= '</div>
+                  </div><!-- end.col-md-4 -->
+                </div> <!-- end.row -->
+              </div> <!-- end#afa -->
 
-        <div class="tab-pane" id="sel">
-          <div class="row">
-            <div class="col-md-4">
-              <h4><a href="http://cas.uta.edu/CAS/">Computers</a></h4>
-<div class="avail">';
-        $block_content .= $selCompAvail; 
-        $block_content .= '</div>
-            </div>
+              <div class="tab-pane" id="sel">
+                <div class="row">
+                  <div class="col-md-4">
+                    <h4><a href="http://cas.uta.edu/CAS/">Computers</a></h4>
+                    <div class="avail">';
+                    $block_content .= $selCompAvail; 
+                    $block_content .= '</div>
+                  </div> <!-- end.col-md-4 -->
 
-            <div class="col-md-4">
-              <h4><a href="technology/laptops">Laptops</a></h4>
-<div class="avail">';
-        $block_content .= $selLaptopAvail;
-        $block_content .= '</div>
-            </div>
+                  <div class="col-md-4">
+                    <h4><a href="technology/laptops">Laptops</a></h4>
+                    <div class="avail">';
+                    $block_content .= $selLaptopAvail;
+                    $block_content .= '</div>
+                  </div> <!-- end.col-md-4 -->
 
-            <div class="col-md-4">
-              <h4><a href="http://library.uta.edu/study-spaces">Study Rooms</a></h4>
-<div class="avail">';
-        $block_content .= $selRoomAvail;
-        $block_content .= '</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>';
+                  <div class="col-md-4">
+                    <h4><a href="http://library.uta.edu/study-spaces">Study Rooms</a></h4>
+                    <div class="avail">';
+                    $block_content .= $selRoomAvail;
+                    $block_content .= '</div>
+                  </div><!-- end.col-md-4 -->
+                </div> </div> <!-- end.row -->
+              </div><!-- end#sel -->
+            </div> <!-- end.tab-content -->
+          </div> <!-- end.tabs-available-now -->
+        </div> <!-- end.col-md-12 -->
+        <span class="available-links"><a href="technology">Borrow Technology</a> / <a href="http://openroom.uta.edu">Reserve a Room</a></span>
+      </div>';
 
 
       $block['subject'] = t("Available Now");
