@@ -166,8 +166,9 @@ function available_now_block_view($delta='') {
               </div><!-- end#sel -->
             </div> <!-- end.tab-content -->
           </div> <!-- end.tabs-available-now -->
+          <span class="available-links"><a href="technology">Borrow Technology</a> / <a href="http://openroom.uta.edu">Reserve a Room</a></span>
         </div> <!-- end.col-md-12 -->
-        <span class="available-links"><a href="technology">Borrow Technology</a> / <a href="http://openroom.uta.edu">Reserve a Room</a></span>
+        
       </div>';
 
 

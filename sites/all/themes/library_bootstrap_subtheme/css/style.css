@@ -7897,9 +7897,10 @@ input.summon-search-submit.button-website:focus {
   max-width: 100%;
   height: auto;
 }
-/* Services For & News & Events padding & title */
+/* Services For & News-Events & Available Now padding & title */
 .pane-block-18 .pane-content,
-.pane-news-events .pane-content {
+.pane-news-events .pane-content,
+.pane-available-now-available-now .pane-content {
   padding-top: 20px;
   padding-bottom: 28px;
 }
