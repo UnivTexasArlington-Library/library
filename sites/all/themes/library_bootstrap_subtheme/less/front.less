@@ -24,8 +24,7 @@
 }
 /* Services For & News-Events & Available Now padding & title */
 .pane-block-18, 
-.pane-news-events,
-.pane-available-now-available-now {
+.pane-news-events {
 	.pane-content {
 		padding-top:20px;
 		padding-bottom: 28px;
@@ -35,7 +34,10 @@
 .services-for {
 	text-transform: uppercase;
 	font-size:16px;
-	color: @header-text;
+	color: @brand-primary;
+	a {
+		color:@brand-primary;
+	}
 }
 /*for News & Events */
 .pane-news-events {
@@ -53,7 +55,7 @@
 		margin-left: auto;
 		margin-right: auto;
 		line-height: 1em;
-		color: #0064b1;
+		color: @brand-primary;
 	}
 	.carousel-control-container {
 		display:block;
@@ -88,12 +90,16 @@
 		text-transform:none;
 		float:right;
 		padding-right:16px;
-		font-size:.7em;
+		font-size:14px;
 		line-height:1.5em;
 		a {
-			color:#0064b1;
+			color:@brand-primary;
 			text-decoration:underline;
 		}
+	}
+	.available-now-content {
+		padding-top: 20px;
+		padding-bottom:28px;
 	}
 	.tabs-left {
 		border:1px solid #dddbdb;
@@ -138,7 +144,7 @@
 		color:@brand-primary;
 	}
 	.nav-tabs > li > a {
-		color:@brand-warning;
+		color:@brand-primary;
 		background:#FFFFFF;
 		border:none;
 		font-size:16px;

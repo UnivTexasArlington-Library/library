@@ -82,7 +82,7 @@ function available_now_block_view($delta='') {
         </div>
         </div>
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-12 available-now-content">
             <div class="tabbable tabs-left tabs-available-now">
               <ul class="nav nav-tabs col-sm-5" id="myTab" role="tablist">
                 <li class="active"><a data-toggle="tab" href="#central">Central Library</a></li>
