@@ -6937,6 +6937,11 @@ table .checkbox input[type="checkbox"] {
     height: 20px;
   }
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  #lib_header .nav {
+    margin-top: -15px;
+  }
+}
 #lib_header .nav > li {
   display: inline-block;
 }
@@ -7775,6 +7780,11 @@ h5 {
   border-bottom-left-radius: 0;
   margin-left: -73px;
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  .summon .searchbox {
+    margin-left: -45px;
+  }
+}
 .summon a {
   float: right;
   text-transform: uppercase;
@@ -7783,6 +7793,12 @@ h5 {
   padding-left: 26px;
   padding-right: 26px;
   padding-top: 10px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .summon a {
+    padding-left: 5px;
+    padding-right: 0;
+  }
 }
 .summon input {
   font-size: 18px;
@@ -7794,6 +7810,11 @@ h5 {
 @media (max-width: 1199px) {
   .summon .summon-search-field {
     width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .summon .summon-search-field {
+    width: 85%;
   }
 }
 .summon .search-parameters {
@@ -7828,6 +7849,11 @@ h5 {
   border: none;
   margin-right: 73px;
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  .nav-tabs-summon {
+    margin-right: 45px;
+  }
+}
 .nav-tabs-summon #articles {
   margin-top: 2px;
   margin-bottom: 2px;
@@ -7849,6 +7875,11 @@ h5 {
   color: #dddbc4;
   background-color: #545555;
   border-width: 0;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .nav-tabs-summon > li > a {
+    padding: 2px 15px;
+  }
 }
 .nav-tabs-summon > li.active > a {
   color: #0052a3;

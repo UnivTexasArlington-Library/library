@@ -118,9 +118,9 @@
       <?php endif; ?>
       <?php if (!empty($page['lib_header'])): ?>
         <div id="lib_header" class="row">
-          <div class="col-md-9 col-sm-9 col-xs-10"><?php print render($page['lib_header']); ?></div>
+          <div class="col-md-9 col-sm-8 col-xs-10"><?php print render($page['lib_header']); ?></div>
           <?php if (!empty($page['modal'])): ?>
-          <div class="col-md-3 col-sm-3 col-xs-10"><?php print render($page['modal']); ?></div>
+          <div class="col-md-3 col-sm-4 col-xs-10"><?php print render($page['modal']); ?></div>
           <?php print render($page['todays_hrs']); ?>
           <?php print render($page['feedback']); ?>
           <?php endif; ?>
