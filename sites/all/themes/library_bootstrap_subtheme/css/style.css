@@ -7862,7 +7862,7 @@ h5 {
   border: none;
   margin-right: 73px;
 }
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (max-width: 1200px) {
   .nav-tabs-summon {
     margin-right: 45px;
   }
