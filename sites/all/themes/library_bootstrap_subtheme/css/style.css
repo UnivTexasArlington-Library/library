@@ -7795,7 +7795,7 @@ h5 {
 }
 @media (max-width: 1200px) {
   .summon .searchbox {
-    margin-left: -45px;
+    margin-left: -40px;
   }
 }
 @media (max-width: 480px) {
@@ -7825,19 +7825,9 @@ h5 {
 .summon .summon-search-field {
   width: 431px;
 }
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
   .summon .summon-search-field {
-    width: 100%;
-  }
-}
-@media (min-width: 768px) and (max-width: 1200px) {
-  .summon .summon-search-field {
-    width: 85%;
-  }
-}
-@media (max-width: 480px) {
-  .summon .summon-search-field {
-    width: 90%;
+    width: 79%;
   }
 }
 .summon .search-parameters {
@@ -7874,7 +7864,7 @@ h5 {
 }
 @media (max-width: 1200px) {
   .nav-tabs-summon {
-    margin-right: 45px;
+    margin-right: 40px;
   }
 }
 @media (max-width: 480px) {
@@ -7904,7 +7894,7 @@ h5 {
   background-color: #545555;
   border-width: 0;
 }
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (max-width: 1200px) {
   .nav-tabs-summon > li > a {
     padding: 2px 15px;
   }
@@ -7940,7 +7930,7 @@ h5 {
 }
 @media (max-width: 767px) {
   .summon-search-box {
-    width: 81%;
+    width: 79%;
   }
 }
 input.summon-search-submit.button-website {
