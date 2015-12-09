@@ -6912,6 +6912,7 @@ table .checkbox input[type="checkbox"] {
 @media (max-width: 767px) {
   #lib_header {
     padding-top: 15px;
+    height: 100px;
   }
 }
 #lib_header a:hover,
@@ -6934,7 +6935,7 @@ table .checkbox input[type="checkbox"] {
 }
 @media (max-width: 767px) {
   #lib_header img {
-    height: 20px;
+    height: 23px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -6942,11 +6943,18 @@ table .checkbox input[type="checkbox"] {
     margin-top: -15px;
   }
 }
+@media (max-width: 767px) {
+  #lib_header .nav {
+    float: right;
+    margin-top: -5px;
+  }
+}
 #lib_header .nav > li {
   display: inline-block;
 }
 #lib_header .navbar-toggle {
   border-color: #ffffff;
+  margin-right: 0;
 }
 #lib_header .navbar-toggle .icon-bar {
   background: #ffffff;
@@ -7769,6 +7777,11 @@ h5 {
 		padding-right:15%;
 	}*/
 }
+@media (max-width: 767px) {
+  .summon {
+    position: relative;
+  }
+}
 .summon .searchbox {
   background-color: rgba(255, 255, 255, 0.9);
   padding-top: 8px;
@@ -7780,7 +7793,7 @@ h5 {
   border-bottom-left-radius: 0;
   margin-left: -73px;
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (max-width: 1200px) {
   .summon .searchbox {
     margin-left: -45px;
   }
@@ -7794,7 +7807,7 @@ h5 {
   padding-right: 26px;
   padding-top: 10px;
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (max-width: 1200px) {
   .summon a {
     padding-left: 5px;
     padding-right: 0;
@@ -7812,7 +7825,7 @@ h5 {
     width: 100%;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 1200px) {
   .summon .summon-search-field {
     width: 85%;
   }
@@ -7849,7 +7862,7 @@ h5 {
   border: none;
   margin-right: 73px;
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 1200px) {
   .nav-tabs-summon {
     margin-right: 45px;
   }
@@ -7876,7 +7889,7 @@ h5 {
   background-color: #545555;
   border-width: 0;
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 1200px) {
   .nav-tabs-summon > li > a {
     padding: 2px 15px;
   }
@@ -7898,6 +7911,17 @@ h5 {
   display: inline-block;
   margin-bottom: 0px;
   vertical-align: middle;
+}
+@media (max-width: 767px) {
+  .summon-search-widget,
+  .summon-search-box {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .summon-search-box {
+    width: 81%;
+  }
 }
 input.summon-search-submit.button-website {
   color: transparent;

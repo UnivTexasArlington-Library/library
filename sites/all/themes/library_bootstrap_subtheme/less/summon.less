@@ -5,6 +5,9 @@
   	z-index: 25;
   	width: 100%;
   	position: absolute;
+	@media (max-width: @screen-xs-max) {
+		position: relative;
+  	}
 	.searchbox {
 		background-color: rgba(255, 255, 255, 0.9);
   		padding-top: 8px;
@@ -15,9 +18,10 @@
   		border-top-left-radius: 0;
   		border-bottom-left-radius: 0;
   		margin-left:-73px;
-  		@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  		@media (max-width: @screen-lg) {
   			margin-left:-45px;
   		}
+
 	}
 	a {
 		float:right;
@@ -27,7 +31,7 @@
 		padding-left: 26px;
 		padding-right: 26px;
 		padding-top:10px;
-		@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+		@media (max-width: @screen-lg) {
 			padding-left:5px;
 			padding-right: 0;
 		}
@@ -41,7 +45,7 @@
 		@media (max-width: @screen-md-max) {
 			width:100%;
 		}
-		@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+		@media (min-width: @screen-sm-min) and (max-width: @screen-lg) {
 			width: 85%
 		}
 	}
@@ -75,7 +79,7 @@
 .nav-tabs-summon {
 	border: none;
 	margin-right:73px;
-	@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+	@media (min-width: @screen-sm-min) and (max-width: @screen-lg) {
 		margin-right: 45px;
 	}
 	#articles {
@@ -100,7 +104,7 @@
 		background-color: #545555;
 		border-width: 0;
 	}
-	@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+	@media (min-width: @screen-sm-min) and (max-width: @screen-lg) {
 		padding: 2px 15px;
 	}
 }
@@ -121,6 +125,14 @@
 	display: inline-block;
 	margin-bottom: 0px;
 	vertical-align: middle;
+	@media (max-width: @screen-xs-max) {
+		width:100%;
+	}
+}
+.summon-search-box {
+	@media (max-width: @screen-xs-max) {
+		width:81%;
+	}
 }
 input.summon-search-submit.button-website {
 	color: transparent;

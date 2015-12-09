@@ -118,13 +118,13 @@
       <?php endif; ?>
       <?php if (!empty($page['lib_header'])): ?>
         <div id="lib_header" class="row">
-          <div class="col-md-9 col-sm-8 col-xs-10"><?php print render($page['lib_header']); ?></div>
+          <div class="col-md-9 col-sm-8 col-xs-12"><?php print render($page['lib_header']); ?></div>
           <?php if (!empty($page['modal'])): ?>
           <div class="col-md-3 col-sm-4 col-xs-10"><?php print render($page['modal']); ?></div>
           <?php print render($page['todays_hrs']); ?>
           <?php print render($page['feedback']); ?>
           <?php endif; ?>
-          <div class="visible-xs pull-right" role="navigation"> 
+          <div class="visible-xs col-xs-2" role="navigation"> 
             <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".row-offcanvas">
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>

@@ -6,6 +6,7 @@
 	margin: 0;
 	@media (max-width: @screen-xs-max) {
 		padding-top:15px;
+		height: 100px;
 	}
 	a {
 		&:hover, &:focus{
@@ -22,12 +23,16 @@
 			height:24px;
 		}
 		@media (max-width: @screen-xs-max) {
-			height:20px;
+			height:23px;
 		}
 	}
 	.nav {
 		@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
 			margin-top:-15px;
+		}
+		@media (max-width: @screen-xs-max) {
+			float:right;
+			margin-top:-5px;
 		}
 	}
 	.nav > li {
@@ -35,6 +40,7 @@
 	}
 	.navbar-toggle {
 		border-color:#ffffff;
+		margin-right: 0;
 	}
 	.navbar-toggle .icon-bar {
 		background: #ffffff; 
