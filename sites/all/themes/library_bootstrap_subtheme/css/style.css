@@ -7729,6 +7729,9 @@ h5 {
   height: auto;
   text-align: center;
 }
+.footer li {
+  display: inline-block;
+}
 .footer .col-xs-4 {
   border-right: 4px solid #FFFFFF;
   text-align: center;
@@ -7914,6 +7917,10 @@ input.summon-search-submit.button-website:focus {
 .services-for a {
   color: #0052a3;
 }
+.services-for a:hover,
+.services-for a:focus {
+  color: #ae482c;
+}
 /*for News & Events */
 .pane-news-events .views-field-field-image img {
   max-height: 165px;
@@ -7946,6 +7953,13 @@ input.summon-search-submit.button-website:focus {
 .pane-news-events .carousel-control-container .carousel-control.right,
 .pane-news-events .carousel-control-container .carousel-control.left {
   background-image: none;
+}
+/* news & events @screen-xs */
+.pane-news-events-panel-pane-1 .views-field-field-news-caption .field-content {
+  padding-right: 20px;
+}
+.pane-news-events-panel-pane-1 .views-field-field-image img {
+  padding-left: 20px;
 }
 /*for Available Now */
 #block-available-now-available-now img {

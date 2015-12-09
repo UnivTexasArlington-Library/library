@@ -37,6 +37,10 @@
 	color: @brand-primary;
 	a {
 		color:@brand-primary;
+		&:hover, 
+		&:focus {
+			color:@link-color;
+		}
 	}
 }
 /*for News & Events */
@@ -73,6 +77,15 @@
 		.carousel-control.left{
 			background-image: none;
 		}
+	}
+}
+/* news & events @screen-xs */
+.pane-news-events-panel-pane-1 {
+	.views-field-field-news-caption .field-content {
+		padding-right: 20px;
+	}
+	.views-field-field-image img {
+		padding-left:20px;
 	}
 }
 /*for Available Now */
