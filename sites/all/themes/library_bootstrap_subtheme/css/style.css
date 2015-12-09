@@ -7793,9 +7793,14 @@ h5 {
   border-bottom-left-radius: 0;
   margin-left: -73px;
 }
-@media (max-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1480px) {
   .summon .searchbox {
-    margin-left: -40px;
+    margin-left: -50px;
+  }
+}
+@media (max-width: 1199px) {
+  .summon .searchbox {
+    margin-left: -35px;
   }
 }
 @media (max-width: 480px) {
@@ -7812,7 +7817,7 @@ h5 {
   padding-right: 26px;
   padding-top: 10px;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1480px) {
   .summon a {
     padding-left: 5px;
     padding-right: 0;
@@ -7862,9 +7867,14 @@ h5 {
   border: none;
   margin-right: 73px;
 }
-@media (max-width: 1200px) {
+@media (min-width: 1200px) {
   .nav-tabs-summon {
-    margin-right: 40px;
+    margin-right: 50px;
+  }
+}
+@media (max-width: 1199px) {
+  .nav-tabs-summon {
+    margin-right: 35px;
   }
 }
 @media (max-width: 480px) {
@@ -7894,9 +7904,14 @@ h5 {
   background-color: #545555;
   border-width: 0;
 }
-@media (max-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1480px) {
   .nav-tabs-summon > li > a {
     padding: 2px 15px;
+  }
+}
+@media (max-width: 1200px) {
+  .nav-tabs-summon > li > a {
+    padding: 2px 10px;
   }
 }
 @media (max-width: 480px) {
