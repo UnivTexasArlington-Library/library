@@ -7374,14 +7374,11 @@ table .checkbox input[type="checkbox"] {
   #block-menu-menu-right-menu-top .menu {
     display: none;
   }
-  #block-menu-menu-right-menu-top .caret {
-    display: inline-block;
-  }
 }
 @media (min-width: 768px) {
   #block-menu-menu-right-menu-top .caret,
   #block-menu-menu-left-menu-top .caret {
-    display: none;
+    display: inline-block;
   }
 }
 @media (max-width: 767px) {
