@@ -6,13 +6,13 @@ h1 {
 	padding-left: 15px;
 }
 h2.block-title, 
-h2.pane-title,
-h3 {
+h2.pane-title {
 	color: @header-text;
 	border-top: 1px solid @footer-bg;
 	border-bottom: 1px solid @footer-bg;
 	padding-top: 6px;
 	padding-bottom: 6px;
+	padding-left: 15px;
 	text-transform: uppercase;
 	margin-top:0px;
 	font-size: 20px;
@@ -24,9 +24,18 @@ h3 {
 		}
 	}
 }
-h2.block-title,
-h2.pane-title {
-	padding-left: 15px;
+h3 {
+	color: @header-text;
+	text-transform: uppercase;
+	margin-top:0px;
+	font-size: 20px;
+	a {
+		color: @header-text;
+		&:hover, &:focus {
+			color: @link-color;
+			text-decoration:underline;
+		}
+	}
 }
 h4 {
 	text-transform: uppercase;
