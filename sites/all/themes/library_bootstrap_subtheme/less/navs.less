@@ -326,15 +326,20 @@
     }
   }
 }
+
+
 /* for collapsed menus */
 #block-menu-menu-left-menu-bottom .menu, 
 #block-menu-menu-right-menu-bottom .menu {
   display: none;
 }
 @media(max-width:@screen-sm-max) {
-  #block-menu-menu-right-menu-top.menu {
+  #block-menu-menu-right-menu-top .menu {
     display:none;
   } 
+  #block-menu-menu-right-menu-top .caret{
+	display:inline-block;
+  }
 }
 @media(min-width:@screen-sm-min) {
   #block-menu-menu-right-menu-top .caret, 

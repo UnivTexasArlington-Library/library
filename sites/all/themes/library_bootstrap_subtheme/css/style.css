@@ -7366,8 +7366,11 @@ table .checkbox input[type="checkbox"] {
   display: none;
 }
 @media (max-width: 991px) {
-  #block-menu-menu-right-menu-top.menu {
+  #block-menu-menu-right-menu-top .menu {
     display: none;
+  }
+  #block-menu-menu-right-menu-top .caret {
+    display: inline-block;
   }
 }
 @media (min-width: 768px) {
