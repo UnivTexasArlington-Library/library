@@ -20,6 +20,7 @@
       position: relative;
       display: block;
       padding: @nav-link-padding;
+      
       &:hover,
       &:focus {
         text-decoration: none;
@@ -95,6 +96,7 @@
 
     // Active state, and its :hover to override normal :hover
     &.active > a {
+      background-color: @brand-primary;
       &,
       &:hover,
       &:focus {
