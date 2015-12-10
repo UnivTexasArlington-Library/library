@@ -86,8 +86,9 @@
     > a {
       margin-right: 2px;
       line-height: @line-height-base;
-      border: 1px solid transparent;
+      border: 1px solid #DDD;
       border-radius: @border-radius-base @border-radius-base 0 0;
+      color:@brand-primary;
       &:hover {
         border-color: @nav-tabs-link-hover-border-color @nav-tabs-link-hover-border-color @nav-tabs-border-color;
         color:@nav-tabs-link-hover-color;
@@ -241,8 +242,12 @@
 .nav-tabs .dropdown-menu {
   // make dropdown border overlap tab border
   margin-top: -1px;
+  background-color: #FFF;
   // Remove the top rounded corners here since there is a hard edge above the menu
   .border-top-radius(0);
+  > li > a {
+    color: @brand-primary;
+  }
 }
 
 

@@ -7078,8 +7078,9 @@ table .checkbox input[type="checkbox"] {
 .nav-tabs > li > a {
   margin-right: 2px;
   line-height: 1.42857143;
-  border: 1px solid transparent;
+  border: 1px solid #DDD;
   border-radius: 4px 4px 0 0;
+  color: #0052a3;
 }
 .nav-tabs > li > a:hover {
   border-color: #eeeeee #eeeeee #dddddd;
@@ -7257,8 +7258,12 @@ table .checkbox input[type="checkbox"] {
 }
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
+  background-color: #FFF;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
+}
+.nav-tabs .dropdown-menu > li > a {
+  color: #0052a3;
 }
 /*for nav links*/
 .region-sidebar-first,
