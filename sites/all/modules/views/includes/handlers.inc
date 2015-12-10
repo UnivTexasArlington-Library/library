@@ -758,7 +758,7 @@ class views_many_to_one_helper {
    */
   public $placeholders = array();
 
-  function __construct(&$handler) {
+  function views_many_to_one_helper(&$handler) {
     $this->handler = &$handler;
   }
 
