@@ -7871,7 +7871,7 @@ h5 {
 }
 @media (min-width: 1200px) and (max-width: 1480px) {
   .summon .summon-search-field {
-    width: 85%;
+    width: 83%;
   }
 }
 @media (min-width: 768px) and (max-width: 1199px) {
@@ -7881,12 +7881,12 @@ h5 {
 }
 @media (min-width: 480px) and (max-width: 767px) {
   .summon .summon-search-field {
-    width: 85%;
+    width: 83%;
   }
 }
 @media (max-width: 479px) {
   .summon .summon-search-field {
-    width: 83%;
+    width: 82%;
   }
 }
 .summon .search-parameters {

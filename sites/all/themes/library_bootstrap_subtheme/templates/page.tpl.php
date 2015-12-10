@@ -88,44 +88,41 @@
       <?php endif; ?>
       <?php if (!empty($page['lib_header'])): ?>
         <div id="lib_header" class="row">
-          <div class="col-md-9 col-sm-9 col-xs-6"><?php print render($page['lib_header']); ?></div>
+          <div class="col-md-9 col-sm-8 col-xs-12"><?php print render($page['lib_header']); ?></div>
           <?php if (!empty($page['modal'])): ?>
-          <div class="col-md-3 col-sm-3 col-xs-4"><?php print render($page['modal']); ?></div>
+          <div class="col-md-3 col-sm-4 col-xs-10"><?php print render($page['modal']); ?></div>
           <?php print render($page['todays_hrs']); ?>
           <?php print render($page['feedback']); ?>
           <?php endif; ?>
-          <div class="visible-xs col-xs-2">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".row-offcanvas">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <!-- <a class="navbar-brand" href="#"></a> -->
-            </div> <!-- end.navbar-header -->
+          <div class="visible-xs col-xs-2" role="navigation"> 
+            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".row-offcanvas">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"></a>
           </div> <!-- end.visible-xs col-xs-2 (mobile navigation) -->
         </div> <!-- end #lib_header -->
-
       <?php endif; ?>
-      
       <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
       <a id="main-content"></a>
-    
-     <?php print render($title_prefix); ?>
-      <?php if (!empty($title)): ?>
-        <h1 class="page-header"><?php print $title; ?></h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?> 
       <?php print $messages; ?>
       <?php if (!empty($tabs)): ?>
         <?php print render($tabs); ?>
       <?php endif; ?>
+      <?php print render($title_prefix); ?>
+      <?php if (!empty($title)): ?>
+        <h1 class="page-header"><?php print $title; ?></h1>
+      <?php endif; ?>
+      <?php print render($title_suffix); ?> 
+      
       <?php if (!empty($page['help'])): ?>
         <?php print render($page['help']); ?>
       <?php endif; ?>
       <?php if (!empty($action_links)): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
+      <div class="internal-menu"><?php print render($page['internal_menu']); ?></div>
       <div id="internal-page"><?php print render($page['content']); ?></div>
       <footer class="footer">
         
