@@ -7809,12 +7809,12 @@ h5 {
     margin-left: -35px;
   }
 }
-@media (max-width: 479px) {
+@media (min-width: 480px) and (max-width: 767px) {
   .summon .searchbox {
     margin-left: 0;
   }
 }
-.summon a {
+.summon .form a {
   float: right;
   text-transform: uppercase;
   text-decoration: underline;
@@ -7824,9 +7824,22 @@ h5 {
   padding-top: 10px;
 }
 @media (min-width: 480px) and (max-width: 1199px) {
-  .summon a {
+  .summon .form a {
     padding-left: 5px;
     padding-right: 0;
+  }
+}
+@media (max-width: 479px) {
+  .summon .form a {
+    display: none;
+  }
+}
+.summon .advanced-display {
+  display: none;
+}
+@media (max-width: 479px) {
+  .summon .advanced-display {
+    display: inherit;
   }
 }
 .summon input {
@@ -7865,6 +7878,11 @@ h5 {
 }
 @media (min-width: 480px) and (max-width: 767px) {
   .summon .summon-search-field {
+    width: 85%;
+  }
+}
+@media (max-width: 479px) {
+  .summon .summon-search-field {
     width: 83%;
   }
 }
@@ -7896,6 +7914,11 @@ h5 {
 .summon .col-md-1 {
   padding-right: 0px;
 }
+@media (max-width: 479px) {
+  .summon .col-xs-3 {
+    padding: 0;
+  }
+}
 .nav-tabs-summon {
   border: none;
   margin-right: 73px;
@@ -7915,7 +7938,7 @@ h5 {
     margin-right: 35px;
   }
 }
-@media (max-width: 479px) {
+@media (min-width: 480px) and (max-width: 767px) {
   .nav-tabs-summon {
     margin-right: 0;
   }

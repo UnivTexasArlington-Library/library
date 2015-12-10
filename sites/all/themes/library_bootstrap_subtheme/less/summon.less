@@ -24,14 +24,14 @@
 		@media (min-width: @screen-md) and (max-width: @screen-md-max) {
   			margin-left:-25px;
   		}
-  		@media (min-width: @screen-sm) and (max-width: @screen-sm-max)  {
+  		@media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
   			margin-left: -35px;
   		}
-  		@media (max-width: 479px) {
+  		@media (min-width: @screen-xs) and (max-width: @screen-xs-max) {
   			margin-left:0;
   		}
 	}
-	a {
+	.form a {
 		float:right;
 		text-transform:uppercase;
 		text-decoration:underline;
@@ -42,6 +42,15 @@
 		@media (min-width: @screen-xs) and (max-width: @screen-md-max)  {
 			padding-left:5px;
 			padding-right: 0;
+		}
+		@media (max-width: 479px) {
+			display:none;
+		}
+	}
+	.advanced-display {
+		display:none;
+		@media (max-width: 479px) {
+			display:inherit;
 		}
 	}
 	input {
@@ -71,8 +80,11 @@
   			width: 79%;
   		}
   		@media (min-width: @screen-xs) and (max-width: @screen-xs-max)  {
-  			width: 83%;
+  			width: 85%;
   		}
+  		@media (max-width: 479px) {
+			width: 83%;
+		}
   	}
 	/*form a {
 		padding-right:15%;
@@ -100,6 +112,11 @@
 	.col-md-2, .col-md-1 {
 		padding-right: 0px;
 	}
+	.col-xs-3 {
+		@media (max-width: 479px) {
+			padding:0;
+		}
+	}
 }
 .nav-tabs-summon {
 	border: none;
@@ -113,7 +130,7 @@
 	@media (min-width: @screen-sm) and (max-width: @screen-sm-max)  {
 		margin-right: 35px;
 	}
-	@media (max-width: 479px) {
+	@media (min-width: @screen-xs) and (max-width: @screen-xs-max) {
 		margin-right:0;
 	}
 	#articles {
