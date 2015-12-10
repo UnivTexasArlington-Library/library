@@ -7377,7 +7377,8 @@ table .checkbox input[type="checkbox"] {
   }
 }
 @media (max-width: 767px) {
-  #block-menu-menu-left-menu-top .menu {
+  #block-menu-menu-left-menu-top .menu,
+  #block-menu-menu-right-menu-top .menu {
     display: none;
   }
 }
