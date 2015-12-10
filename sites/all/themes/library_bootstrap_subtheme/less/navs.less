@@ -46,8 +46,9 @@
     &,
     &:hover,
     &:focus {
-      background-color: @nav-link-hover-bg;
-      border-color: @link-color;
+      color:@nav-tabs-active-link-hover-color;
+      background-color: @nav-tabs-active-link-hover-bg;
+      border-color: @nav-tabs-active-link-hover-border-color;
     }
   }
 
@@ -433,7 +434,7 @@
     margin-right:auto;
   }
 }
-/*for all nav-tabs*/
+/*for all nav-tabs
 .nav-tabs > li.active > a, 
 .nav-tabs > li.active > a:hover, 
 .nav-tabs > li.active > a:focus, 
@@ -441,7 +442,7 @@
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
 }
-/*for tab colors*/
+/*for tab colors
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
@@ -455,7 +456,7 @@
 .tabs-below > .nav-tabs .summary, .tabs-left > .nav-tabs .summary, .tabs-right > .nav-tabs .summary {
   color:#dddbdb;
 }
-/*for spco menu*/
+/*for spco menu
 #block-menu-menu-spco-menu, 
 #block-menu-menu-friends-of-the-library {
   .dropdown-menu {
@@ -463,6 +464,7 @@
   }
   .dropdown-menu > li > a {
     color: @brand-primary;
+
   }
   .dropdown-menu > .active > a {
     background-color: #FFFFFF;
@@ -513,32 +515,14 @@
   border-bottom: 6px solid #ffffff;
   border-left: 6px solid transparent;
   content: '';
-}
+}*/
 .navbar-collapse {
   position: relative;
   top:50px;
 }
-.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-  background-color: #003a70;
-  border-color: #003a70;
-}
 
-.nav > li > a:hover, .nav > li > a:focus {
-    background-color: #003a70;
-    text-decoration:none;
-}
 
-#formContact input, #formContact textarea {
-    color:#000000;
-}
 
-#btnContact {
-    background-color:#f69042;
-    color:#ffffff;
-}
-#btnContact.btn:hover, #btnContact.btn:focus, #btnContact.btn:focus  {
-    color:#ae482c;
-}
 /*for sidebar nav style*/
 #sidebar {
   height: 100%;
