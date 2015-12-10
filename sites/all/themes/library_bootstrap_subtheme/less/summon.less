@@ -27,11 +27,11 @@
   		@media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
   			margin-left: -35px;
   		}
-  		@media (min-width: @screen-xs) and (max-width: @screen-xs-max) {
+  		@media (max-width: @screen-xs-max) {
   			margin-left:0;
   		}
 	}
-	.form a {
+	a {
 		float:right;
 		text-transform:uppercase;
 		text-decoration:underline;
@@ -47,7 +47,7 @@
 			display:none;
 		}
 	}
-	.advanced-display {
+	a.advanced-display {
 		display:none;
 		@media (max-width: 479px) {
 			display:inherit;
@@ -113,9 +113,7 @@
 		padding-right: 0px;
 	}
 	.col-xs-3 {
-		@media (max-width: 479px) {
-			padding:0;
-		}
+		padding:0;
 	}
 }
 .nav-tabs-summon {
@@ -130,7 +128,7 @@
 	@media (min-width: @screen-sm) and (max-width: @screen-sm-max)  {
 		margin-right: 35px;
 	}
-	@media (min-width: @screen-xs) and (max-width: @screen-xs-max) {
+	@media (max-width: @screen-xs-max) {
 		margin-right:0;
 	}
 	#articles {

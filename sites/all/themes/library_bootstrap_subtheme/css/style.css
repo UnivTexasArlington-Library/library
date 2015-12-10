@@ -7809,12 +7809,12 @@ h5 {
     margin-left: -35px;
   }
 }
-@media (min-width: 480px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .summon .searchbox {
     margin-left: 0;
   }
 }
-.summon .form a {
+.summon a {
   float: right;
   text-transform: uppercase;
   text-decoration: underline;
@@ -7824,21 +7824,21 @@ h5 {
   padding-top: 10px;
 }
 @media (min-width: 480px) and (max-width: 1199px) {
-  .summon .form a {
+  .summon a {
     padding-left: 5px;
     padding-right: 0;
   }
 }
 @media (max-width: 479px) {
-  .summon .form a {
+  .summon a {
     display: none;
   }
 }
-.summon .advanced-display {
+.summon a.advanced-display {
   display: none;
 }
 @media (max-width: 479px) {
-  .summon .advanced-display {
+  .summon a.advanced-display {
     display: inherit;
   }
 }
@@ -7914,10 +7914,8 @@ h5 {
 .summon .col-md-1 {
   padding-right: 0px;
 }
-@media (max-width: 479px) {
-  .summon .col-xs-3 {
-    padding: 0;
-  }
+.summon .col-xs-3 {
+  padding: 0;
 }
 .nav-tabs-summon {
   border: none;
@@ -7938,7 +7936,7 @@ h5 {
     margin-right: 35px;
   }
 }
-@media (min-width: 480px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .nav-tabs-summon {
     margin-right: 0;
   }
