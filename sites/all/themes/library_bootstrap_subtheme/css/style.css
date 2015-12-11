@@ -7632,6 +7632,13 @@ h5 {
 .in-maintenance h1 {
   padding-left: 0;
 }
+/* Float DATE FIELDS so they're all on one line */
+div.float-date-field {
+  margin-bottom: 20px;
+}
+div.float-date-field div.form-item {
+  float: left;
+}
 /*for footer*/
 .footer {
   background: #c6c4c4;
