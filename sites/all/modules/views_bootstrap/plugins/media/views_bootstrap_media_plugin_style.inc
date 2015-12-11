@@ -33,6 +33,9 @@ class ViewsBootstrapMediaPluginStyle extends views_plugin_style {
         }
       }
 
+      // Delete grouping.
+      unset($form['grouping']);
+
       $form['image_field'] = array(
         '#type' => 'select',
         '#title' => t('Image field'),

@@ -15,7 +15,6 @@ class ViewsBootstrapThumbnailPluginStyle extends views_plugin_style {
     $options = parent::option_definition();
     $options['alignment'] = array('default' => 'horizontal');
     $options['columns'] = array('default' => 4);
-    $options['class_prefix'] = array('default' => 'col-sm');
     return $options;
   }
 
@@ -45,20 +44,6 @@ class ViewsBootstrapThumbnailPluginStyle extends views_plugin_style {
       '#options' => array_combine($options, $options),
       '#required' => TRUE,
       '#default_value' => $this->options['columns'],
-    );
-
-    $form['class_prefix'] = array(
-      '#type' => 'select',
-      '#title' => t('Class prefix'),
-      '#description' => t('Defines the default prefix to use for column classes.'),
-      '#default_value' => $this->options['class_prefix'],
-      '#required' => TRUE,
-      '#options' => array(
-        'col-xs' => t('Extra Small'),
-        'col-sm' => t('Small'),
-        'col-md' => t('Medium'),
-        'col-lg' => t('Large'),
-      ),
     );
   }
 }

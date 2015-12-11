@@ -13,7 +13,6 @@ function template_preprocess_views_bootstrap_thumbnail_plugin_style(&$vars) {
   // Split items by rows and columns.
   $vars['items'] = _views_bootstrap_split_rows($vars, $columns, $horizontal);
   $vars['column_type'] = 12 / $columns;
-  $vars['class_prefix'] = $options['class_prefix'] ?: 'col-sm';
 }
 
 /**
@@ -21,14 +20,13 @@ function template_preprocess_views_bootstrap_thumbnail_plugin_style(&$vars) {
  */
 function template_preprocess_views_bootstrap_thumbnail_plugin_rows(&$vars) {
   $view = &$vars['view'];
-  $row_index = $view->row_index; // Clone value because get_field will unset it.
 
   foreach ($vars['options'] as $id => $field) {
     switch ($id) {
       case 'image':
       case 'title':
         if (isset($view->field[$field])) {
-          $vars[$id] = $view->style_plugin->get_field($row_index, $field);
+          $vars[$id] = $view->style_plugin->get_field($view->row_index, $field);
         }
         break;
 
@@ -36,7 +34,7 @@ function template_preprocess_views_bootstrap_thumbnail_plugin_rows(&$vars) {
         $vars[$id] = array();
         foreach (array_filter($field) as $content_field) {
           if (isset($view->field[$content_field])) {
-            $vars[$id][$content_field] = $view->style_plugin->get_field($row_index, $content_field);
+            $vars[$id][$content_field] = $view->style_plugin->get_field($view->row_index, $content_field);
           }
         }
         break;

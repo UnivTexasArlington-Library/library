@@ -13,5 +13,4 @@ function template_preprocess_views_bootstrap_grid_plugin_style(&$vars) {
   // Split items by rows and columns.
   $vars['items'] = _views_bootstrap_split_rows($vars, $columns, $horizontal);
   $vars['column_type'] = 12 / $columns;
-  $vars['class_prefix'] = $options['class_prefix'] ?: 'col-sm';
 }
