@@ -7636,6 +7636,9 @@ h5 {
 div.float-date-field {
   margin-bottom: 20px;
 }
+div.float-date-field label {
+  float: left;
+}
 div.float-date-field div.form-item {
   float: left;
 }
