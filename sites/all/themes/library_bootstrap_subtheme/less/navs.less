@@ -286,6 +286,9 @@
     border-top-style: none;
     border-bottom-style: none;
     padding-left: 0;
+    @media (min-width: @screen-md) and (max-width: @screen-md-max) {
+      padding-right:15px;
+    }
   }
   .block-title-link {
     color: @brand-warning;
@@ -294,10 +297,6 @@
     display: inline;
     text-decoration:none;
     border: 0;
-    @media (min-width: @screen-md) and (max-width: @screen-md-max) {
-      padding-right:15px;
-    }
-
   }
   
   .dropdown-menu > li > a {
@@ -319,17 +318,14 @@
   .nav > li {
     text-align: right;
   }
-}
-.region-sidebar-first > .block:first-child h2.block-title {
+  > .block:first-child h2.block-title {
     margin-right: 15px;
   }
+}
 .region-sidebar-second {
     margin-top:77px;
   .nav > li {
     text-align: left;
-  }
-  @media (min-width: @screen-md) and (max-width: @screen-md-max) {
-    margin-right:0;
   }
   @media(max-width:@screen-sm-max) {
     margin-top: 0;
