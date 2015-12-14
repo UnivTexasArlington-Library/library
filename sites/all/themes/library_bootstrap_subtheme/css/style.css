@@ -7648,6 +7648,16 @@ div.float-date-field div.form-item {
 .views-row {
   margin-bottom: 15px;
 }
+/*DEPARTMENT */
+.taxonomy-term-description {
+  margin-bottom: 1em;
+}
+.pane-taxonomy-term-field-organization-chart {
+  margin-left: -15px;
+}
+.view-staff-by-department {
+  margin-left: 15px;
+}
 /*for footer*/
 .footer {
   background: #c6c4c4;
@@ -8560,96 +8570,4 @@ input.summon-search-submit.button-website:focus {
   left: 0;
   right: 0;
   background-color: rgba(255, 255, 255, 0.5);
-}
-/*DEPARTMENT */
-.taxonomy-term-description {
-  margin-bottom: 1em;
-}
-.pane-taxonomy-term-field-organization-chart {
-  margin-left: -15px;
-}
-.view-staff-by-department {
-  margin-left: 15px;
-}
-/*FOOTER*/
-.inq-links {
-  float: left;
-}
-/*lg screens*/
-@media (min-width: 1200px) {
-  .inq-links {
-    width: 25em;
-  }
-  .cc-info {
-    float: right;
-  }
-  .fb-icon,
-  .tw-icon,
-  .yt-icon {
-    width: 6.9em;
-  }
-}
-/*lg screen ends*/
-/*md screen*/
-@media (min-width: 992px) and (max-width: 1199px) {
-  .fb-icon,
-  .tw-icon,
-  .yt-icon {
-    width: 6.5em;
-  }
-}
-/*md screen ends*/
-/*sm screen*/
-@media (min-width: 768px) and (max-width: 991px) {
-  .fb-icon,
-  .tw-icon,
-  .yt-icon {
-    width: 4em;
-    padding: 0px;
-  }
-  .address-block {
-    margin-bottom: 10px;
-  }
-  .sm-links {
-    /*left:15em;*/
-    float: none;
-  }
-  .cc-info {
-    /*left: 10em;*/
-    float: right;
-  }
-  /*				.links{
-	float: left;
-}*/
-}
-/*sm screen ends*/
-/*xs screen*/
-@media (max-width: 767px) {
-  .address-block,
-  .inq-links,
-  .links,
-  .cc-info {
-    width: 100%;
-  }
-  /*.sm-links{
-		width: 100%
-	}*/
-  .sm-links {
-    margin-bottom: 10px;
-  }
-  .sm-links img {
-    /*width: 4.5em !important;*/
-    padding: 0px;
-  }
-  .links {
-    text-align: left;
-  }
-  .footer {
-    margin: auto;
-    text-align: center !important;
-    text-align: -moz-center !important;
-  }
-  .inq-links-right {
-    text-align: left;
-  }
 }
