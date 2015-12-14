@@ -7,6 +7,10 @@
 	line-height:18px;
 	padding-top:10px;
 	padding-bottom:10px;
+	@media (min-width: @screen-md) and (max-width: @screen-md-max) {
+		font-size:0.7em;
+		line-height: 15px;
+	}
 	.region-footer {
 		&:extend(.container-xs-height);
 	}
@@ -21,6 +25,7 @@
 		height:30px;
 		width: auto;
 		text-align:center;
+		margin-bottom: 10px;
 	}
 	li {
 		display: inline-block;

@@ -294,6 +294,9 @@
     display: inline;
     text-decoration:none;
     border: 0;
+    @media (min-width: @screen-md) and (max-width: @screen-md-max) {
+      padding-right:15px;
+    }
 
   }
   
@@ -324,6 +327,9 @@
     margin-top:77px;
   .nav > li {
     text-align: left;
+  }
+  @media (min-width: @screen-md) and (max-width: @screen-md-max) {
+    margin-right:0;
   }
   @media(max-width:@screen-sm-max) {
     margin-top: 0;

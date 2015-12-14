@@ -7326,6 +7326,12 @@ table .checkbox input[type="checkbox"] {
   text-decoration: none;
   border: 0;
 }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .region-sidebar-first .block-title-link,
+  .region-sidebar-second .block-title-link {
+    padding-right: 15px;
+  }
+}
 .region-sidebar-first .dropdown-menu > li > a,
 .region-sidebar-second .dropdown-menu > li > a {
   white-space: normal;
@@ -7358,6 +7364,11 @@ table .checkbox input[type="checkbox"] {
 }
 .region-sidebar-second .nav > li {
   text-align: left;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .region-sidebar-second {
+    margin-right: 0;
+  }
 }
 @media (max-width: 991px) {
   .region-sidebar-second {
@@ -7651,6 +7662,12 @@ div.float-date-field div.form-item {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .footer {
+    font-size: 0.7em;
+    line-height: 15px;
+  }
+}
 .footer .glyphicon {
   color: #000000;
   padding-right: 5px;
@@ -7659,6 +7676,7 @@ div.float-date-field div.form-item {
   height: 30px;
   width: auto;
   text-align: center;
+  margin-bottom: 10px;
 }
 .footer li {
   display: inline-block;
@@ -8090,6 +8108,11 @@ input.summon-search-submit.button-website:focus {
   margin-bottom: 0;
   border-bottom: 0px solid #dddbdb;
   text-transform: uppercase;
+}
+#block-available-now-available-now .nav-tabs > li > a:hover,
+#block-available-now-available-now .nav-tabs > li > a:focus {
+  color: #ae482c;
+  text-decoration: underline;
 }
 #block-available-now-available-now .avail {
   font-size: 20px;
