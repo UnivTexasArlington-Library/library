@@ -7317,7 +7317,7 @@ table .checkbox input[type="checkbox"] {
   border-bottom-style: none;
   padding-left: 0;
 }
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .region-sidebar-first h2.block-title,
   .region-sidebar-second h2.block-title {
     padding-right: 15px;
