@@ -267,6 +267,9 @@
     padding: 2px;
     font-size:1em;
     color:@nav-text;
+    @media (max-width: @screen-xs-max) {
+        font-size:0.8em;
+    }
   }
   .dropdown-menu {
     position:relative;
@@ -289,6 +292,7 @@
     @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
       padding-right:15px;
     }
+
   }
   .block-title-link {
     color: @brand-warning;
@@ -297,6 +301,9 @@
     display: inline;
     text-decoration:none;
     border: 0;
+    @media (max-width: @screen-xs-max) {
+        font-size:15px;
+    }
   }
   
   .dropdown-menu > li > a {

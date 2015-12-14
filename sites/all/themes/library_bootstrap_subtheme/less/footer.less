@@ -7,7 +7,7 @@
 	line-height:18px;
 	padding-top:10px;
 	padding-bottom:10px;
-	@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+	@media (max-width: @screen-sm-max) {
 		font-size:0.7em;
 		line-height: 15px;
 	}
@@ -30,7 +30,12 @@
 	li {
 		display: inline-block;
 	}
-	.col-xs-4 {
+	ul {
+		@media (max-width: @screen-xs) {
+			margin:5px 0;
+		} 
+	}
+	/*.col-xs-4 {
 		border-right:4px solid #FFFFFF;
 		text-align:center;
 		padding-top:25px;
@@ -52,5 +57,5 @@
 	}
 	.col-xs-4:first-of-type {
 		padding-bottom:0px;
-	}
+	}*/
 }
