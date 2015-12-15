@@ -7698,6 +7698,7 @@ div.float-date-field div.form-item {
 @media (max-width: 767px) {
   .summon {
     position: relative;
+    padding: 0;
   }
 }
 .summon .searchbox {
@@ -7802,6 +7803,9 @@ div.float-date-field div.form-item {
   .summon .summon-search-field {
     width: 82%;
   }
+}
+.summon .tabbable {
+  margin-bottom: 0;
 }
 .summon .search-parameters {
   margin-top: 2px;
