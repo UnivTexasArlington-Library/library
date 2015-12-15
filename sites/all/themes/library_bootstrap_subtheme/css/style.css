@@ -6945,6 +6945,9 @@ table .checkbox input[type="checkbox"] {
 #lib_header .navbar-toggle .icon-bar {
   background: #ffffff;
 }
+#lib_header .col-xs-2 {
+  max-height: 50px;
+}
 #uta_logo {
   padding-right: 15px;
   border-right: 1px solid #ffffff;
