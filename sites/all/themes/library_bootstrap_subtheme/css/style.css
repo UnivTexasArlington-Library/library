@@ -7348,6 +7348,7 @@ table .checkbox input[type="checkbox"] {
 .region-sidebar-first {
   margin-top: 77px;
   text-align: right;
+  margin-right: 15px;
 }
 @media (max-width: 767px) {
   .region-sidebar-first {
@@ -7686,6 +7687,11 @@ div.float-date-field div.form-item {
 @media (max-width: 480px) {
   .footer ul {
     margin: 5px 0;
+  }
+}
+@media (max-width: 480px) {
+  .footer address {
+    margin-bottom: 10px;
   }
 }
 .summon {
