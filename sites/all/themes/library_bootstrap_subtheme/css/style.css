@@ -781,8 +781,7 @@ pre code {
   padding-left: 15px;
   padding-right: 15px;
 }
-.row,
-.footer .block {
+.row {
   margin-left: -15px;
   margin-right: -15px;
 }
@@ -6057,9 +6056,7 @@ button.close {
 .modal-footer:before,
 .modal-footer:after,
 .nav:before,
-.nav:after,
-.footer .block:before,
-.footer .block:after {
+.nav:after {
   content: " ";
   display: table;
 }
@@ -6078,8 +6075,7 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
-.nav:after,
-.footer .block:after {
+.nav:after {
   clear: both;
 }
 .center-block {
@@ -6430,12 +6426,6 @@ body #admin-menu .dropdown li {
 }
 .modal-backdrop {
   z-index: 1610;
-}
-.footer {
-  margin-top: 45px;
-  padding-top: 35px;
-  padding-bottom: 36px;
-  border-top: 1px solid #E5E5E5;
 }
 .element-invisible {
   margin: 0;
@@ -6863,10 +6853,6 @@ td.radio {
 .views-display-settings .label {
   font-size: 100%;
   color: #666666;
-}
-.views-display-settings .footer {
-  padding: 0;
-  margin: 4px 0 0 0;
 }
 table .radio input[type="radio"],
 table .checkbox input[type="checkbox"] {
@@ -7674,29 +7660,6 @@ div.float-date-field div.form-item {
   line-height: 18px;
   padding-top: 10px;
   padding-bottom: 10px;
-  /*.col-xs-4 {
-		border-right:4px solid #FFFFFF;
-		text-align:center;
-		padding-top:25px;
-		padding-bottom:20px;
-		&:extend(.col-xs-height, .col-top);
-	}
-	.col-xs-4:last-of-type {
-		border:none;
-		text-align:left;
-		.col-xs-6 {
-			padding-left:0;
-			padding-right:0;
-		}
-		a {
-			text-decoration:underline;
-			padding-top:2px;
-			padding-bottom:2px;
-		}
-	}
-	.col-xs-4:first-of-type {
-		padding-bottom:0px;
-	}*/
 }
 @media (max-width: 991px) {
   .footer {
@@ -8500,14 +8463,12 @@ input.summon-search-submit.button-website:focus {
 }
 /*for columns of same height*/
 /* columns of same height styles */
-.container-xs-height,
-.footer .region-footer {
+.container-xs-height {
   display: table;
   padding-left: 0px;
   padding-right: 0px;
 }
-.row-xs-height,
-.footer .block {
+.row-xs-height {
   display: table-row;
 }
 .col-xs-height {
