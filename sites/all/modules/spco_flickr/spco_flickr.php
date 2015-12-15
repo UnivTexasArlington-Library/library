@@ -32,7 +32,7 @@ $flickr_url = "https://api.flickr.com/services/rest/?&method=flickr.photosets.ge
         }
       }
           $i = rand(0, count($photoarray)-1);
-          $block_content .= "<img src='" . $photoarray[$i] . "' />";
+          $block_content .= "<img src='" . $photoarray[$i] . "' alt='Flickr Image' />";
           $block_content .= "</div>";
       }
       else {
