@@ -94,21 +94,21 @@ function available_now_block_view($delta='') {
                 <div class="row">
                   <div class="col-md-4">
                     <h4><a href="http://cas.uta.edu/CAS/">Computers</a></h4>
-                    <div class="avail">';
+                    <div title="Central Library Computers" class="avail">';
                     $block_content .= $centralCompAvail;
                     $block_content .= '</div>
                   </div> <!-- end.col-md-4 -->
 
                   <div class="col-md-4">
                     <h4><a href="technology/laptops">Laptops</a></h4>
-                    <div class="avail">';
+                    <div title="Central Library Laptops" class="avail">';
                     $block_content .= $centralLaptopAvail;
                     $block_content .= '</div>
                   </div><!-- end.col-md-4 -->
 
                   <div class="col-md-4">
                     <h4><a href="http://library.uta.edu/study-spaces">Study Rooms</a></h4>
-                    <div class="avail">';
+                    <div title="Central Library Study Rooms" class="avail">';
                       $block_content .= $centralRoomAvail;
                       $block_content .= '</div>
                   </div><!-- end.col-md-4 -->
@@ -119,21 +119,21 @@ function available_now_block_view($delta='') {
                 <div class="row">
                   <div class="col-md-4">
                     <h4><a href="http://cas.uta.edu/CAS/">Computers</a></h4>
-                    <div class="avail">';
+                    <div title="Architecture and Fine Arts Library Computers" class="avail">';
                     $block_content .= $afaCompAvail; 
                     $block_content .= '</div>
                   </div> <!-- end.col-md-4 -->
 
                   <div class="col-md-4">
                     <h4><a href="technology/laptops">Laptops</a></h4>
-                    <div class="avail">';
+                    <div title="Architecture and Fine Arts Library Laptops" class="avail">';
                       $block_content .= $afaLaptopAvail;
                       $block_content .= '</div>
                   </div><!-- end.col-md-4 -->
 
                   <div class="col-md-4">
                     <h4><a href="http://library.uta.edu/study-spaces">Study Rooms</a></h4>
-                    <div class="avail">';
+                    <div title="Architecture and Fine Arts Library Study Rooms" class="avail">';
                     $block_content .= $afaRoomAvail;
                     $block_content .= '</div>
                   </div><!-- end.col-md-4 -->
@@ -144,21 +144,21 @@ function available_now_block_view($delta='') {
                 <div class="row">
                   <div class="col-md-4">
                     <h4><a href="http://cas.uta.edu/CAS/">Computers</a></h4>
-                    <div class="avail">';
+                    <div title="Science and Engineering Library Computers" class="avail">';
                     $block_content .= $selCompAvail; 
                     $block_content .= '</div>
                   </div> <!-- end.col-md-4 -->
 
                   <div class="col-md-4">
                     <h4><a href="technology/laptops">Laptops</a></h4>
-                    <div class="avail">';
+                    <div title="Science and Engineering Library Laptops"class="avail">';
                     $block_content .= $selLaptopAvail;
                     $block_content .= '</div>
                   </div> <!-- end.col-md-4 -->
 
                   <div class="col-md-4">
                     <h4><a href="http://library.uta.edu/study-spaces">Study Rooms</a></h4>
-                    <div class="avail">';
+                    <div title="Science and Engineering Library Study Rooms"class="avail">';
                     $block_content .= $selRoomAvail;
                     $block_content .= '</div>
                   </div><!-- end.col-md-4 -->
