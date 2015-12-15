@@ -7666,8 +7666,8 @@ div.float-date-field div.form-item {
   font-size: .8em;
   color: #2c2d2e;
   line-height: 18px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 15px 0;
+  margin-top: 15px;
 }
 @media (max-width: 991px) {
   .footer {
@@ -8216,21 +8216,18 @@ input.summon-search-submit.button-website:focus {
 .node.node-home-page {
   padding-top: 0;
 }
-/*form styling*/
+/*form styling
 .node-form {
-  padding-left: 15px;
+	padding-left:15px;
 }
 .form-horizontal .form-group {
-  margin-left: 0;
-  margin-right: 0;
+	margin-left:0;
+	margin-right:0;
 }
 .btn-primary.form-submit {
-  background-color: #5cb85c;
-  border-color: #5cb85c;
-}
-.form-item {
-  margin-left: 15px;
-}
+	background-color:@brand-success;	
+	border-color:@brand-success;
+}*/
 /*for placeholder text*/
 ::-webkit-input-placeholder {
   padding-left: 10px;
