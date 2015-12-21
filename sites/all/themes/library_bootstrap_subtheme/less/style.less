@@ -13,6 +13,8 @@
 @import 'front.less';
 @import 'variables.less';
 @import 'google-search.less';
+@import	'spco.less';
+@import	'employment.less';
 
 /*for body font*/
 
@@ -124,7 +126,7 @@
 		}
 	}
 }
-.field-collection-view {
+/*.field-collection-view {
   border-bottom-style: none;
   padding: 0;
 }
@@ -162,137 +164,6 @@
 	overflow-x:scroll;
 }
 
-/*for employment page*/
-.employment_image {
-	width:100%;
-}
-.employment_inspiration {
-	color:#FFFFFF;
-	text-align:center;
-	font-size:3em;
-	padding-top:5%;
-	div {
-		padding-bottom:10%;
-	}
-}
-/* Chrome, Safari, Opera */
-@-webkit-keyframes changecolor1 {
-    from {color: #FFFFFF;}
-    to {color: #00447C;}
-}
-/* Standard syntax */
-@keyframes changecolor1 {
-    from {color: #FFFFFF;}
-    to {color: #00447C;}
-}
-@-webkit-keyframes fadeaway {
-	0% {color:#00447C;}
-	100% {color:#dddbdb;}
-}
-@keyframes fadeaway {
-	0% {opacity:1;}
-	100% {opacity:0;}
-}
-#inspire_1 {
-	-webkit-animation: changecolor1 2s,
-						fadeaway 2s 2s linear;
-	animation: changecolor1 2s,
-				fadeaway 2s 2s linear;
-}
-#inspire_2 {
-	-webkit-animation: changecolor1 2s 2s,
-						fadeaway 2s 4s linear;
-	animation: changecolor1 2s 2s,
-						fadeaway 2s 4s linear;
-}
-#inspire_3 {
-	-webkit-animation: changecolor1 2s 4s,
-						fadeaway 2s 6s linear;
-	animation: changecolor1 2s 4s,
-						fadeaway 2s 6s linear;
-}
-#inspire_4 {
-	-webkit-animation: changecolor1 2s 6s,
-						fadeaway 2s 8s linear;
-	animation: changecolor1 2s 6s,
-						fadeaway 2s 8s linear;
-}
-#inspire_5 {
-	-webkit-animation: changecolor1 2s 8s forwards;
-	animation: changecolor1 2s 8s;
-	animation-fill-mode:forwards;
-	text-transform:uppercase;
-	font-style:italic;
-	padding-right:10%;
-	padding-left:10%;
-}
-#node-560 {
-	.row:first-of-type {
-		border-bottom:30px solid #00447C;
-	}
-	.row:nth-of-type(2) {
-		display:table;
-		border-top:30px solid #FFFFFF;
-		margin-right:-16.4px;
-	}
-	.row:before {
-		content:'';
-		display:none;
-	}
-}
-.employment_orange {
-	background:@brand-warning;
-	color:#FFFFFF;
-	display:table-cell;
-	float:none;
-	vertical-align:middle;
-	p {
-		padding: 7%;
-		font-size: 1.8em;
-	}
-}
-.employment_buttons {
-	padding-right: 0;
-	padding-left:0;
-	display:table-cell;
-	float:none;
-	border-left:30px solid #FFFFFF;
-	vertical-align:middle;
-	background:@brand-primary;
-	a {
-		display: block;
-		width: 100%;
-		text-align: center;
-		color: #FFFFFF;
-		font-size: 2.8em;
-		padding: 8%;
-		text-decoration: none;
-		padding-top:10%;
-		padding-bottom:10%;
-		text-transform: uppercase;
-	}
-	a:first-of-type{
-		border-bottom:15px solid #FFFFFF;
-	}
-	a:nth-of-type(2) {
-		border-top:15px solid #FFFFFF;
-	}
-}
-.employment_believe {
-	padding:4%;
-	h4, p {
-		color:#00477C;
-	}
-	p {
-		font-size:1.8em;
-	}
-	h4 {
-		font-size:3em;
-	}
-}
-.page-node-560 .page-header, .page-node-560 .breadcrumb {
-	display:none;
-}
 /*for webforms*/
 .webform-container-inline {
 	display: inline;

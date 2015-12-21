@@ -7612,16 +7612,22 @@ h5 {
   text-transform: uppercase;
   padding-bottom: 11px;
   min-height: 0px;
-  font-size: 1.8em;
+  font-size: 1.6em;
 }
 .center-container {
   background-color: #FFFFFF;
   padding-left: 0;
   padding-right: 0;
-  box-shadow: 0px 0px 15px 3px #000;
+  -webkit-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.46);
+  -moz-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.46);
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.46);
 }
 #internal-page {
   padding: 0 50px;
+}
+.breadcrumb {
+  text-align: left;
+  font-size: 13px;
 }
 /* EMERGENCY NOTIFICATION, image located in template: region--notification.tpl.php */
 #warning {
@@ -7685,18 +7691,8 @@ div.float-date-field div.form-item {
   text-align: center;
   margin-bottom: 10px;
 }
-.footer li {
-  display: inline-block;
-}
-@media (max-width: 480px) {
-  .footer ul {
-    margin: 5px 0;
-  }
-}
-@media (max-width: 480px) {
-  .footer address {
-    margin-bottom: 10px;
-  }
+.footer .footer-links {
+  padding-left: 30px;
 }
 .summon {
   background-color: rgba(255, 255, 255, 0.5);
@@ -8033,6 +8029,9 @@ input.summon-search-submit.button-website:focus {
 .pane-news-events .carousel-control-container .carousel-control.left {
   background-image: none;
 }
+.pane-news-events a {
+  color: #0052a3;
+}
 /* news & events @screen-xs */
 .pane-news-events-panel-pane-1 .views-field-field-news-caption .field-content {
   padding-right: 20px;
@@ -8198,131 +8197,11 @@ input.summon-search-submit.button-website:focus {
   color: #ffffff;
   background-color: #0052A3;
 }
-/*for body font*/
-/*SYSTEM WIDE SETTINGS*/
-/*for orange font, locations icons*/
-.orange {
-  color: #ae482c;
-}
-/*class for inline styling*/
-/*.inline {
-	display:inline-block;
-} */
-/*for padding between nodes*/
-.node {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.node.node-home-page {
-  padding-top: 0;
-}
-/*form styling
-.node-form {
-	padding-left:15px;
-}
-.form-horizontal .form-group {
-	margin-left:0;
-	margin-right:0;
-}
-.btn-primary.form-submit {
-	background-color:@brand-success;	
-	border-color:@brand-success;
-}*/
-/*for placeholder text*/
-::-webkit-input-placeholder {
-  padding-left: 10px;
-}
-:-moz-placeholder {
-  /* Firefox 18- */
-  padding-left: 10px;
-}
-::-moz-placeholder {
-  /* Firefox 19+ */
-  padding-left: 10px;
-}
-:-ms-input-placeholder {
-  padding-left: 10px;
-}
-/*styles background color of texteditor for users*/
-.cke_editable {
-  background: #FFFFFF;
-}
-/*removes opening hours label*/
-.field-name-opening-hours-week .field-label {
-  display: none;
-}
-/*for image widths*/
-.field-type-image img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  display: block;
+/* SPECIAL COLLECTIONS HOMEPAGE STYLES */
+.field-name-spco-current-exhibit .views-field-title a {
   margin-left: auto;
   margin-right: auto;
-  /*@media (max-width: 767px) {
-			width:auto;
-			height: 100%;
-		}*/
-}
-@media (max-width: 767px) {
-  .field-type-image img {
-    padding-bottom: 10px;
-  }
-}
-/*for addthis toolbar/social media*/
-.addthis_default_style {
-  float: right;
-}
-/*for full width accordion links*/
-.panel-title > a {
-  width: 100%;
   display: block;
-}
-/*for staff directory*/
-.node-staff .field-name-field-image img {
-  width: auto;
-  height: auto;
-  /*for staff directoy, in smaller devices*/
-}
-@media (max-width: 767px) {
-  .node-staff .field-name-field-image img {
-    padding-bottom: 15px;
-  }
-}
-.field-collection-view {
-  border-bottom-style: none;
-  padding: 0;
-}
-.field-collection-container {
-  border-bottom-style: none;
-}
-/*for locations */
-.node-location img {
-  width: 100%;
-  height: auto;
-}
-.node-location h2 {
-  color: #FFFFFF;
-  background: #00447C;
-  width: 100%;
-  border-radius: 5px;
-  padding: 5px;
-  margin-top: 0;
-}
-.node-location h2 a {
-  color: #FFFFFF;
-}
-.node-location h2 a:hover,
-.node-location h2 a:focus {
-  color: #FFFFFF;
-}
-.node-location .glyphicon img {
-  width: 20px;
-  height: auto;
-}
-/*for org charts*/
-.view-id-or {
-  overflow-x: scroll;
 }
 /*for employment page*/
 .employment_image {
@@ -8467,9 +8346,131 @@ input.summon-search-submit.button-website:focus {
 .employment_believe h4 {
   font-size: 3em;
 }
-.page-node-560 .page-header,
-.page-node-560 .breadcrumb {
+/*for body font*/
+/*SYSTEM WIDE SETTINGS*/
+/*for orange font, locations icons*/
+.orange {
+  color: #ae482c;
+}
+/*class for inline styling*/
+/*.inline {
+	display:inline-block;
+} */
+/*for padding between nodes*/
+.node {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.node.node-home-page {
+  padding-top: 0;
+}
+/*form styling
+.node-form {
+	padding-left:15px;
+}
+.form-horizontal .form-group {
+	margin-left:0;
+	margin-right:0;
+}
+.btn-primary.form-submit {
+	background-color:@brand-success;	
+	border-color:@brand-success;
+}*/
+/*for placeholder text*/
+::-webkit-input-placeholder {
+  padding-left: 10px;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  padding-left: 10px;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  padding-left: 10px;
+}
+:-ms-input-placeholder {
+  padding-left: 10px;
+}
+/*styles background color of texteditor for users*/
+.cke_editable {
+  background: #FFFFFF;
+}
+/*removes opening hours label*/
+.field-name-opening-hours-week .field-label {
   display: none;
+}
+/*for image widths*/
+.field-type-image img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /*@media (max-width: 767px) {
+			width:auto;
+			height: 100%;
+		}*/
+}
+@media (max-width: 767px) {
+  .field-type-image img {
+    padding-bottom: 10px;
+  }
+}
+/*for addthis toolbar/social media*/
+.addthis_default_style {
+  float: right;
+}
+/*for full width accordion links*/
+.panel-title > a {
+  width: 100%;
+  display: block;
+}
+/*for staff directory*/
+.node-staff .field-name-field-image img {
+  width: auto;
+  height: auto;
+  /*for staff directoy, in smaller devices*/
+}
+@media (max-width: 767px) {
+  .node-staff .field-name-field-image img {
+    padding-bottom: 15px;
+  }
+}
+/*.field-collection-view {
+  border-bottom-style: none;
+  padding: 0;
+}
+.field-collection-container {
+  border-bottom-style: none;
+}
+/*for locations */
+.node-location img {
+  width: 100%;
+  height: auto;
+}
+.node-location h2 {
+  color: #FFFFFF;
+  background: #00447C;
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 0;
+}
+.node-location h2 a {
+  color: #FFFFFF;
+}
+.node-location h2 a:hover,
+.node-location h2 a:focus {
+  color: #FFFFFF;
+}
+.node-location .glyphicon img {
+  width: 20px;
+  height: auto;
+}
+/*for org charts*/
+.view-id-or {
+  overflow-x: scroll;
 }
 /*for webforms*/
 .webform-container-inline {
