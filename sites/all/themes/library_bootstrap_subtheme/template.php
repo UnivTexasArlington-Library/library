@@ -65,8 +65,12 @@ function bootstrap_menu_tree__menu_robots(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
 
-//adding class to robots menu
+//adding class to friends (on production) menu
 function bootstrap_menu_tree__menu_friends_library(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
+//adding class to fiends (on test) menu
+function bootstrap_menu_tree__menu_friends_of_the_library(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
 
