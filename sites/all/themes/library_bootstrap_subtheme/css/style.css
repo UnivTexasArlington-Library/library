@@ -7632,6 +7632,9 @@ h5 {
 .views-row {
   margin-bottom: 30px;
 }
+.views-row h3 {
+  margin-top: -3px;
+}
 /* EMERGENCY NOTIFICATION, image located in template: region--notification.tpl.php */
 #warning {
   float: left;
@@ -7665,6 +7668,40 @@ div.float-date-field div.form-item {
 }
 .view-staff-by-department {
   margin-left: 15px;
+}
+/*for news and events*/
+.node-event .field-name-field-news-caption,
+.node-exhibit .field-name-field-news-caption,
+.node-event .field-name-field-news-caption {
+  font-size: 14px;
+}
+/*for locations */
+.node-location img {
+  width: 100%;
+  height: auto;
+}
+.node-location h2 {
+  color: #FFFFFF;
+  background: #00447C;
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 0;
+  font-size: 20px;
+}
+.node-location h2 a {
+  color: #FFFFFF;
+}
+.node-location h2 a:hover,
+.node-location h2 a:focus {
+  color: #FFFFFF;
+}
+.node-location .glyphicon img {
+  width: 20px;
+  height: auto;
+}
+.node-location .glyphicon-book {
+  padding-right: 4px;
 }
 /*for footer*/
 .footer {
@@ -8436,37 +8473,6 @@ input.summon-search-submit.button-website:focus {
   .node-staff .field-name-field-image img {
     padding-bottom: 15px;
   }
-}
-/*.field-collection-view {
-  border-bottom-style: none;
-  padding: 0;
-}
-.field-collection-container {
-  border-bottom-style: none;
-}
-/*for locations */
-.node-location img {
-  width: 100%;
-  height: auto;
-}
-.node-location h2 {
-  color: #FFFFFF;
-  background: #00447C;
-  width: 100%;
-  border-radius: 5px;
-  padding: 5px;
-  margin-top: 0;
-}
-.node-location h2 a {
-  color: #FFFFFF;
-}
-.node-location h2 a:hover,
-.node-location h2 a:focus {
-  color: #FFFFFF;
-}
-.node-location .glyphicon img {
-  width: 20px;
-  height: auto;
 }
 /*for org charts*/
 .view-id-or {
