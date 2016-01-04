@@ -7735,6 +7735,26 @@ div.float-date-field div.form-item {
 .footer .footer-links {
   padding-left: 30px;
 }
+.footer .social-media li {
+  float: left;
+  margin-right: 10px;
+}
+.facebook,
+.twitter,
+.youtube {
+  background: url(sites/default/files/default_files/Media_buttons.png);
+  display: block;
+  height: 60px;
+  width: 60px;
+  text-indent: -9999px;
+}
+.twitter {
+  background-position: -73px 0;
+}
+.twitter:hover,
+.twitter:focus {
+  background-position: -73px 60px;
+}
 .summon {
   background-color: rgba(255, 255, 255, 0.5);
   padding: 15px 0;
@@ -8072,6 +8092,10 @@ input.summon-search-submit.button-website:focus {
 }
 .pane-news-events a {
   color: #0052a3;
+}
+.pane-news-events a:hover,
+.pane-news-events a:focus {
+  color: #ae482c;
 }
 /* news & events @screen-xs */
 .pane-news-events-panel-pane-1 .views-field-field-news-caption .field-content {
