@@ -38,7 +38,7 @@ $flickr_url = "https://api.flickr.com/services/rest/?&method=flickr.photosets.ge
       else {
         $block_content = "";
       }
-      $block_content .= "<p class='clearfix'>Powered by <a href='http://flickr.com'>Flickr</a></p>";
+      $block_content .= "<p class='clearfix pull-right'>Powered by <a href='http://flickr.com'>Flickr</a></p>";
 
     return $block_content;
     ?>

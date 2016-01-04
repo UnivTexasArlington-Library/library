@@ -7703,6 +7703,10 @@ div.float-date-field div.form-item {
 .node-location .glyphicon-book {
   padding-right: 4px;
 }
+/* for pagination / pager */
+.pagination {
+  float: right;
+}
 /*for footer*/
 .footer {
   background: #c6c4c4;
