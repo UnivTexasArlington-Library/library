@@ -7737,7 +7737,7 @@ div.float-date-field div.form-item {
   float: right;
   margin-left: 10px;
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (max-width: 991px) {
   .social-media a {
     float: left;
     margin-right: 10px;
