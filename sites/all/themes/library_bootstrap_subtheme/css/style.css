@@ -7713,7 +7713,7 @@ div.float-date-field div.form-item {
   font-size: .8em;
   color: #2c2d2e;
   line-height: 18px;
-  padding: 15px 0;
+  padding: 15px;
   margin-top: 15px;
 }
 @media (max-width: 991px) {
@@ -7735,7 +7735,7 @@ div.float-date-field div.form-item {
 .footer .footer-links {
   padding-left: 30px;
 }
-.footer .social-media li {
+.footer .social-media a {
   float: left;
   margin-right: 10px;
 }
@@ -7744,8 +7744,8 @@ div.float-date-field div.form-item {
 .youtube {
   background: url(/sites/default/files/default_images/Media_buttons.png);
   display: block;
-  height: 60px;
-  width: 60px;
+  height: 30px;
+  width: 30px;
   text-indent: -9999px;
 }
 .facebook {
