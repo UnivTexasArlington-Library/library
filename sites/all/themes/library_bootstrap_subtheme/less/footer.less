@@ -6,7 +6,7 @@
 	color:@footer-text;
 	line-height:18px;
 	padding:15px;
-	margin-top: 15px;
+	margin-top: 15px 30px;
 	@media (max-width: @screen-sm-max) {
 		font-size:0.7em;
 		line-height: 15px;
@@ -15,19 +15,28 @@
 		color: #000000;
 		padding-right:5px;
 	}
-	img {
-		height:30px;
-		width: auto;
-		text-align:center;
-		margin-bottom: 10px;
+	
 	}
 	.footer-links {
 		padding-left:30px;
 	}
 	.social-media a{
-		float:left;
-		margin-right: 10px;
+		float:right;
+		margin-left: 10px;
 	}
+	.copyright {
+		float:left;
+		margin-right:10px;
+		a {
+			display:block;
+		}
+		img {
+			height:30px;
+			width: auto;
+			text-align:center;
+			margin-bottom: 10px;
+			display:block;
+		}
 }
 .facebook,
 .twitter, 
