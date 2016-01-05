@@ -7729,9 +7729,19 @@ div.float-date-field div.form-item {
 .footer .footer-links {
   padding-left: 30px;
 }
+.social-media {
+  padding-left: 0;
+  padding-right: 0;
+}
 .social-media a {
   float: right;
   margin-left: 10px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .social-media a {
+    float: left;
+    margin-right: 10px;
+  }
 }
 .copyright {
   float: left;
@@ -7742,15 +7752,6 @@ div.float-date-field div.form-item {
   height: 30px;
   width: auto;
   text-align: center;
-  margin-bottom: 10px;
-}
-@media (max-width: 767px) {
-  .copyright {
-    margin-top: 10px;
-  }
-}
-.libaddress {
-  margin-left: 50px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .libaddress {
@@ -7760,6 +7761,7 @@ div.float-date-field div.form-item {
 @media (max-width: 767px) {
   .libaddress {
     margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 .facebook,

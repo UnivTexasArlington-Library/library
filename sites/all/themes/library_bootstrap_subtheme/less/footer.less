@@ -19,9 +19,17 @@
 		padding-left:30px;
 	}
 }
-.social-media a {
-	float:right;
-	margin-left: 10px;
+.social-media {
+	padding-left:0;
+	padding-right:0;
+	a {
+		float:right;
+		margin-left: 10px;
+		@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+			float:left;
+			margin-right:10px;
+		}
+	}
 }
 .copyright {
 	float:left;
@@ -31,19 +39,15 @@
 		height:30px;
 		width: auto;
 		text-align:center;
-		margin-bottom: 10px;
-	}
-	@media (max-width: @screen-xs-max) {
-		margin-top: 10px;
 	}
 }
 .libaddress {
-	margin-left:50px;
 	@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
 		margin-left:25px;
 	}
 	@media (max-width: @screen-xs-max) {
 		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 }
 .facebook,
