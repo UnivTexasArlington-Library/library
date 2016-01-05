@@ -7707,6 +7707,10 @@ div.float-date-field div.form-item {
 .pagination {
   float: right;
 }
+/* button text wrap */
+.btn {
+  white-space: normal;
+}
 /*for footer*/
 .footer {
   background: #c6c4c4;
