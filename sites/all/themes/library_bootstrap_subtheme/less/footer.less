@@ -15,53 +15,61 @@
 		color: #000000;
 		padding-right:5px;
 	}
-	
-	}
 	.footer-links {
 		padding-left:30px;
 	}
-	.social-media a{
-		float:right;
-		margin-left: 10px;
+}
+.social-media a {
+	float:right;
+	margin-left: 10px;
+}
+.copyright {
+	float:left;
+	margin-right:10px;
+	display: block;
+	img {
+		height:30px;
+		width: auto;
+		text-align:center;
+		margin-bottom: 10px;
 	}
-	.copyright {
-		float:left;
-		margin-right:10px;
-		display: block;
-		img {
-			height:30px;
-			width: auto;
-			text-align:center;
-			margin-bottom: 10px;
-		}
-	.libaddress {
-		margin-left:50px;
+	@media (max-width: @screen-xs-max) {
+		margin-top: 10px;
+	}
+}
+.libaddress {
+	margin-left:50px;
+	@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+		margin-left:25px;
+	}
+	@media (max-width: @screen-xs-max) {
+		margin-top: 10px;
 	}
 }
 .facebook,
 .twitter, 
 .youtube {
-	background: url(/sites/default/files/default_images/Media_buttons.png);
+	background: url(/sites/default/files/default_images/Media_buttons_rev2.jpg);
 	display: block;
 	height:30px;
 	width:30px;
 	text-indent:-9999px;
 }
 .facebook {
-	background-position: 0px -60px;
+	background-position: 0px -30px;
 	&:hover, &:focus {
 		background-position: 0px 0px;
 	}
 }
 .twitter {
-	background-position: -73px 60px;
+	background-position: -30px 30px;
 	&:hover, &:focus {
-		background-position: -73px 0;
+		background-position: -30px 0;
 	}
 }
 .youtube {
-	background-position: -144px 60px;
+	background-position: -60px 30px;
 	&:hover, &:focus {
-		background-position: -144px 0;
+		background-position: -60px 0;
 	}
 }

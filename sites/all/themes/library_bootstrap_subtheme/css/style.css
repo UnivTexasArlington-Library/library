@@ -7726,7 +7726,7 @@ div.float-date-field div.form-item {
   color: #000000;
   padding-right: 5px;
 }
-.footer-links {
+.footer .footer-links {
   padding-left: 30px;
 }
 .social-media a {
@@ -7744,38 +7744,53 @@ div.float-date-field div.form-item {
   text-align: center;
   margin-bottom: 10px;
 }
-.copyright .libaddress {
+@media (max-width: 767px) {
+  .copyright {
+    margin-top: 10px;
+  }
+}
+.libaddress {
   margin-left: 50px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .libaddress {
+    margin-left: 25px;
+  }
+}
+@media (max-width: 767px) {
+  .libaddress {
+    margin-top: 10px;
+  }
 }
 .facebook,
 .twitter,
 .youtube {
-  background: url(/sites/default/files/default_images/Media_buttons.png);
+  background: url(/sites/default/files/default_images/Media_buttons_rev2.jpg);
   display: block;
   height: 30px;
   width: 30px;
   text-indent: -9999px;
 }
 .facebook {
-  background-position: 0px -60px;
+  background-position: 0px -30px;
 }
 .facebook:hover,
 .facebook:focus {
   background-position: 0px 0px;
 }
 .twitter {
-  background-position: -73px 60px;
+  background-position: -30px 30px;
 }
 .twitter:hover,
 .twitter:focus {
-  background-position: -73px 0;
+  background-position: -30px 0;
 }
 .youtube {
-  background-position: -144px 60px;
+  background-position: -60px 30px;
 }
 .youtube:hover,
 .youtube:focus {
-  background-position: -144px 0;
+  background-position: -60px 0;
 }
 .summon {
   background-color: rgba(255, 255, 255, 0.5);
