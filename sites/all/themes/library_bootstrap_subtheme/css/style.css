@@ -7739,7 +7739,14 @@ div.float-date-field div.form-item {
 }
 .social-media a {
   float: right;
-  margin-left: 10px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+@media (min-width: 1201px) and (max-width: 1558px) {
+  .social-media a {
+    margin-right: 10px;
+    float: left;
+  }
 }
 @media (max-width: 991px) {
   .social-media a {
@@ -7749,8 +7756,14 @@ div.float-date-field div.form-item {
 }
 .copyright {
   float: left;
-  margin-right: 10px;
+  margin-right: 40px;
   display: block;
+  margin-bottom: 10px;
+}
+@media (min-width: 1349px) and (max-width: 1558px) {
+  .copyright {
+    margin-right: 75px;
+  }
 }
 .copyright img {
   height: 30px;
@@ -7778,25 +7791,25 @@ div.float-date-field div.form-item {
   text-indent: -9999px;
 }
 .facebook {
-  background-position: 0px -30px;
+  background-position: 0px 0px;
 }
 .facebook:hover,
 .facebook:focus {
-  background-position: 0px 0px;
+  background-position: 0px -30px;
 }
 .twitter {
-  background-position: -30px 30px;
+  background-position: -30px 0px;
 }
 .twitter:hover,
 .twitter:focus {
-  background-position: -30px 0;
+  background-position: -30px -30px;
 }
 .youtube {
-  background-position: -60px 30px;
+  background-position: -60px 0;
 }
 .youtube:hover,
 .youtube:focus {
-  background-position: -60px 0;
+  background-position: -60px -30px;
 }
 .summon {
   background-color: rgba(255, 255, 255, 0.5);
