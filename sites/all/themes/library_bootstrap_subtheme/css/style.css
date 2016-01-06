@@ -8091,6 +8091,7 @@ input.summon-search-submit.button-website {
   background-image: url("/sites/default/files/default_images/magnifier2.png");
   background-size: 18px 18px;
   background-repeat: no-repeat;
+  width: 18px;
 }
 input.summon-search-submit.button-website:hover,
 input.summon-search-submit.button-website:focus {
