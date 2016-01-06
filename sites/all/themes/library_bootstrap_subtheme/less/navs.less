@@ -327,7 +327,10 @@
     text-align: right;
   }
   ul li {
-    margin-right: 12px;
+    margin-right: -12px;
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+      margin-right:0;
+    }
   }
 }
 .region-sidebar-second {
