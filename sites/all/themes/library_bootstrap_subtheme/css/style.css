@@ -6937,7 +6937,6 @@ table .checkbox input[type="checkbox"] {
 }
 #lib_header .nav > li {
   display: inline-block;
-  margin-bottom: 0;
 }
 #lib_header .navbar-toggle {
   border-color: #ffffff;
@@ -7063,7 +7062,7 @@ table .checkbox input[type="checkbox"] {
 }
 .nav-tabs > li {
   float: left;
-  margin-bottom: -1px;
+  margin-bottom: 0px;
 }
 .nav-tabs > li > a {
   margin-right: 2px;
@@ -7715,7 +7714,7 @@ div.float-date-field div.form-item {
   white-space: normal;
 }
 /* View Exposed Settings description */
-.views-exposed-widgets > .description {
+.views-widget > .form-item > .description {
   display: none;
 }
 /*for footer*/
