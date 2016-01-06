@@ -7756,9 +7756,14 @@ div.float-date-field div.form-item {
 }
 .copyright {
   float: left;
-  margin-right: 40px;
+  margin-right: 10px;
   display: block;
   margin-bottom: 10px;
+}
+@media (min-width: 1201px) and (max-width: 1348px) {
+  .copyright {
+    margin-right: 40px;
+  }
 }
 @media (min-width: 1349px) and (max-width: 1558px) {
   .copyright {
