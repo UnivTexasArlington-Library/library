@@ -77,8 +77,11 @@
   <div class="row">
 
     <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-xs-6 col-sm-3 col-md-2 sidebar-offcanvas" role="navigation" id="sidebar">4
+      <aside class="col-xs-6 col-sm-3 col-md-2 sidebar-offcanvas" role="navigation" id="sidebar">
+         <button type="button" class="visible-xs close" data-dismiss="offcanvas" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="row row-offcanvas row-offcanvas-left">
         <?php print render($page['sidebar_first']); ?>
+        </div>
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>
 

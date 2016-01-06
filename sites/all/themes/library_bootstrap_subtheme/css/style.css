@@ -7348,7 +7348,6 @@ table .checkbox input[type="checkbox"] {
 .region-sidebar-first {
   margin-top: 77px;
   text-align: right;
-  margin-right: 15px;
 }
 @media (max-width: 767px) {
   .region-sidebar-first {
@@ -7357,6 +7356,9 @@ table .checkbox input[type="checkbox"] {
 }
 .region-sidebar-first .nav > li {
   text-align: right;
+}
+.region-sidebar-first ul li {
+  margin-right: 12px;
 }
 .region-sidebar-second {
   margin-top: 77px;
@@ -7705,6 +7707,12 @@ div.float-date-field div.form-item {
 .node-location .glyphicon-book {
   padding-right: 4px;
 }
+/*Collections View Footer p at Mobile*/
+@media (max-width: 767px) {
+  .view-Collections > .view-footer > p {
+    font-size: 14px;
+  }
+}
 /* for pagination / pager */
 .pagination {
   float: right;
@@ -7716,6 +7724,10 @@ div.float-date-field div.form-item {
 /* View Exposed Settings description */
 .views-widget > .form-item > .description {
   display: none;
+}
+/* Table heading caret */
+th > a > img {
+  display: inline-block;
 }
 /*for footer*/
 .footer {
