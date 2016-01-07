@@ -67,7 +67,7 @@ function libhours_block_view($delta='') {
       }
     }
 
-      $block_content .= "<a href='all_hours'>All Locations</a></div>";
+      $block_content .= "<a href='hours'>All Locations</a></div>";
 
       $block['subject'] = t("Today's Hours");
       $block['content'] = $block_content;
