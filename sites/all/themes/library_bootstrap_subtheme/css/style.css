@@ -7029,7 +7029,7 @@ table .checkbox input[type="checkbox"] {
 }
 @media (max-width: 767px) {
   .nav > li > a {
-    padding: 5%;
+    padding: 5px 10px;
   }
 }
 .nav > li > a:hover,
