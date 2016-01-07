@@ -7066,6 +7066,11 @@ table .checkbox input[type="checkbox"] {
   border-bottom: 1px solid #dddddd;
   margin: 0 50px;
 }
+@media (max-width: 767px) {
+  .nav-tabs {
+    margin: 0 25px;
+  }
+}
 .nav-tabs > li {
   float: left;
   margin-bottom: 0px;
@@ -7488,9 +7493,11 @@ table .checkbox input[type="checkbox"] {
   border-top-width: 0;
   border-bottom: 4px solid;
 }
-.breadcrumb {
-  text-align: right;
-  margin-bottom: 0;
+/*Hours & Contact Us MODAL block navigation*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .region-modal ul.navbar-right {
+    margin-left: -30px;
+  }
 }
 /*styles book navigation*/
 .book-navigation .page-next,
@@ -7657,12 +7664,17 @@ h5 {
 #internal-page {
   padding: 0 50px;
 }
+@media (max-width: 767px) {
+  #internal-page {
+    padding: 0 25px;
+  }
+}
 #internal-page > h4:first-child {
   margin-top: 0;
 }
 .breadcrumb {
-  text-align: left;
-  font-size: 13px;
+  text-align: right;
+  margin-bottom: 0;
 }
 .views-row {
   margin-bottom: 30px;
@@ -7683,6 +7695,9 @@ h5 {
 }
 .in-maintenance h1 {
   padding-left: 0;
+}
+.in-maintenance a {
+  color: #f69042;
 }
 /* Float DATE FIELDS so they're all on one line */
 div.float-date-field {

@@ -78,6 +78,9 @@ h5 {
 }
 #internal-page {
 	padding:0 50px;
+	@media (max-width: @screen-xs-max) {
+		padding:0 25px;
+	}
 	> h4 { 
 		&:first-child {
 		margin-top:0;
@@ -85,8 +88,8 @@ h5 {
 	}
 }
 .breadcrumb {
-	text-align: left;
-	font-size: 13px;
+  text-align: right;
+  margin-bottom:0;
 }
 .views-row {
 	margin-bottom: 30px;
@@ -107,6 +110,9 @@ h5 {
 	padding:50px;
 	h1 {
 		padding-left: 0;
+	}
+	a {
+		color:@brand-warning;
 	}
 }
 
