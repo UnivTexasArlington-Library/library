@@ -7423,6 +7423,12 @@ table .checkbox input[type="checkbox"] {
 #block-menu-menu-right-menu-bottom h2.block-title {
   margin-top: 15px;
 }
+@media (max-width: 767px) {
+  #block-menu-menu-left-menu-bottom h2.block-title,
+  #block-menu-menu-right-menu-bottom h2.block-title {
+    margin-top: 0;
+  }
+}
 #block-menu-menu-left-menu-bottom .block-title-link {
   margin-left: auto;
 }
@@ -7494,7 +7500,7 @@ table .checkbox input[type="checkbox"] {
   border-bottom: 4px solid;
 }
 /*Hours & Contact Us MODAL block navigation*/
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 992px) and (max-width: 1101px) {
   .region-modal ul.navbar-right {
     margin-left: -30px;
   }

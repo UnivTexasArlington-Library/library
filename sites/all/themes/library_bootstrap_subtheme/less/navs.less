@@ -384,6 +384,9 @@
 #block-menu-menu-left-menu-bottom h2.block-title, 
 #block-menu-menu-right-menu-bottom h2.block-title {
   margin-top:15px;
+  @media(max-width:@screen-xs-max) {
+    margin-top:0;
+  }
 }
 #block-menu-menu-left-menu-bottom .block-title-link {
  
@@ -446,7 +449,7 @@
 }
 /*Hours & Contact Us MODAL block navigation*/
 .region-modal ul.navbar-right {
-  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  @media (min-width: 992px) and (max-width: 1101px) {
     margin-left: -30px;
   }
 }
