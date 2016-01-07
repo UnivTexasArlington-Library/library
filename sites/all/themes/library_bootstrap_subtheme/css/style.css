@@ -7620,6 +7620,12 @@ h4 {
   margin-top: 25px;
   margin-bottom: 8px;
 }
+h4:first-child {
+  margin-top: 0;
+}
+.node > h4:first-child {
+  margin-top: 0;
+}
 h5 {
   font-weight: bold;
 }
