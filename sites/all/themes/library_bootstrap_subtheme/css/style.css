@@ -7028,7 +7028,7 @@ table .checkbox input[type="checkbox"] {
 }
 @media (max-width: 767px) {
   .nav > li > a {
-    padding: 5px 10px;
+    padding: 5%;
   }
 }
 .nav > li > a:hover,
@@ -7064,6 +7064,7 @@ table .checkbox input[type="checkbox"] {
 }
 .nav-tabs {
   border-bottom: 1px solid #dddddd;
+  margin: 0 50px;
 }
 .nav-tabs > li {
   float: left;
