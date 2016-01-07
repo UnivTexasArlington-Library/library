@@ -8021,6 +8021,7 @@ th {
 .nav-tabs-summon {
   border: none;
   margin-right: 73px;
+  margin-left: 0;
 }
 @media (min-width: 1200px) and (max-width: 1480px) {
   .nav-tabs-summon {
@@ -8244,6 +8245,7 @@ input.summon-search-submit.button-website:focus {
 #block-available-now-available-now .tabs-left > .nav-tabs {
   width: auto;
   margin-right: -15px;
+  margin-left: 0;
   margin-bottom: -35px;
   padding-bottom: 0;
 }
