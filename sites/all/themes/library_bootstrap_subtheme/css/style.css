@@ -7026,6 +7026,11 @@ table .checkbox input[type="checkbox"] {
   display: block;
   padding: 10px 15px;
 }
+@media (max-width: 767px) {
+  .nav > li > a {
+    padding: 5px 10px;
+  }
+}
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
@@ -7311,6 +7316,7 @@ table .checkbox input[type="checkbox"] {
   border-top-style: none;
   border-bottom-style: none;
   padding-left: 0;
+  margin-bottom: 0;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .region-sidebar-first h2.block-title,
@@ -7406,6 +7412,10 @@ table .checkbox input[type="checkbox"] {
   #block-menu-menu-right-menu-top .menu {
     display: none;
   }
+}
+#block-menu-menu-left-menu-bottom h2.block-title,
+#block-menu-menu-right-menu-bottom h2.block-title {
+  margin-top: 15px;
 }
 #block-menu-menu-left-menu-bottom .block-title-link {
   margin-left: auto;
@@ -7624,6 +7634,11 @@ h5 {
   min-height: 0px;
   font-size: 1.6em;
 }
+@media (max-width: 767px) {
+  .page-header {
+    font-size: 24px;
+  }
+}
 .center-container {
   background-color: #FFFFFF;
   padding-left: 0;
@@ -7747,7 +7762,7 @@ th {
   color: #2c2d2e;
   line-height: 18px;
   padding: 15px 30px;
-  margin-top: 15px;
+  margin-top: 100px;
 }
 @media (max-width: 991px) {
   .footer {
@@ -8463,6 +8478,12 @@ input.summon-search-submit.button-website:focus {
   padding: 7%;
   font-size: 1.8em;
 }
+@media (max-width: 767px) {
+  .employment_orange p {
+    padding: 6%;
+    font-size: 1em;
+  }
+}
 .employment_buttons {
   padding-right: 0;
   padding-left: 0;
@@ -8490,8 +8511,17 @@ input.summon-search-submit.button-website:focus {
 .employment_buttons a:nth-of-type(2) {
   border-top: 15px solid #FFFFFF;
 }
+.btn-employment {
+  border-radius: 0;
+  margin-top: 10%;
+}
 .employment_believe {
   padding: 4%;
+}
+@media (max-width: 767px) {
+  .employment_believe {
+    padding: 0;
+  }
 }
 .employment_believe h4,
 .employment_believe p {
@@ -8500,8 +8530,19 @@ input.summon-search-submit.button-website:focus {
 .employment_believe p {
   font-size: 1.8em;
 }
+@media (max-width: 767px) {
+  .employment_believe p {
+    font-size: 1em;
+  }
+}
 .employment_believe h4 {
   font-size: 3em;
+}
+@media (max-width: 767px) {
+  .employment_believe h4 {
+    font-size: 20px;
+    margin-top: 5%;
+  }
 }
 /*for body font*/
 /*SYSTEM WIDE SETTINGS*/

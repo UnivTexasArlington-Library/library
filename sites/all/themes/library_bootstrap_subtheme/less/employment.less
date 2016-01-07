@@ -85,6 +85,10 @@
 	p {
 		padding: 7%;
 		font-size: 1.8em;
+		@media (max-width: @screen-xs-max) {
+			padding: 6%;
+			font-size: 1em;
+		}
 	}
 }
 .employment_buttons {
@@ -114,15 +118,29 @@
 		border-top:15px solid #FFFFFF;
 	}
 }
+.btn-employment {
+	border-radius: 0;
+	margin-top: 10%;
+}
 .employment_believe {
 	padding:4%;
+	@media (max-width: @screen-xs-max) {
+		padding:0;
+	}
 	h4, p {
 		color:#00477C;
 	}
 	p {
 		font-size:1.8em;
+		@media (max-width: @screen-xs-max) {
+			font-size:1em;
+		}
 	}
 	h4 {
 		font-size:3em;
+		@media (max-width: @screen-xs-max) {
+			font-size:20px;
+			margin-top: 5%;
+		}
 	}
 }

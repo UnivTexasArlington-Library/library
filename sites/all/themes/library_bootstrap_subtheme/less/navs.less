@@ -20,6 +20,9 @@
       position: relative;
       display: block;
       padding: @nav-link-padding;
+      @media (max-width: @screen-xs-max) {
+        padding: 5px 10px;
+      }
       
       &:hover,
       &:focus {
@@ -289,6 +292,7 @@
     border-top-style: none;
     border-bottom-style: none;
     padding-left: 0;
+    margin-bottom:0;
     @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
       padding-right:15px;
     }
@@ -374,10 +378,15 @@
     display:none;
   } 
 }
+#block-menu-menu-left-menu-bottom h2.block-title, 
+#block-menu-menu-right-menu-bottom h2.block-title {
+  margin-top:15px;
+}
 #block-menu-menu-left-menu-bottom .block-title-link {
  
   margin-left: auto;
 }
+
 /* for nav link icons */
 #block-menu-menu-left-menu-top .block-title-link:before, 
 #block-menu-menu-left-menu-bottom .block-title-link:before, 
