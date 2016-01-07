@@ -56,10 +56,10 @@ function peer() {
 
 function expand() {
 	if (jQuery("#ebookcheck").prop('checked') && jQuery("#expandcheck").prop('checked')) {
-  		new SummonCustomSearchBox({"id":"#s5da153d0cede013143c5441ea15a6074","params":{"s.fvf[]":["IsFullText,true","ContentType,Book / eBook"],"s.ho":["f"],"keep_r":true},"colors":{},"tagline_text":"","searchbutton_text":"Go","advanced_text":"Advanced Search","placeholder_text":"Search books, ebooks, and beyond","advanced":"true","suggest":"true","popup":"true"})
+  		new SummonCustomSearchBox({"id":"#s5da153d0cede013143c5441ea15a6074","params":{"s.fvf[]":["IsFullText,true","ContentType,Book / eBook"],"s.ho":["f"],"keep_r":true},"colors":{},"tagline_text":"","searchbutton_text":"Go","advanced_text":"Advanced Search","placeholder_text":"Search ebooks and beyond","advanced":"true","suggest":"true","popup":"true"})
     } 
     else if (jQuery("#ebookcheck").prop('checked') && !jQuery("#expandcheck").prop('checked')) {
-		new SummonCustomSearchBox({"id":"#s5da153d0cede013143c5441ea15a6074","params":{"s.fvf[]":["IsFullText,true","ContentType,Book / eBook"],"keep_r":true},"colors":{},"tagline_text":"","searchbutton_text":"Go","advanced_text":"Advanced Search","placeholder_text":"Search books and ebooks","advanced":"true","suggest":"true","popup":"true"})
+		new SummonCustomSearchBox({"id":"#s5da153d0cede013143c5441ea15a6074","params":{"s.fvf[]":["IsFullText,true","ContentType,Book / eBook"],"keep_r":true},"colors":{},"tagline_text":"","searchbutton_text":"Go","advanced_text":"Advanced Search","placeholder_text":"Search ebooks","advanced":"true","suggest":"true","popup":"true"})
     }   
     else if (jQuery("#expandcheck").prop('checked') && !jQuery("#ebookcheck").prop('checked')) {
      	new SummonCustomSearchBox({"id":"#s5da153d0cede013143c5441ea15a6074","params":{"s.fvf[]":["ContentType,Book / eBook"],"s.ho":["f"],"keep_r":true},"colors":{},"tagline_text":"","searchbutton_text":"Go","advanced_text":"Advanced Search","placeholder_text":"Search books and beyond","advanced":"true","suggest":"true","popup":"true"})
