@@ -8478,7 +8478,7 @@ input.summon-search-submit.button-website:focus {
   padding: 7%;
   font-size: 1.8em;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .employment_orange p {
     padding: 6%;
     font-size: 1em;
@@ -8518,7 +8518,7 @@ input.summon-search-submit.button-website:focus {
 .employment_believe {
   padding: 4%;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .employment_believe {
     padding: 0;
   }
@@ -8530,7 +8530,7 @@ input.summon-search-submit.button-website:focus {
 .employment_believe p {
   font-size: 1.8em;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .employment_believe p {
     font-size: 1em;
   }
@@ -8538,7 +8538,7 @@ input.summon-search-submit.button-website:focus {
 .employment_believe h4 {
   font-size: 3em;
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .employment_believe h4 {
     font-size: 20px;
     margin-top: 5%;
