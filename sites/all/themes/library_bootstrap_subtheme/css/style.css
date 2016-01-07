@@ -8371,6 +8371,10 @@ input.summon-search-submit.button-website:focus {
   background-color: #0052A3;
 }
 /* SPECIAL COLLECTIONS HOMEPAGE STYLES */
+#flickr {
+  padding-left: 0;
+  padding-right: 0;
+}
 .field-name-spco-current-exhibit .views-field-title a {
   margin-left: auto;
   margin-right: auto;
