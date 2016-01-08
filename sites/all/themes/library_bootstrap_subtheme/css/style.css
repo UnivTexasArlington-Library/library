@@ -7885,18 +7885,18 @@ th {
   width: 30px;
   text-indent: -9999px;
 }
-.facebook {
-  background-position: 0px 0px;
-}
-.facebook:hover,
-.facebook:focus {
-  background-position: 0px -30px;
-}
 .twitter {
-  background-position: -30px 0px;
+  background-position: 0px 0px;
 }
 .twitter:hover,
 .twitter:focus {
+  background-position: 0px -30px;
+}
+.facebook {
+  background-position: -30px 0px;
+}
+.facebook:hover,
+.facebook:focus {
   background-position: -30px -30px;
 }
 .youtube {
