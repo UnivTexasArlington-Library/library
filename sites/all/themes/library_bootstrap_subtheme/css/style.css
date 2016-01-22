@@ -7265,6 +7265,9 @@ table .checkbox input[type="checkbox"] {
 .nav-tabs .dropdown-menu > li > a {
   color: #0052a3;
 }
+.nav-tabs .dropdown-menu > .active > a {
+  color: #FFF;
+}
 /*for nav links*/
 .region-sidebar-first,
 .region-sidebar-second {
@@ -7679,6 +7682,10 @@ h5 {
 #internal-page > h4:first-child {
   margin-top: 0;
 }
+.region-internal-menu,
+.bottom-space {
+  margin-bottom: 20px;
+}
 .breadcrumb {
   text-align: left;
   margin-bottom: 0;
@@ -7985,6 +7992,11 @@ th {
   font-size: 18px;
   line-height: 1em;
 }
+@media (max-width: 480px) {
+  .summon input {
+    font-size: 14px;
+  }
+}
 .summon .summon-search-widget,
 .summon .summon-search-box {
   display: inline-block;
@@ -8187,14 +8199,15 @@ input.summon-search-submit.button-website:focus {
     padding: 7px;
   }
 }
-.views-field-field-image img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-}
+/*.views-field-field-image img {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}*/
 /* Services For & News-Events & Available Now padding & title */
 .pane-block-18 .pane-content,
-.pane-news-events .pane-content {
+.pane-news-events .pane-content,
+.pane-spco-current-exhibit .pane-content {
   padding-top: 20px;
   padding-bottom: 28px;
 }
