@@ -7682,8 +7682,7 @@ h5 {
 #internal-page > h4:first-child {
   margin-top: 0;
 }
-.region-internal-menu,
-.bottom-space {
+.region-internal-menu {
   margin-bottom: 20px;
 }
 .breadcrumb {
@@ -7694,7 +7693,10 @@ h5 {
   margin-bottom: 30px;
 }
 .views-row h3 {
-  margin-top: -3px;
+  margin-top: -4px;
+}
+.panel-separator {
+  height: 30px;
 }
 /* EMERGENCY NOTIFICATION, image located in template: region--notification.tpl.php */
 #warning {
