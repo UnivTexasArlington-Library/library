@@ -8179,6 +8179,9 @@ input.summon-search-submit.button-website:focus {
   background-image: url("/sites/default/files/default_images/magnifier_grey.png");
 }
 /* Styles for the <front> page */
+#frontpage > .panel-separator {
+  height: 0;
+}
 /* HOMEPAGE IMAGE CAPTION */
 .views-field-field-caption .field-content {
   z-index: 25;
