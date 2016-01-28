@@ -8204,11 +8204,9 @@ input.summon-search-submit.button-website:focus {
     padding: 7px;
   }
 }
-/*.views-field-field-image img {
-	width: 100%;
-	max-width: 100%;
-	height: auto;
-}*/
+.views-field-field-image > .img-responsive {
+  width: 100%;
+}
 /* Services For & News-Events & Available Now padding & title */
 .pane-block-18 .pane-content,
 .pane-news-events .pane-content,
