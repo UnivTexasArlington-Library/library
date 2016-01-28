@@ -311,6 +311,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  width: 100%;
 }
 .img-rounded {
   border-radius: 6px;
@@ -7646,6 +7647,13 @@ h4:first-child {
 h5 {
   font-weight: bold;
 }
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 100%;
+}
 /*for page titles*/
 .page-header {
   color: #0052a3;
@@ -8203,9 +8211,6 @@ input.summon-search-submit.button-website:focus {
     font-size: 12px;
     padding: 7px;
   }
-}
-.views-field-field-image > .img-responsive {
-  width: 100%;
 }
 /* Services For & News-Events & Available Now padding & title */
 .pane-block-18 .pane-content,
