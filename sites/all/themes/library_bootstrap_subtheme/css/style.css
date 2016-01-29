@@ -8189,6 +8189,9 @@ input.summon-search-submit.button-website:focus {
 #frontpage > .panel-separator {
   height: 0;
 }
+#heroimage img {
+  width: 100%;
+}
 /* HOMEPAGE IMAGE CAPTION */
 .views-field-field-caption .field-content {
   z-index: 25;
