@@ -6893,12 +6893,23 @@ table .checkbox input[type="checkbox"] {
 @media print {
   #region-sidebar-first,
   #region-sidebar-second,
+  #block-menu-menu-left-menu-top,
+  #block-menu-menu-right-menu-top,
+  #block-menu-menu-right-menu-bottom,
+  #block-menu-menu-left-menu-bottom,
+  #menu-hours,
   .summon .internal-menu {
     display: none;
   }
   #internal-page {
     width: 100%;
     padding: 0 10px;
+  }
+  #uta_logo {
+    content: url("sites/all/files/default_images/UTA-block-Logo.png");
+  }
+  #lib_logo {
+    content: url("sites/all/files/default_images/UTALibraries-1023.png");
   }
 }
 /*for uta header*/
