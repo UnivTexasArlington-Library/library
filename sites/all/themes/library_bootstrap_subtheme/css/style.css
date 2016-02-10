@@ -6889,6 +6889,18 @@ table .checkbox input[type="checkbox"] {
 .alert-danger a {
   color: #843534;
 }
+/* Local Print Styles */
+@media print {
+  #region-sidebar-first,
+  #region-sidebar-second,
+  .summon .internal-menu {
+    display: none;
+  }
+  #internal-page {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
 /*for uta header*/
 #lib_header {
   background-color: #0052a3;
@@ -7005,6 +7017,7 @@ table .checkbox input[type="checkbox"] {
 #menu-hours {
   color: #fff;
   white-space: nowrap;
+  cursor: pointer;
 }
 .hours-block .hours {
   padding-left: 15px;
