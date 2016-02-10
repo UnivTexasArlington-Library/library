@@ -1,5 +1,6 @@
 /* Local Print Styles */
 @media print {
+	.make-grid(xs);
 	#region-sidebar-first, 
 	#region-sidebar-second,
 	#block-menu-menu-left-menu-top,
@@ -7,7 +8,8 @@
 	#block-menu-menu-right-menu-bottom,
 	#block-menu-menu-left-menu-bottom,
 	#menu-hours,
-	.summon
+	#block-block-33,
+	.summon,
 	.internal-menu {
 		display: none;
 	}
@@ -21,5 +23,8 @@
 	#lib_logo {
 		content: url("sites/all/files/default_images/UTALibraries-1023.png");
 	}
-		
+	.collapse {
+    	display: block !important;
+    	height: auto !important;
+	}
 }
