@@ -7056,12 +7056,18 @@ table .checkbox input[type="checkbox"] {
   #block-menu-menu-right-menu-top,
   #block-menu-menu-right-menu-bottom,
   #block-menu-menu-left-menu-bottom,
+  .region-modal,
+  .region-todays-hrs,
+  .region-feedback,
   .summon,
   .internal-menu {
     display: none;
   }
   #lib_header {
     padding-top: 0;
+  }
+  #lib_header img {
+    height: 50px;
   }
   #internal-page {
     width: 100%;
