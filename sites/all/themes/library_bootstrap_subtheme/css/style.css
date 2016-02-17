@@ -7064,7 +7064,11 @@ table .checkbox input[type="checkbox"] {
     padding: 0 10px;
   }
   #uta_logo {
+    display: none;
+  }
+  #uta_logo img {
     content: url("sites/all/files/default_images/UTA-block-Logo.png");
+    display: block;
   }
   #lib_logo {
     content: url("sites/all/files/default_images/UTALibraries-1023.png");
