@@ -7047,7 +7047,6 @@ table .checkbox input[type="checkbox"] {
   .col-xs-offset-0 {
     margin-left: 0%;
   }
-  #menu-hours,
   #block-block-33,
   #footer-links,
   #region-sidebar-first,
@@ -7060,23 +7059,19 @@ table .checkbox input[type="checkbox"] {
   .internal-menu {
     display: none;
   }
+  #lib_header {
+    padding-top: 0;
+  }
   #internal-page {
     width: 100%;
     padding: 0 10px;
-  }
-  #block-block-7 {
-    content: url("sites/default/files/default_images/UTALibraries_blue.png");
-  }
-  #lib_logo,
-  #uta_logo {
-    display: none;
   }
   .collapse {
     display: block !important;
     height: auto !important;
   }
   .footer {
-    margin-top: 0;
+    margin-top: 10px;
   }
 }
 /*for uta header*/
