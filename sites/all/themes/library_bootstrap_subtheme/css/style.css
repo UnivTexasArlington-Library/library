@@ -8807,6 +8807,7 @@ input.summon-search-submit.button-website:focus {
   .summon,
   .internal-menu,
   .row-offcanvas,
+  .panel-separator,
   head {
     display: none;
   }
@@ -8833,6 +8834,7 @@ input.summon-search-submit.button-website:focus {
   .collapse {
     display: block !important;
     height: auto !important;
+    visibility: visible;
   }
   .footer {
     margin-top: 10px;
