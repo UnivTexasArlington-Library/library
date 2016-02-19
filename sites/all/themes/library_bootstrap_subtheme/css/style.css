@@ -7827,6 +7827,11 @@ th {
   padding: 8px;
   vertical-align: top;
 }
+/* for technology */
+.a-zlist {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
 /*for footer*/
 .footer {
   background: #c6c4c4;
