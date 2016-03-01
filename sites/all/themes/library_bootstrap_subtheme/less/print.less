@@ -1,0 +1,53 @@
+/* Local Print Styles */
+@media print {
+	.make-grid(xs);
+	#block-block-33,
+	#block-block-7,
+	#footer-links,
+	#menu-hours,
+	#region-sidebar-first, 
+	#region-sidebar-second,
+	#block-menu-menu-left-menu-top,
+	#block-menu-menu-right-menu-top,
+	#block-menu-menu-right-menu-bottom,
+	#block-menu-menu-left-menu-bottom,
+	.region-page-top,
+	.region-modal,
+	.region-todays-hrs,
+	.region-feedback,
+	.summon,
+	.internal-menu,
+	.row-offcanvas, 
+	.panel-separator,
+	head {
+		display: none;
+	}
+	header.print-visible-block {
+		display: block;
+	}
+	img {
+		max-width: 500px;
+	}
+	#lib_header {
+		padding-top: 0;
+		img {
+			height: 50px;
+		}
+	}
+	#internal-page {
+		width: 100%;
+		padding: 0 10px;
+	}
+	.views-field-field-caption .field-content {
+		bottom: auto;
+		position: static;
+	}
+	.collapse {
+    	display: block !important;
+    	height: auto !important;
+    	visibility: visible;
+	}
+	.footer {
+		margin-top: 10px;
+	}
+}
