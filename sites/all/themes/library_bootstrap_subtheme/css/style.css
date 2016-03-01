@@ -7647,6 +7647,9 @@ h4:first-child {
 h5 {
   font-weight: bold;
 }
+.fira-sans {
+  font-family: 'Fira Sans', sans-serif;
+}
 /*CAPTCHA*/
 .captcha {
   clear: both;
