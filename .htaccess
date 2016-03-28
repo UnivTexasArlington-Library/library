@@ -3,9 +3,10 @@
 #
 
 # Protect files and directories from prying eyes.
-<FilesMatch "\.(engine|inc|info|install|make|module|profile|test|po|sh|.*sql|theme|tpl(\.php)?|xtmpl)(~|\.sw[op]|\.bak|\.orig|\.save)?$|^(\..*|Entries.*|Repository|Root|Tag|Template|composer\.(json|lock))$|^#.*#$|\.php(~|\.sw[op]|\.bak|\.orig\.save)$">
-  Order allow,deny
-</FilesMatch>
+<FilesMatch "\.(engine|inc|info|install|make|module|profile|test|po|sh|.*sql|theme|tpl(\.php)?|xtmpl)(~|\.sw[op]|\.bak|\.orig|\.save)?$|^(\..*|Entries.*|Repository|Root|Tag|Temp
+   Order allow,deny
+ </FilesMatch>
+
 
 # Don't show directory listings for URLs which map to a directory.
 Options -Indexes
@@ -139,11 +140,11 @@ DirectoryIndex index.php index.html index.htm
       # Force proxies to cache gzipped & non-gzipped css/js files separately.
       Header append Vary Accept-Encoding
     </FilesMatch>
-  </IfModule>
-</IfModule>
+   </IfModule>
+ </IfModule>
 
 # Add headers to all responses.
 <IfModule mod_headers.c>
-  # Disable content sniffing, since it's an attack vector.
-  Header always set X-Content-Type-Options nosniff
+ # Disable content sniffing, since it's an attack vector.
+ Header always set X-Content-Type-Options nosniff
 </IfModule>
