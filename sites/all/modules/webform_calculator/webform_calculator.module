@@ -1,0 +1,164 @@
+<?php
+
+define('WEBFORM_CALCULATOR_REGEX', '/\{\w+\}/');
+
+/**
+ * Implements of hook_webform_component_info().
+ */
+function webform_calculator_webform_component_info() {
+  $components = array();
+
+  $components['formula'] = array(
+    'label' => t('Formula'),
+    'description' => t('Computes values of other fields.'),
+    'features' => array(
+        'required' => FALSE,
+      ),
+    'file' => 'components/formula.inc',
+    );
+
+  return $components;
+}
+
+/**
+ * Implements hook_webform_submission_presave().
+ */
+function webform_calculator_webform_submission_presave($node, &$submission) {
+  foreach ($node->webform['components'] as $component) {
+    if ($component['type'] == 'formula') {
+      $submission->data[$component['cid']][0] = webform_calculator_replace_formula_values($component, $node, $submission);
+    }
+  }
+}
+
+/**
+ * Evaluate math formula.
+ *
+ * @param $formula
+ *   Mathematical formula (without tokens).
+ * @param int $precision
+ *   Round precision.
+ *
+ * @return float
+ *   Calculated value for given formula.
+ */
+function webform_calculator_eval($formula, $precision = 1) {
+  eval("\$result = $formula;");
+  return round($result, $precision);
+}
+
+/**
+ * Implements hook_theme().
+ */
+function webform_calculator_theme() {
+  return array(webform_component_invoke('formula', 'theme'));
+}
+
+/**
+ * Get list of component names inside formula.
+ *
+ * @param $formula
+ *   Formula to be searched in (with tokens).
+ *
+ * @return array
+ *   Names of components that are used in formula as tokens.
+ */
+function webform_calculator_get_components_from_formula($formula) {
+  $components = array();
+  if (preg_match_all(WEBFORM_CALCULATOR_REGEX, $formula, $matches)) {
+    foreach ((array)$matches[0] as $match) {
+      $components[] = str_replace(array('{', '}'), array('', ''), $match);
+    }
+  }
+  return $components;
+}
+
+/**
+ * Replace tokens in formula with values of components and evaluate formula.
+ *
+ * @param $formula_component
+ *   Formula compont.
+ * @param $webform_node
+ *   Webform's node.
+ * @param $submission
+ *   Webform submission.
+ *
+ * @return float|int
+ *   Value of evaluated formula.
+ */
+function webform_calculator_replace_formula_values($formula_component, $webform_node, $submission) {
+  $formula = $formula_component['value'];
+  $components_from_formula = webform_calculator_get_components_from_formula($formula);
+
+  // Get webform components keyed by form key.
+  $components_by_key = array();
+  foreach ($webform_node->webform['components'] as $component) {
+    $components_by_key[$component['form_key']] = $component;
+  }
+
+  foreach ($components_from_formula as $component_key) {
+    if (isset($components_by_key[$component_key])) {
+      $component = $components_by_key[$component_key];
+      $values = $submission->data[$component['cid']];
+      $sum = 0;
+      foreach ($values as $value) {
+        $sum += $value;
+      }
+      $formula = str_replace('{' . $component_key . '}', '(' . $sum . ')', $formula);
+    }
+  }
+
+  try  {
+    webform_calculator_validate_php($formula);
+    return webform_calculator_eval($formula, $formula_component['extra']['precision']);
+  }
+  catch (Exception $e) {
+    watchdog_exception('webform_calculator', $e);
+    return 0;
+  }
+}
+
+/**
+ * Validate if code that will be used with eval is secure and valid.
+ *
+ * @param $code
+ *   PHP code to check.
+ *
+ * @return bool
+ *   TRUE if code is valid, FALSE otherwise.
+ *
+ * @throws Exception
+ */
+function webform_calculator_validate_php($code) {
+  $allowed_tokens = array(T_LNUMBER, T_DNUMBER, T_WHITESPACE);
+  $allowed_chars = array('+', '-', '*', '/', '(', ')', '%');
+
+  $tokens = token_get_all('<?php ' . $code);
+  // Remove opening php tag.
+  array_shift($tokens);
+
+  foreach ($tokens as $token) {
+    // Checking for allowed characters.
+    if (is_string($token)) {
+      if (!in_array($token, $allowed_chars)) {
+        throw new Exception(t('Disallowed character %char was used.', array('%char' => $token)));
+      }
+      continue;
+    }
+    // Checking for allowed tokens.
+    if (!in_array($token[0], $allowed_tokens)) {
+      throw new Exception(t('Using %token is disallowed.', array('%token' => token_name($token[0]))));
+    }
+  }
+
+  // Check PHP syntax.
+  ob_start();
+  if (@eval("\$return_array = $code;") === FALSE) {
+    throw new Exception(t('Error occurred while parsing code.'));
+  }
+  else {
+    ob_end_clean();
+    return TRUE;
+  }
+}
+
