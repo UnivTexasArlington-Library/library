@@ -8661,6 +8661,10 @@ input.summon-search-submit.button-website:focus {
   line-height: 2.4;
   margin-top: 25px;
 }
+.webform-component-fieldset > legend {
+  border-bottom: 0;
+  width: auto;
+}
 /* Local Print Styles */
 @media print {
   .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
