@@ -8651,7 +8651,8 @@ input.summon-search-submit.button-website:focus {
 .webform-next {
   float: right;
 }
-#edit-submitted-parlor-setup2-technology-packages > label {
+#edit-submitted-parlor-setup-parlor-tech-pkg label,
+#edit-submitted-atrium-setup-atrium-tech-pkg > label {
   font-weight: normal;
 }
 .event-misc-line {
@@ -8664,6 +8665,7 @@ input.summon-search-submit.button-website:focus {
 .webform-component-fieldset > legend {
   border-bottom: 0;
   width: auto;
+  margin-bottom: 5px;
 }
 /* Local Print Styles */
 @media print {
