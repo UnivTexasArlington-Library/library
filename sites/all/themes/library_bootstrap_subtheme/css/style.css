@@ -8652,7 +8652,7 @@ input.summon-search-submit.button-website:focus {
   float: right;
 }
 #edit-submitted-parlor-setup-parlor-tech-pkg label,
-#edit-submitted-atrium-setup-atrium-tech-pkg-1 > label {
+#edit-submitted-atrium-setup-atrium-tech-pkg label {
   font-weight: normal;
   display: inline;
 }
