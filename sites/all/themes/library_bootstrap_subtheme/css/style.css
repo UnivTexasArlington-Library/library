@@ -8876,6 +8876,9 @@ input.summon-search-submit.button-website:focus {
     margin-top: 10px;
   }
 }
+#mimemail-body p {
+  color: #fff;
+}
 /*for body font*/
 /*SYSTEM WIDE SETTINGS*/
 /*for orange font, locations icons*/
