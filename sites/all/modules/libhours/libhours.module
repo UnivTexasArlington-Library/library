@@ -23,7 +23,7 @@ function libhours_block_view($delta='') {
       foreach ($result as $record) {
      $result2 = db_query('SELECT title FROM node WHERE nid =:nid', array(':nid'=>$record->nid));
       foreach ($result2 as $record2) {
-         $block_content .= "<a href='node/" . $record->nid . "'>" . $record2->title . "</a>";
+         $block_content .= "<a href='/node/" . $record->nid . "'>" . $record2->title . "</a>";
          if ($record->start_time == '00:00:00' && $record->end_time == '00:00:00') {
             $block_content .= "<span class='hours'>24 hours</span></br>";
          } 
