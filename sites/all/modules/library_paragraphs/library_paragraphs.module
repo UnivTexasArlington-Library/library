@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Library Paragraphs feature.
+ */
+
+include_once 'library_paragraphs.features.inc';
