@@ -6,9 +6,9 @@ core = 7.x
 php = 5.2.5
 configure = admin/structure/opening_hours
 
-; Information added by Drupal.org packaging script on 2015-07-21
-version = "7.x-1.5"
+; Information added by Drupal.org packaging script on 2016-06-01
+version = "7.x-1.6"
 core = "7.x"
 project = "opening_hours"
-datestamp = "1437483840"
+datestamp = "1464779640"
 
