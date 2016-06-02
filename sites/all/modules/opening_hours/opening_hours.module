@@ -480,7 +480,7 @@ function opening_hours_repeat_stop_propagation($instance_id) {
 /**
  * Generate the JavaScript settings array shared between presentation and admin.
  */
-function opening_hours_js_settings() {
+function opening_hours_js_settings($nid = NULL) {
   $settings = array(
     'blockedDays' => variable_get('opening_hours_blocked_days', array()),
     'firstDayOfWeek' => (integer) variable_get('date_first_day', 1),
@@ -517,7 +517,12 @@ function opening_hours_js_settings() {
   // If we have a category vocabulary selected for this node
   // type, get the category terms and export them as a setting.
   if (function_exists('taxonomy_vocabulary_machine_name_load')) {
-    $node = menu_get_object();
+    if ($nid) {
+      $node = node_load($nid);
+    }
+    else {
+      $node = menu_get_object();
+    }
 
     if (!empty($node->type)) {
       $machine_name = variable_get('opening_hours_category_vocabulary_' . $node->type, 0);
@@ -543,13 +548,13 @@ function opening_hours_js_settings() {
  * Generates an array suitable for use with #attached.
  * See http://shomeya.com/articles/getting-used-to-attached for details.
  */
-function opening_hours_js_attach_common() {
+function opening_hours_js_attach_common($nid = NULL) {
   $attachments = &drupal_static(__FUNCTION__);
 
   if (empty($attachments)) {
     // Provide common JavaScript settings.
     $attachments['js'][] = array(
-      'data' => array('OpeningHours' => opening_hours_js_settings()),
+      'data' => array('OpeningHours' => opening_hours_js_settings($nid)),
       'type' => 'setting',
     );
 
@@ -618,8 +623,8 @@ function opening_hours_js_attach_admin($nid) {
 /**
  * Attachments for the presentation page.
  */
-function opening_hours_js_attach_presentation() {
-  $attachments = opening_hours_js_attach_common();
+function opening_hours_js_attach_presentation($nid = NULL) {
+  $attachments = opening_hours_js_attach_common($nid);
 
   $path = drupal_get_path('module', 'opening_hours');
   $attachments['css'][] = $path . '/css/opening_hours.theme.css';
@@ -646,7 +651,7 @@ function opening_hours_add_js($type = 'presentation', $nid = FALSE) {
     $attachments = opening_hours_js_attach_admin($nid);
   }
   elseif ($type == 'presentation') {
-    $attachments = opening_hours_js_attach_presentation();
+    $attachments = opening_hours_js_attach_presentation($nid);
   }
 
   if (!empty($attachments)) {
@@ -666,9 +671,14 @@ function opening_hours_add_js($type = 'presentation', $nid = FALSE) {
 function template_preprocess_opening_hours_week(&$vars) {
   static $once;
 
+  $nid = NULL;
+  if ($vars['node']) {
+    $nid = $vars['node']->nid;
+  }
+
   // Only add JavaScript and templates the first time this is run on a page.
   if (!$once) {
-    opening_hours_add_js();
+    opening_hours_add_js('presentation', $nid);
 
     // Add our client-side templates to the page.
     $vars['preface'] = theme('opening_hours_presentation');

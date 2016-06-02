@@ -8640,6 +8640,34 @@ input.summon-search-submit.button-website:focus {
     margin-top: 5%;
   }
 }
+#edit-submitted-event-begins-minute {
+  max-width: 80px;
+}
+.webform-grid-option img {
+  max-width: 100px;
+  height: auto;
+}
+.webform-submit,
+.webform-next {
+  float: right;
+}
+#edit-submitted-parlor-setup-parlor-tech-pkg label,
+#edit-submitted-atrium-setup-atrium-tech-pkg label {
+  font-weight: normal;
+  display: inline;
+}
+.event-misc-line {
+  line-height: 2.4;
+}
+.event-misc-line-top {
+  line-height: 2.4;
+  margin-top: 25px;
+}
+.webform-component-fieldset > legend {
+  border-bottom: 0;
+  width: auto;
+  margin-bottom: 5px;
+}
 /* Local Print Styles */
 @media print {
   .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
@@ -8847,6 +8875,9 @@ input.summon-search-submit.button-website:focus {
   .footer {
     margin-top: 10px;
   }
+}
+#mimemail-body p {
+  color: #fff;
 }
 /*for body font*/
 /*SYSTEM WIDE SETTINGS*/
