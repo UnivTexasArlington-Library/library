@@ -8668,6 +8668,31 @@ input.summon-search-submit.button-website:focus {
   width: auto;
   margin-bottom: 5px;
 }
+/* Styling for Paragraph Types */
+/* text-only paragraphs */
+.paragraphs-item-test p {
+  margin: 1.8em 5%;
+  font-size: 120%;
+}
+/* float thumbnail image and don't let text wrap; clear float after last paragraph */
+.paragraphs-item-thumbnail-description .field-item img {
+  float: left;
+  margin: 0 20px 20px 0;
+}
+.paragraphs-item-thumbnail-description p:last-child:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+.paragraphs-item-thumbnail-description p {
+  overflow: hidden;
+}
+/* add space above each thumbnail/image (does not include top image) */
+.field-name-field-image {
+  margin-top: 2em;
+}
 /* Local Print Styles */
 @media print {
   .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
