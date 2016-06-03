@@ -8691,7 +8691,7 @@ input.summon-search-submit.button-website:focus {
 }
 /* add space above each thumbnail/image (does not include top image) */
 .field-name-field-image {
-  margin-top: 2em;
+  margin-top: 3em;
 }
 /* Local Print Styles */
 @media print {
