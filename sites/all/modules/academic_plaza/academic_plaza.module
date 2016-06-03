@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Academic Plaza feature.
+ */
+
+include_once 'academic_plaza.features.inc';

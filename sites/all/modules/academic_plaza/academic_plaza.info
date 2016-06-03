@@ -1,0 +1,17 @@
+name = Academic Plaza
+core = 7.x
+package = Features
+dependencies[] = features
+dependencies[] = image
+dependencies[] = media
+dependencies[] = node_export_features
+dependencies[] = paragraphs
+features[features_api][] = api:2
+features[field_base][] = field_body2
+features[field_base][] = field_top_image
+features[field_instance][] = node-basic_page2-field_body2
+features[field_instance][] = node-basic_page2-field_top_image
+features[node][] = basic_page2
+features[node_export_features][] = 65941919-0574-4b03-9b6d-30c7e3b2b9b7
+features_exclude[dependencies][node_export_features] = node_export_features
+project path = sites/all/modules/features
