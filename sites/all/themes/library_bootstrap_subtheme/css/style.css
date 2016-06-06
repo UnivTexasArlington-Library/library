@@ -8673,12 +8673,14 @@ input.summon-search-submit.button-website:focus {
 .paragraphs-item-text p {
   margin: 1.8em 5%;
   font-size: 120%;
-  overflow: inherit;
 }
 /* float thumbnail image and don't let text wrap; clear float after last paragraph */
 .paragraphs-item-thumbnail-description .field-item img {
   float: left;
   margin: 0 20px 20px 0;
+}
+.paragraphs-item-thumbnail-description p {
+  overflow: inherit;
 }
 .paragraphs-item-thumbnail-description p:last-child:after {
   content: ".";
