@@ -8670,7 +8670,7 @@ input.summon-search-submit.button-website:focus {
 }
 /* Styling for Paragraph Types */
 /* text-only paragraphs */
-.paragraphs-item-test p {
+.paragraphs-item-text p {
   margin: 1.8em 5%;
   font-size: 120%;
 }
