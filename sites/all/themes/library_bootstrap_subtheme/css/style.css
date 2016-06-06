@@ -8679,18 +8679,12 @@ input.summon-search-submit.button-website:focus {
   float: left;
   margin: 0 20px 20px 0;
 }
-.paragraphs-item-thumbnail-description p {
-  overflow: inherit;
-}
 .paragraphs-item-thumbnail-description p:last-child:after {
   content: ".";
   visibility: hidden;
   display: block;
   height: 0;
   clear: both;
-}
-.paragraphs-item-thumbnail-description p {
-  overflow: hidden;
 }
 /* add space above each thumbnail/image (does not include top image) */
 .field-name-field-image {
