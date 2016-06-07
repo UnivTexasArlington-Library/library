@@ -8677,7 +8677,7 @@ input.summon-search-submit.button-website:focus {
 /* float thumbnail image and don't let text wrap; clear float after last paragraph */
 .paragraphs-item-thumbnail-description .field-item img {
   float: left;
-  margin: 0 20px 20px 0;
+  margin: 0 20px 0 0;
 }
 .paragraphs-item-thumbnail-description p:last-child:after {
   content: ".";
