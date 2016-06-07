@@ -1,0 +1,28 @@
+#edit-submitted-event-begins-minute {
+  max-width: 80px;
+}
+.webform-grid-option img {
+  max-width: 100px;
+  height: auto;
+}
+.webform-submit,
+.webform-next {
+  float: right;
+}
+#edit-submitted-parlor-setup-parlor-tech-pkg label,
+#edit-submitted-atrium-setup-atrium-tech-pkg label {
+  font-weight: normal;
+  display: inline;
+}
+.event-misc-line {
+  line-height: 2.4;
+}
+.event-misc-line-top {
+  line-height: 2.4;
+  margin-top: 25px;
+}
+.webform-component-fieldset > legend {
+  border-bottom: 0;
+  width: auto;
+  margin-bottom: 5px;
+}
