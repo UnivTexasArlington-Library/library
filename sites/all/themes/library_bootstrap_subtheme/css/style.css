@@ -7597,6 +7597,7 @@ body {
 h1 {
   padding-left: 15px;
 }
+h2,
 h2.block-title,
 h2.pane-title {
   color: #0052a3;
@@ -7609,12 +7610,15 @@ h2.pane-title {
   margin-top: 0px;
   font-size: 20px;
 }
+h2 a,
 h2.block-title a,
 h2.pane-title a {
   color: #0052a3;
 }
+h2 a:hover,
 h2.block-title a:hover,
 h2.pane-title a:hover,
+h2 a:focus,
 h2.block-title a:focus,
 h2.pane-title a:focus {
   color: #ae482c;
@@ -7705,6 +7709,9 @@ h5 {
 }
 .panel-separator {
   height: 30px;
+}
+.inline {
+  display: inline-block;
 }
 /* EMERGENCY NOTIFICATION, image located in template: region--notification.tpl.php */
 #warning {
