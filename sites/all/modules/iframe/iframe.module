@@ -437,6 +437,7 @@ function iframe_formatter_hidden_helper($item) {
  * form the iframe code
  */
 function iframe_iframe($text, $path, $options = FALSE) {
+  global $user, $language, $node;
   iframe_debug(1, 'iframe_iframe item', $options);
   if (!$options) {
     $options = array();
@@ -489,12 +490,15 @@ function iframe_iframe($text, $path, $options = FALSE) {
 
   if (module_exists('token')) {
     // Token Support for field "url" and "title"
+    if (!isset($node)) {
+      $node = menu_get_object();
+    }
     $tokensupport = !empty($options['tokensupport'])? (int)$options['tokensupport'] : 0;
     if ($tokensupport > 0) {
-      $text = token_replace($text, array('node' => $GLOBALS['node'], 'user' => $GLOBALS['user']));
+      $text = token_replace($text, array('user' => $user, 'node' => $node), array('language' => $language)); // node:, user: are default token targets
     }
     if ($tokensupport > 1) {
-      $path = token_replace($path, array('node' => $GLOBALS['node'], 'user' => $GLOBALS['user']));
+      $path = token_replace($path, array('user' => $user, 'node' => $node), array('language' => $language));
     }
   }
 
@@ -696,8 +700,10 @@ function iframe_field_widget_form(&$form, &$form_state, $field, $instance, $lang
         '#token_types' => array('node', 'user'),
         '#weight' => 3,
       );
-      $element['url']['#description'] .= t('Field does support tokens.');
-      $element['title']['#description'] .= t('Field does support tokens.');
+      $element['url']['#description'] = (!empty($element['url']['#description'])? $element['url']['#description']." " : "")
+          . t('Field does support tokens.');
+      $element['title']['#description'] .= (!empty($element['title']['#description'])? $element['title']['#description']." " : "")
+          . t('Field does support tokens.');
     }
     else {
       $element['token_tree'] = array(
@@ -755,6 +761,8 @@ function iframe_init() {
 }
 
 if (!function_exists('iframe_content_migrate_field_alter')) {
-    include_once(drupal_get_path('module', 'iframe') . "/iframe.content_migrate.iframe.inc");
+    if (function_exists('module_load_include')) {
+        module_load_include('inc', 'iframe', 'iframe.content_migrate.iframe');
+    }
 }
 
