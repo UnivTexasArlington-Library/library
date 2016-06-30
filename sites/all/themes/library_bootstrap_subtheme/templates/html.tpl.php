@@ -66,7 +66,6 @@ var b=document.getElementsByTagName("script")[0];
 a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0023/0834.js?"+Math.floor(new Date().getTime()/3600000);
 a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 </script> 
-<script type="text/javascript" src="//v2.libanswers.com/load_chat.php?hash=784aed251e94ccda757853b09e693baf"></script>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <div id="skip-link">
