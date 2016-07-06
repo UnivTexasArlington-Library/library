@@ -66,7 +66,9 @@ var b=document.getElementsByTagName("script")[0];
 a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0023/0834.js?"+Math.floor(new Date().getTime()/3600000);
 a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 </script> 
+
 </head>
+
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
@@ -74,6 +76,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
-
+<script type="text/javascript" src="//v2.libanswers.com/load_chat.php?hash=784aed251e94ccda757853b09e693baf"></script>
 </body>
 </html>
