@@ -69,6 +69,11 @@ function bootstrap_menu_tree__menu_gis(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
 
+//adding class to Events Reservation menu
+function bootstrap_menu_tree__menu_event_reservation(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
+
 //adding class to friends (on production) menu
 function bootstrap_menu_tree__menu_friends_library(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
