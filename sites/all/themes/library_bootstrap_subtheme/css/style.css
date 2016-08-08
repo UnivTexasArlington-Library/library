@@ -8675,6 +8675,9 @@ input.summon-search-submit.button-website:focus {
   width: auto;
   margin-bottom: 5px;
 }
+.webform-page {
+  clear: both;
+}
 /* Styling for Paragraph Types */
 /* text-only paragraphs */
 .paragraphs-item-text p {
