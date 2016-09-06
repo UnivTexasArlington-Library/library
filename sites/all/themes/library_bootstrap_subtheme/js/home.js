@@ -3,11 +3,11 @@ function changeSearch(tabID) {
 	jQuery(".search-buttons button").removeClass('active');
 	jQuery("#" + tabID).addClass('active');
 	if (tabID == 'everything') {
-		jQuery("#searchbox").html('<script type="text/javascript" id="s5aecdba01c2c01320001441ea15aa1ac" src="http://uta.summon.serialssolutions.com/widgets/box.js"></script><script type="text/javascript"> new SummonCustomSearchBox({"id":"#s5aecdba01c2c01320001441ea15aa1ac","params":{"keep_r":true},"colors":{},"searchbutton_text":"Go","advanced_text":"Advanced Search","placeholder_text":"Search articles, books, guides, and more","advanced":"true","suggest":"true","popup":"true"})</script>');
+		jQuery("#searchbox").html('<script type="text/javascript" src="//uta.summon.serialssolutions.com/widgets/box.js"></script><script type="text/javascript">summonWidget.box({"id":"se5000c03b4d0446b6bc1c5c4dcf617f","endpoint":"//uta.summon.serialssolutions.com","style":{"tagline":"#000","links":"#ae482c"},"params":{"pn":1,"ho":true,"l":"en"},"tagline_text":"","searchbutton_text":"Search","advanced_text":"Advanced Search","placeholder_text":"Search articles, books, guides, and more","advanced":true,"suggest":false,"tagline":false,"popup":faulse})</script>');
 		jQuery("#s5aecdba01c2c01320001441ea15aa1ac .summon-search-submit[0]").attr("onclick", "_gaq.push(['_trackEvent', 'search', 'submit', 'summoneverything']);");
 	}
 	if (tabID == 'articles') {
-		jQuery("#searchbox").html('<script id="s5b6f3640cedb0131542b00237dd8628a" src="http://uta.summon.serialssolutions.com/widgets/box.js" type="text/javascript" ></script><script type="text/javascript">new SummonCustomSearchBox({"id":"#s5b6f3640cedb0131542b00237dd8628a","params":{"s.fvf[]":["ContentType,Journal Article"],"keep_r":true},"colors":{},"searchbutton_text":"Go","advanced_text":"Advanced Search","placeholder_text":"Search articles","advanced":"true","suggest":"true","popup":"true"})</script><div class="search-parameters"><label><input type="checkbox" id="peerreview" name="peerbox" onclick="peer();">Peer-Reviewed Only</label></div>');
+		jQuery("#searchbox").html('<script type="text/javascript" src="//uta.summon.serialssolutions.com/widgets/box.js"></script><script type="text/javascript">summonWidget.box({"id":"se5000c03b4d0446b6bc1c5c4dcf617f","endpoint":"//uta.summon.serialssolutions.com","style":{"tagline":"#000","links":"#ae482c"},"params":{"pn":1,"ho":true,"fvf":["ContentType,Journal Article,f"],"l":"en"},"tagline_text":"","searchbutton_text":"Search","advanced_text":"Advanced Search","placeholder_text":"Search articles","advanced":true,"suggest":false,"tagline":false,"popup":false})</script><div class="search-parameters"><label><input type="checkbox" id="peerreview" name="peerbox" onclick="peer();">Peer-Reviewed Only</label></div>');
 		jQuery("#s5b6f3640cedb0131542b00237dd8628a .summon-search-submit[0]").attr("onclick", "_gaq.push(['_trackEvent', 'search', 'submit', 'summonarticles']);");
 	}
 	if (tabID == 'books') {
@@ -45,9 +45,9 @@ jQuery(document).ready(function($) {
 function peer() {
 	//peer review checkbox functionality
 		if (jQuery("#peerreview").prop("checked")) {
-			new SummonCustomSearchBox({"id":"#s5b6f3640cedb0131542b00237dd8628a","params":{"s.fvf[]":["ContentType,Journal Article","IsPeerReviewed,true"],"keep_r":true},"colors":{},"searchbutton_text":"Go","advanced_text":"Advanced Search","placeholder_text":"Search peer-reviewed articles","advanced":"true","suggest":"true","popup":"true"})
+			new SummonCustomSearchBox({"id":"se5000c03b4d0446b6bc1c5c4dcf617f","endpoint":"//uta.summon.serialssolutions.com","style":{"tagline":"#000","links":"#ae482c"},"params":{"pn":1,"ho":true,"fvf":["ContentType,Journal Article,f","IsPeerReviewed,true,f"],"l":"en"},"tagline_text":"","searchbutton_text":"Search","advanced_text":"Advanced Search","placeholder_text":"Search peer-reviewed articles","advanced":true,"suggest":false,"tagline":false,"popup":false})
 		} else {
-			new SummonCustomSearchBox({"id":"#s5b6f3640cedb0131542b00237dd8628a","params":{"s.fvf[]":["ContentType,Journal Article"],"keep_r":true},"colors":{},"searchbutton_text":"Go","advanced_text":"Advanced Search","placeholder_text":"Search articles","advanced":"true","suggest":"true","popup":"true"})
+			new SummonCustomSearchBox({"id":"se5000c03b4d0446b6bc1c5c4dcf617f","endpoint":"//uta.summon.serialssolutions.com","style":{"tagline":"#000","links":"#ae482c"},"params":{"pn":1,"ho":true,"fvf":["ContentType,Journal Article,f"],"l":"en"},"tagline_text":"","searchbutton_text":"Search","advanced_text":"Advanced Search","placeholder_text":"Search articles","advanced":true,"suggest":false,"tagline":false,"popup":false})
 		}
 		jQuery("#s5b6f3640cedb0131542b00237dd8628a .summon-search-submit[0]").attr("onclick", "_gaq.push(['_trackEvent', 'search', 'submit', 'summonarticles']);");
 		jQuery("#s5b6f3640cedb0131542b00237dd8628a").attr('action', 'http://uta.summon.serialssolutions.com/search');
