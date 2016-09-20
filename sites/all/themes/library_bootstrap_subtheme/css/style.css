@@ -7702,11 +7702,11 @@ h5 {
   margin-bottom: 0;
 }
 .views-row,
-.views-header {
+.view-header {
   margin-bottom: 30px;
 }
 .views-row h3,
-.views-header h3 {
+.view-header h3 {
   margin-top: -4px;
 }
 .panel-separator {
