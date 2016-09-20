@@ -8709,6 +8709,34 @@ input.summon-search-submit.button-website:focus {
 .field-name-field-image {
   margin-top: 3em;
 }
+.localist_widget_container li.lw_event_item {
+  font-family: 'Calibri', 'Open Sans';
+  font-weight: normal;
+}
+.localist_widget_container li a {
+  color: #ae482c;
+  font-size: 16px;
+  font-weight: normal;
+}
+.localist_widget_container span.lw_event_item_date {
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 16px;
+}
+.localist_widget_container div.lw_event_item_title a {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.localist_widget_container div.lw_event_item_description,
+.localist_widget_container div.lw_event_item_time {
+  font-size: 16px;
+}
+.localist_widget_container .pin {
+  background: #ae482c;
+}
+.localist_widget_container .action_button,
+.localist_widget_container .clock {
+  display: none;
+}
 /* Local Print Styles */
 @media print {
   .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
