@@ -7701,10 +7701,12 @@ h5 {
   text-align: left;
   margin-bottom: 0;
 }
-.views-row {
+.views-row,
+.views-header {
   margin-bottom: 30px;
 }
-.views-row h3 {
+.views-row h3,
+.views-header h3 {
   margin-top: -4px;
 }
 .panel-separator {
@@ -7755,6 +7757,9 @@ div.float-date-field div.form-item {
 .node-exhibit .field-name-field-news-caption,
 .node-event .field-name-field-news-caption {
   font-size: 14px;
+}
+.date-display-range {
+  display: inline-block;
 }
 /*for locations */
 .node-location img {
