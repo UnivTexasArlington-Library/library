@@ -8718,17 +8718,14 @@ input.summon-search-submit.button-website:focus {
   font-size: 16px;
   font-weight: normal;
 }
-.localist_widget_container span.lw_event_item_date {
+.localist_widget_container .lw_event_item_date {
   background-color: rgba(0, 0, 0, 0.8);
   font-size: 16px;
 }
 .localist_widget_container div.lw_event_item_title a {
   font-size: 20px;
   text-transform: uppercase;
-}
-.localist_widget_container div.lw_event_item_description,
-.localist_widget_container div.lw_event_item_time {
-  font-size: 16px;
+  color: #ae482c;
 }
 .localist_widget_container .pin {
   background: #ae482c;
@@ -8736,6 +8733,10 @@ input.summon-search-submit.button-website:focus {
 .localist_widget_container .action_button,
 .localist_widget_container .clock {
   display: none;
+}
+.localist_widget_container div.lw_event_item_description,
+.localist_widget_container div.lw_event_item_time {
+  font-size: 16px;
 }
 /* Local Print Styles */
 @media print {

@@ -11,17 +11,14 @@
 		font-weight: normal;
 	}
 
-	span.lw_event_item_date {
+	.lw_event_item_date {
 		background-color: rgba(0, 0, 0, 0.8);
 		font-size: 16px;
 	}
 	div.lw_event_item_title a {
 		font-size: 20px;
 		text-transform: uppercase;
-	}
-	div.lw_event_item_description, 
-	div.lw_event_item_time {
-		font-size: 16px;
+		color:@link-color;
 	}
 	.pin {
 		background: @link-color;
@@ -30,4 +27,8 @@
 	.clock {
 		display: none;
 	}
+}
+.localist_widget_container div.lw_event_item_description,
+.localist_widget_container div.lw_event_item_time {
+	font-size: 16px;
 }
