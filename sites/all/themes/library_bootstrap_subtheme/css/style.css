@@ -7703,11 +7703,13 @@ h5 {
 }
 .views-row,
 .view-header,
+.view-bookplate-professor > #views-bootstrap-grid-1 > div.row,
 .views-row.views-row-last {
   margin-bottom: 30px;
 }
 .views-row h3,
 .view-header h3,
+.view-bookplate-professor > #views-bootstrap-grid-1 > div.row h3,
 .views-row.views-row-last h3 {
   margin-top: -4px;
 }
