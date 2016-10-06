@@ -5,6 +5,7 @@ body {
 h1 {
 	padding-left: 15px;
 }
+
 h2,
 h2.block-title, 
 h2.pane-title {
@@ -72,9 +73,21 @@ h5 {
 	padding-bottom: 11px;
 	min-height:0px;
 	font-size:1.6em;
+	> small {
+	    color: @header-text;
+	    text-transform: capitalize;
+	    font-style: italic;
+	}
 	@media (max-width: @screen-xs-max) {
 		font-size:24px;
 	}
+}
+.page-header-lg {
+	padding-top: 0;
+}
+.page-header-small {
+	margin-bottom: 0;
+    padding-bottom: 0;
 }
 .center-container {
 	background-color:#FFFFFF;
