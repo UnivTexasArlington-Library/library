@@ -5,6 +5,9 @@ body {
 h1 {
 	padding-left: 15px;
 }
+h1.internal-page-header {
+	margin-top:0;
+}
 
 h2,
 h2.block-title, 
@@ -63,31 +66,42 @@ h5 {
 }
 
 /*for page titles*/
-.page-header {
+.page-header, 
+.internal-page-header,
+.page-header-small,
+.page-header-lg {
 	color:@header-text;
 	background: @header-bg;
 	border:none;
-	padding-top: 10px;
 	padding-right: 15px;
-	text-transform: uppercase;
 	padding-bottom: 11px;
 	min-height:0px;
 	font-size:1.6em;
-	> small {
-	    color: @header-text;
-	    text-transform: capitalize;
-	    font-style: italic;
-	}
 	@media (max-width: @screen-xs-max) {
 		font-size:24px;
 	}
 }
+.page-header, 
+.internal-page-header {
+	text-transform: uppercase;
+	padding-top: 10px;
+}
+/* for internal page header */
 .page-header-lg {
 	padding-top: 0;
+	margin-top:0;
+	text-transform: uppercase;
 }
+/* for 'eyebrow' of internal page header */
 .page-header-small {
 	margin-bottom: 0;
     padding-bottom: 0;
+    padding-top:0;
+    small {
+    	font-size: 55%;
+    	font-style: italic;
+    	color: @header-text;
+    }
 }
 .center-container {
 	background-color:#FFFFFF;
@@ -188,6 +202,13 @@ div.float-date-field div.form-item {
 .date-display-range {
 	display:inline-block;
 }
+/* for event pages */
+.event-img {
+	.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
 /*for locations */
 .node-location {
 	img {
@@ -279,4 +300,16 @@ td,th {
 /* HOURS */
 .day {
 	border-bottom:1px solid @footer-bg;
+}
+/* ELUR Pages */
+#node-1447, 
+#node-1448,
+#node-382,
+#node-377,
+#node-388,
+#node-379 {
+	h3,
+	p {
+		margin-left:15px;
+	}
 }

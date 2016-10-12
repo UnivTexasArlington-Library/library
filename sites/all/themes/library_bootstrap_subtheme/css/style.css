@@ -7591,14 +7591,17 @@ table .checkbox input[type="checkbox"] {
   }
 }
 /*end sidebar nav style*/
-#block-men-menu-elur {
-  margin-top: 5px;
+#block-menu-menu-elur > .menu.nav.nav-tabs {
+  margin-top: 12px;
 }
 body {
   font-family: 'Calibri', 'Open Sans';
 }
 h1 {
   padding-left: 15px;
+}
+h1.internal-page-header {
+  margin-top: 0;
 }
 h2,
 h2.block-title,
@@ -7662,33 +7665,47 @@ h5 {
   clear: both;
 }
 /*for page titles*/
-.page-header {
+.page-header,
+.internal-page-header,
+.page-header-small,
+.page-header-lg {
   color: #0052a3;
   background: #f1f2f2;
   border: none;
-  padding-top: 10px;
   padding-right: 15px;
-  text-transform: uppercase;
   padding-bottom: 11px;
   min-height: 0px;
   font-size: 1.6em;
 }
-.page-header > small {
-  color: #0052a3;
-  text-transform: capitalize;
-  font-style: italic;
-}
 @media (max-width: 767px) {
-  .page-header {
+  .page-header,
+  .internal-page-header,
+  .page-header-small,
+  .page-header-lg {
     font-size: 24px;
   }
 }
+.page-header,
+.internal-page-header {
+  text-transform: uppercase;
+  padding-top: 10px;
+}
+/* for internal page header */
 .page-header-lg {
   padding-top: 0;
+  margin-top: 0;
+  text-transform: uppercase;
 }
+/* for 'eyebrow' of internal page header */
 .page-header-small {
   margin-bottom: 0;
   padding-bottom: 0;
+  padding-top: 0;
+}
+.page-header-small small {
+  font-size: 55%;
+  font-style: italic;
+  color: #0052a3;
 }
 .center-container {
   background-color: #FFFFFF;
@@ -7786,6 +7803,15 @@ div.float-date-field div.form-item {
 .date-display-range {
   display: inline-block;
 }
+/* for event pages */
+.event-img .img-responsive,
+.event-img .thumbnail > img,
+.event-img .thumbnail a > img,
+.event-img .carousel-inner > .item > img,
+.event-img .carousel-inner > .item > a > img {
+  margin-left: auto;
+  margin-right: auto;
+}
 /*for locations */
 .node-location img {
   width: 100%;
@@ -7875,6 +7901,21 @@ th {
 /* HOURS */
 .day {
   border-bottom: 1px solid #c6c4c4;
+}
+/* ELUR Pages */
+#node-1447 h3,
+#node-1448 h3,
+#node-382 h3,
+#node-377 h3,
+#node-388 h3,
+#node-379 h3,
+#node-1447 p,
+#node-1448 p,
+#node-382 p,
+#node-377 p,
+#node-388 p,
+#node-379 p {
+  margin-left: 15px;
 }
 /*for footer*/
 .footer {
@@ -8744,6 +8785,9 @@ input.summon-search-submit.button-website:focus {
   font-size: 16px;
   font-weight: normal;
   text-transform: none;
+}
+.localist_widget_container li.lw_event_item {
+  margin-bottom: 30px;
 }
 .localist_widget_container .lw_event_item_date {
   background-color: none;
