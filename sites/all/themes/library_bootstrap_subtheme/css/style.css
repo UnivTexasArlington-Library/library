@@ -7917,6 +7917,36 @@ th {
 #node-379 p {
   margin-left: 15px;
 }
+/* BLogs */
+#blog-teaser .panel-separator {
+  display: none;
+}
+#blog-teaser .pane-node-title > .pane-title {
+  display: none;
+}
+#blog-teaser h3,
+#blog-teaser p {
+  margin-left: 15px;
+}
+#blog-page h3,
+#blog-page p {
+  margin-left: 15px;
+}
+#blog-page p {
+  margin-top: 1.8em;
+}
+#blog-page .blog-title {
+  margin-top: 0;
+}
+#blog-page .views-row {
+  margin-bottom: initial;
+}
+#author-list h4:first-child {
+  margin-top: 25px;
+}
+#blog-tags.pane-title {
+  margin-top: 0px;
+}
 /*for footer*/
 .footer {
   background: #c6c4c4;
