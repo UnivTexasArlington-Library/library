@@ -7726,9 +7726,9 @@ h5 {
 #internal-page > h4:first-child {
   margin-top: 0;
 }
-.bootstrap-twocol-stacked p,
-.bootstrap-twocol-stacked h3,
-.bootstrap-twocol-stacked h4 {
+#dept-page p,
+#dept-page h3,
+#dept-page h4 {
   margin-left: 15px;
 }
 .region-internal-menu {
