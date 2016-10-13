@@ -7700,7 +7700,7 @@ h5 {
 .page-header-small {
   margin-bottom: 0;
   padding-bottom: 0;
-  padding-top: 0;
+  margin-top: 0;
 }
 .page-header-small small {
   font-size: 55%;
@@ -7725,6 +7725,11 @@ h5 {
 }
 #internal-page > h4:first-child {
   margin-top: 0;
+}
+.bootstrap-twocol-stacked p,
+.bootstrap-twocol-stacked h3,
+.bootstrap-twocol-stacked h4 {
+  margin-left: 15px;
 }
 .region-internal-menu {
   margin-bottom: 20px;
@@ -7946,6 +7951,9 @@ th {
 }
 #blog-tags.pane-title {
   margin-top: 0px;
+}
+.field-name-field-tags {
+  margin-left: 15px;
 }
 /*for footer*/
 .footer {
