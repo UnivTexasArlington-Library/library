@@ -7726,14 +7726,6 @@ h5 {
 #internal-page > h4:first-child {
   margin-top: 0;
 }
-#dept-page p,
-#dept-page h2,
-#dept-page h3,
-#dept-page h4,
-#dept-page h5,
-#dept-page span.file {
-  margin-left: 15px;
-}
 .region-internal-menu {
   margin-bottom: 20px;
 }
@@ -7793,11 +7785,16 @@ div.float-date-field div.form-item {
   float: left;
 }
 /*DEPARTMENT */
+#dept-page p,
+#dept-page h2,
+#dept-page h3,
+#dept-page h4,
+#dept-page h5,
+#dept-page span.file {
+  margin-left: 15px;
+}
 .taxonomy-term-description {
   margin-bottom: 1em;
-}
-.pane-taxonomy-term-field-organization-chart {
-  margin-left: -15px;
 }
 .view-staff-by-department {
   margin-left: 15px;
