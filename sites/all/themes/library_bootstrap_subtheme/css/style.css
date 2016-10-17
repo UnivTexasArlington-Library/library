@@ -7727,8 +7727,11 @@ h5 {
   margin-top: 0;
 }
 #dept-page p,
+#dept-page h2,
 #dept-page h3,
-#dept-page h4 {
+#dept-page h4,
+#dept-page h5,
+#dept-page span.file {
   margin-left: 15px;
 }
 .region-internal-menu {
