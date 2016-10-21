@@ -8864,6 +8864,24 @@ input.summon-search-submit.button-website:focus {
 .localist_widget_container div.lw_event_item_time {
   font-size: 16px;
 }
+/* styles for ETD webform block */
+#block-webform-client-block-1464,
+#block-webform-client-block-1519 {
+  /* on production */
+  border: solid 2px #ccc;
+  padding: 10px;
+}
+#block-webform-client-block-1464 h2.block-title,
+#block-webform-client-block-1519 h2.block-title {
+  border: none;
+  padding-left: 0;
+}
+#block-webform-client-block-1464 legend,
+#block-webform-client-block-1519 legend {
+  font-size: 20px;
+  font-style: oblique;
+  padding-left: 15px;
+}
 /* Local Print Styles */
 @media print {
   .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
@@ -9074,6 +9092,12 @@ input.summon-search-submit.button-website:focus {
 }
 #mimemail-body p {
   color: #fff;
+}
+#mimemail-body legend {
+  font-style: oblique;
+}
+#mimemail-body label {
+  font-weight: bold;
 }
 /*for body font*/
 /*SYSTEM WIDE SETTINGS*/
