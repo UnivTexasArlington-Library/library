@@ -7950,8 +7950,12 @@ th {
 #blog-teaser p {
   margin-left: 15px;
 }
+.img-th {
+  margin: 0 20px 0 0;
+}
 #blog-page h3,
-#blog-page p {
+#blog-page p,
+#blog-page .view-elur-blog {
   margin-left: 15px;
 }
 #blog-page p {
@@ -7962,6 +7966,9 @@ th {
 }
 #blog-page .views-row {
   margin-bottom: initial;
+}
+#blog-page .blog-img {
+  margin: 1.8em 20px 0 15px;
 }
 #author-list h4:first-child {
   margin-top: 25px;
