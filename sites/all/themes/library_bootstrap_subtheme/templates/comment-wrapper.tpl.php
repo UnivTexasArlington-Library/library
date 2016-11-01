@@ -36,6 +36,7 @@
  * @ingroup themeable
  */
 ?>
+<hr />
 <div id="comments" class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php if ($content['comments'] && $node->type != 'forum'): ?>
     <?php print render($title_prefix); ?>
