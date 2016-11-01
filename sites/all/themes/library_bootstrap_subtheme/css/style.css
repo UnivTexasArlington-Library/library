@@ -7955,7 +7955,11 @@ th {
 }
 .blog-teaser-row {
   /* for use on blog main page */
-  margin: 25px 15px 25px 0;
+  margin: 25px 15px 0 0;
+  padding-bottom: 2.5em;
+}
+.author-post-date {
+  padding-bottom: .5em;
 }
 #blog-page h3,
 #blog-page p,
