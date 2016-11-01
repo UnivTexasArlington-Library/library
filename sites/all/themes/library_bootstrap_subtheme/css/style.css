@@ -7982,6 +7982,10 @@ th {
 #blog-page .pane-node-field-blog-body {
   margin-bottom: 25px;
 }
+#blog-page .pane-node-comment-wrapper,
+#blog-page .pane-node-field-addthis {
+  clear: both;
+}
 #author-list h4:first-child {
   margin-top: 25px;
 }
