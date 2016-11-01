@@ -7970,6 +7970,9 @@ th {
 #blog-page p {
   margin-top: 1.8em;
 }
+#blog-page p img {
+  padding: 10px;
+}
 #blog-page .blog-title {
   margin-top: 0;
 }
