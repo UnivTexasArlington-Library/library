@@ -7088,12 +7088,16 @@ table .checkbox input[type="checkbox"] {
   border-color: #eeeeee #eeeeee #dddddd;
   color: #ffffff;
 }
-.nav-tabs > li.active > a {
+.nav-tabs > li.active > a,
+.nav-tabs > li.active-trail > a {
   background-color: #0052a3;
 }
 .nav-tabs > li.active > a,
+.nav-tabs > li.active-trail > a,
 .nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
+.nav-tabs > li.active-trail > a:hover,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active-trail > a:focus {
   color: #ffffff;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
@@ -7745,6 +7749,9 @@ h5 {
 }
 .region-internal-menu {
   margin: 20px -50px 10px -35px;
+}
+.region-internal-menu div.contextual-links-wrapper {
+  right: 100px;
 }
 .breadcrumb {
   text-align: left;
