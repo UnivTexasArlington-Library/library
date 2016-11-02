@@ -1,0 +1,93 @@
+<?php
+/**
+ * Implements hook_filter_info().
+ */
+function responsivewrappers_filter_info() {
+  $filters['bootstrapresponsivewrapper'] = array(
+    'title' => t('Responsive wrappers filter'),
+    'description' => t('Add Bootstrap responsive classes and wrappers for images, videos and tables.'),
+    'settings callback' => '_filter_responsivewrappers_settings',
+    'default settings' => array(
+      'responsive_iframe' => 1,
+      'responsive_table' => 1,
+      'responsive_image' => 0,
+    ),
+    'process callback' => '_responsivewrappers_process',
+  );
+
+  return $filters;
+}
+
+function _filter_responsivewrappers_settings($form, &$form_state, $filter, $format, $defaults) {
+  $filter->settings += $defaults;
+
+  $settings['responsive_iframe'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Add responsive wrapper for youtbe and vimeo videos.'),
+    '#default_value' => $filter->settings['responsive_iframe'],
+  );
+  $settings['responsive_table'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Add responsive wrapper for tables.'),
+    '#default_value' => $filter->settings['responsive_table'],
+  );
+  $settings['responsive_image'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Add responsive class for images.'),
+    '#default_value' => $filter->settings['responsive_image'],
+  );
+
+  return $settings;
+}
+
+/**
+ * Process callback for the responsive wrappers filter.
+ */
+function _responsivewrappers_process($text, $filter) {
+
+  if ($filter->settings['responsive_iframe']) {
+    preg_match_all('#<iframe.*src=".*(youtube.|vimeo.).*".*></iframe>#ui', $text, $matches);
+    if (!empty($matches[0])) {
+      foreach($matches[0] AS $match) {
+        // Only add the wrapper if not exists
+        if (strpos('embed-responsive', $match) == FALSE) {
+          $text = str_replace($match, '<div class="embed-responsive embed-responsive-16by9">' . $match . '</div>', $text);
+        }
+      }
+    }
+  }
+
+  if ($filter->settings['responsive_table']) {
+    preg_match_all('#<table.*>.*</table>#ims', $text, $matches);
+    if (!empty($matches[0])) {
+      foreach($matches[0] AS $match) {
+        // Only add the wrapper if not exists
+        if (strpos('table-responsive', $match) == FALSE) {
+          $text = str_replace($match, '<div class="table-responsive">' . $match . '</div>', $text);
+        }
+      }
+    }
+  }
+
+  if ($filter->settings['responsive_image']) {
+    preg_match_all('#<img[^>]+>#ui', $text, $matches);
+    if (!empty($matches[0])) {
+      foreach($matches[0] AS $match) {
+        // Only add the class if not exists
+        if (strpos('img-responsive', $match) == FALSE) {
+          // Class property exists
+          if (strpos('class="', $match) == TRUE) {
+            $match_replace = str_replace('class="', 'class="img-responsive ', $match);
+            $text = str_replace($match, $match_replace, $text);
+          }
+          else {
+            $match_replace = str_replace('<img ', '<img class="img-responsive" ', $match);
+            $text = str_replace($match, $match_replace, $text);
+          }
+        }
+      }
+    }
+  }
+
+  return $text;
+}

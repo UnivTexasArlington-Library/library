@@ -1,0 +1,10 @@
+name = Responsive wrappers
+description = Add responsive bootstrap wrappers.
+package = Input filters
+
+; Information added by Drupal.org packaging script on 2016-10-05
+version = "7.x-1.4"
+core = "7.x"
+project = "responsivewrappers"
+datestamp = "1475666641"
+
