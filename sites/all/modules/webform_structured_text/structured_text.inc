@@ -27,6 +27,10 @@ function _webform_structured_text_get_wf_property($prop = 'required') {
       '3' => '_webform_filter_descriptions',
       '4' => 'webform_filter_descriptions',
     ),
+    'token_replace' => array(
+      '3' => '_webform_filter_values',
+      '4' => 'webform_replace_tokens',
+    ),
   );
   if ( $prop == 'version' ) return $version[1];
   return $properties[$prop][$version[1]];
@@ -256,7 +260,7 @@ function _webform_edit_structured_text($component) {
   $form['value'] = array(
     '#type' => 'textarea',
     '#title' => t('Default value'),
-    '#default_value' => $component['value'],
+    '#default_value' => isset($component['value']) ? $component['value'] : '',
     '#description' => t('The default value of the field. You can specify default values for each chunk using a
           format similar to the Mask Labels.  Use the form<br><br>
           <em>chunk-number</em>|<em>default-value</em><br><br>For example<br><br>
@@ -354,6 +358,7 @@ function _webform_render_structured_text($component, $value = NULL, $filter = FA
   $description = webform_structured_text_field_description($component);
   $xss_filter = _webform_structured_text_get_wf_property('filter_xss');
   $desc_filter = _webform_structured_text_get_wf_property('filter_desc');
+  $replace_tokens = _webform_structured_text_get_wf_property('token_replace');
   $node = isset($component['nid']) ? node_load($component['nid']) : NULL;
   $form_item = array(
     '#type' => 'webform_structured_text',
@@ -374,7 +379,7 @@ function _webform_render_structured_text($component, $value = NULL, $filter = FA
     '#theme_wrappers' => array('webform_element'),
     '#centre' => isset($component['extra']['centre']) ? $component['extra']['centre'] : TRUE,
     '#separate_boxes' => isset($component['extra']['separate_boxes']) ? $component['extra']['separate_boxes'] : FALSE,
-    '#default_value' => $filter ? webform_replace_tokens($component['value'], $node) : $component['value'],
+    '#default_value' => $filter ? $replace_tokens($component['value'], $node) : $component['value'],
     '#element_validate' => array('webform_validate_structured_text'),
     '#mask' => webform_structured_text_parse_mask($component['extra']['mask']),
     '#mask_regex' => $component['extra']['mask_regex'],

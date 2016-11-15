@@ -5,6 +5,9 @@
  * Webform Calculator formula component.
  */
 
+// Needed for conditional rules and component display
+webform_component_include('number');
+
 /**
  * Implements _webform_defaults_component().
  */
@@ -16,6 +19,7 @@ function _webform_defaults_formula() {
     'weight' => 0,
     'value' => '',
     'extra' => array(
+      'width' => '',
       'field_prefix' => '',
       'field_suffix' => '',
       'title_display' => 0,
@@ -41,9 +45,6 @@ function _webform_theme_formula() {
     'webform_calculator_formula_display' => array(
       'render element' => 'element',
     ),
-    'webform_calculator_formula_form' => array(
-      'render element' => 'element',
-    ),
   );
 }
 
@@ -58,7 +59,6 @@ function theme_webform_calculator_formula_display($variables) {
  * Implements _webform_display_component().
  */
 function _webform_display_formula($component, $value, $format = 'html') {
-  webform_component_include('number');
   $component['extra']['decimals'] = NULL;
   $component['extra']['point'] = '.';
   $component['extra']['separator'] = ',';
@@ -70,32 +70,35 @@ function _webform_display_formula($component, $value, $format = 'html') {
 }
 
 /**
- * Theme function for formula displayed on webform view.
- */
-function theme_webform_calculator_formula_form($variables) {
-  $component = $variables['component'];
-  return '<span id="formula-component-' . $component['form_key'] . '">' . $component['value'] . '</span>';
-}
-
-/**
  * Implements _webform_render_component().
  */
 function _webform_render_formula($component, $value = NULL, $filter = TRUE) {
   $element = array(
-    '#printed' => $component['extra']['hidden'],
-    '#type' => 'markup',
-    '#title' => $filter ? webform_filter_xss($component['name']) : $component['name'],
-    '#title_display' => $component['extra']['title_display'] ? $component['extra']['title_display'] : 'before',
-    '#weight' => $component['weight'],
-    '#field_prefix' => empty($component['extra']['field_prefix']) ? NULL : ($filter ? webform_filter_xss($component['extra']['field_prefix']) : $component['extra']['field_prefix']),
-    '#field_suffix' => empty($component['extra']['field_suffix']) ? NULL : ($filter ? webform_filter_xss($component['extra']['field_suffix']) : $component['extra']['field_suffix']),
-    '#description' => $filter
-      ? webform_filter_descriptions($component['extra']['description'])
-      : $component['extra']['description'],
-    '#markup' => theme('webform_calculator_formula_form', array('component' => $component)),
-    '#translatable' => array('title', 'description'),
     '#theme_wrappers' => array('webform_element'),
+    '#weight' => $component['weight'],
   );
+  if (!$component['extra']['hidden']) {
+    $element += array(
+      '#type' => 'textfield',
+      '#attributes' => array('readonly' => TRUE),
+      '#title' => $filter ? webform_filter_xss($component['name']) : $component['name'],
+      '#title_display' => $component['extra']['title_display'] ? $component['extra']['title_display'] : 'before',
+      '#field_prefix' => empty($component['extra']['field_prefix']) ? NULL : ($filter ? webform_filter_xss($component['extra']['field_prefix']) : $component['extra']['field_prefix']),
+      '#field_suffix' => empty($component['extra']['field_suffix']) ? NULL : ($filter ? webform_filter_xss($component['extra']['field_suffix']) : $component['extra']['field_suffix']),
+      '#description' => $filter
+        ? webform_filter_descriptions($component['extra']['description'])
+        : $component['extra']['description'],
+      '#translatable' => array('title', 'description'),
+    );
+
+    // Change the 'width' option to the correct 'size' option.
+    if ($component['extra']['width'] > 0) {
+      $element['#size'] = $component['extra']['width'];
+    }
+  }
+  else {
+    $element['#type'] = 'hidden';
+  }
   $element['#attached']['js'][] = array(
     'type' => 'setting',
     'data' => array(
@@ -115,23 +118,15 @@ function _webform_render_formula($component, $value = NULL, $filter = TRUE) {
  * Reusable constant.
  */
 function _webform_calculator_allowed_component_types() {
-  return array('number' => 1, 'formula' => 1, 'select' => 1);
+  return array('number' => 1, 'formula' => 1, 'select' => 1, 'grid' => 1);
 }
 
 /**
  * Implements _webform_edit_component().
  */
 function _webform_edit_formula($component) {
-  $allowed_component_types = _webform_calculator_allowed_component_types();
-  $webform_node = node_load($component['nid']);
+  $available_components = _webform_calculator_get_tokens($component);
 
-  // Create list of available tokens for formula description.
-  $available_components = array();
-  foreach ($webform_node->webform['components'] as $node_component) {
-    if (isset($allowed_component_types[$node_component['type']])) {
-      $available_components[] = '{' . $node_component['form_key'] . '} — ' . $node_component['name'];
-    }
-  }
   $replacements = theme('item_list', array('title' => t('Available replacement tokens'), 'items' => $available_components));
   $fieldset = array(
     '#title' => t('Token values'),
@@ -153,9 +148,10 @@ function _webform_edit_formula($component) {
   $available_tokens_message = t('Example: %example', array('%example' => $example_formula));
 
   $form['value'] = array(
-    '#type' => 'textfield',
+    '#type' => 'textarea',
     '#title' => t('Formula value'),
-    '#maxlength' => 1028,
+    '#required' => TRUE,
+    '#rows' => 3,
     '#default_value' => $component['value'],
     '#description' => "$element_description<br/>$allowed_operators_message<br/>$available_tokens_message<br/>$fieldset",
     '#weight' => -3,
@@ -180,6 +176,16 @@ function _webform_edit_formula($component) {
     '#size' => 20,
     '#maxlength' => 127,
     '#parents' => array('extra', 'field_suffix'),
+  );
+
+  $form['display']['width'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Width'),
+    '#default_value' => $component['extra']['width'],
+    '#description' => t('Width of the textfield.') . ' ' . t('Leaving blank will use the default size.'),
+    '#size' => 5,
+    '#maxlength' => 10,
+    '#parents' => array('extra', 'width'),
   );
 
   $form['display']['error_message'] = array(
@@ -218,6 +224,12 @@ function _webform_edit_formula_validate($element, &$element_state) {
   $original_formula = $formula = $element['#value'];
   $formula = $element['#value'];
 
+  // Verify that the value is not longer than 1028 characters.
+  if (drupal_strlen($formula) > 1028) {
+    form_error($element, t('!name cannot be longer than %max characters but is currently %length characters long.', 
+      array('!name' => $element['#title'], '%max' => 1028, '%length' => drupal_strlen($formula))));
+  }
+
   // Replace elements in {}.
   $formula = preg_replace(WEBFORM_CALCULATOR_REGEX, 0, $formula);
 
@@ -226,24 +238,18 @@ function _webform_edit_formula_validate($element, &$element_state) {
   }
   catch (Exception $e) {
     form_error($element, t('The formula syntax is invalid. !error', array('!error' => $e->getMessage())));
+    return;
   }
 
+  // In form_buider_webform context it's tricky to get the nid & cid, normally it's in the values
+  $component = isset($element_state['complete form']['#_edit_element']) ? $element_state['complete form']['#_edit_element']['#webform_component'] : $element_state['values'];
+
+  $allowed_tokens = _webform_calculator_get_tokens($component);
   $components_from_formula = webform_calculator_get_components_from_formula($original_formula);
-  $webform_node = node_load($element_state['complete form']['nid']['#value']);
 
-  // Get webform components keyed by form key.
-  $components_by_key = array();
-  foreach ($webform_node->webform['components'] as $component) {
-    $components_by_key[$component['form_key']] = $component;
-  }
-
-  $allowed_component_types = _webform_calculator_allowed_component_types();
   foreach ($components_from_formula as $component_key) {
-    if (!isset($components_by_key[$component_key])) {
-      form_error($element, t('Webform component %component does not exist.', array('%component' => $component_key)));
-    }
-    elseif (!isset($allowed_component_types[$components_by_key[$component_key]['type']])) {
-      form_error($element, t('Entered component %component is not numeric type.', array('%component' => $component_key)));
+    if (!isset($allowed_tokens[$component_key])) {
+      form_error($element, t('Invalid token %key.', array('%key' => '{' . $component_key . '}')));
     }
   }
 }
@@ -278,4 +284,60 @@ function _webform_csv_headers_formula($component, $export_options) {
  */
 function _webform_csv_data_formula($component, $export_options, $value) {
   return isset($value[0]) ? $value[0] : '';
+}
+
+/**
+ * Create list of available tokens for formula description.
+ *
+ * @param $component
+ * @return array
+ */
+function _webform_calculator_get_tokens($component) {
+  $allowed_component_types = _webform_calculator_allowed_component_types();
+  $webform_node = node_load($component['nid']);
+
+  if (module_exists('form_builder_webform') && class_exists('FormBuilderLoader') && arg(2) == 'form-builder' && arg(4) == 'webform') {
+    $cachedForm = FormBuilderLoader::instance()->fromCache('webform', $component['nid']);
+    $all_components = $cachedForm->getComponents($webform_node);
+  }
+  else {
+    $all_components = $webform_node->webform['components'];
+  }
+
+  $available_components = array();
+  $cid = isset($component['cid']) ? $component['cid'] : NULL;
+  foreach ($all_components as $node_component) {
+    if (isset($allowed_component_types[$node_component['type']]) && (empty($node_component['cid']) || $node_component['cid'] != $cid)) {
+      $available_components[$node_component['form_key']] = '{' . $node_component['form_key'] . '} — ' . $node_component['name'];
+    }
+  }
+  return $available_components;
+}
+
+
+/**
+ * Implements _webform_form_builder_map_component().
+ */
+function _webform_form_builder_map_formula() {
+  return array(
+    'form_builder_type' => 'formula',
+    'properties' => array(
+      'value' => array(
+        'form_parents' => array('value'),
+        'storage_parents' => array('value'),
+      ),
+      'hidden' => array(
+        'form_parents' => array('display', 'hidden'),
+        'storage_parents' => array('extra', 'hidden'),
+      ),
+      'precision' => array(
+        'form_parents' => array('display', 'precision'),
+        'storage_parents' => array('extra', 'precision'),
+      ),
+      'error_message' => array(
+        'form_parents' => array('display', 'error_message'),
+        'storage_parents' => array('extra', 'error_message'),
+      ),
+    ),
+  );
 }

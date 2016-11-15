@@ -6,9 +6,9 @@ package = Webform
 dependencies[] = webform
 
 php = 5.3
-; Information added by Drupal.org packaging script on 2015-12-03
-version = "7.x-1.8"
+; Information added by Drupal.org packaging script on 2016-11-06
+version = "7.x-1.9"
 core = "7.x"
 project = "webform_structured_text"
-datestamp = "1449186841"
+datestamp = "1478471941"
 

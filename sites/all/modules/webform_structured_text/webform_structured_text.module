@@ -49,6 +49,18 @@ function webform_structured_text_webform_component_info() {
   return $components;
 }
 
+/**
+ * Implements hood_webform_validator_alter.  Note that webform_validation.validators.inc's
+ * _webform_validation_check_false($var) function must be patched to filter out empty
+ * strings as well as just the array elements that are FALSE for this to work.
+ * @param array $validators The array of validators.
+ */
+function webform_structured_text_webform_validator_alter(&$validators) {
+  foreach ( array('equal', 'unique', 'oneoftwo', 'oneofseveral',) as $validator ) {
+    $validators[$validator]['component_types'][] = 'structured_text';
+  }
+}
+
 
 /**********************************
  * Translation-related functions.
