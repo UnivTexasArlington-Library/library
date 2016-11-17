@@ -5,7 +5,7 @@
  * Functions related to the WYSIWYG editor and the media input filter.
  */
 
-define('MEDIA_WYSIWYG_TOKEN_REGEX', '/\[\[.*?\]\]/s');
+define('MEDIA_WYSIWYG_TOKEN_REGEX', '/\[\[\{"fid".*?\]\]/s');
 
 /**
  * Filter callback for media markup filter.
@@ -25,6 +25,25 @@ function media_wysiwyg_filter($text, $filter = NULL, $format = NULL, $langcode =
     }
   }
   return $rendered_text;
+}
+
+/**
+ * Filter callback to remove paragraph tags surrounding embedded media.
+ */
+function media_wysiwyg_filter_paragraph_fix($text) {
+  $html_dom = filter_dom_load($text);
+  foreach ($html_dom->getElementsByTagName('p') as $paragraph) {
+    if (preg_match(MEDIA_WYSIWYG_TOKEN_REGEX, $paragraph->nodeValue)) {
+      $sibling = $paragraph->firstChild;
+      do {
+        $next = $sibling->nextSibling;
+        $paragraph->parentNode->insertBefore($sibling, $paragraph);
+      } while ($sibling = $next);
+      $paragraph->parentNode->removeChild($paragraph);
+    }
+  }
+  $text = filter_dom_serialize($html_dom);
+  return $text;
 }
 
 /**
@@ -133,7 +152,7 @@ function media_wysiwyg_token_to_markup($match, $wysiwyg = FALSE, $langcode = NUL
       $tag_info['attributes']['class'] = explode(" ", $tag_info['attributes']['class']);
     }
 
-    // Grab the potentially overrided fields from the file.
+    // Grab the potentially overridden fields from the file.
     $fields = media_wysiwyg_filter_field_parser($tag_info);
     foreach ($fields as $key => $value) {
       $file->{$key} = $value;
@@ -146,7 +165,6 @@ function media_wysiwyg_token_to_markup($match, $wysiwyg = FALSE, $langcode = NUL
 
     if (!empty($tag_info['attributes']) && is_array($tag_info['attributes'])) {
       $settings['attributes'] = array_intersect_key($tag_info['attributes'], array_flip($attribute_whitelist));
-      $settings['fields'] = $fields;
 
       // Many media formatters will want to apply width and height independently
       // of the style attribute or the corresponding HTML attributes, so pull
@@ -170,6 +188,12 @@ function media_wysiwyg_token_to_markup($match, $wysiwyg = FALSE, $langcode = NUL
         if (isset($settings['attributes'][$field_type])) {
           $settings['attributes'][$field_type] = decode_entities($settings['attributes'][$field_type]);
         }
+      }
+    }
+    // Update file metadata from the potentially overridden tag info.
+    foreach (array('width', 'height') as $dimension) {
+      if (isset($settings['attributes'][$dimension])) {
+        $file->metadata[$dimension] = $settings['attributes'][$dimension];
       }
     }
   }
@@ -266,6 +290,26 @@ function media_wysiwyg_filter_field_parser($tag_info) {
         $parsed_field = explode('[', str_replace(']', '', $field_name));
         $ref = &$fields;
 
+        // Certain types of fields, because of differences in markup, end up
+        // here with incomplete arrays. Make a best effort to support as many
+        // types of fields as possible.
+        // Single-value select lists show up here with only 2 array items.
+        if (count($parsed_field) == 2) {
+          $info = field_info_field($parsed_field[0]);
+          if ($info && !empty($info['columns'])) {
+            // Assume single-value.
+            $parsed_field[] = 0;
+            // Next tack on the column for this field.
+            $parsed_field[] = key($info['columns']);
+          }
+        }
+        // Multi-value select lists show up here with 3 array items.
+        elseif (count($parsed_field) == 3 && is_numeric($parsed_field[2])) {
+          $info = field_info_field($parsed_field[0]);
+          // They just need the value column.
+          $parsed_field[3] = key($info['columns']);
+        }
+
         // Each key of the field needs to be the child of the previous key.
         foreach ($parsed_field as $key) {
           if (!isset($ref[$key])) {
@@ -307,7 +351,7 @@ function _media_wysiwyg_generate_tagMap($text) {
   // between function calls. Since media_process_form is multiple times
   // with same form, this function is also called multiple times.
   static $tagmap = array();
-  preg_match_all("/\[\[.*?\]\]/s", $text, $matches, PREG_SET_ORDER);
+  preg_match_all(MEDIA_WYSIWYG_TOKEN_REGEX, $text, $matches, PREG_SET_ORDER);
   foreach ($matches as $match) {
     // We see if tagContent is already in $tagMap, if not we add it
     // to $tagmap.  If we return an empty array, we break embeddings of the same
