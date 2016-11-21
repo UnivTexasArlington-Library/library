@@ -5,7 +5,7 @@
  * Functions related to the WYSIWYG editor and the media input filter.
  */
 
-define('MEDIA_WYSIWYG_TOKEN_REGEX', '/\[\[\{"fid".*?\]\]/s');
+define('MEDIA_WYSIWYG_TOKEN_REGEX', '/\[\[.*?\]\]/s');
 
 /**
  * Filter callback for media markup filter.
@@ -215,11 +215,21 @@ function media_wysiwyg_token_to_markup($match, $wysiwyg = FALSE, $langcode = NUL
 
   if ($wysiwyg) {
     $settings['wysiwyg'] = $wysiwyg;
+
+    // Render file in WYSIWYG using appropriate view mode.
+    $view_mode = db_query('SELECT view_mode FROM {media_view_mode_wysiwyg} WHERE type = :type', array(
+      ':type' => $file->type,
+    ))
+      ->fetchField();
+    if (empty($view_mode)) {
+      $view_mode = $tag_info['view_mode'];
+    }
+
     // If sending markup to a WYSIWYG, we need to pass the file information so
     // that an inline macro can be generated when the WYSIWYG is detached.
     // The WYSIWYG plugin is expecting this information in the
     // Drupal.settings.mediaDataMap variable.
-    $element = media_wysiwyg_get_file_without_label($file, $tag_info['view_mode'], $settings, $langcode);
+    $element = media_wysiwyg_get_file_without_label($file, $view_mode, $settings, $langcode);
     $data = array(
       'type' => 'media',
       'fid'  => $file->fid,
@@ -257,13 +267,13 @@ function media_wysiwyg_token_to_markup($match, $wysiwyg = FALSE, $langcode = NUL
     }
     if (count(element_children($element['content'])) > 1) {
       // Add surrounding divs to group them together.
-      // We dont want divs when there are no additional fields to allow files
+      // We don't want divs when there are no additional fields to allow files
       // to display inline with text, without breaking p tags.
       $element['content']['#type'] = 'container';
       $element['content']['#attributes']['class'] = array(
         'media',
         'media-element-container',
-        'media-' . $element['content']['file']['#view_mode']
+        'media-' . $element['content']['file']['#view_mode'],
       );
     }
 
@@ -351,7 +361,7 @@ function _media_wysiwyg_generate_tagMap($text) {
   // between function calls. Since media_process_form is multiple times
   // with same form, this function is also called multiple times.
   static $tagmap = array();
-  preg_match_all(MEDIA_WYSIWYG_TOKEN_REGEX, $text, $matches, PREG_SET_ORDER);
+  preg_match_all("/\[\[.*?\]\]/s", $text, $matches, PREG_SET_ORDER);
   foreach ($matches as $match) {
     // We see if tagContent is already in $tagMap, if not we add it
     // to $tagmap.  If we return an empty array, we break embeddings of the same
@@ -415,12 +425,23 @@ function media_wysiwyg_get_wysiwyg_allowed_view_modes($file) {
   }
 
   $view_modes = $enabled_view_modes[$file->type];
+  media_wysiwyg_wysiwyg_allowed_view_modes_restrict($view_modes, $file);
   drupal_alter('media_wysiwyg_allowed_view_modes', $view_modes, $file);
   // Invoke the deprecated/misspelled alter hook as well.
   drupal_alter('media_wysiwyg_wysiwyg_allowed_view_modes', $view_modes, $file);
   return $view_modes;
 }
-
+/**
+ * Do not show restricted view modes.
+ */
+function media_wysiwyg_wysiwyg_allowed_view_modes_restrict(&$view_modes, &$file) {
+  $restricted_view_modes = db_query('SELECT display FROM {media_restrict_wysiwyg} WHERE type = :type', array(':type' => $file->type))->fetchCol();
+  foreach ($restricted_view_modes as $restricted_view_mode) {
+    if (array_key_exists($restricted_view_mode, $view_modes)) {
+      unset($view_modes[$restricted_view_mode]);
+    }
+  }
+}
 /**
  * #pre_render callback: Modify the element if the render cache is filtered.
  */
