@@ -8926,13 +8926,19 @@ input.summon-search-submit.button-website:focus {
 #internal-menu-prog .region-internal-menu {
   margin: 0;
 }
+#breadcrumb-prog a {
+  color: #0064b1;
+}
 #program-page {
-  padding: 0;
+  padding: 30px 20px;
 }
 #program-page .page-header-small,
 #program-page .page-header-lg {
   margin-right: 0;
   margin-left: 0;
+  background-color: transparent;
+  padding-left: 0;
+  font-size: 2em;
 }
 #block-menu-menu-libraries-menu .nav > li {
   float: left;
@@ -8942,6 +8948,13 @@ input.summon-search-submit.button-website:focus {
   text-transform: uppercase;
   font-size: 1.2em;
 }
+#block-menu-menu-libraries-menu .nav > li > a:hover,
+#block-menu-menu-libraries-menu .nav > li > a:focus {
+  color: #fff;
+}
+#block-menu-menu-libraries-menu .dropdown-menu {
+  background-color: #fff;
+}
 .pane-menu-menu-risk-taking-and-revolution .nav > li > a {
   color: #0064b1;
 }
@@ -8949,24 +8962,32 @@ input.summon-search-submit.button-website:focus {
 .pane-menu-menu-risk-taking-and-revolution .nav > li > a:focus {
   background-color: transparent;
 }
+.pane-menu-menu-risk-taking-and-revolution .dropdown-menu {
+  position: inherit;
+  box-shadow: none;
+}
 .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a {
   color: #0064b1;
   background-color: #fff;
-}
-.pane-menu-menu-risk-taking-and-revolution .dropdown-menu > .active > a {
-  background-color: #0064b1;
 }
 .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a:hover,
 .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a:focus {
   background-color: #fff;
 }
+.pane-menu-menu-risk-taking-and-revolution .dropdown-menu > .active > a {
+  background-color: #0064b1;
+}
+.pane-menu-menu-risk-taking-and-revolution .active-trail.dropdown-toggle.active {
+  color: #fff;
+}
 .view-scholcomm-staff {
   padding-left: 15px;
+  margin-top: 5em;
 }
 .view-scholcomm-staff h3 {
   margin-bottom: 0px;
   font-size: 1em;
-  margin-top: 10px;
+  margin-top: 10px !important;
   color: #000;
   font-weight: bold;
 }

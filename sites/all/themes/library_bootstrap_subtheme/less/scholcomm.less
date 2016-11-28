@@ -6,13 +6,20 @@
 		margin:0;
 	}
 }
-
+#breadcrumb-prog {
+	a {
+		color:#0064b1;
+	}
+}
 #program-page {
-	padding: 0;
+	padding: 30px 20px;
 	.page-header-small, 
 	.page-header-lg {
 		margin-right:0;
 		margin-left:0;
+		background-color: transparent;
+		padding-left: 0;
+		font-size: 2em;
 	}
 }
 #block-menu-menu-libraries-menu {
@@ -24,6 +31,13 @@
 		text-transform: uppercase;
 		font-size: 1.2em;
 	}
+	.nav > li > a:hover, 
+	.nav > li > a:focus {
+		color: #fff;
+	}
+	.dropdown-menu {
+		background-color: #fff;
+	}
 }
 .pane-menu-menu-risk-taking-and-revolution {
 	.nav > li > a {
@@ -33,23 +47,31 @@
 	.nav > li > a:focus {
 		background-color: transparent;
 	}
+	.dropdown-menu {
+		position:inherit;
+		box-shadow: none;
+	}
 	.dropdown-menu > li > a {
 		color:#0064b1;
 		background-color:#fff;
 	}
+	.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+		background-color: #fff;
+	}
 	.dropdown-menu > .active > a {
 		background-color:#0064b1; 
 	}
-	.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-		background-color: #fff;
+	.active-trail.dropdown-toggle.active {
+		color:#fff;
 	}
 }
 .view-scholcomm-staff {
 	padding-left: 15px;
+	margin-top:5em;
 	h3 {
 		margin-bottom: 0px;
 		font-size: 1em;
-		margin-top: 10px;
+		margin-top: 10px !important;
 		color: #000;
 		font-weight: bold;
 	}
