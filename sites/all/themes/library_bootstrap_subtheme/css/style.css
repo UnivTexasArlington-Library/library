@@ -8919,8 +8919,8 @@ input.summon-search-submit.button-website:focus {
   padding-left: 15px;
 }
 /* Scholarly Communication/ Program Page Styles */
-#scholcomm .page-header {
-  display: none;
+#program-page {
+  padding: 0 50px;
 }
 /* Local Print Styles */
 @media print {

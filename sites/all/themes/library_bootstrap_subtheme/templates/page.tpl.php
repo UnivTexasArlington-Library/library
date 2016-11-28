@@ -136,7 +136,7 @@
     </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
 
-
+<!-- For PROGRAM PAGES LIKE SCHOLCOMM -->
     <?php if (empty($page['sidebar_first'])): ?>
     <section class="center-container col-lg-12 col-md-8 col-sm-9 col-xs-12">
       <?php if (!empty($page['notification'])): ?>
@@ -160,17 +160,17 @@
           </div> <!-- end.visible-xs col-xs-2 (mobile navigation) -->
         </div> <!-- end #lib_header -->
       <?php endif; ?>
-      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+
       <a id="main-content"></a>
       <?php print $messages; ?>
       <?php if (!empty($tabs)): ?>
         <?php print render($tabs); ?>
       <?php endif; ?>
-      <?php print render($title_prefix); ?>
+      <!--<?php print render($title_prefix); ?>
       <?php if (!empty($title)): ?>
         <h1 class="page-header"><?php print $title; ?></h1>
       <?php endif; ?>
-      <?php print render($title_suffix); ?> 
+      <?php print render($title_suffix); ?> -->
       
       <?php if (!empty($page['help'])): ?>
         <?php print render($page['help']); ?>
@@ -179,7 +179,8 @@
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <div class="internal-menu"><?php print render($page['internal_menu']); ?></div>
-      <div id="internal-page"><?php print render($page['content']); ?></div>
+      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+      <div id="program-page"><?php print render($page['content']); ?></div>
       <footer class="footer">
         
     <?php print render($page['footer']); ?>
