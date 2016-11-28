@@ -8918,6 +8918,10 @@ input.summon-search-submit.button-website:focus {
   font-style: oblique;
   padding-left: 15px;
 }
+/* Scholarly Communication/ Program Page Styles */
+#scholcomm .page-header {
+  display: none;
+}
 /* Local Print Styles */
 @media print {
   .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
