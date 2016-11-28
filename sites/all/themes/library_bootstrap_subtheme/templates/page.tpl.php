@@ -75,15 +75,13 @@
 ?>
 <div class="main-container container-fluid">
   <div class="row">
-
-    <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-xs-6 col-sm-3 col-md-2 sidebar-offcanvas" role="navigation" id="sidebar">
-        <div class="row row-offcanvas row-offcanvas-left">
-        <?php print render($page['sidebar_first']); ?>
-        </div>
-      </aside>  <!-- /#sidebar-first -->
-    <?php endif; ?>
-
+    
+    <aside class="col-xs-6 col-sm-3 col-md-2 sidebar-offcanvas" role="navigation" id="sidebar">
+      <div class="row row-offcanvas row-offcanvas-left">
+      <?php print render($page['sidebar_first']); ?>
+      </div>
+    </aside>  <!-- /#sidebar-first -->
+    
     <section class="center-container col-md-8 col-sm-9 col-xs-12">
       <?php if (!empty($page['notification'])): ?>
       <?php print render($page['notification']); ?>
@@ -133,13 +131,8 @@
       </footer>
     </section>
 
-
-    <?php if (!empty($page['sidebar_second'])): ?>
-      <aside class="col-xs-6 col-sm-3 col-md-2 pull-right sidebar_second" role="navigation">
-        <?php print render($page['sidebar_second']); ?>
-      </aside>  <!-- /#sidebar-second -->
-    </div> <!-- end .row -->
-    <?php endif; ?>
-      
-  
+    <aside class="col-xs-6 col-sm-3 col-md-2 pull-right sidebar_second" role="navigation">
+      <?php print render($page['sidebar_second']); ?>
+    </aside>  <!-- /#sidebar-second -->
+  </div> <!-- end .row --> 
 </div> <!-- end.main-container container-fluid -->
