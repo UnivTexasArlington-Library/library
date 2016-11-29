@@ -8968,6 +8968,9 @@ input.summon-search-submit.button-website:focus {
 #block-menu-menu-libraries-menu .dropdown-menu {
   background-color: #fff;
 }
+#block-menu-menu-libraries-menu .caret {
+  display: none;
+}
 .pane-menu-menu-risk-taking-and-revolution .nav > li > a,
 .pane-menu-menu-scholcomm .nav > li > a {
   color: #0052a3;
@@ -8975,16 +8978,18 @@ input.summon-search-submit.button-website:focus {
 .pane-menu-menu-risk-taking-and-revolution .nav > li > a:hover,
 .pane-menu-menu-scholcomm .nav > li > a:hover,
 .pane-menu-menu-risk-taking-and-revolution .nav > li > a:focus,
-.pane-menu-menu-scholcomm .nav > li > a:focus {
+.pane-menu-menu-scholcomm .nav > li > a:focus,
+.pane-menu-menu-risk-taking-and-revolution .nav > li > a.active,
+.pane-menu-menu-scholcomm .nav > li > a.active {
   background-color: #eeeeee;
 }
-.pane-menu-menu-risk-taking-and-revolution .dropdown-menu,
-.pane-menu-menu-scholcomm .dropdown-menu {
+.pane-menu-menu-risk-taking-and-revolution > ul.dropdown-menu,
+.pane-menu-menu-scholcomm > ul.dropdown-menu {
   position: inherit;
   box-shadow: none;
 }
-.pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a,
-.pane-menu-menu-scholcomm .dropdown-menu > li > a {
+.pane-menu-menu-risk-taking-and-revolution > ul.dropdown-menu > li > a,
+.pane-menu-menu-scholcomm > ul.dropdown-menu > li > a {
   color: #0052a3;
   background-color: #fff;
 }
@@ -9014,6 +9019,13 @@ input.summon-search-submit.button-website:focus {
   font-size: 1em;
   margin-top: 10px !important;
   color: #000;
+  font-weight: bold;
+}
+.btn-sc {
+  color: #0052a3;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 4em;
   font-weight: bold;
 }
 /* Local Print Styles */

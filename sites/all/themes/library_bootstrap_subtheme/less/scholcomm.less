@@ -53,6 +53,9 @@
 	.dropdown-menu {
 		background-color: #fff;
 	}
+	.caret {
+		display:none;
+	}
 }
 .pane-menu-menu-risk-taking-and-revolution, 
 .pane-menu-menu-scholcomm {
@@ -60,14 +63,15 @@
 		color:@header-text;
 	}
 	.nav > li > a:hover, 
-	.nav > li > a:focus {
+	.nav > li > a:focus, 
+	.nav > li > a.active {
 		background-color: @gray-lighter;
 	}
-	.dropdown-menu {
+	> ul.dropdown-menu {
 		position:inherit;
 		box-shadow: none;
 	}
-	.dropdown-menu > li > a {
+	> ul.dropdown-menu > li > a {
 		color:@header-text;
 		background-color:#fff;
 	}
@@ -80,6 +84,7 @@
 	.active-trail.dropdown-toggle.active {
 		background-color:@gray-lighter;
 	}
+
 }
 .pane-menu-menu-scholcomm {
 	border-right:1px solid @gray-lighter;
@@ -94,4 +99,11 @@
 		color: #000;
 		font-weight: bold;
 	}
+}
+.btn-sc {
+	color:@header-text;
+	text-transform: uppercase;
+	text-align: center;
+	margin-top: 4em;
+	font-weight: bold;
 }
