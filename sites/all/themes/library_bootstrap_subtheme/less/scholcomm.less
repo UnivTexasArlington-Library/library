@@ -1,7 +1,7 @@
 /* Scholarly Communication/ Program Page Styles */
 #internal-menu-prog {
 	background-color: #D3EFFb;
-	border-bottom:3px solid #00467E;
+	border-bottom:3px solid @header-text;
 	.region-internal-menu {
 		margin:0;
 	}
@@ -22,12 +22,27 @@
 		font-size: 2em;
 	}
 }
+#scholcomm {
+	h2 {
+		border-top:none;
+		border-bottom:3px dotted @gray;
+		padding-left:0;
+		color:@gray;
+		margin-right:10em;
+		font-size: 2em;
+		text-transform:none;
+	}
+	h3 {
+		text-transform: none;
+		margin-top:2em;
+	}
+}
 #block-menu-menu-libraries-menu {
 	.nav > li {
 		float:left;
 	}
 	.nav > li > a {
-		color:#0064b1;
+		color:@header-text;
 		text-transform: uppercase;
 		font-size: 1.2em;
 	}
@@ -39,31 +54,35 @@
 		background-color: #fff;
 	}
 }
-.pane-menu-menu-risk-taking-and-revolution {
+.pane-menu-menu-risk-taking-and-revolution, 
+.pane-menu-menu-scholcomm {
 	.nav > li > a {
-		color:#0064b1;
+		color:@header-text;
 	}
 	.nav > li > a:hover, 
 	.nav > li > a:focus {
-		background-color: transparent;
+		background-color: @gray-lighter;
 	}
 	.dropdown-menu {
 		position:inherit;
 		box-shadow: none;
 	}
 	.dropdown-menu > li > a {
-		color:#0064b1;
+		color:@header-text;
 		background-color:#fff;
 	}
 	.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
 		background-color: #fff;
 	}
 	.dropdown-menu > .active > a {
-		background-color:#0064b1; 
+		background-color:@gray-lighter; 
 	}
 	.active-trail.dropdown-toggle.active {
-		color:#fff;
+		background-color:@gray-lighter;
 	}
+}
+.pane-menu-menu-scholcomm {
+	border-right:1px solid @gray-lighter;
 }
 .view-scholcomm-staff {
 	padding-left: 15px;
