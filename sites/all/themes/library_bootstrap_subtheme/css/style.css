@@ -8940,18 +8940,22 @@ input.summon-search-submit.button-website:focus {
   padding-left: 0;
   font-size: 2em;
 }
+#scholcomm p {
+  color: #000;
+}
 #scholcomm a {
   color: initial;
   text-decoration: underline;
 }
 #scholcomm li.node-readmore > a {
   text-decoration: underline;
+  text-decoration-color: #a3a3a3;
 }
 #scholcomm h2 {
   border-top: none;
-  border-bottom: 3px dotted #555555;
+  border-bottom: 3px dotted #656567;
   padding-left: 0;
-  color: #555555;
+  color: #656567;
   margin-right: 10em;
   font-size: 2em;
   text-transform: none;
@@ -8963,91 +8967,100 @@ input.summon-search-submit.button-website:focus {
   text-transform: none;
   margin-top: 2em;
 }
-#scholcomm h4 .media-heading > a {
+#scholcomm h4 .media-heading {
   margin-top: 0;
-  text-decoration: underline;
 }
-#block-menu-menu-libraries-menu .nav > li {
+#scholcomm h4 .media-heading > a {
+  text-decoration: underline;
+  color: #ae482c;
+}
+#scholcomm #block-menu-menu-libraries-menu .nav > li {
   float: left;
 }
-#block-menu-menu-libraries-menu .nav > li > a {
+#scholcomm #block-menu-menu-libraries-menu .nav > li > a {
   color: #0052a3;
   text-transform: uppercase;
   font-size: 1.1em;
   font-weight: bold;
 }
-#block-menu-menu-libraries-menu .nav > li > a:hover,
-#block-menu-menu-libraries-menu .nav > li > a:focus {
+#scholcomm #block-menu-menu-libraries-menu .nav > li > a:hover,
+#scholcomm #block-menu-menu-libraries-menu .nav > li > a:focus {
   color: #fff;
 }
-#block-menu-menu-libraries-menu .dropdown-menu {
+#scholcomm #block-menu-menu-libraries-menu .dropdown-menu {
   background-color: #fff;
 }
-#block-menu-menu-libraries-menu .caret {
+#scholcomm #block-menu-menu-libraries-menu .caret {
   display: none;
 }
-.pane-menu-menu-risk-taking-and-revolution .nav > li > a,
-.pane-menu-menu-scholcomm .nav > li > a {
+#scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li > a,
+#scholcomm .pane-menu-menu-scholcomm .nav > li > a {
   color: #0052a3;
   display: inline-block;
+  text-decoration: none;
 }
-.pane-menu-menu-risk-taking-and-revolution .nav > li > a:hover,
-.pane-menu-menu-scholcomm .nav > li > a:hover,
-.pane-menu-menu-risk-taking-and-revolution .nav > li > a:focus,
-.pane-menu-menu-scholcomm .nav > li > a:focus,
-.pane-menu-menu-risk-taking-and-revolution .nav > li > a.active,
-.pane-menu-menu-scholcomm .nav > li > a.active {
+#scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li > a:hover,
+#scholcomm .pane-menu-menu-scholcomm .nav > li > a:hover,
+#scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li > a:focus,
+#scholcomm .pane-menu-menu-scholcomm .nav > li > a:focus,
+#scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li > a.active,
+#scholcomm .pane-menu-menu-scholcomm .nav > li > a.active {
   background-color: #eeeeee;
   display: inline-block;
 }
-.pane-menu-menu-risk-taking-and-revolution > ul.dropdown-menu,
-.pane-menu-menu-scholcomm > ul.dropdown-menu {
+#scholcomm .pane-menu-menu-risk-taking-and-revolution > ul.dropdown-menu,
+#scholcomm .pane-menu-menu-scholcomm > ul.dropdown-menu {
   position: inherit;
   box-shadow: none;
 }
-.pane-menu-menu-risk-taking-and-revolution .open > .dropdown-menu > li > a,
-.pane-menu-menu-scholcomm .open > .dropdown-menu > li > a {
+#scholcomm .pane-menu-menu-risk-taking-and-revolution .open > .dropdown-menu > li > a,
+#scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a {
   color: #0052a3;
 }
-.pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a:hover,
-.pane-menu-menu-scholcomm .dropdown-menu > li > a:hover,
-.pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a:focus,
-.pane-menu-menu-scholcomm .dropdown-menu > li > a:focus {
+#scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a:hover,
+#scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a:hover,
+#scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a:focus,
+#scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a:focus {
   background-color: #fff;
 }
-.pane-menu-menu-risk-taking-and-revolution .dropdown-menu > .active > a,
-.pane-menu-menu-scholcomm .dropdown-menu > .active > a {
+#scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > .active > a,
+#scholcomm .pane-menu-menu-scholcomm .dropdown-menu > .active > a {
   background-color: #eeeeee;
 }
-.pane-menu-menu-risk-taking-and-revolution .active-trail.dropdown-toggle.active,
-.pane-menu-menu-scholcomm .active-trail.dropdown-toggle.active {
+#scholcomm .pane-menu-menu-risk-taking-and-revolution .active-trail.dropdown-toggle.active,
+#scholcomm .pane-menu-menu-scholcomm .active-trail.dropdown-toggle.active {
   background-color: #eeeeee;
 }
-.pane-menu-menu-scholcomm {
-  border-right: 1px solid #eeeeee;
+#scholcomm .pane-menu-menu-scholcomm {
+  border-right: 1px solid #a3a3a3;
 }
-.view-scholcomm-staff {
+#scholcomm .view-scholcomm-staff {
   padding-left: 15px;
   margin-top: 5em;
 }
-.view-scholcomm-staff h3 {
+#scholcomm .view-scholcomm-staff h3 {
   margin-bottom: 0px;
   font-size: 1em;
   margin-top: 10px !important;
   color: #000;
   font-weight: bold;
 }
-.btn-sc-row {
+#scholcomm .btn-sc-row {
   margin-bottom: 4em;
 }
-.btn-sc {
+#scholcomm .btn-sc {
   text-align: center;
   text-transform: uppercase;
   margin-top: 4em;
   font-weight: bold;
 }
-.btn-sc a {
+#scholcomm .btn-sc a {
   color: #0052a3 !important;
+}
+#scholcomm .sc-event-workshop {
+  border-radius: 10px;
+  border: 1px solid #a3a3a3;
+  padding: 10px;
 }
 /* Local Print Styles */
 @media print {
