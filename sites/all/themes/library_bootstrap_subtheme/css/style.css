@@ -8991,6 +8991,7 @@ input.summon-search-submit.button-website:focus {
   color: #0057b4;
   display: inline-block;
   text-decoration: none;
+  background-color: inherit;
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li > a:hover,
 #scholcomm .pane-menu-menu-scholcomm .nav > li > a:hover,
@@ -9006,9 +9007,15 @@ input.summon-search-submit.button-website:focus {
   position: inherit;
   box-shadow: none;
 }
+#scholcomm .pane-menu-menu-risk-taking-and-revolution .open > .dropdown-menu,
+#scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu {
+  position: relative;
+  box-shadow: none;
+}
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .open > .dropdown-menu > li > a,
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a {
   color: #0057b4;
+  text-decoration: none;
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a:hover,
 #scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a:hover,
@@ -9051,10 +9058,11 @@ input.summon-search-submit.button-website:focus {
   color: #0057b4;
   text-decoration: none;
 }
-#scholcomm .sc-newsblog > .media-heading {
+#scholcomm .media-heading {
+  /* for newsblog headings */
   margin-top: 0;
 }
-#scholcomm .sc-newsblog > .media-heading > a {
+#scholcomm .media-heading > a {
   text-decoration: underline;
   color: #ae482c;
 }
