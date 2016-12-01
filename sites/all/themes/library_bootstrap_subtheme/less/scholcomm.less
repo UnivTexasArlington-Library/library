@@ -77,15 +77,8 @@
 	h4 {
 		text-transform: none;
 		margin-top:2em;
-		.media-heading {
-			margin-top:0;
-			> a {
-				text-decoration: underline;
-				color: @sc-red;
-			}
-		}
-	}
 
+	}
 	.pane-menu-menu-risk-taking-and-revolution, 
 	.pane-menu-menu-scholcomm {
 		.nav > li > a {
@@ -96,7 +89,7 @@
 		.nav > li > a:hover, 
 		.nav > li > a:focus, 
 		.nav > li > a.active {
-			background-color: @sc-grey-text;
+			background-color: @sc-rollover;
 			display: inline-block;
 		}
 		> ul.dropdown-menu {
@@ -110,10 +103,10 @@
 			background-color: #fff;
 		}
 		.dropdown-menu > .active > a {
-			background-color:@sc-grey-line; 
+			background-color:@sc-rollover; 
 		}
 		.active-trail.dropdown-toggle.active {
-			background-color:@sc-grey-line;
+			background-color:@sc-rollover;
 		}
 	}
 	.pane-menu-menu-scholcomm {
@@ -139,13 +132,20 @@
 		margin-top: 4em;
 		font-weight: bold;
 		a {
-			color:@sc-blue-text !important;
+			color:@sc-blue-text;
+			text-decoration: none;
 		}
 	}
 	.sc-newsblog {
-
+		> .media-heading {
+			margin-top: 0;
+			> a {
+				text-decoration: underline;
+				color: @sc-red;
+			}
+		}
 	}
-	.sc-event-workshop{
+	.sc-event-workshop {
 		border-radius: 10px;
 		border:1px solid @sc-grey-line;
 		padding: 10px;
