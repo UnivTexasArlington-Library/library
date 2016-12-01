@@ -25,8 +25,9 @@
 #scholcomm {
 	a {
 		color:initial;
+		text-decoration: underline;
 	}
-	a.node-readmore {
+	li.node-readmore > a {
 		text-decoration: underline;	
 	}
 	h2 {
@@ -38,9 +39,16 @@
 		font-size: 2em;
 		text-transform:none;
 	}
+	h3 {
+		text-transform: lowercase;
+	}
 	h4 {
 		text-transform: none;
 		margin-top:2em;
+		.media-heading > a {
+			margin-top:0;
+			text-decoration: underline;
+		}
 	}
 
 
@@ -110,12 +118,15 @@
 		font-weight: bold;
 	}
 }
+.btn-sc-row {
+	margin-bottom: 4em;
+}
 .btn-sc {
 	text-align: center;
 	text-transform: uppercase;
 	margin-top: 4em;
 	font-weight: bold;
 	a {
-		color:@header-text;
+		color:@header-text !important;
 	}
 }
