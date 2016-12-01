@@ -1,4 +1,6 @@
 /* Scholarly Communication/ Program Page Styles */
+@sc-blue-text: #0057b4;
+@sc-dkblue: #00447C;
 @sc-grey-text: #656567;
 @sc-grey-line: #a3a3a3;
 @sc-rollover: #f4f4f4;
@@ -6,11 +8,32 @@
 
 #internal-menu-prog {
 	background-color: #D3EFFb;
-	border-bottom:3px solid @header-text;
+	border-bottom:3px solid @sc-blue-text;
 	.region-internal-menu {
 		margin:0;
 	}
 }
+	#block-menu-menu-libraries-menu {
+		.nav > li {
+			float:left;
+		}
+		.nav > li > a {
+			color:@sc-blue-text;
+			text-transform: uppercase;
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		.nav > li > a:hover, 
+		.nav > li > a:focus {
+			color: #fff;
+		}
+		.dropdown-menu {
+			background-color: #fff;
+		}
+		.caret {
+			display:none;
+		}
+	}
 #breadcrumb-prog {
 	a {
 		color:#0064b1;
@@ -62,38 +85,18 @@
 			}
 		}
 	}
-	#block-menu-menu-libraries-menu {
-		.nav > li {
-			float:left;
-		}
-		.nav > li > a {
-			color:@header-text;
-			text-transform: uppercase;
-			font-size: 1.1em;
-			font-weight: bold;
-		}
-		.nav > li > a:hover, 
-		.nav > li > a:focus {
-			color: #fff;
-		}
-		.dropdown-menu {
-			background-color: #fff;
-		}
-		.caret {
-			display:none;
-		}
-	}
+
 	.pane-menu-menu-risk-taking-and-revolution, 
 	.pane-menu-menu-scholcomm {
 		.nav > li > a {
-			color:@header-text;
+			color:@sc-blue-text;
 			display: inline-block;
 			text-decoration: none;
 		}
 		.nav > li > a:hover, 
 		.nav > li > a:focus, 
 		.nav > li > a.active {
-			background-color: @gray-lighter;
+			background-color: @sc-grey-text;
 			display: inline-block;
 		}
 		> ul.dropdown-menu {
@@ -101,16 +104,16 @@
 			box-shadow: none;
 		}
 		.open > .dropdown-menu > li > a {
-				color:@header-text;
+				color:@sc-blue-text;
 		}
 		.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
 			background-color: #fff;
 		}
 		.dropdown-menu > .active > a {
-			background-color:@gray-lighter; 
+			background-color:@sc-grey-line; 
 		}
 		.active-trail.dropdown-toggle.active {
-			background-color:@gray-lighter;
+			background-color:@sc-grey-line;
 		}
 	}
 	.pane-menu-menu-scholcomm {
@@ -136,7 +139,7 @@
 		margin-top: 4em;
 		font-weight: bold;
 		a {
-			color:@header-text !important;
+			color:@sc-blue-text !important;
 		}
 	}
 	.sc-newsblog {

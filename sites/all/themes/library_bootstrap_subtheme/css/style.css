@@ -8921,10 +8921,29 @@ input.summon-search-submit.button-website:focus {
 /* Scholarly Communication/ Program Page Styles */
 #internal-menu-prog {
   background-color: #D3EFFb;
-  border-bottom: 3px solid #0052a3;
+  border-bottom: 3px solid #0057b4;
 }
 #internal-menu-prog .region-internal-menu {
   margin: 0;
+}
+#block-menu-menu-libraries-menu .nav > li {
+  float: left;
+}
+#block-menu-menu-libraries-menu .nav > li > a {
+  color: #0057b4;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+#block-menu-menu-libraries-menu .nav > li > a:hover,
+#block-menu-menu-libraries-menu .nav > li > a:focus {
+  color: #fff;
+}
+#block-menu-menu-libraries-menu .dropdown-menu {
+  background-color: #fff;
+}
+#block-menu-menu-libraries-menu .caret {
+  display: none;
 }
 #breadcrumb-prog a {
   color: #0064b1;
@@ -8974,28 +8993,9 @@ input.summon-search-submit.button-website:focus {
   text-decoration: underline;
   color: #ae482c;
 }
-#scholcomm #block-menu-menu-libraries-menu .nav > li {
-  float: left;
-}
-#scholcomm #block-menu-menu-libraries-menu .nav > li > a {
-  color: #0052a3;
-  text-transform: uppercase;
-  font-size: 1.1em;
-  font-weight: bold;
-}
-#scholcomm #block-menu-menu-libraries-menu .nav > li > a:hover,
-#scholcomm #block-menu-menu-libraries-menu .nav > li > a:focus {
-  color: #fff;
-}
-#scholcomm #block-menu-menu-libraries-menu .dropdown-menu {
-  background-color: #fff;
-}
-#scholcomm #block-menu-menu-libraries-menu .caret {
-  display: none;
-}
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li > a,
 #scholcomm .pane-menu-menu-scholcomm .nav > li > a {
-  color: #0052a3;
+  color: #0057b4;
   display: inline-block;
   text-decoration: none;
 }
@@ -9005,7 +9005,7 @@ input.summon-search-submit.button-website:focus {
 #scholcomm .pane-menu-menu-scholcomm .nav > li > a:focus,
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li > a.active,
 #scholcomm .pane-menu-menu-scholcomm .nav > li > a.active {
-  background-color: #eeeeee;
+  background-color: #656567;
   display: inline-block;
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution > ul.dropdown-menu,
@@ -9015,7 +9015,7 @@ input.summon-search-submit.button-website:focus {
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .open > .dropdown-menu > li > a,
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a {
-  color: #0052a3;
+  color: #0057b4;
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a:hover,
 #scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a:hover,
@@ -9025,11 +9025,11 @@ input.summon-search-submit.button-website:focus {
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > .active > a,
 #scholcomm .pane-menu-menu-scholcomm .dropdown-menu > .active > a {
-  background-color: #eeeeee;
+  background-color: #a3a3a3;
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .active-trail.dropdown-toggle.active,
 #scholcomm .pane-menu-menu-scholcomm .active-trail.dropdown-toggle.active {
-  background-color: #eeeeee;
+  background-color: #a3a3a3;
 }
 #scholcomm .pane-menu-menu-scholcomm {
   border-right: 1px solid #a3a3a3;
@@ -9055,7 +9055,7 @@ input.summon-search-submit.button-website:focus {
   font-weight: bold;
 }
 #scholcomm .btn-sc a {
-  color: #0052a3 !important;
+  color: #0057b4 !important;
 }
 #scholcomm .sc-event-workshop {
   border-radius: 10px;
