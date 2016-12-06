@@ -232,7 +232,7 @@
 
       // Parse out link wrappers. They will be re-applied when the image is
       // rendered on the front-end.
-      if (element.is('a')) {
+      if (element.is('a') && element.find('img').length) {
         element = element.children();
       }
 
@@ -263,6 +263,18 @@
 
       // Store the data in the data map.
       Drupal.media.filter.ensureDataMap();
+
+      // Generate a "delta" to allow for multiple embeddings of the same file.
+      var delta = Drupal.media.filter.fileEmbedDelta(info.fid, element);
+      if (Drupal.settings.mediaDataMap[info.fid]) {
+        info.field_deltas = Drupal.settings.mediaDataMap[info.fid].field_deltas || {};
+      }
+      else {
+        info.field_deltas = {};
+      }
+      info.field_deltas[delta] = info.fields;
+      element.attr('data-delta', delta);
+
       Drupal.settings.mediaDataMap[info.fid] = info;
 
       // Store the fid in the DOM to retrieve the data from the info map.
@@ -314,7 +326,7 @@
      *    A media element with associated file info via a file id (fid).
      */
     extract_file_info: function (element) {
-      var fid, file_info, value;
+      var fid, file_info, value, delta;
 
       if (fid = element.data('fid')) {
         Drupal.media.filter.ensureDataMap();
@@ -334,6 +346,23 @@
 
           // Extract the link text, if there is any.
           file_info.link_text = element.find('a').html();
+
+          // When a file is embedded, its fields can be overridden. To allow for
+          // the edge case where the same file is embedded multiple times with
+          // different field overrides, we look for a data-delta attribute on
+          // the element, and use that to decide which set of data in the
+          // "field_deltas" property to use.
+          if (delta = element.data('delta')) {
+            if (file_info.field_deltas && file_info.field_deltas[delta]) {
+              file_info.fields = file_info.field_deltas[delta];
+
+              // Also look for an overridden view mode, aka "format".
+              // Check for existance of fields to make it backward compatible.
+              if (file_info.fields && file_info.fields.format && file_info.view_mode) {
+                file_info.view_mode = file_info.fields.format;
+              }
+            }
+          }
         }
       }
 
@@ -395,6 +424,24 @@
     ensure_tagmap: function () {
       Drupal.settings.tagmap = Drupal.settings.tagmap || {};
       return Drupal.settings.tagmap;
+    },
+
+    /**
+     * Generates a unique "delta" for each embedding of a particular file.
+     */
+    fileEmbedDelta: function(fid, element) {
+      // Check to see if the element already has one.
+      if (element && element.data('delta')) {
+        return element.data('delta');
+      }
+      // Otherwise, generate a new one. Arbitrarily start with 1.
+      var delta = 1;
+      Drupal.settings.mediaDeltas = Drupal.settings.mediaDeltas || {};
+      if (Drupal.settings.mediaDeltas[fid]) {
+        delta = Drupal.settings.mediaDeltas[fid] + 1;
+      }
+      Drupal.settings.mediaDeltas[fid] = delta;
+      return delta;
     }
   }
 
