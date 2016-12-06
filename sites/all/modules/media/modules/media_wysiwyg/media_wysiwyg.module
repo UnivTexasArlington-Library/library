@@ -342,6 +342,7 @@ function _media_wysiwyg_wysiwyg_allowed_attributes_default() {
     'data-picture-group',
     'data-picture-align',
     'data-picture-mapping',
+    'data-delta',
   );
 }
 
@@ -554,6 +555,11 @@ function media_wysiwyg_entity_info_alter(&$entity_info) {
  * Add select when editing file types to set wysiwyg view mode.
  */
 function media_wysiwyg_form_file_entity_file_type_form_alter(&$form, &$form_state) {
+  // #2609244 Keep media from trying to alter the File add form just edit.
+  if (empty($form_state['build_info']['args'][0])) {
+    return;
+  }
+  
   $options = array();
 
   // Add an option allowing users not to use a view mode.
