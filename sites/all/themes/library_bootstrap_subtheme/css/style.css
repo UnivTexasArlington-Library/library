@@ -9050,6 +9050,7 @@ input.summon-search-submit.button-website:focus {
   margin-top: 10px !important;
   color: #000;
   font-weight: bold;
+  text-transform: uppercase;
 }
 #scholcomm .btn-sc-row {
   margin-bottom: 4em;
