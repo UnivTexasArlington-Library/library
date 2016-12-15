@@ -8980,12 +8980,13 @@ input.summon-search-submit.button-website:focus {
   text-transform: none;
 }
 #scholcomm h3 {
+  font-size: 2em;
   text-transform: capitalize;
 }
 #scholcomm h4 {
   text-transform: none;
 }
-#scholcomm .sidebar-tile {
+#scholcomm .sidebar-title {
   font-weight: bold;
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li > a,
