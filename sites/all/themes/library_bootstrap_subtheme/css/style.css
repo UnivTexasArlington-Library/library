@@ -8989,8 +8989,12 @@ input.summon-search-submit.button-website:focus {
 #scholcomm .sidebar-title {
   font-weight: bold;
 }
-#scholcomm .sidebar-image {
+#scholcomm .sidebar-image > img {
   margin-left: 0;
+}
+#scholcomm .pane-menu-menu-risk-taking-and-revolution .caret,
+#scholcomm .pane-menu-menu-scholcomm .caret {
+  display: none;
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li > a,
 #scholcomm .pane-menu-menu-scholcomm .nav > li > a {
