@@ -162,13 +162,19 @@
 		padding: 10px;
 	}
 	.view-scholcomm-blog-content {
-		.views-field.views-field-created::before {
-			background-image:url(/sites/default/files/CALENDAR-ICON.png) no-repeat left;
-			padding-left: 5px;
+		.views-field.views-field-created,
+		.views-field.views-field-comment-count {
+			padding-left: 2.5em;
+			margin-left:1em;
+			padding-top:0.75em; 
 		}
-		.views-field.views-field-comment-count::before {
-			background-image:url(/sites/default/files/CALENDAR-ICON.png) no-repeat left;
-			padding-left: 5px;
+		.views-field.views-field-created {
+			background:url(/sites/default/files/CALENDAR-ICON.png) no-repeat left;
+
+		}
+		.views-field.views-field-comment-count {
+			background:url(/sites/default/files/COMMENTS-BUBBLE.png) no-repeat left;
+
 		}
 	}
 }

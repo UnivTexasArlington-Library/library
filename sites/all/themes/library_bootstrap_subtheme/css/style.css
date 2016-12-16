@@ -9080,13 +9080,17 @@ input.summon-search-submit.button-website:focus {
   border: 1px solid #a3a3a3;
   padding: 10px;
 }
-#scholcomm .view-scholcomm-blog-content .views-field.views-field-created::before {
-  background-image: url(/sites/default/files/CALENDAR-ICON.png) no-repeat left;
-  padding-left: 5px;
+#scholcomm .view-scholcomm-blog-content .views-field.views-field-created,
+#scholcomm .view-scholcomm-blog-content .views-field.views-field-comment-count {
+  padding-left: 2.5em;
+  margin-left: 1em;
+  padding-top: 0.75em;
 }
-#scholcomm .view-scholcomm-blog-content .views-field.views-field-comment-count::before {
-  background-image: url(/sites/default/files/CALENDAR-ICON.png) no-repeat left;
-  padding-left: 5px;
+#scholcomm .view-scholcomm-blog-content .views-field.views-field-created {
+  background: url(/sites/default/files/CALENDAR-ICON.png) no-repeat left;
+}
+#scholcomm .view-scholcomm-blog-content .views-field.views-field-comment-count {
+  background: url(/sites/default/files/COMMENTS-BUBBLE.png) no-repeat left;
 }
 /* Local Print Styles */
 @media print {
