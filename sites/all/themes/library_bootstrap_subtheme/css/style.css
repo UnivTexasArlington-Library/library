@@ -8959,6 +8959,11 @@ input.summon-search-submit.button-website:focus {
   padding-left: 0;
   font-size: 2em;
 }
+#scholcomm {
+  /*.btn-sc-row {
+		margin-bottom: 4em;
+	}*/
+}
 #scholcomm p {
   color: #000;
 }
@@ -9052,9 +9057,6 @@ input.summon-search-submit.button-website:focus {
   font-weight: bold;
   text-transform: uppercase;
 }
-#scholcomm .btn-sc-row {
-  margin-bottom: 4em;
-}
 #scholcomm .btn-sc {
   text-align: center;
   text-transform: uppercase;
@@ -9077,6 +9079,14 @@ input.summon-search-submit.button-website:focus {
   border-radius: 10px;
   border: 1px solid #a3a3a3;
   padding: 10px;
+}
+#scholcomm .view-scholcomm-blog-content .views-field.views-field-created::before {
+  background-image: url(/sites/default/files/CALENDAR-ICON.png) no-repeat left;
+  padding-left: 5px;
+}
+#scholcomm .view-scholcomm-blog-content .views-field.views-field-comment-count::before {
+  background-image: url(/sites/default/files/CALENDAR-ICON.png) no-repeat left;
+  padding-left: 5px;
 }
 /* Local Print Styles */
 @media print {

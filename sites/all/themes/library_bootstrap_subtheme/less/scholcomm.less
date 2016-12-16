@@ -135,9 +135,9 @@
 			text-transform: uppercase;
 		}
 	}
-	.btn-sc-row {
+	/*.btn-sc-row {
 		margin-bottom: 4em;
-	}
+	}*/
 	.btn-sc {
 		text-align: center;
 		text-transform: uppercase;
@@ -160,5 +160,15 @@
 		border-radius: 10px;
 		border:1px solid @sc-grey-line;
 		padding: 10px;
+	}
+	.view-scholcomm-blog-content {
+		.views-field.views-field-created::before {
+			background-image:url(/sites/default/files/CALENDAR-ICON.png) no-repeat left;
+			padding-left: 5px;
+		}
+		.views-field.views-field-comment-count::before {
+			background-image:url(/sites/default/files/CALENDAR-ICON.png) no-repeat left;
+			padding-left: 5px;
+		}
 	}
 }
