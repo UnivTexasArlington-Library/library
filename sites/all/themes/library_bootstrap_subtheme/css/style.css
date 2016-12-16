@@ -8959,11 +8959,6 @@ input.summon-search-submit.button-website:focus {
   padding-left: 0;
   font-size: 2em;
 }
-#scholcomm {
-  /*.btn-sc-row {
-		margin-bottom: 4em;
-	}*/
-}
 #scholcomm p {
   color: #000;
 }
@@ -9068,7 +9063,6 @@ input.summon-search-submit.button-website:focus {
   text-decoration: none;
 }
 #scholcomm .media-heading {
-  /* for newsblog headings */
   margin-top: 0;
 }
 #scholcomm .media-heading > a {
@@ -9080,17 +9074,33 @@ input.summon-search-submit.button-website:focus {
   border: 1px solid #a3a3a3;
   padding: 10px;
 }
+#scholcomm .view-scholcomm-blog-content .views-field.views-field-comment-count,
+#scholcomm .view-scholcomm-blog-content .blog-author-name {
+  color: #00447c;
+}
 #scholcomm .view-scholcomm-blog-content .views-field.views-field-created,
 #scholcomm .view-scholcomm-blog-content .views-field.views-field-comment-count {
-  padding-left: 2.5em;
+  padding-left: 1.5em;
   margin-left: 1em;
-  padding-top: 0.75em;
 }
 #scholcomm .view-scholcomm-blog-content .views-field.views-field-created {
   background: url(/sites/default/files/CALENDAR-ICON.png) no-repeat left;
 }
 #scholcomm .view-scholcomm-blog-content .views-field.views-field-comment-count {
   background: url(/sites/default/files/COMMENTS-BUBBLE.png) no-repeat left;
+}
+#scholcomm .view-scholcomm-blog-content .scholcomm-more-link {
+  float: right;
+  margin: 2em 0;
+}
+#scholcomm .view-scholcomm-blog-content .scholcomm-more-link a {
+  text-decoration: none;
+  padding: 0.5em;
+  border: 1px solid #a3a3a3;
+}
+#scholcomm .tagclouds a,
+#scholcomm .scholcomm-author-list a {
+  text-decoration: none;
 }
 /* Local Print Styles */
 @media print {
