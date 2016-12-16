@@ -135,9 +135,6 @@
 			text-transform: uppercase;
 		}
 	}
-	/*.btn-sc-row {
-		margin-bottom: 4em;
-	}*/
 	.btn-sc {
 		text-align: center;
 		text-transform: uppercase;
@@ -148,33 +145,51 @@
 			text-decoration: none;
 		}
 	}
-	.media-heading { /* for newsblog headings */
+	.media-heading { 
 		margin-top: 0;
 		> a {
 			text-decoration: underline;
 			color: @sc-red;
 		}
 	}
-
 	.sc-event-workshop {
 		border-radius: 10px;
 		border:1px solid @sc-grey-line;
 		padding: 10px;
 	}
 	.view-scholcomm-blog-content {
+		.views-field.views-field-comment-count,
+		.blog-author-name {
+			color:@sc-dkblue;
+		}
 		.views-field.views-field-created,
 		.views-field.views-field-comment-count {
-			padding-left: 2.5em;
+			padding-left: 1.5em;
 			margin-left:1em;
-			padding-top:0.75em; 
 		}
 		.views-field.views-field-created {
 			background:url(/sites/default/files/CALENDAR-ICON.png) no-repeat left;
-
 		}
 		.views-field.views-field-comment-count {
 			background:url(/sites/default/files/COMMENTS-BUBBLE.png) no-repeat left;
-
+		}
+		.scholcomm-more-link {
+			float:right;
+			margin:2em 0;
+			a {
+				text-decoration: none;
+				padding:0.5em;
+				border:1px solid @sc-grey-line;
+			}
+		}
+	}
+	.tagclouds a,
+	.scholcomm-author-list a {
+		text-decoration: none;
+	}
+	.view-blog-author-list {
+		.views-row {
+			margin-bottom: 0;
 		}
 	}
 }
