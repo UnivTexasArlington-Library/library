@@ -8926,6 +8926,9 @@ input.summon-search-submit.button-website:focus {
 #internal-menu-prog .region-internal-menu {
   margin: 0;
 }
+#internal-menu-prog .dropdown-menu > li > a {
+  color: #00447c;
+}
 #block-menu-menu-libraries-menu .nav > li {
   float: left;
 }
@@ -8989,6 +8992,15 @@ input.summon-search-submit.button-website:focus {
 #scholcomm h4 {
   font-size: 20px;
   text-transform: none;
+}
+#scholcomm h5,
+#scholcomm .field-name-field-sidebar-title {
+  margin-bottom: 0px;
+  font-size: 1em;
+  margin-top: 10px !important;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 #scholcomm .sc-grey {
   color: #656567;
