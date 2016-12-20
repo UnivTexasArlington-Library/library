@@ -8966,6 +8966,10 @@ input.summon-search-submit.button-website:focus {
   color: initial;
   text-decoration: underline;
 }
+#scholcomm a.tagclouds,
+#scholcomm .scholcomm-author-list a {
+  text-decoration: none;
+}
 #scholcomm li.node-readmore > a {
   text-decoration: underline;
   text-decoration-color: #a3a3a3;
@@ -8985,6 +8989,9 @@ input.summon-search-submit.button-website:focus {
 #scholcomm h4 {
   font-size: 20px;
   text-transform: none;
+}
+#scholcomm .sc-grey {
+  color: #656567;
 }
 #scholcomm .sidebar-title {
   font-weight: bold;
@@ -9098,9 +9105,8 @@ input.summon-search-submit.button-website:focus {
   padding: 0.5em;
   border: 1px solid #a3a3a3;
 }
-#scholcomm .tagclouds a,
-#scholcomm .scholcomm-author-list a {
-  text-decoration: none;
+#scholcomm .pane-blog-author-list-panel-pane-1 h3.pane-title {
+  margin-top: 2em;
 }
 #scholcomm .view-blog-author-list .views-row {
   margin-bottom: 0;

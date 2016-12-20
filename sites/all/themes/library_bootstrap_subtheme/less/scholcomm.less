@@ -58,6 +58,10 @@
 		color:initial;
 		text-decoration: underline;
 	}
+	a.tagclouds,
+	.scholcomm-author-list a {
+		text-decoration: none;
+	}
 	li.node-readmore > a {
 		text-decoration: underline;
 		text-decoration-color:@sc-grey-line;	
@@ -77,6 +81,9 @@
 	h4 {
 		font-size: 20px;
 		text-transform: none;
+	}
+	.sc-grey {
+		color:@sc-grey-text;
 	}
 	.sidebar-title {
 		font-weight: bold;
@@ -183,10 +190,12 @@
 			}
 		}
 	}
-	.tagclouds a,
-	.scholcomm-author-list a {
-		text-decoration: none;
+	.pane-blog-author-list-panel-pane-1 {
+		h3.pane-title {
+			margin-top:2em;
+		}
 	}
+
 	.view-blog-author-list {
 		.views-row {
 			margin-bottom: 0;
