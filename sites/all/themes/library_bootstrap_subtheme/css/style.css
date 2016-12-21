@@ -8977,6 +8977,12 @@ input.summon-search-submit.button-website:focus {
 #scholcomm .scholcomm-author-list a {
   text-decoration: none;
 }
+#scholcomm a.tagclouds:hover,
+#scholcomm .scholcomm-author-list a:hover,
+#scholcomm a.tagclouds:focus,
+#scholcomm .scholcomm-author-list a:focus {
+  text-decoration: underline;
+}
 #scholcomm li.node-readmore > a {
   text-decoration: underline;
   text-decoration-color: #a3a3a3;
