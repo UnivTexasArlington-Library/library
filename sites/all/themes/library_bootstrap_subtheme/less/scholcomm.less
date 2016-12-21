@@ -60,10 +60,15 @@
 	a {
 		color:initial;
 		text-decoration: underline;
+		&:hover, 
+		&:focus {
+			text-decoration: underline;
+		}
 	}
 	a.tagclouds,
 	.scholcomm-author-list a {
 		text-decoration: none;
+
 	}
 	li.node-readmore > a {
 		text-decoration: underline;
@@ -148,9 +153,6 @@
 	.pane-menu-menu-scholcomm {
 		border-right:1px solid @sc-grey-line;
 		margin-bottom:5em;
-	}
-	.view-scholcomm-staff {
-		
 	}
 	.sc-staff-focus {
 		padding-left: 15px;

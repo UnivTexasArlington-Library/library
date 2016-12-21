@@ -8969,6 +8969,10 @@ input.summon-search-submit.button-website:focus {
   color: initial;
   text-decoration: underline;
 }
+#scholcomm a:hover,
+#scholcomm a:focus {
+  text-decoration: underline;
+}
 #scholcomm a.tagclouds,
 #scholcomm .scholcomm-author-list a {
   text-decoration: none;
