@@ -9042,6 +9042,15 @@ input.summon-search-submit.button-website:focus {
   color: #0057b4;
   text-decoration: none;
 }
+#scholcomm .pane-menu-menu-risk-taking-and-revolution .open > .dropdown-menu > li > a:hover,
+#scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a:hover,
+#scholcomm .pane-menu-menu-risk-taking-and-revolution .open > .dropdown-menu > li > a:focus,
+#scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a:focus,
+#scholcomm .pane-menu-menu-risk-taking-and-revolution .open > .dropdown-menu > li > a.active,
+#scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a.active {
+  background-color: #f4f4f4;
+  /*display: inline-block; */
+}
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a:hover,
 #scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a:hover,
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a:focus,
@@ -9058,12 +9067,13 @@ input.summon-search-submit.button-website:focus {
 }
 #scholcomm .pane-menu-menu-scholcomm {
   border-right: 1px solid #a3a3a3;
+  margin-bottom: 5em;
 }
-#scholcomm .view-scholcomm-staff {
+#scholcomm .sc-staff-focus {
   padding-left: 15px;
   margin-top: 5em;
 }
-#scholcomm .view-scholcomm-staff h3 {
+#scholcomm .sc-staff-focus h3 {
   margin-bottom: 0px;
   font-size: 1em;
   margin-top: 10px !important;

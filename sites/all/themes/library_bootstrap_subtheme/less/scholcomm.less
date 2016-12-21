@@ -127,6 +127,12 @@
 			> li > a {
 				color:@sc-blue-text;
 				text-decoration: none;
+				&:hover, 
+				&:focus, 
+				&.active {
+					background-color: @sc-rollover;
+					/*display: inline-block; */
+				}
 			}
 		}
 		.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
@@ -141,8 +147,12 @@
 	}
 	.pane-menu-menu-scholcomm {
 		border-right:1px solid @sc-grey-line;
+		margin-bottom:5em;
 	}
 	.view-scholcomm-staff {
+		
+	}
+	.sc-staff-focus {
 		padding-left: 15px;
 		margin-top:5em;
 		h3 {
