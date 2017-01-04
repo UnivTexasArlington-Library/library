@@ -9157,7 +9157,8 @@ input.summon-search-submit.button-website:focus {
   border: 1px solid #a3a3a3;
 }
 #scholcomm .pane-blog-content-panel-pane-6,
-#scholcomm .pane-node-field-sidebar-text {
+#scholcomm .pane-node-field-sidebar-text,
+#scholcomm .pane-tagclouds-1 {
   margin-bottom: 3em;
 }
 #scholcomm .pane-blog-author-list-panel-pane-1 h3.pane-title {
