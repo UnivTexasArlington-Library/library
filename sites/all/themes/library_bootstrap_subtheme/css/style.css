@@ -9047,6 +9047,7 @@ input.summon-search-submit.button-website:focus {
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu {
   position: relative;
   box-shadow: none;
+  clear: both;
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .open > .dropdown-menu > li > a,
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a {
@@ -9093,14 +9094,21 @@ input.summon-search-submit.button-website:focus {
   text-transform: uppercase;
 }
 #scholcomm .btn-sc {
-  text-align: center;
   text-transform: uppercase;
   margin-top: 4em;
   font-weight: bold;
+  padding: 1em;
+}
+#scholcomm .btn-sc p {
+  text-align: center;
 }
 #scholcomm .btn-sc a {
   color: #0057b4;
   text-decoration: none;
+}
+#scholcomm .btn-sc:hover,
+#scholcomm .btn-sc:focus {
+  background-color: #f4f4f4;
 }
 #scholcomm .media-heading {
   margin-top: 0;
@@ -9137,6 +9145,10 @@ input.summon-search-submit.button-website:focus {
   text-decoration: none;
   padding: 0.5em;
   border: 1px solid #a3a3a3;
+}
+#scholcomm .pane-blog-content-panel-pane-6,
+#scholcomm .pane-node-field-sidebar-text {
+  margin-bottom: 3em;
 }
 #scholcomm .pane-blog-author-list-panel-pane-1 h3.pane-title {
   margin-top: 2em;
