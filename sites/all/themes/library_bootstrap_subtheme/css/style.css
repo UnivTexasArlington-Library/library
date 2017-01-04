@@ -9017,12 +9017,17 @@ input.summon-search-submit.button-website:focus {
 #scholcomm .sidebar-image img {
   margin-left: 0;
 }
+#scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li,
+#scholcomm .pane-menu-menu-scholcomm .nav > li {
+  clear: both;
+}
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li > a,
 #scholcomm .pane-menu-menu-scholcomm .nav > li > a {
   color: #0057b4;
   display: inline-block;
   text-decoration: none;
   background-color: inherit;
+  float: left;
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li > a:hover,
 #scholcomm .pane-menu-menu-scholcomm .nav > li > a:hover,
