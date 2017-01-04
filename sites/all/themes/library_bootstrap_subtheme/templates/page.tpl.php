@@ -150,7 +150,7 @@
           <?php print render($page['todays_hrs']); ?>
           <?php print render($page['feedback']); ?>
           <?php endif; ?>
-          <div class="visible-xs col-xs-2" role="navigation"> 
+          <!--<div class="visible-xs col-xs-2" role="navigation"> 
             <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".row-offcanvas">
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
