@@ -183,7 +183,7 @@
             <?php if (!empty($action_links)): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
-      <div id="program-page"><?php print render($page['content']); ?></div>
+      <div id="program-page" class="container"><?php print render($page['content']); ?></div>
       <footer class="footer">
         
     <?php print render($page['footer']); ?>

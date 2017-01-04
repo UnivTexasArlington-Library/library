@@ -8962,6 +8962,12 @@ input.summon-search-submit.button-website:focus {
   padding-left: 0;
   font-size: 2em;
 }
+@media (min-width: 1430px) {
+  /* for screen sizes larger then 1400px */
+  #program-page.container {
+    max-width: 1400px;
+  }
+}
 #scholcomm p {
   color: #000;
 }
@@ -9010,6 +9016,10 @@ input.summon-search-submit.button-website:focus {
 }
 #scholcomm .sc-grey {
   color: #656567;
+}
+#scholcomm .middle {
+  padding-left: 75px;
+  padding-right: 75px;
 }
 #scholcomm .sidebar-title {
   font-weight: bold;
@@ -9099,7 +9109,7 @@ input.summon-search-submit.button-website:focus {
   font-weight: bold;
   padding: 1em;
 }
-#scholcomm .btn-sc p {
+#scholcomm .btn-sc > p {
   text-align: center;
 }
 #scholcomm .btn-sc a {
