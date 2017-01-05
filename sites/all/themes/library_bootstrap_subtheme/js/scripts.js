@@ -2,7 +2,7 @@ jQuery(document).ready(function($) {
   $('[data-toggle=offcanvas]').click(function() {
     $('.row-offcanvas').toggleClass('active');
   });
-  $(".dropdown.first").addClass("open keep-open");
+  $(".dropdown.first").addClass("open");
    var winwidth = $(window).width();
 	 if (winwidth < 992) {
 		$(".region-sidebar-second").appendTo(".region-sidebar-first");
