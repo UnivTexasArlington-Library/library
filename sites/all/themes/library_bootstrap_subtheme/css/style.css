@@ -9004,6 +9004,7 @@ input.summon-search-submit.button-website:focus {
 #scholcomm h4 {
   font-size: 20px;
   text-transform: none;
+  margin-top: 0;
 }
 #scholcomm h5,
 #scholcomm .field-name-field-sidebar-title {
@@ -9166,6 +9167,21 @@ input.summon-search-submit.button-website:focus {
 }
 #scholcomm .view-blog-author-list .views-row {
   margin-bottom: 0;
+}
+@media (max-width: 767px) {
+  #scholcomm .pane-menu-menu-scholcomm {
+    border-right-width: 0;
+    border-bottom: 1px solid #a3a3a3;
+    margin-bottom: 3em;
+    padding-bottom: 2em;
+  }
+  #scholcomm .middle {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  #scholcomm .right {
+    clear: both;
+  }
 }
 /* Local Print Styles */
 @media print {
