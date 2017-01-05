@@ -9176,8 +9176,8 @@ input.summon-search-submit.button-website:focus {
     padding-bottom: 2em;
   }
   #scholcomm .middle {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: initial;
+    padding-right: initial;
   }
   #scholcomm .right {
     clear: both;
