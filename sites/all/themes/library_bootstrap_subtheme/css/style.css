@@ -9025,6 +9025,9 @@ input.summon-search-submit.button-website:focus {
   font-size: 1.0625em;
   line-height: 1.5;
 }
+#scholcomm .middle a {
+  text-decoration: underline;
+}
 #scholcomm .sidebar-title {
   font-weight: bold;
 }
@@ -9128,7 +9131,6 @@ input.summon-search-submit.button-website:focus {
   margin-top: 0;
 }
 #scholcomm .media-heading > a {
-  text-decoration: underline;
   color: #ae482c;
 }
 #scholcomm .sc-event-workshop {
