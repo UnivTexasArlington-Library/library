@@ -8972,7 +8972,6 @@ input.summon-search-submit.button-website:focus {
   color: #000;
 }
 #scholcomm a {
-  color: initial;
   text-decoration: underline;
 }
 #scholcomm a.tagclouds,
@@ -9021,6 +9020,10 @@ input.summon-search-submit.button-website:focus {
 #scholcomm .middle {
   padding-left: 75px;
   padding-right: 75px;
+}
+#scholcomm .middle p {
+  font-size: 1.0625em;
+  line-height: 1.7;
 }
 #scholcomm .sidebar-title {
   font-weight: bold;
