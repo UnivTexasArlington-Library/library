@@ -8863,7 +8863,7 @@ input.summon-search-submit.button-website:focus {
   clear: both;
 }
 /* add space above each thumbnail/image (does not include top image) */
-.field-name-field-image {
+.entity-paragraphs-item .field-name-field-image {
   margin-top: 3em;
 }
 .localist_widget_container li.lw_event_item {
