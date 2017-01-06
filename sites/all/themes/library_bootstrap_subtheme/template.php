@@ -92,8 +92,12 @@ function bootstrap_menu_tree__menu_elur(&$variables) {
 function bootstrap_menu_tree__menu_friends_library(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
-//adding class to fiends (on test) menu
+//adding class to friends (on test) menu
 function bootstrap_menu_tree__menu_friends_of_the_library(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
+//adding class to resource delivery services menu
+function bootstrap_menu_tree__menu_resource_delivery_services(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
 
