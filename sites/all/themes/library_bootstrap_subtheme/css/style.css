@@ -9066,6 +9066,9 @@ input.summon-search-submit.button-website:focus {
   font-size: 1.0625em;
   line-height: 1.5;
 }
+#scholcomm .middle h3 {
+  margin-top: 20px;
+}
 #scholcomm .middle ul li {
   font-size: 1.0625em;
 }
