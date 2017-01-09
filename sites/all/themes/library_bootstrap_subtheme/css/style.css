@@ -8016,9 +8016,12 @@ th {
 }
 .give-feature .nav.nav-tabs.nav-justified li a {
   color: #fff;
+  border-radius: 0;
 }
 .give-feature .nav.nav-tabs.nav-justified li.active > a {
   background-color: #f69042;
+  border-bottom-color: #f69042;
+  border-radius: 0;
 }
 .give-feature .carousel-caption {
   background: rgba(23, 24, 24, 0.4);
