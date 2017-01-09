@@ -8035,6 +8035,13 @@ th {
   text-transform: none;
   font-weight: 600;
 }
+.give-feature .carousel-caption .learn-more {
+  float: right;
+}
+.give-feature .carousel-caption .learn-more a {
+  color: #fff;
+  text-decoration: underline;
+}
 /*for footer*/
 .footer {
   background: #c6c4c4;
