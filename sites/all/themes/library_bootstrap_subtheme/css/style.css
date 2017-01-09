@@ -8008,6 +8008,28 @@ th {
 .field-name-field-tags {
   margin-left: 15px;
 }
+.give-feature .nav.nav-tabs.nav-justified {
+  margin: 0;
+}
+.give-feature .nav.nav-tabs.nav-justified li {
+  background-color: #363c3d;
+}
+.give-feature .nav.nav-tabs.nav-justified li a {
+  color: #fff;
+}
+.give-feature .nav.nav-tabs.nav-justified li.active {
+  background-color: #f69042;
+}
+.give-feature .carousel-caption {
+  background: rgba(23, 24, 24, 0.18);
+  padding: 30px;
+  left: 45%;
+  right: 0;
+  top: 3%;
+  bottom: 67;
+  text-shadow: none;
+  text-align: left;
+}
 /*for footer*/
 .footer {
   background: #c6c4c4;
