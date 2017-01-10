@@ -8032,6 +8032,7 @@ th {
 }
 .give-feature .carousel-caption {
   background: rgba(23, 24, 24, 0.6);
+  position: inherit;
   padding: 30px;
   left: 45%;
   right: 0;
