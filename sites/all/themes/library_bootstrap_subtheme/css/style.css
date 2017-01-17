@@ -9130,7 +9130,7 @@ input.summon-search-submit.button-website:focus {
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a,
 #scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a {
-  white-space: wrap;
+  white-space: normal;
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a:hover,
 #scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a:hover,
