@@ -7621,7 +7621,7 @@ h2.pane-title {
   padding-left: 15px;
   text-transform: uppercase;
   margin-top: 0px;
-  font-size: 20px;
+  font-size: 1.25em;
 }
 h2 a,
 h2.block-title a,
@@ -7641,7 +7641,7 @@ h3 {
   color: #0052a3;
   text-transform: uppercase;
   margin-top: 0px;
-  font-size: 20px;
+  font-size: 1.25em;
 }
 h3 a:hover,
 h3 a:focus {
@@ -7651,7 +7651,7 @@ h3 a:focus {
 h4 {
   text-transform: uppercase;
   color: #0052a3;
-  font-size: 16px;
+  font-size: 1em;
   margin-top: 25px;
   margin-bottom: 8px;
 }
@@ -9036,14 +9036,14 @@ input.summon-search-submit.button-website:focus {
   padding-left: 0;
   color: #656567;
   margin-right: 7em;
-  font-size: 2em;
+  font-size: 1.7em;
   text-transform: none;
 }
 #scholcomm h3 {
   text-transform: capitalize;
 }
 #scholcomm h4 {
-  font-size: 20px;
+  font-size: 1.25em;
   text-transform: none;
   margin-top: 0;
 }
@@ -9127,6 +9127,10 @@ input.summon-search-submit.button-website:focus {
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a.active {
   background-color: #f4f4f4;
   /*display: inline-block; */
+}
+#scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a,
+#scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a {
+  white-space: wrap;
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a:hover,
 #scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a:hover,
