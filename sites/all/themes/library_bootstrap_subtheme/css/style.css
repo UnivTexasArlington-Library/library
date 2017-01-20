@@ -8996,6 +8996,12 @@ input.summon-search-submit.button-website:focus {
 #breadcrumb-prog a {
   color: #0064b1;
 }
+#breadcrumb-prog > ol.breadcrumb > li:first-child {
+  display: none;
+}
+#breadcrumb-prog > ol.breadcrumb > li:nth-child(2)::before {
+  display: none;
+}
 #program-page {
   padding: 30px 20px;
 }
