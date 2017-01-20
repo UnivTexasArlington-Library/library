@@ -76,6 +76,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
-
+  <script type="text/javascript" src="//v2.libanswers.com/load_chat.php?hash=784aed251e94ccda757853b09e693baf"></script>
 </body>
 </html>
