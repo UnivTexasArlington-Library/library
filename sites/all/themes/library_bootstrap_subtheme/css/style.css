@@ -9049,6 +9049,7 @@ input.summon-search-submit.button-website:focus {
   font-size: 1.25em;
   text-transform: none;
   margin-top: 0;
+  padding-top: 0.75em;
 }
 #scholcomm h5,
 #scholcomm .field-name-field-sidebar-title {
