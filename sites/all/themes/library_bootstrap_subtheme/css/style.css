@@ -9203,6 +9203,9 @@ input.summon-search-submit.button-website:focus {
 #scholcomm .view-scholcomm-blog-content .views-field.views-field-comment-count {
   background: url(/sites/default/files/COMMENTS-BUBBLE.png) no-repeat left;
 }
+#scholcomm .view-scholcomm-blog-content .views-field-field-sc-tags {
+  margin-top: 2em;
+}
 #scholcomm .view-scholcomm-blog-content .scholcomm-more-link {
   float: right;
   margin: 2em 0;
