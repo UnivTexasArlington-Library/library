@@ -9188,11 +9188,6 @@ input.summon-search-submit.button-website:focus {
 #scholcomm .media-heading > a {
   color: #ae482c;
 }
-#scholcomm .sc-event-workshop {
-  border-radius: 10px;
-  border: 1px solid #a3a3a3;
-  padding: 10px;
-}
 #scholcomm .view-scholcomm-blog-content .views-field.views-field-comment-count,
 #scholcomm .view-scholcomm-blog-content .blog-author-name {
   color: #00447c;
@@ -9242,6 +9237,9 @@ input.summon-search-submit.button-website:focus {
     padding-right: 30px;
   }
   #scholcomm .right {
+    clear: both;
+  }
+  #scholcomm .sc-event-workshop {
     clear: both;
   }
 }
