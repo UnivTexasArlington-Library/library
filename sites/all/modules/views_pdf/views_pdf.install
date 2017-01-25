@@ -59,3 +59,23 @@ function views_pdf_requirements($phase) {
   return $requirements;
 }
 
+/**
+ * Update all PDF displays to use pager.
+ * This should maintain existing pager settings.
+ * Test your views before using in production.
+ */
+function views_pdf_update_7000() {
+  $views = views_get_all_views();
+
+  foreach ($views as $key => $view) {
+    foreach ($view->display as $key => &$display) {
+      if($display->display_plugin == 'pdf') {
+        if(empty($display->display_options['defaults']['pager'])) {
+          $display->display_options['pager'] = $view->display[$display->id]->display_options['pager'];
+          $display->display_options['defaults']['pager'] = FALSE;
+        }
+      }
+    }
+    views_save_view($view);
+  }
+}
