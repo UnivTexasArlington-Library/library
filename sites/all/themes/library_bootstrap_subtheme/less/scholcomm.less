@@ -1,0 +1,283 @@
+/* Scholarly Communication/ Program Page Styles */
+@sc-blue-text: #0057b4;
+@sc-dkblue: #00447C;
+@sc-grey-text: #656567;
+@sc-grey-line: #a3a3a3;
+@sc-rollover: #f4f4f4;
+@sc-red: #ae482c;
+
+#internal-menu-prog {
+	background-color: #D3EFFb;
+	border-bottom:3px solid @sc-blue-text;
+	.region-internal-menu {
+		margin:0;
+	}
+	.dropdown-menu > li > a {
+		color:@sc-dkblue;
+	}
+}
+	#block-menu-menu-libraries-menu {
+		.nav > li {
+			float:left;
+		}
+		.nav > li > a {
+			color:@sc-blue-text;
+			text-transform: uppercase;
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+		.nav > li > a:hover, 
+		.nav > li > a:focus {
+			color: #fff;
+		}
+		.dropdown-menu {
+			background-color: #fff;
+		}
+		.caret {
+			display:none;
+		}
+	}
+#breadcrumb-prog {
+	a {
+		color:#0064b1;
+	}
+	> ol.breadcrumb > li:first-child {
+		display: none;
+	}
+	> ol.breadcrumb > li:nth-child(2)::before {
+		display: none;
+	}
+}
+#program-page {
+	padding: 30px 20px;
+	.page-header-small, 
+	.page-header-lg {
+		margin-right:0;
+		margin-left:0;
+		background-color: transparent;
+		padding-left: 0;
+		font-size: 2em;
+	}
+}
+@media (min-width: 1430px) { /* for screen sizes larger then 1400px */
+	#program-page.container {
+		width: 1400px;
+	}
+}
+#scholcomm {
+	p {
+		color:#000;
+	}
+	a.tagclouds,
+	.scholcomm-author-list a {
+		text-decoration: none;
+		&:hover, 
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+	li.node-readmore > a {
+		text-decoration: underline;
+		text-decoration-color:@sc-grey-line;	
+	}
+	h2 {
+		border-top:none;
+		border-bottom:3px dotted @sc-grey-text;
+		padding-left:0;
+		color:@sc-grey-text;
+		margin-right:7em;
+		font-size: 1.7em;
+		text-transform:none;
+	}
+	h4 {
+		font-size: 1.25em;
+		text-transform: none;
+		margin-top:0;
+		padding-top:0.75em;
+	}
+	h5,
+	.field-name-field-sidebar-title {
+		margin-bottom: 0px;
+		font-size: 1em;
+		margin-top: 10px !important;
+		color: #000;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	.sc-grey {
+		color:@sc-grey-text;
+	}
+	.middle {
+		padding-left: 75px;
+		padding-right: 75px;
+		p {
+			font-size: 1.0625em;
+			line-height: 1.5;
+		}
+		h3 {margin-top:20px;}
+		ul li {font-size:1.0625em;}
+		a {text-decoration:underline;}
+	}
+
+	.sidebar-title {
+		font-weight: bold;
+	}
+	.sidebar-image img {
+		margin-left:0;
+	}
+	.pane-menu-menu-risk-taking-and-revolution, 
+	.pane-menu-menu-scholcomm {
+		.nav > li {
+			clear:both;
+		}
+		.nav > li > a {
+			color:@sc-blue-text;
+			display: inline-block;
+			text-decoration: none;
+			background-color: inherit;
+			float:left;
+		}
+		.nav > li > a:hover, 
+		.nav > li > a:focus, 
+		.nav > li > a.active {
+			background-color: @sc-rollover;
+			display: inline-block;
+		}
+		> ul.dropdown-menu {
+			position:inherit;
+			box-shadow: none;
+		}
+		.open > .dropdown-menu {
+			position:relative;
+			box-shadow: none;
+			clear:both;
+			> li > a {
+				color:@sc-blue-text;
+				text-decoration: none;
+				&:hover, 
+				&:focus, 
+				&.active {
+					background-color: @sc-rollover;
+					/*display: inline-block; */
+				}
+			}
+		}
+		.dropdown-menu > li > a {
+			white-space: normal;
+		}
+		.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+			background-color: #fff;
+		}
+		.dropdown-menu > .active > a {
+			background-color:@sc-rollover; 
+		}
+		.active-trail.dropdown-toggle.active {
+			background-color:@sc-rollover;
+		}
+	}
+	.pane-menu-menu-scholcomm {
+		border-right:1px solid @sc-grey-line;
+		margin-bottom:5em;
+	}
+	.sc-staff-focus {
+		padding-left: 15px;
+		margin-top:5em;
+		h3 {
+			margin-bottom: 0px;
+			font-size: 1em;
+			margin-top: 10px !important;
+			color: #000;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+	}
+	.btn-sc {
+		text-transform: uppercase;
+		margin-top: 4em;
+		font-weight: bold;
+		padding: 1em;
+		> p {
+			text-align: center;
+		}
+		a {
+			color:@sc-blue-text;
+			text-decoration: none;
+		}
+		&:hover, &:focus {
+			background-color: @sc-rollover;
+		}
+	}
+	.media-heading { 
+		margin-top: 0;
+		> a {
+			color: @sc-red;
+		}
+	}
+	.view-scholcomm-blog-content {
+		.views-field.views-field-comment-count,
+		.blog-author-name {
+			color:@sc-dkblue;
+		}
+		.views-field.views-field-created,
+		.views-field.views-field-comment-count {
+			padding-left: 1.5em;
+			margin-left:1em;
+		}
+		.views-field.views-field-created {
+			background:url(/sites/default/files/CALENDAR-ICON.png) no-repeat left;
+		}
+		.views-field.views-field-comment-count {
+			background:url(/sites/default/files/COMMENTS-BUBBLE.png) no-repeat left;
+		}
+		.views-field-field-sc-tags {
+			margin-top:2em;
+		}
+		.scholcomm-more-link {
+			float:right;
+			margin:2em 0;
+			a {
+				text-decoration: none;
+				padding:0.5em;
+				border:1px solid @sc-grey-line;
+			}
+		}
+	}
+	.pane-blog-content-panel-pane-6,
+	.pane-scholcomm-blog-content-panel-pane-6, 
+	.pane-node-field-sidebar-text,
+	.pane-tagclouds-19, 
+	.pane-blog-author-list-panel-pane-1 {
+		margin-bottom: 3em;
+	}
+	.pane-blog-author-list-panel-pane-1 {
+		h3.pane-title {
+			margin-top:2em;
+		}
+	}
+
+	.view-blog-author-list {
+		.views-row {
+			margin-bottom: 0;
+		}
+	}
+}
+@media (max-width: @screen-xs-max) {
+	#scholcomm {
+		.pane-menu-menu-scholcomm {
+			border-right-width:0;
+			border-bottom: 1px solid @sc-grey-line;
+			margin-bottom: 3em;
+			padding-bottom:2em;
+		}
+		.middle {
+			padding-left: 30px;
+			padding-right:30px;
+		}
+		.right {
+			clear:both;
+		}
+		.sc-event-workshop {
+			clear:both;
+		}
+	}
+}
