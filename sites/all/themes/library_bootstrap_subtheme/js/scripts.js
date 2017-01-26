@@ -2,7 +2,7 @@ jQuery(document).ready(function($) {
   $('[data-toggle=offcanvas]').click(function() {
     $('.row-offcanvas').toggleClass('active');
   });
-/*  $(".dropdown.first").addClass("open");
+ $(".dropdown.first").addClass("open");
    var winwidth = $(window).width();
 	 if (winwidth < 992) {
 		$(".region-sidebar-second").appendTo(".region-sidebar-first");
@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
 		$(".region-sidebar-second").appendTo(".sidebar_second");
 		$(".sidebar_second").addClass("pull-right").removeClass("pull-left"); 
 	 }
-  });*/
+  });
 
 //closing menu's initially
 	$("#block-menu-menu-right-menu-bottom-var-1 .menu").toggle();
