@@ -8449,6 +8449,7 @@ input.summon-search-submit.button-website:focus {
 #frontpage .thumbnail h2 {
   border-bottom: none;
   margin: 0;
+  padding: 0;
 }
 #frontpage .thumbnail .caption {
   padding: 0;
