@@ -8467,12 +8467,12 @@ input.summon-search-submit.button-website:focus {
 }
 #frontpage .services-for {
   /*text-transform: uppercase;
-		font-size:16px; 
-		color: @brand-primary; */
+		font-size:16px; */
+  color: #0052a3;
+  line-height: 1.0;
 }
 #frontpage .services-for a {
-  /*color:@brand-primary; */
-  line-height: 1.0;
+  color: #0052a3;
 }
 #frontpage .services-for a:hover,
 #frontpage .services-for a:focus {
