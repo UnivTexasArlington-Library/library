@@ -8441,7 +8441,10 @@ input.summon-search-submit.button-website:focus {
 }
 #frontpage .thumbnail {
   border-color: #dddddd;
-  padding: 15px;
+  padding: 0 9px;
+}
+#frontpage .thumbnail h2 {
+  border-bottom: none;
 }
 #frontpage .thumbnail .caption {
   padding: 9px 0;
@@ -8459,28 +8462,28 @@ input.summon-search-submit.button-website:focus {
 #frontpage #front-events {
   margin-left: 2em;
 }
-/* HOMEPAGE IMAGE CAPTION */
-.views-field-field-caption .field-content {
-  z-index: 25;
-  color: #fff;
-  background-color: rgba(18, 15, 7, 0.6);
-  padding: 20px;
-  bottom: 0;
-  max-width: 100%;
-  width: 100%;
-  position: absolute;
-  font-size: 14px;
-}
-.views-field-field-caption .field-content a {
-  text-decoration: underline;
-  color: #fff;
-}
-@media (max-width: 767px) {
-  .views-field-field-caption .field-content {
-    font-size: 12px;
-    padding: 7px;
-  }
-}
+/* HOMEPAGE IMAGE CAPTION 
+.views-field-field-caption {
+	.field-content {
+		z-index: 25;
+		color: #fff;
+		background-color: rgba(18,15,7,0.6);
+		padding:20px;
+		bottom: 0;
+		max-width: 100%;
+		width: 100%;
+		position: absolute;
+		font-size: 14px;
+		a {
+			text-decoration: underline;
+			color:#fff;
+		}
+		@media (max-width: @screen-xs-max) {
+			font-size: 12px;
+			padding:7px;
+		}
+	}
+} */
 /* Services For & News-Events & Available Now padding & title */
 .pane-block-18 .pane-content,
 .pane-news-events .pane-content,
