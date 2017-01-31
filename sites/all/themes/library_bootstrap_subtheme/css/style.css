@@ -8980,19 +8980,20 @@ input.summon-search-submit.button-website:focus {
   text-transform: none;
 }
 .localist_widget_container li.lw_event_item {
-  margin-bottom: 30px;
+  padding: 20px 0;
 }
 .localist_widget_container .lw_event_item_date {
   background-color: none;
   font-size: 16px;
 }
 .localist_widget_container div.lw_event_item_title a {
-  font-size: 20px;
-  text-transform: uppercase;
-  color: #ae482c;
+  /*font-size: 20px;
+		text-transform: uppercase;
+		color:@link-color; */
+  font-weight: bold;
 }
 .localist_widget_container .pin {
-  background: #ae482c;
+  background: #333333;
 }
 .localist_widget_container .action_button,
 .localist_widget_container .clock {
@@ -9002,6 +9003,16 @@ input.summon-search-submit.button-website:focus {
 .localist_widget_container div.lw_event_item_time {
   font-size: 16px;
 }
+/* INLINE STYLES: 
+<style type="text/css">
+.localist_widget_container li.lw_event_item {
+	background: transparent;
+	border-left: medium none;
+	border-right: medium none;
+	border-top: medium none;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}</style> */
 /* styles for ETD webform block */
 #block-webform-client-block-1464,
 #block-webform-client-block-1519 {

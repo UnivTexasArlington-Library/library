@@ -13,19 +13,20 @@
 		text-transform: none;
 	}
 	li.lw_event_item {
-		margin-bottom: 30px;
+		padding:20px 0;
 	}
 	.lw_event_item_date {
 		background-color: none;
 		font-size: 16px;
 	}
 	div.lw_event_item_title a {
-		font-size: 20px;
+		/*font-size: 20px;
 		text-transform: uppercase;
-		color:@link-color;
+		color:@link-color; */
+		font-weight: bold;
 	}
 	.pin {
-		background: @link-color;
+		background: @text-color;
 	}
 	.action_button, 
 	.clock {
@@ -36,3 +37,14 @@
 .localist_widget_container div.lw_event_item_time {
 	font-size: 16px;
 }
+
+/* INLINE STYLES: 
+<style type="text/css">
+.localist_widget_container li.lw_event_item {
+	background: transparent;
+	border-left: medium none;
+	border-right: medium none;
+	border-top: medium none;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}</style> */
