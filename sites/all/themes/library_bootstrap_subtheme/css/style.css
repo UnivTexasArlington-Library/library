@@ -8444,7 +8444,11 @@ input.summon-search-submit.button-website:focus {
   padding: 15px;
 }
 #frontpage .thumbnail .caption {
+  padding: 9px 0;
+}
+#frontpage .thumbnail .caption h3 {
   text-transform: none;
+  font-size: initial;
 }
 #frontpage #heroimage {
   margin-bottom: 1em;
