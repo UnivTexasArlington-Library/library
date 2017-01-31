@@ -19,17 +19,22 @@
 	}
 	.thumbnail {
 		border-color:@thumbnail-border;
+		padding: 15px;
+		.caption {
+			text-transform: none;
+		}
+	}
+	#heroimage {
+		margin-bottom: 1em;
+		img{
+			width: 100%;
+		}
+	}
+	#front-events {
+		margin-left: 2em;
 	}
 }
-#heroimage {
-	margin-bottom: 1em;
-	img{
-		width: 100%;
-	}
-}
-#front-events {
-	margin-left: 2em;
-}
+
 /* HOMEPAGE IMAGE CAPTION */
 .views-field-field-caption {
 	.field-content {
@@ -128,6 +133,9 @@
 }
 /*for Available Now */
 #block-available-now-available-now {
+	h2.block-title {
+		margin-left: 15px;
+	}
 	img {
 		width:auto;
 		height:auto;

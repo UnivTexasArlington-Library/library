@@ -8441,14 +8441,18 @@ input.summon-search-submit.button-website:focus {
 }
 #frontpage .thumbnail {
   border-color: #dddddd;
+  padding: 15px;
 }
-#heroimage {
+#frontpage .thumbnail .caption {
+  text-transform: none;
+}
+#frontpage #heroimage {
   margin-bottom: 1em;
 }
-#heroimage img {
+#frontpage #heroimage img {
   width: 100%;
 }
-#front-events {
+#frontpage #front-events {
   margin-left: 2em;
 }
 /* HOMEPAGE IMAGE CAPTION */
@@ -8541,6 +8545,9 @@ input.summon-search-submit.button-website:focus {
   padding-left: 20px;
 }
 /*for Available Now */
+#block-available-now-available-now h2.block-title {
+  margin-left: 15px;
+}
 #block-available-now-available-now img {
   width: auto;
   height: auto;
