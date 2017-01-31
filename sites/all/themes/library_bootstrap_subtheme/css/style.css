@@ -8422,6 +8422,9 @@ input.summon-search-submit.button-website:focus {
   background-image: url("/sites/default/files/default_images/magnifier_grey.png");
 }
 /* Styles for the <front> page */
+#frontpage {
+  /*for services for*/
+}
 #frontpage h2 {
   border-top: none;
   padding-left: 0;
@@ -8462,6 +8465,20 @@ input.summon-search-submit.button-website:focus {
 #frontpage #front-events {
   margin-left: 2em;
 }
+#frontpage .services-for {
+  /*text-transform: uppercase;
+		font-size:16px; 
+		color: @brand-primary; */
+}
+#frontpage .services-for a {
+  /*color:@brand-primary; */
+  line-height: 1.0;
+}
+#frontpage .services-for a:hover,
+#frontpage .services-for a:focus {
+  background-color: #dddddd;
+  text-decoration: none;
+}
 /* HOMEPAGE IMAGE CAPTION */
 .views-field-field-caption .field-content {
   z-index: 25;
@@ -8490,19 +8507,6 @@ input.summon-search-submit.button-website:focus {
 .pane-spco-current-exhibit .pane-content {
   /*padding-top:20px; */
   padding-bottom: 28px;
-}
-/*for services for*/
-.services-for {
-  /*text-transform: uppercase;
-	font-size:16px; */
-  color: #0052a3;
-}
-.services-for a {
-  color: #0052a3;
-}
-.services-for a:hover,
-.services-for a:focus {
-  color: #ae482c;
 }
 /*for News & Events */
 .pane-news-events .views-field-field-image img {
