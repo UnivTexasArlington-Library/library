@@ -8456,6 +8456,11 @@ input.summon-search-submit.button-website:focus {
   text-transform: none;
   font-size: initial;
 }
+#frontpage .thumbnail > img,
+#frontpage .thumbnail a > img {
+  width: 100%
+		margin:0;
+}
 #frontpage #heroimage {
   margin-bottom: 1em;
 }
