@@ -8558,6 +8558,7 @@ input.summon-search-submit.button-website:focus {
 /*for Available Now */
 #block-available-now-available-now h2.block-title {
   margin-left: 15px;
+  margin-right: 15px;
 }
 #block-available-now-available-now img {
   width: auto;
