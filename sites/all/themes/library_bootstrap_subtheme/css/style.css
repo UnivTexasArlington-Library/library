@@ -8424,6 +8424,14 @@ input.summon-search-submit.button-website:focus {
 /* Styles for the <front> page */
 #frontpage h2 {
   border-top: none;
+  padding-left: 0;
+}
+#frontpage h2 a {
+  color: #0052a3;
+}
+#frontpage h2 a:hover,
+#frontpage h2 a:focus {
+  color: #ae482c;
 }
 #frontpage > .img-responsive {
   width: 100%;
@@ -8439,6 +8447,9 @@ input.summon-search-submit.button-website:focus {
 }
 #heroimage img {
   width: 100%;
+}
+#front-events {
+  margin-left: 2em;
 }
 /* HOMEPAGE IMAGE CAPTION */
 .views-field-field-caption .field-content {
@@ -8471,8 +8482,8 @@ input.summon-search-submit.button-website:focus {
 }
 /*for services for*/
 .services-for {
-  text-transform: uppercase;
-  font-size: 16px;
+  /*text-transform: uppercase;
+	font-size:16px; */
   color: #0052a3;
 }
 .services-for a {
@@ -8680,6 +8691,11 @@ input.summon-search-submit.button-website:focus {
 .more-link {
   text-align: right;
   padding-right: 15px;
+}
+@media (max-width: 767px) {
+  #front-events {
+    margin-left: 0;
+  }
 }
 #gcse-wrap .gsc-webResult.gsc-result {
   margin-bottom: 2em;
