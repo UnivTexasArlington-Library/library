@@ -8486,14 +8486,20 @@ input.summon-search-submit.button-website:focus {
   background-color: #dddddd;
   text-decoration: none;
 }
-#frontpage .row:nth-of-type(2),
-#frontpage .row:nth(3) {
-  padding: 0 50px;
+#frontpage .front-left {
+  margin-left: 50px;
 }
 @media (max-width: 767px) {
-  #frontpage .row:nth-of-type(2),
-  #frontpage .row:nth(3) {
-    padding: 0 25px;
+  #frontpage .front-left {
+    margin-left: 25px;
+  }
+}
+#frontpage .front-right {
+  margin-right: 50px;
+}
+@media (max-width: 767px) {
+  #frontpage .front-right {
+    margin-right: 25px;
   }
 }
 @media (max-width: 767px) {
@@ -8579,7 +8585,13 @@ input.summon-search-submit.button-website:focus {
 }
 /*for Available Now */
 #block-available-now-available-now {
-  margin-top: 2em;
+  margin: 2em 50px 0 50px;
+}
+@media (max-width: 767px) {
+  #block-available-now-available-now {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
 }
 #block-available-now-available-now h2.block-title {
   margin-left: 15px;
