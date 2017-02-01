@@ -8442,6 +8442,9 @@ input.summon-search-submit.button-website:focus {
 #frontpage > .panel-separator {
   height: 0;
 }
+#frontpage .panel-separtor {
+  display: none;
+}
 #frontpage .thumbnail {
   border-color: #dddddd;
   padding: 10px;
@@ -8502,9 +8505,12 @@ input.summon-search-submit.button-website:focus {
     margin-right: 25px;
   }
 }
+#frontpage #front-events {
+  margin-right: 50px;
+}
 @media (max-width: 767px) {
   #frontpage #front-events {
-    margin-left: 0;
+    margin: 0 25px;
   }
 }
 /* HOMEPAGE IMAGE CAPTION */

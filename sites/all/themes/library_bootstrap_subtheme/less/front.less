@@ -17,6 +17,9 @@
 	> .panel-separator {
 		height: 0;
 	}
+	.panel-separtor{
+		display:none;
+	}
 	.thumbnail {
 		border-color:@thumbnail-border;
 		padding: 10px;
@@ -73,10 +76,11 @@
 			margin-right:25px;
 		}
 	}
-}
-@media (max-width: @screen-xs-max) {
-	#frontpage #front-events {
-		margin-left: 0;
+	#front-events {
+		margin-right: 50px;
+		@media (max-width: @screen-xs-max) {
+			margin: 0 25px;
+		}
 	}
 }
 
