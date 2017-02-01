@@ -8471,12 +8471,6 @@ input.summon-search-submit.button-website:focus {
 #frontpage #heroimage img {
   width: 100%;
 }
-#frontpage #front-events {
-  margin-left: 2em;
-}
-#frontpage #front-events h2 {
-  margin-bottom: 0;
-}
 #frontpage .services-for {
   /*text-transform: uppercase;
 		font-size:16px; */
@@ -8491,6 +8485,16 @@ input.summon-search-submit.button-website:focus {
 #frontpage .services-for a:focus {
   background-color: #dddddd;
   text-decoration: none;
+}
+#frontpage .row:nth-of-type(2),
+#frontpage .row:nth(3) {
+  padding: 0 50px;
+}
+@media (max-width: 767px) {
+  #frontpage .row:nth-of-type(2),
+  #frontpage .row:nth(3) {
+    padding: 0 25px;
+  }
 }
 @media (max-width: 767px) {
   #frontpage #front-events {
@@ -9014,8 +9018,11 @@ input.summon-search-submit.button-website:focus {
 	border-right: medium none;
 	border-top: medium none;
 	margin-top: 0px;
-	margin-bottom: 20px;
-}</style> */
+	}
+.localist_widget_container div.lw_event_content {
+	padding-top:0;
+}
+</style> */
 /* styles for ETD webform block */
 #block-webform-client-block-1464,
 #block-webform-client-block-1519 {
