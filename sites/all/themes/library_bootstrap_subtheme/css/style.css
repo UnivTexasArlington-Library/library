@@ -8510,6 +8510,12 @@ input.summon-search-submit.button-website:focus {
     margin-right: 0;
   }
 }
+@media (max-width: 767px) {
+  #frontpage #front-news {
+    margin-right: 15px;
+    float: right;
+  }
+}
 #frontpage #front-events {
   margin: 0 50px;
 }
@@ -8603,10 +8609,10 @@ input.summon-search-submit.button-website:focus {
 #block-available-now-available-now {
   margin: 2em 50px 0 50px;
 }
-@media (max-width: 767px) {
+@media (max-width: 1199px) {
   #block-available-now-available-now {
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 #block-available-now-available-now h2.block-title {
