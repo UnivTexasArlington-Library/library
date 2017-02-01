@@ -8469,7 +8469,12 @@ input.summon-search-submit.button-website:focus {
   padding: 6px 0;
 }
 #frontpage #heroimage {
-  margin-bottom: 1em;
+  margin-bottom: 50px;
+}
+@media (max-width: 767px) {
+  #frontpage #heroimage {
+    margin-bottom: 25px;
+  }
 }
 #frontpage #heroimage img {
   width: 100%;
