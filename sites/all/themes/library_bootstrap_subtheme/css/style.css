@@ -9359,17 +9359,18 @@ width:100%;
   #scholcomm .middle p {
     font-size: 1.0425em;
   }
-  #scholcomm .btn-sc {
-    /*img {
-				width:75%;
-				height: auto;
-			}*/
-  }
   #scholcomm .btn-sc > p {
     font-size: 0.75em;
   }
+  #scholcomm .btn-sc > p > a > img {
+    width: 75%;
+    height: auto;
+  }
   #scholcomm .sidebar-image img {
     width: 90%;
+  }
+  #scholcomm .caption {
+    font-size: 0.875em;
   }
 }
 @media (max-width: 767px) {
