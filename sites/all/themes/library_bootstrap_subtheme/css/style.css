@@ -9346,7 +9346,7 @@ width:100%;
   margin-bottom: 0;
 }
 @media (max-width: 1199px) {
-  #block-menu-menu-libraries-menu.nav > li > a {
+  #block-menu-menu-libraries-menu .nav > li > a {
     font-size: 1em;
   }
   #program-page .page-header-small,
