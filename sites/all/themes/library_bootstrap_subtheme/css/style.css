@@ -9291,6 +9291,11 @@ width:100%;
 #scholcomm .btn-sc > p {
   text-align: center;
 }
+#scholcomm .btn-sc > p > a > img {
+  width: 100%;
+  height: auto;
+  max-width: 100px;
+}
 #scholcomm .btn-sc a {
   color: #0057b4;
   text-decoration: none;
@@ -9361,10 +9366,6 @@ width:100%;
   }
   #scholcomm .btn-sc > p {
     font-size: 0.75em;
-  }
-  #scholcomm .btn-sc > p > a > img {
-    width: 75%;
-    height: auto;
   }
   #scholcomm .sidebar-image img {
     width: 90%;
