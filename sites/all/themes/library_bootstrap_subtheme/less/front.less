@@ -20,20 +20,7 @@
 	.panel-separator{
 		display:none;
 	}
-	.thumbnail {
-		border-color:@thumbnail-border;
-		padding: 10px;
-		h2 {
-			border-bottom: none;
-			margin: 0;
-			padding: 0;
-		}
-	}
-	.thumbnail > img, .thumbnail a > img {
-		width: 100%;
-		margin:0;
-		padding:6px 0;
-	}
+	
 	#heroimage {
 		margin-bottom: 50px;
 		@media (max-width: @screen-md-max) {
@@ -73,9 +60,13 @@
 
 	}
 	#front-news {
-		@media (max-width: @screen-xs-max) {
+		@media (max-width: @screen-xs-max) {	
 			margin-right: 15px;
 			float:right;
+		}
+		img {
+			width:100%;
+			padding-bottom: 6px;
 		}
 		.caption {
 			padding: 0;
@@ -85,6 +76,20 @@
 				margin: 0;
 			} 
 		}
+	}
+	.thumbnail {
+		border-color:@thumbnail-border;
+		padding: 10px;
+		h2 {
+			border-bottom: none;
+			margin: 0;
+			padding: 0;
+		}
+	}
+	.thumbnail > img, .thumbnail a > img {
+		width: 100%;
+		margin:0;
+		padding: 6px 0;
 	}
 	#front-events {
 		margin: 0 50px;
