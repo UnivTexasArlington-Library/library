@@ -8442,7 +8442,7 @@ input.summon-search-submit.button-website:focus {
 #frontpage > .panel-separator {
   height: 0;
 }
-#frontpage .panel-separtor {
+#frontpage .panel-separator {
   display: none;
 }
 #frontpage .thumbnail {
@@ -8506,7 +8506,7 @@ input.summon-search-submit.button-website:focus {
   }
 }
 #frontpage #front-events {
-  margin-right: 50px;
+  margin: 0 50px;
 }
 @media (max-width: 767px) {
   #frontpage #front-events {
