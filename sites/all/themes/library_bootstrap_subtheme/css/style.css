@@ -8454,14 +8454,6 @@ input.summon-search-submit.button-website:focus {
   margin: 0;
   padding: 0;
 }
-#frontpage .thumbnail .caption {
-  padding: 0;
-}
-#frontpage .thumbnail .caption h3 {
-  text-transform: none;
-  font-size: initial;
-  margin: 0;
-}
 #frontpage .thumbnail > img,
 #frontpage .thumbnail a > img {
   width: 100%;
@@ -8515,6 +8507,14 @@ input.summon-search-submit.button-website:focus {
     margin-right: 15px;
     float: right;
   }
+}
+#frontpage #front-news .caption {
+  padding: 0;
+}
+#frontpage #front-news .caption h3 {
+  text-transform: none;
+  font-size: initial;
+  margin: 0;
 }
 #frontpage #front-events {
   margin: 0 50px;
@@ -9023,14 +9023,7 @@ input.summon-search-submit.button-website:focus {
 .localist_widget_container li.lw_event_item {
   padding: 20px 0;
 }
-.localist_widget_container .lw_event_item_date {
-  background-color: none;
-  font-size: 16px;
-}
 .localist_widget_container div.lw_event_item_title a {
-  /*font-size: 20px;
-		text-transform: uppercase;
-		color:@link-color; */
   font-weight: bold;
 }
 .localist_widget_container .pin {
@@ -9044,17 +9037,23 @@ input.summon-search-submit.button-website:focus {
 .localist_widget_container div.lw_event_item_time {
   font-size: 16px;
 }
-/* INLINE STYLES: 
-<style type="text/css">
+/* INLINE STYLES - add after widget script 
+<style>
 .localist_widget_container li.lw_event_item {
 	background: transparent;
 	border-left: medium none;
 	border-right: medium none;
 	border-top: medium none;
 	margin-top: 0px;
-	}
+}
 .localist_widget_container div.lw_event_content {
 	padding-top:0;
+}
+.localist_widget_container div.lw_event_item_date {
+padding-bottom:0.5em;
+}
+.localist_widget_container .lw_event_meta {
+width:100%;
 }
 </style> */
 /* styles for ETD webform block */
