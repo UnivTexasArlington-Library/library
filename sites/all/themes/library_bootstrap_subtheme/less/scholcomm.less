@@ -16,27 +16,27 @@
 		color:@sc-dkblue;
 	}
 }
-	#block-menu-menu-libraries-menu {
-		.nav > li {
-			float:left;
-		}
-		.nav > li > a {
-			color:@sc-blue-text;
-			text-transform: uppercase;
-			font-size: 1.1em;
-			font-weight: bold;
-		}
-		.nav > li > a:hover, 
-		.nav > li > a:focus {
-			color: #fff;
-		}
-		.dropdown-menu {
-			background-color: #fff;
-		}
-		.caret {
-			display:none;
-		}
+#block-menu-menu-libraries-menu {
+	.nav > li {
+		float:left;
 	}
+	.nav > li > a {
+		color:@sc-blue-text;
+		text-transform: uppercase;
+		font-size: 1.1em;
+		font-weight: bold;
+	}
+	.nav > li > a:hover, 
+	.nav > li > a:focus {
+		color: #fff;
+	}
+	.dropdown-menu {
+		background-color: #fff;
+	}
+	.caret {
+		display:none;
+	}
+}
 #breadcrumb-prog {
 	a {
 		color:#0064b1;
@@ -136,6 +136,7 @@
 			text-decoration: none;
 			background-color: inherit;
 			float:left;
+			padding:10px;
 		}
 		.nav > li > a:hover, 
 		.nav > li > a:focus, 
@@ -261,6 +262,36 @@
 		}
 	}
 }
+
+@media (max-width: @screen-md-max) {
+	#block-menu-menu-libraries-menu.nav > li > a {
+		font-size: 1em;
+	}
+	#program-page {
+		.page-header-small, 
+		.page-header-lg {
+			font-size: 1.7em;
+		}
+	}
+	#scholcomm {
+		.middle p {
+			font-size: 1.0425em;
+		}
+		.btn-sc {
+			> p {
+				font-size: 0.75em;
+			}
+			img {
+				width:75%;
+				height: auto;
+			}
+		}
+		.sidebar-image img {
+			width: 90%;
+		}
+	}
+}
+
 @media (max-width: @screen-xs-max) {
 	#scholcomm {
 		.pane-menu-menu-scholcomm {
@@ -278,6 +309,9 @@
 		}
 		.sc-event-workshop {
 			clear:both;
+		}
+		.sidebar-image img {
+			width: 80%;
 		}
 	}
 }

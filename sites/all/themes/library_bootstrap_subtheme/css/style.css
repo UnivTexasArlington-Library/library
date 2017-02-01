@@ -9212,6 +9212,7 @@ width:100%;
   text-decoration: none;
   background-color: inherit;
   float: left;
+  padding: 10px;
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li > a:hover,
 #scholcomm .pane-menu-menu-scholcomm .nav > li > a:hover,
@@ -9344,6 +9345,28 @@ width:100%;
 #scholcomm .view-blog-author-list .views-row {
   margin-bottom: 0;
 }
+@media (max-width: 1199px) {
+  #block-menu-menu-libraries-menu.nav > li > a {
+    font-size: 1em;
+  }
+  #program-page .page-header-small,
+  #program-page .page-header-lg {
+    font-size: 1.7em;
+  }
+  #scholcomm .middle p {
+    font-size: 1.0425em;
+  }
+  #scholcomm .btn-sc > p {
+    font-size: 0.75em;
+  }
+  #scholcomm .btn-sc img {
+    width: 75%;
+    height: auto;
+  }
+  #scholcomm .sidebar-image img {
+    width: 90%;
+  }
+}
 @media (max-width: 767px) {
   #scholcomm .pane-menu-menu-scholcomm {
     border-right-width: 0;
@@ -9360,6 +9383,9 @@ width:100%;
   }
   #scholcomm .sc-event-workshop {
     clear: both;
+  }
+  #scholcomm .sidebar-image img {
+    width: 80%;
   }
 }
 /* Local Print Styles */
