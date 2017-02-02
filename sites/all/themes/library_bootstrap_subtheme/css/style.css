@@ -9293,6 +9293,9 @@ width:100%;
 #scholcomm .media-heading > a {
   color: #ae482c;
 }
+#scholcomm .media .img-responsive {
+  max-width: 90%;
+}
 #scholcomm .view-scholcomm-blog-content .views-field.views-field-comment-count,
 #scholcomm .view-scholcomm-blog-content .blog-author-name {
   color: #00447c;
