@@ -9233,6 +9233,8 @@ width:100%;
   position: relative;
   box-shadow: none;
   clear: both;
+  min-width: none;
+  margin-left: 10px;
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .open > .dropdown-menu > li > a,
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a {
@@ -9251,6 +9253,7 @@ width:100%;
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a,
 #scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a {
   white-space: normal;
+  padding: 3px 5px;
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a:hover,
 #scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a:hover,
