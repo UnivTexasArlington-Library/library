@@ -9201,11 +9201,14 @@ width:100%;
 #scholcomm .sidebar-image img {
   margin-left: 0;
 }
-#scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li,
+#scholcomm .pane-menu-menu-scholcomm {
+  border-right: 1px solid #a3a3a3;
+  margin-bottom: 5em;
+  min-width: 140px;
+}
 #scholcomm .pane-menu-menu-scholcomm .nav > li {
   clear: both;
 }
-#scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li > a,
 #scholcomm .pane-menu-menu-scholcomm .nav > li > a {
   color: #0057b4;
   display: inline-block;
@@ -9214,21 +9217,16 @@ width:100%;
   float: left;
   padding: 10px;
 }
-#scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li > a:hover,
 #scholcomm .pane-menu-menu-scholcomm .nav > li > a:hover,
-#scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li > a:focus,
 #scholcomm .pane-menu-menu-scholcomm .nav > li > a:focus,
-#scholcomm .pane-menu-menu-risk-taking-and-revolution .nav > li > a.active,
 #scholcomm .pane-menu-menu-scholcomm .nav > li > a.active {
   background-color: #f4f4f4;
   display: inline-block;
 }
-#scholcomm .pane-menu-menu-risk-taking-and-revolution > ul.dropdown-menu,
 #scholcomm .pane-menu-menu-scholcomm > ul.dropdown-menu {
   position: inherit;
   box-shadow: none;
 }
-#scholcomm .pane-menu-menu-risk-taking-and-revolution .open > .dropdown-menu,
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu {
   position: relative;
   box-shadow: none;
@@ -9236,42 +9234,29 @@ width:100%;
   min-width: none;
   margin-left: 10px;
 }
-#scholcomm .pane-menu-menu-risk-taking-and-revolution .open > .dropdown-menu > li > a,
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a {
   color: #0057b4;
   text-decoration: none;
 }
-#scholcomm .pane-menu-menu-risk-taking-and-revolution .open > .dropdown-menu > li > a:hover,
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a:hover,
-#scholcomm .pane-menu-menu-risk-taking-and-revolution .open > .dropdown-menu > li > a:focus,
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a:focus,
-#scholcomm .pane-menu-menu-risk-taking-and-revolution .open > .dropdown-menu > li > a.active,
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a.active {
   background-color: #f4f4f4;
   /*display: inline-block; */
 }
-#scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a,
 #scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a {
   white-space: normal;
   padding: 3px 5px;
 }
-#scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a:hover,
 #scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a:hover,
-#scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > li > a:focus,
 #scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a:focus {
   background-color: #fff;
 }
-#scholcomm .pane-menu-menu-risk-taking-and-revolution .dropdown-menu > .active > a,
 #scholcomm .pane-menu-menu-scholcomm .dropdown-menu > .active > a {
   background-color: #f4f4f4;
 }
-#scholcomm .pane-menu-menu-risk-taking-and-revolution .active-trail.dropdown-toggle.active,
 #scholcomm .pane-menu-menu-scholcomm .active-trail.dropdown-toggle.active {
   background-color: #f4f4f4;
-}
-#scholcomm .pane-menu-menu-scholcomm {
-  border-right: 1px solid #a3a3a3;
-  margin-bottom: 5em;
 }
 #scholcomm .sc-staff-focus {
   padding-left: 15px;
@@ -9303,7 +9288,7 @@ width:100%;
   background-color: #f4f4f4;
 }
 #scholcomm .media-heading {
-  margin-top: 0;
+  padding-top: 0;
 }
 #scholcomm .media-heading > a {
   color: #ae482c;
@@ -9356,8 +9341,10 @@ width:100%;
   #program-page .page-header-lg {
     font-size: 1.7em;
   }
-  #scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a {
-    width: 80%;
+  #scholcomm {
+    /*.pane-menu-menu-scholcomm .dropdown-menu > li > a {
+			width: 80%
+		}*/
   }
   #scholcomm .middle p {
     font-size: 1.0425em;
