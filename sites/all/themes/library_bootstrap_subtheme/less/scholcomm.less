@@ -285,6 +285,7 @@
 			font-size: 1.0425em;
 		}
 		.btn-sc {
+			margin-top: 2em;
 			> p {
 				font-size: 0.75em;
 			}
@@ -297,7 +298,11 @@
 		}
 	}
 }
-
+@media(max-width: @screen-sm-max) {
+	#schlcomm .btn-sc{
+		margin-top:1em;
+	}
+}
 @media (max-width: @screen-xs-max) {
 	#scholcomm {
 		.pane-menu-menu-scholcomm {
@@ -313,6 +318,7 @@
 		.right {
 			clear:both;
 		}
+
 		.sc-event-workshop {
 			clear:both;
 		}

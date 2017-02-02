@@ -9352,6 +9352,9 @@ width:100%;
   #scholcomm .middle p {
     font-size: 1.0425em;
   }
+  #scholcomm .btn-sc {
+    margin-top: 2em;
+  }
   #scholcomm .btn-sc > p {
     font-size: 0.75em;
   }
@@ -9360,6 +9363,11 @@ width:100%;
   }
   #scholcomm .caption {
     font-size: 0.875em;
+  }
+}
+@media (max-width: 991px) {
+  #schlcomm .btn-sc {
+    margin-top: 1em;
   }
 }
 @media (max-width: 767px) {
