@@ -433,8 +433,20 @@ function theme_media_widget($variables) {
   $element = $variables['element'];
   $output = '';
 
+  // Merge provided attributes with existing ones.
   // The "form-media" class is required for proper Ajax functionality.
-  $output .= '<div class="media-widget form-media clearfix">';
+  $attributes = array(
+    'class' => array("media-widget", "form-media", "clearfix"),
+  );
+  if (!empty($element['#attributes'])) {
+    $attributes = array_merge_recursive($attributes, $element['#attributes']);
+  }
+  if (!empty($element['#id'])) {
+    $attributes = array_merge_recursive($attributes, array('id' => $element['#id'] . '--widget'));
+  }
+
+  // Render attributes into div in one go.
+  $output .= '<div ' . drupal_attributes($attributes) . '>';
   $output .= drupal_render_children($element);
   $output .= '</div>';
 
