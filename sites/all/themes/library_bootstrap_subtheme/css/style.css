@@ -6908,11 +6908,9 @@ table .checkbox input[type="checkbox"] {
 #lib_header img {
   width: auto;
   height: 38px;
-}
-@media (min-width: 992px) and (max-width: 1145px) {
-  #lib_header img {
-    height: 30px;
-  }
+  /*@media (min-width: @screen-md-min) and (max-width: 1145px) {
+			height: 30px;
+		} */
 }
 @media (min-width: 768px) and (max-width: 991px) {
   #lib_header img {
@@ -9309,10 +9307,12 @@ width:100%;
   background-color: #f4f4f4;
 }
 #scholcomm .media-heading {
+  margin-top: -7px;
   padding-top: 0;
 }
 #scholcomm .media-heading > a {
   color: #ae482c;
+  font-size: 0.8em;
 }
 #scholcomm .media .img-responsive {
   max-width: 90%;
@@ -9394,6 +9394,9 @@ width:100%;
   }
 }
 @media (max-width: 767px) {
+  #block-menu-menu-libraries-menu .nav > li > a {
+    font-size: 0.8em;
+  }
   #scholcomm .pane-menu-menu-scholcomm {
     border-right-width: 0;
     border-bottom: 1px solid #cccccc;
