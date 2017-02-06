@@ -9291,10 +9291,11 @@ width:100%;
   padding: 1em;
 }
 #scholcomm .btn-sc img {
-  margin-bottom: 10px;
+  margin-bottom: 1.5em;
 }
 #scholcomm .btn-sc > p {
   text-align: center;
+  line-height: 1;
 }
 #scholcomm .btn-sc a {
   color: #0052a3;
