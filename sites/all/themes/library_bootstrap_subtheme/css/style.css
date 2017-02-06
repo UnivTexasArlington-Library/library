@@ -9151,6 +9151,9 @@ width:100%;
   text-decoration: underline;
   text-decoration-color: #cccccc;
 }
+#scholcomm h1.page-header-small {
+  margin-top: -6px;
+}
 #scholcomm h2 {
   border-top: none;
   border-bottom: 3px dotted #656567;
