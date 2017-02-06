@@ -2,7 +2,7 @@
 @sc-blue-text: #0057b4;
 @sc-dkblue: #00447C;
 @sc-grey-text: #656567;
-@sc-grey-line: #a3a3a3;
+@sc-grey-line: #ccc;
 @sc-rollover: #f4f4f4;
 @sc-red: #ae482c;
 
@@ -89,6 +89,9 @@
 		font-size: 1.7em;
 		text-transform:none;
 	}
+	h3.pane-title {
+		margin-bottom: 0;
+	}
 	h4 {
 		font-size: 1.25em;
 		text-transform: none;
@@ -103,6 +106,10 @@
 		color: #000;
 		font-weight: bold;
 		text-transform: uppercase;
+	}
+	h5.sc-contact {
+		margin-top: 0;
+		line-height: 1;
 	}
 	.sc-grey {
 		color:@sc-grey-text;
@@ -122,8 +129,11 @@
 	.sidebar-title {
 		font-weight: bold;
 	}
-	.sidebar-image img {
-		margin-left:0;
+	.sidebar-image {
+		margin-top:2.75em;
+		img {
+			margin-left:0;
+		}
 	}
 	.pane-menu-menu-scholcomm {
 		border-right:1px solid @sc-grey-line;
@@ -192,12 +202,18 @@
 			font-weight: bold;
 			text-transform: uppercase;
 		}
+		.caption {
+			padding-right: 25px;
+		}
 	}
 	.btn-sc {
 		text-transform: uppercase;
 		margin-top: 4em;
 		font-weight: bold;
 		padding: 1em;
+		img {
+			margin-bottom:10px;
+		}
 		> p {
 			text-align: center;
 		}

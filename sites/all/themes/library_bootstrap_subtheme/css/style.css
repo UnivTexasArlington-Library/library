@@ -9149,7 +9149,7 @@ width:100%;
 }
 #scholcomm li.node-readmore > a {
   text-decoration: underline;
-  text-decoration-color: #a3a3a3;
+  text-decoration-color: #cccccc;
 }
 #scholcomm h2 {
   border-top: none;
@@ -9159,6 +9159,9 @@ width:100%;
   margin-right: 7em;
   font-size: 1.7em;
   text-transform: none;
+}
+#scholcomm h3.pane-title {
+  margin-bottom: 0;
 }
 #scholcomm h4 {
   font-size: 1.25em;
@@ -9174,6 +9177,10 @@ width:100%;
   color: #000;
   font-weight: bold;
   text-transform: uppercase;
+}
+#scholcomm h5.sc-contact {
+  margin-top: 0;
+  line-height: 1;
 }
 #scholcomm .sc-grey {
   color: #656567;
@@ -9198,11 +9205,14 @@ width:100%;
 #scholcomm .sidebar-title {
   font-weight: bold;
 }
+#scholcomm .sidebar-image {
+  margin-top: 2.75em;
+}
 #scholcomm .sidebar-image img {
   margin-left: 0;
 }
 #scholcomm .pane-menu-menu-scholcomm {
-  border-right: 1px solid #a3a3a3;
+  border-right: 1px solid #cccccc;
   margin-bottom: 5em;
   min-width: 140px;
 }
@@ -9270,11 +9280,17 @@ width:100%;
   font-weight: bold;
   text-transform: uppercase;
 }
+#scholcomm .sc-staff-focus .caption {
+  padding-right: 25px;
+}
 #scholcomm .btn-sc {
   text-transform: uppercase;
   margin-top: 4em;
   font-weight: bold;
   padding: 1em;
+}
+#scholcomm .btn-sc img {
+  margin-bottom: 10px;
 }
 #scholcomm .btn-sc > p {
   text-align: center;
@@ -9321,7 +9337,7 @@ width:100%;
 #scholcomm .view-scholcomm-blog-content .scholcomm-more-link a {
   text-decoration: none;
   padding: 0.5em;
-  border: 1px solid #a3a3a3;
+  border: 1px solid #cccccc;
 }
 #scholcomm .pane-blog-content-panel-pane-6,
 #scholcomm .pane-scholcomm-blog-content-panel-pane-6,
@@ -9373,7 +9389,7 @@ width:100%;
 @media (max-width: 767px) {
   #scholcomm .pane-menu-menu-scholcomm {
     border-right-width: 0;
-    border-bottom: 1px solid #a3a3a3;
+    border-bottom: 1px solid #cccccc;
     margin-bottom: 3em;
     padding-bottom: 2em;
   }
