@@ -9081,7 +9081,7 @@ width:100%;
 /* Scholarly Communication/ Program Page Styles */
 #internal-menu-prog {
   background-color: #D3EFFb;
-  border-bottom: 3px solid #0057b4;
+  border-bottom: 3px solid #0052a3;
 }
 #internal-menu-prog .region-internal-menu {
   margin: 0;
@@ -9093,7 +9093,7 @@ width:100%;
   float: left;
 }
 #block-menu-menu-libraries-menu .nav > li > a {
-  color: #0057b4;
+  color: #0052a3;
   text-transform: uppercase;
   font-size: 1.1em;
   font-weight: bold;
@@ -9155,12 +9155,12 @@ width:100%;
   border-top: none;
   border-bottom: 3px dotted #656567;
   padding-left: 0;
-  color: #656567;
   margin-right: 7em;
-  font-size: 1.7em;
+  font-size: 1.25em;
   text-transform: none;
+  /*color:@sc-blue-text;*/
 }
-#scholcomm h3.pane-title {
+#scholcomm h3 .pane-title {
   margin-bottom: 0;
 }
 #scholcomm h4 {
@@ -9213,6 +9213,7 @@ width:100%;
 }
 #scholcomm .pane-menu-menu-scholcomm {
   border-right: 1px dotted #cccccc;
+  margin-top: 10px;
   margin-bottom: 5em;
   min-width: 140px;
 }
@@ -9220,7 +9221,7 @@ width:100%;
   clear: both;
 }
 #scholcomm .pane-menu-menu-scholcomm .nav > li > a {
-  color: #0057b4;
+  color: #0052a3;
   display: inline-block;
   text-decoration: none;
   background-color: inherit;
@@ -9245,7 +9246,7 @@ width:100%;
   margin-left: 10px;
 }
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a {
-  color: #0057b4;
+  color: #0052a3;
   text-decoration: none;
 }
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a:hover,
@@ -9296,7 +9297,7 @@ width:100%;
   text-align: center;
 }
 #scholcomm .btn-sc a {
-  color: #0057b4;
+  color: #0052a3;
   text-decoration: none;
 }
 #scholcomm .btn-sc:hover,
@@ -9330,11 +9331,13 @@ width:100%;
 #scholcomm .view-scholcomm-blog-content .views-field-field-sc-tags {
   margin-top: 2em;
 }
-#scholcomm .view-scholcomm-blog-content .scholcomm-more-link {
+#scholcomm .sc-more-link,
+#scholcomm .s-lg-widget-list-more-results {
   float: right;
   margin: 2em 0;
 }
-#scholcomm .view-scholcomm-blog-content .scholcomm-more-link a {
+#scholcomm .sc-more-link a,
+#scholcomm .s-lg-widget-list-more-results a {
   text-decoration: none;
   padding: 0.5em;
   border: 1px solid #cccccc;

@@ -1,5 +1,5 @@
 /* Scholarly Communication/ Program Page Styles */
-@sc-blue-text: #0057b4;
+@sc-blue-text: @header-text;
 @sc-dkblue: #00447C;
 @sc-grey-text: #656567;
 @sc-grey-line: #ccc;
@@ -84,13 +84,15 @@
 		border-top:none;
 		border-bottom:3px dotted @sc-grey-text;
 		padding-left:0;
-		color:@sc-grey-text;
 		margin-right:7em;
-		font-size: 1.7em;
+		font-size: 1.25em;
 		text-transform:none;
+		/*color:@sc-blue-text;*/
 	}
-	h3.pane-title {
-		margin-bottom: 0;
+	h3{
+		.pane-title {
+			margin-bottom: 0;
+		}
 	}
 	h4 {
 		font-size: 1.25em;
@@ -137,6 +139,7 @@
 	}
 	.pane-menu-menu-scholcomm {
 		border-right:1px dotted @sc-grey-line;
+		margin-top:10px;
 		margin-bottom:5em;
 		min-width: 140px;
 		.nav > li {
@@ -253,14 +256,16 @@
 		.views-field-field-sc-tags {
 			margin-top:2em;
 		}
-		.scholcomm-more-link {
-			float:right;
-			margin:2em 0;
-			a {
-				text-decoration: none;
-				padding:0.5em;
-				border:1px solid @sc-grey-line;
-			}
+
+	}
+	.sc-more-link, 
+	.s-lg-widget-list-more-results {
+		float:right;
+		margin:2em 0;
+		a {
+			text-decoration: none;
+			padding:0.5em;
+			border:1px solid @sc-grey-line;
 		}
 	}
 	.pane-blog-content-panel-pane-6,
