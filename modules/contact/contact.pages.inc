@@ -80,7 +80,7 @@ function contact_site_form($form, &$form_state) {
     '#type' => 'textfield',
     '#title' => t('Subject'),
     '#maxlength' => 255,
-    '#required' => TRUE,
+    '#required' => FALSE,
   );
   $form['cid'] = array(
     '#type' => 'select',
@@ -227,7 +227,7 @@ function contact_personal_form($form, &$form_state, $recipient) {
     '#type' => 'textfield',
     '#title' => t('Subject'),
     '#maxlength' => 50,
-    '#required' => TRUE,
+    '#required' => FALSE,
   );
   $form['message'] = array(
     '#type' => 'textarea',
