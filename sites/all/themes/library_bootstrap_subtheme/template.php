@@ -110,4 +110,12 @@ function library_bootstrap_subtheme_preprocess_node(&$vars, $hook) {
   		drupal_add_js(drupal_get_path('theme', 'library_bootstrap_subtheme'). '/js/home.js', $options);
 	 }
 }
-
+// makes subject a non required field on contect site form
+function contact_site_form($form, &$form_state) {
+  $form['subject'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Subject'),
+    '#maxlength' => 255,
+    '#required' => FALSE,
+  );
+}
