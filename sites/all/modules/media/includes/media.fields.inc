@@ -408,6 +408,7 @@ function media_field_widget_submit($form, &$form_state) {
     }
   }
 
+  ksort($submitted_values);
   // Re-index deltas after removing empty items.
   $submitted_values = array_values($submitted_values);
 
