@@ -52,6 +52,8 @@ function available_now_block_view($delta='') {
       if ($selRooms->length > 0) {
         $selRoomAvail = $selRooms->item(0)->nodeValue;
       }
+    } else {
+      return;
     }
     /*END NEW OPEN ROOM*/
     /*START LAPTOPS*/
