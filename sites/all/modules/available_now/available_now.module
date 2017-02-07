@@ -23,18 +23,12 @@ function available_now_block_view($delta='') {
       foreach ($results as $entry) {
         if ($entry->groupName == 'Science and Engineering Library') {
           $selCompAvail = $entry->availableCount;
-        } else {
-          $selCompAvail = "Information not available";
-        }
+        } 
         if (strpos($entry->groupName, 'Central') !==false) {
           $centralCompAvail = $centralCompAvail + $entry->availableCount; 
-        } else {
-          $centralCompAvail = "Information not available";
-        }
+        } 
         if ($entry->groupName == 'Architecture and Fine Arts Library') {
           $afaCompAvail = $entry->availableCount;
-        } else {
-          $afaCompAvail = "Information not available";
         }
       }
     /*END LAB STATS FOR COMPUTER AVAILABILITY*/
