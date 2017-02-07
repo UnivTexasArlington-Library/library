@@ -21,15 +21,21 @@ function available_now_block_view($delta='') {
       $results = $client->GetGroupedCurrentStats()->GetGroupedCurrentStatsResult->GroupStat;
       global $centralCompAvail;
       foreach ($results as $entry) {
-      if ($entry->groupName == 'Science and Engineering Library') {
-        $selCompAvail = $entry->availableCount;
-      }
-      if (strpos($entry->groupName, 'Central') !==false) {
-        $centralCompAvail = $centralCompAvail + $entry->availableCount; 
-      }
-      if ($entry->groupName == 'Architecture and Fine Arts Library') {
-        $afaCompAvail = $entry->availableCount;
-      }
+        if ($entry->groupName == 'Science and Engineering Library') {
+          $selCompAvail = $entry->availableCount;
+        } else {
+          $selCompAvail = "Information not available";
+        }
+        if (strpos($entry->groupName, 'Central') !==false) {
+          $centralCompAvail = $centralCompAvail + $entry->availableCount; 
+        } else {
+          $centralCompAvail = "Information not available";
+        }
+        if ($entry->groupName == 'Architecture and Fine Arts Library') {
+          $afaCompAvail = $entry->availableCount;
+        } else {
+          $afaCompAvail = "Information not available";
+        }
       }
     /*END LAB STATS FOR COMPUTER AVAILABILITY*/
     /*START NEW OPENROOM*/
@@ -53,11 +59,14 @@ function available_now_block_view($delta='') {
         $selRoomAvail = $selRooms->item(0)->nodeValue;
       }
     } else {
-      return;
+      $centralRoomAvail = "Information not available";
+      $afaRoomAvail = "Information not available";
+      $selRoomAvail = "Information not available";
+
     }
     /*END NEW OPEN ROOM*/
     /*START LAPTOPS*/
-    $html = file_get_contents("http://pulse.uta.edu/vwebv/laptops.cgi");
+    $html = file_get_contents("https://pulse.uta.edu/vwebv/laptops.cgi");
     $doc = new DOMDocument();
     libxml_use_internal_errors(TRUE);
     if (!empty($html)) {
@@ -75,6 +84,12 @@ function available_now_block_view($delta='') {
       $selLaptops = $doc_xpath->query('//div[(@id="laptops_sel")]');
       if ($selLaptops->length > 0) {
         $selLaptopAvail = $selLaptops->item(0)->nodeValue;
+      }
+      else {
+        $centralLaptopAvail = "Information not available";
+        $afaLaptopAvail = "Information not available";
+        $selLaptopAvail = "Information not available";
+
       }
     }
     /*END LAPTOPS*/
