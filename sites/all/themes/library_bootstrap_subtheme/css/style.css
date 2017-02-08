@@ -8551,6 +8551,8 @@ input.summon-search-submit.button-website:focus {
   .views-field-field-caption .field-content {
     font-size: 12px;
     padding: 7px;
+    background-color: rgba(18, 15, 7, 0.86);
+    position: relative;
   }
 }
 /* Services For & News-Events & Available Now padding & title */
