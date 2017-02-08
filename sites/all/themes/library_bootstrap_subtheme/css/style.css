@@ -9124,6 +9124,7 @@ input.summon-search-submit.button-website:focus {
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a {
   color: #0057b4;
   text-decoration: none;
+  display: inline-block;
 }
 #scholcomm .pane-menu-menu-risk-taking-and-revolution .open > .dropdown-menu > li > a:hover,
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a:hover,
@@ -9155,6 +9156,8 @@ input.summon-search-submit.button-website:focus {
 #scholcomm .pane-menu-menu-scholcomm {
   border-right: 1px solid #a3a3a3;
   margin-bottom: 5em;
+  min-width: 160px;
+  margin-top: 10px;
 }
 #scholcomm .sc-staff-focus {
   padding-left: 15px;
