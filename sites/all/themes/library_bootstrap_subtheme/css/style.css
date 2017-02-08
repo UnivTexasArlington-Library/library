@@ -9207,7 +9207,7 @@ width:100%;
   font-weight: bold;
 }
 #scholcomm .sidebar-image {
-  margin-top: 2.75em;
+  margin-top: 0.75em;
 }
 #scholcomm .sidebar-image img {
   margin-left: 0;
@@ -9216,7 +9216,7 @@ width:100%;
   border-right: 1px dotted #cccccc;
   margin-top: 10px;
   margin-bottom: 5em;
-  min-width: 140px;
+  min-width: 160px;
 }
 #scholcomm .pane-menu-menu-scholcomm .nav > li {
   clear: both;
@@ -9259,6 +9259,7 @@ width:100%;
 #scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a {
   white-space: normal;
   padding: 3px 5px;
+  display: inline-block;
 }
 #scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a:hover,
 #scholcomm .pane-menu-menu-scholcomm .dropdown-menu > li > a:focus {
@@ -9386,6 +9387,9 @@ width:100%;
   }
   #scholcomm .caption {
     font-size: 0.875em;
+  }
+  #scholcomm .media-heading {
+    margin-top: 0;
   }
 }
 @media (max-width: 991px) {
