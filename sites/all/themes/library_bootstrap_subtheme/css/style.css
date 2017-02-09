@@ -9216,9 +9216,9 @@ width:100%;
 }
 #scholcomm .pane-menu-menu-scholcomm {
   border-right: 1px dotted #cccccc;
-  margin-top: 10px;
   margin-bottom: 5em;
   min-width: 160px;
+  margin-top: 10px;
 }
 #scholcomm .pane-menu-menu-scholcomm .nav > li {
   clear: both;
@@ -9251,6 +9251,7 @@ width:100%;
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a {
   color: #0052a3;
   text-decoration: none;
+  display: inline-block;
 }
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a:hover,
 #scholcomm .pane-menu-menu-scholcomm .open > .dropdown-menu > li > a:focus,
