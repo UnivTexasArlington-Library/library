@@ -10017,3 +10017,20 @@ width:100%;
   right: 0;
   background-color: rgba(255, 255, 255, 0.5);
 }
+#backtotop {
+  background: transparent url("sites/default/files/top54.png") no-repeat scroll center center;
+  height: 54px;
+  width: 54px;
+  opacity: 1;
+}
+#backtotop:hover,
+#backtotop:focus {
+  opacity: 0.8;
+}
+@media (max-width: 991px) {
+  #backtotop {
+    background: transparent url("sites/default/files/top28.png") no-repeat scroll center center;
+    height: 2em;
+    width: 2em;
+  }
+}
