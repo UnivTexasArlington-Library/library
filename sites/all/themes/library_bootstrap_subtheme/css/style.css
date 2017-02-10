@@ -8026,11 +8026,11 @@ div.float-date-field div.form-item {
   margin-right: auto;
 }
 /*for locations */
-.node-location img {
+.view-location img {
   width: 100%;
   height: auto;
 }
-.node-location h2 {
+.view-location h2 {
   color: #FFFFFF;
   background: #00447C;
   width: 100%;
@@ -8039,18 +8039,18 @@ div.float-date-field div.form-item {
   margin-top: 0;
   font-size: 20px;
 }
-.node-location h2 a {
+.view-location h2 a {
   color: #FFFFFF;
 }
-.node-location h2 a:hover,
-.node-location h2 a:focus {
+.view-location h2 a:hover,
+.view-location h2 a:focus {
   color: #FFFFFF;
 }
-.node-location .glyphicon img {
+.view-location .glyphicon img {
   width: 20px;
   height: auto;
 }
-.node-location .glyphicon-book {
+.view-location .glyphicon-book {
   padding-right: 4px;
 }
 /* for staff */
