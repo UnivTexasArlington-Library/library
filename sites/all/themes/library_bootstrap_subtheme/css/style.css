@@ -8026,11 +8026,11 @@ div.float-date-field div.form-item {
   margin-right: auto;
 }
 /*for locations */
-.view-location img {
+.node-location img {
   width: 100%;
   height: auto;
 }
-.view-location h2 {
+.node-location h2 {
   color: #FFFFFF;
   background: #00447C;
   width: 100%;
@@ -8039,18 +8039,18 @@ div.float-date-field div.form-item {
   margin-top: 0;
   font-size: 20px;
 }
-.view-location h2 a {
+.node-location h2 a {
   color: #FFFFFF;
 }
-.view-location h2 a:hover,
-.view-location h2 a:focus {
+.node-location h2 a:hover,
+.node-location h2 a:focus {
   color: #FFFFFF;
 }
-.view-location .glyphicon img {
+.node-location .glyphicon img {
   width: 20px;
   height: auto;
 }
-.view-location .glyphicon-book {
+.node-location .glyphicon-book {
   padding-right: 4px;
 }
 /* for staff */
@@ -9275,6 +9275,9 @@ width:100%;
 #internal-menu-prog .dropdown-menu > li > a {
   color: #00447c;
 }
+#internal-menu-prog .dropdown-menu > li > a.active {
+  color: #fff;
+}
 #block-menu-menu-libraries-menu .nav > li {
   float: left;
 }
@@ -9588,6 +9591,9 @@ width:100%;
   }
   #block-menu-menu-libraries-menu .nav > li > a {
     font-size: 0.8em;
+  }
+  #scholcomm h2 {
+    margin-right: 2em;
   }
   #scholcomm .pane-menu-menu-scholcomm {
     border-right-width: 0;
