@@ -87,61 +87,70 @@ function available_now_block_view($delta='') {
       }
     }
     /*END LAPTOPS*/
+
+    /*START LOANABLE TECH */
+    $contents = file_get_contents($url);
+    $contents = utf8_encode($contents);
+    $results = json_decode($contents); 
+
+
+    $html = file_get_contents("https://pulse.uta.edu/vwebv/laptops.cgi");
+    $result = json_decode($string);
+
+    $json = '{"ipads":{"cen":10,"sel":5,"afa":5},"chromebooks":{"cen":5,"sel":0,"afa":1},"laptops":{"afa":3,"cen":12,"sel":9},"surfaces":{"sel":10,"cen":50,"afa":9},"macbooks":{"afa":1,"cen":2,"sel":0}}';
+    /*END LOANABLE TECH */
+
 $block_content = '<div class="row">
-          <div class="col-sm-12">
             <h2 class="pane-title">Available Now</h2>
-          </div>
         </div>
         <div class="row">
-          <div class="col-md-12 available-now-content">
-            <div class="table-responsive">
-              <table class="table table-bordered table-hover">
-                 <tr>
-                  <th>Technology</th>
-                  <th>Central Library</th>
-                  <th>Architecture &amp; Fine Arts Library</th>
-                  <th>Science &amp; Engineering Library</th>
-                </tr>
-                <tr>
-                  <td><a href="technology/laptops">Laptops</a></td>
-                  <td>';
-                    $block_content .= $centralLaptopAvail;
+          <div class="table-responsive available-now-content">
+            <table class="table table-bordered table-hover">
+              <tr>
+                <th>Technology</th>
+                <th>Central Library</th>
+                <th>Architecture &amp; Fine Arts Library</th>
+                <th>Science &amp; Engineering Library</th>
+              </tr>
+              <tr>
+                <td><a href="technology/laptops">Laptops</a></td>
+                <td>';
+                  $block_content .= $centralLaptopAvail;
+                  $block_content .= '</td>
+                <td>';
+                    $block_content .= $afaLaptopAvail;
                     $block_content .= '</td>
-                  <td>';
-                      $block_content .= $afaLaptopAvail;
-                      $block_content .= '</td>
-                  <td>';
-                    $block_content .= $selLaptopAvail;
+                <td>';
+                  $block_content .= $selLaptopAvail;
+                  $block_content .= '</td>
+              </tr>
+              <tr>
+                <td><a href="http://cas.uta.edu/CAS/">Computers</a></td>
+                <td>';
+                  $block_content .= $centralCompAvail;
+                  $block_content .= '</td>
+                <td>';
+                  $block_content .= $afaCompAvail; 
+                  $block_content .= '</td>
+                <td>';
+                  $block_content .= $selCompAvail; 
+                  $block_content .= '</td>
+              </tr>
+              <tr>
+                <td><a href="http://library.uta.edu/study-spaces">Study Rooms</a></td>
+                <td>';
+                    $block_content .= $centralRoomAvail;
                     $block_content .= '</td>
-                </tr>
-                <tr>
-                  <td><a href="http://cas.uta.edu/CAS/">Computers</a></td>
-                  <td>';
-                    $block_content .= $centralCompAvail;
-                    $block_content .= '</td>
-                  <td>';
-                    $block_content .= $afaCompAvail; 
-                    $block_content .= '</td>
-                  <td>';
-                    $block_content .= $selCompAvail; 
-                    $block_content .= '</td>
-                </tr>
-                <tr>
-                  <td><a href="http://library.uta.edu/study-spaces">Study Rooms</a></td>
-                  <td>';
-                      $block_content .= $centralRoomAvail;
-                      $block_content .= '</td>
-                  <td>';
-                    $block_content .= $afaRoomAvail;
-                    $block_content .= '</td>
-                  <td>';
-                    $block_content .= $selRoomAvail;
-                    $block_content .= '</td>
-                </tr>
-              </table>
-              </div>    
-          </div> <!-- end.col-md-12 -->
-      </div>';
+                <td>';
+                  $block_content .= $afaRoomAvail;
+                  $block_content .= '</td>
+                <td>';
+                  $block_content .= $selRoomAvail;
+                  $block_content .= '</td>
+              </tr>
+            </table>  
+          </div> <!-- end.table-responsive available-now-content -->
+      </div> <!-- end.row -->';
 
 
       $block['subject'] = t("Available Now");
