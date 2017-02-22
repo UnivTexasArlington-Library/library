@@ -8805,8 +8805,8 @@ input.summon-search-submit.button-website:focus {
 #available-now .row {
   margin: 0 50px;
 }
-#available-now .table > .tbody > tr > th,
-#available-now .table > .tbody > tr > td {
+#available-now .table-bordered > .tbody > tr > th,
+#available-now .table-bordered > .tbody > tr > td {
   text-align: center;
 }
 #available-now .table > .tbody > tr > td:first {
@@ -8816,7 +8816,7 @@ input.summon-search-submit.button-website:focus {
   margin-left: 50px;
   margin-right: auto;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 3em;
 }
 .btn.btn-available:hover {
   border: 1px solid #dddddd;
