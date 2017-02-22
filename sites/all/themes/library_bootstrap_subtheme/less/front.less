@@ -190,7 +190,25 @@
 	}
 }
 /*for Available Now */
-#block-available-now-available-now {
+#available-now {
+	margin: 0 50px;
+	.table > .tbody > tr > th, 
+	.table > .tbody > tr > td {
+		text-align: center;
+		&:first {
+			text-align: left;
+		}
+	}
+}
+.btn.btn-available {
+	margin-left:50px;
+	margin-right:auto;
+	display: block;
+	&:hover {
+		border:1px solid @table-border-color;
+	}
+}
+/*#block-available-now-available-now {
 	margin:2em 50px 0 50px;
 		@media (max-width: @screen-md-max) {
 			margin-left:0;
@@ -286,7 +304,7 @@
 			padding-bottom: none;
 		}
 	}
-}
+}*/
 /*for give button*/ 
 .give {
 	color:@brand-warning;
