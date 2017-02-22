@@ -59,14 +59,13 @@ function theme_field_collection_table_multiple_value_fields($variables) {
   if (!isset($element['#custom_settings'])) {
     $element['#custom_settings'] = array(
       'nodragging' => TRUE,
-      'title_on_top' => TRUE,
     );
   }
 
   if (isset($element['#cardinality']) && ($element['#cardinality'] > 1 || $element['#cardinality'] == FIELD_CARDINALITY_UNLIMITED)) {
     $table_id = drupal_html_id($element['#field_name'] . '_values');
     $order_class = $element['#field_name'] . '-delta-order';
-    $required = !empty($element['#required']) ? theme('form_required_marker', array('element' => $element)) : '';
+    $required = !empty($element['#required']) ? '<span class="form-required" title="' . t('This field is required.') . '">*</span>' : '';
 
     $rows = array();
 
@@ -147,18 +146,6 @@ function theme_field_collection_table_multiple_value_fields($variables) {
       '#prefix' => '<div class="form-item">',
       '#suffix' => '</div>',
     );
-
-    if ($element['#custom_settings']['title_on_top']) {
-      $output['title'] = array(
-        '#prefix' => "<label class='form-item-title'>",
-        '#markup' => t('!title !required', array(
-          '!title' => $element['#title'],
-          '!required' => $required,
-        )),
-        '#suffix' => '</label>',
-      );
-    }
-
     $output['field_collection_table'] = array(
       '#theme' => 'table',
       '#header' => $header,
@@ -254,31 +241,22 @@ function theme_table__field_collection_table($variables) {
  */
 function _field_collection_table_get_title($field) {
   $title = '';
-  $required = FALSE;
 
   if (isset($field['#language']) && isset($field[$field['#language']])) {
     $language = $field['#language'];
     if (isset($field[$language]['#title'])) {
       $title = $field[$language]['#title'];
-      $required = !empty($field[$language]['#required']);
-
     }
     elseif (isset($field[$language][0]['#title'])) {
       $title = $field[$language][0]['#title'];
-      $required = !empty($field[$language][0]['#required']);
     }
   }
   elseif (isset($field['#title'])) {
     $title = empty($field['#is_weight']) ? $field['#title'] : t('Order');
-    $required = !empty($field['#required']);
   }
   elseif (isset($field['#value'])) {
     $title = $field['#value'];
-    $required = !empty($field['#required']);
   }
-  $required = $required ? theme('form_required_marker', array('element' => $field)) : '';
-  return t('!title !required', array(
-    '!title' => $title,
-    '!required' => $required,
-  ));
+
+  return $title;
 }
