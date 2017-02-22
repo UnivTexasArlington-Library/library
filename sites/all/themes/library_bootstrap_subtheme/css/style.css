@@ -8698,6 +8698,7 @@ input.summon-search-submit.button-website:focus {
 #frontpage .thumbnail {
   border-color: #dddddd;
   padding: 10px;
+  border-radius: 0px;
 }
 #frontpage .thumbnail h2 {
   border-bottom: none;
@@ -8827,9 +8828,18 @@ input.summon-search-submit.button-website:focus {
   text-transform: uppercase;
   font-size: 20px;
   margin-bottom: 3em;
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 10px 15px;
+  margin-left: 20px;
+}
+@media (max-width: 767px) {
+  .btn.btn-available {
+    margin-left: 0;
+  }
 }
 .btn.btn-available:hover {
-  border: 1px solid #dddddd;
+  border-color: #dddddd;
   color: #ae482c;
   text-decoration: underline;
 }
