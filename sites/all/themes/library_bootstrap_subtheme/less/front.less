@@ -99,7 +99,7 @@
 			margin: 0 0 0 25px;
 		}
 		@media (max-width: @screen-xs-max) {
-			margin: 0;
+			margin: 1.5em 0 0 0;
 		}
 	}
 }
@@ -129,9 +129,9 @@
 	}
 } 
 
-/* Services For & News-Events & Available Now padding & title 
+/* Services For & News-Events & Available Now padding & title */
 .pane-block-18, 
-.pane-news-events, */
+.pane-news-events,
 .pane-spco-current-exhibit {
 	.pane-content {
 		/*padding-top:20px; */
@@ -208,6 +208,10 @@
 		text-align: left;
 	}
 }
+#available-now-buttons {
+	padding-left:0;
+	padding-right:0;
+}
 .btn.btn-available {
 	color:@brand-primary;
 	text-transform: uppercase;
@@ -216,9 +220,11 @@
 	border:1px solid transparent;
 	border-radius:0;
 	padding:10px 15px;
-	margin-left:20px;
+	margin-left:35px;
 	@media (max-width: @screen-xs-max) {
 		margin-left: 0;
+		margin-top: 1.5em;
+		margin-bottom: 1.5em;
 	}
 	&:hover {
 		border-color: @table-border-color;

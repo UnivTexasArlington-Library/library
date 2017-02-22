@@ -8721,7 +8721,7 @@ input.summon-search-submit.button-website:focus {
 }
 @media (max-width: 767px) {
   #frontpage #front-events {
-    margin: 0;
+    margin: 1.5em 0 0 0;
   }
 }
 /* HOMEPAGE IMAGE CAPTION */
@@ -8748,9 +8748,9 @@ input.summon-search-submit.button-website:focus {
     position: relative;
   }
 }
-/* Services For & News-Events & Available Now padding & title 
-.pane-block-18, 
-.pane-news-events, */
+/* Services For & News-Events & Available Now padding & title */
+.pane-block-18 .pane-content,
+.pane-news-events .pane-content,
 .pane-spco-current-exhibit .pane-content {
   /*padding-top:20px; */
   padding-bottom: 28px;
@@ -8823,6 +8823,10 @@ input.summon-search-submit.button-website:focus {
 #available-now .table-bordered > tbody > tr > td:nth-child(1) {
   text-align: left;
 }
+#available-now-buttons {
+  padding-left: 0;
+  padding-right: 0;
+}
 .btn.btn-available {
   color: #0052a3;
   text-transform: uppercase;
@@ -8831,11 +8835,13 @@ input.summon-search-submit.button-website:focus {
   border: 1px solid transparent;
   border-radius: 0;
   padding: 10px 15px;
-  margin-left: 20px;
+  margin-left: 35px;
 }
 @media (max-width: 767px) {
   .btn.btn-available {
     margin-left: 0;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
   }
 }
 .btn.btn-available:hover {
