@@ -130,14 +130,13 @@ function available_now_block_view($delta='') {
 	}
 	/*END SURFACE TABLETS*/
 
-$block_content = '<div class="row">
-          <div class="col-sm-12">
-            <h2 class="pane-title">Available Now </h2>
-          </div>
+$block_content = '<div id="available-now">
+        <div class="row">
+          <h2 class="pane-title">Available Now </h2>
         </div>
         <div class="row">
             <div class="table-responsive">
-              <table class="table table-hover table-border">
+              <table class="table table-hover table-bordered">
                  <tr>
                   <th>&nbsp;</th>
                   <th>Central Library</th>
@@ -232,7 +231,7 @@ $block_content = '<div class="row">
                     $block_content .= '</td>
                 </tr>
               </table>
-              </div>    
+              </div>     </div>
          </div>';
 
 
