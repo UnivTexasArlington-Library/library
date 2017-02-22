@@ -8802,14 +8802,13 @@ input.summon-search-submit.button-website:focus {
   padding-left: 20px;
 }
 /*for Available Now */
-#available-now {
+#available-now .row {
   margin: 0 50px;
 }
 #available-now .table > .tbody > tr > th,
 #available-now .table > .tbody > tr > td {
   text-align: center;
 }
-#available-now .table > .tbody > tr > th:first,
 #available-now .table > .tbody > tr > td:first {
   text-align: left;
 }
@@ -8817,6 +8816,7 @@ input.summon-search-submit.button-website:focus {
   margin-left: 50px;
   margin-right: auto;
   display: block;
+  margin-bottom: 20px;
 }
 .btn.btn-available:hover {
   border: 1px solid #dddddd;

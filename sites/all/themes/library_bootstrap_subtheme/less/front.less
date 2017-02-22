@@ -191,19 +191,22 @@
 }
 /*for Available Now */
 #available-now {
-	margin: 0 50px;
+	.row {
+		margin: 0 50px;
+	}
 	.table > .tbody > tr > th, 
 	.table > .tbody > tr > td {
 		text-align: center;
-		&:first {
-			text-align: left;
-		}
+	}
+	.table > .tbody > tr > td:first {
+		text-align: left;
 	}
 }
 .btn.btn-available {
 	margin-left:50px;
 	margin-right:auto;
 	display: block;
+	margin-bottom:20px;
 	&:hover {
 		border:1px solid @table-border-color;
 	}
