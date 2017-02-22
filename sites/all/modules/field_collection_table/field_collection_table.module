@@ -60,6 +60,30 @@ function field_collection_table_field_formatter_view($entity_type, $entity, $fie
           }
         }
       }
+
+      if (module_exists('ds')) {
+        // Add Display Suite fields and settings.
+        $fields_ds = ds_get_fields('field_collection_item');
+        $fields_ds_settings = ds_get_field_settings('field_collection_item', $field['field_name'], $view_mode);
+        foreach ($fields_ds_settings as $name => $ds_settings) {
+          if (isset($fields_ds[$name])) {
+            $weight = $ds_settings['weight'];
+            $field_names[$weight] = $name;
+            $header[$weight] = array(
+              'data' => ($ds_settings['label'] != 'hidden') ? $fields_ds[$name]['title'] : NULL,
+              'class' => $name,
+            );
+          }
+          if (in_array($name, $field_names)) {
+            $weight = array_search($name, $field_names);
+          }
+          // Allow to override field label using DS field format settings.
+          if (isset($weight) && isset($ds_settings['formatter_settings']['ft']['lb'])) {
+            $header[$weight]['data'] = t(check_plain($ds_settings['formatter_settings']['ft']['lb']));
+          }
+        }
+      }
+
       ksort($header);
       ksort($field_names);
 
@@ -127,6 +151,12 @@ function field_collection_table_field_formatter_view($entity_type, $entity, $fie
         '#theme' => 'table',
         '#header' => $header,
         '#rows' => $rows,
+        '#attributes' => array(
+          'class' => array(
+            'field-collection-table-view',
+            drupal_clean_css_identifier('view-mode-' . $view_mode),
+          ),
+        ),
       );
 
       if (!empty($settings['empty'])) {
@@ -222,18 +252,6 @@ function field_collection_table_field_attach_form($entity_type, $entity, &$form,
       $form[$field_name][$language]['#pre_render'][] = 'field_collection_table_pre_render_multiple_fields';
     }
     $field = field_info_field($field_name);
-
-    if ($field['type'] == 'field_collection'
-      && field_collection_hide_blank_items($field)
-      && field_access('edit', $field, $entity_type)
-      && $instance['widget']['type'] == 'field_collection_table'
-    ) {
-      $element_langcode = $form[$field_name]['#language'];
-      if ($form[$field_name][$element_langcode]['#max_delta'] > 0) {
-        $form[$field_name][$element_langcode]['#max_delta']--;
-      }
-    }
-
     if ($field['type'] == 'field_collection'
       && $field['cardinality'] == FIELD_CARDINALITY_UNLIMITED
       && empty($form_state['programmed'])
@@ -353,7 +371,10 @@ function field_collection_table_field_widget_info() {
     'field_collection_table' => array(
       'label' => t('Table'),
       'field types' => array('field_collection'),
-      'settings' => array('nodragging' => FALSE),
+      'settings' => array(
+        'nodragging' => FALSE,
+        'title_on_top' => TRUE,
+      ),
       'behaviors' => array(
         'multiple values' => FIELD_BEHAVIOR_DEFAULT,
         'default value' => FIELD_BEHAVIOR_NONE,
@@ -388,6 +409,12 @@ function field_collection_table_field_widget_settings_form($field, $instance) {
       '#title' => t('Disable drag and drop'),
       '#description' => t('If checked, users cannot rearrange the rows.'),
       '#default_value' => $settings['nodragging'],
+    );
+    $form['title_on_top'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Display title above table'),
+      '#description' => t('If checked, field title will appear above the table.'),
+      '#default_value' => $settings['title_on_top'],
     );
   }
 
