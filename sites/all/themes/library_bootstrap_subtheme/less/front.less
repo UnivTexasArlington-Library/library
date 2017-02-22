@@ -193,12 +193,18 @@
 #available-now {
 	.row {
 		margin: 0 50px;
+				@media (max-width: @screen-md-max) {
+			margin: 0 0 0 25px;
+		}
+		@media (max-width: @screen-xs-max) {
+			margin: 0;
+		}
 	}
 	.table-bordered > tbody > tr > th, 
 	.table-bordered > tbody > tr > td {
 		text-align: center;
 	}
-	.table-bordered > tbody > tr > td:first {
+	.table-bordered > tbody > tr > td:nth-child(1) {
 		text-align: left;
 	}
 }

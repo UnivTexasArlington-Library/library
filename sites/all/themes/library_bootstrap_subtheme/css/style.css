@@ -8805,11 +8805,21 @@ input.summon-search-submit.button-website:focus {
 #available-now .row {
   margin: 0 50px;
 }
+@media (max-width: 1199px) {
+  #available-now .row {
+    margin: 0 0 0 25px;
+  }
+}
+@media (max-width: 767px) {
+  #available-now .row {
+    margin: 0;
+  }
+}
 #available-now .table-bordered > tbody > tr > th,
 #available-now .table-bordered > tbody > tr > td {
   text-align: center;
 }
-#available-now .table-bordered > tbody > tr > td:first {
+#available-now .table-bordered > tbody > tr > td:nth-child(1) {
   text-align: left;
 }
 .btn.btn-available {
