@@ -22,13 +22,9 @@ function bootstrap_menu_link(array $variables) {
   $element = $variables['element'];
   $sub_menu = '';
 
-  $options = !empty($element['#localized_options']) ? $element['#localized_options'] : array();
-
-  // Filter the title if the "html" is not set, otherwise l() will automatically
-  // sanitize using check_plain(), so no need to call that here.
-  $title = empty($options['html']) ? filter_xss_admin($element['#title']) : $element['#title'];
-
+  $title = $element['#title'];
   $href = $element['#href'];
+  $options = !empty($element['#localized_options']) ? $element['#localized_options'] : array();
   $attributes = !empty($element['#attributes']) ? $element['#attributes'] : array();
 
   if ($element['#below']) {
@@ -54,6 +50,12 @@ function bootstrap_menu_link(array $variables) {
       $options['attributes']['class'][] = 'dropdown-toggle';
       $options['attributes']['data-toggle'] = 'dropdown';
     }
+  }
+
+  // Filter the title if the "html" is set, otherwise l() will automatically
+  // sanitize using check_plain(), so no need to call that here.
+  if (!empty($options['html'])) {
+    $title = _bootstrap_filter_xss($title);
   }
 
   return '<li' . drupal_attributes($attributes) . '>' . l($title, $href, $options) . $sub_menu . "</li>\n";
@@ -88,14 +90,15 @@ function bootstrap_menu_link__book_toc(array $variables) {
     $attributes['class'][] = 'active';
   }
 
+  // Filter the title if the "html" is set, otherwise l() will automatically
+  // sanitize using check_plain(), so no need to call that here.
+  if (!empty($options['html'])) {
+    $title = _bootstrap_filter_xss($title);
+  }
+
   // Convert to a link.
   if ($link) {
     $title = l($title, $href, $options);
-  }
-  // Otherwise, filter the title if "html" is not set, otherwise l() will automatically
-  // sanitize using check_plain(), so no need to call that here.
-  elseif (empty($options['html'])) {
-    $title = filter_xss_admin($title);
   }
 
   return '<li' . drupal_attributes($attributes) . '>' . $title . $sub_menu . "</li>\n";

@@ -146,9 +146,7 @@ module.exports = function (grunt) {
     var subtask = (dev ? 'dev' : 'css');
     grunt.task.run([
       'clean:' + subtask,
-      'compile:overrides',
-      'csslint:' + subtask
+      'compile:overrides'
     ]);
   });
-
-};
+}

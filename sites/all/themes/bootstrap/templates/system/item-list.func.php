@@ -47,7 +47,6 @@ function bootstrap_item_list($variables) {
     if (is_string($title)) {
       $title = array(
         'text' => $title,
-        'html' => TRUE,
       );
     }
     // Set defaults.
@@ -58,7 +57,7 @@ function bootstrap_item_list($variables) {
     // Heading outputs only when it has text.
     if (!empty($title['text'])) {
       $heading .= '<' . $title['level'] . drupal_attributes($title['attributes']) . '>';
-      $heading .= empty($title['html']) ? check_plain($title['text']) : $title['text'];
+      $heading .= empty($title['html']) ? check_plain($title['text']) : _bootstrap_filter_xss($title['text']);
       $heading .= '</' . $title['level'] . '>';
     }
   }
