@@ -8802,16 +8802,16 @@ input.summon-search-submit.button-website:focus {
   padding-left: 20px;
 }
 /*for Available Now */
-#available-now .row {
+#available-now {
   margin: 0 50px;
 }
 @media (max-width: 1199px) {
-  #available-now .row {
+  #available-now {
     margin: 0 0 0 25px;
   }
 }
 @media (max-width: 767px) {
-  #available-now .row {
+  #available-now {
     margin: 0;
   }
 }
@@ -8823,13 +8823,19 @@ input.summon-search-submit.button-website:focus {
   text-align: left;
 }
 .btn.btn-available {
-  margin-left: 50px;
-  margin-right: auto;
-  display: block;
+  color: #0052a3;
+  text-transform: uppercase;
+  font-size: 20px;
   margin-bottom: 3em;
 }
 .btn.btn-available:hover {
   border: 1px solid #dddddd;
+  color: #ae482c;
+  text-decoration: underline;
+}
+.btn.btn-available h2 {
+  border-bottom: none;
+  text-align: left;
 }
 /*for give button*/
 .give {
