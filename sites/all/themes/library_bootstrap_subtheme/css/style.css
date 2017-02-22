@@ -8748,9 +8748,9 @@ input.summon-search-submit.button-website:focus {
     position: relative;
   }
 }
-/* Services For & News-Events & Available Now padding & title */
-.pane-block-18 .pane-content,
-.pane-news-events .pane-content,
+/* Services For & News-Events & Available Now padding & title 
+.pane-block-18, 
+.pane-news-events, */
 .pane-spco-current-exhibit .pane-content {
   /*padding-top:20px; */
   padding-bottom: 28px;
@@ -8847,6 +8847,9 @@ input.summon-search-submit.button-website:focus {
   border-bottom: none;
   text-align: left;
 }
+.btn.btn-available img {
+  margin-top: 0.5em;
+}
 /*for give button*/
 .give {
   color: #f69042;
@@ -8866,13 +8869,15 @@ input.summon-search-submit.button-website:focus {
   text-decoration: none;
   color: #f69042;
 }
-/*for spacing between hours and news & events*/
-.view-mode-homepage .row:nth-of-type(2) {
-  padding-bottom: 0px;
-}
-.view-mode-homepage .row:nth-of-type(3) {
-  padding-bottom: 15px;
-}
+/*for spacing between hours and news & events
+.view-mode-homepage {
+	.row:nth-of-type(2) {
+		padding-bottom:0px;
+	}
+	.row:nth-of-type(3) {
+		padding-bottom:15px;
+	}
+}*/
 /*for spco homepage */
 .field-name-spco-current-exhibit img,
 #block-views-news-events-block-1 img {
