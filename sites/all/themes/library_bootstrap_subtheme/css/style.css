@@ -8841,7 +8841,12 @@ input.summon-search-submit.button-website:focus {
   border-radius: 0;
   padding: 10px 15px;
   margin-left: 50px;
-  min-width: 237px;
+}
+@media (min-width: 1200px) {
+  .btn.btn-available,
+  .btn.btn-available2 {
+    min-width: 237px;
+  }
 }
 @media (max-width: 767px) {
   .btn.btn-available,
