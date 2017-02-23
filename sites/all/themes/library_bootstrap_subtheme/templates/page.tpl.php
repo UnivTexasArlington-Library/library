@@ -107,6 +107,7 @@
       <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
       <a id="main-content"></a>
       <?php print $messages; ?>
+      <div class="internal-menu"><?php print render($page['internal_menu']); ?></div>
       <?php if (!empty($tabs)): ?>
         <?php print render($tabs); ?>
       <?php endif; ?>
@@ -122,7 +123,7 @@
       <?php if (!empty($action_links)): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
-      <div class="internal-menu"><?php print render($page['internal_menu']); ?></div>
+      
       <div id="internal-page"><?php print render($page['content']); ?></div>
       <footer class="footer">
         
