@@ -8677,6 +8677,9 @@ input.summon-search-submit.button-website:focus {
     margin-right: 0;
   }
 }
+#frontpage #front-news {
+  margin-top: 3em;
+}
 @media (max-width: 767px) {
   #frontpage #front-news {
     margin-right: 15px;
@@ -8804,7 +8807,7 @@ input.summon-search-submit.button-website:focus {
 }
 /*for Available Now */
 #available-now {
-  margin: 0 50px;
+  margin: 50px 50px 0 50px;
 }
 @media (max-width: 1199px) {
   #available-now {
