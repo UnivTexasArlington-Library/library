@@ -100,6 +100,10 @@ function bootstrap_menu_tree__menu_friends_of_the_library(&$variables) {
 function bootstrap_menu_tree__menu_resource_delivery_services(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
+//adding class to admin dept menu
+function bootstrap_menu_tree__menu_admin_dept_menu(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
 
 //adds homepage javascript file for summon search boxes
 function library_bootstrap_subtheme_preprocess_node(&$vars, $hook) {
