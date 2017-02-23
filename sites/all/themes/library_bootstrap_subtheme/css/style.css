@@ -8678,10 +8678,11 @@ input.summon-search-submit.button-website:focus {
   }
 }
 #frontpage #front-news {
-  margin-top: 3em;
+  margin-top: 1.5em;
 }
 @media (max-width: 767px) {
   #frontpage #front-news {
+    margin-top: 0;
     margin-right: 15px;
     float: right;
   }
@@ -8866,7 +8867,7 @@ input.summon-search-submit.button-website:focus {
 }
 @media (min-width: 1199px) {
   .btn.btn-available {
-    margin-top: 46px;
+    margin-top: 5em;
   }
 }
 /*for give button*/
