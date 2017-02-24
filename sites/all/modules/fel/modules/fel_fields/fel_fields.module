@@ -15,66 +15,21 @@ function fel_fields_theme() {
   $theme_file = array(
     'file' => 'fel_fields.theme.inc',
   );
-  $theme = array(
+  return array(
     'fel_fields_multiple_form' => array(
-      'base hook' => 'field_multiple_value_form',
       'render element' => 'element',
     ),
-  );
-
-  // Many supported modules' theme overrides, though these may not necessarily
-  // be enabled, so only add overrides for enabled modules.
-  $modules = array(
-    'date' => array(
-      'fel_date_combo' => $theme_file + array(
-        'base hook' => 'date_combo',
-        'render element' => 'element',
-      ),
+    'fel_date_combo' => $theme_file + array(
+      'render element' => 'element',
     ),
-    'matrix' => array(
-      'fel_fields_matrix_table' => $theme_file + array(
-        'base hook' => 'matrix_table',
-        'render element' => 'form',
-      ),
+    'fel_fields_matrix_table' => $theme_file + array(
+      'render element' => 'form',
     ),
-    'field_group' => array(
-      'fel_fields_multipage_pane' => $theme_file + array(
-        'base hook' => 'multipage_pane',
-        'render element' => 'element',
-      ),
-    ),
-    'socialfield' => array(
-      'fel_fields_socialfield_drag_components' => $theme_file + array(
-        'base hook' => 'socialfield_drag_components',
-        'render element' => 'element',
-      ),
-    ),
-  );
-
-  foreach ($modules as $module => $module_theme) {
-    if (module_exists($module)) {
-      $theme += $module_theme;
-    }
-  }
-  // Special case for 'field_collection_table' which calls drupal_get_path() on
-  // a likely missing module.
-  if (module_exists('field_collection_table')) {
-    $theme['fel_fields_collection_table'] = $theme_file + array(
-      'base hook' => 'field_collection_table_multiple_value_fields',
+    'fel_fields_collection_table' => $theme_file + array(
       'render element' => 'element',
       'includes' => array(drupal_get_path('module', 'field_collection_table') . '/theme/theme.inc'),
-    );
-  }
-  return $theme;
-}
-
-/**
- * Implements hook_element_info_alter().
- */
-function fel_fields_element_info_alter(&$type) {
-  if (!empty($type['multipage_pane'])) {
-    fel_wrapper_replace('multipage_pane', 'fel_fields_multipage_pane', $type['multipage_pane']);
-  }
+    ),
+  );
 }
 
 /**
@@ -119,6 +74,7 @@ function fel_fields_field_attach_form($entity_type, $entity, &$form, &$form_stat
     $default_behavior = field_behaviors_widget('multiple values', $instance) == FIELD_BEHAVIOR_DEFAULT;
     $multiple = ($field['cardinality'] > 1 or $field['cardinality'] == FIELD_CARDINALITY_UNLIMITED);
     $field_form = &$form[$field_name][$field_lang];
+
     // We're unconditionally taking over the theme for rendering fields with
     // default behavior, for all fields, all over.
     if ($default_behavior) {
@@ -160,8 +116,8 @@ function fel_fields_field_attach_form($entity_type, $entity, &$form, &$form_stat
       }
     }
     else {
-      // Last resort. Do a recursive search for #description and add
-      // complementary #description_display if found.
+      // Last resort. Do a recursive search for #description and add complementary
+      // #description_display if found.
       fel_fields_assign_layout_deep($field_form, $instance);
     }
   }
@@ -196,9 +152,9 @@ function fel_fields_assign_layout_deep(&$element, $instance) {
 /**
  * Default description_display value based on field and instance.
  *
- * @param array $field
+ * @param $field
  *   Field settings.
- * @param array $instance
+ * @param $instance
  *   Field instance.
  */
 function _fel_fields_default_position($field, $instance) {
@@ -206,13 +162,14 @@ function _fel_fields_default_position($field, $instance) {
     return $instance['settings']['description_display'];
   }
   // Field types that renders its content in a fieldset and thereby requires a
-  // default setting of 'before'.
+  // default setting of 'before'
   $before = drupal_map_assoc(array('addressfield', 'date'));
   if (!empty($before[$field['module']])) {
     return 'before';
   }
   return 'after';
 }
+
 
 /**
  * Implements hook_form_FORM_ID_alter() for field_ui_field_edit_form().
@@ -270,31 +227,21 @@ function theme_fel_fields_multiple_form($variables) {
   $element = $variables['element'];
   $output = '';
 
-  if (isset($element['#cardinality']) && ($element['#cardinality'] > 1 || $element['#cardinality'] == FIELD_CARDINALITY_UNLIMITED)) {
+  if ($element['#cardinality'] > 1 || $element['#cardinality'] == FIELD_CARDINALITY_UNLIMITED) {
     $table_id = drupal_html_id($element['#field_name'] . '_values');
     $order_class = $element['#field_name'] . '-delta-order';
     $required = !empty($element['#required']) ? theme('form_required_marker', $variables) : '';
     $label_classes = !empty($element['#title_classes']) ? (' class="' . implode(' ', $element['#title_classes']) . '"') : '';
-    $description_before = (isset($element['#description_display']) and $element['#description_display'] == 'before');
-    $label = '<label' . $label_classes . '>' . t('!title !required', array('!title' => $element['#title'], '!required' => $required)) . '</label>';
-    $fel_items = array();
-    if (!$description_before) {
-      $header = array(
-        array(
-          'data' => $label,
-          'colspan' => 2,
-          'class' => array('field-label'),
-        ),
-        t('Order'),
-      );
-    }
-    else {
-      $fel_items['title'] = $label;
-    }
-    if (!empty($element['#description'])) {
-      $fel_items['description'] = theme('fel_form_element_description', $variables);
-    }
+    $header = array(
+      array(
+        'data' => '<label' . $label_classes . '>' . t('!title !required', array('!title' => $element['#title'], '!required' => $required)) . "</label>",
+        'colspan' => 2,
+        'class' => array('field-label'),
+      ),
+      t('Order'),
+    );
     $rows = array();
+
     // Sort items according to '_weight' (needed when the form comes back after
     // preview or failed validation).
     $items = array();
@@ -323,18 +270,19 @@ function theme_fel_fields_multiple_form($variables) {
       );
     }
     $table_args = array(
+      'header' => $header,
       'rows' => $rows,
       'attributes' => array(
         'id' => $table_id,
         'class' => array('field-multiple-table'),
       ),
     );
-    if (!$description_before) {
-      $table_args['header'] = $header;
+    $parts['children'] = theme('table', $table_args);
+    if ($element['#description']) {
+      $parts['description'] = theme('fel_form_element_description', $variables);
     }
-    $fel_items['children'] = theme('table', $table_args);
     $output = '<div class="form-item">';
-    $output .= fel_order_output($element, $fel_items);
+    $output .= fel_order_output($element, $parts);
     $output .= '<div class="clearfix">' . drupal_render($add_more_button) . '</div>';
     $output .= '</div>';
 
@@ -366,6 +314,7 @@ function fel_fields_file_process_description_display($field, $instance, &$form) 
   return array();
 }
 
+
 /**
  * Provide our own theme for field_collection_table widgets.
  *
@@ -375,39 +324,5 @@ function fel_fields_file_process_description_display($field, $instance, &$form) 
  */
 function fel_fields_field_collection_table_after_build($element) {
   $element['#theme'] = 'fel_fields_collection_table';
-  return $element;
-}
-
-/**
- * Implements hook_field_group_pre_render_alter().
- */
-function fel_fields_field_group_pre_render_alter(&$element, $group, &$form) {
-  $supported_groups = array('div', 'tab', 'fieldset', 'htab', 'accordion-item', 'multipage');
-  if (!in_array($group->format_type, $supported_groups) or empty($group->description)) {
-    return;
-  }
-  $element['#description_classes'][] = 'fel-field-group-description';
-  if ($group->format_type == 'div' or $group->format_type == 'accordion-item') {
-    $element['#description'] = $group->description;
-    // Hack alert. Regexp away the <div class="description">...</description>
-    // from '#prefix' and replace it with a themed description that honors
-    // '#description_classes'.
-    $element['#prefix'] = preg_replace('%<div class="description">.*</div>%', '', $element['#prefix']);
-    $element['#prefix'] .= theme('fel_form_element_description', array('element' => $element));
-  }
-}
-
-/**
- * Add our attributes to the nested elements.
- *
- * This is called from the 'select_or_other' plugin, but need to reside in
- * global code due to form caching.
- */
-function fel_fields_select_or_other_pre_render($element) {
-  $element['select']['#title_classes'][] = 'fel-field-label';
-  if (!empty($element['#description_display']) && $element['#description_display'] === 'before') {
-    $element['select']['#description_classes'][] = 'fel-field-help-text';
-  }
-
   return $element;
 }

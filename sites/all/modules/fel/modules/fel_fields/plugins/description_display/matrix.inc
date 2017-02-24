@@ -2,7 +2,7 @@
 
 /**
  * @file
- * CTools plugin 'description_display' for matrix.module.
+ * CTools plugin 'description_display' for text.module.
  */
 
 $plugin = array(

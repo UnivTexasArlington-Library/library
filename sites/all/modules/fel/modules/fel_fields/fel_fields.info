@@ -6,9 +6,9 @@ dependencies[]  = fel
 dependencies[]  = field
 dependencies[]  = ctools
 
-; Information added by Drupal.org packaging script on 2017-02-23
-version = "7.x-1.0-beta3"
+; Information added by Drupal.org packaging script on 2014-09-14
+version = "7.x-1.0-beta2"
 core = "7.x"
 project = "fel"
-datestamp = "1487848987"
+datestamp = "1410714229"
 
