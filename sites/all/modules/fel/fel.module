@@ -7,6 +7,7 @@
  * Introduces a new Form API attribute: #description_display. Its value can be
  * either 'before' or 'after', relative to #children, or the actual input
  * element. It behaves much like the D8 issue with the same purpose.
+ *
  * @see https://www.drupal.org/node/314385
  *
  * The combination of #description_display and #title_display together makes the
@@ -59,9 +60,18 @@ function fel_element_info_alter(&$elements) {
     'item',
     'managed_file',
     // Contrib.
+    'emailfield',
+    'hierarchical_select',
+    'interval',
     'link_field',
     'media',
     'mfw_managed_file',
+    'numberfield',
+    'rangefield',
+    'searchfield',
+    'select_or_other',
+    'telfield',
+    'urlfield',
   );
   foreach ($form_element_wrappers as $type) {
     if (!empty($elements[$type])) {
@@ -69,8 +79,8 @@ function fel_element_info_alter(&$elements) {
     }
   }
   // 'radios' and 'checkboxes' are special.
-  $elements['checkboxes']['#pre_render'][] = 'fel_options_pre_render';
-  $elements['radios']['#pre_render'][] = 'fel_options_pre_render';
+  $elements['checkboxes']['#pre_render'][] = 'fel_element_pre_render';
+  $elements['radios']['#pre_render'][] = 'fel_element_pre_render';
 
   // Fieldsets.
   fel_wrapper_replace('fieldset', 'fel_fieldset', $elements['fieldset']);
@@ -81,12 +91,27 @@ function fel_element_info_alter(&$elements) {
     fel_wrapper_replace('text_format_wrapper', 'fel_text_format_wrapper', $elements['text_format']);
     $elements['text_format']['#process'][] = 'fel_filter_process_format';
   }
+
+  // Contrib: Taxonomy Term Reference Tree Widget.
+  if (!empty($elements['checkbox_tree'])) {
+    $elements['checkbox_tree']['#pre_render'][] = 'fel_element_pre_render';
+  }
+
+  // Contrib: Autocomplete Deluxe.
+  if (!empty($elements['autocomplete_deluxe'])) {
+    $elements['autocomplete_deluxe']['#pre_render'][] = 'fel_element_pre_render';
+  }
+
+  // Contrib: Select (or other).
+  if (!empty($elements['select_or_other'])) {
+    $elements['select_or_other']['#process'][] = 'fel_select_or_other_element_process';
+  }
 }
 
 /**
  * Replace #theme_wrapper => 'form_element' with our own.
  */
-function fel_options_pre_render($element) {
+function fel_element_pre_render($element) {
   fel_wrapper_replace('form_element', 'fel_form_element', $element);
   return $element;
 }
@@ -184,7 +209,7 @@ function theme_fel_form_element($variables) {
 /**
  * Replacement theme for 'form_element_label'.
  *
- * @see theme_form_element_label().
+ * @see theme_form_element_label()
  */
 function theme_fel_form_element_label($variables) {
   $element = $variables['element'];
@@ -289,7 +314,7 @@ function theme_fel_fieldset($variables) {
  *   The element to search in.
  */
 function fel_wrapper_replace($search, $replace, array &$element) {
-  if (is_array($element['#theme_wrappers'])) {
+  if (!empty($element['#theme_wrappers'])) {
     $key = array_search($search, $element['#theme_wrappers']);
     if ($key !== FALSE) {
       unset($element['#theme_wrappers'][$key]);
@@ -316,11 +341,16 @@ function fel_get_order(array $element) {
     return $element['#element_order'];
   }
 
-  $title_before = (empty($element['#title_display']) or $element['#title_display'] == 'before' or $element['#title_display'] == 'invisible');
+  $title_before = (empty($element['#title_display']) or in_array($element['#title_display'], array('before', 'invisible', 'inline')));
   $description_before = (empty($element['#description_display']) ? FALSE : ($element['#description_display'] == 'before'));
 
   if ($title_before) {
-    $order = $description_before ? array('title', 'description', 'children') : array('title', 'children', 'description');
+    if ($description_before) {
+      $order = !empty($element['#title_display']) && $element['#title_display'] == 'inline' ? array('description', 'title', 'children') : array('title', 'description', 'children');
+    }
+    else {
+      $order = array('title', 'children', 'description');
+    }
   }
   else {
     $order = $description_before ? array('description', 'children', 'title') : array('children', 'title', 'description');
@@ -354,4 +384,19 @@ function fel_order_output(array $element, array &$parts) {
   }
   $parts = $parts_ordered;
   return $out;
+}
+
+/**
+ * Additional processing for element type 'select_or_other'.
+ */
+function fel_select_or_other_element_process($element, &$form_state) {
+  // If the description is set to be before the input element, we have to move
+  // it from the outside container to the nested select/radios/checkboxes input
+  // element and apply the FAPI attributes there.
+  if (!empty($element['#description']) && !empty($element['#description_display']) && $element['#description_display'] === 'before') {
+    $element['select']['#description'] = $element['#description'];
+    $element['select']['#description_display'] = $element['#description_display'];
+    unset($element['#description']);
+  }
+  return $element;
 }

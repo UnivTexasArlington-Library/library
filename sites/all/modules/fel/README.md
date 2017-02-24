@@ -62,18 +62,23 @@ All element and field types core provide is supported by *Form element layout
 fields* (`fel_fields.module`). In addition some popular contrib field modules
 are supported:
 
-* [Address Field                ](https://www.drupal.org/project/addressfield)
-* [Date                         ](https://www.drupal.org/project/date)
-* [Email field                  ](https://www.drupal.org/project/email)
-* [Entity reference             ](https://www.drupal.org/project/entityreference)
-* [Field Collection Table       ](https://www.drupal.org/project/field_collection_table)
-* [Geofield                     ](https://www.drupal.org/project/geofield)
-* [Link                         ](https://www.drupal.org/project/link)
-* [Matrix                       ](https://www.drupal.org/project/matrix)
-* [Media                        ](https://www.drupal.org/project/media)
-* [Meta tags quick              ](https://www.drupal.org/project/metatags_quick)
-* [Multiupload filefield widget ](https://www.drupal.org/project/multiupload_filefield_widget)
-* [Multiupload imagefield widget](https://www.drupal.org/project/multiupload_imagefield_widget)
+* [Address Field][]
+* [Autocomplete deluxe][]
+* [Date][]
+* [Email field][]
+* [Entity reference][]
+* [Field Collection Table][]
+* [Field Group][]
+* [Geofield][]
+* [Link][]
+* [Matrix][]
+* [Media][]
+* [Meta tags quick][]
+* [Multiupload filefield widget][]
+* [Multiupload imagefield widget][]
+* [Select or other][]
+* [Social field][]
+* [Taxonomy Term Reference Tree Widget][]
 
 Otherwise it has a fall-back mechanism that recursively will attach the
 appropriate Form API attributes for elements likely to be rendered. If it
@@ -84,7 +89,15 @@ Field modules may also provide support for `fel_fields.module` by adding a
 plugin for it. This is documented in the [Advanced help][] section of this
 module.
 
-[advanced help]: https://www.drupal.org/project/advanced_help
+Support for the Field Group module is only partial in the sense that you cannot
+configure or code the position of the group's descriptions, but the description
+provided by the user will have its own classes
+
+## Additional support ##
+
+The popuplar [Workflow][] module is also supported so you can change the
+description position in webform components. This is extremely useful for e.g.
+the `grid` component which quickly takes up lots of vertical screen estate.
 
 ## How it works: theme replacements ##
 
@@ -122,7 +135,10 @@ Module                 | Original theme                               | Replacem
 -----------------------|----------------------------------------------|-----------------------------
 Date                   | date_combo                                   | fel_date_combo
 Field collection table | field_collection_table_multiple_value_fields | fel_fields_collection_table
+Field Group            | multipage_pane                               | fel_fields_multipage_pane
 Matrix                 | matrix_table                                 | fel_fields_matrix_table
+Social field           | socialfield_drag_components                  | fel_fields_socialfield_drag_components
+Webform                | webform_element                              | fel_webform_element
 
 
 ## Related projects and issues ##
@@ -145,8 +161,27 @@ Matrix                 | matrix_table                                 | fel_fiel
   layout. The concept is the same, but was not suitable for D7 port and had some
   real context leakage. FEL was therefore rewritten from scratch.
 
-[top description]:          https://www.drupal.org/sandbox/jrb/top_description
-[label help]:               https://www.drupal.org/project/label_help
-[extra field description]:  https://www.drupal.org/project/extra_field_description
-[better field description]: https://www.drupal.org/project/better_field_descriptions
-[element shuffle]:          https://www.drupal.org/sandbox/kaare/1132056
+[address field]:                      https://www.drupal.org/project/addressfield
+[advanced help]:                      https://www.drupal.org/project/advanced_help
+[autocomplete deluxe]:                https://www.drupal.org/project/autocomplete_deluxe
+[better field description]:           https://www.drupal.org/project/better_field_descriptions
+[date]:                               https://www.drupal.org/project/date
+[element shuffle]:                    https://www.drupal.org/sandbox/kaare/1132056
+[email field]:                        https://www.drupal.org/project/email
+[entity reference]:                   https://www.drupal.org/project/entityreference
+[extra field description]:            https://www.drupal.org/project/extra_field_description
+[field collection table]:             https://www.drupal.org/project/field_collection_table
+[field group]:                        https://www.drupal.org/project/field_group
+[geofield]:                           https://www.drupal.org/project/geofield
+[label help]:                         https://www.drupal.org/project/label_help
+[link]:                               https://www.drupal.org/project/link
+[matrix]:                             https://www.drupal.org/project/matrix
+[media]:                              https://www.drupal.org/project/media
+[meta tags quick]:                    https://www.drupal.org/project/metatags_quick
+[multiupload filefield widget]:       https://www.drupal.org/project/multiupload_filefield_widget
+[multiupload imagefield widget]:      https://www.drupal.org/project/multiupload_imagefield_widget
+[social field]:                       https://www.drupal.org/project/socialfield
+[select or other]:                    https://www.drupal.org/project/select_or_other
+[taxonomy term reference tree widget]:https://www.drupal.org/project/term_reference_tree
+[top description]:                    https://www.drupal.org/sandbox/jrb/top_description
+[webform]:                            https://www.drupal.org/project/webform
