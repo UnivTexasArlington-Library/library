@@ -60,7 +60,9 @@
 
 	}
 	#front-news {
+		margin-top: 1.5em;
 		@media (max-width: @screen-xs-max) {	
+			margin-top:0;
 			margin-right: 15px;
 			float:right;
 		}
@@ -80,6 +82,7 @@
 	.thumbnail {
 		border-color:@thumbnail-border;
 		padding: 10px;
+		border-radius:0px;
 		h2 {
 			border-bottom: none;
 			margin: 0;
@@ -98,7 +101,7 @@
 			margin: 0 0 0 25px;
 		}
 		@media (max-width: @screen-xs-max) {
-			margin: 0;
+			margin: 1.5em 0 0 0;
 		}
 	}
 }
@@ -130,7 +133,7 @@
 
 /* Services For & News-Events & Available Now padding & title */
 .pane-block-18, 
-.pane-news-events, 
+.pane-news-events,
 .pane-spco-current-exhibit {
 	.pane-content {
 		/*padding-top:20px; */
@@ -190,101 +193,63 @@
 	}
 }
 /*for Available Now */
-#block-available-now-available-now {
-	margin:2em 50px 0 50px;
-		@media (max-width: @screen-md-max) {
-			margin-left:0;
-			margin-right:0;
-		}
-	h2.block-title {
-		margin-left: 15px;
-		margin-right: 15px;
+#available-now {
+	margin: 50px 50px 0 50px;
+	@media (max-width: @screen-md-max) {
+		margin: 0 0 0 25px;
 	}
-	img {
-		width:auto;
-		height:auto;
-		max-height:165px;
-		display:block;
-		margin-left:auto;
-		margin-right:auto;
-		max-width:100%;
-	}
-	.available-links {
-		text-transform:none;
-		float:right;
-		padding-right:16px;
-		font-size:14px;
-		line-height:1.5em;
-	}
-	.available-now-content {
-		padding-top: 20px;
-		padding-bottom:28px;
-	}
-	.tabs-left {
-		border:1px solid #dddbdb;
-		border-radius:5px;
-		margin: 0 15px;
-	}
-	.tabs-left > .nav-tabs {
-		width:auto;
-		margin-right:-15px;
-		margin-left:0;
-		margin-bottom:-35px;
-		padding-bottom:0; 
-		@media(max-width:997px) {
-			width: 40%;
-		}
-	}
-	.tab-content {
-		background:@header-bg;
-		text-align:center;
-		color:@brand-primary;
-		padding-bottom:0;
-		border-color: @header-bg;
-		.col-md-4 {
-			border:3px solid #FFFFFF;
-			border-left:none;
-			border-top:none;
-			border-bottom:none;
-			font-size:16px;
-			min-height:117px;
-		}
-		.col-md-4:last-of-type {
-			border:none;
-		}
-		@media(max-width:997px) {
-			.col-md-4 {
-				border:none;
-			}
-		}
+	@media (max-width: @screen-xs-max) {
+		margin: 0;
 	}
 	
-	.nav-tabs > li > a {
-		color:@brand-primary;
-		background:#FFFFFF;
-		border:none;
-		font-size:16px;
-		margin-bottom:0;
-		border-bottom: 0px solid #dddbdb;
-		text-transform: uppercase;
-		&:hover, 
-		&:focus {
-			color: @link-color;
-		}
+	.table-bordered > tbody > tr > th, 
+	.table-bordered > tbody > tr > td {
+		text-align: center;
 	}
-	.nav-tabs > .active > a {
-		background:@header-bg;
-		border:none;
-		color:@brand-primary;
+	.table-bordered > tbody > tr > td:nth-child(1) {
+		text-align: left;
 	}
-	.avail {
-		font-size:20px;
-		padding-top:27px;
-		padding-bottom:27px;
-		@media(max-width:997px) {
-			padding-top: none;
-			padding-bottom: none;
-		}
+}
+#available-now-buttons {
+	padding-left:0;
+	padding-right:0;
+}
+.btn.btn-available,
+.btn.btn-available2 {
+	color:@brand-primary;
+	text-transform: uppercase;
+	font-size: 18px;
+	margin-bottom:3em;
+	border:1px solid transparent;
+	border-radius:0;
+	padding:10px 15px;
+	margin-left:50px;
+
+	@media (min-width:  @screen-lg-min) {
+			min-width: 237px;
+	}
+	@media (max-width: @screen-xs-max) {
+		margin-left: 0;
+		margin-top: 1.5em;
+		margin-bottom: 1.5em;
+	}
+	&:hover {
+		border-color: @table-border-color;
+		color:@link-color;
+		text-decoration: underline;
+	}
+	h2 {
+		border-bottom:none;
+		text-align: left;
+
+	}
+	img {
+		margin-top:0.5em;
+	}
+}
+@media (min-width: @screen-md-max) {
+	.btn.btn-available {
+		margin-top: 5em;
 	}
 }
 /*for give button*/ 
@@ -333,7 +298,7 @@
 		width:100%;
 	}
 }
-/*.field-name-spco-current-exhibit, .field-name-ds-spco-services-for, #block-views-news-events-block-1 {
+.field-name-spco-current-exhibit, .field-name-ds-spco-services-for, #block-views-news-events-block-1 {
 	h2 {
 		text-transform: uppercase;
 		border-top: 1px solid #dddbdb;
@@ -346,7 +311,7 @@
 	#node-495 h2 {
 		font-size:1.5em;
 	}
-} */
+}
 #node-495 .carousel-caption {
 	h3 {
 		font-size:1.2em;

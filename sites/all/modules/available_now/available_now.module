@@ -1,7 +1,7 @@
 <?php
 /**
  * Implementation of hook_block_info().
- */
+*/
 function available_now_block_info() {
   $blocks = array();
   $blocks['available-now'] = array(
@@ -11,10 +11,11 @@ function available_now_block_info() {
   return $blocks;
 }
 
-function available_now_block_view($delta='') {
+function available_now_block_view($delta='') { 
   $block = array();
   switch ($delta) {
-    case 'available-now':
+    case 'available-now': 
+	
     /*START LABSTATS FOR COMPUTER AVAILABILITY*/
       $ini = ini_set("soap.wsdl_cache_enabled","0");
       $client = new SoapClient("http://cas.uta.edu/LabStats/WebServices/Statistics.asmx?WSDL");
@@ -59,128 +60,179 @@ function available_now_block_view($delta='') {
 
     }
     /*END NEW OPEN ROOM*/
-    /*START LAPTOPS*/
-    $html = file_get_contents("https://pulse.uta.edu/vwebv/laptops.cgi");
-    $doc = new DOMDocument();
-    libxml_use_internal_errors(TRUE);
-    if (!empty($html)) {
-      $doc->loadHTML($html);
-      libxml_clear_errors();
-      $doc_xpath = new DOMXPATH($doc);
-      $centralLaptops = $doc_xpath->query('//div[(@id="laptops_central")]');
-      if ($centralLaptops->length > 0) {
-        $centralLaptopAvail = $centralLaptops->item(0)->nodeValue;
-      }
-      $afaLaptops = $doc_xpath->query('//div[(@id="laptops_afa")]');
-      if ($afaLaptops->length > 0) {
-        $afaLaptopAvail = $afaLaptops->item(0)->nodeValue;
-      }
-      $selLaptops = $doc_xpath->query('//div[(@id="laptops_sel")]');
-      if ($selLaptops->length > 0) {
-        $selLaptopAvail = $selLaptops->item(0)->nodeValue;
-      }
-      else {
-        $centralLaptopAvail = "Information not available";
-        $afaLaptopAvail = "Information not available";
-        $selLaptopAvail = "Information not available";
+  	
+    /*GET JSON DATA FOR DEVICES*/
+	$json = file_get_contents("https://pulse.uta.edu/vwebv/devices.cgi");
+	$data =  json_decode($json, true);
+	
+	/*START LAPTOPS*/
+	if (isset($data)) {
+	$centrallaptops = $data['laptops']['cen'];
+	$afalaptops = $data['laptops']['afa'];
+	$sellaptops = $data['laptops']['sel'];
+	}
+	else {
+		$centrallaptops = "Information not available";
+		$afalaptops = "Information not available";
+		$sellaptops = "Information not available";
+	}
+	/*END LAPTOPS*/
+	
+		/*START IPADS*/
+	if (isset($data)) {
+	$centralipads = $data['ipads']['cen'];
+	$afaipads = $data['ipads']['afa'];
+	$selipads = $data['ipads']['sel'];
+	}
+	else {
+		$centralipads = "Information not available";
+		$afaipads = "Information not available";
+		$selipads = "Information not available";
+	}
+	/*END IPADS*/
 
-      }
-    }
-    /*END LAPTOPS*/
-        $block_content = '<div class="row">
-        <div class="col-sm-12">
-        <h2 class="block-title">Available Now </h2>
-        </div>
+		/*START MACBOOKS*/
+	if (isset($data)) {
+	$centralmacbooks = $data['macbooks']['cen'];
+	$afamacbooks = $data['macbooks']['afa'];
+	$selmacbooks = $data['macbooks']['sel'];
+	}
+	else {
+		$centralmacbooks = "Information not available";
+		$afamacbooks = "Information not available";
+		$selmacbooks = "Information not available";
+	}
+	/*END MACBOOKS*/
+	
+		/*START CHROMEBOOKS*/
+	if (isset($data)) {
+	$centralchromebooks = $data['chromebooks']['cen'];
+	$afachromebooks = $data['chromebooks']['afa'];
+	$selchromebooks = $data['chromebooks']['sel'];
+	}
+	else {
+		$centralchromebooks = "Information not available";
+		$afachromebooks = "Information not available";
+		$selchromebooks = "Information not available";
+	}
+	/*END CHROMEBOOKS*/
+	
+		/*START SURFACE TABLETS*/
+	if (isset($data)) {
+	$centralsurfaces = $data['surfaces']['cen'];
+	$afasurfaces = $data['surfaces']['afa'];
+	$selsurfaces = $data['surfaces']['sel'];
+	}
+	else {
+		$centralsurfaces = "Information not available";
+		$afasurfaces = "Information not available";
+		$selsurfaces = "Information not available";
+	}
+	/*END SURFACE TABLETS*/
+
+$block_content = '<div id="available-now">
+        <div class="row">
+          <h2 class="pane-title">Available Now </h2>
         </div>
         <div class="row">
-          <div class="col-md-12 available-now-content">
-            <div class="tabbable tabs-left tabs-available-now">
-              <ul class="nav nav-tabs col-sm-5" id="myTab" role="tablist">
-                <li class="active"><a data-toggle="tab" href="#central">Central Library</a></li>
-                <li><a data-toggle="tab" href="#afa">Architecture &amp; Fine Arts Library</a></li>
-                <li><a data-toggle="tab" href="#sel">Science &amp; Engineering Library</a></li>
-              </ul>';
-              $block_content .= '<div class="tab-content">
-              <div class="tab-pane active" id="central">
-                <div class="row">
-                  <div class="col-md-4">
-                    <h4><a href="http://cas.uta.edu/CAS/">Computers</a></h4>
-                    <div title="Central Library Computers" class="avail">';
-                    $block_content .= $centralCompAvail;
-                    $block_content .= '</div>
-                  </div> <!-- end.col-md-4 -->
-
-                  <div class="col-md-4">
-                    <h4><a href="technology/laptops">Laptops</a></h4>
-                    <div title="Central Library Laptops" class="avail">';
-                    $block_content .= $centralLaptopAvail;
-                    $block_content .= '</div>
-                  </div><!-- end.col-md-4 -->
-
-                  <div class="col-md-4">
-                    <h4><a href="http://library.uta.edu/study-spaces">Study Rooms</a></h4>
-                    <div title="Central Library Study Rooms" class="avail">';
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered">
+                 <tr>
+                  <th>&nbsp;</th>
+                  <th>Central Library</th>
+                  <th>Architecture &amp; Fine Arts Library</th>
+                  <th>Science &amp; Engineering Library</th>
+                </tr>
+                <tr>
+                  <td><a href="//library.uta.edu/study-spaces">Study Rooms</a></td>
+                  <td>';
                       $block_content .= $centralRoomAvail;
-                      $block_content .= '</div>
-                  </div><!-- end.col-md-4 -->
-                </div> <!-- end.row -->
-              </div> <!-- end#central -->
-
-              <div class="tab-pane" id="afa">
-                <div class="row">
-                  <div class="col-md-4">
-                    <h4><a href="http://cas.uta.edu/CAS/">Computers</a></h4>
-                    <div title="Architecture and Fine Arts Library Computers" class="avail">';
-                    $block_content .= $afaCompAvail; 
-                    $block_content .= '</div>
-                  </div> <!-- end.col-md-4 -->
-
-                  <div class="col-md-4">
-                    <h4><a href="technology/laptops">Laptops</a></h4>
-                    <div title="Architecture and Fine Arts Library Laptops" class="avail">';
-                      $block_content .= $afaLaptopAvail;
-                      $block_content .= '</div>
-                  </div><!-- end.col-md-4 -->
-
-                  <div class="col-md-4">
-                    <h4><a href="http://library.uta.edu/study-spaces">Study Rooms</a></h4>
-                    <div title="Architecture and Fine Arts Library Study Rooms" class="avail">';
+                      $block_content .= '</td>
+                  <td>';
                     $block_content .= $afaRoomAvail;
-                    $block_content .= '</div>
-                  </div><!-- end.col-md-4 -->
-                </div> <!-- end.row -->
-              </div> <!-- end#afa -->
-
-              <div class="tab-pane" id="sel">
-                <div class="row">
-                  <div class="col-md-4">
-                    <h4><a href="http://cas.uta.edu/CAS/">Computers</a></h4>
-                    <div title="Science and Engineering Library Computers" class="avail">';
-                    $block_content .= $selCompAvail; 
-                    $block_content .= '</div>
-                  </div> <!-- end.col-md-4 -->
-
-                  <div class="col-md-4">
-                    <h4><a href="technology/laptops">Laptops</a></h4>
-                    <div title="Science and Engineering Library Laptops"class="avail">';
-                    $block_content .= $selLaptopAvail;
-                    $block_content .= '</div>
-                  </div> <!-- end.col-md-4 -->
-
-                  <div class="col-md-4">
-                    <h4><a href="http://library.uta.edu/study-spaces">Study Rooms</a></h4>
-                    <div title="Science and Engineering Library Study Rooms"class="avail">';
+                    $block_content .= '</td>
+                  <td>';
                     $block_content .= $selRoomAvail;
-                    $block_content .= '</div>
-                  </div><!-- end.col-md-4 -->
-                </div> <!-- end.row -->
-              </div><!-- end#sel -->
-            </div> <!-- end.tab-content -->
-          </div> <!-- end.tabs-available-now -->
-          <span class="available-links"><a href="technology">Borrow Technology</a> / <a href="http://openroom.uta.edu">Reserve a Room</a></span>
-        </div> <!-- end.col-md-12 -->
-        
-      </div>';
+                    $block_content .= '</td>
+                </tr>
+                 <tr>
+                  <td><a href="//cas.uta.edu/CAS/">Computers</a></td>
+                  <td>';
+                    $block_content .= $centralCompAvail;
+                    $block_content .= '</td>
+                  <td>';
+                    $block_content .= $afaCompAvail; 
+                    $block_content .= '</td>
+                  <td>';
+                    $block_content .= $selCompAvail; 
+                    $block_content .= '</td>
+                </tr>
+                <tr>
+                  <td><a href="//library.uta.edu/technology/dell-laptop">Laptops</a></td>
+                  <td>';
+                    $block_content .= $centrallaptops;
+                    $block_content .= '</td>
+                  <td>';
+                      $block_content .= $afalaptops;
+                      $block_content .= '</td>
+                  <td>';
+                    $block_content .= $sellaptops;
+                    $block_content .= '</td>
+                </tr>
+
+               <tr>
+                  <td><a href="//library.uta.edu/technology/ipad-air-2">iPads</a></td>
+                  <td>';
+                      $block_content .= $centralipads;
+                      $block_content .= '</td>
+                  <td>';
+                    $block_content .= $afaipads;
+                    $block_content .= '</td>
+                  <td>';
+                    $block_content .= $selipads;
+                    $block_content .= '</td>
+                </tr>
+
+                <tr>
+                  <td><a href="//library.uta.edu/technology/macbook">MacBooks</a></td>
+                  <td>';
+                      $block_content .= $centralmacbooks;
+                      $block_content .= '</td>
+                  <td>';
+                    $block_content .= $afamacbooks;
+                    $block_content .= '</td>
+                  <td>';
+                    $block_content .= $selmacbooks;
+                    $block_content .= '</td>
+                </tr>
+
+                <tr>
+                  <td><a href="//library.uta.edu/technology/acer-chromebook">Chromebooks</a></td>
+                  <td>';
+                      $block_content .= $centralchromebooks;
+                      $block_content .= '</td>
+                  <td>';
+                    $block_content .= $afachromebooks;
+                    $block_content .= '</td>
+                  <td>';
+                    $block_content .= $selchromebooks;
+                    $block_content .= '</td>
+                </tr>
+                <tr>
+                  <td><a href="//library.uta.edu/technology/surface-tablet">Surface Tablets</a></td>
+                  <td>';
+                      $block_content .= $centralsurfaces;
+                      $block_content .= '</td>
+                  <td>';
+                    $block_content .= $afasurfaces;
+                    $block_content .= '</td>
+                  <td>';
+                    $block_content .= $selsurfaces;
+                    $block_content .= '</td>
+                </tr>
+              </table>
+              </div>     </div>
+         </div>';
 
 
       $block['subject'] = t("Available Now");
@@ -188,6 +240,6 @@ function available_now_block_view($delta='') {
       break;
   }
   return $block;
-}
+} 
 
 ?>
