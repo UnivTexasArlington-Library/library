@@ -8238,6 +8238,10 @@ th {
   color: #fff;
   text-decoration: underline;
 }
+/* CKEDITOR Dropdown menu */
+.cke_panel_container body {
+  background: #FFF;
+}
 /*for footer*/
 .footer {
   background: #c6c4c4;
