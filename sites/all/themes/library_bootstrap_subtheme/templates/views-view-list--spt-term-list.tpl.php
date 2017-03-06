@@ -10,10 +10,11 @@
  */
 ?>
 <?php print $wrapper_prefix; ?>
+<span class="glyphicon glyphicon-chevron-down orange collapse"> </span>
   <?php if (!empty($title)) : ?>
     <?php print $title; ?>
   <?php endif; ?>
- <a data-toggle="spt-list-collapse" aria-expanded="false" aria=controls="collapseExample"><span class="glyphicon glyphicon-chevron-down orange"> </span></a>
+ 
   <?php print $list_type_prefix; ?>
     <?php foreach ($rows as $id => $row): ?>
       <li class="<?php print $classes_array[$id]; ?>"><?php print $row; ?></li>
