@@ -10,7 +10,6 @@
  */
 ?>
 <?php print $wrapper_prefix; ?>
-<span class="glyphicon glyphicon-chevron-down orange collapse"> </span>
   <?php if (!empty($title)) : ?>
     <?php print $title; ?>
   <?php endif; ?>
