@@ -9,10 +9,10 @@ $flickr_url = "https://api.flickr.com/services/rest/?&method=flickr.people.getPu
 
        $block_content = "<div class='col-sm-12' id='flickr'>";
        //if there are photos
-       if ($results_flickr->photoset->total != 0) {
+       if ($results_flickr->total != 0) {
        $flickr_count = 0;
        $photoarray = array();
-      foreach($results_flickr->photoset->photo as $photo) {
+      foreach($results_flickr->photo as $photo) {
         $flickr_count++;
         $photoid = $photo->id;
         $phototitle = $photo->title;
