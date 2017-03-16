@@ -9,14 +9,14 @@ $flickr_url = "https://api.flickr.com/services/rest/?&method=flickr.people.getPu
 
        $block_content = "<div class='col-sm-12' id='flickr'>";
        //if there are photos
-       if ($results_flickr->total != 0) {
+       if ($results_flickr->photos->total != 0) {
        $flickr_count = 0;
        $photoarray = array();
       foreach($results_flickr->photo as $photo) {
         $flickr_count++;
         $photoid = $photo->id;
         $phototitle = $photo->title;
-        $photourl = file_get_contents("https://api.flickr.com/services/rest/?&method=flickr.photos.getSizes&format=json&api_key=24ad194cceb24285045f026dff301622&photo_id=" . $photoid . "&nojsoncallback=1");
+        $photourl = file_get_contents("https://api.flickr.com/services/rest/?&method=flickr.photos.getSizes&api_key=24ad194cceb24285045f026dff301622&photo_id=" . $photoid . "&format=json&nojsoncallback=1");
         $photojson = json_decode($photourl);
         $thumb = NULL;
         foreach($photojson->sizes->size as $size) {
