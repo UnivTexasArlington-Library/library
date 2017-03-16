@@ -1,9 +1,9 @@
 <?php
 ini_set('display_errors',1);
 error_reporting(E_ALL);
-$flickr_url = "https://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&api_key=24ad194cceb24285045f026dff301622&photoset_id=72157626825709146&per_page=5&sort=date-taken-desc&format=json&nojsoncallback=1";
+$flickr_url = "https://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&api_key=24ad194cceb24285045f026dff301622&per_page=5&sort=date-taken-desc&format=json&nojsoncallback=1";
 
-      $response = file_get_contents("https://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&api_key=24ad194cceb24285045f026dff301622&photoset_id=72157626825709146&per_page=5&sort=date-taken-desc&format=json&nojsoncallback=1");
+      $response = file_get_contents("https://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&api_key=24ad194cceb24285045f026dff301622&per_page=5&sort=date-taken-desc&format=json&nojsoncallback=1");
     $results_flickr = json_decode($response);
       //FLICKR RESULTS
 
