@@ -7928,6 +7928,9 @@ h5 {
     padding: 0 25px;
   }
 }
+#internal-page > h2 {
+  padding-left: 0;
+}
 #internal-page > h4:first-child {
   margin-top: 0;
 }
