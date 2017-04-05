@@ -9,6 +9,7 @@ function responsivewrappers_filter_info() {
     'settings callback' => '_filter_responsivewrappers_settings',
     'default settings' => array(
       'responsive_iframe' => 1,
+      'responsive_iframe_pattern' => '#<iframe.*src=".*(youtube.|vimeo.).*".*>.*</iframe>#ui',
       'responsive_table' => 1,
       'responsive_image' => 0,
     ),
@@ -25,6 +26,11 @@ function _filter_responsivewrappers_settings($form, &$form_state, $filter, $form
     '#type' => 'checkbox',
     '#title' => t('Add responsive wrapper for youtbe and vimeo videos.'),
     '#default_value' => $filter->settings['responsive_iframe'],
+  );
+  $settings['responsive_iframe_pattern'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Regular expresion for video detection.'),
+    '#default_value' => $filter->settings['responsive_iframe_pattern'],
   );
   $settings['responsive_table'] = array(
     '#type' => 'checkbox',
@@ -46,7 +52,8 @@ function _filter_responsivewrappers_settings($form, &$form_state, $filter, $form
 function _responsivewrappers_process($text, $filter) {
 
   if ($filter->settings['responsive_iframe']) {
-    preg_match_all('#<iframe.*src=".*(youtube.|vimeo.).*".*></iframe>#ui', $text, $matches);
+    $pattern = $filter->settings['responsive_iframe_pattern'];
+    preg_match_all($pattern, $text, $matches);
     if (!empty($matches[0])) {
       foreach($matches[0] AS $match) {
         // Only add the wrapper if not exists
