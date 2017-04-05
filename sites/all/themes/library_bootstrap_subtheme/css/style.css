@@ -9134,6 +9134,16 @@ input.summon-search-submit.button-website:focus {
     margin-top: 5%;
   }
 }
+/* CAREERS page */
+.page-node-484 blockquote {
+  font-size: 1.125em;
+}
+.view-jobs .views-row {
+  margin: 1.5em 1em;
+}
+.view-jobs .btn {
+  margin: 1em 0;
+}
 #edit-submitted-event-begins-minute {
   max-width: 80px;
 }
