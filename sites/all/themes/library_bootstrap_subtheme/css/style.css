@@ -7964,6 +7964,7 @@ h5 {
   width: 100%;
 }
 .panel-separator {
+  /*used on /k-12*/
   height: 30px;
 }
 .inline {
@@ -8240,6 +8241,13 @@ th {
 .give-feature .carousel-caption .learn-more a {
   color: #fff;
   text-decoration: underline;
+}
+ul.media-list > li.media {
+  /*Used on Resource Delivery Services */
+  margin-top: 30px;
+}
+ul.media-list > li.media:first-child {
+  margin-top: 0;
 }
 /* CKEDITOR Dropdown menu */
 .cke_panel_container body {
