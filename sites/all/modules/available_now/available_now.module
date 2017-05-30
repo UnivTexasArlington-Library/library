@@ -18,7 +18,7 @@ function available_now_block_view($delta='') {
 	
     /*START LABSTATS FOR COMPUTER AVAILABILITY*/
       $ini = ini_set("soap.wsdl_cache_enabled","0");
-      $client = new SoapClient("http://cas.uta.edu/LabStats/WebServices/Statistics.asmx?WSDL");
+      $client = new SoapClient("https://libcas.uta.edu/LabStats/WebServices/Statistics.asmx?WSDL");
       $results = $client->GetGroupedCurrentStats()->GetGroupedCurrentStatsResult->GroupStat;
       global $centralCompAvail;
       foreach ($results as $entry) {
@@ -30,7 +30,7 @@ function available_now_block_view($delta='') {
         } 
         if ($entry->groupName == 'Architecture and Fine Arts Library') {
           $afaCompAvail = $entry->availableCount;
-        }
+        } 
       }
     /*END LAB STATS FOR COMPUTER AVAILABILITY*/
     /*START NEW OPENROOM*/
