@@ -11,27 +11,38 @@ function available_now_block_info() {
   return $blocks;
 }
 
+
 function available_now_block_view($delta='') { 
   $block = array();
   switch ($delta) {
     case 'available-now': 
-	
+	   $errorMessage = 'Information not available';
     /*START LABSTATS FOR COMPUTER AVAILABILITY*/
+      try {
       $ini = ini_set("soap.wsdl_cache_enabled","0");
       $client = new SoapClient("https://libcas.uta.edu/LabStats/WebServices/Statistics.asmx?WSDL");
       $results = $client->GetGroupedCurrentStats()->GetGroupedCurrentStatsResult->GroupStat;
       global $centralCompAvail;
-      foreach ($results as $entry) {
-        if ($entry->groupName == 'Science and Engineering Library') {
-          $selCompAvail = $entry->availableCount;
-        } 
-        if (strpos($entry->groupName, 'Central') !==false) {
-          $centralCompAvail = $centralCompAvail + $entry->availableCount; 
-        } 
-        if ($entry->groupName == 'Architecture and Fine Arts Library') {
-          $afaCompAvail = $entry->availableCount;
-        } 
+        foreach ($results as $entry) {
+          if ($entry->groupName == 'Science and Engineering Library') {
+            $selCompAvail = $entry->availableCount;
+          } 
+          if (strpos($entry->groupName, 'Central') !==false) {
+            $centralCompAvail = $centralCompAvail + $entry->availableCount; 
+          } 
+          if ($entry->groupName == 'Architecture and Fine Arts Library') {
+            $afaCompAvail = $entry->availableCount;
+          } 
+        }
+      } catch (SoapFault $exc) {
+        $selCompAvail = $errorMessage;
+        $centralCompAvail = $errorMessage;
+        $afaCompAvail = $errorMessage;
+        echo 'AvailableNow Computer Available Error';
       }
+
+
+      
     /*END LAB STATS FOR COMPUTER AVAILABILITY*/
     /*START NEW OPENROOM*/
     $html = file_get_contents("https://openroom.uta.edu/or-available.php");
@@ -54,9 +65,9 @@ function available_now_block_view($delta='') {
         $selRoomAvail = $selRooms->item(0)->nodeValue;
       }
     } else {
-      $centralRoomAvail = "Information not available";
-      $afaRoomAvail = "Information not available";
-      $selRoomAvail = "Information not available";
+      $centralRoomAvail = $errorMessage;
+      $afaRoomAvail = $errorMessage;
+      $selRoomAvail = $errorMessage;
 
     }
     /*END NEW OPEN ROOM*/
@@ -72,9 +83,9 @@ function available_now_block_view($delta='') {
 	$sellaptops = $data['laptops']['sel'];
 	}
 	else {
-		$centrallaptops = "Information not available";
-		$afalaptops = "Information not available";
-		$sellaptops = "Information not available";
+		$centrallaptops = $errorMessage;
+		$afalaptops = $errorMessage;
+		$sellaptops = $errorMessage;
 	}
 	/*END LAPTOPS*/
 	
@@ -85,9 +96,9 @@ function available_now_block_view($delta='') {
 	$selipads = $data['ipads']['sel'];
 	}
 	else {
-		$centralipads = "Information not available";
-		$afaipads = "Information not available";
-		$selipads = "Information not available";
+		$centralipads = $errorMessage;
+		$afaipads = $errorMessage;
+		$selipads = $errorMessage;
 	}
 	/*END IPADS*/
 
@@ -98,9 +109,9 @@ function available_now_block_view($delta='') {
 	$selmacbooks = $data['macbooks']['sel'];
 	}
 	else {
-		$centralmacbooks = "Information not available";
-		$afamacbooks = "Information not available";
-		$selmacbooks = "Information not available";
+		$centralmacbooks = $errorMessage;
+		$afamacbooks = $errorMessage;
+		$selmacbooks = $errorMessage;
 	}
 	/*END MACBOOKS*/
 	
@@ -111,9 +122,9 @@ function available_now_block_view($delta='') {
 	$selchromebooks = $data['chromebooks']['sel'];
 	}
 	else {
-		$centralchromebooks = "Information not available";
-		$afachromebooks = "Information not available";
-		$selchromebooks = "Information not available";
+		$centralchromebooks = $errorMessage;
+		$afachromebooks = $errorMessage;
+		$selchromebooks = $errorMessage;
 	}
 	/*END CHROMEBOOKS*/
 	
@@ -124,9 +135,9 @@ function available_now_block_view($delta='') {
 	$selsurfaces = $data['surfaces']['sel'];
 	}
 	else {
-		$centralsurfaces = "Information not available";
-		$afasurfaces = "Information not available";
-		$selsurfaces = "Information not available";
+		$centralsurfaces = $errorMessage;
+		$afasurfaces = $errorMessage;
+		$selsurfaces = $errorMessage;
 	}
 	/*END SURFACE TABLETS*/
 
