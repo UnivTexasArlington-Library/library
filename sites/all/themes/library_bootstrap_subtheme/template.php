@@ -37,9 +37,12 @@ function bootstrap_menu_tree__menu_borrowing_menu(&$variables) {
 function bootstrap_menu_tree__menu_library_instruction(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
-
 //adding class to services for visitors menu
 function bootstrap_menu_tree__menu_visitors(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
+//adding class to services for visitors menu
+function bootstrap_menu_tree__menu_services_for_alumni(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
 //adding class to services for k12 menu
