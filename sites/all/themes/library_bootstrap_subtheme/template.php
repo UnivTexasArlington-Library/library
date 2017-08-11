@@ -53,6 +53,14 @@ function bootstrap_menu_tree__menu_services_k12(&$variables) {
 function bootstrap_menu_tree__menu_services_faculty(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
+//adding class to services for undergraduates menu
+function bootstrap_menu_tree__menu_services_undergrad(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
+//adding class to services for graduates menu
+function bootstrap_menu_tree__menu_services_grad(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
 //adding class to giving menu
 function bootstrap_menu_tree__menu_giving(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';

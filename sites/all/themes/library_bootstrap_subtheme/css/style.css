@@ -8974,6 +8974,9 @@ input.summon-search-submit.button-website:focus {
   margin-right: auto;
   display: block;
 }
+#panels-ipe-display-panel-context-page-special-collections-page-special-collections-panel .caption {
+  margin-top: 1em;
+}
 /*for employment page*/
 .employment_image {
   width: 100%;
