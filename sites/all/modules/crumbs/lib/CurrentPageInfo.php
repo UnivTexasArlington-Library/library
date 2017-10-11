@@ -251,6 +251,7 @@ class crumbs_CurrentPageInfo extends crumbs_Container_AbstractLazyData {
     $router_item = $this->router->getRouterItem($this->path);
     // Allow modules to alter the breadcrumb, if possible, as that is much
     // faster than rebuilding an entirely new active trail.
+    /* @see hook_menu_breadcrumb_alter() */
     drupal_alter('menu_breadcrumb', $breadcrumb_items, $router_item);
     return $breadcrumb_items;
   }

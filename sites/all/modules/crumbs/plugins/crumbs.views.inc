@@ -13,8 +13,7 @@ function views_crumbs_plugins($api) {
   $q->condition('page_callback', 'views_page');
   $q->fields('mr', array('path', 'page_arguments', 'title', 'title_callback'));
 
-  $staticDisplays = array();
-  $dynamicDisplays = array();
+  $viewDisplays = array();
 
   foreach ($q->execute() as $row) {
 
@@ -46,28 +45,15 @@ function views_crumbs_plugins($api) {
       $view_display_ids = array($view_display_ids);
     }
 
-    if ('%' !== substr($row->path, -1)) {
-      // The path does not end with "%", so the title should not depend on a
-      // contextual filter.
-      foreach ($view_display_ids as $view_display_id) {
-        if (!is_string($view_display_id)) {
-          continue;
-        }
-        $staticDisplays[$view_name][$view_display_id][] = $row->path;
+    foreach ($view_display_ids as $view_display_id) {
+      if (!is_string($view_display_id)) {
+        continue;
       }
-    }
-    else {
-      // This is a views display with contextual filters.
-      foreach ($view_display_ids as $view_display_id) {
-        if (!is_string($view_display_id)) {
-          continue;
-        }
-        $dynamicDisplays[$view_name][$view_display_id][] = $row->path;
-      }
+      $viewDisplays[$view_name][$view_display_id][] = $row->path;
     }
   }
 
-  foreach ($staticDisplays as $view_name => $displays) {
+  foreach ($viewDisplays as $view_name => $displays) {
     foreach ($displays as $view_display_id => $routes) {
       if (count($routes) > 1) {
         // More than one route for the same views display.
@@ -85,16 +71,6 @@ function views_crumbs_plugins($api) {
     }
   }
 
-  foreach ($dynamicDisplays as $view_name => $displays) {
-    foreach ($displays as $view_display_id => $routes) {
-      $api->routeMonoPlugin(
-        // There should be only one route.
-        // If there are more, we take the first.
-        $routes[0],
-        "argTitle.$view_name.$view_display_id",
-        new views_CrumbsMonoPlugin_PageTitle($view_name, $view_display_id));
-    }
-  }
 }
 
 /**
@@ -151,11 +127,12 @@ class views_CrumbsMonoPlugin_PageTitle implements crumbs_MonoPlugin_FindTitleInt
       return NULL;
     }
 
-    if ('%' !== substr($item['route'], -1)) {
+    // The first two arguments are view name and display id.
+    $args = array_slice($item['page_arguments'], 2);
+    if (empty($args)) {
       return $this->viewsPageTitle();
     }
     else {
-      $args = array_slice($item['page_arguments'], 2);
       return $this->viewsArgTitle($args);
     }
   }
@@ -208,6 +185,12 @@ class views_CrumbsMonoPlugin_PageTitle implements crumbs_MonoPlugin_FindTitleInt
 
     // Trigger the argument calculation by calling build_title().
     $view->build_title();
+
+    // Check if there are any substitutions to be done.
+    // For example the argument is not validated, so no %1 values are desired.
+    if (empty($view->build_info['substitutions'])) {
+      return NULL;
+    }
 
     // Check the last argument for a breadcrumb item title.
     $last_arg = $this->getRelevantArgument($view->argument);

@@ -11,6 +11,27 @@ function menu_crumbs_plugins($api) {
   $api->multiPlugin('link_title');
   $api->disabledByDefault('hierarchy.*');
   $api->disabledByDefault('link_title.*');
+
+  $api->routeParentCallback(
+    'admin/structure/menu/item/%/edit',
+    'item_edit',
+    function($path, array $item) {
+      if (!empty($item['map'][4]['menu_name'])) {
+        return 'admin/structure/menu/manage/' . $item['map'][4]['menu_name'];
+      }
+
+      return NULL;
+    });
+  $api->routeTitleCallback(
+    'admin/structure/menu/item/%/edit',
+    'item_edit_title',
+    function($path, array $item) {
+      if (!empty($item['map'][4]['mlid'])) {
+        return t('Edit menu link') . ' ' . $item['map'][4]['mlid'];
+      }
+
+      return NULL;
+    });
 }
 
 
