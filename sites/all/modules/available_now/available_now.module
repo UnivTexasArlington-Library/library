@@ -45,7 +45,7 @@ function available_now_block_view($delta='') {
       
     /*END LAB STATS FOR COMPUTER AVAILABILITY*/
     /*START NEW OPENROOM*/
-    $html = file_get_contents("http://localhost/openroom.uta.edu/or-available.php");
+    $html = file_get_contents("https://openroom.uta.edu/or-available.php");
     $doc = new DOMDocument();
     libxml_use_internal_errors(TRUE);
     if (!empty($html)) {
