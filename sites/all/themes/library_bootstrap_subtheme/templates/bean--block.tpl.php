@@ -30,7 +30,6 @@
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 	<h3><?php print render($title); ?></h3>
 	<div class="clearfix">
-		<?php if (!empty($content['field_image'])): ?><?php print render($content['field_image']); ?><?php endif; ?>
 		<?php print render($content['field_body']); ?>
 	 </div>
 </div>
