@@ -21,7 +21,7 @@
 
 /* Workaround for Modal dialog underneith the Ctools modal dialog with jQuery 1.10. 
    @TODO Remove this if ever ctools issue #1397370 ever gets fixed. */
-.ui-front {
+.ui-front.media-wrapper {
   z-index: 10001 !important;
 }
 
