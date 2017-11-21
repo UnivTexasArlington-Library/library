@@ -8337,8 +8337,11 @@ ul.media-list > li.media:first-child {
 }
 .facebook,
 .twitter,
-.youtube {
-  background: url(/sites/default/files/default_images/Media_buttons_rev2.png);
+.youtube,
+.pinterest,
+.snapchat,
+.instagram {
+  background: url(/sites/default/files/default_images/Media_buttons.png);
   display: block;
   height: 30px;
   width: 30px;
@@ -8364,6 +8367,27 @@ ul.media-list > li.media:first-child {
 .youtube:hover,
 .youtube:focus {
   background-position: -60px -30px;
+}
+.instagram {
+  background-position: -90px 0;
+}
+.instagram:hover,
+.instagram:focus {
+  background-position: -90px -30px;
+}
+.snapchat {
+  background-position: -120px 0;
+}
+.snapchat:hover,
+.snapchat:focus {
+  background-position: -120px -30px;
+}
+.pinterest {
+  background-position: -150px 0;
+}
+.pinterest:hover,
+.pinterest:focus {
+  background-position: -150px -30px;
 }
 .summon {
   background-color: rgba(255, 255, 255, 0.5);
