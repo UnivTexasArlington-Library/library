@@ -8289,17 +8289,16 @@ ul.media-list > li.media:first-child {
   float: left;
   margin-left: 10px;
   margin-bottom: 10px;
+  /*@media (min-width: 1201px) and (max-width: 1558px) {
+			margin-right: 5px;
+			float: left;
+		}*/
 }
-@media (min-width: 1201px) and (max-width: 1558px) {
-  .social-media a {
-    margin-right: 5px;
-    float: left;
-  }
-}
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .social-media a {
     float: left;
     margin-right: 10px;
+    margin-left: 0;
   }
 }
 .fdlp {
@@ -8310,6 +8309,7 @@ ul.media-list > li.media:first-child {
 @media (max-width: 991px) {
   .fdlp {
     margin-top: 1em;
+    margin-left: 0;
   }
 }
 .copyright {
