@@ -6,12 +6,13 @@
  */
 
 class MigrateBlockReferenceFieldHandler extends MigrateSimpleFieldHandler {
-  public function __construct($options = array()) {
-    parent::__construct(array(
+
+  public function __construct($options = []) {
+    parent::__construct([
       'value_key' => 'moddelta',
       'skip_empty' => TRUE,
-    ));
+    ]);
 
-    $this->registerTypes(array('blockreference'));
+    $this->registerTypes(['blockreference']);
   }
 }

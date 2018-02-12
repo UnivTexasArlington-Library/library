@@ -3,13 +3,16 @@
 /**
  * Alter referenceable blocks, BEFORE the autocomplete match.
  *
- * These are always block objects, not options. You can change the option label by changing $block->info.
+ * These are always block objects, not options. You can change the option label
+ * by changing $block->info.
  *
- * For autocomplete fields, this alter happens AFTER the search, before slicing the results (ACDB does that).
+ * For autocomplete fields, this alter happens AFTER the search, before slicing
+ * the results (ACDB does that).
  *
  * $context contains:
  * - instance
- * - type ("autocomplete" or "options_list", depending on where this list is requested)
+ * - type ("autocomplete" or "options_list", depending on where this list is
+ * requested)
  * - entity
  * - entity_type
  */
@@ -39,7 +42,7 @@ function hook_blockreference_blocks_post_alter(&$blocks, $context) {
   // the matched labels, so probably don't do that.
 
   // Reverse sort, because I'm like that.
-  uasort($blocks, function($a, $b) {
+  uasort($blocks, function ($a, $b) {
     return strnatcasecmp($b->info, $a->info);
   });
 }

@@ -13,7 +13,7 @@ function blockreference_update_7200() {
 
   // Find fields & tables.
   $all_fields = field_info_field_map();
-  $alter_tables = array();
+  $alter_tables = [];
   foreach ($all_fields as $field_name => $field) {
     if ($field['type'] == 'blockreference') {
       $table_name = 'field_data_' . $field_name;
@@ -26,13 +26,13 @@ function blockreference_update_7200() {
     }
   }
 
-  $col_spec = array(
+  $col_spec = [
     'type' => 'varchar',
     'length' => 129, // 4 x 32 + 1 should be enough
     'not null' => TRUE,
     'default' => '',
-  );
-  $invalid_bids = array();
+  ];
+  $invalid_bids = [];
   foreach ($alter_tables as $table_name => $field_name) {
     $column_bid = $field_name . '_bid';
     $column_moddelta = $field_name . '_moddelta';
@@ -62,13 +62,13 @@ function blockreference_update_7200() {
     db_drop_field($table_name, $column_bid);
 
     // Alter table columns.
-    db_add_index($table_name, 'moddelta', array($column_moddelta));
+    db_add_index($table_name, 'moddelta', [$column_moddelta]);
   }
 
   if ($invalid_bids) {
     $invalid_bids = array_unique($invalid_bids);
-    drupal_set_message(format_string("@num block ids could not be converted, because they don't exist (anymore).", array(
+    drupal_set_message(format_string("@num block ids could not be converted, because they don't exist (anymore).", [
       '@num' => count($invalid_bids),
-    )), 'warning');
+    ]), 'warning');
   }
 }
