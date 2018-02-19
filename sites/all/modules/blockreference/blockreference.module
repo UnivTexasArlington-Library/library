@@ -8,15 +8,15 @@ require __DIR__ . '/blockreference.field.inc';
  * Implements hook_menu().
  */
 function blockreference_menu() {
-  $items = [];
-  $items['blockreference/autocomplete/%/%/%/%'] = [
+  $items = array();
+  $items['blockreference/autocomplete/%/%/%/%'] = array(
     'title' => 'blockreference autocomplete',
     'page callback' => 'blockreference_autocomplete',
-    'page arguments' => [2, 3, 4, 5],
+    'page arguments' => array(2, 3, 4, 5),
     'access callback' => 'blockreference_autocomplete_access',
-    'access arguments' => [2, 3, 4, 5],
+    'access arguments' => array(2, 3, 4, 5),
     'type' => MENU_CALLBACK,
-  ];
+  );
   return $items;
 }
 
@@ -26,13 +26,13 @@ function blockreference_menu() {
 function blockreference_autocomplete_access($entity_type, $bundle, $field_name, $eid) {
   if ($eid == 0) {
     $entity_info = entity_get_info($entity_type);
-    $entity_dummy = entity_create($entity_type, [
+    $entity_dummy = entity_create($entity_type, array(
       $entity_info['entity keys']['bundle'] => $bundle,
-    ]);
+    ));
     $entity_access = entity_access('create', $entity_type, $entity_dummy);
   }
   else {
-    $entity = entity_load($entity_type, [$eid]);
+    $entity = entity_load($entity_type, array($eid));
     $entity = reset($entity) ?: FALSE;
     $entity_access = entity_access('update', $entity_type, $entity);
   }
@@ -44,24 +44,20 @@ function blockreference_autocomplete_access($entity_type, $bundle, $field_name, 
  */
 function blockreference_autocomplete($entity_type, $bundle, $field_name, $entity_id, $search_string) {
   $search_string = trim(implode('/', array_slice(func_get_args(), 4)), '/');
-
   $entity = FALSE;
   if ($entity_id) {
-    $entity_load = entity_load($entity_type, [$entity_id]);
+    $entity_load = entity_load($entity_type, array($entity_id));
     if ($entity_load) {
       $entity = reset($entity_load);
     }
   }
-
   $instance = field_info_instance($entity_type, $field_name, $bundle);
-
-  $context = [
+  $context = array(
     'type' => 'autocomplete',
     'entity' => $entity,
-  ];
+  );
   $blocks = _blockreference_find_blocks($instance, $search_string, $context);
   $options = _blockreference_options($blocks, TRUE);
-
   drupal_json_output($options);
 }
 
@@ -70,9 +66,7 @@ function blockreference_autocomplete($entity_type, $bundle, $field_name, $entity
  */
 function blockreference_autocomplete_value($element, $input = FALSE, $form_state) {
   $ac_string = $input !== FALSE ? $input : (isset($element['#value']) ? $element['#value'] : (string) @$element['#default_value']);
-
   $module = $delta = '';
-
   // Find module & delta from an ac string.
   if (is_string($ac_string)) {
     $block_arr = _blockreference_block_from_ac_string($ac_string);
@@ -80,18 +74,15 @@ function blockreference_autocomplete_value($element, $input = FALSE, $form_state
       list($module, $delta) = array_values($block_arr);
     }
   }
-
   // Found it? Does is exist?
   if ($module && $delta) {
     $infos = module_invoke($module, 'block_info');
     if (isset($infos[$delta])) {
       $block = _blockreference_block($module, $delta, $infos[$delta]);
-
       $value = trim($block->info) . '   [' . $block->module . ':' . $block->delta . ']';
       return $value;
     }
   }
-
   return '';
 }
 
@@ -100,29 +91,25 @@ function blockreference_autocomplete_value($element, $input = FALSE, $form_state
  */
 function blockreference_autocomplete_validate($element, &$form_state, $form) {
   $instance = field_info_instance($element['#entity_type'], $element['#field_name'], $element['#bundle']);
-
   $value = $element['#value'];
   if (!$value) {
     form_set_value($element, '', $form_state);
     return;
   }
   $block_arr = _blockreference_block_from_ac_string($value);
-
   // Validate input to be a block.
   if (!$block_arr) {
-    return form_error($element, t('%name: Title mismatch. Please check your selection.', ['%name' => $instance['label']]));
+    return form_error($element, t('%name: Title mismatch. Please check your selection.', array('%name' => $instance['label'])));
   }
-
   // Validate block's usage in this context.
-  $allowed_blocks = _blockreference_find_blocks($instance, '', [
+  $allowed_blocks = _blockreference_find_blocks($instance, '', array(
     'entity' => $element['#entity'],
     'type' => 'autocomplete',
-  ]);
+  ));
   $moddelta = implode(':', $block_arr);
   if (!isset($allowed_blocks[$moddelta])) {
     return form_error($element, t('This block is not allowed in this field/context.'));
   }
-
   form_set_value($element, $moddelta, $form_state);
 }
 
@@ -130,23 +117,23 @@ function blockreference_autocomplete_validate($element, &$form_state, $form) {
  * Implements hook_theme().
  */
 function blockreference_theme() {
-  return [
-    'blockreference_formatter_default' => [
-      'variables' => ['element' => NULL],
-    ],
-    'blockreference_formatter_without_title' => [
-      'variables' => ['element' => NULL],
-    ],
-    'blockreference_formatter_title' => [
-      'variables' => ['element' => NULL],
-    ],
-    'blockreference_formatter_plain' => [
-      'variables' => ['element' => NULL],
-    ],
-    'blockreference_formatter_config_link' => [
-      'variables' => ['element' => NULL],
-    ],
-  ];
+  return array(
+    'blockreference_formatter_default' => array(
+      'variables' => array('element' => NULL),
+    ),
+    'blockreference_formatter_without_title' => array(
+      'variables' => array('element' => NULL),
+    ),
+    'blockreference_formatter_title' => array(
+      'variables' => array('element' => NULL),
+    ),
+    'blockreference_formatter_plain' => array(
+      'variables' => array('element' => NULL),
+    ),
+    'blockreference_formatter_config_link' => array(
+      'variables' => array('element' => NULL),
+    ),
+  );
 }
 
 /**
@@ -154,7 +141,6 @@ function blockreference_theme() {
  */
 function theme_blockreference_formatter_default($variables) {
   $element = $variables['element'];
-
   $block = _blockreference_formatter_get_block($element);
   if ($block) {
     $bid = $block->module . '_' . $block->delta;
@@ -164,12 +150,11 @@ function theme_blockreference_formatter_default($variables) {
     if (!isset($block->region)) {
       $block->region = 'none';
     }
-    $block_content = _block_render_blocks([$block]);
+    $block_content = _block_render_blocks(array($block));
     $build = _block_get_renderable_array($block_content);
     $build[$bid]['#blockreference_element'] = $element;
     return drupal_render($build);
   }
-
   return '';
 }
 
@@ -178,7 +163,6 @@ function theme_blockreference_formatter_default($variables) {
  */
 function theme_blockreference_formatter_without_title($variables) {
   $element = $variables['element'];
-
   $block = _blockreference_formatter_get_block($element);
   if ($block) {
     $bid = $block->module . '_' . $block->delta;
@@ -188,7 +172,7 @@ function theme_blockreference_formatter_without_title($variables) {
     if (!isset($block->region)) {
       $block->region = 'none';
     }
-    $block_content = _block_render_blocks([$block]);
+    $block_content = _block_render_blocks(array($block));
     if ($block_content) {
       reset($block_content)->subject = '';
       $build = _block_get_renderable_array($block_content);
@@ -196,7 +180,6 @@ function theme_blockreference_formatter_without_title($variables) {
       return drupal_render($build);
     }
   }
-
   return '';
 }
 
@@ -205,13 +188,11 @@ function theme_blockreference_formatter_without_title($variables) {
  */
 function theme_blockreference_formatter_plain($variables) {
   $element = $variables['element'];
-
   $block = _blockreference_formatter_get_block($element);
   if ($block) {
     $info = module_invoke($block->module, 'block_info');
     return $info[$block->delta]['info'];
   }
-
   return '';
 }
 
@@ -220,16 +201,13 @@ function theme_blockreference_formatter_plain($variables) {
  */
 function theme_blockreference_formatter_title($variables) {
   $element = $variables['element'];
-
   $block = _blockreference_formatter_get_block($element);
   if ($block) {
-
-    $block_content = _block_render_blocks([$block]);
+    $block_content = _block_render_blocks(array($block));
     if ($block_content) {
       return reset($block_content)->subject;
     }
   }
-
   return '';
 }
 
@@ -242,37 +220,30 @@ function theme_blockreference_formatter_config_link($variables) {
   if (@$item['moddelta']) {
     list($module, $delta) = explode(':', $item['moddelta']);
     $settings = $element['display']['settings'];
-
     $label = '';
     switch ($settings['label']) {
       case 'custom':
         $label = t($settings['custom_label']);
         break;
-
       case 'info':
         $label = theme_blockreference_formatter_plain($variables);
         break;
-
       case 'config':
         $label = db_query('
           SELECT title
           FROM {block}
           WHERE module = ? AND delta = ?
-        ', [$module, $delta])->fetchField();
+        ', array($module, $delta))->fetchField();
         break;
-
       case 'rendered':
         $label = theme_blockreference_formatter_title($variables);
         break;
     }
-
     if (!$label) {
       $label = t('configure block');
     }
-
     return l($label, 'admin/structure/block/manage/' . $module . '/' . $delta . '/configure');
   }
-
   return '';
 }
 
@@ -283,12 +254,9 @@ function _blockreference_get_block_modules_from_field($instance, $field = NULL) 
   $modules = @$instance['settings']['blockreference_modules'];
   if (!$modules) {
     $field or $field = field_info_field($instance['field_name']);
-
     $modules = @$field['settings']['referenceable_modules'];
   }
-
   $modules = drupal_map_assoc(array_keys(array_filter($modules)));
-
   return (array) $modules;
 }
 
@@ -306,21 +274,17 @@ function _blockreference_get_ac_match_method_from_field($instance, $field = NULL
  */
 function _blockreference_get_block_modules() {
   $modules = &drupal_static(__FUNCTION__);
-
   if (!$modules) {
     // Get modules that define blocks.
     $modules = module_implements('block_info');
     $modules = array_flip($modules);
-
     // And get their pretty names.
     $all_modules = system_list('module_enabled');
     foreach ($modules as $machine_name => $foo) {
       $modules[$machine_name] = @$all_modules[$machine_name]->info['name'] ?: $machine_name;
     }
-
     natcasesort($modules);
   }
-
   return $modules;
 }
 
@@ -331,15 +295,13 @@ function _blockreference_block_string($block) {
   if (!$block) {
     return '';
   }
-
   $moddelta = $block->module . ':' . $block->delta;
   $label = $block->info;
-
   return $label . '   [' . $moddelta . ']';
 }
 
 /**
- * Helper to return a [module => ..., delta => ...] array from an AC string.
+ * Helper to return a array(module => ..., delta => ...) array from an AC string.
  */
 function _blockreference_block_from_ac_string($ac_string) {
   if (preg_match(BLOCKREFERENCE_AC_REGEX, $ac_string, $match)) {
@@ -357,11 +319,9 @@ function _blockreference_block($module, $delta, $info = NULL) {
     $infos = module_invoke($module, 'block_info');
     $info = @$infos[$delta];
   }
-
   if ($info) {
     $info = compact('module', 'delta') + $info;
     $info['info'] = trim($info['info']);
-
     return (object) $info;
   }
 }
@@ -370,15 +330,13 @@ function _blockreference_block($module, $delta, $info = NULL) {
  * Helper to find blocks that potentially match a search string, in the right
  * order, altered by custom modules.
  */
-function _blockreference_find_blocks($instance, $search_string = '', $context = []) {
-  $all_block_infos = &drupal_static(__FUNCTION__, []);
+function _blockreference_find_blocks($instance, $search_string = '', $context = array()) {
+  $all_block_infos = &drupal_static(__FUNCTION__, array());
   $iid = $instance['id'];
-
   // Cache ALL potential block objects for this instance.
   if (!isset($all_block_infos[$iid])) {
     $referenceable_modules = _blockreference_get_block_modules_from_field($instance);
-
-    $all_block_infos[$iid] = [];
+    $all_block_infos[$iid] = array();
     foreach (module_implements('block_info') as $module) {
       if (!$referenceable_modules || isset($referenceable_modules[$module])) {
         if ($blocks = module_invoke($module, 'block_info')) {
@@ -390,12 +348,9 @@ function _blockreference_find_blocks($instance, $search_string = '', $context = 
       }
     }
   }
-
   $blocks = $all_block_infos[$iid];
   $context['instance'] = $instance;
-
   drupal_alter('blockreference_blocks_pre', $blocks, $context);
-
   // Filter by search string.
   if ($search_string) {
     $check_string = drupal_strtolower($search_string);
@@ -405,14 +360,11 @@ function _blockreference_find_blocks($instance, $search_string = '', $context = 
       }
     }
   }
-
   // Sort.
   uasort($blocks, function ($a, $b) {
     return strnatcasecmp($a->info, $b->info);
   });
-
   drupal_alter('blockreference_blocks_post', $blocks, $context);
-
   return $blocks;
 }
 
@@ -420,16 +372,13 @@ function _blockreference_find_blocks($instance, $search_string = '', $context = 
  * Helper to make pretty options from block objects.
  */
 function _blockreference_options($blocks, $ac_style = FALSE) {
-  $options = [];
+  $options = array();
   foreach ($blocks as $block) {
     $moddelta = $block->module . ':' . $block->delta;
     $label = $block->info;
-
     $value = $ac_style ? _blockreference_block_string($block) : $moddelta;
-
     $options[$value] = $label;
   }
-
   return $options;
 }
 
@@ -437,10 +386,10 @@ function _blockreference_options($blocks, $ac_style = FALSE) {
  * Implements hook_options_list().
  */
 function blockreference_options_list($field, $instance, $entity_type, $entity) {
-  $context = [
+  $context = array(
     'type' => 'options_list',
     'entity' => $entity,
-  ];
+  );
   $blocks = _blockreference_find_blocks($instance, '', $context);
   return _blockreference_options($blocks);
 }
@@ -464,7 +413,7 @@ function _blockreference_formatter_get_block($element) {
       if ($result) {
         // Copy all themes columns over to our block object, except the useless, theme-specific.
         foreach ($result as $column => $value) {
-          if (!isset($block->$column) && !in_array($column, ['bid', 'theme'])) {
+          if (!isset($block->$column) && !in_array($column, array('bid', 'theme'))) {
             $block->$column = $value;
           }
         }
@@ -473,7 +422,6 @@ function _blockreference_formatter_get_block($element) {
       return $block;
     }
   }
-
   return FALSE;
 }
 
@@ -487,22 +435,18 @@ function blockreference_entity_view($entity, $entity_type, $view_mode, $langcode
   if (empty($entity->content)) {
     return;
   }
-
   foreach (element_children($entity->content) as $field_name) {
     $field = $entity->content[$field_name];
-
     // This is a blockreference field.
     if (isset($field['#field_type']) && $field['#field_type'] == 'blockreference') {
       // Unset renderable field items.
       foreach (element_children($field) as $n) {
         unset($entity->content[$field_name][$n]);
       }
-
       // Render.
       $html = render($field);
-
       // Add back to entity content.
-      $keep_meta = array_flip([
+      $keep_meta = array_flip(array(
         '#weight',
         '#title',
         '#access',
@@ -510,8 +454,8 @@ function blockreference_entity_view($entity, $entity_type, $view_mode, $langcode
         '#field_name',
         '#entity_type',
         '#bundle',
-      ]);
-      $entity->content[$field_name] = ['#markup' => $html] + array_intersect_key($field, $keep_meta);
+      ));
+      $entity->content[$field_name] = array('#markup' => $html) + array_intersect_key($field, $keep_meta);
     }
   }
 }
@@ -520,10 +464,10 @@ function blockreference_entity_view($entity, $entity_type, $view_mode, $langcode
  * Implements hook_migrate_api().
  */
 function blockreference_migrate_api() {
-  return [
+  return array(
     'api' => 2,
-    'field handlers' => ['MigrateBlockReferenceFieldHandler'],
-  ];
+    'field handlers' => array('MigrateBlockReferenceFieldHandler'),
+  );
 }
 
 /**
@@ -531,20 +475,17 @@ function blockreference_migrate_api() {
  */
 function blockreference_block_usage($module, $delta) {
   $moddelta = $module . ':' . $delta;
-
   // Cycle through potential fields/sources to find field items.
   $fields = field_info_field_map();
-  $entity_loads = $loads_by_field_name = [];
+  $entity_loads = $loads_by_field_name = array();
   foreach ($fields as $field_name => $field) {
     if ($field['type'] == 'blockreference') {
       $table_name = 'field_data_' . $field_name;
       $column_name = $field_name . '_moddelta';
-
       // Query this field table for above bids.
-      $items = db_query("SELECT entity_type, entity_id FROM $table_name WHERE $column_name = :moddelta", [
+      $items = db_query("SELECT entity_type, entity_id FROM $table_name WHERE $column_name = :moddelta", array(
         ':moddelta' => $moddelta,
-      ]);
-
+      ));
       // Collect entity_type's and entity_id's associatively.
       foreach ($items as $item) {
         $entity_loads[$item->entity_type][] = $item->entity_id;
@@ -552,20 +493,18 @@ function blockreference_block_usage($module, $delta) {
       }
     }
   }
-
   // Load entities and stack 'em up into results.
-  $matches = [];
+  $matches = array();
   foreach ($entity_loads as $entity_type => $ids) {
     $entities = entity_load($entity_type, $ids);
     foreach ($entities as $id => $entity) {
       $uri = entity_uri($entity_type, $entity);
       $path = $uri['path'];
-      $options = @$uri['options'] ?: [];
+      $options = @$uri['options'] ?: array();
       $fields = $loads_by_field_name[$entity_type][$id];
       $matches[] = l($entity_type . ' # ' . $id, $path, $options) . ' (' . implode(', ', $fields) . ')';
     }
   }
-
   return $matches;
 }
 
@@ -573,19 +512,19 @@ function blockreference_block_usage($module, $delta) {
  * Implements hook_entityreference_link_config().
  */
 function blockreference_entityreference_link_config() {
-  return [
-    'blockreference' => [
+  return array(
+    'blockreference' => array(
       'value_column' => 'moddelta',
       'links_callback' => '_blockreference_entityreference_link_links',
-    ],
-  ];
+    ),
+  );
 }
 
 /**
  * Helper to make simple links from blocks for entityreference_link.
  */
 function _blockreference_entityreference_link_links($entity_type, $moddeltas, $options, $context, $element) {
-  $links = [];
+  $links = array();
   foreach ($moddeltas as $moddelta) {
     list($module, $delta) = explode(':', $moddelta);
     $block = _blockreference_block($module, $delta);
@@ -593,6 +532,5 @@ function _blockreference_entityreference_link_links($entity_type, $moddeltas, $o
       $links[] = l($block->info, 'admin/structure/block/manage/' . $module . '/' . $delta . '/configure', $options);
     }
   }
-
   return $links;
 }
