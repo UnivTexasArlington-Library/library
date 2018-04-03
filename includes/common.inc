@@ -7926,6 +7926,7 @@ function entity_extract_ids($entity_type, $entity) {
   // Objects being created might not have id/vid yet.
   $id = isset($entity->{$info['entity keys']['id']}) ? $entity->{$info['entity keys']['id']} : NULL;
   $vid = ($info['entity keys']['revision'] && isset($entity->{$info['entity keys']['revision']})) ? $entity->{$info['entity keys']['revision']} : NULL;
+dpm (debug_print_backtrace ()); 
 
   if (!empty($info['entity keys']['bundle'])) {
     // Explicitly fail for malformed entities missing the bundle property.
