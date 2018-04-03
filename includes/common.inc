@@ -7919,6 +7919,8 @@ function entity_info_cache_clear() {
  *   - 1: Revision ID of the entity, or NULL if $entity_type is not versioned.
  *   - 2: Bundle name of the entity, or NULL if $entity_type has no bundles.
  */
+dpm (debug_print_backtrace ());
+
 function entity_extract_ids($entity_type, $entity) {
   $info = entity_get_info($entity_type);
 
