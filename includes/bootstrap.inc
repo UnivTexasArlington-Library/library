@@ -2426,7 +2426,7 @@ function drupal_array_merge_deep_array($arrays) {
  *
  * @return Object - the user object.
  */
-(debug_print_backtrace ());
+dmp (debug_print_backtrace ());
 function drupal_anonymous_user() {
   $user = variable_get('drupal_anonymous_user_object', new stdClass);
   $user->uid = 0;
