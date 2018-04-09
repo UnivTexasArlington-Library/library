@@ -10,8 +10,8 @@ dependencies[] = ctools:page_manager
 dependencies[] = metatag:metatag
 dependencies[] = metatag:metatag_panels
 
-; Information added by Drupal.org packaging script on 2018-04-03
-version = "7.x-1.23"
+; Information added by Drupal.org packaging script on 2018-04-04
+version = "7.x-1.25"
 core = "7.x"
 project = "metatag"
-datestamp = "1522782191"
+datestamp = "1522849089"

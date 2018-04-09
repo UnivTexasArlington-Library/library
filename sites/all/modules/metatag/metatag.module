@@ -1576,7 +1576,7 @@ function metatag_metatags_form(array &$form, $instance, array $metatags = array(
 
     // Get the form element from the meta tag class.
     $metatag_form = $metatag_instance->getForm($options);
-    if (is_array($metatag_form['value']['#default_value'])) {
+    if (isset($metatag_form['value']['#default_value']) && is_array($metatag_form['value']['#default_value'])) {
       $metatag_form['value']['#default_value'] = array_filter($metatag_form['value']['#default_value']);
     }
 
@@ -2795,7 +2795,7 @@ function metatag_cache_default_cid_parts(array $cid_parts = array()) {
 
   // Allow each page in a sequence to have different values.
   if (isset($_GET['page']) && is_numeric($_GET['page'])) {
-    $cid_parts['page'] = int_val($_GET['page']);
+    $cid_parts['page'] = intval($_GET['page']);
   }
 
   // Allow other modules to customize the data using
