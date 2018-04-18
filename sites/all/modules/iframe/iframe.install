@@ -6,18 +6,6 @@
  */
 
 /**
- * Implements hook_install()
- */
-function iframe_install () {
-}
-
-/**
- * Implements hook_uninstall()
- */
-function iframe_uninstall () {
-}
-
-/**
  * Implements hook_field_schema().
  */
 function iframe_field_schema($field) {
@@ -90,6 +78,7 @@ function iframe_field_schema($field) {
  * Helper: Returns all fields created on the system of the type defined in mymodule.
  */ 
 function iframe_get_mymodule_fields() {
+  module_load_include('module', 'iframe', 'iframe');
   $types = array_keys(iframe_field_info()); // field types defined in mymodule
   $fields = array();
   foreach (field_info_fields() as $field) {
@@ -101,8 +90,8 @@ function iframe_get_mymodule_fields() {
 }
 
 /**
-* Helper: add or change one column
-*/
+ * Helper: add or change one column
+ */
 function iframe_addorchange_column($field_suffix, $spec) {
   if (empty($field_suffix) || !is_array($spec) || !isset($spec['type'])) {
     die('Cannot add or change column!');
@@ -110,15 +99,16 @@ function iframe_addorchange_column($field_suffix, $spec) {
   $fields = iframe_get_mymodule_fields();
 
   foreach ($fields as $field) {
-    if (
-        isset($field['storage']) && isset($field['storage']['type'])
-        && 0 !== strcmp($field['storage']['type'], 'field_sql_storage')
+    if (isset($field['storage']) && isset($field['storage']['type'])
+      && 0 !== strcmp($field['storage']['type'], 'field_sql_storage')
     ) {
-        drupal_set_message('iframe: cannot change field ' . $field['field_name'] . 'because of different storage_type: ' . $field['storage']['type'], 'warn');
-        continue;
+      $message = t('Iframe: Cannot change field name @name because of different storage_type: @type.',
+        array('@name' => $field['field_name'], '@type' => $field['storage']['type']));
+      drupal_set_message($message, 'warning');
+      continue;
     }
     $table_prefixes = array(
-      _field_sql_storage_tablename($field), 
+      _field_sql_storage_tablename($field),
       _field_sql_storage_revision_tablename($field)
     );
 
@@ -137,15 +127,8 @@ function iframe_addorchange_column($field_suffix, $spec) {
 }
 
 /**
-* Update 7000 : no update from drupal 6 to drupal 7 supported yet
-*/
-#function iframe_update_7000() {
-#    die('Update from drupal 6 not supported. Please backup all iframe urls and add it new to drupal 7.');
-#}
-
-/**
-* Update 7100 : add new column "tokensupport"
-*/
+ * Update 7100 : add new column "tokensupport"
+ */
 function iframe_update_7100() {
   $spec = array(
     'type' => 'int',
@@ -157,8 +140,8 @@ function iframe_update_7100() {
 }
 
 /**
-* Update 7101 : adjust or synchronize length of "url" field for all users
-*/
+ * Update 7101 : adjust or synchronize length of "url" field for all users
+ 1*/
 function iframe_update_7101() {
   $spec = array(
     'type' => 'varchar',

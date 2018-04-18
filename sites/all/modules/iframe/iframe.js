@@ -9,7 +9,7 @@
         var iframeWaitInterval;
 
         function resizeHeight(iframe) {
-          if ($(iframe).length) { /* IFrame yet loaded ? */
+          if ($(iframe).length) { /* Iframe yet loaded ? */
             var iframeDoc = $(iframe)[0].contentDocument || $(iframe)[0].contentWindow.document;
             var contentheight = 0;
 
@@ -17,7 +17,7 @@
               contentheight = $(iframeDoc).find('body').height();
             } catch (e) {
               elem = $(iframe)[0];
-              msg = $('<p><small>(' + Drupal.t('IFrame URL is not from the same domain - autoresize not working.') + ')</small></p>');
+              msg = $('<p><small>(' + Drupal.t('Iframe URL is not from the same domain - autoresize not working.') + ')</small></p>');
               $(elem).after(msg);
               clearInterval(iframeWaitInterval);
             }

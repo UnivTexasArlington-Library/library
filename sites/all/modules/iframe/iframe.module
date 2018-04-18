@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Defines an iframe field with all attributes
+ * Defines an iframe field with all attributes.
  *
  * Modul-programming
  *    see also http://de.slideshare.net/zugec/fields-in-core-how-to-create-a-custom-field
@@ -43,7 +43,7 @@ function iframe_help($path, $arg) {
     case 'admin/help#iframe':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('The IFrame module defines an iframe field type for the Field module. Further definable are attributes for styling the iframe, like: url, width, height, title, class, frameborder, scrolling and transparency. See the <a href="@field-help">Field module help page</a> for more information about fields.', array('@field-help' => url('admin/help/field'))) . '</p>';
+      $output .= '<p>' . t('The Iframe module defines an iframe field type for the Field module. Further definable are attributes for styling the iframe, like: URL, width, height, title, class, frameborder, scrolling and transparency. See the <a href="@field-help">Field module help page</a> for more information about fields.', array('@field-help' => url('admin/help/field'))) . '</p>';
       return $output;
   }
 }
@@ -60,7 +60,7 @@ function iframe_help($path, $arg) {
 function iframe_field_info() {
   return array(
     'iframe' => array(
-      'label' => t('IFrame'),
+      'label' => t('Iframe'),
       'description' => t('This field stores the parameters for an iframe.'),
 
       /* define defaults either in 'settings' (globally) OR in 'instance_settings' (per content-type) */
@@ -114,7 +114,7 @@ function iframe_field_settings_form($field, $instance, $has_data) {
     $form['frameborder'] = array(
       '#type' => 'select',
       '#title' => t('Frameborder'),
-      '#options' => array('0' => t('no frameborder'), '1' => t('show frameborder')),
+      '#options' => array('0' => t('No frameborder'), '1' => t('Show frameborder')),
       '#default_value' => !empty($settings['frameborder'])? $settings['frameborder'] : 0,
       '#description' => t('Frameborder is the border arround the iframe. Mostly people want it silent, so the default value for frameborder is 0 = no.'),
     );
@@ -128,16 +128,16 @@ function iframe_field_settings_form($field, $instance, $has_data) {
     $form['transparency'] = array(
       '#type' => 'select',
       '#title' => t('Transparency'),
-      '#options' => array('0' => t('no transparency'), '1' => t('allow transparency')),
+      '#options' => array('0' => t('No transparency'), '1' => t('Allow transparency')),
       '#default_value' => !empty($settings['transparency'])? $settings['transparency'] : '0',
-      '#description' => t('Allow transparency per CSS in the outer iframe tag. You have to set background-color:transparent in Your IFrame too for the body tag!'),
+      '#description' => t('Allow transparency per CSS in the outer iframe tag. You have to set background-color:transparent in your iframe body tag too!'),
     );
     $form['tokensupport'] = array(
       '#type' => 'select',
       '#title' => t('Token Support'),
-      '#options' => array('0' => t('no tokens allowed'), '1' => t('tokens only in title field'), '2' => t('tokens for title and url field')),
+      '#options' => array('0' => t('No tokens allowed'), '1' => t('Tokens only in title field'), '2' => t('Tokens for title and url field')),
       '#default_value' => !empty($settings['tokensupport'])? $settings['tokensupport'] : '0',
-      '#description' => t('Are tokens allowed for users to use in title or url field?'),
+      '#description' => t('Are tokens allowed for users to use in title or URL field?'),
     );
     if (! module_exists('token')) {
       $form['tokensupport']['#description'] .= ' ' . t('Attention: token module is not enabled currently!');
@@ -161,18 +161,18 @@ function iframe_field_instance_settings_form($field, $instance) {
   if ($field['type'] == 'iframe') {
     $form['width'] = array(
       '#type' => 'textfield',
-      '#title' => t('width of an iframe'),
+      '#title' => t('Iframe width'),
       '#default_value' => !empty($settings['width'])? $settings['width'] : (!empty($field_settings['width'])? $field_settings['width'] : ''),
-      '#description' => t('iframes need fix width and height, only numbers are allowed.'),
+      '#description' => t('Iframes need a fixed width and height; only numbers are allowed, or percentage values. (e.g. 500px => "500", 80% => "80%")'),
       //'#disabled' => $has_data,
       '#maxlength' => 4,
       '#size' => 4,
     );
     $form['height'] = array(
       '#type' => 'textfield',
-      '#title' => t('height of an iframe'),
+      '#title' => t('Iframe height'),
       '#default_value' => !empty($settings['height'])? $settings['height'] : (!empty($field_settings['height'])? $field_settings['height'] : ''),
-      '#description' => t('iframes need fix width and height, only numbers are allowed.'),
+      '#description' => t('Iframes need a fixed width and height; only numbers are allowed, or percentage values. (e.g. 500px => "500", 80% => "80%")'),
       '#maxlength' => 4,
       '#size' => 4,
     );
@@ -191,7 +191,7 @@ function iframe_field_instance_settings_form($field, $instance) {
     $form['frameborder'] = array(
       '#type' => 'select',
       '#title' => t('Frameborder'),
-      '#options' => array('0' => t('no frameborder'), '1' => t('show frameborder')),
+      '#options' => array('0' => t('No frameborder'), '1' => t('Show frameborder')),
       '#default_value' => !empty($settings['frameborder'])? $settings['frameborder'] : (!empty($field_settings['frameborder'])? $field_settings['frameborder'] : 0),
       '#description' => t('Frameborder is the border arround the iframe. Mostly people want it silent, so the default value for frameborder is 0 = no.'),
     );
@@ -205,16 +205,16 @@ function iframe_field_instance_settings_form($field, $instance) {
     $form['transparency'] = array(
       '#type' => 'select',
       '#title' => t('Transparency'),
-      '#options' => array('0' => t('no transparency'), '1' => t('allow transparency')),
+      '#options' => array('0' => t('No transparency'), '1' => t('Allow transparency')),
       '#default_value' => !empty($settings['transparency'])? $settings['transparency'] : (!empty($field_settings['transparency'])? $field_settings['transparency'] : 0),
-      '#description' => t('Allow transparency per CSS in the outer iframe tag. You have to set background-color:transparent in Your IFrame too for the body tag!'),
+      '#description' => t('Allow transparency per CSS in the outer iframe tag. You have to set background-color:transparent in your iframe body tag too!'),
     );
     $form['tokensupport'] = array(
       '#type' => 'select',
       '#title' => t('Token Support'),
       '#options' => array('0' => t('no tokens allowed'), '1' => t('tokens only in title field'), '2' => t('tokens for title and url field')),
       '#default_value' => !empty($settings['tokensupport'])? $settings['tokensupport'] : (!empty($field_settings['tokensupport'])? $field_settings['tokensupport'] : '0'),
-      '#description' => t('Are tokens allowed for users to use in title or url field?'),
+      '#description' => t('Are tokens allowed for users to use in title or URL field?'),
     );
     if (! module_exists('token')) {
       $form['tokensupport']['#description'] .= ' ' . t('Attention: token module is not enabled currently!');
@@ -306,7 +306,7 @@ function iframe_field_formatter_info() {
       'field types' => array('iframe'),
     ),
     'iframe_formatter_only' => array(
-      'label' => t('IFrame without title'),
+      'label' => t('Iframe without title'),
       'field types' => array('iframe'),
     ),
     'iframe_formatter_asurl' => array(
@@ -346,22 +346,22 @@ function iframe_field_formatter_view($object_type, $object, $field, $instance, $
 
   if ($display['type']=='iframe_formatter_default') {
     foreach ($items as $delta => $item) {
-      $element[$delta]['#markup'] = '<p>' . iframe_formatter_default_helper($item, $delta) . '</p>';
+      $element[$delta]['#markup'] = iframe_formatter_default_helper($item, $delta);
     }
   }
   elseif ($display['type']=='iframe_formatter_only') {
     foreach ($items as $delta => $item) {
-      $element[$delta]['#markup'] = '<p>' . iframe_formatter_only_helper($item, $delta) . '</p>';
+      $element[$delta]['#markup'] = iframe_formatter_only_helper($item, $delta);
     }
   }
   elseif ($display['type']=='iframe_formatter_asurl') {
     foreach ($items as $delta => $item) {
-      $element[$delta]['#markup'] = '<p>' . iframe_formatter_asurl_helper($item, $delta) . '</p>';
+      $element[$delta]['#markup'] = iframe_formatter_asurl_helper($item, $delta);
     }
   }
   elseif ($display['type']=='iframe_formatter_asurlwithuri') {
     foreach ($items as $delta => $item) {
-      $element[$delta]['#markup'] = '<p>' . iframe_formatter_asurlwithuri_helper($item, $delta) . '</p>';
+      $element[$delta]['#markup'] = iframe_formatter_asurlwithuri_helper($item, $delta);
     }
   }
   elseif ($display['type']=='iframe_formatter_hidden') {
@@ -502,14 +502,21 @@ function iframe_iframe($text, $path, $options = FALSE) {
     }
   }
 
+  $iframearguments_allowed = array('title', 'width', 'height', 'class', 'frameborder', 'scrolling', 'transparency');
+  $iframearguments = array();
+  foreach($iframearguments_allowed as $argkey) {
+    if (isset($options[$argkey])) {
+      $iframearguments[$argkey] = $options[$argkey];
+    }
+  }
   return 
     '<div class="' . (isset($options['class'])? check_plain($options['class']) : '') . '">'
       . (empty($text)? '' : '<h3 class="iframe_title">' . ($options['html'] ? $text : check_plain($text)) . '</h3>')
       . '<iframe src="' . check_url(url($path, $options)) . '"'
-        . drupal_attributes($options)
+        . drupal_attributes($iframearguments)
         . $htmlid
       . '>'
-      . t('Your browser does not support iframes. But You can use the following link.') . ' ' . l('Link', url($path, $options), $options_link)
+      . t('Your browser does not support iframes, but you can use the following link.') . ' ' . l('Link', url($path, $options), $options_link)
       . '</iframe>'
     . '</div>'
   ;
@@ -649,7 +656,7 @@ function iframe_field_widget_form(&$form, &$form_state, $field, $instance, $lang
         : NULL;
       $element['title'] = array(
         '#type' => 'textfield',
-        '#title' => t('IFrame Title'),
+        '#title' => t('Iframe Title'),
         '#placeholder' => '',
         '#default_value' => $title,
         '#size' => 80,
@@ -664,7 +671,7 @@ function iframe_field_widget_form(&$form, &$form_state, $field, $instance, $lang
         : NULL;
       $element['url'] = array(
         '#type' => 'textfield',
-        '#title' => t('IFrame URL'),
+        '#title' => t('Iframe URL'),
         '#placeholder' => 'http://',
         '#default_value' => $furl,
         '#size' => 80,
