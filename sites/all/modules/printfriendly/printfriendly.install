@@ -26,6 +26,5 @@ function printfriendly_uninstall() {
   variable_del('printfriendly_email');
   variable_del('printfriendly_print');
   variable_del('printfriendly_custom_css');
-  variable_del('custom_button_img_url');
 
 }
