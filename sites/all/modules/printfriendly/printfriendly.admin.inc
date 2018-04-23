@@ -15,6 +15,11 @@ function printfriendly_admin_settings() {
     server. PrintFriendly service requires a remotely-accessible web site
     to function.'), 'warning', FALSE);
   }
+
+  $form['#attached']['css'] = array(
+    drupal_get_path('module', 'printfriendly') . '/printfriendly.css',
+  );
+
   $form['printfriendly_types'] = array(
     '#type' => 'checkboxes',
     '#title' => t('Content Types'),
@@ -30,16 +35,42 @@ function printfriendly_admin_settings() {
       'teaser' => t('Teaser'),
       'full' => t('Full content page'),
     ),
-    '#default_value' => array_filter(variable_get('printfriendly_display')),
+    '#default_value' => array_filter(variable_get('printfriendly_display', array())),
   );
   
   // Add more features here
   $form['printfriendly_features'] = array(
       '#type' => 'fieldset',
       '#title' => t('Features'),
-      '#collapsible' => TRUE,
-      '#collapsed' => TRUE,
+      '#collapsible' => FALSE,
+      '#collapsed' => FALSE,
     );
+  
+  $img_path = drupal_get_path('module', 'printfriendly') . '/images';
+  $results = file_scan_directory($img_path, '/^.*\.(gif|png|jpg|GIF|PNG|JPG)$/');
+  $options = array();
+  foreach ($results as $image) {
+    $options[$image->filename] = theme('image', array('path' => $image->uri));
+  }
+  ksort($options);
+
+  // set custom button image options.
+  $options['custom-button-img-url'] = '';
+
+  $form['printfriendly_features']['printfriendly_image'] = array(
+    '#type' => 'radios',
+    '#title' => t('Choose button'),
+    '#options' => $options,
+    '#default_value' => variable_get('printfriendly_image', 'button-print-grnw20.png'),
+  );
+
+  $form['printfriendly_features']['custom_button_img_url'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Custom button image URL'),
+      '#description' => t('Put full path of an image http://devt.drupalchamp.org/sites/default/files/drupal-logo.png'),
+      '#default_value' => variable_get('custom_button_img_url', ''),
+   );
+  
   $icon = '';
   if(!empty(variable_get('printfriendly_page_custom_header'))) $icon = 'custom_logo';  else $icon = 'default_logo';
   $form['printfriendly_features']['printfriendly_page_header'] = array(
@@ -150,32 +181,8 @@ function printfriendly_admin_settings() {
 
   );
 
-  $form['printfriendly_features']['printfriendly_website_protocol'] = array(
-    '#type' => 'select',
-    '#title' => t('Website protocol'),
-    '#options' => array(
-      'http' => 'HTTP',
-      'https' => 'HTTPS',
-    ),
-    '#default_value' => variable_get('printfriendly_website_protocol', 'http'),
-  );
-
   /*-----------------------------------------------------------*/
 
-  $img_path = drupal_get_path('module', 'printfriendly') . '/images';
-  $results = file_scan_directory($img_path, '/^.*\.(gif|png|jpg|GIF|PNG|JPG)$/');
-  $options = array();
-  foreach ($results as $image) {
-    $options[$image->filename] = theme('image', array('path' => $image->uri));
-  }
-  ksort($options);
-
-  $form['printfriendly_image'] = array(
-    '#type' => 'radios',
-    '#title' => t('Choose button'),
-    '#options' => $options,
-    '#default_value' => variable_get('printfriendly_image', 'button-print-grnw20.png'),
-  );
   $form['support-link'] = array(
     '#markup' => t('Need help or have suggestions? !support-email.', array(
       '!support-email' => l(t('Support@PrintFriendly.com'), 'mailto:support@printfriendly.com', array(
@@ -195,6 +202,8 @@ function printfriendly_admin_settings_submit(&$form, &$form_state) {
      variable_set('printfriendly_page_custom_header', $form_state['values']['printfriendly_page_custom_header']);
      variable_set('printfriendly_tagline', $form_state['values']['printfriendly_tagline']);
    }else{
+     $form_state['values']['printfriendly_page_custom_header'] = '';
+     $form_state['values']['printfriendly_tagline'] = '';
      variable_set('printfriendly_page_custom_header', '');
      variable_set('printfriendly_tagline', '');
    }
@@ -204,6 +213,14 @@ function printfriendly_admin_settings_submit(&$form, &$form_state) {
    }else{
      variable_set('printfriendly_custom_css', '');
    }
+   
+   if($form_state['values']['printfriendly_image'] == 'custom-button-img-url'){
+     variable_set('custom_button_img_url', $form_state['values']['custom_button_img_url']);
+   }else{
+     $form_state['values']['custom_button_img_url'] = '';
+     variable_set('custom_button_img_url', '');
+   }
+   
 }
 
 
