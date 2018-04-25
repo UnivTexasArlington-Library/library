@@ -8,7 +8,7 @@
 /**
  * The current system version.
  */
-define('VERSION', '7.58');
+define('VERSION', '7.59');
 
 /**
  * Core API compatibility.
@@ -2426,7 +2426,6 @@ function drupal_array_merge_deep_array($arrays) {
  *
  * @return Object - the user object.
  */
-
 function drupal_anonymous_user() {
   $user = variable_get('drupal_anonymous_user_object', new stdClass);
   $user->uid = 0;
@@ -2778,6 +2777,11 @@ function _drupal_bootstrap_variables() {
     if (isset($_GET['destination']) && url_is_external($_GET['destination'])) {
       unset($_GET['destination']);
       unset($_REQUEST['destination']);
+    }
+    // Use the DrupalRequestSanitizer to ensure that the destination's query
+    // parameters are not dangerous.
+    if (isset($_GET['destination'])) {
+      DrupalRequestSanitizer::cleanDestination();
     }
     // If there's still something in $_REQUEST['destination'] that didn't come
     // from $_GET, check it too.
