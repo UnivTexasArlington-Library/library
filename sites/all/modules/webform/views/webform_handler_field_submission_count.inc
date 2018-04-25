@@ -1,8 +1,11 @@
 <?php
 
 /**
+ * @file
  * Views handler to display the number of submissions in a webform.
- *
+ */
+
+/**
  * Field handler to present the submission count of a node to the user.
  */
 class webform_handler_field_submission_count extends views_handler_field {

@@ -7,6 +7,12 @@
 
 /**
  * Implements hook_webform_exporters().
+ *
+ * Defines the exporters this module implements.
+ *
+ * @return array
+ *   An "array of arrays", keyed by content-types. The 'handler' slot
+ *   should point to the PHP class implementing this flag.
  */
 function webform_webform_exporters() {
   $exporters = array(
@@ -102,7 +108,7 @@ function webform_export_create_handler($format, $options) {
     $handler = new $definition['handler']($options);
   }
   else {
-    // @todo: Create a default broken exporter.
+    // TODO: Create a default broken exporter.
     $handler = new webform_exporter_broken($options);
   }
 

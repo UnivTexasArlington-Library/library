@@ -58,7 +58,8 @@ function _webform_theme_number() {
 }
 
 /**
- * Fix the view field(s) that are automatically generated for number components.
+ * Adjusts the view field(s) that are automatically generated for number
+ * components.
  */
 function _webform_view_field_number($component, $fields) {
   foreach ($fields as &$field) {
@@ -609,13 +610,12 @@ function _webform_csv_data_number($component, $export_options, $value) {
 }
 
 /**
- * A Drupal Form API Validation function.
+ * A Drupal Form API Validation function. Validates the entered values from
+ * number components on the client-side form.
  *
- * Validates the entered values from number components on the client-side form.
- *
- * @param array $element
+ * @param $element
  *   The form element. May either be a select or a webform_number element.
- * @param array $form_state
+ * @param $form_state
  *   The full form state for the webform.
  */
 function _webform_validate_number($element, &$form_state) {
@@ -882,11 +882,10 @@ function webform_number_format($value, $decimals = NULL, $point = '.', $separato
  *
  * @param string $value
  *   The string value to be standardized into a numeric string.
- * @param string $point
+ * @param $point
  *   The point separator between the whole number and the decimals.
  *
- * @return string
- *   The converted number.
+ * @return mixed|string
  */
 function webform_number_standardize($value, $point) {
   // For simplicity, strip everything that's not the decimal point.

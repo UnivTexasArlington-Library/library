@@ -208,7 +208,7 @@ class WebformConditionals {
           $nodes[$id]['out'] = array();
         }
 
-        // Check for a cyclic graph (circular dependency).
+        // Check for a cyclic graph (circular dependency)
         foreach ($nodes as $id => $n) {
           if ($n['in'] || $n['out']) {
             $errors[$page_num][] = t('A circular reference involving %name was found.',
@@ -216,9 +216,9 @@ class WebformConditionals {
           }
         }
 
-      } // End finishing previous page.
+      } // End finishing previous page
 
-    } // End component loop.
+    } // End component loop
 
     // Create an empty page map for the preview page.
     $page_map[$page_num + 1] = array();
@@ -313,9 +313,8 @@ class WebformConditionals {
   protected $resultStack;
 
   /**
-   * Initializes an execution stack for a conditional group's rules.
-   *
-   * Also initializes sub-conditional rules.
+   * Initializes an execution stack for a conditional group's rules and
+   * sub-conditional rules.
    */
   public function executionStackInitialize($andor) {
     $this->stackPointer = -1;
@@ -356,9 +355,8 @@ class WebformConditionals {
   }
 
   /**
-   * Executes the conditionals on a submission.
-   *
-   * This removes any data which should be hidden.
+   * Executes the conditionals on a submission, removing any data which should
+   * be hidden.
    */
   public function executeConditionals($input_values, $page_num = 0) {
     $this->getOrder();
@@ -512,8 +510,6 @@ class WebformConditionals {
   }
 
   /**
-   * Returns the required status for a component.
-   *
    * Returns whether a given component is always hidden, always shown, or might
    * be shown depending upon other sources on the same page.
    *
@@ -537,11 +533,10 @@ class WebformConditionals {
   }
 
   /**
-   * Returns whether a given page should be displayed.
-   *
-   * This requires any conditional for the page itself to be shown, plus at
-   * least one component within the page must be shown too. The first and
-   * preview pages are always shown, however.
+   * Returns whether a given page should be displayed. This requires any
+   * conditional for the page itself to be shown, plus at least one component
+   * within the page must be shown too. The first and preview pages are always
+   * shown, however.
    *
    * @param int $page_num
    *   The page number that the component is on.
@@ -566,8 +561,6 @@ class WebformConditionals {
   }
 
   /**
-   * Returns the required status for a component.
-   *
    * Returns whether a given component is always required, always optional, or
    * unchanged by conditional logic.
    *

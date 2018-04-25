@@ -304,7 +304,7 @@ function theme_webform_time($variables) {
 }
 
 /**
- * Validate that the time data is valid, calling form_error() if not.
+ *
  */
 function webform_validate_time($element, $form_state) {
   // Check if the user filled the required fields.
@@ -495,12 +495,12 @@ function _webform_csv_data_time($component, $export_options, $value) {
 /**
  * Convert a time between a 24-hour and a 12-hour value.
  *
- * @param array $array
+ * @param $array
  *   An array of hour, minute, second, and optionally ampm.
- * @param string $format
+ * @param $format
  *   Either 12-hour or 24-hour.
  *
- * @return array
+ * @return
  *   An array with hour, minute, second, and ampm (if using "12-hour").
  */
 function webform_time_convert($array, $format) {

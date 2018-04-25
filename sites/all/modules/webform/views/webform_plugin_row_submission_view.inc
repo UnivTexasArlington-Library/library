@@ -1,8 +1,11 @@
 <?php
 
 /**
+ * @file
  * Contains the submission view row style plugin.
- *
+ */
+
+/**
  * Plugin which performs a webform_submission_render on the resulting object.
  *
  * Most of the code on this object is in the theme function.
@@ -10,19 +13,14 @@
  * @ingroup views_row_plugins
  */
 class webform_views_plugin_row_submission_view extends views_plugin_row {
-
   /**
    * Basic properties that let the row style follow relationships.
-   *
-   * @var string
    */
   public $base_table = 'webform_submissions';
   public $base_field = 'sid';
 
   /**
    * Stores the nodes loaded with pre_render.
-   *
-   * @var array
    */
   private $submissions = array();
   private $nodes = array();

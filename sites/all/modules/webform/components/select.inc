@@ -996,7 +996,8 @@ function _webform_select_options_callback($name, $component, $flat = FALSE) {
 }
 
 /**
- * Splits user values from new-line separated text into an array of options.
+ * Utility function to split user-entered values from new-line separated
+ * text into an array of options.
  *
  * @param string $text
  *   Text to be converted into a select option array.
