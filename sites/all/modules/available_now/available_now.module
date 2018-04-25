@@ -18,7 +18,7 @@ function available_now_block_view($delta='') {
     case 'available-now': 
 	   $errorMessage = 'Information not available';
     /*START LABSTATS FOR COMPUTER AVAILABILITY*/
-      /*try {
+      try {
       $ini = ini_set("soap.wsdl_cache_enabled","0");
       $client = new SoapClient("https://libcas.uta.edu/LabStats/WebServices/Statistics.asmx?WSDL");
       $results = $client->GetGroupedCurrentStats()->GetGroupedCurrentStatsResult->GroupStat;
@@ -39,7 +39,7 @@ function available_now_block_view($delta='') {
         $centralCompAvail = $errorMessage;
         $afaCompAvail = $errorMessage;
         echo 'AvailableNow Computer Available Error';
-      }*/
+      }
 
 
       
@@ -166,7 +166,7 @@ $block_content = '<div id="available-now">
                     $block_content .= $selRoomAvail;
                     $block_content .= '</td>
                 </tr>
-                 <!--<tr>
+                 <tr>
                   <td><a href="//cas.uta.edu/CAS/">Computers</a></td>
                   <td>';
                     $block_content .= $centralCompAvail;
@@ -177,7 +177,7 @@ $block_content = '<div id="available-now">
                   <td>';
                     $block_content .= $selCompAvail; 
                     $block_content .= '</td>
-                </tr> -->
+                </tr>
                 <tr>
                   <td><a href="//library.uta.edu/technology/dell-laptop">Laptops</a></td>
                   <td>';
