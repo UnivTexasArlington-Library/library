@@ -8689,6 +8689,7 @@ input.summon-search-submit.button-website:focus {
 }
 #frontpage #heroimage {
   margin-bottom: 50px;
+  background-color: #333333;
 }
 @media (max-width: 1199px) {
   #frontpage #heroimage {
