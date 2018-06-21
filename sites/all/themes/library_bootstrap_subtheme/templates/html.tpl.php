@@ -60,6 +60,18 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <?php print $scripts; ?>
+  <script>
+(function ($) {
+    //this adds the open and keep-open classes to the dropdown menu so that the active one stays open
+    $(document).ready(function() {
+        $('a[href="' + this.location.pathname + '"]').parent().parent().parent().addClass('open keep-open');
+    });
+//this prevents a click on the open menu from closing the menu
+$(document).on('click', '.menu .dropdown-menu', function (e) {
+  e.stopPropagation();
+});
+}(jQuery));
+</script>
   <script type="text/javascript">
 setTimeout(function(){var a=document.createElement("script");
 var b=document.getElementsByTagName("script")[0];
