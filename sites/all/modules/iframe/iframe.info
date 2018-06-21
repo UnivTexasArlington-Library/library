@@ -11,8 +11,8 @@ files[] = iframe.content_migrate.iframe.inc
 required = FALSE
 
 
-; Information added by Drupal.org packaging script on 2018-04-16
-version = "7.x-1.9"
+; Information added by Drupal.org packaging script on 2018-06-17
+version = "7.x-1.10"
 core = "7.x"
 project = "iframe"
-datestamp = "1523920084"
+datestamp = "1529278724"

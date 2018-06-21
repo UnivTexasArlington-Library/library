@@ -141,7 +141,7 @@ function iframe_update_7100() {
 
 /**
  * Update 7101 : adjust or synchronize length of "url" field for all users
- 1*/
+ */
 function iframe_update_7101() {
   $spec = array(
     'type' => 'varchar',

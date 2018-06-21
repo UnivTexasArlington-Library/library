@@ -509,6 +509,7 @@ function iframe_iframe($text, $path, $options = FALSE) {
       $iframearguments[$argkey] = $options[$argkey];
     }
   }
+  $options['external'] = TRUE;
   return 
     '<div class="' . (isset($options['class'])? check_plain($options['class']) : '') . '">'
       . (empty($text)? '' : '<h3 class="iframe_title">' . ($options['html'] ? $text : check_plain($text)) . '</h3>')
@@ -609,7 +610,7 @@ function iframe_field_widget_form(&$form, &$form_state, $field, $instance, $lang
 
   switch ($instance['widget']['type']) {
     case 'iframe_widget_urlwidthheight':
-      $fwidth = (isset($items['delta']) && isset($items[$delta]['width']))
+      $fwidth = (isset($items[$delta]) && isset($items[$delta]['width']))
         ? $items[$delta]['width']
         : (!empty($settings['width'])
           ? $settings['width']
@@ -709,7 +710,7 @@ function iframe_field_widget_form(&$form, &$form_state, $field, $instance, $lang
       );
       $element['url']['#description'] = (!empty($element['url']['#description'])? $element['url']['#description']." " : "")
           . t('Field does support tokens.');
-      $element['title']['#description'] .= (!empty($element['title']['#description'])? $element['title']['#description']." " : "")
+      $element['title']['#description'] = (!empty($element['title']['#description'])? $element['title']['#description']." " : "")
           . t('Field does support tokens.');
     }
     else {
