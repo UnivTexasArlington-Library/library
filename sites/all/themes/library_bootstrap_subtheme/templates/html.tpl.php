@@ -67,7 +67,7 @@
         $('a[href="' + this.location.pathname + '"]').parent().parent().parent().addClass('open keep-open');
     });
 //this prevents a click on the open menu from closing the menu
-$(document).on('click', '.pane-menu-menu-scholcomm .dropdown-menu', function (e) {
+$(document).on('click', '.pane-menu-menu-scholcomm', function (e) {
   e.stopPropagation();
 });
 }(jQuery));
