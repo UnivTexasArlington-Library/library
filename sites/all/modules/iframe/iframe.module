@@ -75,6 +75,7 @@ function iframe_field_info() {
         'scrolling' => 'auto',
         'transparency' => 0,
         'tokensupport' => 0,
+        #'expose_class' => 1,
       ),
       'instance_settings' => array(
         #'title' => '',
@@ -86,6 +87,7 @@ function iframe_field_info() {
         #'scrolling' => 'auto',
         #'transparency' => 0,
         #'tokensupport' => 0,
+        'expose_class' => 1,
       ),
       'default_widget' => 'iframe_widget_url',
       'default_formatter' => 'iframe_formatter_default',
@@ -326,15 +328,25 @@ function iframe_field_formatter_info() {
 
 /**
  * Implements hook_field_formatter_view().
+ *
+ * field settings = settings from "Feldtyp = field type" for the given generic field in the content-type
+ * instance settings = generic settings from iframe-field (specific only in this content-type)
+ * ==> take (1) field-settings => overwrite (if set) with (2) instance-settings => overwrite with (3) item-settings
  */
 function iframe_field_formatter_view($object_type, $object, $field, $instance, $langcode, $items, $display) {
   // object_type = node, object = Article-node-object
   iframe_debug(2, 'iframe_field_formatter_view', array('field' => $field, 'instance' => $instance, 'langcode' => $langcode, 'items' => '...', 'display' => $display));
   $element = array();
-  $settings = $instance['settings'];
 
-  $class = !empty($settings['class'])? $settings['class'] : '';
+  $settings = $instance['settings'] + $field['settings']; // f-s rules i-s
+  if (isset($settings['user_register_form'])) unset($settings['user_register_form']);
+  # merge for sub-fields: "class"
+  $settings['class'] = @trim($field['settings']['class'] . " " . $instance['settings']['class']);
+
+  $class = $settings['class'];
   foreach ($items as $delta => $item) {
+    $items[$delta]['delta'] = $delta;
+    $items[$delta]['id'] = drupal_html_id($field['type'] . '-' . $field['field_name'] . '-' . $delta);
     $iclass = isset($item['class'])? $item['class'] : '';
     if (isset($settings['expose_class']) && $settings['expose_class']>0) {
         $items[$delta]['class'] = trim($class . " " . $iclass);
@@ -375,7 +387,7 @@ function iframe_field_formatter_view($object_type, $object, $field, $instance, $
 /**
  * Formatter function for 'default' text field formatter.
  */
-function iframe_formatter_default_helper($item) {
+function iframe_formatter_default_helper($item, $delta) {
   // If no url given display nothing.
   if (empty($item['url'])) {
     return '';
@@ -390,7 +402,7 @@ function iframe_formatter_default_helper($item) {
 /**
  * Formatter function for 'iframeonly' text field formatter.
  */
-function iframe_formatter_only_helper($item) {
+function iframe_formatter_only_helper($item, $delta) {
   // If no url given display nothing.
   if (empty($item['url'])) {
     return '';
@@ -402,7 +414,7 @@ function iframe_formatter_only_helper($item) {
 /**
  * Formatter function for 'asurl' text field formatter.
  */
-function iframe_formatter_asurl_helper($item) {
+function iframe_formatter_asurl_helper($item, $delta) {
   // If no url given display nothing.
   if (empty($item['url'])) {
     return '';
@@ -415,7 +427,7 @@ function iframe_formatter_asurl_helper($item) {
 /**
  * Formatter function for 'asurlwithuri' text field formatter.
  */
-function iframe_formatter_asurlwithuri_helper($item) {
+function iframe_formatter_asurlwithuri_helper($item, $delta) {
   // If no url given display nothing.
   if (empty($item['url'])) {
     return '';
@@ -428,7 +440,7 @@ function iframe_formatter_asurlwithuri_helper($item) {
 /**
  * Formatter function for 'hidden' text field formatter.
  */
-function iframe_formatter_hidden_helper($item) {
+function iframe_formatter_hidden_helper($item, $delta) {
   return '';
 }
 
@@ -465,11 +477,6 @@ function iframe_iframe($text, $path, $options = FALSE) {
     $options['tokensupport'] = 0;
   }
 
-  $htmlid = '';
-  if (isset($options['html-id']) && !empty($options['html-id'])) {
-    $htmlid = ' id="' . $options['html-id'] . '" name="' . $options['html-id'] . '"';
-  }
-
   // Append active class.
   if ($path == $_GET['q'] || ($path == '<front>' && drupal_is_front_page())) {
     if (isset($options['class'])) {
@@ -502,7 +509,7 @@ function iframe_iframe($text, $path, $options = FALSE) {
     }
   }
 
-  $iframearguments_allowed = array('title', 'width', 'height', 'class', 'frameborder', 'scrolling', 'transparency');
+  $iframearguments_allowed = array('title', 'width', 'height', 'class', 'frameborder', 'scrolling', 'transparency', 'id');
   $iframearguments = array();
   foreach($iframearguments_allowed as $argkey) {
     if (isset($options[$argkey])) {
