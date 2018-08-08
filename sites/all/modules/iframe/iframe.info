@@ -7,12 +7,13 @@ dependencies[] = field
 files[] = iframe.module
 files[] = iframe.install
 files[] = iframe.content_migrate.iframe.inc
+files[] = mappers/iframe.inc
 ;files[] = iframe.test
 required = FALSE
 
 
-; Information added by Drupal.org packaging script on 2018-07-22
-version = "7.x-1.11"
+; Information added by Drupal.org packaging script on 2018-07-27
+version = "7.x-1.12"
 core = "7.x"
 project = "iframe"
-datestamp = "1532259062"
+datestamp = "1532690285"

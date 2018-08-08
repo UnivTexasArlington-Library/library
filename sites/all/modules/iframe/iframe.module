@@ -509,7 +509,11 @@ function iframe_iframe($text, $path, $options = FALSE) {
     }
   }
 
-  $iframearguments_allowed = array('title', 'width', 'height', 'class', 'frameborder', 'scrolling', 'transparency', 'id');
+  if (!isset($options['name']) && !empty($options['id'])) {
+    $options['name'] = $options['id'];
+  }
+
+  $iframearguments_allowed = array('title', 'width', 'height', 'class', 'frameborder', 'scrolling', 'transparency', 'id', 'name');
   $iframearguments = array();
   foreach($iframearguments_allowed as $argkey) {
     if (isset($options[$argkey])) {
@@ -522,7 +526,6 @@ function iframe_iframe($text, $path, $options = FALSE) {
       . (empty($text)? '' : '<h3 class="iframe_title">' . ($options['html'] ? $text : check_plain($text)) . '</h3>')
       . '<iframe src="' . check_url(url($path, $options)) . '"'
         . drupal_attributes($iframearguments)
-        . $htmlid
       . '>'
       . t('Your browser does not support iframes, but you can use the following link.') . ' ' . l('Link', url($path, $options), $options_link)
       . '</iframe>'
@@ -773,11 +776,16 @@ function iframe_validate_url($element, &$form_state) {
  */
 function iframe_init() {
   drupal_add_js(drupal_get_path('module', 'iframe') .'/iframe.js');
-}
 
-if (!function_exists('iframe_content_migrate_field_alter')) {
+  if (!function_exists('iframe_content_migrate_field_alter')) {
     if (function_exists('module_load_include')) {
-        module_load_include('inc', 'iframe', 'iframe.content_migrate.iframe');
+      module_load_include('inc', 'iframe', 'iframe.content_migrate.iframe');
     }
+  }
+  if (!function_exists('iframe_feeds_set_target')) {
+    if (function_exists('module_load_include')) {
+      module_load_include('inc', 'iframe', 'mappers/iframe');
+    }
+  }
 }
 
