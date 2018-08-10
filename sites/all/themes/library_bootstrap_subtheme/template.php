@@ -115,6 +115,10 @@ function bootstrap_menu_tree__menu_resource_delivery_services(&$variables) {
 function bootstrap_menu_tree__menu_admin_dept_menu(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
+//adding class to Virginia Garrett Lectures menu
+function bootstrap_menu_tree__menu-virgina-garrett-lectures(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
 
 //adds homepage javascript file for summon search boxes
 function library_bootstrap_subtheme_preprocess_node(&$vars, $hook) {
