@@ -116,7 +116,7 @@ function bootstrap_menu_tree__menu_admin_dept_menu(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
 //adding class to Virginia Garrett Lectures menu
-function bootstrap_menu_tree__menu-virgina-garrett-lectures(&$variables) {
+function bootstrap_menu_tree__menu_virgina_garrett_lectures(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
 
