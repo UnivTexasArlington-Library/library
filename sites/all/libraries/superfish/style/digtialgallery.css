@@ -32,8 +32,8 @@
 .sf-menu.sf-style-digtialgallery span.nolink {
   /*border: 1px solid #000;*/
   color: #23d1dd;
-  padding: 0.75em 1em;
-  text-align: center; 
+  padding: 0.75em 0.875em;
+  text-align: center;
 }
 .sf-menu.sf-style-digtialgallery a.sf-with-ul,
 .sf-menu.sf-style-digtialgallery span.nolink.sf-with-ul {
