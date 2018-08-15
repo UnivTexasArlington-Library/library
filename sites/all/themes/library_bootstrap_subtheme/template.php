@@ -119,7 +119,10 @@ function bootstrap_menu_tree__menu_admin_dept_menu(&$variables) {
 function bootstrap_menu_tree__menu_virgina_garrett_lectures(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
-
+//adding class to Strategic Plan menu
+function bootstrap_menu_tree__menu_strategic_plan(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
 //adds homepage javascript file for summon search boxes
 function library_bootstrap_subtheme_preprocess_node(&$vars, $hook) {
 	 if ($vars['node']->nid == 476) {
