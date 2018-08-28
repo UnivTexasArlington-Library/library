@@ -73,10 +73,12 @@ function available_now_block_view($delta='') {
     /*END NEW OPEN ROOM*/
   	
     /*GET JSON DATA FOR DEVICES*/
+	/*
 	$json = file_get_contents("https://pulse.uta.edu/vwebv/devices.cgi");
 	$data =  json_decode($json, true);
 	
 	/*START LAPTOPS*/
+	/*
 	if (isset($data)) {
 	$centrallaptops = $data['laptops']['cen'];
 	$afalaptops = $data['laptops']['afa'];
@@ -90,6 +92,7 @@ function available_now_block_view($delta='') {
 	/*END LAPTOPS*/
 	
 		/*START IPADS*/
+	/*
 	if (isset($data)) {
 	$centralipads = $data['ipads']['cen'];
 	$afaipads = $data['ipads']['afa'];
@@ -103,6 +106,7 @@ function available_now_block_view($delta='') {
 	/*END IPADS*/
 
 		/*START MACBOOKS*/
+	/*
 	if (isset($data)) {
 	$centralmacbooks = $data['macbooks']['cen'];
 	$afamacbooks = $data['macbooks']['afa'];
@@ -116,6 +120,7 @@ function available_now_block_view($delta='') {
 	/*END MACBOOKS*/
 	
 		/*START CHROMEBOOKS*/
+	/*
 	if (isset($data)) {
 	$centralchromebooks = $data['chromebooks']['cen'];
 	$afachromebooks = $data['chromebooks']['afa'];
@@ -129,6 +134,7 @@ function available_now_block_view($delta='') {
 	/*END CHROMEBOOKS*/
 	
 		/*START SURFACE TABLETS*/
+	/*
 	if (isset($data)) {
 	$centralsurfaces = $data['surfaces']['cen'];
 	$afasurfaces = $data['surfaces']['afa'];
@@ -178,69 +184,7 @@ $block_content = '<div id="available-now">
                     $block_content .= $selCompAvail; 
                     $block_content .= '</td>
                 </tr>
-                <tr>
-                  <td><a href="//library.uta.edu/technology/dell-laptop">Laptops</a></td>
-                  <td>';
-                    $block_content .= $centrallaptops;
-                    $block_content .= '</td>
-                  <td>';
-                      $block_content .= $afalaptops;
-                      $block_content .= '</td>
-                  <td>';
-                    $block_content .= $sellaptops;
-                    $block_content .= '</td>
-                </tr>
-
-               <tr>
-                  <td><a href="//library.uta.edu/technology/ipad-air-2">iPads</a></td>
-                  <td>';
-                      $block_content .= $centralipads;
-                      $block_content .= '</td>
-                  <td>';
-                    $block_content .= $afaipads;
-                    $block_content .= '</td>
-                  <td>';
-                    $block_content .= $selipads;
-                    $block_content .= '</td>
-                </tr>
-
-                <tr>
-                  <td><a href="//library.uta.edu/technology/macbook">MacBooks</a></td>
-                  <td>';
-                      $block_content .= $centralmacbooks;
-                      $block_content .= '</td>
-                  <td>';
-                    $block_content .= $afamacbooks;
-                    $block_content .= '</td>
-                  <td>';
-                    $block_content .= $selmacbooks;
-                    $block_content .= '</td>
-                </tr>
-
-                <tr>
-                  <td><a href="//library.uta.edu/technology/acer-chromebook">Chromebooks</a></td>
-                  <td>';
-                      $block_content .= $centralchromebooks;
-                      $block_content .= '</td>
-                  <td>';
-                    $block_content .= $afachromebooks;
-                    $block_content .= '</td>
-                  <td>';
-                    $block_content .= $selchromebooks;
-                    $block_content .= '</td>
-                </tr>
-                <tr>
-                  <td><a href="//library.uta.edu/technology/surface-tablet">Surface Tablets</a></td>
-                  <td>';
-                      $block_content .= $centralsurfaces;
-                      $block_content .= '</td>
-                  <td>';
-                    $block_content .= $afasurfaces;
-                    $block_content .= '</td>
-                  <td>';
-                    $block_content .= $selsurfaces;
-                    $block_content .= '</td>
-                </tr>
+                
               </table>
               </div>     </div>
          </div>';
