@@ -10086,3 +10086,13 @@ width:100%;
     width: 2em;
   }
 }
+@media (max-width: 767px) {
+  body {
+    background-color: #fff;
+  }
+  .center-container {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+  }
+}
