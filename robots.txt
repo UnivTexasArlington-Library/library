@@ -74,8 +74,10 @@ Disallow: /comment/reply/
 Disallow: /filter/tips/
 Disallow: /node/add/
 Disallow: /search/
+Disallow: /user
 Disallow: /user/register/
 Disallow: /user/password/
+Disallow: /user/login
 Disallow: /user/login/
 Disallow: /user/logout/
 # Paths (no clean URLs)
