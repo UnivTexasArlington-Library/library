@@ -80,6 +80,8 @@ Disallow: /user/password/
 Disallow: /user/login
 Disallow: /user/login/
 Disallow: /user/logout/
+Noindex: /user
+Noindex: /user/login
 # Paths (no clean URLs)
 Disallow: /?q=admin/
 Disallow: /?q=comment/reply/
