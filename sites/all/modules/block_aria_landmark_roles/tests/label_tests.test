@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Tests for adding ARIA labels to blocks.
+ */
+
+/**
+ * Test adding ARIA labels to blocks.
+ */
+class BlockAriaLandmarkRolesLabelTest extends DrupalWebTestCase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'Label tests',
+      'description' => 'Test adding ARIA labels to blocks.',
+      'group' => 'Block ARIA Landmark Roles',
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function setUp() {
+    parent::setUp(array('block_aria_landmark_roles'));
+  }
+
+  /**
+   * Test adding a role to a block.
+   */
+  public function testAddingALabel() {
+    $expected = 'id="block-system-main" class="block block-system" aria-label="foo"';
+
+    $this->assertNoRaw($expected);
+
+    $this->drupalLogin($this->drupalCreateUser(array('administer blocks')));
+
+    $this->drupalPost(
+      'admin/structure/block/manage/system/main/configure',
+      array('aria_label' => 'foo'),
+      t('Save block')
+    );
+
+    $this->assertRaw($expected);
+  }
+
+  /**
+   * Ensure the ARIA label input field exists.
+   */
+  public function testAdminFormSetting() {
+    $this->drupalLogin($this->drupalCreateUser(array('administer blocks')));
+
+    $this->drupalGet('admin/structure/block/manage/system/main/configure');
+
+    $this->assertFieldByName('aria_label');
+  }
+
+}

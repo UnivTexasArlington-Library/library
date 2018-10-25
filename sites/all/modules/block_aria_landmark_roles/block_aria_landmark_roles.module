@@ -1,0 +1,173 @@
+<?php
+
+/**
+ * @file
+ * Adds additional elements on block administration forms to add ARIA landmark roles.
+ */
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Adds additional elements to the 'add block' and 'configure block' forms.
+ */
+function block_aria_landmark_roles_form_alter(&$form, &$form_state, $form_id) {  
+  if ($form_id == 'block_add_block_form' || $form_id == 'block_admin_configure') {  
+    // Build the block object.
+    $block = new stdClass;
+    $block->module = $form['module']['#value'];
+    $block->delta = $form['delta']['#value'];
+
+    $options[] = t('- None -');
+    $options += drupal_map_assoc(array(
+      'application',
+      'banner',
+      'complementary',
+      'contentinfo',
+      'form',
+      'main',
+      'navigation',
+      'search',
+    ));
+
+    // Create the additional form elements.
+    $form['block_aria_role'] = array(
+      '#title' => t('Block ARIA Landmark Roles settings'),
+      '#type' => 'fieldset',
+      '#collapsible' => TRUE,
+    );
+    $form['block_aria_role']['role'] = array(
+      '#title' => t('Landmark Role'),
+      '#description' => t('Add an ARIA landmark role to this block.'),
+      '#type' => 'select',
+      '#options' => $options,
+      '#default_value' => _block_aria_landmark_roles_get_role($block),
+    );
+    $form['block_aria_role']['aria_label'] = array(
+      '#title' => t('Label'),
+      '#description' => t('Add an ARIA label to this block.'),
+      '#type' => 'textfield',
+      '#default_value' => _block_aria_landmark_roles_get_label($block),
+    );
+
+    $form['#submit'][] = 'block_aria_landmark_roles_form_submit';
+  }
+}
+
+/**
+ * Form submission handler for the ARIA landmark role.
+ *
+ * Saves the data to the block_aria_landmark_roles table.
+ */
+function block_aria_landmark_roles_form_submit($form, &$form_state) {
+  if (user_access('administer blocks')) {
+
+    $module = $form_state['values']['module'];
+    $delta = $form_state['values']['delta'];
+
+    // ARIA Labels.
+    if (isset($form_state['values']['aria_label'])) {
+      $label = $form_state['values']['aria_label'];
+
+      // Delete any existing label.
+      db_delete('block_aria_landmark_roles_label')
+        ->condition('module', $module)
+        ->condition('delta', $delta)
+        ->execute();
+
+      // Save the new label.
+      if (!empty($form_state['values']['aria_label'])) {
+        db_insert('block_aria_landmark_roles_label')
+          ->fields(
+            array(
+              'module' => $module,
+              'delta' => $delta,
+              'label' => $label,
+            )
+          )
+          ->execute();
+      }
+    }
+
+    // ARIA Landmark roles.
+    if (isset($form_state['values']['role'])) {
+      $role = $form_state['values']['role'];
+
+      // Delete any existing role.
+      db_delete('block_aria_landmark_roles')
+        ->condition('module', $module)
+        ->condition('delta', $delta)
+        ->execute();
+
+      // Save the new role.
+      if (!empty($form_state['values']['role'])) {
+        db_insert('block_aria_landmark_roles')
+          ->fields(
+            array(
+              'module' => $module,
+              'delta' => $delta,
+              'role' => $role,
+            )
+          )
+          ->execute();
+      }
+    }
+  }
+}
+
+/**
+ * Find an ARIA landmark role for a certain block.
+ *
+ * @param obj $block
+ *  An object containing the name of the module and the delta of the block.
+ *
+ * @return string|bool
+ *  Returns the role if one was found. If not, returns nothing.
+ */
+function _block_aria_landmark_roles_get_role($block) {
+  $role = db_query('SELECT role FROM {block_aria_landmark_roles} WHERE module = :module AND delta = :delta', array(
+    ':module' => $block->module,
+    ':delta' => $block->delta,
+  ))->fetchField();
+
+  return $role ? $role : '';
+}
+
+/**
+ * Find an ARIA landmark label for a certain block.
+ *
+ * @param obj $block
+ *   An object containing the name of the module and the delta of the block.
+ *
+ * @return string|bool
+ *   Returns the label if one was found. If not, returns nothing.
+ */
+function _block_aria_landmark_roles_get_label($block) {
+  $label = db_query('SELECT label FROM {block_aria_landmark_roles_label} WHERE module = :module AND delta = :delta', array(
+    ':module' => $block->module,
+    ':delta' => $block->delta,
+  ))->fetchField();
+
+  return $label ? $label : '';
+}
+
+
+/**
+ * Implements hook_preprocess_block().
+ *
+ * Adds additional variables for ARIA landmark roles.
+ */
+function block_aria_landmark_roles_preprocess_block(&$variables) {
+  $block = $variables['block'];
+  $role = _block_aria_landmark_roles_get_role($block);
+  $label = _block_aria_landmark_roles_get_label($block);
+
+  if (!empty($role)) {
+    // Add the role into the attributes array.
+    $variables['attributes_array']['role'] = $role;
+  }
+
+  if (!empty($label)) {
+    // Add the label into the attributes array.
+    $variables['attributes_array']['aria-label'] = $label;
+  }
+}

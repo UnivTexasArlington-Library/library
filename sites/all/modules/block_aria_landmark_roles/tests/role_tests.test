@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * Tests for adding ARIA roles to blocks.
+ */
+
+/**
+ * Test adding ARIA roles to blocks.
+ */
+class BlockAriaLandmarkRolesRoleTest extends DrupalWebTestCase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'Role tests',
+      'description' => 'Test adding ARIA landmark roles to blocks.',
+      'group' => 'Block ARIA Landmark Roles',
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function setUp() {
+    parent::setUp(array('block_aria_landmark_roles'));
+  }
+
+  /**
+   * Test adding a role to a block.
+   */
+  public function testAddingARole() {
+    $output = 'id="block-system-main" class="block block-system" role="banner"';
+
+    $this->assertNoRaw($output);
+
+    $this->drupalLogin($this->drupalCreateUser(array('administer blocks')));
+
+    $this->drupalPost(
+      'admin/structure/block/manage/system/main/configure',
+      array('role' => 'banner'),
+      t('Save block')
+    );
+
+    $this->assertRaw($output);
+  }
+
+  /**
+   * Ensure the ARIA landmark role input field exists.
+   */
+  public function testAdminFormSetting() {
+    $this->drupalLogin($this->drupalCreateUser(array('administer blocks')));
+
+    $this->drupalGet('admin/structure/block/manage/system/main/configure');
+
+    $this->assertFieldByName('role');
+  }
+
+}
