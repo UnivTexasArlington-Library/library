@@ -127,6 +127,11 @@ function bootstrap_menu_tree__menu_strategic_plan(&$variables) {
 function bootstrap_menu_tree__menu_facilities(&$variables) {
   return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
 }
+//adding class to marketing dept menu
+function bootstrap_menu_tree__menu_marketing(&$variables) {
+  return '<ul class="menu nav nav-tabs">' . $variables['tree'] . '</ul>';
+}
+
 //adds homepage javascript file for summon search boxes
 function library_bootstrap_subtheme_preprocess_node(&$vars, $hook) {
 	 if ($vars['node']->nid == 476) {
