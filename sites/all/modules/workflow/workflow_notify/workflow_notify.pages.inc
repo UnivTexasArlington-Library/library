@@ -31,7 +31,7 @@ function workflow_notify_settings_form($form, &$form_state, Workflow $workflow) 
   $states = $workflow->getStates();
   $form['#states'] = $states;
   if (!$states) {
-    $form['#columns'] = [];
+    $form['#columns'] = array();
     $form['error'] = array(
       '#type' => 'markup',
       '#value' => t('There are no states defined for this workflow.'),
