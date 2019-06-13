@@ -67,7 +67,7 @@ function module_missing_message_fixer_drush_command() {
       'mmmff',
     ),
     'arguments' => array(
-      'name' => 'The name of the module to fix.',
+      'filename' => 'The filename of the module to fix.',
     ),
     'options' => array(
       'all' => dt('Fixes all module missing messages'),
@@ -89,41 +89,43 @@ function drush_module_missing_message_fixer_list() {
 /**
  * Drush command.
  *
- * @param string $name
- *        The name of the module to fix messages for.
+ * @param string $filename
+ *        The filename of the module to fix messages for.
  */
-function drush_module_missing_message_fixer_fix($name = NULL) {
+function drush_module_missing_message_fixer_fix($filename = NULL) {
   $modules = array();
+  $rows = module_missing_message_fixer_check_modules(TRUE);
   if (drush_get_option('all') !== NULL) {
-    $rows = module_missing_message_fixer_check_modules(TRUE);
     if (!empty($rows)) {
       foreach ($rows as $row) {
-        $modules[] = $row['name'];
+        $modules[] = $row['filename'];
       }
     }
   }
-  elseif ($name !== NULL) {
-    if (module_exists($name)) {
-      $modules[] = $name;
+  elseif ($filename !== NULL) {
+    foreach ($rows as $row) {
+      if ($row['filename'] == $filename) {
+        $modules[] = $row['filename'];
+      }
     }
-    else {
-      drush_log(dt('Module ' . $name . ' was not found.'), 'error');
+    if (empty($modules)) {
+      drush_log(dt('Module ' . $filename . ' was not found.'), 'error');
     }
   }
   else {
-    drush_log(dt('Missing input, provide module name or run with --all'), 'error');
+    drush_log(dt('Missing input, provide module filename or run with --all'), 'error');
   }
   // Delete if there is no modules.
   if (count($modules) > 0) {
     db_delete('system')
-      ->condition('name', $modules, 'IN')
+      ->condition('filename', $modules, 'IN')
       ->execute();
     if (drush_get_option('all') !== NULL) {
       drush_log(dt('All missing references have been removed.'), 'success');
     }
-    elseif ($name !== NULL) {
-      if (in_array($name, $modules, TRUE)) {
-        drush_log(dt('Reference to ' . $name . ' (if found) has been removed.'), 'success');
+    elseif ($filename !== NULL) {
+      if (in_array($filename, $modules, TRUE)) {
+        drush_log(dt('Reference to ' . $filename . ' (if found) has been removed.'), 'success');
       }
     }
   }

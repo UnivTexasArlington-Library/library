@@ -80,7 +80,7 @@ function _module_missing_message_fixer_get_table_rows() {
 
     // Add exception to this since content module seems to be ubercart sad only.
     if ($record->name === 'content' && !module_exists('ubercart')) {
-      $rows[$record->name] = array(
+      $rows[$record->filename] = array(
         'name' => $record->name,
         'type' => $record->type,
         'filename' => $record->filename,
@@ -109,7 +109,7 @@ function _module_missing_message_fixer_get_table_rows() {
 
     if ($filename === NULL) {
       // Report this module in the table.
-      $rows[$record->name] = array(
+      $rows[$record->filename] = array(
         'name' => $record->name,
         'type' => $record->type,
         'filename' => $record->filename,

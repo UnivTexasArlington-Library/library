@@ -52,13 +52,16 @@ function module_missing_message_fixer_form_submit(array $form, array &$form_stat
   $modules = array();
   // Go through each record and add it to the array to win.
   foreach ($form_state['values']['table'] as $module) {
-    $modules[] = $module;
+    // do not use '0' (not selected)
+    if ($module) {
+      $modules[] = $module;
+    }
   }
 
   // Delete if there is no modules.
   if (count($modules) > 0) {
     db_delete('system')
-      ->condition('name', $modules, 'IN')
+      ->condition('filename', $modules, 'IN')
       ->execute();
   }
 }
