@@ -173,7 +173,7 @@ $block_content = '<div id="available-now">
                     $block_content .= '</td>
                 </tr>
                  <tr>
-                  <td><a href="http://cas.uta.edu/CAS/">Computers</a></td>
+                  <td>Computers</td>
                   <td>';
                     $block_content .= $centralCompAvail;
                     $block_content .= '</td>
