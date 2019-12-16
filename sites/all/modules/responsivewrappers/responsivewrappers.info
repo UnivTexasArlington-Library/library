@@ -4,9 +4,8 @@ package = Input filters
 core = 7.x
 configure = admin/config/content/responsivewrappers
 
-; Information added by Drupal.org packaging script on 2017-09-19
-version = "7.x-1.6"
+; Information added by Drupal.org packaging script on 2019-11-22
+version = "7.x-1.7"
 core = "7.x"
 project = "responsivewrappers"
-datestamp = "1505807954"
-
+datestamp = "1574428086"

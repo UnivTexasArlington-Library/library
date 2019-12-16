@@ -45,7 +45,7 @@ function responsivewrappers_filter_info() {
     'settings callback' => '_responsivewrappers_filter_settings',
     'default settings' => array(
       'responsive_iframe' => 1,
-      'responsive_iframe_pattern' => '#<iframe.*src=".*(youtube.|vimeo.).*".*>.*</iframe>#ui',
+      'responsive_iframe_pattern' => '#<iframe.*src=".*(youtube.|vimeo.).*".*>.*</iframe>#Uui',
       'responsive_iframe_aspect_ratio' => 'embed-responsive-16by9',
       'responsive_table' => 1,
       'responsive_image' => 0,
@@ -64,12 +64,12 @@ function _responsivewrappers_filter_settings($form, &$form_state, $filter, $form
 
   $settings['responsive_iframe'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Add responsive wrapper for youtbe and vimeo videos.'),
+    '#title' => t('Add responsive wrapper in embed videos/objects.'),
     '#default_value' => $filter->settings['responsive_iframe'],
   );
   $settings['responsive_iframe_pattern'] = array(
     '#type' => 'textfield',
-    '#title' => t('Regular expresion for video detection.'),
+    '#title' => t('Regular expresion for video/embed detection.'),
     '#default_value' => $filter->settings['responsive_iframe_pattern'],
   );
   $settings['responsive_iframe_aspect_ratio'] = array(
