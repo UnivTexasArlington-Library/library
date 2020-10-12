@@ -27,7 +27,7 @@ function _scheduler_form_alter(&$form, $form_state) {
   // If this is a preview then get the values from the form, not the
   // database.
   if (isset($form_state['values']['op']) && $form_state['values']['op'] == t('Preview')) {
-    $defaults = new StdClass;
+    $defaults = new stdClass();
     $defaults->publish_on = $publishing_enabled ? $form_state['values']['publish_on'] : NULL;
     $defaults->unpublish_on = $unpublishing_enabled ? $form_state['values']['unpublish_on'] : NULL;
   }
@@ -40,7 +40,7 @@ function _scheduler_form_alter(&$form, $form_state) {
   }
   else {
     // Initialise standard values.
-    $defaults = new StdClass;
+    $defaults = new stdClass();
     // Respect presets added by functions like
     // scheduler_field_attach_prepare_translation_alter().
     $defaults->publish_on = isset($node->publish_on) ? $node->publish_on : NULL;
@@ -86,7 +86,7 @@ function _scheduler_form_alter(&$form, $form_state) {
   // Add Scheduler settings to Vertical Tabs group and attach the javascript.
   if ($use_vertical_tabs) {
     $form['scheduler_settings']['#group'] = 'additional_settings';
-    $form['scheduler_settings']['#attached']['js'][] = drupal_get_path('module', 'scheduler') . '/scheduler_vertical_tabs.js';
+    $form['scheduler_settings']['#attached']['js'][] = _scheduler_get_vertical_tabs_js();
   }
 
   $extra_info = variable_get('scheduler_extra_info', '');
@@ -178,12 +178,18 @@ function _scheduler_form_alter(&$form, $form_state) {
 /**
  * Callback function for the Scheduler date entry elements.
  */
-function scheduler_date_value_callback(&$element, $input = FALSE, &$form_state) {
+function scheduler_date_value_callback(&$element, $input, &$form_state) {
   // When processing a delete operation the user should not be forced to enter a
   // date. Hence set the scheduler date element's #required attribute to FALSE.
-  // Test the input operation against $form_state['values']['delete'] as this
-  // will match the value of the Delete button even if translated.
-  if (isset($form_state['input']['op']) && isset($form_state['values']['delete']) && $form_state['input']['op'] == $form_state['values']['delete']) {
+  // Test the 'triggering_element' value against $form_state['values']['delete']
+  // as this will match Delete button even if the text is translated.
+  // @see https://www.drupal.org/node/1614880
+  if (isset($form_state['triggering_element']['#value']) && isset($form_state['values']['delete']) && $form_state['triggering_element']['#value'] == $form_state['values']['delete']) {
+    // At some point between October 2013 and August 2017 this code became
+    // unnecessary. Nodes can now be deleted when 'required' is set and when no
+    // date is entered, even without setting #required to FALSE here. It may be
+    // due to a core change between 7.23 and 7.56? Leave this line as-is just
+    // for safety.
     $element['#required'] = FALSE;
   }
   // If using date popup then process the callback that would have been done had

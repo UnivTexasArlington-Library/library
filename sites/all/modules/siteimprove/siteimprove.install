@@ -14,7 +14,8 @@ function siteimprove_install() {
     variable_set('siteimprove_token', $token);
   }
   else {
-    drupal_set_message(t('There was an error requesting a new token. Please try again in a few minutes.'), 'error');
+    $t = get_t();
+    drupal_set_message($t('There was an error requesting a new token. Please try again in a few minutes.'), 'error');
   }
 }
 
@@ -23,4 +24,5 @@ function siteimprove_install() {
  */
 function siteimprove_uninstall() {
   variable_del('siteimprove_token');
+  variable_del('siteimprove_frontend_domain');
 }

@@ -42,14 +42,15 @@ function _scheduler_publish() {
   foreach ($nids as $nid) {
     $n = node_load($nid);
 
+    // Check that scheduled publishing is (still) enabled for this type.
+    if (!variable_get('scheduler_publish_enable_' . $n->type, 0)) {
+      continue;
+    }
+
     // Check that other modules allow the action on this node.
     if (!_scheduler_allow($n, $action)) {
       continue;
     }
-
-    // Invoke Scheduler API for modules to react before the node is published.
-    // @todo For D8 move the 'pre' call to here.
-    // See https://www.drupal.org/node/2311273
 
     // Update timestamps.
     $n->changed = $n->publish_on;
@@ -74,7 +75,8 @@ function _scheduler_publish() {
 
     // Invoke scheduler API to allow modules to alter the node before it is
     // saved.
-    // @todo For D8, remove this from here.
+    // For 8.x this 'pre' call is moved up to just before 'Update timestamps'.
+    // See https://www.drupal.org/node/2311273
     _scheduler_scheduler_api($n, 'pre_' . $action);
 
     // Use the actions system to publish the node.
@@ -131,6 +133,11 @@ function _scheduler_unpublish() {
   foreach ($nids as $nid) {
     $n = node_load($nid);
 
+    // Check that scheduled publishing is (still) enabled for this type.
+    if (!variable_get('scheduler_unpublish_enable_' . $n->type, 0)) {
+      continue;
+    }
+
     // Check that other modules allow the action on this node.
     if (!_scheduler_allow($n, $action)) {
       continue;
@@ -142,10 +149,6 @@ function _scheduler_unpublish() {
     if (!empty($n->publish_on) && $n->publish_on <= REQUEST_TIME) {
       continue;
     }
-
-    // Invoke scheduler API for modules to react before the node is unpublished.
-    // @todo For D8, move the 'pre' call to here.
-    // See https://www.drupal.org/node/2311273
 
     // Update timestamps.
     $old_change_date = $n->changed;
@@ -167,7 +170,8 @@ function _scheduler_unpublish() {
 
     // Invoke scheduler API to allow modules to alter the node before it is
     // saved.
-    // @todo For D8, remove this from here.
+    // For 8.x this 'pre' call is moved up to just before 'Update timestamps'.
+    // See https://www.drupal.org/node/2311273
     _scheduler_scheduler_api($n, 'pre_' . $action);
 
     // Use the actions system to unpublish the node.

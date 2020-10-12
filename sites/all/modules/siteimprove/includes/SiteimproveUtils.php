@@ -16,7 +16,7 @@ class SiteimproveUtils {
   /**
    * Return Siteimprove token.
    */
-  static public function requestToken() {
+  public static function requestToken() {
 
     // Request new token.
     $headers = array('Accept' => 'application/json');
@@ -44,7 +44,7 @@ class SiteimproveUtils {
    * @param bool $auto
    *   Automatic calling to the defined method.
    */
-  static public function includeJs($url, $type, $auto = TRUE) {
+  public static function includeJs($url, $type, $auto = TRUE) {
     // Add Siteimprove JS.
     drupal_add_js(self::JS_LIBRARY_URL, 'external');
     // Add url and token to the JS settings.
@@ -52,7 +52,7 @@ class SiteimproveUtils {
       'siteimprove' => array(
         $type => array(
           'auto' => $auto,
-          'url' => $url,
+          'url' => SiteimproveUtils::rewriteDomain($url),
         ),
         'token' => variable_get('siteimprove_token'),
       ),
@@ -64,7 +64,7 @@ class SiteimproveUtils {
   /**
    * Save URL in session.
    *
-   * @param object $object
+   * @param object $entity
    *   Node or taxonomy term entity object.
    * @param string $id
    *   Name of identifier field:
@@ -75,13 +75,46 @@ class SiteimproveUtils {
    *     - node/: Node path.
    *     - taxonomy/term/: Taxonomy term path.
    */
-  static public function setSessionUrl($object, $id, $path) {
+  public static function setSessionUrl($entity, $id, $path) {
     // Check if user has access.
     if (user_access(SITEIMPROVE_PERMISSION_USE)) {
       // Get friendly url of node and save in SESSION.
-      $url = url($path . $object->{$id}, array('absolute' => TRUE));
+      $url = url($path . $entity->{$id}, array('absolute' => TRUE));
+      $url = SiteimproveUtils::rewriteDomain($url);
       $_SESSION['siteimprove_url'][] = $url;
     }
+  }
+
+  /**
+   * Rewrite domain in a URL.
+   *
+   * @param string $url
+   *   The full URL to a page.
+   */
+  public static function rewriteDomain($url) {
+    $frontend_domain = variable_get('siteimprove_frontend_domain');
+    $rewritten_url = $url;
+
+    // Rewrite domain.
+    if (!empty($frontend_domain)) {
+      $url_parts = parse_url($url);
+
+      // Search string.
+      $search = $url_parts['scheme'] .'://' . $url_parts['host'];
+      $search = !empty($url_parts['port']) ? $search .':' . $url_parts['port'] : $search;
+
+      // Replace string.
+      $replace = $url_parts['scheme'] .'://' . $frontend_domain;
+
+      // URL with rewritten domain.
+      $rewritten_url = str_replace($search, $replace, $url);
+    }
+
+    // Let other modules alter the rewritten URL.
+    $original_url = $url;
+    drupal_alter('siteimprove_frontend_url', $rewritten_url, $original_url);
+
+    return $rewritten_url;
   }
 
 }
