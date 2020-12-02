@@ -1,10 +1,9 @@
-name = Menu
-description = Allows administrators to customize the site navigation menu.
-package = Core
+name = "User module flood control tests"
+description = "Support module for user flood control testing."
+package = Testing
 version = VERSION
 core = 7.x
-files[] = menu.test
-configure = admin/structure/menu
+hidden = TRUE
 
 ; Information added by Drupal.org packaging script on 2020-12-02
 version = "7.76"
