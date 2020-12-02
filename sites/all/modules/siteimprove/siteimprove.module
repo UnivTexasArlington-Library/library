@@ -54,9 +54,6 @@ function siteimprove_form_alter(&$form, &$form_state, $form_id) {
         || ($form_id == 'taxonomy_form_term' && isset($form_state['term']->tid))
     ) {
 
-      // Add siteimprove js to entity forms.
-      $form['#after_build'][] = 'siteimprove_entity_form_after_build';
-
       // Only show recheck button for published nodes or any term.
       if ((strpos($form_id, '_node_form') !== FALSE && isset($form_state['node']->nid) && $form_state['node']->status <> 0)
           || ($form_id == 'taxonomy_form_term' && isset($form_state['term']->tid))
@@ -73,35 +70,6 @@ function siteimprove_form_alter(&$form, &$form_state, $form_id) {
       }
     }
   }
-}
-
-/**
- * Alter node/taxonomy term forms.
- *
- * Add Siteimprove javascript in node/taxonomy term edit forms.
- */
-function siteimprove_entity_form_after_build($form, &$form_state) {
-  // In node edit forms, add Siteimprove js scripts.
-  if (strpos($form['#form_id'], '_node_form') !== FALSE) {
-    $node = $form_state['node'];
-    if (isset($node->nid)) {
-      // Get friendly url of node.
-      $url = url('node/' . $form['nid']['#value'], array('absolute' => TRUE));
-    }
-  }
-  // In taxonomy term edit forms, add Siteimprove js scripts.
-  if ($form['#form_id'] == 'taxonomy_form_term') {
-    $term = $form_state['term'];
-    if (isset($term->tid)) {
-      // Get friendly url of taxonomy term.
-      $url = url('taxonomy/term/' . $form['tid']['#value'], array('absolute' => TRUE));
-    }
-  }
-  if (!empty($url)) {
-    SiteimproveUtils::includeJs($url, 'input');
-    SiteimproveUtils::includeJs($url, 'recheck', FALSE);
-  }
-  return $form;
 }
 
 /**
@@ -151,23 +119,56 @@ function siteimprove_init() {
     // If exist siteimprove_url in SESSION, send to Siteimprove.
     if (!empty($_SESSION['siteimprove_url'])) {
       if (count($_SESSION['siteimprove_url']) > 1) {
-        $url    = url('<front>', array('absolute' => TRUE));
+        $url = url('<front>', array('absolute' => TRUE));
         $method = 'recrawl';
       }
       else {
-        $url    = array_pop($_SESSION['siteimprove_url']);
+        $url = array_pop($_SESSION['siteimprove_url']);
         $method = 'recheck';
       }
       // Include all Siteimprove js scripts.
       SiteimproveUtils::includeJs($url, $method);
       unset($_SESSION['siteimprove_url']);
     }
-    // Ignore node (view/edit) and taxonomy (view/edit) pages.
-    if (!preg_match('/(^node\/\d*(\/edit)?$)|(^taxonomy\/term\/\d*(\/edit)?$)/', current_path())) {
-      SiteimproveUtils::includeJs(url(current_path(), array('absolute' => TRUE)), 'domain');
+
+    // Find the "siteimprove" path of the current page.
+    $siteimprove_path = siteimprove_is_frontpage() ? '<front>' : current_path();
+
+    // If node page or taxonomy term page, add input method, else domain method.
+    if (preg_match('/(^node\/\d*$)|(^taxonomy\/term\/\d*$)/', current_path())) {
+      SiteimproveUtils::includeJs(url($siteimprove_path, array('absolute' => TRUE)), 'input');
     }
-    elseif (preg_match('/(^node\/\d*$)|(^taxonomy\/term\/\d*$)/', current_path())) {
-      SiteimproveUtils::includeJs(url(current_path(), array('absolute' => TRUE)), 'input');
+    elseif (preg_match('/(^node\/\d*(\/edit)?$)|(^taxonomy\/term\/\d*(\/edit)?$)/', current_path())) {
+      SiteimproveUtils::includeJs(url($siteimprove_path, array('absolute' => TRUE)), 'input');
+      SiteimproveUtils::includeJs(url($siteimprove_path, array('absolute' => TRUE)), 'recheck', FALSE);
     }
+    else {
+      SiteimproveUtils::includeJs(url($siteimprove_path, array('absolute' => TRUE)), 'domain');
+    }
+  }
+}
+
+/**
+ * Trying to detect if the current page is the frontpage.
+ *
+ * @return bool
+ *   True if the page is the frontpage, false otherwise.
+ */
+function siteimprove_is_frontpage() {
+  $frontpage = variable_get('site_frontpage', '');
+
+  if (drupal_is_front_page()) {
+    return TRUE;
+  }
+  elseif (!empty($frontpage) && preg_match('/(^node\/\d*(\/edit)?$)/', current_path())) {
+    $current_entity_path = 'node/' . arg(1);
+    return ($current_entity_path == $frontpage);
+  }
+  elseif (!empty($frontpage) && preg_match('/(^taxonomy\/term\/\d*(\/edit)?$)/', current_path())) {
+    $current_entity_path = 'taxonomy/term/' . arg(2);
+    return ($current_entity_path == $frontpage);
+  }
+  else {
+    return FALSE;
   }
 }

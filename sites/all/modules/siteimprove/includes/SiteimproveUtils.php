@@ -10,7 +10,7 @@
  */
 class SiteimproveUtils {
 
-  const TOKEN_REQUEST_URL = 'https://my2.siteimprove.com/auth/token';
+  const TOKEN_REQUEST_URL = 'https://my2.siteimprove.com/auth/token?cms=Drupal-' . VERSION;
   const JS_LIBRARY_URL = 'https://cdn.siteimprove.net/cms/overlay.js';
 
   /**
