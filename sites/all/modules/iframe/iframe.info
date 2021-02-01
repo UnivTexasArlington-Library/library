@@ -12,8 +12,8 @@ files[] = mappers/iframe.inc
 required = FALSE
 
 
-; Information added by Drupal.org packaging script on 2018-07-27
-version = "7.x-1.12"
+; Information added by Drupal.org packaging script on 2021-01-17
+version = "7.x-1.13"
 core = "7.x"
 project = "iframe"
-datestamp = "1532690285"
+datestamp = "1610921967"

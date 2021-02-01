@@ -76,6 +76,7 @@ function iframe_field_info() {
         'transparency' => 0,
         'tokensupport' => 0,
         #'expose_class' => 1,
+        #'allowfullscreen' => 0,
       ),
       'instance_settings' => array(
         #'title' => '',
@@ -88,6 +89,7 @@ function iframe_field_info() {
         #'transparency' => 0,
         #'tokensupport' => 0,
         'expose_class' => 1,
+        'allowfullscreen' => 0,
       ),
       'default_widget' => 'iframe_widget_url',
       'default_formatter' => 'iframe_formatter_default',
@@ -221,6 +223,12 @@ function iframe_field_instance_settings_form($field, $instance) {
     if (! module_exists('token')) {
       $form['tokensupport']['#description'] .= ' ' . t('Attention: token module is not enabled currently!');
     }
+    $form['allowfullscreen'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Allow fullscreen'),
+      '#default_value' => isset($settings['allowfullscreen'])? (int)$settings['allowfullscreen'] : 0,
+      '#description' => t('Allow author to specify an additional class attribute for this iframe.'),
+    );
   }
 
   return $form;
@@ -457,25 +465,61 @@ function iframe_iframe($text, $path, $options = FALSE) {
   // Merge in defaults.
   $options += array(
     'html' => FALSE,
+    'style' => '',
   );
+  $allow = array();
+
   if (!isset($options['width'])) {
     $options['width'] = '100%';
   }
   if (!isset($options['height'])) {
     $options['height'] = '701';
   }
-  if (!isset($options['frameborder']) || $options['frameborder'] < 0) {
-    $options['frameborder'] = 0;
+
+  if (isset($options['frameborder'])) {
+    if ($options['frameborder'] > 0) {
+      $options['style'] .= 'border-width:2px;';
+    }
+    else {
+      $options['style'] .= 'border-width:0;';
+    }
+    unset($options['frameborder']);
   }
-  if (!isset($options['scrolling']) || empty($options['scrolling'])) {
-    $options['scrolling'] = 'auto';
+  if (isset($options['scrolling'])) {
+    if ($options['scrolling'] == 'yes') {
+      $options['style'] .= 'overflow:scroll;';
+    }
+    elseif ($options['scrolling'] == 'no') {
+      $options['style'] .= 'overflow:hidden;';
+    }
+    else { # auto
+      $options['style'] .= 'overflow:auto;';
+    }
+    unset($options['scrolling']);
   }
-  if (!isset($options['transparency']) || $options['transparency'] < 0) {
-    $options['transparency'] = 0;
+  if (isset($options['transparency'])) {
+    if ($options['transparency'] > 0) {
+      $options['style'] .= 'background-color:transparent;';
+    }
+    unset($options['transparency']);
   }
+
   if (!isset($options['tokensupport']) || $options['tokensupport'] < 0) {
     $options['tokensupport'] = 0;
   }
+  if (isset($options['allowfullscreen']) && $options['allowfullscreen'] == 1) {
+    $allow[] = 'fullscreen';
+  }
+  unset($options['allowfullscreen']);
+  $allow[] = 'autoplay';
+  $allow[] = 'camera';
+  $allow[] = 'microphone';
+  $allow[] = 'payment';
+  $allow[] = 'accelerometer';
+  $allow[] = 'geolocation';
+  $allow[] = 'encrypted-media';
+  $allow[] = 'gyroscope';
+  $options['allow'] = implode(',', $allow);
 
   // Append active class.
   if ($path == $_GET['q'] || ($path == '<front>' && drupal_is_front_page())) {
@@ -513,7 +557,7 @@ function iframe_iframe($text, $path, $options = FALSE) {
     $options['name'] = $options['id'];
   }
 
-  $iframearguments_allowed = array('title', 'width', 'height', 'class', 'frameborder', 'scrolling', 'transparency', 'id', 'name');
+  $iframearguments_allowed = array('title', 'width', 'height', 'class', 'style', 'id', 'name', 'allow');
   $iframearguments = array();
   foreach($iframearguments_allowed as $argkey) {
     if (isset($options[$argkey])) {
@@ -546,23 +590,23 @@ function iframe_iframe($text, $path, $options = FALSE) {
 function iframe_field_widget_info() {
   return array(
     'iframe_widget_url' => array(
-    'label' => t('URL only'),
-    'field types' => array('iframe'),
-    'settings' => array('size' => 255),
-    'weight' => 1,
-  ),
+      'label' => t('URL only'),
+      'field types' => array('iframe'),
+      'settings' => array('size' => 255),
+      'weight' => 1,
+    ),
     'iframe_widget_urlheight' => array(
-    'label' => t('URL with height'),
-    'field types' => array('iframe'),
-    'settings' => array('size' => 255),
-    'weight' => 2,
-  ),
+      'label' => t('URL with height'),
+      'field types' => array('iframe'),
+      'settings' => array('size' => 255),
+      'weight' => 2,
+    ),
     'iframe_widget_urlwidthheight' => array(
-    'label' => t('URL with width and height'),
-    'field types' => array('iframe'),
-    'settings' => array('size' => 255),
-    'weight' => 3,
-  ),
+      'label' => t('URL with width and height'),
+      'field types' => array('iframe'),
+      'settings' => array('size' => 255),
+      'weight' => 3,
+    ),
   );
 }
 
@@ -592,8 +636,8 @@ function iframe_DISABLED_field_widget_settings_form($field, $instance) {
 /**
  * Implements hook_field_widget_form().
  *    depends on the widget-type
- * Field XYZ sub-menu "Edit" (used in the middle for "default" values for each individual instance-itemi,
- *                            prefilled, with setting from ifrmae_field_info->instance_settings)
+ * Field XYZ sub-menu "Edit" (used in the middle for "default" values for each individual instance-item,
+ *                            prefilled, with setting from iframe_field_info->instance_settings)
  * (Step 3)
  */
 function iframe_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
@@ -656,7 +700,7 @@ function iframe_field_widget_form(&$form, &$form_state, $field, $instance, $lang
       );
       // no "break" intentionally, fall through
 
-    case 'iframe_widget_urlonly':
+    case 'iframe_widget_url':
     default:
         //
       break;
