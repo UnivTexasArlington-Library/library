@@ -10,7 +10,7 @@
  */
 class SiteimproveUtils {
 
-  const TOKEN_REQUEST_URL = 'https://my2.siteimprove.com/auth/token?cms=Drupal-' . VERSION;
+  const TOKEN_REQUEST_URL = 'https://my2.siteimprove.com/auth/token';
   const JS_LIBRARY_URL = 'https://cdn.siteimprove.net/cms/overlay.js';
 
   /**
@@ -20,7 +20,7 @@ class SiteimproveUtils {
 
     // Request new token.
     $headers = array('Accept' => 'application/json');
-    $result = drupal_http_request(self::TOKEN_REQUEST_URL, array('headers' => $headers));
+    $result = drupal_http_request(self::getTokenRequestUrl(), array('headers' => $headers));
 
     // If success, set token field with the new token.
     if ($result->code == 200) {
@@ -32,6 +32,16 @@ class SiteimproveUtils {
 
     watchdog('siteimprove', 'There was an error requesting a new token.', array(), WATCHDOG_ERROR);
     return FALSE;
+  }
+
+  /**
+   * Prepare the token request URL.
+   *
+   * @return string
+   *   The prepared token request URL.
+   */
+  public static function getTokenRequestUrl() {
+    return self::TOKEN_REQUEST_URL . '?cms=Drupal-' . VERSION;
   }
 
   /**

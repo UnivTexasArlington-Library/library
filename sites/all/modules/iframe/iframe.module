@@ -519,7 +519,7 @@ function iframe_iframe($text, $path, $options = FALSE) {
   $allow[] = 'geolocation';
   $allow[] = 'encrypted-media';
   $allow[] = 'gyroscope';
-  $options['allow'] = implode(',', $allow);
+  $options['allow'] = implode(';', $allow);
 
   // Append active class.
   if ($path == $_GET['q'] || ($path == '<front>' && drupal_is_front_page())) {
