@@ -385,7 +385,7 @@ function _tagclouds_sort_by_title($a, $b) {
 }
 
 function _tagclouds_sort_by_count($a, $b) {
-  return $a->count > $b->count;
+  return (int) ($a->count > $b->count);
 }
 
 /**
