@@ -113,6 +113,15 @@ DirectoryIndex index.php index.html index.htm
   # If your site is running in a VirtualDocumentRoot at http://example.com/,
   # uncomment the following line:
   # RewriteBase /
+  
+  ###################### DigitalGallery Redirect #########################
+
+  # Enable after the switch from digitalgallery-beta to digitalgallery.
+  #Test#  RewriteRule ^glenn-beta(/.*)?$ /digitalgallery/$1 [R=301,NC,L]
+
+  RewriteRule ^digitalgallery-beta(.*)$ /digitalgallery$1 [R=301,NC,L]
+
+######################## End DigitalGallery Redirect ####################
 
   # Pass all requests not referring directly to files in the filesystem to
   # index.php. Clean URLs are handled in drupal_environment_initialize().
