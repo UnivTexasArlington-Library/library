@@ -32,20 +32,28 @@ class views_pdf_plugin_display extends views_plugin_display_page {
     // Set default code
     $this->view->pdf->SetFont('');
 
+    // Render the first result row to generate tokens.
+    // Only field-value tokens from the first row are usable.
+    if ($result0 = reset($this->view->result)) {
+      $this->view->style_plugin->render_fields(array($result0));
+    }
+
     // Add leading pages
     $path = $this->view->pdf->getTemplatePath($this->get_option('leading_template'));
-    $this->view->pdf->addPdfDocument($path);
+    $this->view->pdf->addPdfDocument($path, 'leading');
 
     // Set the default background template
     $path = $this->view->pdf->getTemplatePath($this->get_option('template'));
     $this->view->pdf->setDefaultPageTemplate($path, 'main');
 
+    // Clear the leading/succeed flag.
+    $this->view->pdf->addPdfDocument();
     // Render the items
     $this->view->style_plugin->render();
 
     // Add succeed pages
     $path = $this->view->pdf->getTemplatePath($this->get_option('succeed_template'));
-    $this->view->pdf->addPdfDocument($path);
+    $this->view->pdf->addPdfDocument($path, 'closing');
 
   }
 
@@ -109,8 +117,7 @@ class views_pdf_plugin_display extends views_plugin_display_page {
     $this->view->pdf->setDefaultTextAlign($this->get_option('default_text_align'));
     $this->view->pdf->setDefaultFontColor($this->get_option('default_font_color'));
 
-    $this->view->pdf->setViewsHeader($this->view->display_handler->render_header());
-    $this->view->pdf->setViewsFooter($this->view->display_handler->render_footer());
+    $this->view->pdf->setViewsHeaderFooter($this);
 
     $html = $this->view->render($this->display->id);
 
@@ -196,6 +203,20 @@ class views_pdf_plugin_display extends views_plugin_display_page {
     $options['default_text_align'] = array('default' => 'L');
     $options['default_font_color'] = array('default' => '000000');
     $options['default_text_hyphenate'] = array('default' => 'none');
+
+    $options['header_margin'] = array('default' => '1');
+    $options['header_font_family'] = array('default' => 'helvetica');
+    $options['header_font_style'] = array('default' => array());
+    $options['header_font_size'] = array('default' => '12');
+    $options['header_text_align'] = array('default' => 'C');
+    $options['header_font_color'] = array('default' => '000000');
+
+    $options['footer_spacing'] = array('default' => '1');
+    $options['footer_font_family'] = array('default' => 'helvetica');
+    $options['footer_font_style'] = array('default' => array());
+    $options['footer_font_size'] = array('default' => '12');
+    $options['footer_text_align'] = array('default' => 'C');
+    $options['footer_font_color'] = array('default' => '000000');
 
     $options['css_file'] = array('default' => '');
 
@@ -338,49 +359,178 @@ class views_pdf_plugin_display extends views_plugin_display_page {
 
         break;
 
+      case 'pdf_header':
+        $fonts = views_pdf_get_font_list();
+        $font_styles = array(
+          'b' => t('Bold'),
+          'i' => t('Italic'),
+          'u' => t('Underline'),
+          'd' => t('Line through'),
+          'o' => t('Overline')
+        );
+
+        $align = array(
+          'L' => t('Left'),
+          'C' => t('Center'),
+          'R' => t('Right'),
+          'J' => t('Justify'),
+        );
+
+        $form['#title'] .= t('PDF Header & Footer Options');
+
+        $form['header'] = array(
+          '#type' => 'fieldset',
+          '#title' => t('Header options'),
+          '#collapsed' => TRUE,
+          '#collapsible' => TRUE,
+          );
+        $form['header']['header_margin'] = array(
+          '#type' => 'textfield',
+          '#title' => t('Top margin'),
+          '#size' => 10,
+          '#default_value' => $this->get_option('header_margin'),
+        );
+        $form['header']['header_font_size'] = array(
+          '#type' => 'textfield',
+          '#title' => t('Font Size'),
+          '#size' => 10,
+          '#default_value' => $this->get_option('header_font_size'),
+        );
+        $form['header']['header_font_family'] = array(
+          '#type' => 'select',
+          '#title' => t('Font Family'),
+          '#options' => $fonts,
+          '#size' => 5,
+          '#default_value' => $this->get_option('header_font_family'),
+        );
+        $form['header']['header_font_style'] = array(
+          '#type' => 'checkboxes',
+          '#title' => t('Font Style'),
+          '#options' => $font_styles,
+          '#default_value' => $this->get_option('header_font_style'),
+        );
+        $form['header']['header_text_align'] = array(
+          '#type' => 'radios',
+          '#title' => t('Text Alignment'),
+          '#options' => $align,
+          '#default_value' => $this->get_option('header_text_align'),
+        );
+        $form['header']['header_font_color'] = array(
+          '#type' => 'textfield',
+          '#title' => t('Text Color'),
+          '#description' => t('If a value is entered without a comma, it will be interpreted as a hexadecimal RGB color. Normal RGB can be used by separating the components by a comma. e.g 255,255,255 for white. A CMYK color can be entered in the same way as RGB. e.g. 0,100,0,0 for magenta.'),
+          '#size' => 20,
+          '#default_value' => $this->get_option('header_font_color'),
+        );
+
+        $form['footer'] = array(
+          '#type' => 'fieldset',
+          '#title' => t('Footer options'),
+          '#collapsed' => TRUE,
+          '#collapsible' => TRUE,
+          );
+        $form['footer']['footer_spacing'] = array(
+          '#type' => 'textfield',
+          '#title' => t('Bottom spacing'),
+          '#size' => 10,
+          '#default_value' => $this->get_option('footer_spacing'),
+        );
+        $form['footer']['footer_font_size'] = array(
+          '#type' => 'textfield',
+          '#title' => t('Font Size'),
+          '#size' => 10,
+          '#default_value' => $this->get_option('footer_font_size'),
+        );
+        $form['footer']['footer_font_family'] = array(
+          '#type' => 'select',
+          '#title' => t('Font Family'),
+          '#options' => $fonts,
+          '#size' => 5,
+          '#default_value' => $this->get_option('footer_font_family'),
+        );
+        $form['footer']['footer_font_style'] = array(
+          '#type' => 'checkboxes',
+          '#title' => t('Font Style'),
+          '#options' => $font_styles,
+          '#default_value' => $this->get_option('footer_font_style'),
+        );
+        $form['footer']['footer_text_align'] = array(
+          '#type' => 'radios',
+          '#title' => t('Text Alignment'),
+          '#options' => $align,
+          '#default_value' => $this->get_option('footer_text_align'),
+        );
+        $form['footer']['footer_font_color'] = array(
+          '#type' => 'textfield',
+          '#title' => t('Text Color'),
+          '#description' => t('If a value is entered without a comma, it will be interpreted as a hexadecimal RGB color. Normal RGB can be used by separating the components by a comma. e.g 255,255,255 for white. A CMYK color can be entered in the same way as RGB. e.g. 0,100,0,0 for magenta.'),
+          '#size' => 20,
+          '#default_value' => $this->get_option('footer_font_color'),
+        );
+
+        break;
+
       case 'pdf_template':
         $form['#title'] .= t('PDF Templates');
 
         $templates = array_merge(array(t('-- None --')), views_pdf_get_pdf_templates());
-        $form['leading_template'] = array(
+        $form['leading'] = array(
+          '#type' => 'fieldset',
+          '#title' => t('Leading PDF Template'),
+        );
+        $form['leading']['leading_template'] = array(
           '#type' => 'select',
           '#options' => $templates,
-          '#title' => t('Leading PDF Template'),
           '#required' => FALSE,
-          '#description' => t('Here you specify a PDF file to be printed in front of every row.'),
+          '#description' => t('Here you specify a PDF file to be printed before the main content.'),
           '#default_value' => $this->get_option('leading_template'),
         );
+        $form['leading']['leading_header'] = array(
+          '#type' => 'checkbox',
+          '#title' => 'Print page headers on leading template',
+          '#default_value' => $this->get_option('leading_header'),
+        );
+        $form['leading']['leading_footer'] = array(
+          '#type' => 'checkbox',
+          '#title' => 'Print page footers on leading template',
+          '#default_value' => $this->get_option('leading_footer'),
+        );
 
-        $form['template'] = array(
+        $form['background'] = array(
+          '#type' => 'fieldset',
+          '#title' => t('Background PDF Template'),
+        );
+        $form['background']['template'] = array(
           '#type' => 'select',
           '#options' => $templates,
-          '#title' => t('Template PDF'),
           '#description' => t('Here you specify a PDF file on which the content is printed. The first page of this document is used for the first page, in the target document. The second page is used for the second page in the target document and so on. If the target document has more that this template file, the last page of the template will be repeated. The leading document has no effect on the order of the pages.'),
           '#default_value' => $this->get_option('template'),
         );
 
-        $form['succeed_template'] = array(
+        $form['succeed'] = array(
+          '#type' => 'fieldset',
+          '#title' => t('Trailing PDF Template'),
+        );
+        $form['succeed']['succeed_template'] = array(
           '#type' => 'select',
           '#options' => $templates,
-          '#title' => t('Succeed PDF Template'),
           '#required' => FALSE,
           '#description' => t('Here you specify a PDF file to be printed after the main content.'),
           '#default_value' => $this->get_option('succeed_template'),
         );
-
-        $form['template_file'] = array(
-          '#type' => 'file',
-          '#title' => t('Upload New Template File'),
+        $form['succeed']['succeed_header'] = array(
+          '#type' => 'checkbox',
+          '#title' => 'Print page headers on trailing template',
+          '#default_value' => $this->get_option('succeed_header'),
+        );
+        $form['succeed']['succeed_footer'] = array(
+          '#type' => 'checkbox',
+          '#title' => 'Print page footers on trailing template',
+          '#default_value' => $this->get_option('succeed_footer'),
         );
 
-        $form['#attached']['js'][] = array(
-          'type' => 'setting',
-          'data' => array(
-            'urlIsAjaxTrusted' => array(
-              $GLOBALS['base_url'] . '/' . current_path() => TRUE,
-            ),
-          ),
-        );
+        $form['notes']['#markup'] =
+        t('To manage template files and upload new ones, go to the <a href="@link">PDF Templates</a> tab on the main Views page.', array('@link' => '/admin/structure/views/pdfs'));
 
         break;
 
@@ -466,8 +616,19 @@ class views_pdf_plugin_display extends views_plugin_display_page {
       'desc' => t('Define some PDF specific settings.'),
     );
 
+    // Add for pdf header/footer settings
+    $options['pdf_header'] = array(
+      'category' => 'page',
+      'title' => t('PDF Header & Footer'),
+      'value' => t('Settings'),
+      'desc' => t('Define PDF settings for header & footer.'),
+    );
+
     // add for pdf template settings
-    if ($this->get_option('leading_template') != '' || $this->get_option('template') != '' || $this->get_option('succeed_template') != '') {
+    if (!empty($this->get_option('leading_template')) ||
+        !empty($this->get_option('template')) ||
+        !empty($this->get_option('succeed_template'))
+      ) {
       $isAnyTemplate = t('Yes');
     }
     else {
@@ -525,27 +686,32 @@ class views_pdf_plugin_display extends views_plugin_display_page {
 
         break;
 
-      case 'pdf_template':
-        // Save new file:
-        // Note: The jQuery update is required to use Ajax for file upload. With
-        // default Drupal jQuery it will not work.
-        // For upload with Ajax a iFrame is open and upload in it, because
-        // normal forms are not allowed to handle directly.
-        $destination = variable_get('views_pdf_template_stream', 'public://views_pdf_templates');
+      case 'pdf_header':
+        $this->set_option('header_margin', $form_state['values']['header_margin']);
+        $this->set_option('header_font_size', $form_state['values']['header_font_size']);
+        $this->set_option('header_font_style', $form_state['values']['header_font_style']);
+        $this->set_option('header_font_family', $form_state['values']['header_font_family']);
+        $this->set_option('header_text_align', $form_state['values']['header_text_align']);
+        $this->set_option('header_font_color', $form_state['values']['header_font_color']);
 
-        if (file_prepare_directory($destination, FILE_CREATE_DIRECTORY)) {
-          $file = file_save_upload('template_file', array(), $destination);
-          if (is_object($file)) {
-            $file_name =  basename($file->destination, '.pdf');
-            $form_state['values']['template'] = $file_name;
-            $file->status |= FILE_STATUS_PERMANENT;
-            $file = file_save($file);
-          }
-        }
+        $this->set_option('footer_spacing', $form_state['values']['footer_spacing']);
+        $this->set_option('footer_font_size', $form_state['values']['footer_font_size']);
+        $this->set_option('footer_font_style', $form_state['values']['footer_font_style']);
+        $this->set_option('footer_font_family', $form_state['values']['footer_font_family']);
+        $this->set_option('footer_text_align', $form_state['values']['footer_text_align']);
+        $this->set_option('footer_font_color', $form_state['values']['footer_font_color']);
+
+        break;
+
+      case 'pdf_template':
 
         $this->set_option('leading_template', $form_state['values']['leading_template']);
+        $this->set_option('leading_header', $form_state['values']['leading_header']);
+        $this->set_option('leading_footer', $form_state['values']['leading_footer']);
         $this->set_option('template', $form_state['values']['template']);
         $this->set_option('succeed_template', $form_state['values']['succeed_template']);
+        $this->set_option('succeed_header', $form_state['values']['succeed_header']);
+        $this->set_option('succeed_footer', $form_state['values']['succeed_footer']);
         break;
 
       case 'displays':

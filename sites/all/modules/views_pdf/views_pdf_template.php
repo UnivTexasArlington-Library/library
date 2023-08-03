@@ -46,12 +46,16 @@ class PdfTemplate extends FPDI {
   protected $addNewPageBeforeNextContent = FALSE;
   protected $elements = array();
   protected $headerFooterData = array();
-  protected $views_header = '';
-  protected $view = NULL;
-  protected $views_footer = '';
   protected $headerFooterOptions = array();
+  protected $view = NULL;
+  protected $display = NULL;
+  protected $y_header = 0;
+  protected $y_footer = 0;
   protected $lastWritingPage = 1;
   protected $lastWritingPositions;
+  protected $position = '';
+
+  protected $tableHeader = array();
 
   protected static $defaultFontList = array(
     'almohanad' => 'AlMohanad',
@@ -147,31 +151,64 @@ class PdfTemplate extends FPDI {
     );
   }
 
-  public function setViewsHeader($header) {
-    $this->views_header = $header;
+  // Sets up the header & footer.
+  // Rendering is deferred to the Header() and Footer() functions.
+  public function setViewsHeaderFooter($display) {
+    $this->display = $display;
+
+    $this->y_header = $display->get_option('header_margin');
+    $this->SetY(-($this->bMargin - $display->get_option('footer_spacing')));
+    $this->y_footer = $this->y;
   }
   /**
-   * This method must be overriden, in the other case, some
-   * output is printed to the header.
+   * Function override to output the header.
    */
   function Header() {
-    if (!empty($this->views_header)) {
-      $this->writeHTML($this->views_header);
+    $this->_format_header_footer('header');
+
+    // Output the table header if required.
+    if (!empty($this->tableHeader)) {
+      $this->cell_padding = $this->cellPaddings;
+
+      foreach ($this->tableHeader as $header) {
+        list($x, $y, $label, $headerOptions, $view, $id) = $header;
+        $this->renderItem($x, $y, $label, NULL, $headerOptions, $view, $id, FALSE, TRUE);
+      }
     }
   }
-
-  public function setViewsFooter($footer) {
-    $this->views_footer = $footer;
-   }
-
   /**
-   * This method must be overriden, in the other case, some
-   * output is printed to the footer.
+   * Function override to output the footer.
    */
   function Footer() {
-    $this->SetY(-$this->bMargin);
-    if (!empty($this->views_footer)) {
-      $this->writeHTML($this->views_footer);
+    $this->_format_header_footer('footer');
+  }
+  /*
+   * Common function to output header or footer.
+   *
+   * @param $h_f 'header' or 'footer'.
+   */
+  function _format_header_footer($h_f) {
+    $display = $this->display;
+    // Get the leading/trailing header/footer option (e.g. "succeed_header").
+    if ((empty($this->position) || $this->position == 'closing' || $display->get_option("{$this->position}_{$h_f}")) &&
+        !empty($rendered = $display->render_area("$h_f"))) {
+      $this->SetTextColorArray($display->get_option("{$h_f}_font_color"));
+      $this->SetFont(
+        $display->get_option("{$h_f}_font_family"),
+        implode('', $display->get_option("{$h_f}_font_style")),
+        $display->get_option("{$h_f}_font_size")
+      );
+      $yvar = "y_$h_f";
+      $this->writeHTMLCell(0, 0,
+        (float)$this->lMargin, (float)$this->$yvar,
+        format_string($rendered, array('!page' => $this->getPage())),
+        0, 0,
+        FALSE, TRUE,
+        $display->get_option("{$h_f}_text_align")
+      );
+    }
+    if ($h_f == 'footer' && $this->position == 'closing') {
+      $this->position = 'succeed';
     }
   }
 
@@ -227,6 +264,11 @@ class PdfTemplate extends FPDI {
    */
   public function drawContent($row, $options, &$view = NULL, $key = NULL, $printLabels = TRUE) {
 
+    if (empty($view) && empty($key)) {
+      return;
+    }
+    $content = $view->field[$key]->theme($row);
+
     if (!is_array($options)) {
       $options = array();
     }
@@ -271,15 +313,15 @@ class PdfTemplate extends FPDI {
     // that we have enough space left on this page. If not force adding
     // a new one.
     if (isset($options['render']['minimal_space'])) {
-      $enoughtSpace = ($this->y + $this->bMargin + $options['render']['minimal_space']) < $pageDim['hk'];
+      $enoughSpace = ($this->y + $this->bMargin + $options['render']['minimal_space']) < $pageDim['hk'];
     }
     else {
-      $enoughtSpace = TRUE;
+      $enoughSpace = TRUE;
     }
 
 
     // Check if there is a page, if not add it:
-    if (!$enoughtSpace OR $this->getPage() == 0 OR $this->addNewPageBeforeNextContent == TRUE) {
+    if (!$enoughSpace OR $this->getPage() == 0 OR $this->addNewPageBeforeNextContent == TRUE) {
       $this->addNewPageBeforeNextContent = FALSE;
       $this->addPage();
     }
@@ -297,34 +339,32 @@ class PdfTemplate extends FPDI {
       $last_writing_y_position = $this->y;
     }
 
-    // Determin the x and y coordinates
+    // Determine the x and y coordinates
     if ($options['position']['object'] == 'last_position') {
-      $x = $this->x + $options['position']['x'];
-      $y = $this->y + $options['position']['y'];
+      $x = (float) $this->x + (float) $options['position']['x'];
+      $y = (float) $this->y + (float) $options['position']['y'];
     }
     elseif ($options['position']['object'] == 'page') {
       switch ($options['position']['corner']) {
         default:
         case 'top_left':
-          $x = $options['position']['x']+$this->lMargin;
-          $y = $options['position']['y']+$this->tMargin;
+          $x = (float) $options['position']['x'] + (float) $this->lMargin;
+          $y = (float) $options['position']['y'] + (float) $this->tMargin;
           break;
 
         case 'top_right':
-          $x = $options['position']['x'] + $pageDim['wk'] - $this->rMargin;
-          $y = $options['position']['y'] + $this->tMargin;
+          $x = (float) $options['position']['x'] + (float) $pageDim['wk'] - (float) $this->rMargin;
+          $y = (float) $options['position']['y'] + (float) $this->tMargin;
           break;
 
         case 'bottom_left':
-          $x = $options['position']['x'] + $this->rMargin;
-          $y = $options['position']['y'] + $pageDim['hk'] - $this->bMargin;
-
+          $x = (float) $options['position']['x'] + (float) $this->lMargin;
+          $y = (float) $options['position']['y'] + (float) $pageDim['hk'] - (float) $this->bMargin;
           break;
 
         case 'bottom_right':
-          $x = $options['position']['x'] + $pageDim['wk'] - $this->rMargin;
-          $y = $options['position']['y'] + $pageDim['hk'] - $this->bMargin;
-
+          $x = (float) $options['position']['x'] + (float) $pageDim['wk'] - (float) $this->rMargin;
+          $y = (float) $options['position']['y'] + (float) $pageDim['hk'] - (float) $this->bMargin;
           break;
       }
     }
@@ -348,25 +388,23 @@ class PdfTemplate extends FPDI {
         switch ($options['position']['corner']) {
           default:
           case 'top_left':
-            $x = $options['position']['x'] + $this->elements[$relative_to_element]['x'];
-            $y = $options['position']['y'] + $this->elements[$relative_to_element]['y'];
+            $x = (float) $options['position']['x'] + (float) $this->elements[$relative_to_element]['x'];
+            $y = (float) $options['position']['y'] + (float) $this->elements[$relative_to_element]['y'];
             break;
 
           case 'top_right':
-            $x = $options['position']['x'] + $this->elements[$relative_to_element]['x'] + $this->elements[$relative_to_element]['width'];
-            $y = $options['position']['y'] + $this->elements[$relative_to_element]['y'];
+            $x = (float) $options['position']['x'] + (float) $this->elements[$relative_to_element]['x'] + (float) $this->elements[$relative_to_element]['width'];
+            $y = (float) $options['position']['y'] + (float) $this->elements[$relative_to_element]['y'];
             break;
 
           case 'bottom_left':
-            $x = $options['position']['x'] + $this->elements[$relative_to_element]['x'];
-            $y = $options['position']['y'] + $this->elements[$relative_to_element]['y'] + $this->elements[$relative_to_element]['height'];
-
+            $x = (float) $options['position']['x'] + (float) $this->elements[$relative_to_element]['x'];
+            $y = (float) $options['position']['y'] + (float) $this->elements[$relative_to_element]['y'] + (float) $this->elements[$relative_to_element]['height'];
             break;
 
           case 'bottom_right':
-            $x = $options['position']['x'] + $this->elements[$relative_to_element]['x'] + $this->elements[$relative_to_element]['width'];
-            $y = $options['position']['y'] + $this->elements[$relative_to_element]['y'] + $this->elements[$relative_to_element]['height'];
-
+            $x = (float) $options['position']['x'] + (float) $this->elements[$relative_to_element]['x'] + (float) $this->elements[$relative_to_element]['width'];
+            $y = (float) $options['position']['y'] + (float) $this->elements[$relative_to_element]['y'] + (float) $this->elements[$relative_to_element]['height'];
             break;
         }
 
@@ -382,50 +420,26 @@ class PdfTemplate extends FPDI {
 
       }
       else {
-        $x = $this->x;
-        $y = $last_writing_y_position;
+        $x = (float) $this->x;
+        $y = (float) $last_writing_y_position;
       }
 
     }
-
-    // No position match (for example header/footer)
+    // No position match (for example header/footer).
     else {
-      // Render or return
-      if (is_object($view) && $key != NULL ) {
-        $content = $view->field[$key]->theme($row);
-      }
-      else{
         return;
-      }
-
     }
-
-    if ($key !== NULL && $view->field[$key]->theme($row) || !empty($row)) {
-      $this->SetX($x);
-      $this->SetY($y);
-      $this->renderRow($x, $y, $row, $options, $view, $key, $printLabels);
-    }
+    $this->SetX($x);
+    $this->SetY($y);
+    $this->renderItem($x, $y, $content, $row, $options, $view, $key, $printLabels);
   }
 
-  protected function renderRow($x, $y, $row, $options, &$view = NULL, $key = NULL, $printLabels = TRUE) {
+  protected function renderItem($x, $y, $content, $row, $options, &$view, $key, $printLabels = TRUE, $istable = FALSE) {
+
+    if (empty($view->field[$key]->options['exclude'])) {
+
       if ($options['position']['object'] !== 'header_footer') {
         $pageDim = $this->getPageDimensions();
-
-        // Render the content if it is not already:
-        if (is_object($view) && $key != NULL && isset($view->field[$key]) && is_object($view->field[$key]) && !is_string($row)) {
-          $content = $view->field[$key]->theme($row);
-        }
-        elseif (is_string($row)) {
-          $content = $row;
-        }
-        else {
-          // We got bad data. So return.
-          return;
-        }
-
-        if (empty($key) || !empty($view->field[$key]->options['exclude']) || (empty($content) && $view->field[$key]->options['hide_empty'])) {
-          return '';
-        }
 
         // Apply the hyphenation patterns to the content:
         if (!isset($options['text']['hyphenate']) && is_object($view) && is_object($view->display_handler)) {
@@ -484,7 +498,22 @@ class PdfTemplate extends FPDI {
           }
           $prefix .= ' ';
         }
-
+        if (!empty($prefix)) {
+          // If label HTML has been customised, add tag and classes as required.
+          $label_info = $view->field[$key]->options;
+          if ($tag = $label_info['element_label_type']) {
+            $classes = array();
+            if ($label_info['element_label_class']) {
+              $classes[] = $label_info['element_label_class'];
+            }
+            if ($label_info['element_default_classes']) {
+              $classes[] = 'views-label';
+              $classes[] = "views-label-{$label_info['id']}";
+            }
+            $class = !empty($classes)? ' class="' . implode(' ', $classes) . '"' : '';
+            $prefix = "<$tag$class>$prefix</$tag>";
+          }
+        }
         $font_size = empty($options['text']['font_size']) ? $this->defaultFontSize : $options['text']['font_size'] ;
         $font_family = ($options['text']['font_family'] == 'default' || empty($options['text']['font_family'])) ? $this->defaultFontFamily : $options['text']['font_family'];
         $font_style = is_array($options['text']['font_style']) ? $options['text']['font_style'] : $this->defaultFontStyle;
@@ -493,29 +522,27 @@ class PdfTemplate extends FPDI {
 
         $w = $options['position']['width'];
         $h = $options['position']['height'];
-        $border = 0;
+        $border = !empty($options['text']['border'])? $options['text']['border'] : 0;
         $align = isset($options['text']['align']) ? $options['text']['align'] : $this->defaultTextAlign;
         $fill = 0;
         $ln = 1;
         $reseth = TRUE;
         $stretch = 0;
-        $ishtml = isset($options['render']['is_html']) ? $options['render']['is_html'] : 1;
+        $ishtml = $istable? 0 : (isset($options['render']['is_html']) ? $options['render']['is_html'] : 1);
         $stripHTML = !$ishtml;
         $autopadding = TRUE;
-        $maxh = 0;
-        $valign = 'T';
-        $fitcell = FALSE;
+        $maxh = $istable? $h : 0;
 
         // Run eval before.
-        if (VIEWS_PDF_PHP) {
-          if (!empty($options['render']['bypass_eval_before']) && !empty($options['render']['eval_before'])) {
-            eval($options['render']['eval_before']);
-          }
-          elseif (!empty($options['render']['eval_before']))  {
+        if (VIEWS_PDF_PHP && !empty($options['render']['eval_before'])) {
+          if (empty($options['render']['bypass_eval_before'])) {
             $content = php_eval($options['render']['eval_before']);
           }
+          else {
+            eval($options['render']['eval_before']);
+          }
         }
-        if ($options['render']['custom_layout']) {
+        if (isset($options['render']['custom_layout'])) {
           // Custom layout hook.
           $layout_data = array (
             'x'          => &$x,
@@ -537,7 +564,7 @@ class PdfTemplate extends FPDI {
         }
 
         // Add css if there is a css file set and stripHTML is not active.
-        if (!empty($css_file) && is_string($css_file) && !$stripHTML && $ishtml && !empty($content)) {
+        if (!empty($css_file) && is_string($css_file) && !$stripHTML && !empty($content)) {
           $content = '<link type="text/css" rel="stylesheet" media="all" href="' . $css_file . '" />' . PHP_EOL . $content;
         }
 
@@ -548,36 +575,39 @@ class PdfTemplate extends FPDI {
         $this->SetFont($font_family, implode('', $font_style), $font_size);
 
         // Save the last page before starting writing, this
-        // is needed to dected if we write over a page. Then we need
+        // is needed to detect if we write over a page. Then we need
         // to reset the y coordinate for the 'last_writing' position option.
         $this->lastWritingPage = $this->getPage();
 
         if ($stripHTML) {
-          $content = strip_tags($content);
+          $content = html_entity_decode(strip_tags($content), ENT_QUOTES | ENT_HTML401);
         }
 
         // Write the content of a field to the pdf file:
-        if (!empty($content)) {
-          $this->MultiCell($w, $h, $prefix . $content, $border, $align, $fill, $ln, $x, $y, $reseth, $stretch, $ishtml, $autopadding, $maxh, $valign, $fitcell);
+        if ($istable) {
+          $this->cell_padding['T'] = $this->cell_padding['B'] = !empty($options['text']['vpad'])?
+            $options['text']['vpad'] : 0;
         }
-        else {
-          $this->MultiCell($w, $h, $prefix, $border, $align, $fill, $ln, $x, $y, $reseth, $stretch, $ishtml, $autopadding, $maxh, $valign, $fitcell);
-        }
+        $this->MultiCell($w, $h, $prefix . $content, $border, $align, $fill, $ln, $x, $y, $reseth, $stretch, $ishtml, $autopadding, $maxh);
 
-        // Reset font to default.
-        $this->SetFont($this->defaultFontFamily, implode('', $this->defaultFontStyle), $this->defaultFontSize);
+        // Reset font to default. There doesn't seem to be any point doing this!
+//         $this->SetFont($this->defaultFontFamily, implode('', $this->defaultFontStyle), $this->defaultFontSize);
 
         // Post render.
-        if ($options['render']['custom_post']) {
+        if (isset($options['render']['custom_post'])) {
           drupal_alter('views_pdf_custom_post', $view);
         }
         // Run eval after.
-        if (VIEWS_PDF_PHP) {
-          if (!empty($options['render']['bypass_eval_after']) && !empty($options['render']['eval_after'])) {
-            eval($options['render']['eval_after']);
+        if (VIEWS_PDF_PHP && !empty($options['render']['eval_after'])) {
+          // Questionable whether there's any point supporting php_eval()
+          // after render. It has no access to the local context, and can
+          // only return a value. But the output has already been written
+          // so there's nothing that can be done with the return value!
+          if (empty($options['render']['bypass_eval_after'])) {
+            php_eval($options['render']['eval_after']);
           }
-          elseif (!empty($options['render']['eval_after'])) {
-            $content = php_eval($options['render']['eval_after']);
+          else {
+            eval($options['render']['eval_after']);
           }
         }
 
@@ -592,7 +622,7 @@ class PdfTemplate extends FPDI {
 
         $this->lastWritingElement = $key;
       }
-
+    }
   }
 
   /**
@@ -604,211 +634,210 @@ class PdfTemplate extends FPDI {
     $columns = $view->field;
     $pageDim = $this->getPageDimensions();
 
-    // Set draw point to the indicated position:
-    if (empty($options['position']['x'])) {
-      $options['position']['x'] = 0;
-    }
-
-    if (empty($options['position']['y'])) {
-      $options['position']['y'] = 0;
-    }
-
-    if (isset($options['position']['last_writing_position']) && $options['position']['last_writing_position']) {
-      $y = $options['position']['y'] + $this->y;
-      $x = $options['position']['x'] + $this->x;
-    }
-    else {
-      $y = $options['position']['y'];
-      $x = $options['position']['x'];
-    }
-
-    if (isset($options['position']['width']) && !empty($options['position']['width'])) {
-      $width = $options['position']['width'];
-    }
-    else {
-      $width = $pageDim['wk'] - $this->rMargin - $x;
-    }
+    $width = (float)$pageDim['wk'] - (float)$this->rMargin - (float)$this->rMargin;
 
     $sumWidth = 0;
     $numberOfColumnsWithoutWidth = 0;
 
-    // Set the definitiv width of a column
-    foreach ($columns as $id => $columnName) {
-      if (isset($options['info'][$id]['position']['width']) && !empty($options['info'][$id]['position']['width'])) {
-        $sumWidth += $options['info'][$id]['position']['width'];
-      }
-      else {
-        $numberOfColumnsWithoutWidth++;
-      }
-    }
-    if ($numberOfColumnsWithoutWidth > 0) {
-      $defaultColumnWidth = ($width - $sumWidth) / $numberOfColumnsWithoutWidth;
-    }
-    else {
-      $defaultColumnWidth = 0;
-    }
+    // Default header height is height of default font.
+    $options['position']['header_style']['height'] = $this->getCellHeight($this->defaultFontSize / $this->k);
 
-    // Print header:
-    $rowX = $x;
-    $page = $this->getPage();
-    if ($page == 0) {
-      $this->addPage();
-      $page = $this->getPage();
-    }
+    // Compute the row height as the max of default font size and explicit row height.
+    $options['position']['body_style']['height'] = max(
+      $options['position']['row_height'], $options['position']['header_style']['height']
+    );
 
-    if (!isset($options['position']['row_height']) || empty($options['position']['row_height'])) {
-      $options['position']['row_height'] = 0;
-    }
-
+    // Create a safety height padding, in current units.
+    // Without this, FP rounding errors can result in the computed row height
+    // being fractionally too small on occasional rows, making them invisible.
+    $safety = 0.01 / $this->k;
+    // Pre-process column info to determine layout parameters.
+    $borderpad = array('header_style' => $safety, 'body_style' => $safety);
     foreach ($columns as $id => $column) {
 
-      if (!empty($column->options['exclude'])) {
-        continue;
+      // Check for hide-empty columns and scan results to check if they are empty.
+      if (!empty($options['info'][$id]['empty']['hide_empty']) && ($row = reset($rows))) {
+        do {
+          $content = $view->field[$id]->theme($row);
+        } while (empty($content) && ($row = next($rows)));
+        // If the loop got to the end of the rows, then they are all empty.
+        if (!$row) {
+          $column->options['exclude'] = TRUE;
+        }
       }
+      // Skip excluded fields and the page-break field.
+      if (empty($column->options['exclude']) && $id != 'page_break') {
 
-      if (!is_array($options['info'][$id])) {
-        $options['info'][$id] = array();
+        // Options are merge of specific options and defaults.
+        if (isset($options['info']['_default_'])) {
+          if (!empty($options['info'][$id])) {
+            // Merge column specifics with column defaults.
+            $options['info'][$id] = array_replace_recursive($options['info']['_default_'], $options['info'][$id]);
+          }
+          else {
+            $options['info'][$id] = $options['info']['_default_'];
+          }
+        }
+        elseif (empty($options['info'][$id])) {
+          $options['info'][$id] = array();
+        }
+
+        if (!empty($options['info'][$id]['position']['width'])) {
+          $sumWidth += $options['info'][$id]['position']['width'];
+        }
+        else {
+          $numberOfColumnsWithoutWidth++;
+        }
+
+        foreach(array('header_style', 'body_style') as $style) {
+
+          $font_size = empty($options['info'][$id][$style]['text']['font_size'])?
+            $this->defaultFontSize : $options['info'][$id][$style]['text']['font_size'];
+
+          $cell_height = $this->getCellHeight($font_size / $this->k);
+
+          // Add extra padding if specified.
+          if (!empty($options['info'][$id][$style]['text']['vpad'])) {
+            $cell_height += $options['info'][$id][$style]['text']['vpad'] * 2;
+          }
+          // Increase row height if column font size requires.
+          $options['position'][$style]['height'] = max($options['position'][$style]['height'], $cell_height);
+
+          // Get extra vertical padding required if borders are present.
+          if (!empty($options['info'][$id][$style]['text']['border'])) {
+            $this->cell_padding['T'] = $this->cell_padding['B'] = 0;
+            $extra_paddings = $this->adjustCellPadding($options['info'][$id][$style]['text']['border']);
+            $borderpad[$style] = max($borderpad[$style], $extra_paddings['T'] + $extra_paddings['B']);
+          }
+        }
       }
+    }
+    $defaultColumnWidth = $numberOfColumnsWithoutWidth > 0?
+      $defaultColumnWidth = ($width - $sumWidth) / $numberOfColumnsWithoutWidth : 0;
 
-      $options['info'][$id] += array(
-        'header_style' => array(),
-        'body_style' => array(),
-      );
-
-      $options['info'][$id]['header_style'] += array(
-        'position' => array(),
-        'text' => array(),
-        'render' => array(),
-      );
-
-      $options['info'][$id]['header_style']['position'] += array(
-        'corner' => 'top_left',
-        'x' => NULL,
-        'y' => NULL,
-        'object' => '',
-        'width' => NULL,
-        'height' => NULL,
-      );
-
-      $options['info'][$id]['header_style']['text'] += array(
-        'font_family' => 'default',
-        'font_style' => '',
-      );
-
-      $options['info'][$id]['header_style']['text'] += array(
-        'eval_before' => '',
-        'eval_after' => '',
-      );
-
-      $options['info'][$id]['body_style'] += array(
-        'position' => array(),
-        'text' => array(),
-        'render' => array(),
-      );
-
-      $options['info'][$id]['body_style']['position'] += array(
-        'corner' => 'top_left',
-        'x' => NULL,
-        'y' => NULL,
-        'object' => '',
-        'width' => NULL,
-        'height' => NULL,
-      );
-
-      $options['info'][$id]['body_style']['text'] += array(
-        'font_family' => 'default',
-        'font_style' => '',
-      );
-
-      $options['info'][$id]['body_style']['text'] += array(
-        'eval_before' => '',
-        'eval_after' => '',
-      );
-
-      $headerOptions = $options['info'][$id]['header_style'];
-
-      if (isset($options['info'][$id]['position']['width']) && !empty($options['info'][$id]['position']['width'])) {
-        $headerOptions['position']['width'] = $options['info'][$id]['position']['width'];
-      }
-      else {
-        $headerOptions['position']['width'] = $defaultColumnWidth;
-      }
-      $headerOptions['position']['object'] = 'last_position_without_reset';
-
-      $this->SetY($y);
-      $this->SetX($x);
-      $this->setPage($page);
-
-      $this->renderRow($x, $y, $column->options['label'], $headerOptions, $view, $id, FALSE);
-      $x += $headerOptions['position']['width'];
+    // Increase heights to allow for borders.
+    foreach(array('header_style', 'body_style') as $style) {
+      $options['position'][$style]['height'] += $borderpad[$style];
     }
 
-    $rowY = $this->y;
-
-    if (!isset($options['position']['row_height']) || empty($options['position']['row_height'])) {
-      $options['position']['row_height'] = 0;
+    // Get table header spacing, or set to 0 if not using header.
+    // Note the value of $hspace is the distance from the top of the header to the first line,
+    // but the option value in the settings UI is the space from the bottom of the header
+    // to the first line.
+    if (empty($options['position']['use_header'])) {
+      $hspace = 0;
     }
+    else {
+      $hspace = $options['position']['header_style']['height'];
+      if (is_numeric($options['position']['h'])) {
+        $hspace += $options['position']['h'];
+      }
+    }
+    // Increase the top margin by the table header spacing.
+    $this->tMargin += $hspace;
+    $y = (float)$this->tMargin;
+    $x = (float)$this->lMargin;
 
+    // Add default option values, and gather all the column header data into an array for use by the Header() function.
+    $xh = $x;
+    $yh = $y - $hspace;
+    foreach ($columns as $id => $column) {
+      // Skip excluded fields and the page-break field.
+      if (empty($column->options['exclude']) && $id != 'page_break') {
+
+        foreach(array('header_style', 'body_style') as $style) {
+          $options['info'][$id][$style] += array(
+            'position' => array(),
+            'text' => array(),
+            'render' => array(),
+          );
+
+          $options['info'][$id][$style]['position'] += array(
+            'corner' => 'top_left',
+            'x' => NULL,
+            'y' => NULL,
+            'object' => '',
+            'width' => NULL,
+            'height' => NULL,
+          );
+
+          $options['info'][$id][$style]['text'] += array(
+            'font_family' => 'default',
+            'font_style' => array(),
+          );
+
+          $options['info'][$id][$style]['render'] += array(
+            'eval_before' => '',
+            'eval_after' => '',
+          );
+        }
+
+        if ($hspace) {
+          $headerOptions = $options['info'][$id]['header_style'];
+
+          $headerOptions['position']['width'] = !empty($options['info'][$id]['position']['width'])?
+            $options['info'][$id]['position']['width'] : $defaultColumnWidth;
+
+          $headerOptions['position']['height'] = $options['position']['header_style']['height'];
+
+          // Save the parameters for rendering the column headers for use by the Header() function.
+          $this->tableHeader[] = array($xh, $yh, $column->options['label'], $headerOptions, &$view, $id);
+          $xh += $headerOptions['position']['width'];
+        }
+      }
+    }
+    // Save default paddings for use in the header.
+    $this->cellPaddings = $this->cell_padding;
+
+    // Add the first page, this will print the header.
+    $this->addPage();
+
+    $rowX = $x;
+    $view->row_index = 0;
+
+    $break = FALSE;
     foreach ($rows as $row) {
       $x = $rowX;
 
-       // Get the page dimensions
-      $pageDim = $this->getPageDimensions();
-
-      if (($rowY + $this->bMargin + $options['position']['row_height']) > $pageDim['hk']) {
-        $rowY = $this->tMargin;
+      // If last row forced a new page, or this row would overflow page, add a page.
+      if ($break ||
+          ($this->y + $this->bMargin + $options['position']['body_style']['height']) > $pageDim['hk']) {
+        $break = FALSE;
         $this->addPage();
       }
 
-      if ($this->lastWritingPage != $this->getPage()) {
-        $rowY = $this->y; // $rowY - $pageDim['hk']
-      }
-
-      $y = $rowY;
-      $page = $this->getPage();
+      $y = (float)$this->y;
       foreach ($columns as $id => $column) {
+        // Always render the field in order to generate tokens for other fields.
+        $content = $view->field[$id]->theme($row);
 
-        if (!empty($column->options['exclude']) && is_object($view->field[$id])) {
-          // Render the element, but dont print the output. This
-          // is required to allow the use of tokens in other fields.
-          $view->field[$id]->theme($row);
-          continue;
+        if (empty($column->options['exclude'])) {
+
+          if ($id == 'page_break') {
+            $break = !empty($content);
+          }
+          else {
+            $bodyOptions = $options['info'][$id]['body_style'];
+
+            $bodyOptions['position']['width'] = !empty($options['info'][$id]['position']['width'])?
+              $options['info'][$id]['position']['width'] : $defaultColumnWidth;
+
+            $bodyOptions['position']['height'] = $options['position']['body_style']['height'];
+
+            $this->renderItem($x, $y, $content, $row, $bodyOptions, $view, $id, FALSE, TRUE);
+
+            // Set x to start position of next cell
+            $x += (float)$bodyOptions['position']['width'];
+          }
         }
-
-        $bodyOptions = $options['info'][$id]['body_style'];
-
-        if (isset($options['info'][$id]['position']['width']) && !empty($options['info'][$id]['position']['width'])) {
-          $bodyOptions['position']['width'] = $options['info'][$id]['position']['width'];
-        }
-        else {
-          $bodyOptions['position']['width'] = $defaultColumnWidth;
-        }
-        $bodyOptions['position']['object'] = 'last_position';
-
-        $this->setPage($page);
-        $this->SetY($y);
-        $this->SetX($x);
-
-        $bodyOptions['position']['height'] = 0;
-
-        $this->renderRow($x, $y, $row, $bodyOptions, $view, $id, FALSE);
-
-        $x += $bodyOptions['position']['width'];
-
-        // If the cell is writting over the row, we need to adjust the
-        // row y position.
-        if (($rowY + $options['position']['row_height']) < $this->y) {
-          $rowY = $this->y - $options['position']['row_height'];
-        }
-
       }
-
-      $rowY += $options['position']['row_height'];
+      // Set y position to start of next row.
+      $this->SetY($y + (float)$options['position']['body_style']['height']);
 
       $view->row_index++;
     }
-
-    $this->SetY($rowY + $options['position']['row_height']);
+    // Empty the table header data so as not to print on a trailing template.
+    $this->tableHeader = array();
   }
 
   /**
@@ -817,9 +846,12 @@ class PdfTemplate extends FPDI {
    * it will returns the number of the added pages.
    *
    * @param $path string Path to the file
+   * @param $position 'leading' or 'succeed' according to position of document
    * @return integer Number of added pages
    */
-  public function addPdfDocument($path) {
+  public function addPdfDocument($path = '', $position = '') {
+    $this->position = $position;
+
     if (empty($path) || !file_exists($path)) {
       return 0;
     }
@@ -891,6 +923,7 @@ class PdfTemplate extends FPDI {
     if ($path != NULL) {
       $files[] = array('path' => $path, 'numbering' => $numbering);
     }
+
     $format = FALSE;
     foreach ($files as $file) {
       if (!empty($file['path']) && file_exists($file['path'])) {
@@ -920,8 +953,8 @@ class PdfTemplate extends FPDI {
           else {
             $orientation = 'P';
           }
-          $this->setPageFormat($format, $orientation);
           parent::addPage();
+          $this->setPageFormat($format, $orientation);
         }
 
         // Apply the template
@@ -941,11 +974,9 @@ class PdfTemplate extends FPDI {
    * Sets the current header and footer of the page.
    */
   public function setHeaderFooter($record, $options, $view) {
-    //if ($this->getPage() > 0 && !isset($this->headerFooterData[$this->getPage()])) {
-      $this->headerFooterData[$this->getPage()] = $record;
-    //}
+    $this->headerFooterData[$this->getPage()] = $record;
     $this->headerFooterOptions = $options;
-    $this->view =& $view;
+    $this->view = $view;
   }
 
   /**
@@ -954,12 +985,13 @@ class PdfTemplate extends FPDI {
    */
   public function Close() {
     // Print the Header & Footer
+
     for ($page = 1; $page <= $this->getNumPages(); $page++) {
       $this->setPage($page);
 
       if (isset($this->headerFooterData[$page])) {
-        $record = $this->headerFooterData[$page];
         if (is_array($this->headerFooterOptions['formats'])) {
+          $record = $this->headerFooterData[$page];
           foreach ($this->headerFooterOptions['formats'] as $id => $options) {
             if ($options['position']['object'] == 'header_footer') {
               $fieldOptions = $options;
@@ -985,7 +1017,6 @@ class PdfTemplate extends FPDI {
 
     // call parent:
     parent::Close();
-
   }
 
   /**

@@ -16,35 +16,25 @@ class views_pdf_plugin_row_fields extends views_plugin_row {
   function render($row) {
     $options = $this->option_definition();
 
-    // Header of a record.
-    $path = $this->view->pdf->getTemplatePath($this->options['leading_template']);
-    $this->view->pdf->addPdfDocument($path);
-
-    // Set row page template.
-    $path = $this->view->pdf->getTemplatePath($this->options['template'], $row, $this->view);
-    $this->view->pdf->setDefaultPageTemplate($path, 'row', 'row');
-
     // Due of limitations of field renderer, we invoke them
     // here and not in the field render function.
     foreach ($this->view->field as $id => $field) {
-      if (isset($this->options['formats'][$id])) {
-        $options = $this->options['formats'][$id];
-      }
-      else {
-        $options = array();
-      }
+      if (empty($field->options['exclude'])) {
+        if (isset($this->options['formats'][$id])) {
+          $options = $this->options['formats'][$id];
+        }
+        else {
+          $options = array();
+        }
+        // Register the row for header & footer on the current page before writing
+        // each field. This is necessary in case the fields for one record span
+        // multiple pages, or there is a page break. Otherwise there can be pages
+        // with missing headers and footers.
+        $this->view->pdf->setHeaderFooter($row, $this->options, $this->view);
 
-      $this->view->pdf->drawContent($row, $options, $this->view, $id);
-
-      // Set or update header / footer options per row
-      // this ensures that we write the last record for each page
-      // in the cache.
-      $this->view->pdf->setHeaderFooter($row, $this->options, $this->view);
+        $this->view->pdf->drawContent($row, $options, $this->view, $id);
+      }
     }
-
-    // Footer of a record.
-    $path = $this->view->pdf->getTemplatePath($this->options['succeed_template']);
-    $this->view->pdf->addPdfDocument($path);
 
     // Reset the row page number.
     $this->view->pdf->resetRowPageNumber();
@@ -127,7 +117,7 @@ class views_pdf_plugin_row_fields extends views_plugin_row {
 
     foreach ($options as $field => $option) {
 
-      if (isset($fields[$field]['exclude']) && $fields[$field]['exclude'] == 1) {
+      if (!empty($fields[$field]['exclude'])) {
         continue;
       }
 
@@ -264,40 +254,44 @@ class views_pdf_plugin_row_fields extends views_plugin_row {
         '#description' => t("Allow a custom module to alter the layout of this field."),
         '#default_value' => !empty($this->options['formats'][$field]['render']['custom_layout']) ? $this->options['formats'][$field]['render']['custom_layout'] : FALSE,
       );
+      $form['formats'][$field]['render']['custom_post'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Enable custom post render hook.'),
+        '#description' => t("Allow a custom module hook to be executed after the rendering of this field."),
+        '#default_value' => !empty($this->options['formats'][$field]['render']['custom_post']) ? $this->options['formats'][$field]['render']['custom_post'] : FALSE,
+      );
       $form['formats'][$field]['render']['minimal_space'] = array(
         '#type' => 'textfield',
         '#title' => t('Minimal Space'),
         '#description' => t('Specify here the minimal space, which is needed on the page, that the content is placed on the page.'),
         '#default_value' => isset($this->options['formats'][$field]['render']['minimal_space']) ? $this->options['formats'][$field]['render']['minimal_space'] : 1,
       );
-      if (user_access('allow php in views pdf') && VIEWS_PDF_PHP) {
+      if (user_access('use PHP for settings') && VIEWS_PDF_PHP) {
         $form['formats'][$field]['render']['eval_before'] = array(
           '#type' => 'textarea',
           '#title' => t('PHP Code Before Output'),
+          '#description' =>
+          t('Please avoid direct PHP here, this feature is deprecated in favour of hook_views_pdf_custom_layout()'),
           '#default_value' => isset($this->options['formats'][$field]['render']['eval_before']) ? $this->options['formats'][$field]['render']['eval_before'] : '',
         );
         $form['formats'][$field]['render']['bypass_eval_before'] = array(
           '#type' => 'checkbox',
           '#title' => t('Use the PHP eval function instead php_eval.'),
-          '#description' => t("WARNING: If you don't know the risk of using eval leave as it."),
+          '#description' => t("WARNING: If you don't know the risk of using eval leave unckecked."),
           '#default_value' => !empty($this->options['formats'][$field]['render']['bypass_eval_before']) ? $this->options['formats'][$field]['render']['bypass_eval_before'] : FALSE,
         );
-        $form['formats'][$field]['render']['custom_post'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('Enable custom post render hook.'),
-        '#description' => t("Allow a custom module hook to be executed after the rendering of this field."),
-        '#default_value' => !empty($this->options['formats'][$field]['render']['custom_post']) ? $this->options['formats'][$field]['render']['custom_post'] : FALSE,
-      );
 
         $form['formats'][$field]['render']['eval_after'] = array(
           '#type' => 'textarea',
           '#title' => t('PHP Code After Output'),
+          '#description' =>
+          t('Please avoid direct PHP here, this feature is deprecated in favour of hook_views_pdf_custom_post()'),
           '#default_value' => isset($this->options['formats'][$field]['render']['eval_after']) ? $this->options['formats'][$field]['render']['eval_after'] : '',
         );
         $form['formats'][$field]['render']['bypass_eval_after'] = array(
           '#type' => 'checkbox',
           '#title' => t('Use the PHP eval function instead php_eval.'),
-          '#description' => t("WARNING: If you don't know the risk of using eval leave as it."),
+          '#description' => t("WARNING: If you don't know the risk of using eval leave unckecked."),
           '#default_value' => !empty($this->options['formats'][$field]['render']['bypass_eval_after']) ? $this->options['formats'][$field]['render']['bypass_eval_after'] : FALSE,
         );
       }
@@ -339,15 +333,13 @@ class views_pdf_plugin_row_fields extends views_plugin_row {
     );
 
     $form['#attached']['js'][] = array(
-          'type' => 'setting',
-          'data' => array(
-            'urlIsAjaxTrusted' => array(
-              $GLOBALS['base_url'] . '/' . current_path() => TRUE,
-            ),
-          ),
-        );
-
-
+      'type' => 'setting',
+      'data' => array(
+        'urlIsAjaxTrusted' => array(
+          $GLOBALS['base_url'] . '/' . current_path() => TRUE,
+        ),
+      ),
+    );
   }
 
   /**
@@ -358,7 +350,8 @@ class views_pdf_plugin_row_fields extends views_plugin_row {
     foreach ($form_state['values']['row_options']['formats'] as $id => $field) {
 
       // Reset to default, if the elements are equal to the default settings
-      if (count(array_diff($default, $field['text']['font_style'])) == 0 && count(array_diff($field['text']['font_style'], $default)) == 0) {
+      if (count(array_diff($default, $field['text']['font_style'])) == 0 &&
+          count(array_diff($field['text']['font_style'], $default)) == 0) {
         $form_state['values']['row_options']['formats'][$id]['text']['font_style'] = NULL;
       }
 

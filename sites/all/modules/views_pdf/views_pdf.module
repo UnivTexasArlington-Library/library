@@ -15,6 +15,32 @@ function views_pdf_views_api() {
 }
 
 /**
+ * Implements hook_menu().
+ */
+function views_pdf_menu() {
+  $items = array();
+
+  $items['admin/structure/views/pdfs'] = array(
+    'title' => t('PDF Templates'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('views_pdf_templates'),
+    'access arguments' => array('administer views'),
+    'file' => 'views_pdf.admin.inc',
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 10,
+  );
+  $items['admin/structure/views/pdfs/delete/%'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('views_pdf_template_delete', 5),
+    'access arguments' => array('administer views'),
+    'file' => 'views_pdf.admin.inc',
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
  * Implements hook_theme().
  */
 function views_pdf_theme() {
@@ -209,8 +235,3 @@ if (!function_exists('array_replace_recursive')) {
     }
   }
 }
-
-
-
-
-

@@ -77,7 +77,8 @@ function views_pdf_views_plugins() {
         'parent' => 'default',
         'uses row plugin' => TRUE,
         'uses fields' => TRUE,
-        'uses options' => TRUE,
+        // No options, not even grouping. Set to TRUE if grouping implemented.
+        'uses options' => FALSE,
         'type' => 'pdf',
       ),
     ),

@@ -11,6 +11,23 @@
  * This class holds all the funtionality used for the unformatted style plugin.
  */
 class views_pdf_plugin_style_unformatted extends views_plugin_style {
+
+  /**
+   * Render the style.
+   *
+   * Grouping is not supported, it will probably require overriding render_grouping()
+   * as well as render_grouping_sets() in order to get it to work properly.
+   *
+   * @see views_pdf_views_plugins()
+   */
+  function render() {
+    $this->view->row_index = 0;
+    foreach ($this->view->result as $row) {
+      $this->row_plugin->render($row);
+      $this->view->row_index++;
+    }
+  }
+
   /**
    * Render the grouping sets.
    *
@@ -25,7 +42,8 @@ class views_pdf_plugin_style_unformatted extends views_plugin_style {
    * @return string
    *   Rendered output of given grouping sets.
    */
-  function render_grouping_sets($sets, $level = 0) {
+/*
+    function render_grouping_sets($sets, $level = 0) {
 
     $output = '';
 
@@ -65,6 +83,7 @@ class views_pdf_plugin_style_unformatted extends views_plugin_style {
     unset($this->view->row_index);
     return $output;
   }
+*/
 
   /**
    * Attach this view to another display as a feed.
