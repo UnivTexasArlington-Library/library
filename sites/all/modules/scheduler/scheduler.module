@@ -437,11 +437,14 @@ function _scheduler_strptime($date, $format) {
     }
     $index++;
   }
-  if ((strncasecmp($results['meridiem'], "pm", 2) == 0) && ($results['hour'] < 12)) {
-    $results['hour'] += 12;
-  }
-  if ((strncasecmp($results['meridiem'], "am", 2) == 0) && ($results['hour'] == 12)) {
-    $results['hour'] -= 12;
+
+  if ($results['meridiem'] !== NULL) {
+    if ((strncasecmp($results['meridiem'], "pm", 2) == 0) && ($results['hour'] < 12)) {
+      $results['hour'] += 12;
+    }
+    if ((strncasecmp($results['meridiem'], "am", 2) == 0) && ($results['hour'] == 12)) {
+      $results['hour'] -= 12;
+    }
   }
 
   $time = mktime($results['hour'], $results['minute'], $results['second'], $results['month'], $results['day'], $results['year']);
@@ -876,14 +879,8 @@ function scheduler_feeds_set_target($source, $entity, $target, $value, $mapping)
   // then strtotime() must not be used, otherwise it returns the current time.
   if (!empty($value) && !is_numeric($value)) {
     if (!$timestamp = strtotime($value)) {
-      throw new FeedsValidationException(
-        // Throw an exception if the date format was not recognized.
-        t('Value %value for @source could not be converted to a valid %target date.', array(
-          '@source' => $mapping['source'],
-          '%value' => $value,
-          '%target' => $target,
-        )
-      ));
+      // Throw an exception if the date format was not recognized.
+      throw new FeedsValidationException("Value $value for {$mapping['source']} could not be converted to a valid Scheduler $target date.");
     }
   }
   else {

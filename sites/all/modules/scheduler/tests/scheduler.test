@@ -74,6 +74,9 @@ abstract class SchedulerTestBase extends DrupalWebTestCase {
     $this->drupalLogin($this->adminUser);
     $this->drupalPost('node/add/page', $edit, t('Save'));
     $node = $this->drupalGetNodeByTitle($title);
+
+    // Verify that the scheduler table is not empty.
+    $this->assertTrue(db_query_range('SELECT 1 FROM {scheduler}', 0, 1)->fetchField(), 'Scheduler table is not empty');
     // Show the specific page for an anonymous visitor, then assert that the
     // node is correctly published or unpublished.
     $this->drupalLogout();
@@ -86,8 +89,7 @@ abstract class SchedulerTestBase extends DrupalWebTestCase {
       $key = 'unpublish_on';
       $this->assertText($body, t('Node is published'));
     }
-    // Verify that the scheduler table is not empty.
-    $this->assertTrue(db_query_range('SELECT 1 FROM {scheduler}', 0, 1)->fetchField(), 'Scheduler table is not empty');
+
     // Modify the scheduler row to a time far enough in the past because
     // scheduler_cron uses REQUEST_TIME and our timestamp has to be before that.
     db_update('scheduler')->fields(array($key => time() - 3600))->execute();
@@ -98,6 +100,7 @@ abstract class SchedulerTestBase extends DrupalWebTestCase {
       $this->cronRun();
     }
     // Verify that the scheduler table is empty.
+    // If the cron job gives 403 check $conf[cron_key] in settings.php.
     $this->assertFalse(db_query_range('SELECT 1 FROM {scheduler}', 0, 1)->fetchField(), 'Scheduler table is empty');
     // Show the specific page for an anonymous visitor, then assert that the
     // node is correctly published or unpublished.
@@ -694,25 +697,25 @@ class SchedulerFunctionalTest extends SchedulerTestBase {
    *     unpublishing_enabled - (bool) whether unpublishing is enabled
    */
   public function dataNonEnabledType() {
-    $data = [
+    $data = array(
       // By default check that the scheduler date fields are not displayed.
-      0 => [0, 'Default', FALSE, FALSE],
+      0 => array(0, 'Default', FALSE, FALSE),
 
       // Explicitly disable this content type for both settings.
-      1 => [1, 'Disabling both settings', FALSE, FALSE],
+      1 => array(1, 'Disabling both settings', FALSE, FALSE),
 
       // Turn on scheduled publishing only.
-      2 => [2, 'Enabling publishing only', TRUE, FALSE],
+      2 => array(2, 'Enabling publishing only', TRUE, FALSE),
 
       // Turn on scheduled unpublishing only.
-      3 => [3, 'Enabling unpublishing only', FALSE, TRUE],
+      3 => array(3, 'Enabling unpublishing only', FALSE, TRUE),
 
       // For completeness turn on bothbscheduled publishing and unpublishing.
-      4 => [4, 'Enabling both publishing and unpublishing', TRUE, TRUE],
-    ];
+      4 => array(4, 'Enabling both publishing and unpublishing', TRUE, TRUE),
+    );
 
     // Use unset($data[n]) to remove a temporarily unwanted item, use
-    // return [$data[n]] to selectively test just one item, or have the
+    // return array($data[n]) to selectively test just one item, or have the
     // default return $data to test everything.
     return $data;
 
@@ -906,7 +909,7 @@ class SchedulerFunctionalTest extends SchedulerTestBase {
     variable_set('scheduler_publish_required_page', TRUE);
     variable_set('scheduler_unpublish_required_page', TRUE);
 
-    // @TODO Add tests when scheduled publishing and unpublishing are required.
+    // @todo Add tests when scheduled publishing and unpublishing are required.
     // Cannot be done until we make a decision on what 'required'  means.
     // @see https://www.drupal.org/node/2707411
     // "Conflict between 'required publishing' and not having permission"
@@ -1201,7 +1204,10 @@ class SchedulerDateModuleTest extends SchedulerTestBase {
         'scheduler_field_type' => 'date_popup',
       );
       $this->drupalPost('admin/config/content/scheduler', $edit, t('Save configuration'));
-      $message = format_string('When using date popups the date format %format is @expected', array('%format' => $date_format, '@expected' => $expected_result ? 'allowed' : 'not allowed.'));
+      $message = format_string('When using date popups the date format %format is @expected', array(
+        '%format' => $date_format,
+        '@expected' => $expected_result ? 'allowed' : 'not allowed.',
+      ));
       $assert = $expected_result ? 'assertNoText' : 'assertText';
       $this->$assert('Error message', $message);
     }
@@ -1252,7 +1258,10 @@ class SchedulerRulesTest extends SchedulerTestBase {
     $rule = rules_reaction_rule();
     $rule->event('node_presave')
       ->condition(rules_condition('data_is', array('data:select' => 'node:title', 'value' => 'Rule 1')))
-      ->action(rules_action('scheduler_set_publish_date_action', array('data:select' => 'node:node', 'date' => REQUEST_TIME + 1800)))
+      ->action(rules_action('scheduler_set_publish_date_action', array(
+        'data:select' => 'node:node',
+        'date' => REQUEST_TIME + 1800,
+      )))
       ->action('drupal_message', array('message' => $message1));
     // Check access and integrity, then save the rule.
     $rule->access();
@@ -1274,7 +1283,10 @@ class SchedulerRulesTest extends SchedulerTestBase {
     $rule = rules_reaction_rule();
     $rule->event('node_presave')
       ->condition(rules_condition('data_is', array('data:select' => 'node:title', 'value' => 'Rule 3')))
-      ->action(rules_action('scheduler_set_unpublish_date_action', array('data:select' => 'node:node', 'date' => REQUEST_TIME + 1800)))
+      ->action(rules_action('scheduler_set_unpublish_date_action', array(
+        'data:select' => 'node:node',
+        'date' => REQUEST_TIME + 1800,
+      )))
       ->action('drupal_message', array('message' => $message3));
     $rule->access();
     $rule->integrityCheck();
@@ -1569,6 +1581,7 @@ class SchedulerRulesTest extends SchedulerTestBase {
   public function testRulesEvents() {
 
     // Create six reaction rules, one for each event that Scheduler triggers.
+    // phpcs:set Drupal.Arrays.Array lineLimit 150
     $rule_data = array(
       1 => array('scheduler_new_node_is_scheduled_for_publishing_event', 'A new node is created and is scheduled for publishing.'),
       2 => array('scheduler_existing_node_is_scheduled_for_publishing_event', 'An existing node is saved and is scheduled for publishing.'),
@@ -1577,6 +1590,7 @@ class SchedulerRulesTest extends SchedulerTestBase {
       5 => array('scheduler_existing_node_is_scheduled_for_unpublishing_event', 'An existing node is saved and is scheduled for unpublishing.'),
       6 => array('scheduler_node_has_been_unpublished_event', 'Scheduler has unpublished this node during cron.'),
     );
+    // phpcs:set Drupal.Arrays.Array lineLimit 120
     foreach ($rule_data as $i => $values) {
       list($event_name, $description) = $values;
       $rule = rules_reaction_rule();

@@ -1,0 +1,15 @@
+# See docs at https://www.drupal.org/drupalorg/docs/drupal-ci/customizing-drupalci-testing-for-projects
+build:
+  assessment:
+    validate_codebase:
+      container_composer:
+      phplint:
+      phpcs:
+        sniff-all-files: false
+      eslint:
+      csslint:
+    testing:
+      run_tests_d7:
+        testgroups: '--all'
+        types: 'PHPUnit-Functional'
+        suppress-deprecations: true

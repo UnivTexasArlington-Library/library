@@ -19,10 +19,22 @@
     <exclude name="Drupal.Commenting.InlineComment.SpacingAfter"/>
   </rule>
 
+  <!-- Ignore the NullCoalesce sniff because ?? is only availbale from PHP7 -->
+  <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator"><severity>0</severity></rule>
+  <!-- Ignore the LongListUsed sniff because short array [] is only availbale from PHP7 -->
+  <rule ref="SlevomatCodingStandard.PHP.ShortList.LongListUsed"><severity>0</severity></rule>
+
   <!-- Ignore all files that match these patterns. By default the full file -->
   <!-- path is checked, unless type=relative is used. There is an implied * -->
   <!-- wildcard at each end and periods and slashes must be escaped using \ -->
   <exclude-pattern>\/_+ignore</exclude-pattern>
   <exclude-pattern>interdif</exclude-pattern>
+
+  <!-- Increase the allowed line length for inline array declarations. -->
+  <rule ref="Drupal.Arrays.Array">
+    <properties>
+      <property name="lineLimit" value="120"/>
+    </properties>
+  </rule>
 
 </ruleset>

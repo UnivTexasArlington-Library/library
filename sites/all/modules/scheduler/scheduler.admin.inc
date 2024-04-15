@@ -195,10 +195,15 @@ function scheduler_admin_submit($form, &$form_state) {
   variable_set('scheduler_date_only_format', $date_only_format);
 
   if (empty($time_only_format)) {
-    drupal_set_message(t('The date part of the Scheduler format is %date_part. There is no time part', array('%date_part' => $date_only_format)));
+    drupal_set_message(t('The date part of the Scheduler format is %date_part. There is no time part', array(
+      '%date_part' => $date_only_format,
+    )));
   }
   else {
-    drupal_set_message(t('The date part of the Scheduler format is %date_part and the time part is %time_part.', array('%date_part' => $date_only_format, '%time_part' => $time_only_format)));
+    drupal_set_message(t('The date part of the Scheduler format is %date_part and the time part is %time_part.', array(
+      '%date_part' => $date_only_format,
+      '%time_part' => $time_only_format,
+    )));
   }
 }
 

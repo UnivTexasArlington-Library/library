@@ -7,6 +7,7 @@
  * This content type contains the publish and unpublish scheduling date fields.
  */
 
+// phpcs:ignore DrupalPractice.CodeAnalysis.VariableAnalysis
 $plugin = array(
   'single' => TRUE,
   'edit form' => 'scheduler_form_pane_node_form_menu_content_type_edit_form',
