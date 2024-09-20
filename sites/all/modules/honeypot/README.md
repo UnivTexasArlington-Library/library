@@ -40,16 +40,28 @@ restriction on the form by including or not including the option in the array.
 
 ## Testing
 
-Honeypot includes a `docker-compose.yml` file that can be used for testing purposes. To build a Drupal 8 environment for local testing, do the following:
+Honeypot includes a `docker-compose.yml` file that can be used for testing
+purposes. To build a Drupal 8 environment for local testing, do the following:
 
-  1. Make sure you have Docker for Mac (or for whatever OS you're using) installed.
-  2. Add the following entry to your `/etc/hosts` file: `192.168.22.33   local.drupalhoneypot.com`
-  3. Run `docker-compose up -d` in this directory.
-  4. Install Drupal: `docker exec honeypot install-drupal 7.x` (optionally provide a version after `install-drupal`).
-  5. Link the honeypot module directory into the Drupal modules directory: `docker exec honeypot ln -s /opt/honeypot/ /var/www/drupalvm/drupal/web/sites/all/modules/honeypot`
-  6. Visit `http://local.drupalhoneypot.com/user` and log in using the admin credentials Drush displayed.
+  1. Make sure you have Docker installed.
+  1. Add the following entry to your `/etc/hosts` file:
+     `192.168.22.33   local.drupalhoneypot.com`
+  1. Run `docker-compose up -d` in this directory.
+  1. Install Drupal: `docker exec honeypot install-drupal 7.x` (optionally
+     provide a version after `install-drupal`).
+  1. Link the honeypot module directory into the Drupal modules directory:
 
-> Note: If you're using a Mac, you may also need to perform additional steps to get the hostname working; see [Managing your hosts file](http://docs.drupalvm.com/en/latest/other/docker/#managing-your-hosts-file) in the Drupal VM documentation.
+     ```
+     docker exec honeypot ln -s /opt/honeypot/ /var/www/drupalvm/drupal/web/sites/all/modules/honeypot
+     ```
+
+  1. Visit `http://local.drupalhoneypot.com/user` and log in using the admin
+     credentials Drush displayed.
+
+> Note: If you're using a Mac, you may also need to perform additional steps to
+get the hostname working; see [Managing your hosts file]
+(http://docs.drupalvm.com/en/latest/other/docker/#managing-your-hosts-file)
+in the Drupal VM documentation.
 
 
 ## Credit

@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Honeypot test module.
+ */
+
+/**
  * Implements hook_menu().
  */
 function honeypot_test_menu() {

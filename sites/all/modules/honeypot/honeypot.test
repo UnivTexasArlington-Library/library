@@ -6,13 +6,34 @@
  */
 
 /**
- * Test the functionality of the Honeypot module for forms.
+ * Tests the functionality of the Honeypot module for forms.
  */
 class HoneypotFormTestCase extends DrupalWebTestCase {
+
+  /**
+   * Admin user.
+   *
+   * @var object|false
+   */
   protected $adminUser;
+
+  /**
+   * Web user, an authenticated user with some permissions.
+   *
+   * @var object|false
+   */
   protected $webUser;
+
+  /**
+   * Example node.
+   *
+   * @var object
+   */
   protected $node;
 
+  /**
+   * Implements DrupalWebTestCase::getInfo().
+   */
   public static function getInfo() {
     return array(
       'name' => 'Honeypot form protections',
@@ -21,7 +42,10 @@ class HoneypotFormTestCase extends DrupalWebTestCase {
     );
   }
 
-  public function setUp() {
+  /**
+   * Overrides DrupalWebTestCase::setUp().
+   */
+  protected function setUp() {
     // Enable modules required for this test.
     parent::setUp(array('honeypot', 'comment', 'honeypot_test'));
 
@@ -65,7 +89,7 @@ class HoneypotFormTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Test user registration (anonymous users).
+   * Tests user registration (anonymous users).
    */
   public function testProtectRegisterUserNormal() {
     // Set up form and submit it.
@@ -77,10 +101,14 @@ class HoneypotFormTestCase extends DrupalWebTestCase {
     $this->assertText(t('A welcome message with further instructions has been sent to your e-mail address.'), 'User registered successfully.');
   }
 
+  /**
+   * Tests that user registration is protected when honeypot field is filled.
+   */
   public function testProtectUserRegisterHoneypotFilled() {
     // Set up form and submit it.
     $edit['name'] = $this->randomName();
     $edit['mail'] = $edit['name'] . '@example.com';
+    // Fill in Honeypot 'url' field.
     $edit['url'] = 'http://www.example.com/';
     $this->drupalPost('user/register', $edit, t('Create new account'));
 
@@ -88,6 +116,9 @@ class HoneypotFormTestCase extends DrupalWebTestCase {
     $this->assertText(t('There was a problem with your form submission. Please refresh the page and try again.'), 'Registration form protected by honeypot.');
   }
 
+  /**
+   * Tests that user register form is protected when submitted too quickly.
+   */
   public function testProtectRegisterUserTooFast() {
     // Enable time limit for honeypot.
     variable_set('honeypot_time_limit', 5);
@@ -102,7 +133,7 @@ class HoneypotFormTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Test comment form protection.
+   * Tests comment form protection.
    */
   public function testProtectCommentFormNormal() {
     $comment = 'Test comment.';
@@ -119,6 +150,9 @@ class HoneypotFormTestCase extends DrupalWebTestCase {
     $this->assertText(t('Your comment has been posted.'), 'Comment posted successfully.');
   }
 
+  /**
+   * Tests that comment form is protected when honeypot field is filled.
+   */
   public function testProtectCommentFormHoneypotFilled() {
     $comment = 'Test comment.';
 
@@ -127,11 +161,15 @@ class HoneypotFormTestCase extends DrupalWebTestCase {
 
     // Set up form and submit it.
     $edit['comment_body[' . LANGUAGE_NONE . '][0][value]'] = $comment;
+    // Fill in Honeypot 'url' field.
     $edit['url'] = 'http://www.example.com/';
     $this->drupalPost('comment/reply/' . $this->node->nid, $edit, t('Save'));
     $this->assertText(t('There was a problem with your form submission. Please refresh the page and try again.'), 'Comment posted successfully.');
   }
 
+  /**
+   * Tests that comment form can be submitted when honeypot field is ignored.
+   */
   public function testProtectCommentFormHoneypotBypass() {
     // Log in the admin user.
     $this->drupalLogin($this->adminUser);
@@ -142,7 +180,7 @@ class HoneypotFormTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Test node form protection.
+   * Tests that node form is protected when submitted too quickly.
    */
   public function testProtectNodeFormTooFast() {
     // Log in the admin user.
@@ -158,7 +196,7 @@ class HoneypotFormTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Test node form protection.
+   * Tests node form protection.
    */
   public function testProtectNodeFormPreviewPassthru() {
     // Log in the admin user.
@@ -171,7 +209,7 @@ class HoneypotFormTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Test programmatic submission.
+   * Tests programmatic submission.
    */
   public function testProgrammaticSubmission() {
     // Enable time limit protection.
@@ -179,8 +217,8 @@ class HoneypotFormTestCase extends DrupalWebTestCase {
 
     // Create a user for which we are going to trigger the password reset.
     $edit = array();
-    $edit['name']   = 'robo-user';
-    $edit['mail']   = $edit['name'] . '@example.com';
+    $edit['name'] = 'robo-user';
+    $edit['mail'] = $edit['name'] . '@example.com';
     $edit['status'] = 1;
     user_save(drupal_anonymous_user(), $edit);
 
@@ -194,7 +232,7 @@ class HoneypotFormTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Test that any (not-strict-empty) value triggers protection.
+   * Tests that any (not-strict-empty) value triggers protection.
    */
   public function testStrictEmptinessOnHoneypotField() {
     // Initialise the form values.
@@ -203,19 +241,30 @@ class HoneypotFormTestCase extends DrupalWebTestCase {
 
     // Any value that is not strictly empty should trigger Honeypot.
     foreach (['0', ' '] as $value) {
+      // Fill in Honeypot 'url' field.
       $edit['url'] = $value;
       $this->drupalPost('user/register', $edit, t('Create new account'));
       $this->assertText(t('There was a problem with your form submission. Please refresh the page and try again.'), "Honeypot protection is triggered when the honeypot field contains '{$value}'.");
     }
   }
+
 }
 
 /**
  * Test the functionality of the Honeypot module for an admin user.
  */
 class HoneypotAdminFormTestCase extends DrupalWebTestCase {
+
+  /**
+   * Admin user.
+   *
+   * @var object|false
+   */
   protected $adminUser;
 
+  /**
+   * Implements DrupalWebTestCase::getInfo().
+   */
   public static function getInfo() {
     return array(
       'name' => 'Honeypot admin form',
@@ -224,7 +273,10 @@ class HoneypotAdminFormTestCase extends DrupalWebTestCase {
     );
   }
 
-  public function setUp() {
+  /**
+   * Overrides DrupalWebTestCase::setUp().
+   */
+  protected function setUp() {
     // Enable modules required for this test.
     parent::setUp(array('honeypot'));
 
@@ -236,7 +288,7 @@ class HoneypotAdminFormTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Test a valid element name.
+   * Tests a valid element name.
    */
   public function testElementNameUpdateSuccess() {
     // Log in the web user.
@@ -258,7 +310,7 @@ class HoneypotAdminFormTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Test an invalid element name (invalid first character).
+   * Tests an invalid element name (invalid first character).
    */
   public function testElementNameUpdateFirstCharacterFail() {
     // Log in the admin user.
@@ -273,7 +325,7 @@ class HoneypotAdminFormTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Test an invalid element name (invalid character in name).
+   * Tests an invalid element name (invalid character in name).
    */
   public function testElementNameUpdateInvalidCharacterFail() {
     // Log in the admin user.
@@ -293,12 +345,17 @@ class HoneypotAdminFormTestCase extends DrupalWebTestCase {
     // Form submission should fail.
     $this->assertText(t('The element name cannot contain spaces or other special characters.'), 'Honeypot element name assertion works for invalid names with spaces.');
   }
+
 }
 
 /**
  * Test Honeypot's CSS generation routines.
  */
 class HoneypotCssTestCase extends DrupalWebTestCase {
+
+  /**
+   * Implements DrupalWebTestCase::getInfo().
+   */
   public static function getInfo() {
     return array(
       'name' => 'Honeypot CSS tests',
@@ -307,7 +364,10 @@ class HoneypotCssTestCase extends DrupalWebTestCase {
     );
   }
 
-  public function setUp() {
+  /**
+   * Overrides DrupalWebTestCase::setUp().
+   */
+  protected function setUp() {
     // Enable modules required for this test.
     parent::setUp(array('honeypot'));
 
@@ -316,7 +376,7 @@ class HoneypotCssTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Test CSS file regeneration.
+   * Tests CSS file regeneration.
    */
   public function testHoneypotCssRegeneration() {
     $honeypot_css = honeypot_get_css_file_path();
@@ -335,7 +395,7 @@ class HoneypotCssTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Test cron-based CSS file regeneration.
+   * Tests cron-based CSS file regeneration.
    */
   public function testHoneypotCssRegenerationOnCron() {
     $honeypot_css = honeypot_get_css_file_path();
@@ -354,7 +414,7 @@ class HoneypotCssTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Test cron-based CSS file update.
+   * Tests cron-based CSS file update.
    */
   public function testHoneypotCssUpdateOnCron() {
     $honeypot_css = honeypot_get_css_file_path();
@@ -384,7 +444,7 @@ class HoneypotCssTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Test CSS works when default file scheme is not public://
+   * Tests CSS works when default file scheme is not "public://".
    */
   public function testHoneypotCssNonpublicFileSystem() {
     variable_set('file_default_scheme', 'private');
@@ -405,7 +465,7 @@ class HoneypotCssTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Test CSS file availability.
+   * Tests CSS file availability.
    */
   public function testHoneypotCssAvailability() {
     // Public CSS file can be consumed.
@@ -415,7 +475,6 @@ class HoneypotCssTestCase extends DrupalWebTestCase {
     }
     $this->drupalGet($url);
     $this->assertResponse(200);
-
 
     // Private CSS file can not be consumed.
     variable_set('file_default_scheme', 'private');
@@ -442,6 +501,10 @@ class HoneypotCssTestCase extends DrupalWebTestCase {
  * Test the functionality of the Honeypot module's integration with Trigger.
  */
 class HoneypotTriggerTestCase extends DrupalWebTestCase {
+
+  /**
+   * Implements DrupalWebTestCase::getInfo().
+   */
   public static function getInfo() {
     return array(
       'name' => 'Honeypot Trigger integration',
@@ -450,7 +513,10 @@ class HoneypotTriggerTestCase extends DrupalWebTestCase {
     );
   }
 
-  public function setUp() {
+  /**
+   * Overrides DrupalWebTestCase::setUp().
+   */
+  protected function setUp() {
     // Enable modules required for this test.
     parent::setUp(array('honeypot', 'trigger'));
 
@@ -477,12 +543,13 @@ class HoneypotTriggerTestCase extends DrupalWebTestCase {
   }
 
   /**
-   * Test trigger integration.
+   * Tests trigger integration.
    */
   public function testHoneypotTriggerIntegration() {
     // Set up form and submit it.
     $edit['name'] = $this->randomName();
     $edit['mail'] = $edit['name'] . '@example.com';
+    // Fill in Honeypot 'url' field.
     $edit['url'] = 'http://www.example.com/';
     $this->drupalPost('user/register', $edit, t('Create new account'));
 

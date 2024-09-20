@@ -152,8 +152,8 @@ function honeypot_library() {
         'data' => array(
           'honeypot' => array(
             'jsToken' => honeypot_get_signed_timestamp('js_token:' . mt_rand(0, 2147483647)),
-           ),
-         ),
+          ),
+        ),
       ),
       drupal_get_path('module', 'honeypot') . '/js/honeypot.js' => array(
         'group' => JS_LIBRARY,
@@ -168,7 +168,7 @@ function honeypot_library() {
 /**
  * Build an array of all the protected forms on the site, by form_id.
  *
- * @todo - Add in API call/hook to allow modules to add to this array.
+ * @todo Add in API call/hook to allow modules to add to this array.
  */
 function honeypot_get_protected_forms() {
   $forms = &drupal_static(__FUNCTION__);
@@ -203,11 +203,8 @@ function honeypot_get_protected_forms() {
  * @param array $options
  *   Array of options to be added to form. Currently accepts 'honeypot' and
  *   'time_restriction'.
- *
- * @return array
- *   Returns elements to be placed in a form's elements array to prevent spam.
  */
-function honeypot_add_form_protection(&$form, &$form_state, $options = array()) {
+function honeypot_add_form_protection(&$form, &$form_state, array $options = array()) {
   global $user;
 
   // Allow other modules to alter the protections applied to this form.
@@ -370,7 +367,7 @@ function _honeypot_time_restriction_validate(&$element, &$form_state) {
  * @param string $honeypot_time
  *   The signed interval as submitted via javascript.
  *
- * @return int|FALSE
+ * @return int|false
  *   The interval in seconds if the token is valid, FALSE otherwise.
  */
 function _honeypot_get_interval_from_signed_js_value($honeypot_time) {
@@ -419,9 +416,9 @@ function _honeypot_log($form_id, $type) {
  * Look up the time limit for the current user.
  *
  * @param array $form_values
- *   Array of form values (optional).
+ *   (optional) Array of form values.
  */
-function honeypot_get_time_limit($form_values = array()) {
+function honeypot_get_time_limit(array $form_values = array()) {
   global $user;
   $honeypot_time_limit = variable_get('honeypot_time_limit', 5);
 
@@ -452,7 +449,7 @@ function honeypot_get_time_limit($form_values = array()) {
 }
 
 /**
- * Log the failed submision with timestamp and hostname.
+ * Log the failed submission with timestamp and hostname.
  *
  * @param string $form_id
  *   Form ID for the rejected form submission.
@@ -566,7 +563,7 @@ function honeypot_get_signed_timestamp($time) {
  * Validate a signed timestamp.
  *
  * @param string $signed_timestamp
- *   A timestamp concateneted with the signature
+ *   A timestamp concateneted with the signature.
  *
  * @return int
  *   The timestamp if the signature is correct, 0 otherwise.
@@ -579,6 +576,7 @@ function honeypot_get_time_from_signed_timestamp($signed_timestamp) {
     return $honeypot_time;
   }
 
+  // phpcs:ignore SlevomatCodingStandard.PHP.ShortList.LongListUsed
   list($timestamp, $received_hmac) = explode('|', $signed_timestamp);
 
   if ($timestamp && $received_hmac) {
@@ -596,7 +594,7 @@ function honeypot_get_time_from_signed_timestamp($signed_timestamp) {
 /**
  * Gets the default file stream for honeypot.
  *
- * @return
+ * @return string
  *   'public', 'private' or any other file scheme defined as the default.
  *
  * @see file_default_scheme()
